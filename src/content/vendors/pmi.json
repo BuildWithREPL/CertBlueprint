@@ -1,0 +1,138 @@
+{
+  "title": "PMI",
+  "slug": "pmi",
+  "overview": "The Project Management Institute (PMI) is the world's leading professional body for project management and the organization behind the PMP—the most recognized project management credential in existence. Its certification ladder starts with the entry-level CAPM and climbs through the experience-gated PMP to specialized agile, program, and portfolio credentials. PMI certifications appear by name in project management job postings across nearly every industry.",
+  "why_vendor_matters": "PMI matters because the PMP functions as a de facto requirement for many project management roles: government contracts, consulting firms, and large enterprises frequently list it as mandatory, and salary surveys consistently show a meaningful premium for PMP holders. The credential's value comes from its gate: PMP candidates must document 36 months of project leadership experience (60 months without a four-year degree) plus 35 hours of project management education before they can even sit the exam. That experience requirement is exactly what makes the PMP credible to employers—it certifies practitioners, not students.\n\nThat gate is also why the CAPM exists and where the honest CAPM-to-PMP ladder comes in. The CAPM (Certified Associate in Project Management) has no experience requirement—just a secondary degree and 23 hours of project management education—making it the realistic starting point for students, career changers, and coordinators who are not yet PMP-eligible. It carries far less hiring weight than the PMP on its own, but it does two concrete things: it signals commitment to the field for junior roles, and holding an active CAPM satisfies the PMP's 35-hour education requirement outright. The sensible path for most people is CAPM early, accumulate documented project leadership experience, then PMP once the experience gate opens. Do not expect any certificate to shortcut that middle step—PMI audits applications.",
+  "certification_tracks": [
+    {
+      "name": "Entry Level",
+      "level": "Foundation",
+      "description": "The CAPM requires only a secondary degree and 23 hours of project management education—no work experience since PMI dropped that option in 2024. The standard on-ramp for aspiring project managers and coordinators."
+    },
+    {
+      "name": "Professional",
+      "level": "Professional",
+      "description": "The PMP requires 36 months of project leadership experience (60 with only a high school diploma) plus 35 contact hours, and remains the most requested project management credential in job postings worldwide."
+    },
+    {
+      "name": "Agile",
+      "level": "Specialist",
+      "description": "The PMI-ACP (Agile Certified Practitioner) validates agile delivery experience across Scrum, Kanban, and Lean. An option for practitioners in agile-heavy organizations where PMP's broader framing matters less."
+    },
+    {
+      "name": "Program and Portfolio",
+      "level": "Expert",
+      "description": "PgMP (Program Management) and PfMP (Portfolio Management) target senior leaders coordinating multiple projects or an organization's whole investment portfolio. Heavy experience requirements; pursued by a small fraction of PMP holders."
+    }
+  ],
+  "featured_certs": ["capm"],
+  "who_its_for": [
+    {
+      "role": "Students and recent graduates",
+      "detail": "In your final year or fresh out of a degree with no project experience yet, CAPM is the one PMI credential you actually qualify for. It needs only a secondary degree and 23 contact hours of education, not the PMP's 36 months of documented work."
+    },
+    {
+      "role": "Career changers moving into project work",
+      "detail": "Switching into coordinator or analyst roles from an unrelated field, CAPM gets 'PMI-certified' onto your resume and helps you clear HR filters. It buys time to build the leadership experience the PMP later requires."
+    },
+    {
+      "role": "IT pros who run projects without the title",
+      "detail": "If you already coordinate rollouts, migrations, or sprints but 'project manager' is not on your business card, CAPM formalizes what you do. Agile is 20% of the exam, so it maps to how modern IT teams actually work."
+    },
+    {
+      "role": "Business analysts wanting PM grounding",
+      "detail": "Business analysis is 27% of the current CAPM, so BAs earn a credential that validates a strength they already have. It adds the project-delivery vocabulary that makes working alongside PM teams smoother."
+    }
+  ],
+  "career_salary_impact": [
+    "Be honest about what a PMI credential does at entry level: the CAPM is a resume signal, not a pay lever. Project coordinator, project analyst, and PMO roles that list it typically pay $55K–$80K in the US depending on industry and market, and surveys put certified holders only about 5–10% above uncertified peers early on. You are buying a better shot at the first project-flavored role, not a raise stacked on top of one.",
+    "The real compensation jump comes later, and it comes from the PMP paired with documented experience, where $100K+ is common. Notice what actually moves the needle: the PMP is a de facto requirement in many government, consulting, and enterprise postings, so for those roles the cert changes your eligibility more than it dictates a fixed number. But the gate is the 36 months of project leadership experience PMI demands—no certificate shortcuts that, and PMI audits applications. Treat CAPM as the on-ramp and the PMP-plus-experience combination as where the money is."
+  ],
+  "study_difficulty": [
+    {
+      "cert": "CAPM (Certified Associate in Project Management)",
+      "difficulty": "Beginner–Moderate",
+      "time": "4–8 weeks part-time",
+      "detail": "CAPM is the most approachable PMI exam—150 questions in three hours with no experience required—and most candidates are ready in 4 to 8 weeks of part-time study. The catch is the post-2023 content mix: agile (20%) and business analysis (27%) make up nearly half the exam, so IT and waterfall-minded candidates who skim those domains are the ones who fail."
+    }
+  ],
+  "available_guides": [
+    {
+      "title": "PMI CAPM (Certified Associate in Project Management) Study Guide",
+      "level": "Foundation",
+      "description": "PMI's genuine entry-level credential—no experience required, just a secondary degree and 23 contact hours—covering predictive, agile, and business-analysis fundamentals.",
+      "slug": "capm",
+      "vendor_slug": "pmi",
+      "featured": true
+    }
+  ],
+  "more_certs": [
+    {
+      "title": "PMP (Project Management Professional)",
+      "level": "Professional",
+      "description": "PMI's flagship and the most-requested PM credential in job postings. Gated behind 36 months of project leadership experience (60 without a four-year degree) plus 35 contact hours—the certification most people ultimately want."
+    },
+    {
+      "title": "PMI-ACP (Agile Certified Practitioner)",
+      "level": "Specialist",
+      "description": "Validates hands-on agile delivery across Scrum, Kanban, and Lean. Aimed at practitioners in agile-heavy organizations; requires documented agile project experience, not just study."
+    },
+    {
+      "title": "PgMP (Program Management Professional)",
+      "level": "Expert",
+      "description": "For senior leaders coordinating multiple related projects as a single program. Heavy experience requirements plus a panel review; pursued by a small share of PMP holders."
+    },
+    {
+      "title": "PfMP (Portfolio Management Professional)",
+      "level": "Expert",
+      "description": "For executives managing an organization's whole portfolio of programs and investments. The top of PMI's ladder, with the steepest experience bar of any of its credentials."
+    }
+  ],
+  "related_paths": [
+    {
+      "title": "IT Project Coordinator",
+      "href": "/paths/it-project-coordinator/",
+      "description": "The role CAPM is built for—see the day-to-day, salary range, and how the credential fits an entry-level project-coordination career."
+    },
+    {
+      "title": "Scrum.org",
+      "href": "/vendors/scrum-org/",
+      "description": "Agile is a fifth of the CAPM exam; a Professional Scrum Master cert proves those skills in depth and pairs naturally with PMI's broader project framing."
+    },
+    {
+      "title": "PeopleCert (ITIL)",
+      "href": "/vendors/peoplecert/",
+      "description": "ITIL covers how IT services run day to day, complementing CAPM's focus on how changes to them get delivered—a strong combination for IT project coordinators."
+    }
+  ],
+  "cta": {
+    "heading": "Start with the CAPM",
+    "blurb": "It's the one PMI credential you can earn without years of project experience, and the terminology carries straight into the PMP later. Our guide walks the eligibility, exam, and study plan end to end.",
+    "href": "/vendors/pmi/capm/",
+    "label": "Read the CAPM guide"
+  },
+  "faq": [
+    {
+      "question": "Can I get the PMP without project management experience?",
+      "answer": "No. The PMP requires 36 months of documented project leadership experience with a four-year degree, or 60 months without one, plus 35 hours of education—and PMI audits a percentage of applications. If you lack the experience, start with the CAPM and build real project experience; there is no legitimate shortcut."
+    },
+    {
+      "question": "Is the CAPM worth it, or should I just wait for the PMP?",
+      "answer": "Honest answer: the CAPM carries much less weight than the PMP and rarely appears as a job requirement. It is worth it if you are years away from PMP eligibility and want a credential now—it helps for coordinator-level roles, and an active CAPM satisfies the PMP's 35-hour education requirement. If you already qualify for the PMP, skip the CAPM and go straight there."
+    },
+    {
+      "question": "Do PMI certifications expire?",
+      "answer": "Yes. The PMP renews on a 3-year cycle requiring 60 PDUs (professional development units); the CAPM also renews every 3 years, requiring 15 PDUs. PDUs come from training, webinars, volunteering, and work experience, so maintenance is manageable but not free of effort."
+    },
+    {
+      "question": "How much do the CAPM and PMP exams cost?",
+      "answer": "As of 2026, the CAPM exam runs about $225 for PMI members / $300 for non-members, and the PMP about $405 / $555. Annual PMI membership (~$129 plus application fee) usually pays for itself via the exam discount and free access to the PMBOK Guide. Verify current pricing on pmi.org—fees change periodically."
+    },
+    {
+      "question": "Did the PMP exam change in 2026?",
+      "answer": "Yes—PMI launched an updated PMP exam in July 2026 with rebalanced domains and new content covering topics like AI in project delivery. Eligibility requirements did not change. If you are using older prep materials, confirm they align with the current exam content outline before your test date."
+    }
+  ],
+  "seo_title": "PMI Certifications – CAPM and PMP Study Guides | CertBlueprint",
+  "seo_description": "PMI certification guides for CAPM and PMP. Eligibility requirements, the CAPM-to-PMP ladder, and honest advice on when each cert is worth it."
+}

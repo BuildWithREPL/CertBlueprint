@@ -1,0 +1,307 @@
+{
+  "title": "Cisco CCNP Security Study Guide",
+  "slug": "ccnp-security",
+  "short_name": "CCNP Security",
+  "vendor": "Cisco",
+  "vendor_slug": "cisco",
+  "level": "Professional",
+  "description": "CCNP Security is Cisco's network-security engineering certification — the SCOR core plus one concentration, covering firewalls, identity (ISE), VPN/SSE, and from v2.0, AI-era security. Read this before anything else: 2026 is a transition year. SCOR v1.1's last test day is August 26, 2026; v2.0 launches August 27 — and three concentration exams retire outright on the same date.",
+  "audience": "Network engineers pivoting into security engineering — people who build and run Cisco Secure Firewall, ISE/NAC, and VPN/SSE estates. Explicitly NOT a SOC analyst cert: if your target is alert triage, incident response, and threat hunting, that's Cisco's separate CCNP Cybersecurity (the renamed CyberOps Professional). Confusing these two wastes a year.",
+  "why_get_it": "It's consistently cited as the highest-paying CCNP track, and the reason is scarcity of the profile: engineers who genuinely know both enterprise networking and the Cisco security stack — Secure Firewall (FTD/FMC), ISE, secure connectivity — are rare and expensive. Every exam passed earns a standalone Specialist credential along the way, and SCOR doubles as the CCIE Security qualifying exam. The honest scope note: this is a Cisco-product expert path, and its value tracks your employer's Cisco footprint. In Palo Alto or Fortinet shops it buys less; pair it with Security+ or CISSP for the vendor-neutral HR-filter layer.",
+  "when_to_get_it": "After CCNA-level networking plus real exposure to firewalls, VPNs, and identity concepts — SCOR will bury pure-theory candidates. And in 2026, timing IS the strategy: if you're mid-study on v1.1 material (or targeting SESA, SWSA, or SVPN — all three retire), you must test by August 26, 2026. Starting fresh? Study straight to the v2.0/v1.2 blueprints and expect official training to lag — Cisco ships partial v2.0 training in Q3 2026, full in Q4. Both windows are legitimate choices — drifting across the boundary mid-prep is the expensive mistake.",
+  "salary_range": "$110,000 – $155,000 (U.S. network security engineers)",
+  "salary_note": "Placement trackers consistently call CCNP Security the highest-paying CCNP: ZipRecruiter-class data shows ~$150K averages for tagged roles (with the usual title-skew caveats), PayScale pegs cert-holder medians nearer $113K. The realistic band is $110–155K, with federal/cleared roles and Fortune-500 firewall+ISE work at the top. All third-party estimates — no official Cisco salary data exists.",
+  "exam_code": "350-701 SCOR + 1 concentration",
+  "exam_duration": "SCOR: 120 minutes · concentration: 90 minutes",
+  "exam_format": "Two proctored exams at Pearson VUE (test center or OnVUE): the SCOR core (multiple-choice, drag-and-drop, performance-based; count and passing score not published) plus one concentration. Results in ~48 hours. No lab exam at CCNP level.",
+  "exam_questions": "Not published by Cisco",
+  "exam_structure": [
+    {
+      "code": "350-701 SCOR",
+      "name": "Implementing and Operating Cisco Security Core Technologies",
+      "role": "Core exam — required",
+      "price": "$400",
+      "note": "v1.1 last test day Aug 26, 2026; v2.0 live Aug 27 (adds AI/LLM security, Zero Trust/SSE/SASE, post-quantum crypto). Also the CCIE Security qualifying exam. Earns Specialist – Security Core."
+    },
+    {
+      "code": "300-710 SNCF",
+      "name": "Securing Networks with Cisco Firewalls",
+      "role": "Concentration — choose one",
+      "price": "$300",
+      "note": "The most job-relevant pick — firewall roles name it. Moves to v1.2 on Aug 27, 2026."
+    },
+    {
+      "code": "300-715 SISE",
+      "name": "Implementing and Configuring Cisco Identity Services Engine",
+      "role": "Concentration — choose one",
+      "price": "$300",
+      "note": "The identity/NAC lane — ISE expertise is among the most billable Cisco skills. v1.2 (ISE 3.4/3.5) from Aug 27, 2026."
+    },
+    {
+      "code": "300-740 SCAZT",
+      "name": "Designing and Implementing Secure Cloud Access for Users and Endpoints",
+      "role": "Concentration — choose one",
+      "price": "$300",
+      "note": "Major v2.0 rewrite Aug 27, 2026: multicloud, ZTNA, AI guardrails."
+    },
+    {
+      "code": "300-745 SDSI",
+      "name": "Designing Cisco Security Infrastructure",
+      "role": "Concentration — choose one",
+      "price": "$300",
+      "note": "Newest option — architecture/design plus DevSecOps focus."
+    },
+    {
+      "code": "300-720 / 300-725 / 300-730",
+      "name": "SESA (email), SWSA (web), SVPN (VPN)",
+      "role": "Concentrations — RETIRING",
+      "price": "$300",
+      "note": "All three retire Aug 26, 2026 with no replacements. Only start one if you can test before that date."
+    }
+  ],
+  "official_url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/security/ccnp-security/exams-and-training.html",
+  "official_pricing_url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/security/ccnp-security/exams-and-training.html",
+  "recertification_note": "3-year cycle, 80 CE credits — the unified ledger: core exam re-pass = 80 CE, concentrations = 40 each, training CE from Cisco U counts too, excess rolls over. Two concentrations across a cycle keeps you certified without re-facing SCOR.",
+  "last_verified": "July 2026",
+  "skills_covered": [
+    {
+      "category": "Network Security & Firewalls (25%)",
+      "items": [
+        "Cisco Secure Firewall (FTD/FMC) deployment and policy",
+        "Intrusion prevention concepts and tuning",
+        "Segmentation strategy and enforcement",
+        "NetFlow/telemetry for security visibility",
+        "The firewall engineering that SNCF then certifies at depth"
+      ]
+    },
+    {
+      "category": "Identity, Access & Enforcement (15%)",
+      "items": [
+        "ISE concepts: 802.1X, MAB, posture, profiling",
+        "AAA architecture across the enterprise",
+        "TrustSec and software-defined segmentation",
+        "Guest access and BYOD workflows",
+        "The identity layer modern zero-trust designs stand on"
+      ]
+    },
+    {
+      "category": "Cloud Security & SSE (25% in v2.0)",
+      "items": [
+        "Zero Trust and SASE/SSE architecture — first-class in v2.0",
+        "Cloud security fundamentals across IaaS/SaaS",
+        "Umbrella/Secure Access concepts",
+        "AI/LLM security vulnerabilities — new v2.0 territory",
+        "Post-quantum cryptography awareness — yes, it's on the blueprint now"
+      ]
+    },
+    {
+      "category": "Endpoint & Content Security (15–20%)",
+      "items": [
+        "Endpoint detection concepts and Cisco Secure Endpoint",
+        "Email and web security principles (surviving SESA/SWSA's retirement in the core)",
+        "Malware analysis fundamentals",
+        "eBPF-based workload protection — new in v2.0",
+        "VPN technologies: site-to-site and remote access"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Pick your side of August 26, 2026 — first, before anything",
+      "description": "The single most important decision: test v1.1 by Aug 26 (mature study materials, but a deadline), or start clean on v2.0 from Aug 27 (current content — AI security, SSE, PQC — but official training arrives in waves, Q3–Q4 2026). Mid-study drift across that boundary is the expensive mistake. If SESA/SWSA/SVPN was your concentration plan, the deadline is absolute — they retire with no replacements."
+    },
+    {
+      "step": 2,
+      "title": "Confirm this is your track — not CCNP Cybersecurity",
+      "description": "Thirty seconds that saves a year: CCNP Security = build and run the security infrastructure (firewalls, ISE, VPN/SSE). CCNP Cybersecurity (renamed CyberOps Professional) = SOC operations, forensics, threat hunting. Different careers, different exams. If your target is analyst work, stop here and switch guides."
+    },
+    {
+      "step": 3,
+      "title": "Choose the concentration by your job market",
+      "description": "SNCF (firewalls) has the most postings behind it; SISE (ISE/identity) is the most billable specialty; SCAZT covers the cloud/ZTNA direction the industry is moving; SDSI suits architecture-leaning engineers. Pick before starting SCOR so your lab time compounds."
+    },
+    {
+      "step": 4,
+      "title": "Lab on DevNet sandboxes — the stack is unaffordable otherwise",
+      "description": "Nobody home-labs FMC, ISE, and the content stack legally on a budget. Cisco's free DevNet sandboxes carry reservable ISE and Secure Firewall instances — the realistic hands-on route. Add dcloud.cisco.com guided demos with a free account, and Katherine McNamara's free ISE labs at network-node.com (the unofficial SISE bible — verify version coverage against ISE 3.4/3.5 for v1.2)."
+    },
+    {
+      "step": 5,
+      "title": "Build the SCOR spine from the OCG plus blueprint deltas",
+      "description": "Omar Santos's SCOR Official Cert Guide is the standard text — but it targets v1.1, and no v2.0 edition exists at the changeover. If you're on the v2.0 side, study the book for the durable 70% and fill AI-security, SSE/SASE, and post-quantum topics straight from the blueprint and Cisco U content as it lands."
+    },
+    {
+      "step": 6,
+      "title": "Calibrate with Boson before burning $400",
+      "description": "Boson's SCOR ExSim is the most exam-realistic practice available and the best predictor of readiness. Consistent mid-80s = book it. Version-check the bank against your chosen blueprint side."
+    },
+    {
+      "step": 7,
+      "title": "Sit SCOR, bank two doors at once",
+      "description": "Passing earns Specialist – Security Core immediately and qualifies you for the CCIE Security lab. 120 minutes, results in ~48 hours."
+    },
+    {
+      "step": 8,
+      "title": "Close out the concentration while the core is fresh",
+      "description": "90 minutes, $300. SNCF and SISE reward the sandbox hours you already logged; SDSI leans design-brain over lab-brain. Passing completes CCNP Security and banks 40 CE toward the next cycle."
+    },
+    {
+      "step": 9,
+      "title": "Add the vendor-neutral layer for HR",
+      "description": "The blunt market truth: many security-manager and government postings filter on Security+ or CISSP regardless of how deep your Cisco skills run. CCNP Security proves you can build it; pair it with the neutral credential that gets the resume opened. Our Security+ and CISSP guides cover both."
+    },
+    {
+      "step": 10,
+      "title": "Keep current the cheap way",
+      "description": "80 CE per 3 years: one concentration re-pass (40) plus free Cisco U 'Rev Up' promos usually covers it. Watch for time-boxed free official courses too — Cisco periodically gives away full concentration prep worth 40+ CE."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "Official SCOR v2.0 Exam Topics",
+      "url": "https://learningnetwork.cisco.com/s/scor-v2-exam-topics",
+      "type": "Official Documentation",
+      "note": "The authoritative v2.0 blueprint; the v1.1 blueprint stays posted until the Aug 26, 2026 sunset. Your side-of-the-boundary decision starts here."
+    },
+    {
+      "name": "Cisco's Official Transition Announcement",
+      "url": "https://learningnetwork.cisco.com/s/blogs/a0DQO000004N0jN2AS/cisco-ccnp-security-gets-a-major-upgrade-what-you-need-to-know",
+      "type": "Official Documentation",
+      "note": "Every date that matters: Aug 26 last-day-to-test for v1.1 and the three retiring exams, Aug 27 v2.0 launch, and the training release schedule."
+    },
+    {
+      "name": "Cisco DevNet Sandboxes (ISE, Secure Firewall)",
+      "url": "https://developer.cisco.com/site/sandbox/",
+      "type": "Hands-on Labs",
+      "note": "Free reservable instances of the exact products on the blueprint — the realistic way to lab this stack without enterprise gear."
+    },
+    {
+      "name": "network-node.com ISE Labs (Katherine McNamara)",
+      "url": "https://www.network-node.com",
+      "type": "Community Labs",
+      "note": "The community's unofficial SISE bible — long-running free ISE lab guides. Verify coverage against ISE 3.4/3.5 for the v1.2 exam."
+    },
+    {
+      "name": "Cisco Learning Network Security Community",
+      "url": "https://learningnetwork.cisco.com",
+      "type": "Community",
+      "note": "Free study groups and official Q&A — including transition-focused events as the v2.0 cutover approaches."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Cisco Press – SCOR 350-701 Official Cert Guide, 2nd Ed. (Omar Santos)",
+      "type": "Book",
+      "price": "~$50–$70",
+      "best_for": "The standard spine text — with the transition warning: it targets v1.1, and no v2.0 edition exists at the changeover; supplement AI/SSE/PQC topics from the blueprint",
+      "affiliate_url": "https://www.amazon.com/s?k=CCNP+CCIE+Security+Core+SCOR+350-701+Official+Cert+Guide&tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_scor_ocg",
+      "affiliate": true,
+      "note": "Still worth owning on the v2.0 side — the durable 70% doesn't change."
+    },
+    {
+      "provider": "Boson ExSim-Max for SCOR 350-701",
+      "type": "Practice Exams",
+      "price": "~$99",
+      "best_for": "The most exam-realistic practice in the Cisco space — the best predictor before spending $400 on an attempt",
+      "affiliate_url": "https://www.boson.com/product/exsim-max-for-cisco-350-701-scor/",
+      "affiliate_label": "View on Boson",
+      "affiliate_event": "boson_scor_exsim",
+      "affiliate": false,
+      "note": "Plain reference link, no commission. Version-check against your blueprint side."
+    },
+    {
+      "provider": "CBT Nuggets – CCNP Security",
+      "type": "Video Course",
+      "price": "~$59/month",
+      "best_for": "Video-first learners — solid SCOR and SISE coverage with virtual labs and quizzes",
+      "affiliate_url": "https://www.cbtnuggets.com/it-training/cisco/ccnp-security",
+      "affiliate_label": "View CBT Nuggets",
+      "affiliate_event": "cbtnuggets_ccnp_sec",
+      "affiliate": false,
+      "note": "Plain reference link."
+    },
+    {
+      "provider": "Cisco U. (Essentials / All Access)",
+      "type": "Official Training",
+      "price": "~$1,800/yr Essentials · ~$6,000/yr All Access (list — verify current pricing)",
+      "best_for": "Employer-funded prep — All Access subscribers get early v2.0 SCOR/SNCF/SCAZT training in Q3 2026 before the full Q4 release, and completions earn CE credits",
+      "affiliate_url": "https://u.cisco.com/",
+      "affiliate_label": "View Cisco U",
+      "affiliate_event": "ciscou_ccnp_sec",
+      "affiliate": false,
+      "note": "Rational with employer money or Cisco Learning Credits; overkill self-funded versus book + Boson + sandboxes."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Book via Pearson VUE ($400 core + $300 concentration)",
+      "url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/security/ccnp-security/exams-and-training.html",
+      "note": "$700 minimum. Check whether your employer holds Cisco Learning Credits before paying cash — security teams at Cisco shops usually do. And re-check the calendar against the Aug 26/27, 2026 version boundary before booking anything."
+    }
+  ],
+  "faq": [
+    {
+      "question": "What's this August 2026 deadline everyone mentions?",
+      "answer": "Cisco's biggest security-track transition in years: SCOR v1.1, SNCF v1.1, SISE v1.1, and SCAZT v1.0 all have a last test date of August 26, 2026, with v2.0/v1.2 versions launching August 27 — and three concentrations (SESA email, SWSA web, SVPN) retire outright that day with no replacements. Decide which side of the boundary you're on before you start studying, not mid-way."
+    },
+    {
+      "question": "CCNP Security or CCNP Cybersecurity — aren't they the same thing?",
+      "answer": "No, and the naming genuinely trips people. CCNP Security (SCOR + concentration) is security ENGINEERING: you build and operate firewalls, ISE, VPN/SSE. CCNP Cybersecurity — the renamed CyberOps Professional (CBRCOR core + forensics or threat-hunting concentration) — is security OPERATIONS: SOC work, incident response, hunting. Pick by which chair you want: builder or defender-analyst."
+    },
+    {
+      "question": "Which concentration should I pick?",
+      "answer": "SNCF (firewalls) for the most job postings; SISE (ISE/identity) for the most billable specialty; SCAZT for the ZTNA/cloud direction; SDSI for design-leaning engineers. Do not start SESA, SWSA, or SVPN unless you can test before August 26, 2026 — they retire with no successors."
+    },
+    {
+      "question": "Is CCNP Security worth it outside Cisco shops?",
+      "answer": "Less — be honest with yourself here. This is a Cisco-product expert path; its market value tracks your employer's (or target employers') Cisco security footprint. In Palo Alto or Fortinet estates, it buys goodwill but not mastery-fit. Vendor-neutral trajectory (CISO-track, architecture)? CISSP plus this or instead of this. Pure Cisco shop? Few certs pay better."
+    },
+    {
+      "question": "What does SCOR v2.0 actually add?",
+      "answer": "The 2026 threat landscape, essentially: AI/LLM security vulnerabilities, Zero Trust and SSE/SASE as first-class architecture, Splunk telemetry, eBPF workload protection, and post-quantum cryptography awareness. It's a genuinely more current exam — the trade-off is that official training lands in waves (partial Q3, full Q4 2026) and third-party material will lag into 2027."
+    },
+    {
+      "question": "Does SCOR count toward CCIE Security?",
+      "answer": "Yes — SCOR is simultaneously the CCNP Security core and the CCIE Security qualifying exam. Pass it and you're eligible to book the 8-hour lab. Same efficient pattern as the Enterprise track: the professional cert's core is the expert cert's entry ticket."
+    },
+    {
+      "question": "How do I keep it current without re-taking SCOR?",
+      "answer": "80 CE credits per 3-year cycle, and concentrations pay 40 each — so one additional concentration per cycle plus modest Cisco U coursework keeps you certified indefinitely. Watch for Cisco's periodic free official courses; they've given away full concentration prep worth 40+ CE before."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CompTIA Security+",
+      "slug": "security-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "The vendor-neutral HR-filter layer — many postings screen on it regardless of Cisco depth. Pair, don't choose."
+    },
+    {
+      "title": "CCIE Security",
+      "slug": "ccie-security",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The summit — your SCOR pass is already its qualifying exam."
+    },
+    {
+      "title": "ISC2 CISSP",
+      "slug": "cissp",
+      "vendor": "ISC2",
+      "vendor_slug": "isc2",
+      "reason": "The senior credential for the architecture/leadership direction — the complement when careers outgrow single-vendor depth."
+    },
+    {
+      "title": "CCNA Cybersecurity",
+      "slug": "ccna-cybersecurity",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The SOC-side associate cert — the right lane if operations, not engineering, is your actual pull."
+    }
+  ],
+  "seo_title": "Cisco CCNP Security Study Guide – SCOR v2.0 Transition, Concentrations, Honest Value | CertBlueprint",
+  "seo_description": "Complete CCNP Security guide: the critical Aug 2026 v1.1→v2.0 boundary, retiring concentrations, SNCF vs SISE vs SCAZT vs SDSI, DevNet sandbox lab strategy, and why this is not a SOC cert."
+}

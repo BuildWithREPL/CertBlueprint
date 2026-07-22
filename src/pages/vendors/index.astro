@@ -1,0 +1,329 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import VendorCard from '../../components/VendorCard.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Vendors', href: '/vendors/' },
+];
+
+const liveVendors = [
+  {
+    title: 'Cisco',
+    href: '/vendors/cisco/',
+    description: 'The full ladder, entry to expert: $125 CCSTs, CCNA, all eight CCNP tracks, and honest CCIE/CCDE briefings — 17 guides.',
+    certCount: 17,
+    available: true,
+  },
+  {
+    title: 'CompTIA',
+    href: '/vendors/comptia/',
+    description: 'Vendor-neutral IT certifications: Security+, Network+, A+, CySA+, and CASP+. DoD 8570-approved and recognized across government and private sector.',
+    certCount: 7,
+    available: true,
+  },
+  {
+    title: 'AWS',
+    href: '/vendors/aws/',
+    description: 'Cloud certifications covering architecture, development, operations, and specialty domains. Among the highest-paying IT credentials globally.',
+    certCount: 3,
+    available: true,
+  },
+  {
+    title: 'Microsoft',
+    href: '/vendors/microsoft/',
+    description: 'Azure, Microsoft 365, endpoint, security, and data certifications. Dominant credential track in Microsoft-centric enterprise organizations.',
+    certCount: 6,
+    available: true,
+  },
+  {
+    title: 'Google',
+    href: '/vendors/google/',
+    description: 'Google Career Certificates — six guided programs from IT Support to Cybersecurity and BI, with real exam discounts (A+, Security+, CAPM) for completers.',
+    certCount: 6,
+    available: true,
+  },
+  {
+    title: 'PMI',
+    href: '/vendors/pmi/',
+    description: 'Project Management Institute — CAPM for genuine entry-level project roles, with the experience-gated PMP as the career destination.',
+    certCount: 1,
+    available: true,
+  },
+  {
+    title: 'Scrum.org',
+    href: '/vendors/scrum-org/',
+    description: 'Professional Scrum certifications (PSM I–III) — no mandatory course, lifetime validity, and the strongest value in agile credentials.',
+    certCount: 1,
+    available: true,
+  },
+  {
+    title: 'ISTQB',
+    href: '/vendors/istqb/',
+    description: 'The international software testing qualification scheme — CTFL is the one QA credential hiring managers recognize worldwide.',
+    certCount: 1,
+    available: true,
+  },
+  {
+    title: 'PeopleCert',
+    href: '/vendors/peoplecert/',
+    description: 'The exam institute behind ITIL — service-management vocabulary certifications that enterprise and government IT run on.',
+    certCount: 1,
+    available: true,
+  },
+  {
+    title: 'ISC2',
+    href: '/vendors/isc2/',
+    description: 'The body behind the CISSP — the senior security credential that management and federal job postings ask for by name.',
+    certCount: 1,
+    available: true,
+  },
+  {
+    title: 'ISACA',
+    href: '/vendors/isaca/',
+    description: 'Governance-side security and audit credentials — CISM for security management, CISA for audit, CRISC for risk.',
+    certCount: 1,
+    available: true,
+  },
+  {
+    title: 'Juniper',
+    href: '/vendors/juniper/',
+    description: 'The other serious network OS — JNCIA-Junos is the budget-friendly routing & switching entry, big in ISP and service-provider shops.',
+    certCount: 1,
+    available: true,
+  },
+];
+
+const plannedVendors = [
+  { title: 'EC-Council',  description: 'Cybersecurity certifications including CEH, CPENT, and CHFI.' },
+  { title: 'VMware',      description: 'Virtualization and cloud management certifications: VCP and VCAP tracks.' },
+  { title: 'Red Hat',     description: 'Linux, container, and enterprise open source certifications.' },
+  { title: 'Google Cloud', description: 'Associate Cloud Engineer, Professional Cloud Architect, and specialty certs.' },
+  { title: 'Palo Alto Networks', description: 'PCNSE and other firewall and security operations certifications.' },
+];
+
+const comparison = [
+  {
+    vendor: 'Cisco',
+    domain: 'Networking & Security',
+    level: 'Entry → Expert',
+    topCert: 'CCNA 200-301',
+    renewalCycle: '3 years (CCST: 5)',
+    bestFor: 'Network engineers, infrastructure roles',
+    href: '/vendors/cisco/',
+  },
+  {
+    vendor: 'CompTIA',
+    domain: 'Vendor-neutral IT',
+    level: 'Foundation → Expert',
+    topCert: 'Security+ SY0-701',
+    renewalCycle: '3 years (CE credits)',
+    bestFor: 'Career changers, gov/DoD roles',
+    href: '/vendors/comptia/',
+  },
+  {
+    vendor: 'AWS',
+    domain: 'Cloud Infrastructure',
+    level: 'Foundation → Specialty',
+    topCert: 'Solutions Architect Associate',
+    renewalCycle: '3 years',
+    bestFor: 'Cloud architects, DevOps engineers',
+    href: '/vendors/aws/',
+  },
+  {
+    vendor: 'Microsoft',
+    domain: 'Azure & Enterprise Cloud',
+    level: 'Foundation → Expert',
+    topCert: 'AZ-104 Administrator',
+    renewalCycle: 'Annual (free assessment)',
+    bestFor: 'Enterprise IT, Microsoft-stack orgs',
+    href: '/vendors/microsoft/',
+  },
+];
+---
+
+<BaseLayout
+  title="IT Certification Vendors – Cisco, CompTIA, AWS, Microsoft and More | CertBlueprint"
+  description="Compare IT certification vendors: Cisco, CompTIA, AWS, and Microsoft. Find the right certification path for networking, cloud, cybersecurity, and enterprise IT careers."
+  breadcrumbs={breadcrumbs}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <Breadcrumb crumbs={breadcrumbs} />
+
+    <header class="mt-4 mb-8 max-w-3xl">
+      <h1 class="text-2xl sm:text-3xl font-bold mb-3" style="color: var(--cb-text);">IT Certification Vendors Compared</h1>
+      <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+        Choosing the right certification vendor is the first decision in any IT career path. Each vendor covers different domains, targets different roles, and carries different weight with employers. This guide breaks down what each vendor offers, who their certifications are built for, and how to decide where to start.
+      </p>
+    </header>
+
+    <!-- Vendor guides grid -->
+    <section aria-labelledby="live-heading" class="mb-12">
+      <h2 id="live-heading" class="text-base font-bold mb-4" style="color: var(--cb-text);">Available vendor guides</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {liveVendors.map((v) => (
+          <VendorCard
+            title={v.title}
+            href={v.href}
+            description={v.description}
+            certCount={v.certCount}
+            available={v.available}
+          />
+        ))}
+      </div>
+    </section>
+
+    <!-- How to choose -->
+    <section class="mb-12 max-w-3xl" aria-labelledby="how-to-choose-heading">
+      <h2 id="how-to-choose-heading" class="text-base font-bold mb-4" style="color: var(--cb-text);">How to choose the right certification vendor</h2>
+      <div class="space-y-4 text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+        <p>
+          The most common mistake when starting an IT certification journey is picking a cert based on name recognition rather than role alignment. Every vendor on this list is reputable. The question is not which one is best — it is which one matches where you want to work and what you want to do.
+        </p>
+        <p>
+          Start by identifying a target role. Network engineer, cloud architect, security analyst, systems administrator — each has a recognized certification path. Look at actual job postings in your area for the role you want. The certifications that appear most frequently in those listings are the ones worth pursuing first. That research takes 30 minutes and will save you months of studying the wrong thing.
+        </p>
+        <p>
+          If you are early in your career and genuinely undecided, CompTIA is usually the safest starting point because their certifications are vendor-neutral and recognized across nearly every sector and employer type. Network+ or Security+ will not lock you out of any path — they open doors without closing others.
+        </p>
+        <p>
+          If you know you want to work in networking specifically, start with Cisco. If you know you want cloud, choose between AWS and Azure based on which platform your target employers use. If you want cybersecurity in government or defense, Security+ is non-negotiable — it is a formal DoD requirement.
+        </p>
+      </div>
+    </section>
+
+    <!-- Vendor comparison table -->
+    <section class="mb-12" aria-labelledby="comparison-heading">
+      <h2 id="comparison-heading" class="text-base font-bold mb-4" style="color: var(--cb-text);">Vendor comparison at a glance</h2>
+      <p class="text-sm mb-4" style="color: var(--cb-text-sub);">Deciding between two specific certifications? See our <a href="/compare/" class="font-medium" style="color: var(--cb-accent-text);">head-to-head comparisons</a> — CCNA vs Network+, CCNP vs CCIE, and more.</p>
+      <div class="overflow-x-auto rounded-xl border" style="border-color: var(--cb-border);">
+        <table class="w-full text-sm" style="background: var(--cb-bg-card);">
+          <thead>
+            <tr style="background: var(--cb-bg-subtle); border-bottom: 1px solid var(--cb-border);">
+              <th class="text-left px-4 py-3 font-semibold text-xs uppercase tracking-wider" style="color: var(--cb-text-muted);">Vendor</th>
+              <th class="text-left px-4 py-3 font-semibold text-xs uppercase tracking-wider" style="color: var(--cb-text-muted);">Domain</th>
+              <th class="text-left px-4 py-3 font-semibold text-xs uppercase tracking-wider hidden sm:table-cell" style="color: var(--cb-text-muted);">Top Cert</th>
+              <th class="text-left px-4 py-3 font-semibold text-xs uppercase tracking-wider hidden md:table-cell" style="color: var(--cb-text-muted);">Renewal</th>
+              <th class="text-left px-4 py-3 font-semibold text-xs uppercase tracking-wider" style="color: var(--cb-text-muted);">Best For</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y" style="border-color: var(--cb-border-sub);">
+            {comparison.map((row) => (
+              <tr>
+                <td class="px-4 py-3 font-semibold" style="color: var(--cb-text);">
+                  <a href={row.href} style="color: var(--cb-accent-text);">{row.vendor}</a>
+                </td>
+                <td class="px-4 py-3" style="color: var(--cb-text-sub);">{row.domain}</td>
+                <td class="px-4 py-3 hidden sm:table-cell" style="color: var(--cb-text-sub);">{row.topCert}</td>
+                <td class="px-4 py-3 hidden md:table-cell" style="color: var(--cb-text-sub);">{row.renewalCycle}</td>
+                <td class="px-4 py-3" style="color: var(--cb-text-sub);">{row.bestFor}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Vendor deep dives -->
+    <section class="mb-12 max-w-3xl" aria-labelledby="deepdive-heading">
+      <h2 id="deepdive-heading" class="text-base font-bold mb-6" style="color: var(--cb-text);">What each vendor offers</h2>
+      <div class="space-y-8">
+
+        <div>
+          <h3 class="font-semibold text-sm mb-2" style="color: var(--cb-text);">
+            <a href="/vendors/cisco/" style="color: var(--cb-accent-text);">Cisco</a> — Enterprise Networking and Security
+          </h3>
+          <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+            Cisco dominates enterprise networking globally. Their equipment powers the core infrastructure of most large organizations — financial institutions, healthcare systems, government agencies, and telecommunications providers. Cisco certifications are the benchmark for networking professionals because they validate skills on the actual systems those professionals will manage. The ladder now starts even earlier: the $125 CCST certs (Networking, Cybersecurity, IT Support) give true beginners a legitimate ground floor with free official training. The CCNA remains the most widely recognized networking credential at any level and appears in more networking job postings than any other cert in its tier. From CCNA, the path leads to CCNP (professional-level, role-specific tracks) and ultimately CCIE (expert-level, held by a small fraction of networking professionals worldwide). Cisco's curriculum also covers security, automation, data center, and collaboration, making it one of the most complete vendor ecosystems in IT.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-sm mb-2" style="color: var(--cb-text);">
+            <a href="/vendors/comptia/" style="color: var(--cb-accent-text);">CompTIA</a> — Vendor-Neutral Foundations
+          </h3>
+          <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+            CompTIA is the dominant provider of vendor-neutral IT certifications. Their credentials validate foundational skills that apply across any employer, platform, or technology stack. A Network+ holder understands TCP/IP, routing, and troubleshooting regardless of whether their employer runs Cisco, Juniper, or Aruba equipment. Security+ covers cybersecurity fundamentals that apply on Linux, Windows, or cloud-native infrastructure. The unique strength of CompTIA is breadth of recognition: their certifications appear in job postings across every sector, and Security+ is formally required by the U.S. Department of Defense for IT security roles under DoD Directive 8570/8140. CompTIA is the best starting point for career changers and for professionals who want credentials that will work anywhere.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-sm mb-2" style="color: var(--cb-text);">
+            <a href="/vendors/aws/" style="color: var(--cb-accent-text);">Amazon Web Services (AWS)</a> — Cloud Infrastructure
+          </h3>
+          <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+            AWS holds roughly a third of the global cloud market — more than any other provider. That market share translates directly into job demand: more organizations running on AWS means more roles requiring AWS skills, more job postings listing AWS certifications, and more hiring managers who take those certifications seriously. The AWS Solutions Architect Associate (SAA-C03) is the most widely held cloud certification globally and is the standard first credential for technical professionals entering cloud roles. AWS exams are scenario-based: they present architectural problems and ask candidates to select the best solution. Passing genuinely demonstrates usable skill, not just familiarity with service names. AWS certifications are valid for three years and require re-examination or passing a higher-level cert to renew.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-sm mb-2" style="color: var(--cb-text);">
+            <a href="/vendors/microsoft/" style="color: var(--cb-accent-text);">Microsoft Azure</a> — Enterprise Cloud and Hybrid IT
+          </h3>
+          <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+            Microsoft Azure is the second-largest cloud platform globally and the dominant choice in enterprise environments already standardized on Microsoft technology. For IT professionals with a Windows Server, Active Directory, or Microsoft 365 background, Azure is the natural cloud transition — the identity model, management tools, and organizational concepts are consistent across on-premises and cloud. AZ-104 (Azure Administrator Associate) is the foundational operations credential and validates day-to-day management of Azure identities, storage, VMs, networking, and monitoring. Microsoft's renewal model is uniquely cost-effective: associate and expert certifications earned after June 2021 renew annually through a free online assessment on Microsoft Learn, eliminating recurring exam fees. You pay once and maintain certification through annual assessments at no cost.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Career path decision guide -->
+    <section class="mb-12 max-w-3xl" aria-labelledby="career-path-heading">
+      <h2 id="career-path-heading" class="text-base font-bold mb-4" style="color: var(--cb-text);">Which vendor to start with, by career goal</h2>
+      <div class="space-y-3">
+        {[
+          { goal: 'I want to work in enterprise networking', rec: 'Start with Cisco CCNA. It is the industry standard and the most recognized credential for this path.', href: '/vendors/cisco/ccna/', label: 'CCNA study guide' },
+          { goal: 'I want to work in cybersecurity', rec: 'Start with CompTIA Security+. It opens the most doors fastest and is DoD-required for government security roles.', href: '/vendors/comptia/security-plus/', label: 'Security+ study guide' },
+          { goal: 'I want to work in cloud at a tech company', rec: 'Start with AWS Solutions Architect Associate. It is the most widely requested cloud cert in tech hiring.', href: '/vendors/aws/aws-saa/', label: 'AWS SAA study guide' },
+          { goal: 'I want to work in IT at an enterprise company', rec: 'Start with Microsoft AZ-104 if they use Azure, or CompTIA Security+ if you are not sure yet.', href: '/vendors/microsoft/az-104/', label: 'AZ-104 study guide' },
+          { goal: 'I am a career changer with no IT background', rec: 'Start with CompTIA Network+ or Security+. Vendor-neutral credentials prove foundational competence without requiring prior experience.', href: '/vendors/comptia/', label: 'CompTIA overview' },
+        ].map((item) => (
+          <div class="rounded-xl border p-4" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+            <p class="font-semibold text-sm mb-1" style="color: var(--cb-text);">{item.goal}</p>
+            <p class="text-sm leading-relaxed mb-2" style="color: var(--cb-text-sub);">{item.rec}</p>
+            <a href={item.href} class="text-xs font-medium" style="color: var(--cb-accent-text);">{item.label} →</a>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Individual cert quick links -->
+    <section class="mb-12" aria-labelledby="certs-heading">
+      <h2 id="certs-heading" class="text-base font-bold mb-4" style="color: var(--cb-text);">Popular certification study guides</h2>
+      <p class="text-sm mb-4 leading-relaxed" style="color: var(--cb-text-sub);">A few of the most-searched guides — every vendor card above links to that vendor's full guide list.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        {[
+          { title: 'Cisco CCNA 200-301', href: '/vendors/cisco/ccna/', tag: 'Networking · Associate', desc: 'Entry-level networking certification. Routing, switching, security fundamentals, and automation basics. The most recognized networking credential at the associate level.' },
+          { title: 'CompTIA Security+ SY0-701', href: '/vendors/comptia/security-plus/', tag: 'Cybersecurity · Associate', desc: 'DoD-approved baseline security cert. Covers threats, identity management, cryptography, and incident response. Required for many government IT roles.' },
+          { title: 'CompTIA Network+ N10-009', href: '/vendors/comptia/network-plus/', tag: 'Networking · Associate', desc: 'Vendor-neutral networking credential. TCP/IP, routing, switching, wireless, and troubleshooting across any platform or vendor.' },
+          { title: 'AWS Solutions Architect Associate', href: '/vendors/aws/aws-saa/', tag: 'Cloud · Associate', desc: 'Most widely held AWS certification. Validates designing scalable, fault-tolerant, cost-optimized systems on AWS.' },
+          { title: 'Microsoft AZ-104', href: '/vendors/microsoft/az-104/', tag: 'Cloud · Associate', desc: 'Azure Administrator Associate. Managing identities, storage, virtual machines, networking, and monitoring in Microsoft Azure.' },
+        ].map((cert) => (
+          <a href={cert.href} class="rounded-xl border p-4 block transition-all" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+            <p class="text-xs mb-1.5 font-medium" style="color: var(--cb-accent-text);">{cert.tag}</p>
+            <h3 class="font-semibold text-sm mb-1.5" style="color: var(--cb-text);">{cert.title}</h3>
+            <p class="text-xs leading-relaxed" style="color: var(--cb-text-sub);">{cert.desc}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Planned vendors -->
+    <section aria-labelledby="planned-heading">
+      <h2 id="planned-heading" class="text-base font-bold mb-2" style="color: var(--cb-text);">More vendors — guides coming soon</h2>
+      <p class="text-sm mb-4 leading-relaxed" style="color: var(--cb-text-sub);">
+        CertBlueprint is expanding to cover every major IT certification vendor. The following guides are in development.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+        {plannedVendors.map((v) => (
+          <div class="rounded-xl border p-4" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+            <h3 class="font-semibold text-sm mb-1.5" style="color: var(--cb-text);">{v.title}</h3>
+            <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{v.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

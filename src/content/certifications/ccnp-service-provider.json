@@ -1,0 +1,279 @@
+{
+  "title": "Cisco CCNP Service Provider Study Guide",
+  "slug": "ccnp-service-provider",
+  "short_name": "CCNP Service Provider",
+  "vendor": "Cisco",
+  "vendor_slug": "cisco",
+  "level": "Professional",
+  "description": "CCNP Service Provider is the carrier-side professional track — the SPCOR core plus one of three concentrations (advanced routing, VPN services, or cloud network infrastructure), covering the backbone world: IS-IS and BGP at scale, MPLS and segment routing, and the transport that everything else rides on. Smaller candidate pool than Enterprise, genuinely scarcer skills, and the shops that need them know it.",
+  "audience": "Engineers in or headed toward ISP, carrier, telco, and large-backbone environments — NOC engineers at providers stepping up, enterprise route/switch people crossing into the SP world, and anyone whose favorite part of networking is why the routing table looks like that. Assumes solid CCNA-level fundamentals plus real routing appetite; this is the deepest-routing track Cisco offers below CCIE.",
+  "why_get_it": "Because the backbone world runs on a different physics than the campus — IS-IS instead of OSPF-everywhere, BGP as the product rather than the edge, MPLS/SR as the fabric — and the engineers fluent in it are scarce enough to command a premium wherever providers, carriers, and IXPs hire. The track's structure rewards you along the way (every exam passed earns a standalone Specialist credential), and SPCOR doubles as the CCIE Service Provider qualifying exam. Honest scope note: fewer job postings name this track than name Enterprise — but the postings that do are exactly the SP shops where the skills are the job, and where the Junos crossover (most carrier shops run both stacks) makes this pair beautifully with a cheap JNCIA.",
+  "when_to_get_it": "When the SP world is your target or your present: you're at a provider already, you're eyeing carrier/ISP roles, or your enterprise role keeps touching the WAN/transport edge and you want the deep end. Fundamentals floor: CCNA-level routing must be automatic, because SPCOR assumes it and the concentrations go deep fast. One menu note from the February 2026 wave: the SPAUTO automation concentration retired — the menu is now SPRI, SPVI, and SPCNI, with no SP-specific automation option (the automation lane lives in CCNP Automation now).",
+  "salary_range": "$100,000 – $145,000 (U.S. service-provider network engineers)",
+  "salary_note": "No cert-specific salary data exists — anchor to the role: SP/carrier network engineers typically post $100–145K in U.S. markets, with backbone, peering, and MPLS/SR-fluent roles at the top and principal/consulting above. The scarcity logic mirrors the Juniper world (often literally the same shops): fewer people hold deep SP skills than campus skills, and the employers who need them pay for the difference. Third-party and directional, as always.",
+  "exam_code": "350-501 SPCOR + 1 concentration",
+  "exam_duration": "SPCOR: 120 minutes · concentration: 90 minutes",
+  "exam_format": "Two proctored exams at Pearson VUE (test center or OnVUE): the SPCOR core plus one of three concentrations. Multiple-choice, drag-and-drop, and scenario items; question counts and passing scores not published by Cisco. Results in ~48 hours.",
+  "exam_questions": "Not published by Cisco",
+  "exam_structure": [
+    {
+      "code": "350-501 SPCOR",
+      "name": "Implementing and Operating Cisco Service Provider Network Core Technologies",
+      "role": "Core exam — required",
+      "price": "$400",
+      "note": "The carrier core: SP architecture, IS-IS/OSPF/BGP at scale, MPLS and segment routing, QoS, automation concepts. Also the CCIE Service Provider qualifying exam. Earns Specialist – Service Provider Core."
+    },
+    {
+      "code": "300-510 SPRI",
+      "name": "Implementing Cisco Service Provider Advanced Routing Solutions",
+      "role": "Concentration — choose one",
+      "price": "$300",
+      "note": "The deep-routing choice: advanced BGP (communities, RRs, policy at scale), IS-IS and OSPF advanced operation, route manipulation, and high availability. The most respected pick and the natural CCIE SP runway."
+    },
+    {
+      "code": "300-515 SPVI",
+      "name": "Implementing Cisco Service Provider VPN Services",
+      "role": "Concentration — choose one",
+      "price": "$300",
+      "note": "The services choice: L3VPN/L2VPN, EVPN, and the MPLS service constructs providers actually sell."
+    },
+    {
+      "code": "300-540 SPCNI",
+      "name": "Designing and Implementing Cisco Service Provider Cloud Network Infrastructure",
+      "role": "Concentration — choose one",
+      "price": "$300",
+      "note": "The newest option — SP cloud infrastructure design and implementation. Thinner third-party prep ecosystem than SPRI/SPVI."
+    },
+    {
+      "code": "300-535 SPAUTO",
+      "name": "Automating Cisco Service Provider Solutions",
+      "role": "RETIRED",
+      "price": "—",
+      "note": "Retired February 2, 2026 in the DevNet→Automation restructuring. No SP-specific automation concentration remains; that lane now lives in CCNP Automation."
+    }
+  ],
+  "official_url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/service-provider/ccnp-service-provider/index.html",
+  "official_pricing_url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/service-provider/ccnp-service-provider/index.html",
+  "recertification_note": "3-year cycle, 80 CE credits on the unified ledger: SPCOR re-pass = 80 CE, a concentration = 40, Cisco U training counts, excess rolls over. A second concentration next cycle both renews you and deepens the SP portfolio — SPRI then SPVI is the classic pairing.",
+  "last_verified": "July 2026",
+  "skills_covered": [
+    {
+      "category": "SP Core Architecture & Transport (SPCOR)",
+      "items": [
+        "Service-provider architectures: core, aggregation, access — and why they're built that way",
+        "MPLS fundamentals through operation: LDP, traffic engineering concepts",
+        "Segment routing — the direction carrier transport has already gone",
+        "QoS at provider scale: policing, shaping, and the SLAs behind them",
+        "The transport layer the entire internet actually rides on"
+      ]
+    },
+    {
+      "category": "Routing at Carrier Scale (SPCOR + SPRI)",
+      "items": [
+        "IS-IS as a first-class citizen — the SP world's IGP of choice",
+        "BGP as the product: communities, route reflectors, policy at scale",
+        "Advanced route manipulation and traffic steering (SPRI's deep end)",
+        "OSPF advanced operation where it survives in provider networks",
+        "Convergence, stability, and high availability when downtime is a headline"
+      ]
+    },
+    {
+      "category": "Services & The Business (SPVI territory)",
+      "items": [
+        "L3VPN — the bread-and-butter product of every provider",
+        "L2VPN and EVPN — the modern service constructs",
+        "Inter-AS and carrier-supporting-carrier concepts",
+        "What providers actually sell, and how the config maps to the invoice",
+        "Multicast and IPv6 in provider deployments"
+      ]
+    },
+    {
+      "category": "The Modern SP Edge (SPCNI territory + automation reality)",
+      "items": [
+        "SP cloud network infrastructure — where carrier meets cloud",
+        "Peering, IXPs, and the interconnection ecosystem",
+        "Automation concepts in SPCOR (NETCONF/YANG awareness) even though SPAUTO retired",
+        "Telemetry and the observability providers live on",
+        "The Junos reality: most carrier shops run Cisco AND Juniper — multi-vendor fluency is the actual job"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Confirm the fundamentals floor honestly",
+      "description": "SPCOR assumes CCNA-level routing is automatic and rewards genuine BGP/IS-IS curiosity. If IS-IS is a stranger, start there before anything — it's the SP world's IGP and most enterprise-side engineers have never touched it. That gap is the most common early stall."
+    },
+    {
+      "step": 2,
+      "title": "Build the SPCOR spine from the blueprint outward",
+      "description": "Pull the official SPCOR exam topics from the Cisco Learning Network and structure everything around them — the SP track's third-party ecosystem is thinner than Enterprise's, so the blueprint plus the OCG carry more weight. Cisco U's SP paths and Cisco Live's SP/MPLS/segment-routing sessions (free, on-demand) fill the gaps."
+    },
+    {
+      "step": 3,
+      "title": "Lab the carrier stack in CML — this track labs beautifully",
+      "description": "Unlike ACI or wireless, the SP world virtualizes almost completely: IOS-XR images in CML Personal ($199/yr, 20 nodes) let you build genuine MPLS/SR cores, BGP route-reflector topologies, and L3VPN services end to end. The free 5-node tier handles protocol drills; a full SP core wants the paid tier. XRd containers extend it further if you're comfortable with containers."
+    },
+    {
+      "step": 4,
+      "title": "Choose the concentration by the job you want — SPRI if in doubt",
+      "description": "SPRI (advanced routing) is the most respected pick, the deepest content, and the natural CCIE SP runway — if backbone routing is the pull, it's the one. SPVI (VPN services) maps to what provider engineering teams deliver daily. SPCNI is newest with the thinnest prep ecosystem — choose it only when cloud-edge work is your actual role."
+    },
+    {
+      "step": 5,
+      "title": "For SPRI: make BGP policy your daily bread",
+      "description": "SPRI's deep end is BGP at scale — communities, route reflectors, policy control, and route manipulation under real constraints, plus IS-IS/OSPF advanced operation. Lab a two-AS topology with RRs and policy until steering traffic feels like typing. The exam rewards engineers who've made BGP decisions, not just memorized attributes."
+    },
+    {
+      "step": 6,
+      "title": "Sit SPCOR, bank the Specialist and the CCIE door",
+      "description": "$400, 120 minutes, results in ~48 hours. Passing earns Specialist – Service Provider Core immediately and qualifies you for the CCIE Service Provider lab (a lab whose current format holds until the AI module reaches SP around September 2027, per Cisco's TBC timeline) if the expert tier ever calls."
+    },
+    {
+      "step": 7,
+      "title": "Close the concentration while the core is hot",
+      "description": "90 minutes, $300. SPRI rewards the BGP/IS-IS lab hours directly; SPVI leans on the L3VPN/EVPN services you built in CML. Passing completes the CCNP and banks 40 CE toward the next cycle."
+    },
+    {
+      "step": 8,
+      "title": "Add the Junos layer — the SP world's open secret",
+      "description": "Most carrier and provider shops run Cisco and Juniper side by side, and SP job postings say so. The ~$50 JNCIA-Junos (free official training, 75%-off voucher) is the cheapest multi-vendor credibility in networking and pairs with this track better than with any other CCNP. Our JNCIA guide covers the whole play."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "Official SPCOR Exam Topics (Cisco Learning Network)",
+      "url": "https://learningnetwork.cisco.com/s/spcor-exam-topics",
+      "type": "Official Documentation",
+      "note": "The authoritative core blueprint — links the SPRI/SPVI/SPCNI topic lists too. With a thinner third-party ecosystem, this is your primary map."
+    },
+    {
+      "name": "Cisco Live On-Demand — SP / MPLS / Segment Routing Sessions",
+      "url": "https://www.ciscolive.com/on-demand.html",
+      "type": "Video Sessions",
+      "note": "Free deep dives from Cisco's own SP engineers — the segment-routing and BGP-at-scale sessions are the best free SP training that exists."
+    },
+    {
+      "name": "Cisco Modeling Labs — Free Tier",
+      "url": "https://developer.cisco.com/docs/modeling-labs/cml-free/",
+      "type": "Hands-on Labs",
+      "note": "Five nodes of real images free — enough for IS-IS and small BGP drills before upgrading to build full MPLS cores."
+    },
+    {
+      "name": "Segment Routing (segment-routing.net)",
+      "url": "https://www.segment-routing.net/",
+      "type": "Reference",
+      "note": "The community-standard SR resource — tutorials and design material straight from the technology's authors."
+    },
+    {
+      "name": "Cisco Learning Network SP Community",
+      "url": "https://learningnetwork.cisco.com",
+      "type": "Community",
+      "note": "The SP study groups — a smaller, senior crowd; questions get answered by people running real backbones."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Cisco Press – SPCOR 350-501 Official Cert Guide",
+      "type": "Book",
+      "price": "~$50–$70",
+      "best_for": "The spine text for the core — pair with the blueprint since SP editions refresh less often than Enterprise ones",
+      "affiliate_url": "https://www.amazon.com/s?k=CCNP+Service+Provider+SPCOR+350-501+Official+Cert+Guide&tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_spcor_ocg",
+      "affiliate": true,
+      "note": "Verify the edition against the current blueprint version before relying on print alone."
+    },
+    {
+      "provider": "Cisco Modeling Labs – Personal",
+      "type": "Lab Platform",
+      "price": "$199/year (20 nodes)",
+      "best_for": "The SP track's best friend — IOS-XR images for real MPLS/SR/BGP cores, legally, at home",
+      "affiliate_url": "https://u.cisco.com/",
+      "affiliate_label": "View on Cisco U",
+      "affiliate_event": "cml_via_ccnp_sp",
+      "affiliate": false,
+      "note": "Plain reference link. This track virtualizes better than almost any other — the lab investment pays directly."
+    },
+    {
+      "provider": "MPLS in the SDN Era (O'Reilly) + classic MPLS/BGP design texts",
+      "type": "Book",
+      "price": "~$50–$80",
+      "best_for": "The depth layer behind the exam — the design reasoning SP interviews probe beyond cert questions",
+      "affiliate_url": "https://www.amazon.com/s?k=MPLS+in+the+SDN+Era&tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_mpls_sdn_era",
+      "affiliate": true,
+      "note": "SP engineering rewards book depth more than most tracks — the classics stay relevant because the protocols do."
+    },
+    {
+      "provider": "Cisco U. (Essentials / All Access)",
+      "type": "Official Training",
+      "price": "~$1,800/yr Essentials · ~$6,000/yr All Access (list — verify current)",
+      "best_for": "Official SP learning paths with labs and CE credits — the structured option where third-party coverage thins",
+      "affiliate_url": "https://u.cisco.com/",
+      "affiliate_label": "View Cisco U",
+      "affiliate_event": "ciscou_ccnp_sp",
+      "affiliate": false,
+      "note": "Plain reference link. Providers are exactly the employers holding unused Learning Credits — ask."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Book via Pearson VUE ($400 core + $300 concentration)",
+      "url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/service-provider/ccnp-service-provider/index.html",
+      "note": "$700 minimum for the pair. Carrier and provider employers almost universally hold Cisco Learning Credits — this is the track where asking first pays most reliably."
+    }
+  ],
+  "faq": [
+    {
+      "question": "How different is CCNP Service Provider from CCNP Enterprise, really?",
+      "answer": "More than the names suggest. Enterprise lives in campus/WAN land: OSPF-centric, SD-WAN/SD-Access, controller-driven. SP lives on the backbone: IS-IS as the IGP, BGP as the product, MPLS/segment routing as the fabric, and services (L3VPN/EVPN) as the deliverable. The overlap is real but the center of gravity is completely different — pick by which world's problems you actually want."
+    },
+    {
+      "question": "Which concentration should I choose?",
+      "answer": "SPRI (advanced routing) if in doubt — it's the most respected, the deepest, and the natural CCIE SP runway; if backbone routing is why you're here, it's the one. SPVI (VPN services) maps directly to what provider delivery teams do daily. SPCNI (cloud network infrastructure) is newest with the thinnest prep ecosystem — right only when cloud-edge work is your actual role. Note SPAUTO retired in February 2026; there's no SP automation concentration anymore."
+    },
+    {
+      "question": "Is the SP track worth it with a smaller job market?",
+      "answer": "Smaller but denser: fewer postings, far less competition, and employers (carriers, ISPs, IXPs, backbone-heavy enterprises) for whom these skills ARE the business. The scarcity math mirrors the Juniper world — often literally the same shops — and deep SP engineers routinely command a premium over equivalent campus roles. If the SP world is your target, this is simply its credential; there's no substitute track."
+    },
+    {
+      "question": "Should I learn Juniper alongside this?",
+      "answer": "Honestly, yes — it's the SP world's open secret. Most carrier shops run Cisco and Juniper side by side, and SP postings routinely list both. The ~$50 JNCIA-Junos (free official training, 75%-off exam voucher) is the cheapest multi-vendor proof in networking and pairs better with this track than with any other CCNP. Junos in the SP world isn't an alternative — it's the other half of the job."
+    },
+    {
+      "question": "Does SPCOR count toward CCIE Service Provider?",
+      "answer": "Yes — the standard pattern: SPCOR is simultaneously this track's core and the CCIE SP qualifying exam. One pass opens both doors. If the expert lab tempts you, note its current format holds until the AI module reaches the SP track around September 2027 (Cisco marks the date to-be-confirmed) — a clean window for a determined climb."
+    },
+    {
+      "question": "How does labbing work for SP study?",
+      "answer": "Better than almost any track: the SP stack virtualizes nearly completely. CML Personal ($199/yr) with IOS-XR images builds genuine MPLS/SR cores, route-reflector meshes, and L3VPN services at home — no data-center hardware problem, no wireless physics problem. The free 5-node tier covers protocol drills; a real SP core topology wants the 20-node tier. It's the best lab-per-dollar story in the Cisco catalog."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "Juniper JNCIA-Junos",
+      "slug": "jncia-junos",
+      "vendor": "Juniper",
+      "vendor_slug": "juniper",
+      "reason": "The SP world's other half — most carrier shops run both stacks, and the ~$50 entry makes multi-vendor proof nearly free."
+    },
+    {
+      "title": "CCNP Enterprise",
+      "slug": "ccnp-enterprise",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The campus-side sibling — the honest comparison for anyone deciding which world's problems they want."
+    },
+    {
+      "title": "Cisco CCNA",
+      "slug": "ccna",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The assumed foundation — SPCOR treats CCNA-level routing as automatic before the carrier depth begins."
+    }
+  ],
+  "seo_title": "Cisco CCNP Service Provider Study Guide – SPCOR, SPRI, and the Carrier World | CertBlueprint",
+  "seo_description": "Complete CCNP Service Provider guide: SPCOR core, the SPRI/SPVI/SPCNI concentration menu (SPAUTO retired), IS-IS/BGP/MPLS-SR at carrier scale, CML lab strategy, and the Juniper crossover."
+}

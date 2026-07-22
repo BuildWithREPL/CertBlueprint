@@ -1,0 +1,225 @@
+{
+  "title": "Google IT Automation with Python Certificate Guide",
+  "slug": "google-it-automation",
+  "short_name": "Google IT Automation",
+  "vendor": "Google",
+  "vendor_slug": "google",
+  "level": "Intermediate",
+  "description": "The Google IT Automation with Python Professional Certificate is the advanced follow-on to IT Support — Python, Git, Linux troubleshooting, configuration management, and a capstone of real automation projects, run in browser-based VMs. It's built for support techs who feel the ceiling and can't script their way past it yet.",
+  "audience": "Help desk and desktop support workers ready to break the ticket-queue ceiling, and IT Support Certificate graduates continuing the Google track. Not for total beginners — it assumes basic IT literacy (operating systems, files, basic networking) and drops you into Bash quickly.",
+  "why_get_it": "Because 'support tech who can automate' is a genuinely rare and valuable combination. Hiring managers see plenty of candidates with ticket experience; the ones who can script the repetitive work stand out — and this program teaches exactly the right stack for that jump: Python, Git/GitHub, structured debugging, and configuration management. The honest caveat up front: everything here can be learned free (Automate the Boring Stuff, CS50P, Pro Git). What the subscription buys is structure, graded VM labs, ACE credit, and a Google-branded line for HR filters. For a self-disciplined learner the free path is equal or better; for someone who needs a deadline and a credential, this is one of the cheaper legitimate options.",
+  "when_to_get_it": "After 6–18 months in a support seat, when the tickets feel repetitive and you can name three tasks you'd automate if you knew how. That itch is the qualification. If you have no IT background at all, do the IT Support Certificate (or equivalent) first — Google says so explicitly, and course 2 assumes command-line comfort.",
+  "salary_range": "$55,000 – $75,000 (helpdesk-plus and junior sysadmin roles)",
+  "salary_note": "Google's '$114,000+ median for IT automation jobs' averages in DevOps and SRE postings that require far more than this certificate — treat it as marketing. Honest numbers for the roles this actually feeds: junior sysadmin averages ~$63K (ZipRecruiter) to ~$70K (Indeed), against a BLS support-specialist median of ~$60K. The realistic play: $55–75K moving up from help desk, pointing toward the $96,800 BLS sysadmin median as a mid-career ceiling.",
+  "exam_code": "Coursera Certificate",
+  "exam_duration": "Self-paced — marketed at ~6 months at 10 hrs/week; ~130 hours of real content, so IT-experienced learners finish in 4–8 weeks, true beginners 2–4 months",
+  "exam_format": "No proctored exam. Seven self-paced Coursera courses with auto-graded quizzes and hands-on Qwiklabs — real VMs where you write and run Python and Git in a Linux environment. The capstone builds working automation: image processing, web-service interaction, email/PDF generation, log analysis.",
+  "exam_questions": "No final exam — graded quizzes, VM labs, and a project capstone",
+  "official_url": "https://www.coursera.org/professional-certificates/google-it-automation",
+  "official_pricing_url": "https://www.coursera.org/professional-certificates/google-it-automation",
+  "recertification_note": "Never expires — course-completion certificate with a permanent Credly badge. Note there is no industry exam this maps to (unlike IT Support's A+ pairing or Cybersecurity's Security+ discount) — your GitHub is the credential that keeps renewing.",
+  "skills_covered": [
+    {
+      "category": "Python Fundamentals (Course 1)",
+      "items": [
+        "Python syntax, data types, and control flow from zero",
+        "Functions, loops, and string/list manipulation",
+        "Writing scripts that solve actual small problems",
+        "Code style and readability habits",
+        "The foundation every later course builds on"
+      ]
+    },
+    {
+      "category": "Python + Operating Systems (Course 2)",
+      "items": [
+        "Running Python against a real Linux filesystem",
+        "Reading, writing, and processing files and CSV data",
+        "Regular expressions for log and text processing",
+        "Bash basics and where shell scripts beat Python (and vice versa)",
+        "Automating across processes, environments, and data streams"
+      ]
+    },
+    {
+      "category": "Git, Debugging & Config Management (Courses 3–5)",
+      "items": [
+        "Git and GitHub: commits, branches, pull requests, collaboration",
+        "Structured troubleshooting: binary search the problem, not the panic",
+        "Debugging techniques for slowness, crashes, and intermittent failures",
+        "Configuration management concepts with Puppet",
+        "Scaling automation into the cloud — concepts and tradeoffs"
+      ]
+    },
+    {
+      "category": "The Capstone (Course 6)",
+      "items": [
+        "End-to-end automation projects you can show, not describe",
+        "Image processing and format conversion at scale",
+        "Interacting with web services and APIs from Python",
+        "Generating emails and PDF reports automatically",
+        "Log analysis — turning noise into answers with a script"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Check your floor before subscribing",
+      "description": "If you've never used a command line, this isn't your starting point — do the IT Support Certificate or free Linux basics first. Comfortable navigating a filesystem and editing files in a terminal? You're ready. Audit course one free to confirm."
+    },
+    {
+      "step": 2,
+      "title": "Read Automate the Boring Stuff alongside — it's free",
+      "description": "Al Sweigart's free book covers much of the same practical ground and explains some concepts better. Using both costs nothing extra and gives you two angles on every idea. If you find the book alone is enough for you, you've honestly saved $150."
+    },
+    {
+      "step": 3,
+      "title": "Type every example — never copy-paste",
+      "description": "Scripting skill is muscle memory. Type the code, break it, fix it. The Qwiklabs VMs are the program's real value: actual Linux machines where your scripts run against real files, not a sandbox simulation."
+    },
+    {
+      "step": 4,
+      "title": "Push everything to GitHub as you go",
+      "description": "Course 3 teaches Git — from that point on, every script you write goes into a public repo with a decent README. Hiring managers rarely ask for Python certs; they ask for your GitHub. Build it during the program, not after."
+    },
+    {
+      "step": 5,
+      "title": "Know the Puppet course's place",
+      "description": "The configuration-management course teaches durable concepts through Puppet, but 2026 job postings run on Ansible and Terraform. Learn the ideas here, then spend a free weekend translating them to Ansible — that's the version interviews ask about."
+    },
+    {
+      "step": 6,
+      "title": "Make the capstone your portfolio centerpiece",
+      "description": "The final course's projects — image pipeline, API interaction, automated reports, log analysis — are legitimately good portfolio pieces. Finish them properly, clean them up, and pin them on GitHub with clear READMEs explaining what each automates and why."
+    },
+    {
+      "step": 7,
+      "title": "Aim it at a real target: your own job",
+      "description": "The week you finish, automate three genuinely repetitive tasks at your current role and document the time saved. 'I built this and it saves my team four hours a week' is the interview line this entire certificate exists to make true."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "Automate the Boring Stuff with Python (free book)",
+      "url": "https://automatetheboringstuff.com",
+      "type": "Free Book",
+      "note": "The canonical free alternative — covers much of the same practical-automation ground. If you only want the skill and not the credential, start here."
+    },
+    {
+      "name": "Harvard CS50P – Python",
+      "url": "https://cs50.harvard.edu/python/",
+      "type": "Free Course",
+      "note": "Deeper Python fundamentals than Google's crash course, with real problem sets. The course itself is completely free."
+    },
+    {
+      "name": "Pro Git (free book)",
+      "url": "https://git-scm.com/book/en/v2",
+      "type": "Free Book",
+      "note": "Everything in the Git/GitHub course and more, free forever."
+    },
+    {
+      "name": "Exercism – Python Track",
+      "url": "https://exercism.org/tracks/python",
+      "type": "Practice Platform",
+      "note": "Free mentored exercises that build the muscle memory the program's quizzes don't."
+    },
+    {
+      "name": "Coursera Audit Mode + Financial Aid",
+      "url": "https://www.coursera.org/professional-certificates/google-it-automation",
+      "type": "Official Course Access",
+      "note": "Audit any course free (no labs or certificate), or apply per-course financial aid for the full program at no cost."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Coursera – the certificate itself",
+      "type": "Subscription",
+      "price": "$49/month after 7-day trial (~$100–300 total)",
+      "best_for": "Support techs who want structure, graded VM labs, and a Google-branded credential — the free path covers the skill, this adds the proof",
+      "affiliate_url": "https://www.coursera.org/professional-certificates/google-it-automation",
+      "affiliate_label": "View on Coursera",
+      "affiliate_event": "coursera_google_automation",
+      "affiliate": false,
+      "note": "Plain reference link, no commission. Known gripe: occasional Qwiklabs autograder flakiness — retry before assuming your code is wrong."
+    },
+    {
+      "provider": "Python Institute – PCEP exam",
+      "type": "Certification Exam",
+      "price": "~$59",
+      "best_for": "A cheap standalone proctored Python credential if you want exam-backed proof on paper",
+      "affiliate_url": "https://pythoninstitute.org/pcep",
+      "affiliate_label": "View PCEP",
+      "affiliate_event": "pcep_via_google_automation",
+      "affiliate": false,
+      "note": "Optional — a GitHub full of working automation beats it in most interviews, but it's the cheapest exam-backed Python signal going."
+    },
+    {
+      "provider": "Udemy – Automate the Boring Stuff (video course)",
+      "type": "Video Course",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Sweigart's material in video form without a subscription clock running",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fautomate%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_atbs_via_google",
+      "affiliate": true,
+      "note": "The book is free; the video course is for people who learn better watching someone code."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Enroll – Google IT Automation on Coursera",
+      "url": "https://www.coursera.org/professional-certificates/google-it-automation",
+      "note": "No exam voucher — Coursera subscription (~$49/month U.S. after a 7-day trial; financial aid available). Unlike IT Support (A+ discount) and Cybersecurity (Security+ discount), this program pairs with no industry exam — there is no 'IT automation exam.' Your GitHub is the second credential."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Can't I just learn all of this free?",
+      "answer": "Yes — and we'll say it plainly: Automate the Boring Stuff + CS50P + Pro Git covers roughly 90% of this content at zero cost. What $100–300 buys is structure, graded VM labs, a deadline, ACE college credit, and the Google line for HR filters. Self-disciplined learners can skip it without guilt; people who need the meter running to finish things get real value."
+    },
+    {
+      "question": "Do I need the IT Support Certificate first?",
+      "answer": "Google recommends it if you have no IT background, and they're right — course 2 drops you into Bash and Linux quickly. If you already work in support or can navigate a terminal comfortably, skip straight to this one."
+    },
+    {
+      "question": "Will this get me a DevOps or automation engineer job?",
+      "answer": "Not by itself, and be wary of the $114K marketing framing — that averages in DevOps/SRE roles requiring far more. What it realistically does: makes you the support tech or junior sysadmin who can script, which is a genuinely rare profile that accelerates the helpdesk → sysadmin → automation ladder. The DevOps tier comes later, with infrastructure experience on top."
+    },
+    {
+      "question": "Is the Puppet course outdated?",
+      "answer": "Somewhat — it's the most common fair criticism. The configuration-management concepts are durable, but 2026 postings overwhelmingly name Ansible and Terraform. Learn the ideas here, then spend a weekend translating them to Ansible. The concepts transfer in an afternoon; the vocabulary is what interviews check."
+    },
+    {
+      "question": "What matters more — this certificate or a GitHub portfolio?",
+      "answer": "The GitHub, decisively. Hiring managers rarely require Python certificates; they open your repos. The program's saving grace is that its capstone produces real portfolio pieces — push everything public with clean READMEs, and the certificate becomes the caption rather than the headline."
+    },
+    {
+      "question": "Does it expire?",
+      "answer": "No — permanent completion certificate with ACE credit recommendation (up to 15 U.S. college credits advertised; confirm with your institution). No renewal, no fees, no maintenance."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "Google IT Support Certificate",
+      "slug": "google-it-support",
+      "vendor": "Google",
+      "vendor_slug": "google",
+      "reason": "The intended prerequisite — Google's own recommendation if you don't yet have command-line comfort or IT fundamentals."
+    },
+    {
+      "title": "CompTIA Linux+",
+      "slug": "linux-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "The proctored deepening of the Linux skills this program introduces — the natural exam-backed credential for the sysadmin direction."
+    },
+    {
+      "title": "CCNA Automation",
+      "slug": "ccna-automation",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The network-side automation track — same Python/API/Git foundations pointed at network infrastructure instead of systems."
+    }
+  ],
+  "seo_title": "Google IT Automation with Python Certificate Review – Cost, Worth It | CertBlueprint",
+  "seo_description": "Honest Google IT Automation with Python guide: real cost vs the free path, the 7 courses, the Puppet caveat, GitHub-first strategy, and who genuinely benefits."
+}

@@ -1,0 +1,286 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CertCard from '../components/CertCard.astro';
+import VendorCard from '../components/VendorCard.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
+const breadcrumbs = [{ label: 'Home', href: '/' }];
+
+const homeFaq = [
+  {
+    question: 'What is the best IT certification for beginners?',
+    answer: 'It depends on your target role. For networking, CCNA is the strongest foundational credential. For general IT support, CompTIA A+ is the recognized starting point. For cloud, AWS Cloud Practitioner is a common entry. For cybersecurity, CompTIA Security+ opens the most doors fastest. If you are undecided, Security+ or CCNA cover the most transferable ground.',
+  },
+  {
+    question: 'Is CCNA good for beginners?',
+    answer: 'Yes, if you are serious about networking. No prior work experience is required. Plan for 3 to 6 months of part-time study. Build a basic grasp of IP addressing before starting a full course and the process will be faster.',
+  },
+  {
+    question: 'Are IT certifications worth it?',
+    answer: 'Yes, when chosen strategically. Employers use them to filter candidates, especially for roles where direct experience is limited. The return is highest when the cert aligns with a specific role you are targeting and when you genuinely learn the material.',
+  },
+  {
+    question: 'Which cloud certification pays the most?',
+    answer: 'AWS Solutions Architect Associate and Professional consistently rank among the highest-paying IT certifications globally. Azure certifications (AZ-104, AZ-305) command strong salaries in Microsoft-heavy enterprise environments. Cloud architect roles with 3+ years of experience and multiple cloud certs frequently earn $130K–$180K+.',
+  },
+  {
+    question: 'How long does it take to study for Security+?',
+    answer: 'Most candidates spend 6 to 12 weeks studying part-time. Those with existing IT experience may be ready in 4 to 6 weeks. Hands-on practice with tools like TryHackMe matters as much as video course completion—performance-based questions require real skill.',
+  },
+  {
+    question: 'What certification should I get after CCNA?',
+    answer: 'Depends on direction: CCNP Enterprise for networking, CCNP Security or CCNA Cybersecurity (formerly CyberOps Associate) for security, CCNA Automation (formerly DevNet Associate) for automation, or AWS SAA / AZ-104 for cloud. Pick the path that aligns with the roles you want.',
+  },
+  {
+    question: 'Do I need experience before getting certified?',
+    answer: 'Most associate-level certifications have no formal prerequisites. Hands-on lab practice is still essential—exams include simulation questions that require real skill, not just memorization. Cisco Packet Tracer and GNS3 are both free and sufficient for CCNA lab work. AWS free tier covers SAA lab needs.',
+  },
+];
+
+const paths = [
+  {
+    title: 'Networking',
+    example: 'Network+ → CCNA → CCNP Enterprise',
+    description: 'Routing, switching, wireless, and infrastructure. CompTIA Network+ for vendor-neutral foundations; CCNA for Cisco-specific depth and enterprise networking roles.',
+    icon: 'M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18',
+    href: '/vendors/comptia/network-plus/',
+  },
+  {
+    title: 'Cybersecurity',
+    example: 'Security+ → CySA+ → CASP+',
+    description: 'Security fundamentals, threat detection, and incident response. Security+ is DoD-approved and opens the most entry-level security doors fastest.',
+    icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+    href: '/vendors/comptia/security-plus/',
+  },
+  {
+    title: 'Cloud',
+    example: 'AWS SAA → AWS SAP or AZ-104 → AZ-305',
+    description: 'Infrastructure design and operations on AWS and Azure. Among the fastest-growing cert categories in demand and the highest correlation to salary increases.',
+    icon: 'M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z',
+    href: '/vendors/aws/aws-saa/',
+  },
+  {
+    title: 'Systems & Infrastructure',
+    example: 'CompTIA A+ → AZ-104 → AZ-305',
+    description: 'Server management, virtualization, identity, and cloud administration. Microsoft Azure certifications dominate this path in enterprise environments.',
+    icon: 'M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2',
+    href: '/vendors/microsoft/az-104/',
+  },
+];
+
+const featuredCerts = [
+  {
+    title: 'Cisco CCNA 200-301',
+    vendor: 'Cisco',
+    level: 'Associate',
+    description: 'The established entry-level networking certification. Covers IP connectivity, routing, switching, security fundamentals, and automation basics. Recognized globally by networking employers.',
+    href: '/vendors/cisco/ccna/',
+  },
+  {
+    title: 'CompTIA Security+ (SY0-701)',
+    vendor: 'CompTIA',
+    level: 'Associate',
+    description: 'The DoD-approved baseline cybersecurity credential. Covers threats, vulnerabilities, identity management, cryptography, and incident response. Required for U.S. government and federal contractor roles.',
+    href: '/vendors/comptia/security-plus/',
+  },
+  {
+    title: 'AWS Solutions Architect Associate',
+    vendor: 'AWS',
+    level: 'Associate',
+    description: 'The most widely held and in-demand cloud certification globally. Validates designing scalable, fault-tolerant, cost-optimized systems on AWS. Consistently among the highest-paying IT credentials.',
+    href: '/vendors/aws/aws-saa/',
+  },
+  {
+    title: 'Microsoft AZ-104',
+    vendor: 'Microsoft',
+    level: 'Associate',
+    description: 'The foundational Azure administration credential. Validates managing Azure identities, storage, virtual machines, networking, and monitoring. Essential for Microsoft-centric enterprise environments.',
+    href: '/vendors/microsoft/az-104/',
+  },
+];
+---
+
+<BaseLayout
+  title="CertBlueprint – IT Certification Roadmaps and Study Plans"
+  description="Find the right IT certification, understand what it covers, and know exactly where to study. Structured guides for CCNA, Security+, AWS, Azure, and more."
+  breadcrumbs={breadcrumbs}
+>
+
+  <!-- ─── Hero ────────────────────────────────────────────── -->
+  <section style="background: var(--cb-hero-bg);" class="text-white pt-14 pb-16 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold leading-tight mb-4" style="color: #f1f5f9;">
+        IT Certification Roadmaps<br class="hidden sm:block" />
+        and Study Plans
+      </h1>
+      <p class="text-base sm:text-lg max-w-xl mx-auto mb-8 leading-relaxed" style="color: #94a3b8;">
+        CertBlueprint cuts through the noise. Understand what a cert covers, who it is for, what salary to expect, and exactly where to study—before you spend money on an exam.
+      </p>
+      <div class="flex flex-wrap gap-3 justify-center mb-8">
+        <a href="/vendors/cisco/ccna/" class="px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors" style="background: #2563eb; color: white;">
+          CCNA guide
+        </a>
+        <a href="/vendors/comptia/security-plus/" class="px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors" style="background: #b91c1c; color: white;">
+          Security+ guide
+        </a>
+        <a href="/vendors/aws/aws-saa/" class="px-5 py-2.5 rounded-lg text-sm font-medium border transition-colors" style="background: rgba(255,255,255,0.08); color: #e2e8f0; border-color: rgba(255,255,255,0.15);">
+          AWS SAA guide
+        </a>
+        <a href="/vendors/microsoft/az-104/" class="px-5 py-2.5 rounded-lg text-sm font-medium border transition-colors" style="background: rgba(255,255,255,0.08); color: #e2e8f0; border-color: rgba(255,255,255,0.15);">
+          AZ-104 guide
+        </a>
+      </div>
+      <button
+        onclick="document.getElementById('search-modal')?.classList.remove('hidden'); setTimeout(()=>document.getElementById('search-input')?.focus(),30);"
+        class="flex items-center gap-3 mx-auto max-w-md w-full px-4 py-2.5 rounded-xl border text-sm transition-colors"
+        style="background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.12); color: #64748b;"
+        aria-label="Open search"
+      >
+        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" stroke-width="2"/>
+          <path d="M21 21l-4.35-4.35" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="flex-1 text-left">Search certifications, vendors, guides…</span>
+        <kbd class="hidden sm:flex items-center text-xs px-1.5 py-0.5 rounded border font-mono shrink-0" style="border-color: rgba(255,255,255,0.12); color: #475569;">⌃K</kbd>
+      </button>
+    </div>
+  </section>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- ─── Featured certifications ───────────────────────── -->
+    <section class="py-10 border-b" style="border-color: var(--cb-border);" aria-labelledby="featured-cert-heading">
+      <div class="flex items-center justify-between mb-5">
+        <h2 id="featured-cert-heading" class="text-lg font-bold" style="color: var(--cb-text);">Certification guides</h2>
+        <a href="/vendors/" class="text-sm font-medium" style="color: var(--cb-accent-text);">Browse all vendors →</a>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {featuredCerts.map((cert) => (
+          <CertCard
+            title={cert.title}
+            vendor={cert.vendor}
+            level={cert.level}
+            description={cert.description}
+            href={cert.href}
+          />
+        ))}
+      </div>
+    </section>
+
+    <!-- ─── Browse by vendor ─────────────────────────────────── -->
+    <section class="py-10 border-b" style="border-color: var(--cb-border);" aria-labelledby="vendors-heading">
+      <div class="flex items-center justify-between mb-5">
+        <h2 id="vendors-heading" class="text-lg font-bold" style="color: var(--cb-text);">Browse by vendor</h2>
+        <a href="/vendors/" class="text-sm font-medium" style="color: var(--cb-accent-text);">All vendors →</a>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        <VendorCard title="Cisco" href="/vendors/cisco/" description="The full networking ladder: $125 CCST entry certs through CCNA, all eight CCNP tracks, and honest CCIE briefings." certCount={17} available={true} />
+        <VendorCard title="CompTIA" href="/vendors/comptia/" description="Vendor-neutral IT certifications: Security+, Network+, A+, and CySA+. DoD-approved and recognized across government and private sector." certCount={7} available={true} />
+        <VendorCard title="AWS" href="/vendors/aws/" description="Cloud platform certifications: Solutions Architect, Developer, SysOps, and specialty tracks. Among the highest-paying credentials in IT." certCount={3} available={true} />
+        <VendorCard title="Microsoft" href="/vendors/microsoft/" description="Azure administration, architecture, security, and DevOps certifications. Dominant in enterprise Microsoft environments." certCount={6} available={true} />
+      </div>
+    </section>
+
+    <!-- ─── Browse by path ───────────────────────────────────── -->
+    <section class="py-10 border-b" style="border-color: var(--cb-border);" aria-labelledby="paths-heading">
+      <h2 id="paths-heading" class="text-lg font-bold mb-5" style="color: var(--cb-text);">Browse by career path</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {paths.map((path) => (
+          <a href={path.href} class="rounded-xl border p-4 block transition-all" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+            <div class="flex items-start gap-3 mb-2">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style="background: var(--cb-accent-sub);">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--cb-accent-text);">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={path.icon}/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-sm" style="color: var(--cb-text);">{path.title}</h3>
+                <p class="text-xs font-mono mt-0.5" style="color: var(--cb-accent-text);">{path.example}</p>
+              </div>
+            </div>
+            <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{path.description}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- ─── How to choose ────────────────────────────────────── -->
+    <section class="py-10 border-b" style="border-color: var(--cb-border);" aria-labelledby="how-to-choose-heading">
+      <div class="max-w-3xl">
+        <h2 id="how-to-choose-heading" class="text-lg font-bold mb-4" style="color: var(--cb-text);">How to choose a certification</h2>
+        <p class="text-sm leading-relaxed mb-5" style="color: var(--cb-text-sub);">
+          Start with the role you want, not the cert that sounds most impressive. The certification is a tool to get a job—pick one that matches where you want to land.
+        </p>
+        <div class="space-y-4">
+          {[
+            { step: '1', title: 'Define your target role', body: 'Network engineer, cloud architect, security analyst, systems administrator. Each role has a recognized cert path. Start there.' },
+            { step: '2', title: 'Check what employers actually require', body: 'Look at real job listings in your target market. Note which certifications appear most often for entry-level and mid-level roles. That list is your priority queue.' },
+            { step: '3', title: 'Start at associate or foundational level', body: 'Unless you have substantial hands-on experience, starting at associate level is the right move. Expert-level certs assume knowledge you will not have otherwise.' },
+            { step: '4', title: 'Study to learn, not just to pass', body: 'Modern IT exams include simulation and performance-based questions. Rote memorization is not sufficient. Build the actual skills, and passing follows.' },
+          ].map((item) => (
+            <div class="flex gap-3">
+              <span class="flex items-center justify-center w-7 h-7 rounded-full text-white text-sm font-bold shrink-0 mt-0.5" style="background: var(--cb-accent);">{item.step}</span>
+              <div>
+                <p class="font-semibold text-sm" style="color: var(--cb-text);">{item.title}</p>
+                <p class="text-sm mt-0.5 leading-relaxed" style="color: var(--cb-text-sub);">{item.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Why CertBlueprint ─────────────────────────────────── -->
+    <section class="py-10 border-b" style="border-color: var(--cb-border);" aria-labelledby="why-heading">
+      <div class="max-w-3xl">
+        <h2 id="why-heading" class="text-lg font-bold mb-4" style="color: var(--cb-text);">Why CertBlueprint</h2>
+        <div class="grid sm:grid-cols-2 gap-3">
+          {[
+            { title: 'What each cert actually covers', body: 'Broken down by skill domain, not marketing copy.' },
+            { title: "Who it is and isn't for", body: 'Honest audience framing so you do not study the wrong cert.' },
+            { title: 'Salary expectations per cert', body: 'Realistic compensation data so you can prioritize by ROI.' },
+            { title: 'Where to study', body: 'Curated free and paid resources with honest assessments—no filler.' },
+          ].map((item) => (
+            <div class="rounded-lg border p-4" style="background: var(--cb-bg-subtle); border-color: var(--cb-border-sub);">
+              <p class="font-semibold text-sm mb-1" style="color: var(--cb-text);">{item.title}</p>
+              <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FAQ ──────────────────────────────────────────────── -->
+    <section class="py-10 border-b" style="border-color: var(--cb-border);" aria-labelledby="faq-heading">
+      <h2 id="faq-heading" class="text-lg font-bold mb-5" style="color: var(--cb-text);">Frequently asked questions</h2>
+      <div class="max-w-3xl">
+        <FAQAccordion items={homeFaq} />
+      </div>
+    </section>
+
+    <!-- ─── CTA ──────────────────────────────────────────────── -->
+    <section class="py-10">
+      <div class="rounded-2xl text-white p-8 text-center max-w-3xl mx-auto" style="background: linear-gradient(135deg, #1d4ed8, #1e3a8a);">
+        <h2 class="text-xl font-bold mb-2">Not sure where to start?</h2>
+        <p class="text-sm mb-5 max-w-md mx-auto leading-relaxed" style="color: #bfdbfe;">
+          The four most impactful entry-level certs right now are CCNA, Security+, AWS SAA, and AZ-104. Pick the one that matches your target role.
+        </p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a href="/vendors/cisco/ccna/" class="px-4 py-2 rounded-lg text-sm font-semibold transition-colors" style="background: white; color: #1d4ed8;">
+            CCNA
+          </a>
+          <a href="/vendors/comptia/security-plus/" class="px-4 py-2 rounded-lg text-sm font-semibold transition-colors" style="background: rgba(255,255,255,0.15); color: white;">
+            Security+
+          </a>
+          <a href="/vendors/aws/aws-saa/" class="px-4 py-2 rounded-lg text-sm font-semibold transition-colors" style="background: rgba(255,255,255,0.15); color: white;">
+            AWS SAA
+          </a>
+          <a href="/vendors/microsoft/az-104/" class="px-4 py-2 rounded-lg text-sm font-semibold transition-colors" style="background: rgba(255,255,255,0.15); color: white;">
+            AZ-104
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

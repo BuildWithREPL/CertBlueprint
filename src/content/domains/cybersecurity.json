@@ -1,0 +1,13 @@
+{
+  "specializations": [
+    "Security Operations (SOC)",
+    "Identity & Access Management",
+    "GRC & Risk",
+    "Application Security",
+    "Incident Response & Forensics"
+  ],
+  "one_liner": "Protecting systems, data, and identities from adversarial threat.",
+  "order": 2,
+  "slug": "cybersecurity",
+  "title": "Cybersecurity"
+}

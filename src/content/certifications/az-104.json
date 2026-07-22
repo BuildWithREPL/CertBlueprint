@@ -1,0 +1,242 @@
+{
+  "title": "Microsoft AZ-104 Azure Administrator Study Guide",
+  "slug": "az-104",
+  "vendor": "Microsoft",
+  "vendor_slug": "microsoft",
+  "level": "Associate",
+  "description": "The Microsoft Certified: Azure Administrator Associate (AZ-104) validates skills in managing Azure subscriptions, implementing storage, configuring virtual networks, managing identities, and monitoring Azure resources. It is the foundational Azure operations credential and a prerequisite for most advanced Azure certifications.",
+  "audience": "Systems administrators, IT operations professionals, and infrastructure engineers who manage or plan to manage Azure environments. Also a strong fit for Windows administrators transitioning to cloud roles.",
+  "why_get_it": "Azure is the second-largest cloud platform globally and the dominant cloud in enterprise Microsoft-heavy environments. Organizations running Windows Server, Active Directory, Microsoft 365, and SQL Server are increasingly extending those workloads to Azure—creating strong demand for administrators who understand both on-premises Microsoft infrastructure and Azure. AZ-104 validates exactly that operational skill set: managing Azure identities, networking, storage, virtual machines, and monitoring. Unlike AWS SAA (which focuses on architecture design), AZ-104 is an operations-focused credential—it validates what you can configure and maintain, not just design. For IT professionals in Microsoft-centric environments, this is one of the highest-return certifications available.",
+  "when_to_get_it": "Get AZ-104 if your organization uses Azure or is migrating to it, or if you want to move into cloud operations roles in Microsoft-centric enterprises. Experience with Windows Server, Active Directory, or Microsoft 365 administration significantly reduces the learning curve. The AZ-900 (Azure Fundamentals) exam is optional prep—most experienced IT administrators can skip it and go directly to AZ-104.",
+  "salary_range": "$85,000 – $125,000",
+  "salary_note": "Azure Administrator roles typically start at $85K–$100K for candidates with 1–2 years of cloud experience, and reach $115K–$140K+ with 3–5 years. In organizations with heavy Microsoft infrastructure investment, Azure skills command a premium over on-premises-only experience.",
+  "exam_code": "AZ-104",
+  "exam_duration": "100 minutes",
+  "exam_format": "Multiple choice, case studies, drag-and-drop, and performance-based questions. 40–60 questions.",
+  "exam_questions": "40–60 questions (Microsoft does not publish an exact count)",
+  "official_url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-administrator/",
+  "official_pricing_url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-administrator/#certification-exam-disclaimer",
+  "recertification_note": "AZ-104 does not expire. Microsoft Associate and Expert certifications earned after June 2021 are renewed annually through Microsoft Learn for free—a short online assessment keeps your certification active without re-taking the exam.",
+  "skills_covered": [
+    {
+      "category": "Manage Azure Identities and Governance",
+      "items": [
+        "Azure Active Directory (Entra ID): users, groups, and roles",
+        "Azure RBAC – assigning and managing role-based access control",
+        "Azure subscriptions and management groups",
+        "Azure Policy and resource locks",
+        "Cost management and spending controls"
+      ]
+    },
+    {
+      "category": "Implement and Manage Storage",
+      "items": [
+        "Azure Storage accounts: blobs, queues, tables, and files",
+        "Storage access tiers and lifecycle management",
+        "Azure Files and Azure File Sync",
+        "Shared Access Signatures (SAS) and storage security",
+        "Azure Backup and Azure Site Recovery"
+      ]
+    },
+    {
+      "category": "Deploy and Manage Azure Compute Resources",
+      "items": [
+        "Azure Virtual Machines: provisioning, sizing, and availability",
+        "VM scale sets and load balancing",
+        "Azure App Service and container deployments",
+        "Azure Kubernetes Service (AKS) fundamentals",
+        "ARM templates and Bicep for infrastructure as code"
+      ]
+    },
+    {
+      "category": "Implement and Manage Virtual Networking",
+      "items": [
+        "Virtual Networks (VNets), subnets, and IP addressing",
+        "Network Security Groups (NSGs) and Application Security Groups",
+        "Azure Load Balancer and Application Gateway",
+        "VPN Gateways and ExpressRoute",
+        "Azure DNS and private DNS zones"
+      ]
+    },
+    {
+      "category": "Monitor and Maintain Azure Resources",
+      "items": [
+        "Azure Monitor, Log Analytics, and alerts",
+        "Azure Advisor and Cost Management",
+        "VM health monitoring and diagnostics",
+        "Network Watcher for connectivity troubleshooting",
+        "Azure Service Health and resource tags"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Create a free Azure account",
+      "description": "Sign up for an Azure free account at azure.microsoft.com. You receive $200 in credits for 30 days plus 12 months of free services. AZ-104 is a hands-on operational exam—you need actual Azure portal experience, not just videos. Provision resources, configure settings, and make mistakes in a real environment."
+    },
+    {
+      "step": 2,
+      "title": "Study the Microsoft Learn path",
+      "description": "Microsoft Learn provides free, official, exam-aligned learning paths for AZ-104. These are structured, hands-on modules with integrated sandbox environments. While they should not be your only resource, they are essential because they reflect exactly what Microsoft considers important—which is what appears on the exam."
+    },
+    {
+      "step": 3,
+      "title": "Work through a comprehensive course",
+      "description": "John Savill's AZ-104 course on YouTube is free, highly detailed, and widely considered the best available. Scott Duffy's Udemy course is the top-rated paid option and includes practice exams. Choose one structured course and work through it completely. AZ-104 covers a wide range of services—you need systematic coverage, not jumping between topics."
+    },
+    {
+      "step": 4,
+      "title": "Build real labs in Azure",
+      "description": "After each major topic area, go to the Azure portal and configure it yourself. Create a VNet with subnets, deploy a VM, configure NSGs, set up Azure Backup, assign RBAC roles, create Azure Policy assignments. Many exam questions describe a configuration problem—you need to recognize the correct solution from having actually seen the interface."
+    },
+    {
+      "step": 5,
+      "title": "Use Microsoft Learn sandbox labs",
+      "description": "Microsoft Learn includes free sandbox environments for many AZ-104 topics. These provide a temporary Azure environment that does not use your credits. Use them for every available exercise within the official learning path—they are specifically aligned to exam scenarios."
+    },
+    {
+      "step": 6,
+      "title": "Take practice exams",
+      "description": "MeasureUp (Microsoft's official partner) and Tutorials Dojo provide the most exam-accurate AZ-104 practice questions. Whizlabs is a lower-cost alternative. Take full timed exams and review every explanation—not just wrong answers. Target 80%+ before scheduling the real exam."
+    },
+    {
+      "step": 7,
+      "title": "Schedule and sit the exam",
+      "description": "Book through Pearson VUE, available online proctored or at a test center. The exam includes case studies that present a detailed organizational scenario followed by several related questions—read these carefully before answering. Performance-based questions may include configuring items in a simulated Azure portal."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "Microsoft Learn – AZ-104 Study Guide",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-104",
+      "type": "Official Study Guide",
+      "note": "Microsoft's official exam study guide with learning paths, hands-on exercises, and sandbox environments. Essential—use this in conjunction with any other resource."
+    },
+    {
+      "name": "John Savill – AZ-104 Course (YouTube)",
+      "url": "https://www.youtube.com/watch?v=10PbGbTUSAg",
+      "type": "Video Course",
+      "note": "Free, comprehensive, and technically deep. John Savill is widely regarded as one of the best Azure educators available. The full course is available free on YouTube."
+    },
+    {
+      "name": "Azure Free Account",
+      "url": "https://azure.microsoft.com/en-us/free/",
+      "type": "Hands-on Lab",
+      "note": "Create a free Azure account for hands-on practice. $200 in credits for the first 30 days plus free tier services. Required for practical exam prep."
+    },
+    {
+      "name": "r/AzureCertification on Reddit",
+      "url": "https://www.reddit.com/r/AzureCertification/",
+      "type": "Community",
+      "note": "Active community with recent exam experience reports, resource recommendations, and study advice."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Udemy – Scott Duffy AZ-104 Course",
+      "type": "Video Course",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Candidates who want a structured paid course with clear explanations and practice tests included",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2F70533-azure%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_az104_duffy",
+      "affiliate": true,
+      "note": "Scott Duffy's course is well-organized and consistently updated. One of the top-rated AZ-104 courses on Udemy."
+    },
+    {
+      "provider": "Udemy – Alan Rodrigues AZ-104 Practice Tests",
+      "type": "Practice Exams",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Final exam preparation with realistic question sets at the right difficulty level",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Faz-104-microsoft-azure-administrator-practice-test-questions%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_az104_practice",
+      "affiliate": true,
+      "note": "Detailed explanations for each answer. High pass rate reported by candidates who used these before the real exam."
+    },
+    {
+      "provider": "Microsoft Press – Exam Ref AZ-104",
+      "type": "Book",
+      "price": "~$35–$50",
+      "best_for": "Candidates who want an official written reference organized exactly by exam objective",
+      "affiliate_url": "https://www.amazon.com/dp/0138345937/?tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_az104_exam_ref",
+      "affiliate": true,
+      "note": "The official Microsoft Press Exam Ref series is dry but comprehensive. Best used as a reference alongside a video course, not as a standalone."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Schedule AZ-104 Exam – Microsoft Certification Portal",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-administrator/",
+      "note": "AZ-104 is $165 USD at standard pricing. Microsoft periodically offers free exam vouchers through Learn challenges. Check the Microsoft Certification portal for current promotions before purchasing."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is AZ-104 hard?",
+      "answer": "It is a moderately difficult exam for candidates with IT administration experience, and challenging for those new to Azure. The exam is operational—it requires knowing how to configure things, not just what they are. Hands-on practice in the Azure portal is as important as video study. Plan for 6 to 10 weeks of part-time study."
+    },
+    {
+      "question": "Do I need AZ-900 before AZ-104?",
+      "answer": "No. AZ-900 is Azure Fundamentals—a business-overview exam. Experienced IT professionals can and should skip it and go directly to AZ-104. AZ-900 is best suited for non-technical professionals or complete beginners with no IT background."
+    },
+    {
+      "question": "Does AZ-104 expire?",
+      "answer": "No, not in the traditional sense. Microsoft now uses annual renewal assessments through Microsoft Learn. Once certified, you complete a free renewal assessment each year to keep your certification active. You do not need to re-take and pay for the exam to renew."
+    },
+    {
+      "question": "What is the difference between AZ-104 and AWS SAA?",
+      "answer": "AZ-104 is an operations and administration exam—it validates that you can configure and manage Azure resources. AWS SAA is an architecture design exam—it validates that you can design systems using AWS services. AZ-104 is closer to an admin credential; AWS SAA is closer to an architect credential. Both are valuable, and many cloud professionals eventually hold both."
+    },
+    {
+      "question": "What jobs does AZ-104 qualify me for?",
+      "answer": "Azure Administrator, Cloud Administrator, Systems Administrator (Azure), Infrastructure Engineer, and Cloud Operations Engineer roles. In organizations with Microsoft-heavy environments, AZ-104 often provides a direct path to a role upgrade or salary increase."
+    },
+    {
+      "question": "What comes after AZ-104?",
+      "answer": "AZ-305 (Azure Solutions Architect Expert) is the architecture-level follow-on. AZ-500 (Azure Security Engineer) for security roles. AZ-400 (DevOps Engineer Expert) for DevOps paths. Microsoft's certification map shows the full progression at learn.microsoft.com."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "AWS Solutions Architect Associate",
+      "slug": "aws-saa",
+      "vendor": "AWS",
+      "vendor_slug": "aws",
+      "reason": "The AWS counterpart to AZ-104. Many cloud professionals pursue both to become multi-cloud capable."
+    },
+    {
+      "title": "CompTIA Security+",
+      "slug": "security-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "Security fundamentals that complement Azure administration, particularly relevant for Microsoft environments with compliance requirements."
+    },
+    {
+      "title": "CompTIA Network+",
+      "slug": "network-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "Networking fundamentals that directly support AZ-104 VNet and hybrid connectivity topics."
+    },
+    {
+      "title": "Microsoft AZ-900",
+      "slug": "az-900",
+      "vendor": "Microsoft",
+      "vendor_slug": "microsoft",
+      "reason": "The foundational Azure cert. A good first step before AZ-104 for those new to the Microsoft cloud."
+    },
+    {
+      "title": "Microsoft SC-900",
+      "slug": "sc-900",
+      "vendor": "Microsoft",
+      "vendor_slug": "microsoft",
+      "reason": "Security, compliance, and identity fundamentals. Directly supports the identity and governance topics on AZ-104."
+    }
+  ],
+  "seo_title": "Microsoft AZ-104 Study Guide – Azure Administrator Associate Exam Details and Study Plan | CertBlueprint",
+  "seo_description": "Complete AZ-104 Azure Administrator Associate guide: who it's for, salary expectations, exam breakdown, step-by-step study plan, free and paid resources, and FAQ."
+}

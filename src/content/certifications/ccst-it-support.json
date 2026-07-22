@@ -1,0 +1,197 @@
+{
+  "title": "Cisco CCST IT Support (100-140) Study Guide",
+  "slug": "ccst-it-support",
+  "short_name": "CCST IT Support",
+  "vendor": "Cisco",
+  "vendor_slug": "cisco",
+  "level": "Entry",
+  "description": "The Cisco Certified Support Technician (CCST) IT Support is Cisco's direct answer to CompTIA A+ — one $125 exam instead of two ~$274 vouchers, covering real help-desk work: tickets and SLAs, hardware, Windows/macOS/mobile troubleshooting, connectivity, security threats, and remote-support tools. The catch is recognition: A+ has decades of HR mindshare; this is the newcomer.",
+  "audience": "Students whose schools offer it, career changers for whom A+'s ~$550 exam cost is a genuine barrier, and anyone who wants a legitimate, current help-desk credential at the lowest possible price. English-only exam — worth knowing for non-native speakers who'd prefer A+'s language options.",
+  "why_get_it": "The math and the material. One exam at $125 versus A+'s two exams at ~$274 each is a real difference when you're funding your own start. And the content is genuinely job-relevant — more current than A+ in spots: ticket queues, SLAs and KPIs, remote-support tooling, even using AI as a support tool, which reflects what 2026 help desks actually look like. The honest catch: almost no job filter searches for CCST IT Support yet. A+ appears in a huge share of support listings; this appears in almost none. Recognition is growing through the high-school pipeline and it carries ACE college-credit recommendation, but a hiring manager who hasn't heard of it won't weight it like A+. A CCST plus a good homelab story beats no cert — it doesn't yet beat A+."
+  ,
+  "when_to_get_it": "When budget decides: if ~$550 in A+ vouchers is the barrier between you and a first credential, CCST IT Support at $125 is the legitimate alternative — take it, apply anyway, and let the interview carry you. When your school offers it: free-to-you plus ACE credit is an easy yes. When you're job hunting within six months in a market that lists A+ by name: save toward A+ instead, or do the Google IT Support Certificate first and use its 30% A+ discount. Note this cert bridges sideways (to CCST Networking or Cybersecurity), not upward — unlike CCST Networking, there's no natural Cisco follow-on above it.",
+  "salary_range": "$38,000 – $52,000 (entry help desk)",
+  "salary_note": "Maps directly to help desk technician and IT support specialist roles at roughly $38–52K U.S. entry — the same seats A+ feeds, because it competes head-on with A+ for exactly these jobs. The cert doesn't set the pay; availability, communication, and any customer-service history move entry offers more than the badge choice does.",
+  "exam_code": "100-140",
+  "exam_duration": "50 minutes",
+  "exam_format": "40–50 questions (multiple choice plus performance-based items), via Certiport or Pearson VUE (test center or OnVUE online). English only. Unlimited retakes, instant results. Passing score not published.",
+  "exam_questions": "40–50 questions",
+  "official_url": "https://learningnetwork.cisco.com/s/ccst-it-support-exam-topics",
+  "official_pricing_url": "https://learningnetwork.cisco.com/s/ccst-it-support-exam-topics",
+  "recertification_note": "Same 2025 policy as all CCSTs: earned on/after July 15, 2025 = 5-year validity (exam-only renewal); earned before = lifetime. CE credits don't apply.",
+  "last_verified": "July 2026",
+  "skills_covered": [
+    {
+      "category": "The Job Itself (Domains 1 & 6)",
+      "items": [
+        "Ticketing systems, SLAs, KPIs — the metrics help desks live by",
+        "Professional communication and active listening (yes, it's graded)",
+        "Documentation habits that make tier-2 love you",
+        "Remote-support tools and session etiquette",
+        "Using AI assistants as a support tool — new, and genuinely current"
+      ]
+    },
+    {
+      "category": "Hardware & Connectivity (Domains 2–3)",
+      "items": [
+        "Diagnosing hardware issues: power, storage, memory, peripherals",
+        "Basic networking from the support seat: Wi-Fi, DNS, DHCP symptoms",
+        "Resource-access problems: shares, printers, permissions",
+        "The isolate-and-escalate discipline",
+        "When it's the cable (it's often the cable)"
+      ]
+    },
+    {
+      "category": "Operating Systems, Apps & Threats (Domains 4–5)",
+      "items": [
+        "Windows, macOS, and mobile troubleshooting workflows",
+        "Application issues: installs, updates, crashes, profiles",
+        "Common threats a help desk sees first: phishing, malware symptoms",
+        "Prevention basics and when to sound the alarm",
+        "Account security: resets, MFA, lockouts done right"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Work the free official path",
+      "description": "NetAcad's IT Support Specialist path (~30 hours, free) is the official prep. Supplement with the free mini-courses — Computer Hardware Basics (6h), Operating Systems Basics (12h), IT Customer Support Basics (4h) — which map directly onto the blueprint domains."
+    },
+    {
+      "step": 2,
+      "title": "Read the actual blueprint PDF",
+      "description": "The 100-140 blueprint is the newest and least-covered CCST — third-party prep is thin, so the official topic list matters more here than usual. Six domains, no published weights. Note the soft-skills content: communication is genuinely tested."
+    },
+    {
+      "step": 3,
+      "title": "Build the homelab story",
+      "description": "This cert plus a demonstrable story beats the cert alone: wipe and rebuild an old PC, set up remote-desktop access, document three 'tickets' you solved at home in write-up form. That's your interview material — the exam's troubleshooting scenarios get easier too."
+    },
+    {
+      "step": 4,
+      "title": "Demo the interface, then book",
+      "description": "Certiport's free Test Drive first, then book via Certiport (schools) or Pearson VUE (individuals — test center or online from home). Remember it's English-only, unlike the other two CCSTs."
+    },
+    {
+      "step": 5,
+      "title": "Apply immediately — don't wait for more certs",
+      "description": "Help desk is the one genuinely entry-level IT tier. CCST + homelab story + any customer-service history is an application-ready package. Apply while momentum is high; add A+ later if your market demands it."
+    },
+    {
+      "step": 6,
+      "title": "Branch deliberately from here",
+      "description": "CCST IT Support has no Cisco follow-on above it — the bridges run sideways: CCST Networking → CCNA if infrastructure pulls you, CCST Cybersecurity → Security+ if defense does. Six months of real tickets will tell you which. Our Help Desk Technician path maps both exits."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "IT Support Specialist Path (Cisco NetAcad)",
+      "url": "https://www.netacad.com/career-paths",
+      "type": "Official Training",
+      "note": "~30 hours, free — the official prep path (ignore the stale Cisco Learning Network note saying training is 'coming'; it's live)."
+    },
+    {
+      "name": "Official CCST IT Support Exam Topics + Blueprint PDF",
+      "url": "https://learningnetwork.cisco.com/s/ccst-it-support-exam-topics",
+      "type": "Official Documentation",
+      "note": "The authoritative six-domain blueprint. Especially important here — third-party prep for this newest CCST is thin."
+    },
+    {
+      "name": "NetAcad Mini-Courses (Hardware, OS, Customer Support)",
+      "url": "https://www.netacad.com/catalog",
+      "type": "Official Training",
+      "note": "Free bite-size courses (6h/12h/4h) mapping onto domains 1, 2, and 4."
+    },
+    {
+      "name": "Certiport CCST Test Drive",
+      "url": "https://certiport.pearsonvue.com/Certifications/Cisco/Certified-Support-Technician/Overview",
+      "type": "Practice Exam",
+      "note": "Free demo of the real exam interface."
+    },
+    {
+      "name": "Our Help Desk Technician path",
+      "url": "/paths/help-desk-technician/",
+      "type": "Career Roadmap",
+      "note": "Where this cert points — the honest day-to-day, salary bands, and the roadmap beyond the first job."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Cisco Press – CCST IT Support 100-140 OCG Premium Edition",
+      "type": "Book + Practice Test",
+      "price": "~$40–$60",
+      "best_for": "The only Cisco-approved book — and the practice-test bundle matters since third-party prep for this new exam is thin",
+      "affiliate_url": "https://www.amazon.com/s?k=CCST+IT+Support+100-140+Official+Cert+Guide&tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_ccst_itsupport_ocg",
+      "affiliate": true,
+      "note": "Worth more here than for the other CCSTs, purely because alternatives are scarce."
+    },
+    {
+      "provider": "Udemy – CCST IT Support courses",
+      "type": "Video Course",
+      "price": "~$15–$25 (on sale)",
+      "best_for": "Video learners — but vet reviews carefully; this exam has fewer quality courses than the other two CCSTs",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3DCCST%2520IT%2520Support%2520100-140",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_ccst_itsupport",
+      "affiliate": true,
+      "note": "Confirm 100-140 coverage explicitly — some listings recycle generic help-desk content."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Register – Certiport or Pearson VUE",
+      "url": "https://learningnetwork.cisco.com/s/ccst-it-support-exam-topics",
+      "note": "$125 flat, one exam (versus ~$548 for A+'s two at mid-2026 pricing). No discounts; the price is the point."
+    }
+  ],
+  "faq": [
+    {
+      "question": "CCST IT Support or CompTIA A+ — the honest answer?",
+      "answer": "A+ if your job market lists it and you can afford ~$548 for both exams — three decades of HR mindshare is worth real money. CCST IT Support if budget is the barrier, your school offers it, or you want current, job-relevant material for $125 and are willing to let the interview do more work. Middle path many take: Google IT Support Certificate first (~$150), then its 30% A+ discount, then both on the resume."
+    },
+    {
+      "question": "Do employers recognize CCST IT Support?",
+      "answer": "Honestly, mostly not yet. It's the newest CCST (launched 2024), appears in very few job filters, and is English-only. Recognition is growing through the high-school CTE pipeline and it carries ACE college-credit recommendation — but today its value is proof of readiness plus the Cisco brand, not keyword matches. Pair it with a homelab story and apply anyway; help desk hiring forgives thin credentials more than any other IT tier."
+    },
+    {
+      "question": "What makes it different from A+ in content?",
+      "answer": "It's leaner (one 50-minute exam vs two 90-minute ones) and more current in spots — ticketing/SLA/KPI workflows, remote-support tooling, and AI-assisted troubleshooting are first-class topics, which A+ covers lightly or not at all. A+ goes deeper on hardware minutiae and has broader OS coverage. For the actual day-one job, the content gap is smaller than the recognition gap."
+    },
+    {
+      "question": "What comes after it?",
+      "answer": "Sideways, then up: CCST IT Support has no direct Cisco cert above it. The natural moves are CCST Networking → CCNA (infrastructure lane) or CCST Cybersecurity → Security+ (security lane), decided by which tickets you enjoy most after a few months in the seat."
+    },
+    {
+      "question": "Does it expire?",
+      "answer": "Earned before July 15, 2025: lifetime. On or after: 5 years, exam-only renewal (any current CCST or higher Cisco exam). CE credits don't apply at this tier."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CompTIA A+",
+      "slug": "a-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "The incumbent it challenges — more expensive, more recognized. The honest comparison is the heart of this decision."
+    },
+    {
+      "title": "Google IT Support Certificate",
+      "slug": "google-it-support",
+      "vendor": "Google",
+      "vendor_slug": "google",
+      "reason": "The other budget on-ramp — course-based rather than exam-based, with a 30% A+ discount on completion."
+    },
+    {
+      "title": "CCST Networking",
+      "slug": "ccst-networking",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The upward bridge — if infrastructure tickets become your favorites, this is the lane change toward CCNA."
+    }
+  ],
+  "seo_title": "Cisco CCST IT Support (100-140) Study Guide – the $125 A+ Alternative | CertBlueprint",
+  "seo_description": "Honest CCST IT Support guide: one $125 exam vs A+'s ~$548, what's actually tested (tickets, SLAs, AI tools), the recognition gap, and who should pick which."
+}

@@ -1,0 +1,235 @@
+{
+  "title": "ITIL 4 Foundation Study Guide",
+  "slug": "itil-4-foundation",
+  "vendor": "PeopleCert",
+  "vendor_slug": "peoplecert",
+  "level": "Foundation",
+  "short_name": "ITIL 4 Foundation",
+  "description": "ITIL 4 Foundation is the entry-level certification for IT service management (ITSM). It validates understanding of the ITIL framework: the service value system, the four dimensions of service management, the guiding principles, and core practices like incident, problem, and change management. ITIL is the de facto shared vocabulary of enterprise IT operations, and Foundation is the credential that proves you speak it.",
+  "audience": "Service desk analysts, ITSM coordinators, incident and change managers, IT support staff in enterprise environments, and anyone whose employer runs (or is adopting) ITIL-based processes. Also common for project managers and business analysts who work alongside IT operations teams.",
+  "why_get_it": "ITIL 4 Foundation is fundamentally a vocabulary certification—and that is precisely its value. Enterprise IT shops, managed service providers, government agencies, and large corporations run their operations on ITIL concepts: incidents vs. problems, change enablement, service level management, the service value chain. Foundation proves you understand how this world works before you walk in the door. It appears as a requirement or strong preference in job listings for service desk, ITSM analyst, service delivery, and IT coordinator roles, and it is a common HR filter in organizations that have standardized on ITIL. What it is not: a technical certification. It teaches you no tools, no troubleshooting, no configuration. If your target is a purely technical track—development, cloud engineering, security—ITIL Foundation is overkill and your study time is better spent elsewhere. Where it earns its keep is in service management and IT operations career paths, where the framework literacy it provides is genuinely used day to day.",
+  "when_to_get_it": "Get it when you are targeting (or already working in) service desk, ITSM, or IT operations roles in organizations that run ITIL-based processes—which is most large enterprises. It has no prerequisites and is one of the fastest certifications to earn: most candidates are exam-ready in one to three weeks of part-time study. It pairs well early in a career alongside CompTIA A+ for service desk roles, or later as a checkbox when moving into service delivery or process management positions. One timing consideration: PeopleCert released ITIL Foundation (Version 5) in February 2026 and has announced plans to retire ITIL 4 exams at the end of 2027. ITIL 4 Foundation remains valid and widely recognized, and ITIL 4 certificate holders can progress into higher Version 5 modules without repeating Foundation—but if you are starting from zero in 2026, check the current transition guidance on PeopleCert's site and consider whether Version 5 Foundation is the better entry point for you.",
+  "salary_range": "$50,000 – $85,000",
+  "salary_note": "Be realistic: ITIL Foundation by itself rarely commands a salary premium. Service desk roles where it is listed typically pay $45K–$60K; ITSM analyst and coordinator roles run $55K–$75K; service delivery and process manager roles reach $85K–$110K+ with experience. The certification's value is role eligibility in enterprise ITSM shops, not a direct pay bump. It moves salary indirectly by qualifying you for the service management career ladder.",
+  "exam_code": "ITIL 4 Foundation",
+  "exam_duration": "60 minutes",
+  "exam_format": "40 multiple-choice questions, closed book. Delivered online proctored through PeopleCert's exam platform; test center availability varies by region.",
+  "exam_questions": "40 questions; 26 correct (65%) to pass",
+  "official_url": "https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil-4-foundation-2565",
+  "official_pricing_url": "https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil-4-foundation-2565",
+  "recertification_note": "Valid for 3 years under the renewal scheme PeopleCert introduced in 2023. Renew by logging CPD points through a paid PeopleCert Plus membership (20 points per year over three consecutive years), by retaking the exam, or by passing another certification in the ITIL product suite before your renewal date. Note: achieving ITIL Foundation (Version 5) renews held ITIL 4 certifications in the suite.",
+  "skills_covered": [
+    {
+      "category": "Key Concepts of Service Management",
+      "items": [
+        "Value and value co-creation",
+        "Services, products, and service offerings",
+        "Service relationships: provision, consumption, relationship management",
+        "Outcomes, costs, and risks from the consumer perspective",
+        "Utility and warranty"
+      ]
+    },
+    {
+      "category": "The Four Dimensions of Service Management",
+      "items": [
+        "Organizations and people",
+        "Information and technology",
+        "Partners and suppliers",
+        "Value streams and processes",
+        "External factors (PESTLE) affecting the four dimensions"
+      ]
+    },
+    {
+      "category": "The Service Value System and Guiding Principles",
+      "items": [
+        "The ITIL service value system (SVS) components",
+        "The seven guiding principles (focus on value, start where you are, progress iteratively with feedback, etc.)",
+        "Governance within the SVS",
+        "Continual improvement and the improvement model"
+      ]
+    },
+    {
+      "category": "The Service Value Chain",
+      "items": [
+        "The six value chain activities: plan, improve, engage, design & transition, obtain/build, deliver & support",
+        "How value chain activities combine into value streams",
+        "Inputs, outputs, and purpose of each activity"
+      ]
+    },
+    {
+      "category": "ITIL Practices",
+      "items": [
+        "Seven practices in detail: continual improvement, change enablement, incident management, problem management, service request management, service desk, service level management",
+        "Definitions and purpose of supporting practices (e.g., IT asset management, monitoring and event management, release management, deployment management)",
+        "Incident vs. problem vs. change—the distinctions the exam loves to test"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Decide: ITIL 4 or ITIL Version 5",
+      "description": "Before spending a dollar, check where the scheme stands. PeopleCert released ITIL Foundation (Version 5) in February 2026 and plans to retire ITIL 4 exams at the end of 2027. If your employer, contract, or study materials specify ITIL 4, proceed—the certification stays valid and bridges into the Version 5 scheme. If you are starting fresh with no constraint, compare both on PeopleCert's site first."
+    },
+    {
+      "step": 2,
+      "title": "Download the official syllabus",
+      "description": "Get the ITIL 4 Foundation syllabus from PeopleCert's certification page. It is short, and it maps exactly what the 40 questions can cover: key concepts, the four dimensions, the guiding principles, the service value chain, and the practices. Foundation is a bounded exam—knowing the boundary keeps your study tight."
+    },
+    {
+      "step": 3,
+      "title": "Pick one primary study resource",
+      "description": "PeopleCert's exam bundle includes the official eBook, which is the definitive source. If you prefer video, one Udemy course or an accredited training organization's self-paced course is plenty. Foundation does not require accredited training—self-study is allowed—so do not pay for a bootcamp unless your employer covers it."
+    },
+    {
+      "step": 4,
+      "title": "Drill the vocabulary until the definitions are automatic",
+      "description": "This exam is almost entirely definitional. You must know the seven guiding principles by name, the six value chain activities, the four dimensions, and utility vs. warranty cold. Flashcards work exceptionally well here. Most wrong answers on this exam come from two plausible-sounding definitions—precision wins."
+    },
+    {
+      "step": 5,
+      "title": "Master the seven detailed practices",
+      "description": "Seven practices are tested in depth: continual improvement, change enablement, incident management, problem management, service request management, service desk, and service level management. Know their purposes and how they differ—especially incident vs. problem vs. service request, and the three change types (standard, normal, emergency). The remaining practices only need definition-level recall."
+    },
+    {
+      "step": 6,
+      "title": "Take the official mock exam and practice tests",
+      "description": "PeopleCert publishes an official ITIL 4 Foundation mock exam—take it under timed conditions. Supplement with third-party practice exams (Jason Dion's Udemy set is well regarded) until you score 80%+ consistently. At 40 questions in 60 minutes, time pressure is minimal; accuracy is everything."
+    },
+    {
+      "step": 7,
+      "title": "Book and sit the online proctored exam",
+      "description": "Exams are delivered online proctored through PeopleCert's platform. Test your webcam, ID, and room setup ahead of time—proctoring requirements are strict. Rescheduling is free up to 48 hours before your slot. Read each question for the exact ITIL term being tested; the exam rewards precise recall over reasoning."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "PeopleCert – ITIL 4 Foundation Official Page & Syllabus",
+      "url": "https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil-4-foundation-2565",
+      "type": "Official Documentation",
+      "note": "The definitive source for the syllabus, exam specifications, and current pricing. Download the syllabus PDF before starting any course."
+    },
+    {
+      "name": "PeopleCert – ITIL 4 Foundation Official Mock Exam",
+      "url": "https://www.peoplecert.org/browse-mock-exams/it-governance-and-service-management/ITIL-1/itil-4-foundation-mock-exam",
+      "type": "Practice Exam",
+      "note": "Official mock exam from the certification body itself. The closest match to real exam wording you will find."
+    },
+    {
+      "name": "PeopleCert – ITIL FAQ",
+      "url": "https://www.peoplecert.org/help-and-support/faq-itil",
+      "type": "Official Documentation",
+      "note": "Covers the ITIL 4 to Version 5 transition, exam retirement dates, and renewal rules straight from the source. Check this before booking."
+    },
+    {
+      "name": "r/ITIL on Reddit",
+      "url": "https://www.reddit.com/r/ITIL/",
+      "type": "Community",
+      "note": "Active community for exam prep questions, pass reports, and honest discussion of whether ITIL certs are worth it for specific roles."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Udemy – Jason Dion ITIL 4 Foundation Practice Exams (6 Exams)",
+      "type": "Practice Exams",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Final exam preparation—six full-length 40-question practice exams matching the real format",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fitil-4-foundation-practice-certification-exams-6-exams-q%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_itil4_dion_practice_exams",
+      "affiliate": true,
+      "note": "Dion Training is an accredited training organization for ITIL. Six timed exams give you more question volume than most candidates need—consistent 80%+ here means you are ready."
+    },
+    {
+      "provider": "Udemy – Introduction to Service Management with ITIL 4 (Dion Training)",
+      "type": "Video Course",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Candidates who want a low-cost video walkthrough of the ITIL 4 framework before or instead of the official eBook",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fservice-management-itil-4%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_itil4_intro_service_management",
+      "affiliate": true,
+      "note": "Covers service management concepts with a dedicated ITIL 4 Foundation exam prep section. Pair with the practice exams above for a complete budget prep stack."
+    },
+    {
+      "provider": "PeopleCert – Official eLearning Bundles",
+      "type": "Official Training + Exam",
+      "price": "~$1,029–$1,338 (varies by region)",
+      "best_for": "Candidates whose employer is paying, or who want official self-paced training, the eBook, exam voucher, and (in the top tier) a free retake in one package",
+      "affiliate_url": "https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil-4-foundation-2565",
+      "affiliate_label": "View on PeopleCert",
+      "affiliate_event": "peoplecert_itil4_elearning",
+      "affiliate": false,
+      "note": "Significantly more expensive than self-study plus a standalone exam bundle. Only worth it if someone else is paying or you strongly prefer official structured content."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Buy ITIL 4 Foundation Exam – PeopleCert Official Store",
+      "url": "https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil-4-foundation-2565",
+      "note": "PeopleCert sells the exam as a bundle that includes the official eBook—around $690 in the US at the time of writing, but prices vary significantly by region and change often. Accredited training organizations also bundle vouchers with courses at varying prices. Always verify current pricing on the official page."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is ITIL 4 Foundation worth it?",
+      "answer": "It depends entirely on your target role. For service desk, ITSM analyst, service delivery, and IT operations roles in enterprise environments, yes—it is a common HR filter and the framework vocabulary is genuinely used daily in those jobs. For purely technical tracks (development, cloud engineering, security), it is overkill: it teaches process vocabulary, not technical skills, and your study time is better invested in a technical certification."
+    },
+    {
+      "question": "How hard is the ITIL 4 Foundation exam?",
+      "answer": "It is one of the easier entry-level IT certifications. 40 multiple-choice questions in 60 minutes, 65% (26 correct) to pass, and the content is definitional rather than applied. Most candidates are ready in one to three weeks of part-time study. The main trap is imprecise vocabulary—the exam deliberately offers near-miss definitions as distractors, so surface-level familiarity is not enough."
+    },
+    {
+      "question": "Should I take ITIL 4 Foundation or wait for ITIL Version 5?",
+      "answer": "PeopleCert released ITIL Foundation (Version 5) in February 2026 and has announced plans to retire ITIL 4 exams at the end of 2027. ITIL 4 Foundation remains valid, and ITIL 4 holders can enter higher Version 5 modules without repeating Foundation. If your employer or a job posting specifically requires ITIL 4, take it. If you are starting fresh with no constraint, compare both on PeopleCert's site—Version 5 may be the more future-proof entry point. Verify current transition dates before booking, as details evolve."
+    },
+    {
+      "question": "Does ITIL 4 Foundation expire?",
+      "answer": "Yes. Since PeopleCert introduced its renewal scheme in 2023, ITIL certifications are valid for 3 years. You can renew by logging CPD points through a paid PeopleCert Plus membership (20 points per year over three years), retaking the exam, or passing another certification in the ITIL product suite before your renewal date. Certificates earned before the scheme have their own transition rules—check PeopleCert's renewal page for your situation."
+    },
+    {
+      "question": "How much does the ITIL 4 Foundation exam cost?",
+      "answer": "More than most entry-level certs, and it varies by region and channel. PeopleCert's direct exam bundle (which includes the official eBook and learning resources) runs around $690 in the US; official eLearning bundles run $1,029–$1,338. Vouchers purchased through accredited training organizations, often bundled with a course, can land in the $400–$600 range. Prices change often—verify on PeopleCert's official page before budgeting."
+    },
+    {
+      "question": "Do I need to take a training course before the exam?",
+      "answer": "No. ITIL 4 Foundation has no prerequisites and no mandatory training requirement—self-study is allowed. The official eBook included in PeopleCert's exam bundle plus a set of practice exams is sufficient for most candidates. Paid instructor-led training only makes sense if your employer covers it or you strongly prefer structured classes."
+    },
+    {
+      "question": "What jobs can I get with ITIL 4 Foundation?",
+      "answer": "By itself, it will not get you hired—but it strengthens candidacy for service desk analyst, IT support specialist, ITSM analyst/coordinator, incident manager, change coordinator, and service delivery roles. It is most powerful combined with something else: A+ or hands-on support experience for service desk roles, or project/process experience for coordinator and manager roles. Think of it as the vocabulary requirement of enterprise IT operations, not a standalone job ticket."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CompTIA A+",
+      "slug": "a-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "The natural technical pairing for service desk roles—A+ proves you can fix the issue, ITIL proves you understand the process around it."
+    },
+    {
+      "title": "Microsoft MS-900",
+      "slug": "ms-900",
+      "vendor": "Microsoft",
+      "vendor_slug": "microsoft",
+      "reason": "Microsoft 365 fundamentals complement ITIL for support and ITSM roles in the many enterprises running M365 as their productivity stack."
+    },
+    {
+      "title": "PMI CAPM",
+      "slug": "capm",
+      "vendor": "PMI",
+      "vendor_slug": "pmi",
+      "reason": "For coordinators moving toward project management—CAPM covers project vocabulary the way ITIL covers service management vocabulary."
+    },
+    {
+      "title": "Professional Scrum Master I",
+      "slug": "psm-1",
+      "vendor": "Scrum.org",
+      "vendor_slug": "scrum-org",
+      "reason": "Agile delivery knowledge that pairs with ITIL's service management framing—many ITSM teams now operate alongside or inside agile organizations."
+    }
+  ],
+  "seo_title": "ITIL 4 Foundation Study Guide – Exam Details, Study Plan, Resources | CertBlueprint",
+  "seo_description": "Complete ITIL 4 Foundation guide: exam cost and format, the ITIL v5 transition, honest salary expectations, study plan, free and paid resources, and FAQ."
+}

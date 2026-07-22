@@ -1,0 +1,229 @@
+{
+  "title": "AWS Certified Cloud Practitioner (CLF-C02) Study Guide",
+  "slug": "aws-cloud-practitioner",
+  "short_name": "AWS Cloud Practitioner",
+  "vendor": "AWS",
+  "vendor_slug": "aws",
+  "level": "Foundation",
+  "description": "AWS Certified Cloud Practitioner is the foundational AWS certification. Exam CLF-C02 validates a broad understanding of the AWS Cloud—core services, security, pricing, and the value of cloud—making it the most accessible entry point into the AWS ecosystem.",
+  "audience": "Career changers and beginners entering cloud, non-technical professionals (sales, finance, project management) who work with AWS, and IT pros who want an entry credential before tackling the associate-level AWS exams.",
+  "why_get_it": "Cloud Practitioner is the easiest way to get 'AWS certified' on your resume and prove cloud literacy. It's the most accessible AWS cert—no deep technical prerequisites—yet it carries real recognition because AWS is the dominant cloud platform. For beginners it's a confidence-building first win and a foundation for the higher-paying associate exams (Solutions Architect, Developer, SysOps). For non-technical roles, it signals you can speak the language of cloud—services, pricing, and security—which is increasingly expected across sales, finance, and project management in tech.",
+  "when_to_get_it": "Get Cloud Practitioner if you're new to cloud and want an approachable first AWS certification, or if your role touches AWS without being deeply technical. If you already have IT experience and a technical goal, many people skip straight to the Solutions Architect Associate (SAA-C03)—but Cloud Practitioner is a low-cost, low-risk way to build momentum first.",
+  "exam_code": "CLF-C02",
+  "exam_duration": "90 minutes",
+  "exam_format": "65 questions (50 scored, 15 unscored): multiple choice and multiple response. Passing score: 700 (on a scale of 100–1000).",
+  "exam_questions": "65 questions",
+  "official_url": "https://aws.amazon.com/certification/certified-cloud-practitioner/",
+  "official_pricing_url": "https://aws.amazon.com/certification/certified-cloud-practitioner/",
+  "recertification_note": "Valid for 3 years. Recertify by passing the current Cloud Practitioner exam, or by earning any higher-level AWS certification, which extends your Cloud Practitioner validity.",
+  "salary_range": "$65,000 – $110,000",
+  "salary_note": "Cloud Practitioner is an entry credential rather than a salary driver on its own. Cloud support and junior cloud roles for certificate holders commonly fall in the $65K–$90K range, with the national median around $78K. It pays off most as a stepping stone—pairing it with hands-on experience and an associate-level AWS cert (SAA-C03) moves you toward six figures.",
+  "skills_covered": [
+    {
+      "category": "Cloud Concepts (24%)",
+      "items": [
+        "The value and benefits of the AWS Cloud",
+        "Cloud economics and the AWS Well-Architected Framework",
+        "Cloud deployment and operation models",
+        "Elasticity, scalability, and high availability concepts",
+        "The shared-responsibility model at a high level"
+      ]
+    },
+    {
+      "category": "Security and Compliance (30%)",
+      "items": [
+        "The AWS shared-responsibility model in detail",
+        "AWS security, identity (IAM), and access-management concepts",
+        "Compliance programs and where to find compliance information",
+        "Security services: WAF, Shield, GuardDuty, KMS (awareness level)",
+        "Encryption and data-protection basics"
+      ]
+    },
+    {
+      "category": "Cloud Technology and Services (34%)",
+      "items": [
+        "Core compute, storage, networking, and database services",
+        "EC2, S3, RDS, VPC, Lambda, and common service families",
+        "Methods of deploying and operating on AWS",
+        "Global infrastructure: Regions, Availability Zones, edge locations",
+        "Choosing the right service for a use case (awareness level)"
+      ]
+    },
+    {
+      "category": "Billing, Pricing, and Support (12%)",
+      "items": [
+        "AWS pricing models (On-Demand, Reserved, Savings Plans, Spot)",
+        "Cost management tools: Budgets, Cost Explorer, Billing dashboard",
+        "AWS support plans and their differences",
+        "The Total Cost of Ownership and pricing calculators",
+        "Account structures and consolidated billing"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Download the CLF-C02 exam guide",
+      "description": "Get the official AWS Certified Cloud Practitioner (CLF-C02) exam guide. The four domains and their weightings are your roadmap—note that Cloud Technology & Services and Security are two-thirds of the exam."
+    },
+    {
+      "step": 2,
+      "title": "Work through a primary video course",
+      "description": "Choose one comprehensive CLF-C02 course and complete it end to end. Stephane Maarek's course on Udemy is the most popular and includes hands-on demos. See the paid resources section."
+    },
+    {
+      "step": 3,
+      "title": "Create a free-tier AWS account and explore",
+      "description": "Sign up for the AWS Free Tier and click around the console: launch an EC2 instance, create an S3 bucket, open the Billing dashboard. Hands-on familiarity makes the service questions trivial."
+    },
+    {
+      "step": 4,
+      "title": "Use the free AWS digital training",
+      "description": "AWS Skill Builder offers a free Cloud Practitioner Essentials course straight from AWS. Use it to reinforce the official terminology and service descriptions the exam uses."
+    },
+    {
+      "step": 5,
+      "title": "Read a study guide for the weak spots",
+      "description": "Keep the Sybex Cloud Practitioner Study Guide handy to go deeper on billing, pricing, and security topics that videos sometimes skim. Use it to close specific gaps."
+    },
+    {
+      "step": 6,
+      "title": "Take practice exams",
+      "description": "Work through full-length CLF-C02 practice exams. Aim to score consistently above 85% before booking. Review every miss—many Cloud Practitioner questions hinge on knowing which service does what."
+    },
+    {
+      "step": 7,
+      "title": "Schedule and sit the exam",
+      "description": "Register through Pearson VUE or PSI (test center or online proctored). The exam is 90 minutes. It's an approachable exam—most prepared candidates pass on the first attempt."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "AWS Certified Cloud Practitioner Exam Guide (Official)",
+      "url": "https://aws.amazon.com/certification/certified-cloud-practitioner/",
+      "type": "Official Documentation",
+      "note": "The official CLF-C02 exam guide with all four domains and weightings. Your study roadmap—start here."
+    },
+    {
+      "name": "AWS Skill Builder – Cloud Practitioner Essentials (Free)",
+      "url": "https://skillbuilder.aws/",
+      "type": "Video Course",
+      "note": "AWS's own free digital training for Cloud Practitioner. The terminology matches the exam exactly—worth doing alongside any paid course."
+    },
+    {
+      "name": "AWS Free Tier",
+      "url": "https://aws.amazon.com/free/",
+      "type": "Hands-on Labs",
+      "note": "A free AWS account for hands-on practice. Clicking through EC2, S3, and the Billing console makes the service and pricing questions intuitive."
+    },
+    {
+      "name": "freeCodeCamp – AWS Cloud Practitioner Course (YouTube)",
+      "url": "https://www.youtube.com/c/Freecodecamp",
+      "type": "Video Course",
+      "note": "A free, full-length Cloud Practitioner course on YouTube. A solid no-cost alternative or supplement to a paid course."
+    },
+    {
+      "name": "r/AWSCertifications on Reddit",
+      "url": "https://www.reddit.com/r/AWSCertifications/",
+      "type": "Community",
+      "note": "Active community with recent CLF-C02 pass reports and resource recommendations. Useful for current exam experience."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Udemy – Stephane Maarek Cloud Practitioner (CLF-C02) Course",
+      "type": "Video Course",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Most candidates – the most popular CLF-C02 course, with hands-on demos and a practice exam",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Faws-certified-cloud-practitioner-new%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_clf_maarek_course",
+      "affiliate": true,
+      "note": "Stephane Maarek's CLF-C02 course is the community standard—4.7 stars across 200K+ ratings. Frequently on sale."
+    },
+    {
+      "provider": "Udemy – Cloud Practitioner (CLF-C02) 6 Practice Exams",
+      "type": "Practice Exams",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Final exam preparation with realistic, full-length CLF-C02 practice tests",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fpractice-exams-aws-certified-cloud-practitioner%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_clf_practice",
+      "affiliate": true,
+      "note": "Six full-length practice exams that closely match the real CLF-C02 difficulty. Use to confirm readiness before booking."
+    },
+    {
+      "provider": "AWS Certified Cloud Practitioner Study Guide CLF-C02 (Sybex, Piper & Clinton)",
+      "type": "Book",
+      "price": "~$30–$45",
+      "best_for": "Candidates who want a written reference with 500 practice questions alongside a video course",
+      "affiliate_url": "https://www.amazon.com/dp/1394235631/?tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_clf_sybex_guide",
+      "affiliate": true,
+      "note": "The standard CLF-C02 book. Best used to deepen billing, pricing, and security topics that video courses sometimes skim."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Schedule the CLF-C02 Exam – AWS Certification",
+      "url": "https://aws.amazon.com/certification/certified-cloud-practitioner/",
+      "note": "The Cloud Practitioner exam is $100 USD and is scheduled through Pearson VUE or PSI. Verify current pricing on the AWS certification page before booking."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is AWS Cloud Practitioner worth it?",
+      "answer": "For beginners and non-technical roles, yes. It's the easiest way to get AWS-certified and prove cloud literacy, and it's a confidence-building first step toward the higher-value associate exams. Technical candidates with experience often skip straight to Solutions Architect Associate."
+    },
+    {
+      "question": "How hard is the CLF-C02 exam?",
+      "answer": "It's the easiest AWS exam—foundational and broad rather than deep. Most candidates pass with a few weeks of study. Knowing which service does what, plus the basics of pricing and security, gets you most of the way there."
+    },
+    {
+      "question": "Do I need experience before Cloud Practitioner?",
+      "answer": "No. There are no prerequisites, and it's designed to be accessible to beginners and non-technical professionals. A free-tier AWS account for hands-on clicking is the only 'experience' you really need."
+    },
+    {
+      "question": "How long does it take to study for Cloud Practitioner?",
+      "answer": "Most candidates spend 2 to 4 weeks part-time. Those with some IT background may be ready in a week or two. A single video course plus practice exams is usually enough."
+    },
+    {
+      "question": "Should I get Cloud Practitioner or go straight to Solutions Architect Associate?",
+      "answer": "If you have IT experience and a technical goal, many people skip straight to SAA-C03. If you're new to cloud or in a non-technical role, Cloud Practitioner is a low-cost, low-risk way to build a foundation and momentum first."
+    },
+    {
+      "question": "What comes after Cloud Practitioner?",
+      "answer": "The associate-level AWS certifications: Solutions Architect Associate (most popular), Developer Associate, or SysOps Administrator Associate—depending on whether you lean toward architecture, development, or operations."
+    },
+    {
+      "question": "Does AWS Cloud Practitioner expire?",
+      "answer": "Yes. It's valid for three years. Recertify by retaking the current exam, or by earning any higher-level AWS certification, which extends your Cloud Practitioner validity automatically."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "AWS Solutions Architect Associate",
+      "slug": "aws-saa",
+      "vendor": "AWS",
+      "vendor_slug": "aws",
+      "reason": "The natural next step. Cloud Practitioner builds the foundation; SAA-C03 is the in-demand, higher-paying associate credential most people target next."
+    },
+    {
+      "title": "AWS Developer Associate",
+      "slug": "aws-developer-associate",
+      "vendor": "AWS",
+      "vendor_slug": "aws",
+      "reason": "The associate path for software engineers. A strong follow-on for Cloud Practitioner holders who write code and build cloud-native apps."
+    },
+    {
+      "title": "AZ-900: Azure Fundamentals",
+      "slug": "az-900",
+      "vendor": "Microsoft",
+      "vendor_slug": "microsoft",
+      "reason": "The Microsoft equivalent foundational cloud cert. Many beginners get both to demonstrate cross-cloud literacy."
+    }
+  ],
+  "seo_title": "AWS Certified Cloud Practitioner CLF-C02 Study Guide | CertBlueprint",
+  "seo_description": "Complete AWS Cloud Practitioner (CLF-C02) guide: who it's for, salary, exam domains, study path, free and paid resources, and FAQ."
+}

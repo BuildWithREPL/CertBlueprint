@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'IT Career Navigator — Find Your IT Path Before You Pick a Cert | CertBlueprint';
+const description =
+  'Two free ways to find your IT path: talk it out with an AI reader that hears your own words, or take the transparent guided assessment — get your strongest IT fields, honest downsides, and a hands-on trial for this weekend.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Career Navigator', href: '/navigator/' },
+];
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'IT Career Navigator',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web browser',
+  url: 'https://certblueprint.com/navigator/',
+  description,
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  publisher: { '@type': 'Organization', name: 'CertBlueprint' },
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  breadcrumbs={breadcrumbs}
+  structuredData={structuredData}
+>
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-2">
+    <p class="font-mono text-xs uppercase tracking-widest mb-3" style="color: var(--cb-accent-text);">
+      Free tool
+    </p>
+    <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-balance" style="color: var(--cb-text);">
+      Not sure which IT path fits you? Start here — before you pick a certification.
+    </h1>
+    <p class="mt-4 text-lg leading-relaxed" style="color: var(--cb-text-sub); max-width: 60ch;">
+      A certification is step two. Step one is knowing which direction actually suits you. Answer a set of
+      honest questions on how you like to work — no trivia, nothing to cram — and get your three
+      strongest IT paths, what each job really feels like (downsides included), and a hands-on trial you
+      can do this weekend. Then come back to CertBlueprint for the roadmap.
+    </p>
+    <div class="mt-5 flex flex-wrap gap-2">
+      <span class="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium border"
+        style="color: var(--cb-text-muted); background: var(--cb-bg-subtle); border-color: var(--cb-border);">
+        No IT background needed
+      </span>
+      <span class="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium border"
+        style="color: var(--cb-text-muted); background: var(--cb-bg-subtle); border-color: var(--cb-border);">
+        ~10 minutes
+      </span>
+      <span class="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium border"
+        style="color: var(--cb-text-muted); background: var(--cb-bg-subtle); border-color: var(--cb-border);">
+        Transparent scoring, no black box
+      </span>
+    </div>
+
+    <!-- Two ways in: conversation (recommended) or guided assessment -->
+    <div class="mt-8 grid sm:grid-cols-2 gap-4">
+      <a href="/navigator-lab" class="rounded-2xl border-2 p-5 block transition-all" style="border-color: var(--cb-accent); background: var(--cb-bg-card);">
+        <div class="flex items-center gap-2 mb-2">
+          <p class="font-bold text-base" style="color: var(--cb-text);">Talk it out</p>
+          <span class="text-xs font-semibold px-2 py-0.5 rounded-full" style="background: var(--cb-accent); color: #fff;">Recommended</span>
+        </div>
+        <p class="text-sm leading-relaxed mb-3" style="color: var(--cb-text-sub);">
+          Answer one open question the way you'd tell a friend. A real AI reader hears what you actually said — your specifics, your words — asks a follow-up if it needs one, and points you at the field that fits, with the honest road in.
+        </p>
+        <span class="text-sm font-semibold" style="color: var(--cb-accent-text);">Start the conversation →</span>
+      </a>
+      <a href="#guided" class="rounded-2xl border p-5 block transition-all" style="border-color: var(--cb-border); background: var(--cb-bg-card);">
+        <p class="font-bold text-base mb-2" style="color: var(--cb-text);">Prefer buttons?</p>
+        <p class="text-sm leading-relaxed mb-3" style="color: var(--cb-text-sub);">
+          The guided assessment: ~27 quick questions, one at a time, scored transparently into your top three IT families — with weekend trials for each. Also home to the military-translation module.
+        </p>
+        <span class="text-sm font-semibold" style="color: var(--cb-accent-text);">Take the guided assessment ↓</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="guided" class="max-w-5xl mx-auto px-2 sm:px-4 pb-16">
+    <div
+      class="rounded-xl overflow-hidden border"
+      style="border-color: var(--cb-border); background: var(--cb-bg-subtle);"
+    >
+      <iframe
+        id="nav-frame"
+        title="IT Career Navigator — interactive assessment"
+        loading="lazy"
+        style="width: 100%; border: 0; display: block; min-height: 640px;"
+        referrerpolicy="no-referrer"
+      ></iframe>
+    </div>
+    <noscript>
+      <p class="mt-4 text-sm" style="color: var(--cb-text-muted);">
+        This tool needs JavaScript. You can open it directly at
+        <a href="/navigator-app.html" style="color: var(--cb-accent-text);">/navigator-app.html</a>.
+      </p>
+    </noscript>
+    <p class="mt-4 text-xs leading-relaxed" style="color: var(--cb-text-muted); max-width: 70ch;">
+      This is an exploration tool, not a definitive answer — it maps how you like to work to fields worth
+      testing, and it never ranks a path higher because it earns anyone money. Salary and growth figures
+      are U.S. Bureau of Labor Statistics national medians (a median is the midpoint of everyone employed,
+      so entry pay runs lower); treat them as directional. Assessment content is an early prototype pending
+      expert review.
+    </p>
+  </section>
+
+  <script is:inline>
+    (function () {
+      var f = document.getElementById('nav-frame');
+      if (!f) return;
+      function theme() { return document.documentElement.getAttribute('data-theme') || 'light'; }
+      // Set src with the current theme baked in to avoid a flash inside the frame.
+      f.src = '/navigator-app.html?embed=1&theme=' + encodeURIComponent(theme());
+      function sendTheme() { try { f.contentWindow.postMessage({ cbTheme: theme() }, '*'); } catch (e) {} }
+      window.addEventListener('message', function (e) {
+        var d = e.data || {};
+        if (d && d.cbNav && d.height) {
+          // Only resize on a real change — guards against sub-pixel reflow churn
+          // ever turning into a feedback loop.
+          var target = d.height + 8;
+          var cur = parseInt(f.style.height, 10) || 0;
+          if (Math.abs(target - cur) > 3) f.style.height = target + 'px';
+        }
+      });
+      f.addEventListener('load', sendTheme);
+      try {
+        new MutationObserver(sendTheme).observe(document.documentElement, {
+          attributes: true, attributeFilter: ['data-theme'],
+        });
+      } catch (e) {}
+    })();
+  </script>
+</BaseLayout>

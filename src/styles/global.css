@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────
+   CERTBLUEPRINT — Global Styles
+   Theme system:  data-theme="dark" | data-theme="hc" (high contrast)
+   ───────────────────────────────────────────────────────────── */
+
+/* ─── CSS Custom Properties (light defaults) ─────────────── */
+:root {
+  --cb-bg:          #f8fafc;
+  --cb-bg-card:     #ffffff;
+  --cb-bg-subtle:   #f1f5f9;
+  --cb-border:      #e2e8f0;
+  --cb-border-sub:  #f1f5f9;
+  --cb-text:        #1e293b;
+  --cb-text-sub:    #475569;
+  --cb-text-muted:  #94a3b8;
+  --cb-accent:      #2563eb;
+  --cb-accent-sub:  #eff6ff;
+  --cb-accent-text: #1d4ed8;
+  --cb-nav-bg:      #ffffff;
+  --cb-nav-border:  #e2e8f0;
+  --cb-hero-bg:     #0f172a;
+}
+
+/* ─── Dark mode ───────────────────────────────────────────── */
+[data-theme="dark"] {
+  --cb-bg:          #0f172a;
+  --cb-bg-card:     #1e293b;
+  --cb-bg-subtle:   #1e293b;
+  --cb-border:      #334155;
+  --cb-border-sub:  #1e293b;
+  --cb-text:        #f1f5f9;
+  --cb-text-sub:    #94a3b8;
+  --cb-text-muted:  #64748b;
+  --cb-accent:      #3b82f6;
+  --cb-accent-sub:  #1e3a5f;
+  --cb-accent-text: #60a5fa;
+  --cb-nav-bg:      #1e293b;
+  --cb-nav-border:  #334155;
+  --cb-hero-bg:     #020617;
+}
+
+/* ─── High contrast / accessibility mode ─────────────────── */
+[data-theme="hc"] {
+  --cb-bg:          #000000;
+  --cb-bg-card:     #111111;
+  --cb-bg-subtle:   #1a1a1a;
+  --cb-border:      #ffffff;
+  --cb-border-sub:  #555555;
+  --cb-text:        #ffffff;
+  --cb-text-sub:    #eeeeee;
+  --cb-text-muted:  #cccccc;
+  --cb-accent:      #4d94ff;
+  --cb-accent-sub:  #001a3d;
+  --cb-accent-text: #80b3ff;
+  --cb-nav-bg:      #111111;
+  --cb-nav-border:  #ffffff;
+  --cb-hero-bg:     #000000;
+}
+
+/* ─── Base reset ──────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--cb-bg);
+  color: var(--cb-text);
+  transition: background-color 0.15s ease, color 0.15s ease;
+  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Focus ────────────────────────────────────────────────── */
+*:focus-visible {
+  outline: 2px solid var(--cb-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+[data-theme="hc"] *:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+
+/* ─── FAQ accordion ──────────────────────────────────────── */
+details[open] summary .faq-chevron {
+  transform: rotate(180deg);
+}
+details summary .faq-chevron {
+  transition: transform 0.2s ease;
+}
+
+/* ─── High contrast link underlines ──────────────────────── */
+[data-theme="hc"] a:not([class*="inline-flex"]):not([class*="block"]):not([class*="flex"]) {
+  text-decoration: underline;
+}
+
+/* ─── Theme toggle button ─────────────────────────────────── */
+.theme-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: 0.375rem;
+  border: 1px solid var(--cb-border);
+  background: transparent;
+  color: var(--cb-text-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  padding: 0;
+}
+.theme-btn:hover {
+  background: var(--cb-bg-subtle);
+  color: var(--cb-text);
+  border-color: var(--cb-text-muted);
+}
+.theme-btn[aria-pressed="true"] {
+  background: var(--cb-accent);
+  border-color: var(--cb-accent);
+  color: #ffffff;
+}

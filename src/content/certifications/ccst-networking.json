@@ -1,0 +1,199 @@
+{
+  "title": "Cisco CCST Networking (100-150) Study Guide",
+  "slug": "ccst-networking",
+  "short_name": "CCST Networking",
+  "vendor": "Cisco",
+  "vendor_slug": "cisco",
+  "level": "Entry",
+  "description": "The Cisco Certified Support Technician (CCST) Networking is Cisco's true entry-level networking cert — a $125, 50-minute exam with no prerequisites, backed by a genuinely good free official training path. It's the cheapest legitimate first step toward CCNA and the networking career ladder.",
+  "audience": "High school and college students, complete beginners on a tight budget, and anyone who wants a low-risk checkpoint before committing to CCNA. No experience, no prerequisites — this is the ground floor of the Cisco ladder, on purpose.",
+  "why_get_it": "Three honest reasons. Price: $125 against roughly $400 for Network+ or $300 for CCNA — the cheapest respected networking credential there is. Training: the official prep (Cisco Networking Academy's ~70-hour Network Technician path) is free and genuinely good, which is rare at this tier. And the ladder: CCST Networking is designed as the first step toward CCNA — the curriculum flows directly into NetAcad's CCNA series. What it is not: an HR-filter keyword. Almost no job posting requires CCST, and recruiters searching resumes look for A+, Network+, or CCNA. It signals readiness to learn, not readiness to be hired — know that going in and it's a fine deal.",
+  "when_to_get_it": "At the very beginning — if you're a student whose school offers it, on a budget where $125 is the ceiling, or genuinely unsure whether networking is your lane and wanting a cheap, structured way to find out. If you're an adult already committed to a networking career, the honest advice is to skip it: put the $125 toward CCNA study materials, because CCNA is what gets interviews. And if you want general IT support work rather than networking specifically, A+ still beats CCST for resume filters.",
+  "salary_range": "$40,000 – $58,000 (entry support roles)",
+  "salary_note": "CCST alone rarely moves salary — it feeds entry roles like network support technician and help desk, typically $40–58K U.S. to start. Its real value is directional: it's the on-ramp to CCNA, and CCNA-level roles ($60–85K) are where the ladder starts paying. Treat these figures as directional, not promises.",
+  "exam_code": "100-150",
+  "exam_duration": "50 minutes",
+  "exam_format": "40–50 questions (multiple choice plus performance-based items), delivered by Certiport (schools and testing centers) or Pearson VUE (test center or OnVUE online proctoring). Unlimited retakes, instant pass/fail on screen. Cisco does not publish the passing score.",
+  "exam_questions": "40–50 questions",
+  "official_url": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/ccst-networking.html",
+  "official_pricing_url": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/ccst-networking.html",
+  "recertification_note": "Changed in 2025: CCSTs earned on or after July 15, 2025 are valid for 5 years; earned before that date, lifetime. Renewal is exam-only — pass any current CCST or higher Cisco exam. Continuing Education credits do NOT apply to CCST renewal.",
+  "last_verified": "July 2026",
+  "skills_covered": [
+    {
+      "category": "Standards, Concepts & Addressing (Domains 1–2)",
+      "items": [
+        "TCP/IP model, common protocols, and how data actually moves",
+        "IPv4 and IPv6 addressing and subnet formats",
+        "Public vs private addressing, NAT concepts",
+        "Bandwidth, latency, and what 'slow internet' really means",
+        "The vocabulary every networking conversation assumes"
+      ]
+    },
+    {
+      "category": "Endpoints, Media & Infrastructure (Domains 3–4)",
+      "items": [
+        "Cables, connectors, and wireless media types",
+        "Switches, routers, and access points — what each actually does",
+        "Basic network topologies and where devices sit",
+        "Cisco device status lights and basic device management",
+        "Connecting and verifying endpoint devices"
+      ]
+    },
+    {
+      "category": "Diagnosing Problems & Security (Domains 5–6)",
+      "items": [
+        "The troubleshooting method: identify, isolate, resolve, document",
+        "ping, traceroute, ipconfig — the first-response toolkit",
+        "Reading basic device output to find the problem",
+        "Security fundamentals: firewalls, authentication, common threats",
+        "When to escalate and how to document what you found"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Enroll in the free official path first",
+      "description": "Cisco Networking Academy's Network Technician career path (~70 hours, free) is the official prep and the best free networking curriculum anywhere. Don't buy anything until you've started it — for many people it's the only study resource needed."
+    },
+    {
+      "step": 2,
+      "title": "Download the official exam topics",
+      "description": "Get the 100-150 blueprint from the Cisco Learning Network. Note: Cisco does not publish domain weight percentages for CCST — any site listing them is guessing. Use the topic list as your checklist, not invented percentages."
+    },
+    {
+      "step": 3,
+      "title": "Lab everything in Packet Tracer",
+      "description": "Packet Tracer is free through NetAcad and fully sufficient at this tier. Build every topology the course shows you — the exam includes performance-based items, and clicking through real (simulated) devices is what makes those easy."
+    },
+    {
+      "step": 4,
+      "title": "Try the free Certiport demo exam",
+      "description": "Certiport's 'Test Drive CCST Exams' shows the real exam interface at no cost. Ten minutes there removes the interface surprise factor on test day — worth it, especially for first-time test takers."
+    },
+    {
+      "step": 5,
+      "title": "Add the Official Cert Guide only if you need it",
+      "description": "The Cisco Press CCST Networking OCG (~$40–60) is the only Cisco-approved book. It's a good belt-and-suspenders addition if the free path leaves gaps, but plenty of people pass on NetAcad alone. Free first, paid second."
+    },
+    {
+      "step": 6,
+      "title": "Book whichever delivery works for you",
+      "description": "Two options: Certiport testing centers (usually through schools) or Pearson VUE (test center or online from home). 50 minutes, instant result, unlimited retakes if it goes wrong — the stakes are deliberately low."
+    },
+    {
+      "step": 7,
+      "title": "Roll momentum straight into CCNA",
+      "description": "CCST gives no exam credit toward CCNA — the bridge is curricular, not transactional. But the NetAcad path flows directly into the CCNA course series, and taking it while the fundamentals are fresh is exactly what this cert is designed for."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "Network Technician Career Path (Cisco NetAcad)",
+      "url": "https://www.netacad.com/career-paths/network-technician",
+      "type": "Official Training",
+      "note": "~70 hours, free, and the official prep path — the best free networking curriculum from any vendor. Start here."
+    },
+    {
+      "name": "Official CCST Networking Exam Topics",
+      "url": "https://learningnetwork.cisco.com/s/ccst-networking-exam-topics",
+      "type": "Official Documentation",
+      "note": "The authoritative blueprint with free PDF. Cisco publishes no domain weights — ignore sites that invent them."
+    },
+    {
+      "name": "Cisco Packet Tracer",
+      "url": "https://www.netacad.com/cisco-packet-tracer",
+      "type": "Hands-on Labs",
+      "note": "Free network simulator, fully sufficient for CCST (and most of CCNA after it)."
+    },
+    {
+      "name": "Certiport CCST Test Drive",
+      "url": "https://certiport.pearsonvue.com/Certifications/Cisco/Certified-Support-Technician/Overview",
+      "type": "Practice Exam",
+      "note": "Free demo of the real exam interface — do it before test day."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Cisco Press – CCST Networking 100-150 Official Cert Guide",
+      "type": "Book",
+      "price": "~$40–$60",
+      "best_for": "The only Cisco-approved book — useful backup to the free path, with practice questions in the Premium Edition",
+      "affiliate_url": "https://www.amazon.com/s?k=CCST+Networking+100-150+Official+Cert+Guide&tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_ccst_networking_ocg",
+      "affiliate": true,
+      "note": "Free NetAcad first — buy this only if you want a written reference alongside."
+    },
+    {
+      "provider": "Udemy – CCST Networking courses",
+      "type": "Video Course",
+      "price": "~$15–$25 (on sale)",
+      "best_for": "Video-first learners who find NetAcad's reading-heavy format slow",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3DCCST%2520Networking%2520100-150",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_ccst_networking",
+      "affiliate": true,
+      "note": "Confirm 100-150 coverage and recent reviews before buying."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Register – Certiport or Pearson VUE",
+      "url": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/ccst-networking.html",
+      "note": "$125 flat, no voucher hunt needed. Schools buy vouchers through Certiport; individuals book via Pearson VUE (test center or online). No student discounts exist — the price is already the discount."
+    }
+  ],
+  "faq": [
+    {
+      "question": "CCST Networking or CompTIA Network+ — which first?",
+      "answer": "Different jobs for different tools. CCST is $125, gentler, and designed as the on-ramp to CCNA; Network+ is ~$400, deeper, vendor-neutral, and appears in far more job filters. If you're a student or testing the waters, CCST. If you're job hunting within six months, Network+ (or go straight at CCNA). Money-wise, CCST plus CCNA study costs less than Network+ alone."
+    },
+    {
+      "question": "Does CCST give credit toward CCNA?",
+      "answer": "No — no exam credit, no discount. The bridge is curricular: the free NetAcad path that preps CCST flows directly into the CCNA course series, so your knowledge carries forward even though nothing transfers on paper. Cisco markets it honestly as 'a first step toward CCNA,' and that's exactly what it is."
+    },
+    {
+      "question": "Do employers care about CCST?",
+      "answer": "Mostly not yet, and we won't pretend otherwise. It appears in almost no job filters — A+, Network+, and CCNA dominate that space. Recognition is growing through the high-school pipeline (state education systems are adopting it), but its value today is proof-of-readiness and momentum toward CCNA, not interview callbacks by itself."
+    },
+    {
+      "question": "Does CCST Networking expire?",
+      "answer": "If you earned it before July 15, 2025: never. On or after that date: 5 years, renewable only by passing any current CCST or higher Cisco exam — CE credits don't count at this tier. Older blog posts saying 'CCST never expires' are describing the old policy."
+    },
+    {
+      "question": "Is the exam hard?",
+      "answer": "It's the gentlest exam Cisco offers: 50 minutes, 40–50 questions, unlimited retakes, instant results. That said, it includes performance-based items, so people who only read and never touch Packet Tracer do get surprised. Do the labs and it's a fair, passable first exam."
+    },
+    {
+      "question": "What comes after CCST Networking?",
+      "answer": "CCNA — that's the entire design. CCST proves the fundamentals stuck; CCNA (200-301, $300) is the credential the job market actually recognizes. Our CCNA guide covers that road, and the Network Administrator career path shows where it leads."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "Cisco CCNA",
+      "slug": "ccna",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The destination — CCST is designed as the first step toward CCNA, and CCNA is where employers start paying attention."
+    },
+    {
+      "title": "CompTIA Network+",
+      "slug": "network-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "The vendor-neutral alternative at this tier — pricier but with far more HR-filter recognition."
+    },
+    {
+      "title": "CCST Cybersecurity",
+      "slug": "ccst-cybersecurity",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The security-flavored sibling — same $125 format, aimed at the security lane instead of networking."
+    }
+  ],
+  "seo_title": "Cisco CCST Networking (100-150) Study Guide – the $125 First Networking Cert | CertBlueprint",
+  "seo_description": "Honest CCST Networking guide: the $125 exam, free official NetAcad training, the CCST-to-CCNA bridge, the new 5-year validity rule, and when to skip it for CCNA."
+}

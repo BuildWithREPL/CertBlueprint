@@ -1,0 +1,62 @@
+{
+  "slug": "qa-engineer",
+  "role": "QA Engineer",
+  "domain": "software-engineering",
+  "specialization": "QA / Test Engineering",
+  "navigator_family": "Software Quality Assurance & Testing",
+  "tagline": "Break it before users do — test cases, bug hunts, and the automation that keeps releases safe.",
+  "what_you_do": "You make sure software actually works before it ships. Day to day you write and run test cases, reproduce bugs until you can hand a developer exact steps, do exploratory testing on new features, and re-run regression checks before every release. It's one of the more accessible software rungs: manual QA is self-study viable and doesn't require heavy coding to start. The career, though, grows through automation — Selenium, Playwright, Cypress — and toward SDET, where testing becomes an engineering discipline of its own.",
+  "day_in_life": [
+    "Run the regression checklist against last night's build and log anything that broke",
+    "Reproduce a customer-reported bug until you can write exact steps a developer can follow",
+    "Exploratory-test a new feature, probing edge cases the requirements never mentioned",
+    "Write and update test cases as the sprint's stories change underneath you",
+    "Flag a release risk in standup that nobody else has noticed yet"
+  ],
+  "entry_titles": ["QA Tester", "Manual QA Analyst", "Junior QA Engineer", "Software Test Engineer", "Quality Assurance Analyst"],
+  "work_texture": { "communication": 3, "technical_depth": 2, "troubleshooting": 3, "customer": 1, "on_call": 1, "remote": 4 },
+  "salary": {
+    "median": "$102,610",
+    "entry": "~$55,000–$70,000 to start (manual QA — industry figure, not BLS)",
+    "growth": "+15% — counted in the same fast-growing group as software developers",
+    "note": "U.S. BLS figure for Software Quality Assurance Analysts and Testers (15-1253); a median is the midpoint of everyone employed, so entry pay runs lower — the entry range here is an industry estimate, not BLS. Verify against the live BLS page before deciding."
+  },
+  "downsides": "QA is often treated as lower-status than development, and pay lags dev until you automate. Release weeks bring crunch, regression testing is genuinely repetitive, and there's steady pressure to move from manual testing into automation faster than you may feel ready for.",
+  "work_style": {
+    "fits_if": ["You instinctively poke at things to see how they break", "You like methodical, checklist-driven work with visible results", "You want a software career without starting from heavy coding"],
+    "less_ideal_if": ["You need to build features to feel satisfied — finding flaws in others' work grates on some people", "You dislike repetitive, detail-heavy tasks", "You'd rather avoid delivering critical feedback, sprint after sprint"]
+  },
+  "skills": [
+    { "name": "Testing fundamentals (test cases, test plans, coverage)", "level": "Foundational", "note": "How to turn 'does it work?' into a repeatable, reviewable process." },
+    { "name": "Bug reporting & reproduction", "level": "Foundational", "note": "Exact steps, expected vs. actual, environment — a great bug report is your calling card." },
+    { "name": "Exploratory & regression testing", "level": "Foundational" },
+    { "name": "SQL & API testing basics", "level": "Working", "note": "Check the data behind the screen; poke APIs with Postman." },
+    { "name": "Test automation (Selenium / Playwright / Cypress)", "level": "Working", "note": "The skill that moves you from tester to engineer — and raises pay." },
+    { "name": "CI/CD & version control basics", "level": "Working" },
+    { "name": "Programming (JavaScript / Python / Java)", "level": "Emerging", "note": "The SDET track — building full automation frameworks — runs on real code." }
+  ],
+  "technologies": ["Jira / Azure DevOps", "TestRail / Zephyr", "Postman", "Playwright / Cypress", "Selenium", "Git", "SQL", "Chrome DevTools"],
+  "certs": [
+    { "title": "ISTQB Certified Tester Foundation Level", "slug": "istqb-ctfl", "vendor_slug": "istqb", "stage": "Optional signal", "reason": "The one QA credential hiring managers recognize worldwide — lifetime validity, and it formalizes the vocabulary of the craft." }
+  ],
+  "cert_note": "Honest priority check: a public portfolio of real test plans, sharp bug reports, and one small automation project beats any QA cert on a resume. ISTQB CTFL is an optional filter-passer, not a requirement.",
+  "trial": {
+    "objective": "Do the actual job for an evening: pick a public website, try to break it methodically, and write up what you find as professional bug reports.",
+    "time": "60–90 minutes",
+    "cost": "Free",
+    "disclosure": "Just a browser and a text editor — everything stays on your machine, submit nothing, contact no one. You're practicing the write-up, not reporting real bugs."
+  },
+  "roadmap": [
+    { "stage": "1", "title": "Learn how testing works", "focus": "Test-case design, the bug lifecycle, and where QA sits in the software process — free via Test Automation University and Ministry of Testing. Practice on demo apps built to be tested." },
+    { "stage": "2", "title": "Build a public portfolio", "focus": "Write real test plans and bug reports against open-source or practice apps and put them on GitHub. This is your resume — manual QA hiring runs on demonstrated craft, not credentials. Add ISTQB CTFL if listings in your market ask for it.", "cert_slug": "istqb-ctfl" },
+    { "stage": "3", "title": "Land manual QA and learn the product", "focus": "Get in as a tester, master the domain, and quietly add SQL and API testing (Postman) — the skills that separate you from checklist-only testers." },
+    { "stage": "4", "title": "Automate", "focus": "Pick Playwright or Cypress, learn enough JavaScript or Python to be dangerous, and automate your own team's most repetitive regression checks. Pay and status both move here." },
+    { "stage": "5", "title": "Grow toward SDET", "focus": "Build test frameworks, wire tests into CI/CD, and own quality as an engineering problem — or use the coding base to branch into development outright." }
+  ],
+  "adjacent_paths": [
+    { "role": "Software Developer", "slug": "software-developer", "reason": "Automation skills turn QA into SDET and open the dev door." },
+    { "role": "IT Project Coordinator", "slug": "it-project-coordinator", "reason": "QA discipline and requirements-thinking transfer directly into coordination and BA work." }
+  ],
+  "seo_title": "QA Engineer Career Path — Skills, Roadmap & How to Start | CertBlueprint",
+  "seo_description": "Is QA Engineer the right path for you? What testing work feels like, the skills to build, a free trial, salary reality, and the road from manual QA to SDET."
+}

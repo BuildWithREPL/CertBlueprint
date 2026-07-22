@@ -1,0 +1,181 @@
+{
+  "slug": "network-administrator",
+  "role": "Network Administrator",
+  "domain": "networking",
+  "specialization": "Enterprise Networking / Network Operations",
+  "navigator_family": "Networking & Network Operations",
+  "tagline": "Keep the data moving — the routers, switches, firewalls, and Wi-Fi that connect everything.",
+  "what_you_do": "You install, configure, and maintain the network that a business runs on. Day to day you watch for outages, trace connectivity problems one hop at a time, configure switches and routers, manage IP addressing and VLANs, and keep firewalls and Wi-Fi healthy. Entry work often starts in a Network Operations Center (NOC), watching dashboards and triaging incidents before they spread.",
+  "day_in_life": [
+    "Check overnight alerts and the monitoring dashboard for anything degraded",
+    "Trace a 'the internet is slow in Building C' complaint down to a single switch port or uplink",
+    "Configure a new VLAN and update firewall rules for a team that's moving offices",
+    "Document the fix in the runbook so the next person can repeat it",
+    "Escalate a hardware failure and coordinate the swap with the vendor"
+  ],
+  "entry_titles": [
+    "NOC Technician",
+    "Network Support Specialist",
+    "Network Technician",
+    "Junior Network Engineer"
+  ],
+  "work_texture": {
+    "communication": 2,
+    "technical_depth": 3,
+    "troubleshooting": 4,
+    "customer": 2,
+    "on_call": 4,
+    "remote": 2
+  },
+  "salary": {
+    "median": "$73,340",
+    "entry": "~$40,000–$62,000 to start (NOC/junior)",
+    "growth": "Steady — the NOC is a well-known launchpad",
+    "note": "U.S. BLS figure for Computer Network Support Specialists (15-1231); a median is the midpoint of everyone employed, so entry pay runs lower. Verify against the live BLS page before deciding."
+  },
+  "downsides": "NOCs run 24/7, so nights, weekends, and on-call pages are normal early on. Alarm fatigue is real, and you can get blamed for outages outside your control. The ladder is slow without certs.",
+  "work_style": {
+    "fits_if": [
+      "You like methodical, one-thing-at-a-time troubleshooting",
+      "You're curious about what makes a network fast or slow",
+      "You're okay with shift work and being the person who fixes things"
+    ],
+    "less_ideal_if": [
+      "You want strictly 9-to-5, no on-call",
+      "You'd rather build new things than keep systems running",
+      "You want to avoid deep technical detail"
+    ]
+  },
+  "skills": [
+    {
+      "name": "TCP/IP & subnetting fundamentals",
+      "level": "Foundational",
+      "note": "The bedrock — how addresses, routes, and ports actually work."
+    },
+    {
+      "name": "Switching & VLANs",
+      "level": "Foundational"
+    },
+    {
+      "name": "Routing (static + a protocol like OSPF)",
+      "level": "Working"
+    },
+    {
+      "name": "Firewall & VPN basics",
+      "level": "Working"
+    },
+    {
+      "name": "Structured troubleshooting & packet capture",
+      "level": "Working",
+      "note": "Isolate faults tier by tier; read a Wireshark trace."
+    },
+    {
+      "name": "Monitoring & documentation",
+      "level": "Working"
+    },
+    {
+      "name": "Network automation (Python/Ansible)",
+      "level": "Emerging",
+      "note": "A force-multiplier that raises pay and mobility."
+    }
+  ],
+  "technologies": [
+    "TCP/IP",
+    "OSPF / BGP",
+    "VLANs",
+    "Wireshark",
+    "SolarWinds / PRTG",
+    "Cisco / Juniper / Arista",
+    "Palo Alto / Fortinet firewalls"
+  ],
+  "certs": [
+    {
+      "title": "Cisco CCST Networking",
+      "slug": "ccst-networking",
+      "vendor_slug": "cisco",
+      "stage": "First rung (optional)",
+      "reason": "The $125 confidence checkpoint with free official training — for students and budget starts; committed adults can go straight to Network+/CCNA."
+    },
+    {
+      "title": "CompTIA Network+",
+      "slug": "network-plus",
+      "vendor_slug": "comptia",
+      "stage": "Start here",
+      "reason": "Vendor-neutral proof of networking fundamentals — the recognized entry signal."
+    },
+    {
+      "title": "Cisco CCNA",
+      "slug": "ccna",
+      "vendor_slug": "cisco",
+      "stage": "Level up",
+      "reason": "The strong hands-on networking cert; opens more doors and pay once you have the fundamentals."
+    },
+    {
+      "title": "Juniper JNCIA-Junos",
+      "slug": "jncia-junos",
+      "vendor_slug": "juniper",
+      "stage": "Level up (alternative)",
+      "reason": "The Juniper-side equivalent of CCNA — free official training and deep-discount vouchers make it the cheapest legit routing & switching cert; strong in ISP and service-provider shops."
+    },
+    {
+      "title": "CCNP Enterprise",
+      "slug": "ccnp-enterprise",
+      "vendor_slug": "cisco",
+      "stage": "The professional tier",
+      "reason": "Where senior network roles start — ENCOR + a concentration, once CCNA-level work is second nature."
+    },
+    {
+      "title": "CCNP Automation",
+      "slug": "ccnp-automation",
+      "vendor_slug": "cisco",
+      "stage": "The automation direction",
+      "reason": "The NetDevOps professional tier — if the Python/Ansible direction from stage 4 becomes your lane, this is its credential."
+    }
+  ],
+  "trial": {
+    "objective": "See how packets actually travel and what a NOC watches all day, using commands already on your computer.",
+    "time": "60–90 minutes",
+    "cost": "Free",
+    "disclosure": "Built-in commands only; optional free Cisco Packet Tracer or Wireshark for a deeper follow-up."
+  },
+  "roadmap": [
+    {
+      "stage": "1",
+      "title": "Learn the fundamentals",
+      "focus": "TCP/IP, subnetting, switching, VLANs — free via Professor Messer / Cisco Networking Academy. Build a home lab in Packet Tracer.",
+      "cert_slug": "network-plus"
+    },
+    {
+      "stage": "2",
+      "title": "Prove networking fundamentals",
+      "focus": "Earn CompTIA Network+ to get past resume filters for NOC and network support roles.",
+      "cert_slug": "network-plus"
+    },
+    {
+      "stage": "3",
+      "title": "Go hands-on with real gear",
+      "focus": "Study Cisco CCNA — routing, OSPF, ACLs, WAN — and lab everything. This is where you become employable as a network engineer.",
+      "cert_slug": "ccna"
+    },
+    {
+      "stage": "4",
+      "title": "Specialize and go professional",
+      "focus": "Pick a direction — network security, cloud networking, or automation (Python/Ansible) — then formalize it with CCNP Enterprise (ENCOR + a concentration) when senior roles are the target.",
+      "cert_slug": "ccnp-enterprise"
+    }
+  ],
+  "adjacent_paths": [
+    {
+      "role": "SOC Analyst",
+      "slug": "soc-analyst",
+      "reason": "Networking knowledge is a direct feeder into security operations."
+    },
+    {
+      "role": "Cloud Engineer",
+      "slug": "cloud-engineer",
+      "reason": "Cloud networking is a natural next step as infrastructure moves to the cloud."
+    }
+  ],
+  "seo_title": "Network Administrator Career Path — Skills, Roadmap & Certs | CertBlueprint",
+  "seo_description": "Is Network Administrator the right IT path for you? What the work feels like, the skills to build, a free weekend trial, salary reality, and the exact certification roadmap (Network+ → CCNA → CCNP)."
+}

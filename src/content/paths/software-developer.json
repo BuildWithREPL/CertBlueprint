@@ -1,0 +1,62 @@
+{
+  "slug": "software-developer",
+  "role": "Software Developer",
+  "domain": "software-engineering",
+  "specialization": "Backend / Web Development",
+  "navigator_family": "Software & Web Development",
+  "tagline": "Build the applications and websites people actually use — and prove it with shipped work, not certificates.",
+  "what_you_do": "You write, test, debug, and ship the code behind applications and websites, usually in an agile team: pick up a ticket, understand the existing code, make a change, get it reviewed, and get it in front of users. It's creative, logical work with a visible payoff. Be clear-eyed about right now, though: the junior market is unusually tough — AI tooling is absorbing the classic junior tasks and listings skew senior — so a public GitHub with real, shipped projects matters far more than any credential. Web development is the more accessible sub-branch to start in.",
+  "day_in_life": [
+    "Pick up a ticket from the sprint board and read the surrounding code before writing a line",
+    "Reproduce a bug a user reported, then trace it down to the actual broken function",
+    "Write the fix plus a test that proves it, and open a pull request",
+    "Work through code-review comments — some picky, most fair — revise and merge",
+    "Give a standup update and flag the dependency that's going to slow this sprint down"
+  ],
+  "entry_titles": ["Junior Web Developer", "Junior Software Developer", "Associate Software Engineer", "Frontend Developer", "Software Engineer I"],
+  "work_texture": { "communication": 3, "technical_depth": 4, "troubleshooting": 3, "customer": 1, "on_call": 2, "remote": 4 },
+  "salary": {
+    "median": "$133,080",
+    "entry": "Web dev is the on-ramp: median $90,930, entry ~$48,560",
+    "growth": "+15% for the developer group — strong long-term, but junior openings are the squeezed end right now",
+    "note": "U.S. BLS figures for Software Developers (15-1252) and Web Developers (15-1254); a median is the midpoint of everyone employed, so entry pay runs far lower — especially in today's tight junior market. Verify against the live BLS pages before deciding."
+  },
+  "downsides": "This is the toughest entry market in tech right now: AI is absorbing junior-level tasks and listings skew senior, so breaking in takes longer than the bootcamp ads admit. Interviews often hinge on leetcode-style puzzles that feel disconnected from the job. Imposter syndrome is near-universal, and the learning never stops.",
+  "work_style": {
+    "fits_if": ["You love building something and watching it work", "You can stay stuck on a problem for an hour and enjoy the moment it cracks", "You're a relentless self-teacher — this field reinvents its tools constantly"],
+    "less_ideal_if": ["You want a cert ladder where a credential reliably gets you the job", "You get discouraged by rejection — the current junior market demands persistence", "You'd rather follow fixed procedures than reason through ambiguity"]
+  },
+  "skills": [
+    { "name": "Programming fundamentals (one language deeply)", "level": "Foundational", "note": "Variables, functions, data structures, control flow — in JavaScript or Python first, not five languages shallowly." },
+    { "name": "How the web works (HTML/CSS/HTTP)", "level": "Foundational" },
+    { "name": "Git & version control", "level": "Foundational", "note": "Non-negotiable — every team runs on it, and your GitHub is your portfolio." },
+    { "name": "Debugging & reading error messages", "level": "Working", "note": "Half the job is figuring out why code doesn't work — yours or someone else's." },
+    { "name": "Testing & code-review habits", "level": "Working" },
+    { "name": "Databases & APIs (SQL, REST)", "level": "Working" },
+    { "name": "Cloud deployment & CI/CD", "level": "Emerging", "note": "Shipping to a real URL is what separates a project from an exercise." }
+  ],
+  "technologies": ["JavaScript / TypeScript", "Python", "Git / GitHub", "React / Node.js", "SQL (PostgreSQL)", "REST APIs", "Docker", "VS Code"],
+  "certs": [
+    { "title": "AWS Developer Associate", "slug": "aws-developer-associate", "vendor_slug": "aws", "stage": "Optional", "reason": "Only if you lean cloud-dev — proves you can build ON cloud platforms; never a substitute for a portfolio." }
+  ],
+  "cert_note": "Certifications matter less here than anywhere else in IT. No cert gates software development — hiring managers check your GitHub, not your credentials, and a public repo of real, shipped projects is the currency. Treat any cert as a late optional add-on, never as the plan.",
+  "trial": {
+    "objective": "Live the core loop of the job: build a small web page from scratch, break it on purpose, and debug it with your browser's developer tools.",
+    "time": "60–90 minutes",
+    "cost": "Free",
+    "disclosure": "Fully local — a plain text editor and the browser already on your computer; nothing installed or transmitted."
+  },
+  "roadmap": [
+    { "stage": "1", "title": "Learn to code for real", "focus": "Pick one free structured path — The Odin Project or freeCodeCamp — and go deep: HTML/CSS/JavaScript, then one backend language. Build tiny things constantly; watching tutorials is not learning." },
+    { "stage": "2", "title": "Ship a public portfolio", "focus": "Build 3–4 real projects that solve actual problems, deploy them to live URLs, and put the code on GitHub with honest READMEs. This is the currency of the field — nothing else substitutes." },
+    { "stage": "3", "title": "Work like a professional", "focus": "Learn the team toolchain: Git branching, tests, pull requests, code review. Contribute to an open-source project — it's real collaboration experience you can point to." },
+    { "stage": "4", "title": "Run the interview gauntlet", "focus": "Practice data-structure and algorithm problems — leetcode gatekeeping is real even when it's unfair — and apply broadly, including web dev, QA, and support-engineering roles as legitimate on-ramps." },
+    { "stage": "5", "title": "Optional: lean into cloud", "focus": "If your projects pull you toward backend and AWS, the Developer Associate cert can round out the picture — after the portfolio exists, never instead of it.", "cert_slug": "aws-developer-associate" }
+  ],
+  "adjacent_paths": [
+    { "role": "QA Engineer", "slug": "qa-engineer", "reason": "A more accessible on-ramp into the same software world." },
+    { "role": "Data Analyst", "slug": "data-analyst", "reason": "A data-leaning alternative if you like logic more than product-building." }
+  ],
+  "seo_title": "Software Developer Career Path — Portfolio-First Roadmap | CertBlueprint",
+  "seo_description": "Is software development right for you? The honest junior-market reality, a portfolio-first roadmap, salary data, a free trial build, and why no cert gates dev."
+}

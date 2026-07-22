@@ -1,0 +1,13 @@
+{
+  "specializations": [
+    "Enterprise Networking",
+    "Network Operations (NOC)",
+    "Network Security",
+    "Wireless & Mobility",
+    "SD-WAN & Edge"
+  ],
+  "one_liner": "Moving data reliably and securely between systems, sites, and users.",
+  "order": 1,
+  "slug": "networking",
+  "title": "Networking & Connectivity"
+}

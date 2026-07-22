@@ -1,0 +1,138 @@
+{
+  "title": "ISC2",
+  "slug": "isc2",
+  "overview": "ISC2 (the International Information System Security Certification Consortium) is the body behind the CISSP — the most-cited certification in U.S. security job postings and the closest thing cybersecurity has to a senior standard. Its ladder runs from the entry-level CC (Certified in Cybersecurity) through SSCP for hands-on practitioners, up to CISSP and the cloud-focused CCSP. ISC2 credentials are experience-gated by design: they certify practitioners, not students, which is exactly why employers trust them.",
+  "why_vendor_matters": "ISC2 matters because the CISSP functions as a hard screen for senior security work: security-manager, architect, and CISO-track postings list it by name, and it's DoD 8140-approved, making it a formal requirement across government and defense hiring. Salary surveys consistently place CISSP holders in the $130K–$165K band — among the highest of any certification tracked. The credibility comes from the gate: five years of paid, verified experience plus peer endorsement is part of the certification itself, so the letters can't be studied into existence.\n\nThat gate is also what beginners need to understand honestly. CISSP is not an entry cert, and chasing it first is the classic newcomer mistake. ISC2's own answer is two-fold: the CC (Certified in Cybersecurity) gives newcomers a legitimate first credential — though note the famous free-exam program (One Million Certified in Cybersecurity) closed to new enrollment in May 2026, so the exam now runs $199, and anyone who passes the CISSP exam without the years becomes an Associate of ISC2 with six years to earn them. The honest road for most people runs through Security+ and real IT work first — then CISSP when the experience clock says so, not before.",
+  "certification_tracks": [
+    {
+      "name": "Entry",
+      "level": "Foundation",
+      "description": "CC (Certified in Cybersecurity) — ISC2's entry credential. Basic security concepts, no experience required. The free One Million Certified program closed in May 2026; the exam now runs $199 plus $50/yr maintenance. A resume line, not a job ticket."
+    },
+    {
+      "name": "Practitioner",
+      "level": "Intermediate",
+      "description": "SSCP (Systems Security Certified Practitioner) — hands-on security operations for admins and analysts with about a year of experience. Respectable but overshadowed by Security+ and CySA+ in hiring volume."
+    },
+    {
+      "name": "Professional",
+      "level": "Advanced",
+      "description": "CISSP — the flagship. Five years of experience in 2+ of 8 domains, peer endorsement, and the broadest recognition of any security cert. The senior standard for security leadership."
+    },
+    {
+      "name": "Cloud",
+      "level": "Advanced",
+      "description": "CCSP (Certified Cloud Security Professional) — CISSP's cloud-focused sibling for architects and engineers securing cloud environments. CISSP experience counts toward it, and one annual fee covers both."
+    }
+  ],
+  "featured_certs": ["cissp"],
+  "who_its_for": [
+    {
+      "role": "Experienced IT pros stepping toward security leadership",
+      "detail": "Five-plus years in sysadmin, networking, or SOC work counts toward more CISSP domains than you'd think. If security-manager or architect roles are the goal, CISSP is the credential those postings actually name."
+    },
+    {
+      "role": "Military and government-adjacent professionals",
+      "detail": "CISSP is DoD 8140-approved and a de facto requirement across federal and defense-contractor security roles. For veterans, COOL programs and the GI Bill both cover it — and clearance plus CISSP is a genuinely strong combination."
+    },
+    {
+      "role": "Mid-career SOC and security analysts",
+      "detail": "When you've done the analyst years and want the next tier, CISSP converts your accumulated experience into the credential that unlocks senior postings. The exam's manager mindset is the actual promotion skill."
+    },
+    {
+      "role": "Complete beginners — with a caveat",
+      "detail": "The CC is a legitimate first credential, but at $199 (the free program closed in May 2026) it competes with Security+ for the same dollars — and Security+ carries more hiring weight. The honest beginner road is Security+ plus real IT experience; ISC2's senior certs come later, when the experience gate opens."
+    }
+  ],
+  "career_salary_impact": [
+    "Be clear-eyed about what the numbers mean. CISSP holders show up in surveys at $130K–$165K, and the ISC2 workforce study reports a ~$150K U.S. median for cyber professionals — but the cert requires five years of experience, so those figures describe the seniority of the people allowed to hold it, not a raise the letters confer. A CISSP won't triple an entry salary, and it can't be earned at entry anyway.",
+    "Where it demonstrably moves money is eligibility: security-manager, architect, and CISO-track postings that list CISSP as required simply don't interview without it, and DoD 8140 approval makes it a hard gate in government and defense work. It's also the most employer-reimbursed security cert going — if you're employed in IT, ask about funding before self-paying the $749 exam and $135 annual fee."
+  ],
+  "study_difficulty": [
+    {
+      "cert": "CISSP",
+      "difficulty": "Hard",
+      "time": "3–6 months part-time (for experienced professionals)",
+      "detail": "The difficulty isn't trivia — it's breadth (eight domains) plus the adaptive CAT format and 'least wrong of four defensible answers' phrasing. The killer skill is answering as the risk-managing manager rather than the engineer. Nearly everyone walks out convinced they failed; most of them passed."
+    }
+  ],
+  "available_guides": [
+    {
+      "title": "ISC2 CISSP Study Guide",
+      "level": "Advanced",
+      "description": "The senior security credential — the 5-year experience gate (and Associate path), CAT exam format, endorsement process, and the study stack that actually works.",
+      "slug": "cissp",
+      "vendor_slug": "isc2",
+      "featured": true
+    }
+  ],
+  "more_certs": [
+    {
+      "title": "CC (Certified in Cybersecurity)",
+      "level": "Foundation",
+      "description": "ISC2's genuine entry credential. The famous free-exam program closed to new enrollment in May 2026 — the exam now costs $199 plus a $50/yr fee. At that price, weigh it against putting the money toward Security+ instead."
+    },
+    {
+      "title": "SSCP (Systems Security Certified Practitioner)",
+      "level": "Intermediate",
+      "description": "Hands-on security operations for practitioners with about a year of experience. Solid content, but Security+ and CySA+ dominate the same hiring space with more posting volume."
+    },
+    {
+      "title": "CCSP (Certified Cloud Security Professional)",
+      "level": "Advanced",
+      "description": "Cloud security architecture, operations, and compliance at the CISSP tier. The natural add-on for CISSPs in cloud-heavy shops — and one annual fee covers every ISC2 cert you hold."
+    },
+    {
+      "title": "CSSLP (Certified Secure Software Lifecycle Professional)",
+      "level": "Advanced",
+      "description": "Security across the software development lifecycle — a niche but respected credential for AppSec and DevSecOps leaders in software organizations."
+    }
+  ],
+  "related_paths": [
+    {
+      "title": "SOC Analyst",
+      "href": "/paths/soc-analyst/",
+      "description": "The career path where CISSP sits at the summit — see the honest road from first IT rung through Security+ and CySA+ to the senior tier."
+    },
+    {
+      "title": "CompTIA",
+      "href": "/vendors/comptia/",
+      "description": "Security+ is the baseline security cert on the road to CISSP — and historically a waiver credential for a year of its experience requirement (verify against ISC2's current list)."
+    },
+    {
+      "title": "ISACA",
+      "href": "/vendors/isaca/",
+      "description": "The governance-side counterpart — CISM covers security management where CISSP covers technical-leadership breadth; senior postings often accept either."
+    }
+  ],
+  "cta": {
+    "heading": "Ready for the CISSP road?",
+    "blurb": "It's the senior security credential — experience-gated, endorsement-verified, and named in the postings that matter. Our guide covers the eligibility math, the CAT exam, and the self-study stack passers actually use.",
+    "href": "/vendors/isc2/cissp/",
+    "label": "Read the CISSP guide"
+  },
+  "faq": [
+    {
+      "question": "Is CISSP worth it without 5 years of experience?",
+      "answer": "You can pass the exam early and become an Associate of ISC2 — a legitimate status with six years to earn the experience — but the letters themselves wait for the endorsement. If you're at the start of your career, Security+ plus real IT work moves you further faster; CISSP is the destination credential, not the starting one."
+    },
+    {
+      "question": "What's the cheapest legitimate way into an ISC2 credential?",
+      "answer": "It used to be the CC (Certified in Cybersecurity) — ISC2's One Million Certified in Cybersecurity program offered free exam attempts for years, but it closed to new enrollment in May 2026. The CC now costs $199 plus a $50/yr maintenance fee. It's still a real credential, but at that price, most beginners get more hiring value putting the money toward Security+ — and CertBlueprint's free path guides cover the honest sequence."
+    },
+    {
+      "question": "How much does CISSP cost all-in?",
+      "answer": "$749 for the exam (Pearson VUE test centers only — no online proctoring), then $135/year annual maintenance plus 120 CPE credits per 3-year cycle. The optional Peace of Mind bundle ($998) buys two attempts. One AMF covers all your ISC2 certs, so adding CCSP later doesn't double the fee."
+    },
+    {
+      "question": "CISSP vs CISM — which does my career need?",
+      "answer": "CISSP for technical-leadership breadth (architect, senior engineer, security leadership with technical depth); CISM for security management and governance (security manager, GRC, CISO-track). Postings often list them interchangeably, and holding CISSP waives two years of CISM's general experience requirement — many senior leaders eventually hold both."
+    },
+    {
+      "question": "Does passing the exam make me a CISSP?",
+      "answer": "No — and this catches people. After passing you have nine months to complete endorsement: an ISC2-certified professional attests to your five years of experience, applications get randomly audited, and only after approval (and your first AMF) can you use the letters. Using 'CISSP' before that is a code-of-ethics violation."
+    }
+  ],
+  "seo_title": "ISC2 Certifications – CISSP Study Guide and the Honest Road | CertBlueprint",
+  "seo_description": "ISC2 certification guides: CISSP requirements and study plan, the Associate path if you lack the years, the CC entry cert, and honest advice on when each is worth it."
+}

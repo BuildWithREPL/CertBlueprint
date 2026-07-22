@@ -1,0 +1,63 @@
+{
+  "slug": "cloud-engineer",
+  "role": "Cloud Engineer",
+  "domain": "cloud-platform",
+  "specialization": "Cloud & Platform Engineering",
+  "navigator_family": "Cloud & DevOps Engineering",
+  "tagline": "Build and automate the infrastructure software runs on in the cloud — provision with code, ship reliably.",
+  "what_you_do": "You design, provision, and automate cloud infrastructure — spinning up networks, servers, and services with code instead of by hand, wiring up deployment pipelines, and keeping production healthy. It's powerful, in-demand work, but be honest with yourself: it's usually a second rung, not a first job. Most cloud engineers arrive from a support, systems, networking, or development background, then add cloud on top. This roadmap treats it as a destination and shows the on-ramp.",
+  "day_in_life": [
+    "Write Terraform to provision a new environment instead of clicking through a console",
+    "Debug why a deployment pipeline failed and fix the automation so it can't happen again",
+    "Right-size resources to cut the monthly cloud bill without hurting performance",
+    "Respond to an alert that a service is degraded and trace it through logs and metrics",
+    "Review a teammate's infrastructure change before it reaches production"
+  ],
+  "entry_titles": ["Cloud Support Engineer", "Cloud Operations Engineer", "Junior DevOps Engineer", "Platform Engineer"],
+  "work_texture": { "communication": 2, "technical_depth": 4, "troubleshooting": 3, "customer": 1, "on_call": 4, "remote": 4 },
+  "salary": {
+    "median": "~$116,580",
+    "entry": "Reached via a first rung (support / sysadmin / dev), not day one",
+    "growth": "~7%+ — much faster than average",
+    "note": "No dedicated BLS code; figure approximates Computer Occupations, All Other (15-1299). Industry cloud-role averages skew higher and are self-selected. Treat as directional."
+  },
+  "downsides": "It's hard as a first job — most listings expect a prior rung plus cloud certs. DevOps/SRE work carries real on-call ('you build it, you run it'), the tool surface is sprawling, and you can be blamed for outages. Route in as a destination, not a starting point.",
+  "work_style": {
+    "fits_if": ["You love automating repetitive work so you never do it by hand again", "You're comfortable at the command line and want deep technical work", "You want highly remote-friendly work and don't mind on-call"],
+    "less_ideal_if": ["You're a complete beginner looking for a first IT job", "You want lots of face-to-face customer interaction", "You want to avoid coding and scripting"]
+  },
+  "skills": [
+    { "name": "Linux & command line", "level": "Foundational" },
+    { "name": "Networking fundamentals", "level": "Foundational", "note": "Cloud is still networking — VPCs, subnets, and routing don't disappear." },
+    { "name": "Cloud core services (compute, storage, IAM)", "level": "Working" },
+    { "name": "Scripting (Python / Bash)", "level": "Working", "note": "The automation force-multiplier at the heart of the role." },
+    { "name": "Infrastructure as Code (Terraform)", "level": "Working" },
+    { "name": "CI/CD pipelines", "level": "Working" },
+    { "name": "Containers & orchestration (Docker / Kubernetes)", "level": "Emerging" }
+  ],
+  "technologies": ["AWS / Azure / GCP", "Terraform", "Docker / Kubernetes", "Git + GitHub Actions", "Python / Bash", "Prometheus / Grafana"],
+  "certs": [
+    { "title": "Azure AZ-900 (Fundamentals)", "slug": "az-900", "vendor_slug": "microsoft", "stage": "Start here", "reason": "A cheap, never-expiring first proof of cloud literacy — great orientation." },
+    { "title": "AWS Cloud Practitioner", "slug": "aws-cloud-practitioner", "vendor_slug": "aws", "stage": "Start here (AWS)", "reason": "The AWS equivalent entry cert if your target employers are AWS shops." },
+    { "title": "Azure AZ-104 (Administrator)", "slug": "az-104", "vendor_slug": "microsoft", "stage": "Level up", "reason": "The associate-level admin cert that proves you can actually operate cloud infrastructure." },
+    { "title": "AWS Solutions Architect Associate", "slug": "aws-saa", "vendor_slug": "aws", "stage": "Level up (AWS)", "reason": "The high-signal AWS associate cert for designing real cloud systems." }
+  ],
+  "trial": {
+    "objective": "Provision real infrastructure and deploy a page — the cloud loop end to end.",
+    "time": "60–90 minutes",
+    "cost": "Free",
+    "disclosure": "Free account (email) required on a cloud free tier; a local, no-account fallback is available to feel the serve-it-yourself half."
+  },
+  "roadmap": [
+    { "stage": "0", "title": "Earn a first rung first", "focus": "Cloud is rarely a first job. Get a support, systems, networking, or dev foundation — then cloud is a promotion, not a wall.", "cert_slug": "network-plus" },
+    { "stage": "1", "title": "Get cloud-literate", "focus": "Learn Linux and cloud core concepts free on Microsoft Learn / AWS Skill Builder, then earn a fundamentals cert.", "cert_slug": "az-900" },
+    { "stage": "2", "title": "Learn to operate the cloud", "focus": "Study for an associate cert (AZ-104 or AWS SAA) and build a public infrastructure-as-code project — the real portfolio.", "cert_slug": "az-104" },
+    { "stage": "3", "title": "Automate everything", "focus": "Terraform, CI/CD, Docker, and Kubernetes. A public repo of automation is what turns a sysadmin into a cloud/platform engineer.", "cert_slug": "aws-saa" }
+  ],
+  "adjacent_paths": [
+    { "role": "Network Administrator", "slug": "network-administrator", "reason": "A common on-ramp — networking is a prerequisite that carries straight into cloud networking." },
+    { "role": "SOC Analyst", "slug": "soc-analyst", "reason": "Cloud security is a fast-growing crossover if you lean toward protection." }
+  ],
+  "seo_title": "Cloud Engineer Career Path — Skills, Roadmap & Certs | CertBlueprint",
+  "seo_description": "Is Cloud Engineer right for you? What the work feels like, why it's a second rung not a first job, a free weekend trial, salary reality, and the certification roadmap (AZ-900/AWS CP → AZ-104/AWS SAA)."
+}

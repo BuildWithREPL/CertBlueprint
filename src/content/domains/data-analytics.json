@@ -1,0 +1,12 @@
+{
+  "specializations": [
+    "Data Analytics / BI",
+    "Data Engineering",
+    "Data Warehousing",
+    "Analytics Engineering"
+  ],
+  "one_liner": "Turning raw data into stored, modeled, and analyzed information people act on.",
+  "order": 6,
+  "slug": "data-analytics",
+  "title": "Data & Analytics"
+}

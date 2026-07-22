@@ -1,0 +1,12 @@
+{
+  "specializations": [
+    "Server/OS Administration",
+    "Virtualization",
+    "Directory & Endpoint",
+    "Datacenter Operations"
+  ],
+  "one_liner": "Provisioning and running the compute, storage, OS, and identity a company depends on.",
+  "order": 3,
+  "slug": "systems-infrastructure",
+  "title": "Systems & Infrastructure"
+}

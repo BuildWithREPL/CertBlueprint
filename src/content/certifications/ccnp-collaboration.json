@@ -1,0 +1,243 @@
+{
+  "title": "Cisco CCNP Collaboration Study Guide",
+  "slug": "ccnp-collaboration",
+  "short_name": "CCNP Collaboration",
+  "vendor": "Cisco",
+  "vendor_slug": "cisco",
+  "level": "Professional",
+  "description": "CCNP Collaboration is the voice, video, and unified-communications professional track — the CLCOR v2.0 core plus one of three concentrations, refreshed heavily in February 2026 (two exams renamed, one retired, one brand-new cloud-experience option added). The honest market story: the niche is shrinking on paper and yet the phones keep ringing — because the engineers are leaving faster than the CUCM estates are.",
+  "audience": "Engineers running or inheriting Cisco collaboration estates — CUCM, Webex, voice gateways, contact-center edges — and telecom-side people formalizing UC skills. Fair warning honestly given: this is a specialist's track for a consolidating market; read the 'is this wise?' FAQ before committing a year.",
+  "why_get_it": "The contrarian economics are real: as UC migrates to SaaS, fewer engineers maintain deep CUCM/voice-gateway skills — but enormous installed bases (healthcare, government, finance, anywhere with compliance-bound telephony) still run them and will for years. Scarcity is rising faster than demand is falling, which is why recruiters chase the remaining CUCM engineers relentlessly. If you're one of the people willing to hold this ground, the leverage is genuinely good: less competition per posting than any mainstream track, every exam earns a Specialist credential, and CLCOR doubles as the CCIE Collaboration qualifying exam. The equally honest flip side: choose this because the work suits you, not for growth — the ceiling rises through migration expertise (on-prem → Webex/cloud), not through more of the same.",
+  "when_to_get_it": "When collaboration infrastructure is already your work or your confirmed next role — this track rewards estate experience more than study hours. Check your materials against the February 2026 refresh before buying anything: CLCOR moved to v2.0, CLACCM became CLACC (call control on-premises), CLCEI became CLHCT (hybrid and cloud), CLICA retired outright, and the new CLCCE cloud-customer-experience exam joined. Pre-2026 courses wear the old names and miss the new content.",
+  "salary_range": "$95,000 – $135,000 (UC/collaboration engineers)",
+  "salary_note": "No cert-specific data exists — anchor to the role: U.S. collaboration/UC engineers typically post $95–135K, with migration specialists (on-prem to Webex/Teams-adjacent architectures) and contact-center-edge engineers at the top. The scarcity dynamic is genuine — shrinking supply against a slow-draining installed base — but so is the ceiling logic: the premium roles are migration and architecture, not steady-state CUCM administration. Third-party and directional.",
+  "exam_code": "350-801 CLCOR + 1 concentration",
+  "exam_duration": "CLCOR: 120 minutes · concentration: 90 minutes",
+  "exam_format": "Two proctored exams at Pearson VUE (test center or OnVUE): the CLCOR v2.0 core plus one of three concentrations. Multiple-choice, drag-and-drop, and scenario items; counts and passing scores not published. Results in ~48 hours.",
+  "exam_questions": "Not published by Cisco",
+  "exam_structure": [
+    {
+      "code": "350-801 CLCOR v2.0",
+      "name": "Implementing Cisco Collaboration Core Technologies",
+      "role": "Core exam — required",
+      "price": "$400",
+      "note": "Bumped to v2.0 in the February 2026 refresh. Also the CCIE Collaboration qualifying exam. Earns Specialist – Collaboration Core."
+    },
+    {
+      "code": "300-815 CLACC v2.0",
+      "name": "Implementing Cisco Advanced Call Control On-Premises",
+      "role": "Concentration — choose one",
+      "price": "$300",
+      "note": "Renamed from CLACCM (old name retired Feb 2, 2026) — the deep CUCM/call-control lane for on-prem estates."
+    },
+    {
+      "code": "300-820 CLHCT v2.0",
+      "name": "Implementing Cisco Collaboration Hybrid and Cloud Technologies",
+      "role": "Concentration — choose one",
+      "price": "$300",
+      "note": "Renamed from CLCEI (old name retired Feb 2, 2026) — the hybrid/Webex lane, and the migration-skills pick."
+    },
+    {
+      "code": "300-830 CLCCE",
+      "name": "Implementing Cisco Collaboration Cloud Customer Experience",
+      "role": "Concentration — choose one",
+      "price": "$300",
+      "note": "Brand new (first test Feb 3, 2026) — the cloud contact-center/customer-experience lane; also earns its own new Collaboration Specialist certification."
+    },
+    {
+      "code": "300-810 CLICA / 300-835 CLAUTO",
+      "name": "Instant messaging & presence / Collaboration automation",
+      "role": "RETIRED",
+      "price": "—",
+      "note": "Both retired February 2, 2026. If your study plan or old course mentions them, it predates the refresh."
+    }
+  ],
+  "official_url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/collaboration/ccnp-collaboration/index.html",
+  "official_pricing_url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/collaboration/ccnp-collaboration/index.html",
+  "recertification_note": "3-year cycle, 80 CE credits on the unified ledger: CLCOR re-pass = 80 CE, concentrations = 40 each, training CE counts, excess rolls over. A second concentration next cycle is the natural renewal — CLACC then CLHCT covers both the estate you run and the migration everyone eventually asks for.",
+  "last_verified": "July 2026",
+  "skills_covered": [
+    {
+      "category": "Collaboration Core (CLCOR v2.0)",
+      "items": [
+        "Collaboration architecture: CUCM, IM&P, gateways, Webex integration",
+        "SIP at working depth — the protocol collaboration lives on",
+        "Codecs, media resources, and the quality engineering of voice/video",
+        "Dial plan fundamentals — the discipline that separates UC engineers from admins",
+        "QoS for real-time traffic: the network half of call quality"
+      ]
+    },
+    {
+      "category": "Call Control On-Premises (CLACC lane)",
+      "items": [
+        "CUCM at depth: clustering, redundancy, device mobility",
+        "Advanced dial plans: globalized design, calling privileges, transformations",
+        "Gateways and PSTN integration: MGCP, H.323 survivals, SIP trunking",
+        "SRST and remote-site survivability",
+        "The estate-keeping skills compliance-bound telephony still pays for"
+      ]
+    },
+    {
+      "category": "Hybrid, Cloud & Customer Experience (CLHCT/CLCCE lanes)",
+      "items": [
+        "Webex hybrid services and cloud registration models",
+        "Migration architecture — the single most billable skill in this niche",
+        "Edge traversal: Expressway concepts for B2B and mobile/remote access",
+        "Cloud contact-center and customer-experience platforms (CLCCE's new ground)",
+        "Where the collaboration career ceiling actually rises: moving estates, not keeping them"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Have the honest talk with yourself first",
+      "description": "Read this guide's 'is this wise?' FAQ before spending anything. The right reasons: you run (or will run) a collab estate, the work genuinely suits you, or you're building migration expertise. The wrong reason: it looked like an uncrowded shortcut — the market is uncrowded because it's consolidating, and the leverage only pays if you actually want this work."
+    },
+    {
+      "step": 2,
+      "title": "Version-check everything against the February 2026 refresh",
+      "description": "This track just had its biggest shake-up in years: CLCOR → v2.0, CLACCM → CLACC, CLCEI → CLHCT, CLICA and CLAUTO retired, CLCCE added. Any course or book wearing the old names predates the refresh — the durable content overlaps, but blueprints moved. The official CLN topic pages are the arbiters."
+    },
+    {
+      "step": 3,
+      "title": "Build the CLCOR spine on SIP and dial-plan fundamentals",
+      "description": "The core rewards protocol depth: SIP call flows you can read cold, dial-plan logic you can design rather than recite, QoS you can defend. Estate experience covers half of this; the blueprint tells you which half you still owe."
+    },
+    {
+      "step": 4,
+      "title": "Lab on dCloud — the collab lab problem is solved for you",
+      "description": "Nobody home-labs a CUCM cluster legally on a budget — and you don't need to: Cisco dCloud's guided collaboration labs (free with a Cisco.com account) carry full CUCM/IM&P/Expressway environments. It's the closest thing to estate keys without the estate."
+    },
+    {
+      "step": 5,
+      "title": "Pick the concentration by where your market is heading",
+      "description": "CLACC if your world is (and will stay) serious on-prem CUCM — healthcare, government, compliance-bound telephony. CLHCT if migrations are appearing on your horizon — it's the skills employers pay premiums for. CLCCE if the contact-center/CX edge is your lane; note it's brand-new with the thinnest prep ecosystem, and it earns its own Specialist cert."
+    },
+    {
+      "step": 6,
+      "title": "Sit CLCOR, bank the Specialist and the CCIE door",
+      "description": "$400, 120 minutes. Passing earns Specialist – Collaboration Core and qualifies you for the CCIE Collaboration lab (whose AI module arrives around August 2027, per Cisco's TBC timeline) if the expert tier is in your future."
+    },
+    {
+      "step": 7,
+      "title": "Close the concentration, then point at migrations",
+      "description": "90 minutes, $300, CCNP complete. Then the career advice this niche's veterans give: aim your next year at migration projects. Steady-state CUCM administration is the shrinking floor; moving estates to hybrid/cloud is the rising ceiling — and CLHCT's content is the bridge."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "Official CLCOR v2.0 Exam Topics (Cisco Learning Network)",
+      "url": "https://learningnetwork.cisco.com/s/clcor-exam-topics",
+      "type": "Official Documentation",
+      "note": "The v2.0 blueprint — and the arbiter of what the February 2026 refresh actually changed. Links the three concentration topic lists."
+    },
+    {
+      "name": "Cisco dCloud Collaboration Labs",
+      "url": "https://dcloud.cisco.com",
+      "type": "Hands-on Labs",
+      "note": "Free guided CUCM/IM&P/Expressway environments with any Cisco.com account — the answer to the 'nobody home-labs a CUCM cluster' problem."
+    },
+    {
+      "name": "Cisco Live On-Demand — Collaboration Sessions",
+      "url": "https://www.ciscolive.com/on-demand.html",
+      "type": "Video Sessions",
+      "note": "Free deep dives on Webex hybrid architecture and migration design — the ceiling-raising content, straight from the source."
+    },
+    {
+      "name": "Cisco Learning Network Collaboration Community",
+      "url": "https://learningnetwork.cisco.com",
+      "type": "Community",
+      "note": "A smaller, veteran crowd — the study groups where actual CUCM war stories answer your questions."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Cisco Press – CLCOR 350-801 Official Cert Guide",
+      "type": "Book",
+      "price": "~$50–$70",
+      "best_for": "The core spine text — verify the edition covers v2.0 (the current print edition targets v1.x; check Pearson's digital updates)",
+      "affiliate_url": "https://www.amazon.com/s?k=CCNP+CCIE+Collaboration+Core+CLCOR+350-801+Official+Cert+Guide&tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_clcor_ocg",
+      "affiliate": true,
+      "note": "The SIP and dial-plan chapters are the durable heart regardless of blueprint version."
+    },
+    {
+      "provider": "Cisco U. (Essentials / All Access)",
+      "type": "Official Training",
+      "price": "~$1,800/yr Essentials · ~$6,000/yr All Access (list — verify current)",
+      "best_for": "The primary structured prep post-refresh — official v2.0 paths while third-party material catches up, plus CE credits",
+      "affiliate_url": "https://u.cisco.com/",
+      "affiliate_label": "View Cisco U",
+      "affiliate_event": "ciscou_ccnp_collab",
+      "affiliate": false,
+      "note": "Plain reference link. Collab estates live inside exactly the enterprises that hold unused Learning Credits."
+    },
+    {
+      "provider": "CBT Nuggets – Collaboration Training",
+      "type": "Video Course",
+      "price": "~$59/month",
+      "best_for": "Video-first learners — verify v2.0/new-name alignment; pre-refresh CLACCM/CLCEI content persists in catalogs",
+      "affiliate_url": "https://www.cbtnuggets.com/it-training/cisco",
+      "affiliate_label": "View CBT Nuggets",
+      "affiliate_event": "cbtnuggets_ccnp_collab",
+      "affiliate": false,
+      "note": "Plain reference link."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Book via Pearson VUE ($400 core + $300 concentration)",
+      "url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/collaboration/ccnp-collaboration/index.html",
+      "note": "$700 minimum for the pair. The healthcare/government/finance shops that run big CUCM estates are prime Learning-Credit holders — ask before self-funding."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is pursuing a collaboration cert wise in 2026? The honest answer.",
+      "answer": "It's a deliberate contrarian bet, and it can be a good one. The niche is consolidating — UC keeps moving to SaaS — but the installed base (healthcare, government, finance, compliance-bound telephony) drains slowly, and the engineers are leaving faster than the estates are. Result: scarcity leverage — less competition per posting, persistent recruiter demand for the people who remain. Take the bet if the work genuinely suits you or you're building migration expertise; skip it if you're just hunting an uncrowded field, because the ceiling rises through migrations, not maintenance."
+    },
+    {
+      "question": "What changed in the February 2026 refresh?",
+      "answer": "A lot, for one track: the CLCOR core moved to v2.0; CLACCM was renamed CLACC (Advanced Call Control On-Premises) and CLCEI became CLHCT (Hybrid and Cloud Technologies), with both old names retired February 2; CLICA (IM & presence) and CLAUTO (automation) retired outright; and the brand-new CLCCE (Collaboration Cloud Customer Experience) joined, earning its own Specialist certification. Any study material wearing the old names predates all of this."
+    },
+    {
+      "question": "Which concentration should I pick?",
+      "answer": "CLACC for serious on-prem estates — the deep CUCM/call-control lane that compliance-bound telephony still runs on. CLHCT for the migration/hybrid skills that command this niche's premium — the forward-looking default. CLCCE for the cloud contact-center lane — newest, thinnest prep ecosystem, and the only one that earns an additional standalone Specialist certification."
+    },
+    {
+      "question": "How do I lab CUCM without a cluster?",
+      "answer": "You don't build one — you borrow Cisco's: dCloud's free guided collaboration labs carry full CUCM, IM&P, and Expressway environments with any Cisco.com account. It's the practical answer this track has needed for years, and it's genuinely free."
+    },
+    {
+      "question": "Where does this track lead?",
+      "answer": "Three honest directions: migration architecture (the premium lane — moving estates to hybrid/cloud), the contact-center/CX edge (CLCCE's territory, where budgets still grow), or the CCIE Collaboration lab (CLCOR qualifies you; its AI module lands ~August 2027 per Cisco's TBC timeline). The direction to avoid planning a decade around: steady-state on-prem administration alone — hold that ground by choice, not by default."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CCNP Enterprise",
+      "slug": "ccnp-enterprise",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The generalist alternative — and the QoS/network half of call quality lives in its territory anyway."
+    },
+    {
+      "title": "Cisco CCNA",
+      "slug": "ccna",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The assumed foundation — collaboration rides on networking, and CLCOR expects the fundamentals to be automatic."
+    },
+    {
+      "title": "ITIL 4 Foundation",
+      "slug": "itil-4-foundation",
+      "vendor": "PeopleCert",
+      "vendor_slug": "peoplecert",
+      "reason": "UC estates live inside service organizations — the change/incident discipline pairs naturally with estate-keeping work."
+    }
+  ],
+  "seo_title": "Cisco CCNP Collaboration Study Guide – CLCOR v2.0, the 2026 Refresh, Honest Market Read | CertBlueprint",
+  "seo_description": "Complete CCNP Collaboration guide: the Feb 2026 shake-up (renames, retirements, new CLCCE), the shrinking-niche-rising-scarcity economics told straight, and the migration-skills ceiling."
+}

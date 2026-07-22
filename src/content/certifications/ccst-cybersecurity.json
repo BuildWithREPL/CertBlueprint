@@ -1,0 +1,196 @@
+{
+  "title": "Cisco CCST Cybersecurity (100-160) Study Guide",
+  "slug": "ccst-cybersecurity",
+  "short_name": "CCST Cybersecurity",
+  "vendor": "Cisco",
+  "vendor_slug": "cisco",
+  "level": "Entry",
+  "description": "The Cisco Certified Support Technician (CCST) Cybersecurity is Cisco's $125 entry security cert — 50 minutes, no prerequisites, and backed by the most substantial free entry-level cyber curriculum from any vendor (NetAcad's 120-hour Junior Cybersecurity Analyst path). Honest framing: it's a learning checkpoint, not a job ticket.",
+  "audience": "Students and absolute beginners pivoting toward security with zero background. If you're mid-career and need a security job soon, this isn't your cert — Security+ is. This is the ground-floor option for people building from nothing on a budget.",
+  "why_get_it": "The strongest reason isn't the cert — it's the curriculum behind it. NetAcad's Junior Cybersecurity Analyst path is 120 free hours of genuinely solid security fundamentals: security principles, network security, endpoint concepts, vulnerability assessment, incident handling. The $125 exam is a confidence checkpoint that proves the material stuck. What it is not: a SOC-job credential. 'Entry-level cybersecurity job' barely exists, and the postings that do exist screen for Security+ (DoD 8140-approved — CCST is not), a degree, or experience. Take this cert with clear eyes: it's the cheapest structured start in security, and the road continues through networking fundamentals and Security+ before a SOC seat is realistic.",
+  "when_to_get_it": "When you're a student, when your school pays for it, or when you're at the very start of a self-funded pivot and want a milestone partway through the free NetAcad path. Skip it if you need a security job within a year — put the money toward Security+ instead (roughly 3× the cost, but it's the credential HR filters and government contracts actually require). And if you're drawn to security through networking, consider CCST Networking → CCNA → security instead; defenders who understand networks outperform defenders who memorized threat lists.",
+  "salary_range": "$40,000 – $58,000 (cyber-adjacent support roles)",
+  "salary_note": "The honest version: CCST Cybersecurity alone does not get you a SOC analyst job. It feeds cyber-adjacent support roles — help desk with security duties, junior technician — around $40–58K U.S. Real entry SOC roles ($45–70K) typically want Security+, CCNA Cybersecurity, a degree, or internship experience on top. This cert is mile one of that road, priced accordingly.",
+  "exam_code": "100-160",
+  "exam_duration": "50 minutes",
+  "exam_format": "40–50 questions (multiple choice plus performance-based items), via Certiport testing centers or Pearson VUE (test center or OnVUE online). Unlimited retakes, instant results. Passing score not published.",
+  "exam_questions": "40–50 questions",
+  "official_url": "https://learningnetwork.cisco.com/s/ccst-cybersecurity-exam-topics",
+  "official_pricing_url": "https://learningnetwork.cisco.com/s/ccst-cybersecurity-exam-topics",
+  "recertification_note": "Same 2025 policy change as all CCSTs: earned on/after July 15, 2025 = 5-year validity; before = lifetime. Renew only by passing any current CCST or higher Cisco exam — CE credits don't apply at this tier.",
+  "last_verified": "July 2026",
+  "skills_covered": [
+    {
+      "category": "Security Principles & Network Security (Domains 1–2)",
+      "items": [
+        "The CIA triad and core security vocabulary",
+        "Common threats: malware, phishing, social engineering",
+        "Network security basics: firewalls, VPNs, secure protocols",
+        "Authentication concepts and access control",
+        "Why defenders think in layers"
+      ]
+    },
+    {
+      "category": "Endpoint Security (Domain 3)",
+      "items": [
+        "Host-based protections: antimalware, host firewalls, hardening",
+        "Operating system security basics across Windows and Linux",
+        "Patch management and why unpatched systems get owned",
+        "Detecting suspicious behavior on an endpoint",
+        "The endpoint's place in the bigger defensive picture"
+      ]
+    },
+    {
+      "category": "Vulnerability Assessment & Incident Handling (Domains 4–5)",
+      "items": [
+        "Vulnerability management concepts and risk basics",
+        "Reading scan output without panicking",
+        "The incident response lifecycle at ground level",
+        "Escalation, documentation, and evidence handling basics",
+        "Writing up what happened so the next tier can act"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Start the free Junior Cybersecurity Analyst path",
+      "description": "NetAcad's 120-hour path is the official prep and the most substantial free entry cyber curriculum anywhere. It IS the product — the exam just certifies you finished it with understanding. Budget 2–4 months at a steady pace."
+    },
+    {
+      "step": 2,
+      "title": "Pull the official blueprint",
+      "description": "Download the 100-160 exam topics from the Cisco Learning Network. Five domains, no published weights (Cisco doesn't publish them for CCST — ignore invented percentages). Use it to track coverage as you work through the path."
+    },
+    {
+      "step": 3,
+      "title": "Add the Endpoint Security mini-course",
+      "description": "NetAcad's free 27-hour Endpoint Security course maps directly onto domain 3 and adds hands-on depth the main path treats more lightly. Free reinforcement — take it."
+    },
+    {
+      "step": 4,
+      "title": "Get free hands-on reps outside the courseware",
+      "description": "TryHackMe's free intro rooms turn the concepts into practice — and give you something concrete to mention when the cert alone doesn't impress. A beginner who can say 'here's my TryHackMe profile' beats one with only a badge."
+    },
+    {
+      "step": 5,
+      "title": "Demo the exam interface, then book",
+      "description": "Certiport's free Test Drive shows the real interface. Then book via Certiport (through schools) or Pearson VUE (test center or online). 50 minutes, instant result, unlimited retakes — deliberately low stakes."
+    },
+    {
+      "step": 6,
+      "title": "Plan the road past this cert honestly",
+      "description": "CCST Cybersecurity is mile one. The realistic sequence to a SOC seat runs through networking fundamentals (CCST Networking or Network+), then Security+ — the DoD-approved HR-filter cert — then hands-on labs and often an IT support rung. Our SOC Analyst path lays out the whole road."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "Junior Cybersecurity Analyst Path (Cisco NetAcad)",
+      "url": "https://www.netacad.com/career-paths/cybersecurity",
+      "type": "Official Training",
+      "note": "120 free hours — the most substantial free entry-level cyber curriculum from any vendor, and the official CCST prep."
+    },
+    {
+      "name": "Official CCST Cybersecurity Exam Topics",
+      "url": "https://learningnetwork.cisco.com/s/ccst-cybersecurity-exam-topics",
+      "type": "Official Documentation",
+      "note": "The authoritative five-domain blueprint with free PDF. No published weights — don't trust sites that invent them."
+    },
+    {
+      "name": "Endpoint Security Course (NetAcad)",
+      "url": "https://www.netacad.com/catalog",
+      "type": "Official Training",
+      "note": "Free 27-hour supplement mapping directly to the endpoint domain."
+    },
+    {
+      "name": "TryHackMe (free tier)",
+      "url": "https://tryhackme.com/",
+      "type": "Hands-on Labs",
+      "note": "Free intro security rooms — the practical companion that makes the concepts stick and gives you something to show."
+    },
+    {
+      "name": "Certiport CCST Test Drive",
+      "url": "https://certiport.pearsonvue.com/Certifications/Cisco/Certified-Support-Technician/Overview",
+      "type": "Practice Exam",
+      "note": "Free demo of the real exam interface."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Cisco Press – CCST Cybersecurity 100-160 Official Cert Guide",
+      "type": "Book",
+      "price": "~$40–$60",
+      "best_for": "The only Cisco-approved book; the Premium Edition adds practice exams",
+      "affiliate_url": "https://www.amazon.com/s?k=CCST+Cybersecurity+100-160+Official+Cert+Guide&tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_ccst_cyber_ocg",
+      "affiliate": true,
+      "note": "The free 120-hour path covers the material — buy this only as a written reference or for the practice questions."
+    },
+    {
+      "provider": "Udemy – CCST Cybersecurity courses",
+      "type": "Video Course",
+      "price": "~$15–$25 (on sale)",
+      "best_for": "Video-first learners supplementing the NetAcad path",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3DCCST%2520Cybersecurity%2520100-160",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_ccst_cyber",
+      "affiliate": true,
+      "note": "Verify 100-160 coverage and recent reviews — third-party prep for this exam is thinner than for Networking."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Register – Certiport or Pearson VUE",
+      "url": "https://learningnetwork.cisco.com/s/ccst-cybersecurity-exam-topics",
+      "note": "$125 flat via Certiport (schools) or Pearson VUE (individuals, test center or online). No discounts exist; the price is the pitch."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Will CCST Cybersecurity get me a SOC job?",
+      "answer": "No — and any site implying otherwise is selling you something. Entry SOC postings screen for Security+, CCNA Cybersecurity, degrees, or experience. CCST Cybersecurity is mile one: the cheapest structured start, backed by excellent free training, on a road that realistically runs through Security+ and often an IT support rung first. Our SOC Analyst career path maps the honest route."
+    },
+    {
+      "question": "CCST Cybersecurity or Security+ — which should I take?",
+      "answer": "If you need a security-relevant credential for job applications: Security+, no contest — it's DoD 8140-approved and the keyword filters search for it, at roughly 3× the price. CCST is for an earlier moment: students, tight budgets, or testing whether security genuinely pulls you before committing real money. Many people do CCST's free path first, then spend on Security+ with confidence."
+    },
+    {
+      "question": "Is this the same as CCNA Cybersecurity?",
+      "answer": "No — different tiers. CCST Cybersecurity ($125, entry) is the beginner checkpoint. CCNA Cybersecurity ($300, associate — formerly CyberOps Associate, renamed February 2026) is the SOC-focused associate cert that actually appears in some analyst postings. Cisco positions CCST as the stepping stone toward it, but no exam credit transfers."
+    },
+    {
+      "question": "Does it expire?",
+      "answer": "Earned before July 15, 2025: lifetime. On or after: 5 years, renewable only by passing any current CCST or higher Cisco exam. CE credits don't apply at this tier."
+    },
+    {
+      "question": "What's actually on the exam?",
+      "answer": "Five domains: security principles, network security concepts, endpoint security, vulnerability assessment and risk, and incident handling. 40–50 questions in 50 minutes, including performance-based items. It tests the fundamentals the 120-hour path teaches — no exotic content, no trick depth."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CompTIA Security+",
+      "slug": "security-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "The credential this road leads to — DoD-approved and the keyword security job filters actually search."
+    },
+    {
+      "title": "CCNA Cybersecurity",
+      "slug": "ccna-cybersecurity",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "Cisco's associate-tier SOC cert — the official next rung on this ladder (formerly CyberOps Associate)."
+    },
+    {
+      "title": "CCST Networking",
+      "slug": "ccst-networking",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The sibling on-ramp — defenders who understand networks outperform defenders who don't, and many take both."
+    }
+  ],
+  "seo_title": "Cisco CCST Cybersecurity (100-160) Study Guide – Honest Entry Security Cert Review | CertBlueprint",
+  "seo_description": "Honest CCST Cybersecurity guide: the $125 exam, the free 120-hour NetAcad path, why it won't get you a SOC job alone, and the realistic road through Security+."
+}

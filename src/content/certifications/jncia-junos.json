@@ -1,0 +1,239 @@
+{
+  "title": "Juniper JNCIA-Junos (JN0-106) Study Guide",
+  "slug": "jncia-junos",
+  "short_name": "JNCIA-Junos",
+  "vendor": "Juniper",
+  "vendor_slug": "juniper",
+  "level": "Associate",
+  "description": "The JNCIA-Junos is Juniper's entry networking certification — routing fundamentals, the Junos OS, and real CLI configuration — and quietly the best deal in vendor certs: Juniper's free official training path earns you a 75%-off exam voucher, putting a legitimate routing & switching credential within reach for about $50.",
+  "audience": "Aspiring network engineers and NOC techs — especially anyone targeting ISP, service-provider, carrier, or data-center shops where Junos runs the backbone. Also a smart, nearly-free second vendor cert for CCNA holders who want multi-vendor credibility. No prerequisites, though you'll want Network+-level TCP/IP basics first.",
+  "why_get_it": "Two honest reasons. First, the economics: complete Juniper's free Open Learning path, pass the assessment, and the $200 exam drops to $50 — no other respected vendor cert comes close to that entry price. Second, the engineering: the Junos configuration model (candidate configs, commit/rollback) teaches disciplined change management that many engineers consider saner than IOS, and it genuinely makes you better at networking regardless of vendor. In Junos-heavy environments — ISPs, carriers, service providers — this cert is the recognized front door, and Juniper skills carry a scarcity premium at the higher tiers precisely because fewer people hold them.",
+  "when_to_get_it": "After you have basic TCP/IP fundamentals (Network+ level, or equivalent hands-on). If you're targeting service-provider or ISP work, take it as your first vendor cert. If you're on the general enterprise track, take CCNA first for the job-posting volume, then add JNCIA-Junos as the cheap second cert that proves you're not a one-vendor engineer. It's also the shared gateway into every deeper Juniper track — JNCIS and beyond require it.",
+  "salary_range": "$54,000 – $71,000 (junior network roles)",
+  "salary_note": "Nobody publishes salary data for JNCIA specifically — an associate cert doesn't set your pay, the role does. Junior network engineer ranges run roughly $54K–$71K across major salary trackers, with BLS putting mid-career Network and Computer Systems Administrators at $96,800 median (May 2024, ~4% projected decline — openings come from replacement). Our Network Administrator path cites a lower $40–62K entry band — that's the NOC/support tier under a different BLS series; the junior market genuinely spans both. Where Juniper skills genuinely pay is upstream: JNCIS/JNCIP-level engineers in service-provider shops command a scarcity premium over equivalent Cisco tiers.",
+  "exam_code": "JN0-106",
+  "exam_duration": "90 minutes",
+  "exam_format": "65 multiple-choice questions via Pearson VUE (test center or OnVUE online proctored), based on Junos OS 21.2. Juniper doesn't publish the passing score; community reports put it around 65–70%. No lab simulations — pure multiple choice.",
+  "exam_questions": "65 questions",
+  "official_url": "https://www.juniper.net/us/en/training/certification/tracks/junos/jncia-junos.html",
+  "official_pricing_url": "https://www.pearsonvue.com/us/en/junipernetworks.html",
+  "recertification_note": "Valid 3 years. Recertify by re-passing the current exam, or — the path most people take — passing any higher-level exam in the track, which renews everything beneath it. No annual fees, no CE-credit bookkeeping.",
+  "skills_covered": [
+    {
+      "category": "Networking & Junos Fundamentals",
+      "items": [
+        "OSI and TCP/IP models, addressing, and subnetting applied",
+        "Junos OS architecture: control plane vs forwarding plane",
+        "Transit vs exception traffic",
+        "The FreeBSD-based Junos kernel and daemon model",
+        "Junos device families and where each runs"
+      ]
+    },
+    {
+      "category": "CLI, Configuration & J-Web",
+      "items": [
+        "Operational vs configuration CLI modes",
+        "The candidate configuration model: commit, commit confirmed, rollback",
+        "Configuration hierarchy, navigation, and templates",
+        "Initial device setup: users, authentication, management access",
+        "J-Web interface basics"
+      ]
+    },
+    {
+      "category": "Routing Fundamentals",
+      "items": [
+        "Routing tables, route preference, and route selection",
+        "Static routing and the routing-instance concept",
+        "Dynamic routing protocol concepts (OSPF/BGP awareness level)",
+        "Routing policy: import and export controls",
+        "Firewall filters (Junos ACLs) and their evaluation order"
+      ]
+    },
+    {
+      "category": "Operational Monitoring & Maintenance",
+      "items": [
+        "show/monitor commands and interpreting operational output",
+        "Interface configuration and troubleshooting",
+        "System logging, tracing, and core troubleshooting workflow",
+        "Software upgrades and rescue configurations",
+        "Ping, traceroute, and reachability verification in Junos"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Verify you're studying for JN0-106",
+      "description": "The exam code changed in April 2026 — JN0-106 replaced JN0-105, and plenty of course listings still say the old code. Content overlap is high, but check anything you buy or watch against the current JN0-106 objectives on Juniper's site."
+    },
+    {
+      "step": 2,
+      "title": "Enroll in Juniper Open Learning — it's free and it's the whole strategy",
+      "description": "Juniper's official self-paced JNCIA-Junos courseware is free, and completing it unlocks the Voucher Assessment Test: score 70%+ (three attempts max) and you get a 75%-off voucher, making the exam $50. There is almost no excuse to pay the full $200."
+    },
+    {
+      "step": 3,
+      "title": "Shore up TCP/IP fundamentals as needed",
+      "description": "The exam assumes you can subnet and reason about basic routing before Junos specifics. If Network+-level material is shaky, patch it now — the Junos-specific content lands much easier on solid fundamentals."
+    },
+    {
+      "step": 4,
+      "title": "Get real CLI time in Juniper vLabs",
+      "description": "vLabs is free: reserve browser-based topologies with real vMX/vSRX instances — no home lab, no licenses. Practice the loop that defines Junos: edit the candidate config, commit confirmed, verify, rollback. The exam expects genuine CLI familiarity even though it's multiple choice."
+    },
+    {
+      "step": 5,
+      "title": "Read the free Day One books",
+      "description": "Juniper's free Day One PDF library — especially 'Exploring the Junos CLI' — maps almost directly onto the exam objectives and is better written than most paid books. Free, official, and exam-relevant is a rare combination; use it."
+    },
+    {
+      "step": 6,
+      "title": "Add a structured course if you want one",
+      "description": "Open Learning plus vLabs plus Day One covers most people. If you prefer a single guided video course, the well-rated Udemy options run $15–25 on sale — just confirm JN0-106 coverage before buying."
+    },
+    {
+      "step": 7,
+      "title": "Time the voucher assessment deliberately",
+      "description": "The 75%-off voucher expires 30 days after issue with no extensions — you must schedule AND sit the exam inside that window. So finish studying first, then take the Voucher Assessment Test, then book Pearson VUE immediately. Don't burn the voucher early."
+    },
+    {
+      "step": 8,
+      "title": "Sit the exam, then plan the next rung",
+      "description": "90 minutes, 65 questions — pace is generous if you know the material. Afterward, JNCIA-Junos is rarely terminal: it gates the JNCIS tracks (Enterprise R&S, Service Provider, Security, and more), and passing a JNCIS later auto-renews this cert."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "Juniper Open Learning (Official)",
+      "url": "https://learningportal.juniper.net/juniper/user_activity_info.aspx?id=JUNIPER-OPEN-LEARNING",
+      "type": "Official Training + Voucher Program",
+      "note": "THE resource: free official JNCIA-Junos courseware, and completing it unlocks the assessment that earns your 75%-off exam voucher."
+    },
+    {
+      "name": "JNCIA-Junos Voucher Assessment Test",
+      "url": "https://learningportal.juniper.net/juniper/user_activity_info.aspx?id=EXAM-JOL-JNCIA-JUNOS",
+      "type": "Official Practice Exam",
+      "note": "Doubles as your free practice exam and your ticket to the $50 exam. 70%+ to earn the voucher, three attempts max — take it only when ready."
+    },
+    {
+      "name": "Juniper vLabs",
+      "url": "https://jlabs.juniper.net/vlabs/",
+      "type": "Hands-on Labs",
+      "note": "Free hosted lab environment with real vMX/vSRX instances in your browser. Essential for the commit/rollback CLI fluency the exam expects."
+    },
+    {
+      "name": "Juniper Day One Books",
+      "url": "https://www.juniper.net/documentation/jnbooks/us/en/day-one-books",
+      "type": "Free Ebooks",
+      "note": "Free official PDF library — 'Exploring the Junos CLI' maps almost directly onto JNCIA objectives."
+    },
+    {
+      "name": "0x2142 – JNCIA-Junos Study Resources",
+      "url": "https://0x2142.com/jncia-junos-study-resources/",
+      "type": "Community",
+      "note": "Well-maintained community roundup of free JNCIA prep. Verify anything third-party covers JN0-106, not the older codes."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Udemy – JNCIA-Junos Complete Course (video + labs)",
+      "type": "Video Course",
+      "price": "~$15–$25 (on sale)",
+      "best_for": "People who want one structured video course with hands-on labs alongside the free Open Learning path",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3DJNCIA-Junos%2520JN0-106",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_jncia_course",
+      "affiliate": true,
+      "note": "Check the course page confirms JN0-106 coverage — many listings still reference JN0-105."
+    },
+    {
+      "provider": "Udemy – JNCIA-Junos Practice Test Bundles",
+      "type": "Practice Exams",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Extra question volume after the free official Voucher Assessment Test — note Boson and Pocket Prep don't cover Juniper",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3DJNCIA-Junos%2520practice%2520exams",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_jncia_practice",
+      "affiliate": true,
+      "note": "Quality varies by author — read recent reviews and confirm JN0-106 alignment."
+    },
+    {
+      "provider": "INE Networking Subscription (JNCIA-Junos path)",
+      "type": "Video Training Subscription",
+      "price": "~$39+/month",
+      "best_for": "Only if you'll continue up the Juniper or multi-vendor ladder — overkill for JNCIA alone given Open Learning is free",
+      "affiliate_url": "https://ine.com/",
+      "affiliate_label": "View INE",
+      "affiliate_event": "ine_jncia_path",
+      "affiliate": false,
+      "note": "Plain reference link, no commission. The free official stack covers JNCIA fine; INE earns its keep at JNCIS+."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Earn the 75%-off voucher via Juniper Open Learning",
+      "url": "https://learningportal.juniper.net/juniper/user_activity_info.aspx?id=JUNIPER-OPEN-LEARNING",
+      "note": "The headline deal in all of IT certs: free official training → pass the assessment at 70%+ → 75% off at Pearson VUE, making the $200 exam $50. Voucher lasts 30 days from issue with no extensions — earn it only when you're ready to book."
+    },
+    {
+      "label": "Register at Pearson VUE (full price $200)",
+      "url": "https://www.pearsonvue.com/us/en/junipernetworks.html",
+      "note": "Test center or OnVUE online proctored. Only pay full price if you've somehow skipped the Open Learning voucher — don't."
+    }
+  ],
+  "faq": [
+    {
+      "question": "JNCIA-Junos or CCNA — which should I get first?",
+      "answer": "Honestly: CCNA for general employability — it appears in vastly more U.S. job postings and is stronger HR-filter currency. Pick JNCIA-Junos first if you're targeting an ISP, carrier, or service-provider shop where Junos dominates. And for CCNA holders, JNCIA is the obvious second cert: nearly free via the voucher, fast, and it proves you're not a one-vendor engineer."
+    },
+    {
+      "question": "Is the exam really only $50?",
+      "answer": "Effectively, yes — if you use the system as designed. Juniper Open Learning's official courseware is free; complete it, score 70%+ on the Voucher Assessment Test (three attempts max), and you receive a 75%-off Pearson VUE voucher, turning $200 into $50. The catch: the voucher expires 30 days after issue, so don't take the assessment until you're genuinely ready to book and sit the exam."
+    },
+    {
+      "question": "Did the exam code change?",
+      "answer": "Yes — JN0-106 went live April 5, 2026, replacing JN0-105. Existing JN0-105 certs stay valid for their full 3-year term. Watch for stale study material: plenty of popular courses still say JN0-105 in the title. Content overlap is high, but verify against the current objectives."
+    },
+    {
+      "question": "Is JNCIA-Junos easier than CCNA?",
+      "answer": "Generally yes — it's shorter (65 questions, 90 minutes), pure multiple choice with no lab sims, and more focused in scope. That's also its honest weakness: it's passable by memorization, which is exactly why hiring managers weight hands-on stories (vLabs, home lab, real tickets) over the paper. Do the labs anyway; the commit/rollback workflow is the actual career value."
+    },
+    {
+      "question": "What's the deal with Juniper and HPE?",
+      "answer": "HPE's acquisition of Juniper closed in mid-2025, and pages now brand as 'HPE Juniper Networking.' The certification program continues unchanged so far, but it's fair to watch for program shifts — one more reason JNCIA works better as part of a multi-vendor foundation than as a single-track bet."
+    },
+    {
+      "question": "Does JNCIA-Junos expire?",
+      "answer": "Valid for three years. Most people never re-take it — passing any higher-level Juniper exam (like a JNCIS) automatically renews everything beneath it, including your associate certs in other Juniper tracks. No annual fees, no CE-credit paperwork."
+    },
+    {
+      "question": "What comes after JNCIA-Junos?",
+      "answer": "It's the shared gateway to Juniper's specialist tier: JNCIS-ENT (enterprise routing & switching), JNCIS-SP (service provider), and the security, data center, and automation tracks — then JNCIP and ultimately the JNCIE lab exams. If you're following the route/switch road, JNCIS-ENT is the natural next rung."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "Cisco CCNA",
+      "slug": "ccna",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The other side of the same coin — more job-posting volume, more expensive. Many network engineers hold both; the concepts transfer directly."
+    },
+    {
+      "title": "CompTIA Network+",
+      "slug": "network-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "The vendor-neutral foundation — build the TCP/IP fundamentals here first, then JNCIA's Junos-specific material lands easily."
+    },
+    {
+      "title": "CCNA Automation",
+      "slug": "ccna-automation",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "Where routing & switching careers are heading — Juniper has a parallel automation track, and Junos was built API-first long before it was fashionable."
+    }
+  ],
+  "seo_title": "Juniper JNCIA-Junos JN0-106 Study Guide – the $50 Networking Cert | CertBlueprint",
+  "seo_description": "Complete JNCIA-Junos (JN0-106) guide: the free Open Learning path and 75%-off voucher, vLabs practice, honest JNCIA vs CCNA advice, exam details, and the Juniper track roadmap."
+}

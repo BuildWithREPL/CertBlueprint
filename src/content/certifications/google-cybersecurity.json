@@ -1,0 +1,236 @@
+{
+  "title": "Google Cybersecurity Certificate Guide",
+  "slug": "google-cybersecurity",
+  "short_name": "Google Cybersecurity",
+  "vendor": "Google",
+  "vendor_slug": "google",
+  "level": "Foundation",
+  "description": "The Google Cybersecurity Professional Certificate is a nine-course, beginner-from-zero program on Coursera covering security foundations, networks, Linux, SQL, Python, and detection & response — with hands-on portfolio activities instead of a proctored exam. Its most valuable perk is concrete: completers get 30% off the CompTIA Security+ exam.",
+  "audience": "Complete beginners testing whether security work actually suits them, and career changers who want a structured, brand-name curriculum before committing to a proctored cert. No degree, no prior IT experience required — genuinely zero-to-basics.",
+  "why_get_it": "Three honest reasons. First, it's the cheapest structured way to find out if you like security work — about $49–150 total if you keep pace, versus committing $439 to a Security+ voucher on day one. Second, the curriculum is legitimately good for the price: real Linux command line, real SQL, Python scripting, NIST frameworks, and SIEM concepts, not just vocabulary videos. Third, the Security+ bridge: completers get 30% off the Security+ exam (about $130 saved), which effectively makes this program near-free if you were headed to Security+ anyway — and you should be, because that's the credential HR filters actually search for.",
+  "when_to_get_it": "At the very start of a security-curious career switch, before spending real money on proctored exams. Take it, build the portfolio pieces, then use the discount to sit Security+. Skip it if you already work in IT with security exposure — you'd be paying for material you know, and your money goes further at Security+ directly. And know what it is: preparation and proof of initiative, not a job ticket — security hiring in 2026 still expects Security+, hands-on labs, and often a help-desk or IT rung first.",
+  "salary_range": "$45,000 – $70,000 (entry SOC roles)",
+  "salary_note": "Google advertises a $120K+ median for the field — that's marketing covering 0–5 years of experience. Entry reality: ZipRecruiter (2026) puts entry-level SOC analysts at ~$58K average, with the bulk between $40K and $62.5K. BLS's $124,910 median for Information Security Analysts (May 2024) reflects experienced analysts, not first seats. Expect $45–70K for a first SOC role in most U.S. metros, and treat anything above that as market- and background-dependent.",
+  "exam_code": "Coursera Certificate",
+  "exam_duration": "Self-paced — Google says 3–6 months at 5–10 hrs/week; ~133 hours of content, so steady learners finish in 2–3 months (IT-experienced people in weeks)",
+  "exam_format": "No proctored exam. Nine self-paced Coursera courses with auto-graded quizzes and hands-on portfolio activities: Linux command line, SQL queries, Python scripts, an incident report, and a NIST CSF-based audit.",
+  "exam_questions": "No final exam — graded quizzes and practical activities throughout",
+  "official_url": "https://grow.google/certificates/cybersecurity/",
+  "official_pricing_url": "https://www.coursera.org/professional-certificates/google-cybersecurity",
+  "recertification_note": "Never expires — it's a course-completion certificate (Credly badge included), not an exam credential with a renewal cycle. That permanence is also why employers read it as training evidence rather than tested competency.",
+  "skills_covered": [
+    {
+      "category": "Security Foundations & Risk (Courses 1–2)",
+      "items": [
+        "Core security concepts, the CIA triad, and common attack types",
+        "Security frameworks: NIST CSF, NIST RMF, CIA-aligned controls",
+        "Risk management concepts and security audits",
+        "The eight CISSP-style security domains as a map of the field",
+        "Ethics and the day-to-day of entry security work"
+      ]
+    },
+    {
+      "category": "Networks, Linux & SQL (Courses 3–4)",
+      "items": [
+        "Network architecture, TCP/IP, and common network attacks",
+        "Hardening: firewalls, VPNs, IDS/IPS concepts",
+        "Linux command line: navigation, permissions, user management",
+        "SQL queries for filtering security-relevant data",
+        "Hands-on labs in a real Linux environment"
+      ]
+    },
+    {
+      "category": "Threats, Detection & Response (Courses 5–6)",
+      "items": [
+        "Asset classification and vulnerability management basics",
+        "Threat types, attack vectors, and the attacker mindset",
+        "Incident response lifecycle and escalation",
+        "SIEM tools and log analysis fundamentals",
+        "Writing an incident report that a manager can act on"
+      ]
+    },
+    {
+      "category": "Automation & Job Readiness (Courses 7–9)",
+      "items": [
+        "Python fundamentals for security automation",
+        "Writing scripts to automate repetitive security tasks",
+        "Building the portfolio pieces the program produces",
+        "Resume framing, interview prep, and the AI job-search course",
+        "Preparing for the Security+ exam path after completion"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Audit course one free before paying",
+      "description": "Every course can be audited free (videos and readings, no graded labs). Audit 'Foundations of Cybersecurity' first — if the material doesn't pull you in, you've spent nothing finding out. If money is tight, apply for Coursera financial aid (~15-day review, covers everything)."
+    },
+    {
+      "step": 2,
+      "title": "Start the 7-day trial with a schedule already set",
+      "description": "It's $49/month after the trial, so pace is literally money. Block 10 hours a week before you subscribe — at that pace the ~133 hours of content lands in about 3 months (~$150). Drifting to 6 months doubles the cost for the same certificate."
+    },
+    {
+      "step": 3,
+      "title": "Treat the Linux and SQL course as the main event",
+      "description": "Course 4 (Tools of the Trade) is where the durable skills live. Don't quiz-skim it — the command-line and SQL fluency you build here is what interviews probe and what Security+ and real SOC work assume."
+    },
+    {
+      "step": 4,
+      "title": "Do every portfolio activity for real",
+      "description": "The incident report, the NIST-based audit, the Python scripts — these are the actual product of the program, because the certificate alone certifies exposure, not skill. Polish them into a portfolio you can walk through in an interview."
+    },
+    {
+      "step": 5,
+      "title": "Add hands-on labs the quizzes can't give you",
+      "description": "Run TryHackMe's free SOC-track rooms alongside the later courses. 'Here's my TryHackMe profile' lands better with interviewers than any completion badge — the multiple-choice assessments in this program are easy, and hiring managers know it."
+    },
+    {
+      "step": 6,
+      "title": "Claim the Security+ discount immediately on finishing",
+      "description": "Completion unlocks 30% off the Security+ exam — about $307 instead of $439. That discount is the program's single most valuable perk; watch for the offer email and don't let it lapse. Passing both also earns a dual-credential Credly badge."
+    },
+    {
+      "step": 7,
+      "title": "Roll straight into Security+ prep",
+      "description": "Professor Messer's free SY0-701 series plus a $20 practice-exam bank is the standard path. The Google cert gave you vocabulary and context; Security+ is the credential job filters actually require — the two are complements, not substitutes."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "Coursera Audit Mode + Financial Aid",
+      "url": "https://www.coursera.org/professional-certificates/google-cybersecurity",
+      "type": "Official Course Access",
+      "note": "Audit any course free (no graded work), or apply for per-course financial aid — approved applicants get the full program at no cost."
+    },
+    {
+      "name": "Professor Messer – Security+ SY0-701 Course",
+      "url": "https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/",
+      "type": "Video Course",
+      "note": "The standard free prep for the Security+ exam this certificate discounts — your next step after completing."
+    },
+    {
+      "name": "TryHackMe (free tier)",
+      "url": "https://tryhackme.com/",
+      "type": "Hands-on Labs",
+      "note": "Free blue-team rooms that prove the practical skills this program's quizzes can't. The portfolio companion this cert needs."
+    },
+    {
+      "name": "Cisco NetAcad – Introduction to Cybersecurity",
+      "url": "https://www.netacad.com/courses/introduction-to-cybersecurity",
+      "type": "Free Course",
+      "note": "Free intro course with a Credly badge — a useful second signal from a networking-credible brand."
+    },
+    {
+      "name": "CISA Learning",
+      "url": "https://learning.cisa.gov/",
+      "type": "Free Training",
+      "note": "Free U.S. government cybersecurity training, including SOC-relevant material — free for everyone."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Coursera – the certificate itself",
+      "type": "Subscription",
+      "price": "$49/month after 7-day trial (~$100–300 total)",
+      "best_for": "The cheapest structured zero-to-basics security curriculum from a brand-name company",
+      "affiliate_url": "https://www.coursera.org/professional-certificates/google-cybersecurity",
+      "affiliate_label": "View on Coursera",
+      "affiliate_event": "coursera_google_cyber",
+      "affiliate": false,
+      "note": "Plain reference link, no commission. Finish fast — the meter runs monthly."
+    },
+    {
+      "provider": "CompTIA Security+ voucher (with completer discount)",
+      "type": "Certification Exam",
+      "price": "~$307 with the 30% discount ($439 retail as of 2026)",
+      "best_for": "The credential HR filters and DoD 8140 roles actually require — this discount is the program's best perk",
+      "affiliate_url": "https://www.comptia.org/en-us/certifications/security/",
+      "affiliate_label": "View Security+",
+      "affiliate_event": "comptia_secplus_via_google",
+      "affiliate": false,
+      "note": "Claim the discount right after completing — see our full Security+ guide for the study plan."
+    },
+    {
+      "provider": "Udemy – Security+ practice exams (Dion Training)",
+      "type": "Practice Exams",
+      "price": "~$15–$25 (on sale)",
+      "best_for": "Checking Security+ readiness before spending $300+ on the voucher",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3DSecurity%252B%2520SY0-701%2520practice%2520exams%2520Dion",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_secplus_practice_via_google",
+      "affiliate": true,
+      "note": "Buy on Udemy's routine sales; aim for consistent 85%+ before booking."
+    },
+    {
+      "provider": "TryHackMe Premium",
+      "type": "Hands-on Labs",
+      "price": "~$14/month",
+      "best_for": "The SOC Level 1 path — guided SIEM and triage practice that gives you real stories for interviews",
+      "affiliate_url": "https://tryhackme.com/",
+      "affiliate_label": "View TryHackMe",
+      "affiliate_event": "tryhackme_via_google_cyber",
+      "affiliate": false,
+      "note": "Plain reference link. The free tier is plenty to start; upgrade only when you've exhausted it."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Enroll – Google Cybersecurity on Coursera",
+      "url": "https://www.coursera.org/professional-certificates/google-cybersecurity",
+      "note": "No exam voucher exists — this is a Coursera subscription (~$49/month U.S. after a 7-day free trial). Financial aid can waive the cost entirely. The voucher that matters comes at the END: 30% off CompTIA Security+ for completers."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Will the Google Cybersecurity Certificate get me a SOC job by itself?",
+      "answer": "Rarely, and we'd rather tell you that now. Hiring managers read it as initiative and baseline vocabulary, not a qualifying credential — the assessments are mostly easy multiple-choice, so it certifies exposure rather than tested skill. The transitions that work pair it with Security+ (discounted 30% for completers), hands-on labs like TryHackMe, and often a help-desk or IT rung first. Security isn't a true entry-level field, and no certificate changes that."
+    },
+    {
+      "question": "How much does it actually cost?",
+      "answer": "$49/month on Coursera after a 7-day trial. The content runs about 133 hours, so a steady 10 hours a week finishes in ~3 months (~$150); IT-experienced learners often finish in weeks. Coursera financial aid can make it free if approved. The 30% Security+ discount (~$130 value) effectively refunds most of the cost if you continue to the exam — which is the right move."
+    },
+    {
+      "question": "Google Cybersecurity Certificate or CompTIA Security+ — which should I get?",
+      "answer": "They're complements, not rivals. The Google cert is the learning program: structured, cheap, zero-prerequisite, with real Linux/SQL/Python content. Security+ is the credential: proctored, DoD 8140-approved, and the keyword HR filters search. If you can only put one line on a resume, Security+ wins every time. The smart sequence is Google cert → 30% discount → Security+."
+    },
+    {
+      "question": "What's the employer consortium really worth?",
+      "answer": "It's real but modest: 150+ U.S. companies (Deloitte, T-Mobile, Mandiant, Walmart among them) have committed to considering certificate graduates, and U.S. completers get free career coaching and mock interviews. That's application access and interview prep — not a hiring pipeline. Google's '75% positive career outcome' stat includes raises and promotions, not just new jobs."
+    },
+    {
+      "question": "Does the certificate expire?",
+      "answer": "No — it's a course-completion certificate with a permanent Credly badge, not an exam credential with a renewal cycle. The flip side: because nothing is retested, employers weigh it as training evidence, which is exactly why pairing it with a proctored cert matters."
+    },
+    {
+      "question": "Is there college credit?",
+      "answer": "Yes — an ACE recommendation of up to 9 U.S. college credits (acceptance is at each school's discretion). Worth claiming via the Credly badge if you're heading toward a degree program later."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CompTIA Security+",
+      "slug": "security-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "The intended next step — completers get 30% off the exam, and Security+ is the credential security job filters actually require."
+    },
+    {
+      "title": "Google IT Support Certificate",
+      "slug": "google-it-support",
+      "vendor": "Google",
+      "vendor_slug": "google",
+      "reason": "The realistic first rung — most successful security transitions run through IT support first, and this is the same-format on-ramp."
+    },
+    {
+      "title": "CompTIA CySA+",
+      "slug": "cysa-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "The analyst tier after Security+ — where the SOC skills this program introduces get certified under exam conditions."
+    }
+  ],
+  "seo_title": "Google Cybersecurity Certificate Review – Cost, Worth It, Security+ Path | CertBlueprint",
+  "seo_description": "Honest Google Cybersecurity Certificate guide: real cost (~$49/mo), the 9 courses, the 30% Security+ discount, entry SOC salary reality, and whether it alone gets you hired."
+}

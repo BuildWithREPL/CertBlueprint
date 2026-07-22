@@ -1,0 +1,138 @@
+{
+  "title": "ISTQB",
+  "slug": "istqb",
+  "overview": "The International Software Testing Qualifications Board (ISTQB) is the world's most widely recognized certification scheme for software testers, with over one million certifications issued globally. Its structured scheme runs from the Certified Tester Foundation Level (CTFL) through Advanced and Expert levels, plus specialist streams for areas like test automation, agile, and security testing. Exams are administered through national member boards and accredited exam providers worldwide.",
+  "why_vendor_matters": "ISTQB matters because it is effectively the only globally standardized credential ladder in software testing. QA job postings across Europe, Asia, and increasingly North America list CTFL by name, and many consultancies and outsourcing firms require it for testing roles. Because the scheme is vendor-neutral and administered by national boards under a shared syllabus, a CTFL earned in one country means the same thing everywhere—useful for a field where distributed and offshore teams are the norm. The current CTFL v4.0 syllabus also folds in agile-aligned practices, keeping the foundation relevant to how most teams actually ship software.\n\nThe honest caveat: ISTQB certifications validate testing theory and vocabulary, not hands-on automation skill. CTFL will get you past HR filters and give you a shared professional language, but hiring managers for modern QA roles typically weight practical skills—test automation with tools like Selenium, Playwright, or Cypress, plus scripting ability—more heavily than the certificate alone. The strongest use of the ISTQB ladder is CTFL as an early-career credibility marker, paired with a portfolio of real testing work, with Advanced and Specialist levels reserved for testers deepening a long-term QA career rather than entering one.",
+  "certification_tracks": [
+    {
+      "name": "Core Foundation",
+      "level": "Foundation",
+      "description": "CTFL v4.0 covers testing fundamentals: test levels and types, static testing, test analysis and design techniques, test management, and tool support. The entry point for the entire ISTQB scheme and the most requested QA cert in job postings."
+    },
+    {
+      "name": "Core Advanced",
+      "level": "Advanced",
+      "description": "Advanced Level certifications—Test Analyst, Technical Test Analyst, and Test Management—deepen the Foundation material for experienced testers. CTFL is a prerequisite for all of them."
+    },
+    {
+      "name": "Specialist Stream",
+      "level": "Specialist",
+      "description": "Focused certifications for specific domains: Test Automation Engineering, Agile Testing, Security Tester, Performance Testing, Mobile Application Testing, and AI Testing, among others. Taken alongside or after the Core stream."
+    },
+    {
+      "name": "Expert Level",
+      "level": "Expert",
+      "description": "The top of the scheme, covering Test Management and Improving the Test Process. Aimed at testing leaders with years of experience; rarely required by employers but recognized as a mark of deep specialization."
+    }
+  ],
+  "featured_certs": ["istqb-ctfl"],
+  "who_its_for": [
+    {
+      "role": "Manual QA testers formalizing their knowledge",
+      "detail": "Testers who have been running test cases and writing bug reports without formal training. CTFL gives your self-taught experience a recognized credential and usually surfaces real gaps in test design techniques you have been working around."
+    },
+    {
+      "role": "Career changers moving into software testing",
+      "detail": "QA is one of the more accessible entrances to tech, and CTFL has no prerequisites—you can sit it with zero professional testing experience. Pair it with hands-on practice on a real app so you have something concrete to show alongside the certificate."
+    },
+    {
+      "role": "Developers, BAs, and product owners on QA-adjacent teams",
+      "detail": "People who work with testers but do not test full-time and want the shared vocabulary. Knowing the ISTQB definitions of verification vs. validation, or when to use boundary value analysis, makes cross-team conversations about quality far more precise."
+    },
+    {
+      "role": "Consultancy and regulated-industry contractors",
+      "detail": "In many consultancies, government contracts, and regulated industries, CTFL is a hard staffing requirement—you cannot be placed on the account without it. If you work or want to work in those environments, the cert is less optional than it is elsewhere."
+    }
+  ],
+  "career_salary_impact": [
+    "Software testing pays modestly at the entry level and rewards hands-on skill more than certificates. Entry-level QA analyst and software tester roles in the US typically land in the $50K–$70K range, with mid-level manual QA reaching roughly $75K–$85K. CTFL rarely moves those numbers on its own—its job is to get your resume past filters that require a testing certification, not to bump your pay band. The compensation lever in QA is test automation: Selenium, Playwright, Cypress, and API testing skills are what push tester salaries into the $90K+ range.",
+    "Where CTFL genuinely changes your outcomes is eligibility, not salary. In Europe, at consultancies, and in government or regulated industries, it appears in job filters constantly and is sometimes a contractual requirement to be staffed at all—there it is the difference between being considered and being screened out. At roughly $229 with lifetime validity and no renewal fees, it is one of the cheapest recognized certs in IT, so the honest math is: worth it if you see it in postings you want, but treat it as a door-opener paired with a portfolio, not a raise you can bank on."
+  ],
+  "study_difficulty": [
+    {
+      "cert": "ISTQB Certified Tester Foundation Level (CTFL v4.0) Study Guide",
+      "difficulty": "Beginner–Moderate",
+      "time": "2–6 weeks part-time",
+      "detail": "The bulk of CTFL is terminology—many questions hinge on the precise ISTQB glossary definition of a word, which rewards flashcards and disciplined reading of the free official syllabus. What trips people up is the applied portion: small scenario problems in test design techniques like boundary value analysis, decision tables, and state transition testing that cannot be memorized and must be practiced by hand."
+    }
+  ],
+  "available_guides": [
+    {
+      "title": "ISTQB Certified Tester Foundation Level (CTFL v4.0) Study Guide",
+      "level": "Foundation",
+      "description": "The world's most widely held software testing certification and the entry point to the entire ISTQB scheme—covering testing fundamentals, static testing, test design techniques, and test management.",
+      "slug": "istqb-ctfl",
+      "vendor_slug": "istqb",
+      "featured": true
+    }
+  ],
+  "more_certs": [
+    {
+      "title": "ISTQB Advanced Level Test Analyst (CTAL-TA)",
+      "level": "Advanced",
+      "description": "Deepens the Foundation test design and analysis material for experienced testers who own test cases day to day. Requires CTFL as a prerequisite."
+    },
+    {
+      "title": "ISTQB Advanced Level Test Management (CTAL-TM)",
+      "level": "Advanced",
+      "description": "The Advanced credential for testers moving toward QA lead and test manager roles, covering planning, estimation, risk-based testing, and reporting at scale. Builds on CTFL."
+    },
+    {
+      "title": "ISTQB Certified Tester – Test Automation Engineering (CT-TAE)",
+      "level": "Specialist",
+      "description": "The specialist cert closest to the automation skills that actually move QA salaries, covering test automation architecture and framework design. A natural companion to hands-on tool practice rather than a substitute for it."
+    },
+    {
+      "title": "ISTQB Certified Tester – Agile Testing (CT-AgT)",
+      "level": "Specialist",
+      "description": "Focused on testing within Scrum and other agile teams—test planning within sprints, the whole-team approach, and agile-specific techniques. A common next step for testers whose CTFL v4.0 agile content sparked the interest."
+    }
+  ],
+  "related_paths": [
+    {
+      "title": "QA Engineer",
+      "href": "/paths/qa-engineer/",
+      "description": "The role CTFL is built for. See how the certification fits alongside the automation and scripting skills that hiring managers actually weigh most heavily."
+    },
+    {
+      "title": "Software Developer",
+      "href": "/paths/software-developer/",
+      "description": "Testing and development overlap constantly on shift-left and DevOps teams. Developers who understand ISTQB test design write better tests and collaborate more cleanly with QA."
+    },
+    {
+      "title": "Not sure this is your path?",
+      "href": "/navigator/",
+      "description": "Use the Navigator to check whether software testing suits how you like to work before you commit study time to CTFL."
+    }
+  ],
+  "cta": {
+    "heading": "Start with CTFL",
+    "blurb": "The Foundation Level is the entry point to the entire ISTQB scheme and the testing cert QA filters recognize by name. Our guide covers the exam breakdown, an honest salary reality, and a step-by-step study plan built around the free official materials.",
+    "href": "/vendors/istqb/istqb-ctfl/",
+    "label": "Read the CTFL Study Guide"
+  },
+  "faq": [
+    {
+      "question": "Is the ISTQB CTFL certification worth it?",
+      "answer": "For entering or formalizing a QA career, yes—it is the most widely requested testing credential and appears by name in job listings, especially in Europe and with consultancies. But it tests theory, not tool skills. Pair it with hands-on automation practice; the certificate alone rarely wins a competitive QA role."
+    },
+    {
+      "question": "Do ISTQB certifications expire?",
+      "answer": "No. ISTQB certifications, including CTFL, are valid for life with no renewal fees or continuing education requirements. When a syllabus gets a major update (like CTFL v4.0 in 2023), older certificates remain valid—you are certified against the syllabus version you passed."
+    },
+    {
+      "question": "Who actually runs the ISTQB exam?",
+      "answer": "ISTQB defines the syllabi and exam standards, but exams are delivered by national member boards (like ASTQB in the United States or the UKITB/BCS in the UK) and their accredited exam providers. Pricing varies by country—CTFL typically runs $200-$250 in the US—so check your local board's site rather than a global price list."
+    },
+    {
+      "question": "Do I need a training course to sit the CTFL exam?",
+      "answer": "No. Accredited training exists but is optional—you can self-study from the freely downloadable official syllabus and sample exams on istqb.org and register for the exam directly. Self-study plus the official sample papers is a common and realistic path for CTFL."
+    },
+    {
+      "question": "What order should I take ISTQB certifications in?",
+      "answer": "CTFL first—it is a hard prerequisite for the Advanced and Expert levels and for most Specialist certs. After that, choose based on your role: Test Automation Engineering or Agile Testing for hands-on paths, Test Management for lead roles. Most testers never need to go past Foundation plus one specialist; go deeper only if your career genuinely calls for it."
+    }
+  ],
+  "seo_title": "ISTQB Certifications – CTFL Foundation Level Study Guides | CertBlueprint",
+  "seo_description": "ISTQB certification guides starting with CTFL. How the Foundation, Advanced, and Expert levels work and whether software testing certs pay off."
+}

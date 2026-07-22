@@ -1,0 +1,78 @@
+{
+  "slug": "ccna-vs-ccst-networking",
+  "title": "CCNA vs CCST Networking",
+  "intro": "Cisco's two entry points, $175 apart: the $125 true-beginner checkpoint or the $300 credential employers actually recognize. The right answer depends entirely on where you're standing.",
+  "a": {
+    "name": "Cisco CCNA",
+    "href": "/vendors/cisco/ccna/",
+    "tagline": "The industry-standard networking credential — 200-301, $300, 120 minutes, the cert that gets interviews."
+  },
+  "b": {
+    "name": "CCST Networking",
+    "href": "/vendors/cisco/ccst-networking/",
+    "tagline": "Cisco's $125 ground floor — 100-150, 50 minutes, free official training, designed as the first step toward CCNA."
+  },
+  "verdict": "If you're an adult committed to a networking career: CCNA, full stop — CCST gives no exam credit toward it, and hiring filters search for CCNA, not CCST. Pick CCST Networking when you're a student, when $300 plus study materials is genuinely out of reach, or when you're honestly unsure networking is your lane and want a $125 structured answer before committing. CCST's real product is the free 70-hour NetAcad path with a cheap proof-of-completion attached — used that way, it's excellent.",
+  "rows": [
+    {
+      "label": "Exam",
+      "a": "200-301, $300, 120 minutes — question count not published (simulations included)",
+      "b": "100-150, $125, 50 minutes, 40–50 questions incl. performance items"
+    },
+    {
+      "label": "Recognition",
+      "a": "The most-cited networking cert at its level — the interview-getter",
+      "b": "Almost no job filters search it yet; growing via the high-school pipeline"
+    },
+    {
+      "label": "Audience",
+      "a": "Committed networking careers; assumes real study commitment",
+      "b": "Students, budget starts, and the genuinely undecided"
+    },
+    {
+      "label": "Training",
+      "a": "Books, videos, Packet Tracer — typically $50–200 in materials",
+      "b": "Free official NetAcad path (~70 hours) covers it entirely"
+    },
+    {
+      "label": "Validity",
+      "a": "3 years, renewable via exams or CE credits",
+      "b": "5 years if earned on or after July 15, 2025 (lifetime before); exam-only renewal"
+    },
+    {
+      "label": "Bridge between them",
+      "a": "—",
+      "b": "Curricular only: the NetAcad path flows into the CCNA series, but no exam credit or discount transfers"
+    }
+  ],
+  "pick_a_if": [
+    "You're committed to networking and job-hunting within a year",
+    "You can invest 3–6 months of real study including lab time",
+    "You want the credential that actually appears in job filters",
+    "$300 is affordable without hardship"
+  ],
+  "pick_b_if": [
+    "You're a student — especially if your school offers it through Certiport",
+    "Budget is the genuine constraint and $125 is the ceiling",
+    "You're testing whether networking pulls you before committing months",
+    "You want a milestone partway through the free NetAcad curriculum"
+  ],
+  "both_note": "The sequence works exactly as Cisco designed it — CCST as the confidence checkpoint, CCNA as the destination — as long as you know nothing transfers on paper. Momentum is the real bridge: take CCNA while the CCST fundamentals are fresh, not a year later.",
+  "faq": [
+    {
+      "question": "Does CCST Networking give any credit toward CCNA?",
+      "answer": "No — no exam credit, no discount. The bridge is purely curricular: the free NetAcad path that preps CCST flows directly into the CCNA course series. Your knowledge carries; your $125 doesn't."
+    },
+    {
+      "question": "Will employers care about CCST at all?",
+      "answer": "Mostly not yet, honestly. It appears in almost no job filters — CCNA, Network+, and A+ own that space. Its value is proof-of-readiness, momentum, and the genuinely good free training behind it. As a resume line next to a homelab story it does no harm; as a substitute for CCNA it doesn't work."
+    },
+    {
+      "question": "I'm 30+ and switching careers — is CCST beneath me?",
+      "answer": "Not beneath you, just possibly redundant. If you're committed, the $125 buys more as CCNA study materials. But if 'committed' is doing heavy lifting in that sentence — if you're actually still deciding — a $125 structured test-drive with free training is the cheapest honest answer in IT. Deciding is a legitimate use of money."
+    }
+  ],
+  "last_verified": "July 2026",
+  "seo_title": "CCNA vs CCST Networking (2026) – Cisco's Two Entry Points, Honestly | CertBlueprint",
+  "seo_description": "CCNA vs CCST Networking settled: $300 vs $125, what transfers between them (nothing on paper), who each is genuinely for, and the 5-year CCST validity change."
+}

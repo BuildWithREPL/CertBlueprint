@@ -1,0 +1,176 @@
+{
+  "slug": "systems-administrator",
+  "role": "Systems Administrator",
+  "domain": "systems-infrastructure",
+  "specialization": "Server / OS Administration",
+  "navigator_family": "Systems & Infrastructure Administration",
+  "tagline": "Own the servers everything runs on — patching, backups, identity, and the maintenance windows nobody sees.",
+  "what_you_do": "You keep a company's servers, identities, and core services alive: patching operating systems, managing Active Directory and Entra ID accounts, running virtualization hosts, watching monitoring dashboards, and making sure last night's backups actually worked. It's the generalist infrastructure role — when something between the desktop and the network breaks, it lands on you. Almost nobody starts here day one; the normal route is a year or two in help desk or a NOC, picking up server tasks until they become your job. Be clear-eyed about the trajectory too: the classic on-prem version of this role is shrinking as workloads move to the cloud, so the modern sysadmin path deliberately ends in hybrid and cloud administration.",
+  "day_in_life": [
+    "Check monitoring and backup reports first thing — rerun the one backup job that failed and find out why",
+    "Work the escalations support couldn't crack: a service that won't start, a full disk, a Group Policy doing something weird",
+    "Stage this month's patches on test servers ahead of Saturday night's maintenance window",
+    "Provision accounts, group memberships, and mailboxes in Active Directory/Entra for Monday's new hires",
+    "Turn a manual task into a PowerShell script and schedule it so nobody ever does it by hand again"
+  ],
+  "entry_titles": [
+    "Junior Systems Administrator",
+    "IT Support Specialist (Tier 2)",
+    "NOC Technician",
+    "Systems Support Analyst"
+  ],
+  "work_texture": {
+    "communication": 2,
+    "technical_depth": 3,
+    "troubleshooting": 4,
+    "customer": 2,
+    "on_call": 4,
+    "remote": 2
+  },
+  "salary": {
+    "median": "$96,800",
+    "entry": "~$60,000 to start (junior roles, usually reached from support)",
+    "growth": "-4% projected — cloud is absorbing the classic on-prem role",
+    "note": "U.S. BLS figure for Network and Computer Systems Administrators (15-1244); a median is the midpoint of everyone employed, so entry pay runs well below it. The negative outlook is real — it's why this roadmap ends in cloud, not on-prem. Verify against the live BLS page before deciding."
+  },
+  "downsides": "Patching happens when users are offline, so nights and weekends are part of the deal, and on-call pages come with the pager. The work is invisible when done well — nobody notices the servers until they break, and then everybody does. And the occupation itself is projected to shrink as cloud absorbs on-prem work: staying valuable means continuously retooling toward cloud and automation, not settling in.",
+  "work_style": {
+    "fits_if": [
+      "You like being the person who understands how the whole environment fits together",
+      "You get satisfaction from quiet reliability — systems that just work",
+      "You'd rather spend an hour automating a task than repeat it forever"
+    ],
+    "less_ideal_if": [
+      "You need visible wins — good sysadmin work goes unnoticed by design",
+      "You want strictly 9-to-5 with no maintenance windows or on-call",
+      "You're hoping to learn one stack once and coast — this role is mid-transition to cloud"
+    ]
+  },
+  "skills": [
+    {
+      "name": "Operating systems (Windows Server + Linux)",
+      "level": "Foundational",
+      "note": "Most shops run both — being fluent in only one halves your options."
+    },
+    {
+      "name": "Networking fundamentals",
+      "level": "Foundational",
+      "note": "Servers are network citizens; you can't troubleshoot one without understanding the other."
+    },
+    {
+      "name": "Identity & directory services (Active Directory / Entra ID)",
+      "level": "Working"
+    },
+    {
+      "name": "Virtualization (VMware / Hyper-V / Proxmox)",
+      "level": "Working"
+    },
+    {
+      "name": "Backup & recovery",
+      "level": "Working",
+      "note": "The unglamorous discipline that actually ends careers when it's neglected."
+    },
+    {
+      "name": "Scripting & automation (PowerShell / Bash)",
+      "level": "Working",
+      "note": "The single biggest lever for pay, promotion, and surviving the cloud shift."
+    },
+    {
+      "name": "Cloud administration (Azure / Microsoft 365)",
+      "level": "Emerging",
+      "note": "Where the role is going — hybrid identity and cloud workloads."
+    }
+  ],
+  "technologies": [
+    "Windows Server",
+    "Active Directory / Entra ID",
+    "Linux (RHEL / Ubuntu)",
+    "VMware / Hyper-V / Proxmox",
+    "PowerShell / Bash",
+    "Group Policy",
+    "Veeam / backup tooling",
+    "Zabbix / PRTG",
+    "Azure / Microsoft 365"
+  ],
+  "certs": [
+    {
+      "title": "CompTIA Network+",
+      "slug": "network-plus",
+      "vendor_slug": "comptia",
+      "stage": "Foundation",
+      "reason": "Servers live on networks — this is the assumed baseline."
+    },
+    {
+      "title": "CompTIA Linux+",
+      "slug": "linux-plus",
+      "vendor_slug": "comptia",
+      "stage": "Start here",
+      "reason": "Linux administration fundamentals — half the server world runs on it."
+    },
+    {
+      "title": "Microsoft AZ-104 (Administrator)",
+      "slug": "az-104",
+      "vendor_slug": "microsoft",
+      "stage": "Level up",
+      "reason": "The associate cert proving you can operate the hybrid/cloud infrastructure sysadmin work is becoming."
+    },
+    {
+      "title": "Google IT Automation with Python",
+      "slug": "google-it-automation",
+      "vendor_slug": "google",
+      "stage": "The automation edge",
+      "reason": "Python, Git, and config management — the scripting skills that separate 'keeps it running' from 'automated it away.'"
+    }
+  ],
+  "cert_note": "If you land in a Linux-heavy shop, Red Hat's hands-on RHCSA is the respected next step (no guide here yet). Either way, a home lab you can talk through in an interview outweighs any certificate on this list.",
+  "trial": {
+    "objective": "Do the core sysadmin move: find a task you repeat on your own computer, automate it with a script, and schedule it to run itself.",
+    "time": "60–90 minutes",
+    "cost": "Free",
+    "disclosure": "Built-in tools only — PowerShell + Task Scheduler on Windows, Bash + cron on Mac/Linux. Nothing installed, everything stays on your machine."
+  },
+  "roadmap": [
+    {
+      "stage": "1",
+      "title": "Learn the fundamentals",
+      "focus": "TCP/IP, DNS, DHCP — servers are network citizens first. Free via Professor Messer; spin up a home lab with VirtualBox or a spare PC.",
+      "cert_slug": "network-plus"
+    },
+    {
+      "stage": "2",
+      "title": "Get fluent in operating systems",
+      "focus": "Learn Linux administration properly (users, permissions, services, storage) and lab Windows Server alongside it — free evaluation ISOs exist for exactly this.",
+      "cert_slug": "linux-plus"
+    },
+    {
+      "stage": "3",
+      "title": "Start on the support rung and automate",
+      "focus": "Take the help desk / NOC / junior admin job — that's the honest door in. Volunteer for every server task, and script anything you do twice. Automation is what gets you promoted out."
+    },
+    {
+      "stage": "4",
+      "title": "Go hybrid and cloud",
+      "focus": "Extend what you know upward: Active Directory to Entra ID, on-prem VMs to Azure. AZ-104 proves you can run the environment this job is turning into.",
+      "cert_slug": "az-104"
+    },
+    {
+      "stage": "5",
+      "title": "Pick your exit ramp",
+      "focus": "Classic on-prem administration is a shrinking island. Ride your foundation toward a growing shore: cloud/platform engineering (infrastructure as code) or security."
+    }
+  ],
+  "adjacent_paths": [
+    {
+      "role": "Cloud Engineer",
+      "slug": "cloud-engineer",
+      "reason": "The natural evolution of the role as infrastructure moves to code and cloud."
+    },
+    {
+      "role": "Network Administrator",
+      "slug": "network-administrator",
+      "reason": "Deeply overlapping infrastructure disciplines that feed each other."
+    }
+  ],
+  "seo_title": "Systems Administrator Career Path — Skills, Roadmap & Certs | CertBlueprint",
+  "seo_description": "Is Systems Administrator the right IT path? What the work feels like, salary reality, a free trial project, and the cert roadmap (Network+ → Linux+ → AZ-104)."
+}

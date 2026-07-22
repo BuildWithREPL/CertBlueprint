@@ -1,0 +1,237 @@
+---
+// Search index — static, generated at build time
+---
+
+<div
+  id="search-modal"
+  class="hidden fixed inset-0 z-50 flex items-start justify-center pt-[8vh] px-4"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Search"
+>
+  <!-- Backdrop -->
+  <div
+    id="search-backdrop"
+    class="absolute inset-0"
+    style="background: rgba(15,23,42,0.6); backdrop-filter: blur(4px);"
+    onclick="document.getElementById('search-modal')?.classList.add('hidden')"
+    aria-hidden="true"
+  ></div>
+
+  <!-- Panel -->
+  <div
+    class="relative w-full max-w-xl rounded-xl border shadow-2xl overflow-hidden"
+    style="background: var(--cb-bg-card); border-color: var(--cb-border);"
+  >
+    <!-- Input row -->
+    <div class="flex items-center gap-3 px-4 py-3 border-b" style="border-color: var(--cb-border);">
+      <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--cb-text-muted);">
+        <circle cx="11" cy="11" r="7" stroke-width="2"/>
+        <path d="M21 21l-4.35-4.35" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <input
+        id="search-input"
+        type="search"
+        placeholder="Search certifications, vendors, guides…"
+        autocomplete="off"
+        spellcheck="false"
+        class="flex-1 bg-transparent text-sm outline-none min-w-0"
+        style="color: var(--cb-text);"
+        aria-label="Search"
+      />
+      <kbd class="hidden sm:inline-flex items-center text-xs px-1.5 py-0.5 rounded border font-mono" style="color: var(--cb-text-muted); border-color: var(--cb-border);">Esc</kbd>
+    </div>
+
+    <!-- Results -->
+    <div id="search-results" class="max-h-72 overflow-y-auto py-1.5">
+      <div id="search-default" class="px-4 py-8 text-sm text-center" style="color: var(--cb-text-muted);">
+        Start typing to search certifications, vendors, and guides.
+      </div>
+      <ul id="search-results-list" class="hidden" role="listbox"></ul>
+      <div id="search-no-results" class="hidden px-4 py-8 text-sm text-center" style="color: var(--cb-text-muted);">No results found.</div>
+    </div>
+
+    <!-- Footer hint -->
+    <div class="px-4 py-2 border-t flex items-center justify-between text-xs" style="border-color: var(--cb-border); color: var(--cb-text-muted);">
+      <span><kbd class="font-mono border rounded px-1" style="border-color: var(--cb-border);">↑↓</kbd> navigate · <kbd class="font-mono border rounded px-1" style="border-color: var(--cb-border);">↵</kbd> open</span>
+      <span>Ctrl+K to open</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  const SEARCH_INDEX = [
+    { id: 'home', title: 'Home', description: 'IT certification directory and study resource platform.', url: '/', type: 'page' },
+    { id: 'vendors', title: 'Browse Vendors', description: 'Cisco, CompTIA, AWS, Microsoft, EC-Council and more.', url: '/vendors/', type: 'page' },
+    { id: 'cisco', title: 'Cisco Certifications', description: 'CCST entry certs, CCNA, CCNA Cybersecurity/Automation, all eight CCNP tracks (Enterprise, Security, Cybersecurity, Data Center, Automation, Wireless, Service Provider, Collaboration), CCIE, and CCDE — 17 study guides.', url: '/vendors/cisco/', type: 'vendor' },
+    { id: 'ccna', title: 'Cisco CCNA 200-301', description: 'Study guide, exam details, resources, study path, FAQ.', url: '/vendors/cisco/ccna/', type: 'certification' },
+    { id: 'ccna-study', title: 'CCNA Study Path', description: 'Step-by-step CCNA study plan from start to exam day.', url: '/vendors/cisco/ccna/#study-path', type: 'section' },
+    { id: 'ccna-resources', title: 'CCNA Free Resources', description: 'Free YouTube courses, Packet Tracer, DevNet labs.', url: '/vendors/cisco/ccna/#free-resources', type: 'section' },
+    { id: 'ccna-exam', title: 'CCNA Exam Details', description: 'Format, duration, question types, passing score.', url: '/vendors/cisco/ccna/#exam-details', type: 'section' },
+    { id: 'ccna-paid', title: 'CCNA Paid Courses', description: 'Udemy, Boson, Cisco Press — course and exam comparison.', url: '/vendors/cisco/ccna/#paid-resources', type: 'section' },
+    { id: 'ccna-faq', title: 'CCNA FAQ', description: 'Difficulty, study time, job value, renewal questions.', url: '/vendors/cisco/ccna/#faq', type: 'section' },
+    { id: 'ccna-cybersecurity', title: 'CCNA Cybersecurity 200-201 (formerly CyberOps Associate)', description: 'SOC analyst study guide: security monitoring, intrusion analysis, incident response. Legacy names: CyberOps Associate, CBROPS.', url: '/vendors/cisco/ccna-cybersecurity/', type: 'certification' },
+    { id: 'ccna-cybersecurity-salary', title: 'CCNA Cybersecurity / SOC Analyst Salary', description: 'Typical SOC analyst and security operations salary ranges.', url: '/vendors/cisco/ccna-cybersecurity/#salary', type: 'section' },
+    { id: 'ccna-automation', title: 'CCNA Automation 200-901 (formerly DevNet Associate)', description: 'Network automation study guide: Python, REST APIs, Cisco platforms, infrastructure automation. Legacy names: DevNet Associate, DEVASC.', url: '/vendors/cisco/ccna-automation/', type: 'certification' },
+    { id: 'ccna-automation-salary', title: 'CCNA Automation / Network Automation Salary', description: 'Network automation and NetDevOps engineer salary ranges.', url: '/vendors/cisco/ccna-automation/#salary', type: 'section' },
+    { id: 'ccst-networking', title: 'Cisco CCST Networking (100-150)', description: 'The $125 entry networking cert — free NetAcad training, first step toward CCNA.', url: '/vendors/cisco/ccst-networking/', type: 'certification' },
+    { id: 'ccst-cybersecurity', title: 'Cisco CCST Cybersecurity (100-160)', description: 'The $125 entry security cert — 120 free training hours, honest SOC-road framing.', url: '/vendors/cisco/ccst-cybersecurity/', type: 'certification' },
+    { id: 'ccst-it-support', title: 'Cisco CCST IT Support (100-140)', description: 'The $125 help-desk cert — Cisco\'s one-exam answer to CompTIA A+.', url: '/vendors/cisco/ccst-it-support/', type: 'certification' },
+    { id: 'ccnp-enterprise', title: 'Cisco CCNP Enterprise (350-401 ENCOR)', description: 'Professional networking: ENCOR v1.2 core + concentration (ENARSI, ENSDWI, ENSLD, ENAUTO).', url: '/vendors/cisco/ccnp-enterprise/', type: 'certification' },
+    { id: 'ccnp-security', title: 'Cisco CCNP Security (350-701 SCOR)', description: 'Network security engineering: SCOR core + concentration (SNCF, SISE, SCAZT, SDSI). v2.0 Aug 2026.', url: '/vendors/cisco/ccnp-security/', type: 'certification' },
+    { id: 'ccnp-data-center', title: 'Cisco CCNP Data Center (350-601 DCCOR)', description: 'Nexus, ACI, UCS, storage: DCCOR core + concentration (DCACI, DCAI, DCNAUTO).', url: '/vendors/cisco/ccnp-data-center/', type: 'certification' },
+    { id: 'ccie-enterprise-infrastructure', title: 'CCIE Enterprise Infrastructure', description: 'The expert lab: ENCOR + 8-hour practical. Real costs, pass-rate reality, the CCNP question.', url: '/vendors/cisco/ccie-enterprise-infrastructure/', type: 'certification' },
+    { id: 'ccie-security', title: 'CCIE Security', description: 'The widest expert lab: SCOR + 8-hour practical across FTD/FMC, ISE, VPNs.', url: '/vendors/cisco/ccie-security/', type: 'certification' },
+    { id: 'ccde', title: 'Cisco CCDE (400-007, Design Expert)', description: 'The rarest Cisco cert — no-CLI design practical, an estimated (unofficial) fewer than 1,000 holders worldwide.', url: '/vendors/cisco/ccde/', type: 'certification' },
+    { id: 'ccnp-service-provider', title: 'Cisco CCNP Service Provider (350-501 SPCOR)', description: 'The carrier track — SPCOR + SPRI/SPVI/SPCNI. IS-IS, BGP at scale, MPLS/segment routing.', url: '/vendors/cisco/ccnp-service-provider/', type: 'certification' },
+    { id: 'ccnp-collaboration', title: 'Cisco CCNP Collaboration (350-801 CLCOR)', description: 'The UC/voice track — CLCOR v2.0 + CLACC/CLHCT/CLCCE after the Feb 2026 refresh.', url: '/vendors/cisco/ccnp-collaboration/', type: 'certification' },
+    { id: 'ccnp-cybersecurity', title: 'Cisco CCNP Cybersecurity (350-201 CBRCOR)', description: 'The SOC-operations professional track (formerly CyberOps Professional) — forensics (CBRFIR) or threat hunting (CBRTHD).', url: '/vendors/cisco/ccnp-cybersecurity/', type: 'certification' },
+    { id: 'ccnp-automation', title: 'Cisco CCNP Automation (350-901 AUTOCOR)', description: 'The renamed DevNet Professional — AUTOCOR v2.0 + ENAUTO/DCNAUTO. NetDevOps professional tier.', url: '/vendors/cisco/ccnp-automation/', type: 'certification' },
+    { id: 'ccnp-wireless', title: 'Cisco CCNP Wireless (350-101 WLCOR)', description: 'The new Mar 2026 track — WLCOR + WLSD/WLSI, with ENWLSD/ENWLSI transition credits.', url: '/vendors/cisco/ccnp-wireless/', type: 'certification' },
+    { id: 'compare', title: 'Certification Comparisons', description: 'Honest head-to-heads: CCNA vs Network+, CCNP vs CCIE, and more.', url: '/compare/', type: 'page' },
+    { id: 'ccna-vs-network-plus', title: 'CCNA vs Network+', description: 'The first-networking-cert decision, settled honestly with 2026 prices and job-filter reality.', url: '/compare/ccna-vs-network-plus/', type: 'page' },
+    { id: 'ccnp-vs-ccie', title: 'CCNP vs CCIE', description: 'The senior-track decision: real costs, pass folklore, and who actually pays for the number.', url: '/compare/ccnp-vs-ccie/', type: 'page' },
+    { id: 'ccna-vs-ccst-networking', title: 'CCNA vs CCST Networking', description: 'Cisco\'s two entry points — $300 vs $125, and what transfers between them.', url: '/compare/ccna-vs-ccst-networking/', type: 'page' },
+    { id: 'ccnp-enterprise-vs-ccnp-security', title: 'CCNP Enterprise vs CCNP Security', description: 'Broadest track vs highest-paying track — and the CCNP Cybersecurity name-trap.', url: '/compare/ccnp-enterprise-vs-ccnp-security/', type: 'page' },
+    { id: 'comptia', title: 'CompTIA Certifications', description: 'A+, Network+, Security+, CySA+, PenTest+, Cloud+, Linux+ study guides.', url: '/vendors/comptia/', type: 'vendor' },
+    { id: 'a-plus', title: 'CompTIA A+ (220-1201 & 220-1202)', description: 'Entry-level IT support study guide: hardware, OS, networking, security, troubleshooting. Two exams.', url: '/vendors/comptia/a-plus/', type: 'certification' },
+    { id: 'network-plus', title: 'CompTIA Network+ (N10-009)', description: 'Vendor-neutral networking study guide: TCP/IP, routing, switching, wireless, troubleshooting.', url: '/vendors/comptia/network-plus/', type: 'certification' },
+    { id: 'security-plus', title: 'CompTIA Security+ (SY0-701)', description: 'DoD-approved baseline cybersecurity study guide: threats, identity, cryptography, incident response.', url: '/vendors/comptia/security-plus/', type: 'certification' },
+    { id: 'cysa-plus', title: 'CompTIA CySA+ (CS0-003)', description: 'Cybersecurity analyst study guide: monitoring, threat detection, vulnerability management, incident response.', url: '/vendors/comptia/cysa-plus/', type: 'certification' },
+    { id: 'pentest-plus', title: 'CompTIA PenTest+ (PT0-003)', description: 'Penetration testing study guide: recon, exploitation, post-exploitation, reporting.', url: '/vendors/comptia/pentest-plus/', type: 'certification' },
+    { id: 'cloud-plus', title: 'CompTIA Cloud+ (CV0-004)', description: 'Multi-cloud operations study guide: architecture, deployment, security, operations, DevOps.', url: '/vendors/comptia/cloud-plus/', type: 'certification' },
+    { id: 'linux-plus', title: 'CompTIA Linux+ (XK0-005)', description: 'Linux administration study guide: command line, system management, security, scripting, troubleshooting.', url: '/vendors/comptia/linux-plus/', type: 'certification' },
+    { id: 'aws', title: 'AWS Certifications', description: 'Cloud Practitioner, Solutions Architect, Developer Associate study guides.', url: '/vendors/aws/', type: 'vendor' },
+    { id: 'aws-cloud-practitioner', title: 'AWS Cloud Practitioner (CLF-C02)', description: 'Foundational AWS study guide: cloud concepts, core services, security, pricing.', url: '/vendors/aws/aws-cloud-practitioner/', type: 'certification' },
+    { id: 'aws-saa', title: 'AWS Solutions Architect Associate (SAA-C03)', description: 'AWS architecture study guide: scalable, fault-tolerant, cost-optimized systems.', url: '/vendors/aws/aws-saa/', type: 'certification' },
+    { id: 'aws-developer-associate', title: 'AWS Developer Associate (DVA-C02)', description: 'AWS development study guide: Lambda, DynamoDB, serverless, security, CI/CD.', url: '/vendors/aws/aws-developer-associate/', type: 'certification' },
+    { id: 'microsoft', title: 'Microsoft Certifications', description: 'AZ-900, AZ-104, SC-900, MD-102, MS-900, PL-300 study guides.', url: '/vendors/microsoft/', type: 'vendor' },
+    { id: 'az-900', title: 'Microsoft AZ-900: Azure Fundamentals', description: 'Foundational Azure study guide: cloud concepts, core services, pricing, governance.', url: '/vendors/microsoft/az-900/', type: 'certification' },
+    { id: 'az-104', title: 'Microsoft AZ-104: Azure Administrator', description: 'Azure administration study guide: identity, storage, compute, networking, monitoring.', url: '/vendors/microsoft/az-104/', type: 'certification' },
+    { id: 'sc-900', title: 'Microsoft SC-900: Security, Compliance & Identity', description: 'Microsoft security fundamentals: Entra, Defender, Purview, identity, compliance.', url: '/vendors/microsoft/sc-900/', type: 'certification' },
+    { id: 'md-102', title: 'Microsoft MD-102: Endpoint Administrator', description: 'Endpoint management study guide: Intune, Windows deployment, compliance, app management.', url: '/vendors/microsoft/md-102/', type: 'certification' },
+    { id: 'ms-900', title: 'Microsoft MS-900: Microsoft 365 Fundamentals', description: 'Microsoft 365 fundamentals study guide: cloud concepts, apps, security, licensing.', url: '/vendors/microsoft/ms-900/', type: 'certification' },
+    { id: 'pl-300', title: 'Microsoft PL-300: Power BI Data Analyst', description: 'Power BI study guide: data modeling, DAX, visualization, analysis.', url: '/vendors/microsoft/pl-300/', type: 'certification' },
+    { id: 'isc2', title: 'ISC2 Certifications', description: 'CISSP study guide — the senior security credential, plus CC, SSCP, and CCSP.', url: '/vendors/isc2/', type: 'vendor' },
+    { id: 'cissp', title: 'ISC2 CISSP', description: 'Senior security cert study guide: 8 domains, 5-year experience gate, CAT exam, endorsement.', url: '/vendors/isc2/cissp/', type: 'certification' },
+    { id: 'isaca', title: 'ISACA Certifications', description: 'CISM study guide — security management, plus CISA, CRISC, and the GRC track.', url: '/vendors/isaca/', type: 'vendor' },
+    { id: 'cism', title: 'ISACA CISM', description: 'Security management cert study guide: governance, risk, program, incident management.', url: '/vendors/isaca/cism/', type: 'certification' },
+    { id: 'juniper', title: 'Juniper Certifications', description: 'JNCIA-Junos study guide — the ~$50 routing & switching entry via Open Learning vouchers.', url: '/vendors/juniper/', type: 'vendor' },
+    { id: 'jncia-junos', title: 'Juniper JNCIA-Junos (JN0-106)', description: 'Junos routing & switching study guide: free official training, 75%-off voucher, vLabs.', url: '/vendors/juniper/jncia-junos/', type: 'certification' },
+    { id: 'google', title: 'Google Certifications', description: 'Google Career Certificates — Data Analytics, IT Support, Cybersecurity, Project Management, IT Automation, BI.', url: '/vendors/google/', type: 'vendor' },
+    { id: 'google-data-analytics', title: 'Google Data Analytics Certificate', description: 'Project-based data analytics program: spreadsheets, SQL, Tableau, Python, portfolio.', url: '/vendors/google/google-data-analytics/', type: 'certification' },
+    { id: 'google-it-support', title: 'Google IT Support Certificate', description: 'Zero-to-help-desk program: troubleshooting, networking, OSes, sysadmin — 30% off CompTIA A+ on completion.', url: '/vendors/google/google-it-support/', type: 'certification' },
+    { id: 'google-cybersecurity', title: 'Google Cybersecurity Certificate', description: 'Beginner security program: Linux, SQL, Python, SIEM — 30% off Security+ on completion.', url: '/vendors/google/google-cybersecurity/', type: 'certification' },
+    { id: 'google-project-management', title: 'Google Project Management Certificate', description: 'Project lifecycle + agile with capstone — banks PMI hours, $175 off CAPM.', url: '/vendors/google/google-project-management/', type: 'certification' },
+    { id: 'google-it-automation', title: 'Google IT Automation with Python', description: 'Python, Git, debugging, config management — the help-desk-to-sysadmin scripting bridge.', url: '/vendors/google/google-it-automation/', type: 'certification' },
+    { id: 'google-business-intelligence', title: 'Google Business Intelligence Certificate', description: 'BigQuery/Dataflow pipelines and Tableau dashboards — the analyst-to-BI step up.', url: '/vendors/google/google-business-intelligence/', type: 'certification' },
+    { id: 'pmi', title: 'PMI Certifications', description: 'CAPM study guide — the entry project management credential, plus the PMP ladder.', url: '/vendors/pmi/', type: 'vendor' },
+    { id: 'capm', title: 'PMI CAPM', description: 'Entry project management study guide: predictive, agile, and business analysis domains.', url: '/vendors/pmi/capm/', type: 'certification' },
+    { id: 'scrum-org', title: 'Scrum.org Certifications', description: 'Professional Scrum Master study guide — PSM I and the PSM ladder.', url: '/vendors/scrum-org/', type: 'vendor' },
+    { id: 'psm-1', title: 'Scrum.org PSM I', description: 'Professional Scrum Master study guide: Scrum framework, accountabilities, lifetime cert.', url: '/vendors/scrum-org/psm-1/', type: 'certification' },
+    { id: 'istqb', title: 'ISTQB Certifications', description: 'CTFL study guide — the international software testing qualification.', url: '/vendors/istqb/', type: 'vendor' },
+    { id: 'istqb-ctfl', title: 'ISTQB CTFL', description: 'Software testing foundation study guide: test design, levels, types, management.', url: '/vendors/istqb/istqb-ctfl/', type: 'certification' },
+    { id: 'peoplecert', title: 'PeopleCert Certifications', description: 'ITIL 4 Foundation study guide — IT service management vocabulary.', url: '/vendors/peoplecert/', type: 'vendor' },
+    { id: 'itil-4-foundation', title: 'ITIL 4 Foundation', description: 'Service management study guide: the ITIL framework, practices, and value system.', url: '/vendors/peoplecert/itil-4-foundation/', type: 'certification' },
+    { id: 'navigator', title: 'IT Career Navigator', description: 'Free assessment: find your three strongest IT paths before picking a certification.', url: '/navigator/', type: 'page' },
+    { id: 'paths', title: 'Career Paths', description: 'Role roadmaps: help desk, networking, sysadmin, cloud, dev, QA, data, security, and more.', url: '/paths/', type: 'page' },
+    { id: 'privacy', title: 'Privacy Policy', description: 'Analytics, cookies, and affiliate link handling.', url: '/legal/privacy-policy/', type: 'legal' },
+    { id: 'terms', title: 'Terms of Use', description: 'Terms governing use of CertBlueprint.', url: '/legal/terms-of-use/', type: 'legal' },
+    { id: 'affiliate', title: 'Affiliate Disclosure', description: 'How affiliate links work on CertBlueprint.', url: '/legal/affiliate-disclosure/', type: 'legal' },
+  ];
+
+  type Doc = (typeof SEARCH_INDEX)[number];
+
+  function simpleSearch(query: string): Doc[] {
+    const q = query.toLowerCase().trim();
+    if (!q) return [];
+    return SEARCH_INDEX.filter(
+      d => d.title.toLowerCase().includes(q) || d.description.toLowerCase().includes(q) || d.type.includes(q)
+    ).slice(0, 8);
+  }
+
+  const typeBadgeStyle: Record<string, string> = {
+    certification: 'background:#eff6ff;color:#1d4ed8;',
+    vendor: 'background:#f5f3ff;color:#6d28d9;',
+    section: 'background:var(--cb-bg-subtle);color:var(--cb-text-muted);',
+    legal: 'background:var(--cb-bg-subtle);color:var(--cb-text-muted);',
+    page: 'background:var(--cb-bg-subtle);color:var(--cb-text-muted);',
+  };
+
+  const typeLabel: Record<string, string> = {
+    certification: 'Cert', vendor: 'Vendor', section: 'Section', legal: 'Legal', page: 'Page',
+  };
+
+  function renderResults(results: Doc[]) {
+    const defaultEl = document.getElementById('search-default')!;
+    const list = document.getElementById('search-results-list')!;
+    const noRes = document.getElementById('search-no-results')!;
+
+    if (!results.length) {
+      defaultEl.classList.add('hidden');
+      list.classList.add('hidden');
+      noRes.classList.remove('hidden');
+      return;
+    }
+    noRes.classList.add('hidden');
+    defaultEl.classList.add('hidden');
+    list.classList.remove('hidden');
+    list.innerHTML = results.map((r, i) => `
+      <li role="option" aria-selected="false">
+        <a
+          href="${r.url}"
+          class="flex items-start gap-3 px-4 py-2.5 transition-colors"
+          style="color: var(--cb-text);"
+          onmouseover="this.style.background='var(--cb-bg-subtle)'"
+          onmouseout="this.style.background=''"
+          onfocus="this.style.background='var(--cb-bg-subtle)'"
+          onblur="this.style.background=''"
+          onclick="document.getElementById('search-modal')?.classList.add('hidden')"
+        >
+          <div class="flex-1 min-w-0">
+            <p class="text-sm font-medium truncate">${r.title}</p>
+            <p class="text-xs mt-0.5 line-clamp-1" style="color: var(--cb-text-muted);">${r.description}</p>
+          </div>
+          <span class="shrink-0 mt-0.5 text-xs px-1.5 py-0.5 rounded font-medium" style="${typeBadgeStyle[r.type] ?? ''}">${typeLabel[r.type] ?? r.type}</span>
+        </a>
+      </li>
+    `).join('');
+  }
+
+  let searchInited = false;
+
+  function initSearch() {
+    const input = document.getElementById('search-input') as HTMLInputElement;
+    const defaultEl = document.getElementById('search-default')!;
+    const list = document.getElementById('search-results-list')!;
+    const noRes = document.getElementById('search-no-results')!;
+
+    input.addEventListener('input', () => {
+      if (!input.value.trim()) {
+        defaultEl.classList.remove('hidden');
+        list.classList.add('hidden');
+        noRes.classList.add('hidden');
+        return;
+      }
+      renderResults(simpleSearch(input.value));
+    });
+
+    input.addEventListener('keydown', (e) => {
+      const items = list.querySelectorAll<HTMLAnchorElement>('a');
+      const focused = list.querySelector<HTMLElement>('a:focus');
+      const idx = focused ? Array.from(items).indexOf(focused as HTMLAnchorElement) : -1;
+      if (e.key === 'ArrowDown') { e.preventDefault(); (items[idx + 1] ?? items[0])?.focus(); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); idx <= 0 ? input.focus() : items[idx - 1]?.focus(); }
+    });
+  }
+
+  const observer = new MutationObserver(() => {
+    const modal = document.getElementById('search-modal');
+    if (modal && !modal.classList.contains('hidden') && !searchInited) {
+      searchInited = true;
+      initSearch();
+    }
+  });
+  const modal = document.getElementById('search-modal');
+  if (modal) observer.observe(modal, { attributes: true, attributeFilter: ['class'] });
+</script>

@@ -1,0 +1,254 @@
+{
+  "title": "AWS Solutions Architect Associate SAA-C03 Study Guide",
+  "slug": "aws-saa",
+  "vendor": "AWS",
+  "vendor_slug": "aws",
+  "level": "Associate",
+  "description": "The AWS Certified Solutions Architect – Associate (SAA-C03) validates the ability to design and deploy scalable, highly available, and fault-tolerant systems on Amazon Web Services. It is the most widely held AWS certification and among the highest-value cloud credentials in the job market today.",
+  "audience": "IT professionals, developers, and sysadmins moving into cloud architecture roles, and anyone targeting AWS infrastructure, DevOps, or cloud consulting positions.",
+  "why_get_it": "The AWS Solutions Architect Associate is the most in-demand cloud certification globally. Cloud architect and cloud engineer roles routinely list it as a requirement or strong preference, and it consistently ranks among the top-paying IT certifications. The exam tests real architectural decision-making: choosing the right storage service for a use case, designing for fault tolerance, understanding cost optimization trade-offs, and knowing when to use which AWS compute option. It is not a test of memorizing service names—it requires understanding how AWS services interact and why certain designs are better than others. For anyone in IT who wants to move toward cloud infrastructure, this is the single highest-leverage certification available today.",
+  "when_to_get_it": "Get AWS SAA when you are ready to move into cloud infrastructure, solutions design, or DevOps roles. A foundational understanding of networking (IP addressing, DNS, load balancing concepts) and basic Linux/Windows administration makes the study process substantially faster. AWS Cloud Practitioner is a valid first step if you are completely new to AWS, but many candidates skip it and go directly to SAA. If cloud architecture is your target role, this should be near the top of your study queue.",
+  "salary_range": "$95,000 – $140,000",
+  "salary_note": "Cloud architect and cloud engineer roles requiring AWS SAA typically start at $95K–$110K for candidates with limited experience, and reach $130K–$160K+ with 3–5 years of hands-on cloud work. The certification is one of the highest-correlation certs to salary growth in the IT industry.",
+  "exam_code": "SAA-C03",
+  "exam_duration": "130 minutes",
+  "exam_format": "Multiple choice and multiple response (select two or more). 65 questions.",
+  "exam_questions": "65 questions",
+  "official_url": "https://aws.amazon.com/certification/certified-solutions-architect-associate/",
+  "official_pricing_url": "https://aws.amazon.com/certification/certified-solutions-architect-associate/",
+  "recertification_note": "AWS certifications are valid for 3 years. Recertify by passing the same exam again or a higher-level AWS exam before expiration. AWS occasionally offers recertification exams at reduced cost.",
+  "skills_covered": [
+    {
+      "category": "Design Secure Architectures",
+      "items": [
+        "IAM policies, roles, and permissions",
+        "VPC design: subnets, route tables, security groups, NACLs",
+        "Secure access to AWS resources (S3 bucket policies, KMS encryption)",
+        "Multi-account strategies and AWS Organizations",
+        "Network edge security: WAF, Shield, CloudFront"
+      ]
+    },
+    {
+      "category": "Design Resilient Architectures",
+      "items": [
+        "Multi-AZ and multi-region deployment patterns",
+        "Auto Scaling and Elastic Load Balancing",
+        "RDS Multi-AZ and read replicas",
+        "S3 versioning, replication, and lifecycle policies",
+        "Disaster recovery strategies (backup, pilot light, warm standby, multi-site)"
+      ]
+    },
+    {
+      "category": "Design High-Performance Architectures",
+      "items": [
+        "EC2 instance types and when to use each",
+        "Storage options: EBS, EFS, S3, Glacier – performance trade-offs",
+        "Caching strategies: ElastiCache, CloudFront, DAX",
+        "Database selection: RDS, DynamoDB, Aurora, Redshift",
+        "Lambda and serverless architecture patterns"
+      ]
+    },
+    {
+      "category": "Design Cost-Optimized Architectures",
+      "items": [
+        "EC2 pricing models: On-Demand, Reserved, Spot",
+        "S3 storage class selection for cost optimization",
+        "Right-sizing compute resources",
+        "Cost Explorer and AWS Budgets",
+        "Serverless vs. server-based cost trade-offs"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Get hands-on with a free AWS account",
+      "description": "Create a free-tier AWS account before starting any course. AWS is a hands-on platform—reading about EC2 is far less useful than actually launching an instance, attaching an EBS volume, and connecting to it over SSH. The free tier covers most services you will need for exam prep."
+    },
+    {
+      "step": 2,
+      "title": "Work through a structured course",
+      "description": "Stephane Maarek's AWS SAA course on Udemy is the highest-rated and most comprehensive available. Adrian Cantrill's course is also excellent—more hands-on focused, but longer. Choose one and complete it fully before moving to practice exams. The exam tests how services work together, and that context only comes from a complete course."
+    },
+    {
+      "step": 3,
+      "title": "Build hands-on with real AWS labs",
+      "description": "As you work through your course, follow along in the AWS console. Build a VPC from scratch, set up an Application Load Balancer with an Auto Scaling group, configure an S3 static website, practice IAM policy writing. AWS provides free hands-on labs through AWS Skill Builder. The practical experience changes how exam questions read."
+    },
+    {
+      "step": 4,
+      "title": "Understand the architecture decision patterns",
+      "description": "The SAA-C03 exam is scenario-based. Every question presents a problem and asks which AWS solution best addresses it, given constraints like cost, performance, or availability. Read AWS whitepapers on the Well-Architected Framework—it directly frames how exam questions are written. Knowing why services are chosen matters as much as knowing what they do."
+    },
+    {
+      "step": 5,
+      "title": "Take Tutorials Dojo practice exams",
+      "description": "Jon Bonso's Tutorials Dojo practice exams are the benchmark for AWS SAA exam prep. They are the closest match to real exam question style and difficulty available. Take timed, full-length exams. Review every explanation—even for questions you answered correctly. Target 80%+ before scheduling."
+    },
+    {
+      "step": 6,
+      "title": "Review weak service areas",
+      "description": "After practice exams, identify the AWS services and scenarios where you score consistently below 70%. Return to your course for those topics, look up the official AWS documentation, and review any associated hands-on labs. Networking (VPC design) and database selection are common weak spots."
+    },
+    {
+      "step": 7,
+      "title": "Schedule and sit the exam",
+      "description": "Book through Pearson VUE or PSI. The exam is 130 minutes for 65 questions—roughly 2 minutes per question. Read scenarios carefully; many wrong answers are plausible but violate a constraint buried in the question. Flag uncertain questions and return. You have time if you manage it."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "AWS Free Tier Account",
+      "url": "https://aws.amazon.com/free/",
+      "type": "Hands-on Lab",
+      "note": "Essential. Create a free-tier AWS account and practice in the actual AWS console throughout your study. Theoretical knowledge without hands-on practice does not hold up on this exam."
+    },
+    {
+      "name": "AWS Skill Builder – Free Tier",
+      "url": "https://skillbuilder.aws/",
+      "type": "Official Training",
+      "note": "AWS's official learning platform. Free tier includes foundational courses, exam-style quizzes, and some hands-on labs. Useful supplement to a primary course."
+    },
+    {
+      "name": "AWS Well-Architected Framework Whitepaper",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+      "type": "Official Documentation",
+      "note": "Read this. The five pillars of the Well-Architected Framework (operational excellence, security, reliability, performance efficiency, cost optimization) map directly to how SAA exam questions are framed."
+    },
+    {
+      "name": "r/AWSCertifications on Reddit",
+      "url": "https://www.reddit.com/r/AWSCertifications/",
+      "type": "Community",
+      "note": "Active community of exam candidates. Recent pass reports are valuable for understanding current exam experience and resource recommendations."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Udemy – Stephane Maarek AWS SAA Course",
+      "type": "Video Course",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Most candidates – the most comprehensive and widely used AWS SAA course available",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Faws-certified-solutions-architect-associate-saa-c03%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_aws_saa_maarek",
+      "affiliate": true,
+      "note": "Over 800,000 students. Updated regularly for current exam content. Includes hands-on demos in the AWS console."
+    },
+    {
+      "provider": "Tutorials Dojo – AWS SAA Practice Exams (Jon Bonso)",
+      "type": "Practice Exams",
+      "price": "~$15–$20",
+      "best_for": "Exam preparation – the closest match to real exam difficulty and question style",
+      "affiliate_url": "https://portal.tutorialsdojo.com/courses/aws-certified-solutions-architect-associate-practice-exams/",
+      "affiliate_label": "View Tutorials Dojo",
+      "affiliate_event": "tutorialsdojo_aws_saa",
+      "affiliate": false,
+      "note": "Jon Bonso's practice exams are the community standard for AWS SAA prep. Detailed explanations for every answer are as valuable as the questions themselves."
+    },
+    {
+      "provider": "Adrian Cantrill – AWS SAA Course",
+      "type": "Video Course + Labs",
+      "price": "~$40",
+      "best_for": "Candidates who want deeper hands-on labs and architectural reasoning, not just exam coverage",
+      "affiliate_url": "https://learn.cantrill.io/p/aws-certified-solutions-architect-associate-saa-c03",
+      "affiliate_label": "View at learn.cantrill.io",
+      "affiliate_event": "cantrill_aws_saa",
+      "affiliate": false,
+      "note": "More expensive than Udemy options but highly rated for depth. Better for candidates who want to actually understand cloud architecture, not just pass the exam."
+    },
+    {
+      "provider": "AWS Certified Solutions Architect Study Guide — Sybex (SAA-C03, Piper & Clinton)",
+      "type": "Book",
+      "price": "~$40–$50",
+      "best_for": "A thorough written reference with 900 online practice questions to pair with a video course",
+      "affiliate_url": "https://www.amazon.com/dp/1119982626/?tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_aws_saa_sybex_guide",
+      "affiliate": true,
+      "note": "The standard written companion for SAA-C03. Pairs well with Stephane Maarek’s video course above."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Schedule AWS SAA Exam – AWS Certification Portal",
+      "url": "https://aws.amazon.com/certification/certified-solutions-architect-associate/",
+      "note": "AWS exams are scheduled through Pearson VUE or PSI. Verify current pricing on the AWS certification page. The exam is $150 USD at standard pricing."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is AWS SAA hard?",
+      "answer": "It is a scenario-based exam that requires understanding trade-offs between AWS services—not just memorizing what services exist. Candidates with networking fundamentals and some hands-on AWS experience typically find it manageable in 6 to 10 weeks of study. Those without IT experience should plan for 12+ weeks and invest heavily in hands-on practice."
+    },
+    {
+      "question": "Do I need programming experience for AWS SAA?",
+      "answer": "No. The Solutions Architect Associate is infrastructure and design focused. While the exam touches on Lambda and serverless patterns, it does not require writing code. Understanding what these services do and when to use them is sufficient."
+    },
+    {
+      "question": "Should I start with AWS Cloud Practitioner first?",
+      "answer": "Only if you are completely new to AWS and IT concepts in general. Most candidates with IT backgrounds skip Cloud Practitioner and go directly to SAA. Cloud Practitioner is a business-overview exam—it does not significantly accelerate SAA preparation."
+    },
+    {
+      "question": "How much does the AWS SAA exam cost?",
+      "answer": "The standard exam price is $150 USD. AWS periodically offers free practice exams and discounts through AWS Skill Builder and re:Invent promotions. Verify current pricing on the official AWS certification page before purchasing."
+    },
+    {
+      "question": "What jobs can I get with AWS SAA?",
+      "answer": "Cloud Solutions Architect, Cloud Engineer, DevOps Engineer, Cloud Consultant, and Infrastructure Engineer roles frequently list AWS SAA as a requirement. It is one of the certifications most directly correlated with a salary increase in a candidate's existing role or a new position."
+    },
+    {
+      "question": "What comes after AWS SAA?",
+      "answer": "AWS Solutions Architect Professional is the natural progression for deep architecture roles. AWS DevOps Engineer Professional for DevOps paths. Specialty certifications (Security, Networking, Machine Learning) for focused expertise. Many candidates also pursue Azure or GCP certifications to become multi-cloud architects."
+    },
+    {
+      "question": "What is the passing score for AWS SAA?",
+      "answer": "The passing score is 720 on a scale of 100 to 1000. AWS uses weighted scoring—some questions count more than others based on difficulty. The exact formula is not published."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CompTIA Security+",
+      "slug": "security-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "Pairs well with AWS SAA for candidates targeting cloud security roles. Security+ covers security fundamentals that complement cloud architecture knowledge."
+    },
+    {
+      "title": "CompTIA Network+",
+      "slug": "network-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "Strong networking foundation that directly accelerates AWS SAA study, particularly VPC and networking service topics."
+    },
+    {
+      "title": "Microsoft AZ-104",
+      "slug": "az-104",
+      "vendor": "Microsoft",
+      "vendor_slug": "microsoft",
+      "reason": "For candidates pursuing multi-cloud knowledge, Azure Administrator Associate is the natural Azure companion to AWS SAA."
+    },
+    {
+      "title": "Cisco CCNA",
+      "slug": "ccna",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "CCNA networking fundamentals directly support AWS VPC and hybrid connectivity topics covered in the SAA exam."
+    },
+    {
+      "title": "AWS Cloud Practitioner",
+      "slug": "aws-cloud-practitioner",
+      "vendor": "AWS",
+      "vendor_slug": "aws",
+      "reason": "The foundational AWS cert. A common first step before SAA-C03 for those new to AWS who want to build core service knowledge."
+    },
+    {
+      "title": "AWS Developer Associate",
+      "slug": "aws-developer-associate",
+      "vendor": "AWS",
+      "vendor_slug": "aws",
+      "reason": "The development-focused associate cert. Architecture (SAA) plus development is a powerful, well-paid AWS combination."
+    }
+  ],
+  "seo_title": "AWS Solutions Architect Associate (SAA-C03) Study Guide – Exam Details, Study Plan | CertBlueprint",
+  "seo_description": "Complete AWS Solutions Architect Associate SAA-C03 guide: who it's for, salary expectations, exam breakdown, step-by-step study plan, free and paid resources, and FAQ."
+}

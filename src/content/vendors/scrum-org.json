@@ -1,0 +1,138 @@
+{
+  "title": "Scrum.org",
+  "slug": "scrum-org",
+  "overview": "Scrum.org is the certification body founded in 2009 by Ken Schwaber, co-creator of Scrum, and is the home of the Professional Scrum Master (PSM) credentials. Its exams are rigorous, competency-based assessments that anyone can take without a mandatory training course, and every certification is valid for life. The PSM ladder runs from PSM I (foundational) through PSM II (advanced) to the rarely achieved PSM III.",
+  "why_vendor_matters": "Scrum.org matters because of how its model differs from the alternatives. A PSM I costs $200 for the exam alone, requires no course, and never expires—versus the Scrum Alliance CSM, which requires a mandatory two-day course typically costing $500-$1,000+ and renewal fees every two years. Because Scrum.org exams have a genuine pass bar (85% on PSM I, with PSM II and III significantly harder), the credential signals that you actually understand the Scrum framework rather than that you attended a workshop. For self-directed learners, it is the most cost-efficient legitimate Scrum credential available, and the free Scrum Open practice assessments on scrum.org let you gauge readiness before paying anything.\n\nThe honest counterweight: in raw brand recognition among non-technical recruiters, CSM still appears in more job postings, particularly in the US, because it has been around longer. And no Scrum certificate—PSM or CSM—will carry a candidate into a Scrum Master role by itself in today's crowded agile job market; employers increasingly filter on real delivery experience. The strongest case for the Scrum.org path is professionals who want a defensible, lifetime credential at minimal cost: PSM I to establish the foundation, PSM II once you have real facilitation experience to validate, and complementary certs like PSPO if your role straddles product ownership.",
+  "certification_tracks": [
+    {
+      "name": "Professional Scrum Master",
+      "level": "Foundation to Expert",
+      "description": "PSM I validates understanding of the Scrum Guide and the Scrum Master role. PSM II tests applying Scrum in complex real-world situations. PSM III is an essay-based mastery exam held by only a few thousand people worldwide."
+    },
+    {
+      "name": "Professional Scrum Product Owner",
+      "level": "Foundation to Expert",
+      "description": "PSPO I through III mirror the PSM ladder for product ownership: value maximization, backlog management, and stakeholder work. PSPO I is a common second cert for Scrum Masters working closely with product."
+    },
+    {
+      "name": "Developer and Team",
+      "level": "Specialist",
+      "description": "Applying Professional Scrum (APS) and the Professional Scrum Developer (PSD) focus on how engineering team members deliver Done increments within Scrum, including technical practices like CI and test automation."
+    },
+    {
+      "name": "Scaled and Specialty",
+      "level": "Specialist",
+      "description": "Scaled Professional Scrum (SPS) covers the Nexus framework for multi-team products. Professional Agile Leadership (PAL) targets managers, and Professional Scrum with Kanban (PSK) blends flow metrics into Scrum."
+    }
+  ],
+  "featured_certs": ["psm-1"],
+  "who_its_for": [
+    {
+      "role": "Aspiring Scrum Masters",
+      "detail": "The standard entry credential for people targeting a Scrum Master or agile delivery role. PSM I clears HR filters and proves you understand the framework, but pair it with real team exposure—the exam proves knowledge, not that you can run a team."
+    },
+    {
+      "role": "Business analysts and project coordinators",
+      "detail": "If you already work on or adjacent to an agile team, PSM I formalizes working knowledge into a credential recruiters recognize. It is the natural stepping stone from coordinator into a delivery or Scrum Master track."
+    },
+    {
+      "role": "Developers and QA on Scrum teams",
+      "detail": "Engineers and testers who want to speak the framework precisely—events, artifacts, the Definition of Done—rather than the 'Scrum-but' habits many workplaces drift into. It sharpens how you contribute inside the sprint and sets up the developer-focused PSD track later."
+    },
+    {
+      "role": "Cost-conscious self-directed learners",
+      "detail": "At $200 with no mandatory course and lifetime validity, PSM I is the most affordable credible agile credential for people who study on their own. The free Scrum Guide and Scrum Open assessment cover most of the prep."
+    }
+  ],
+  "career_salary_impact": [
+    "Be honest about what a Scrum credential does to pay: PSM I is a filter-passer, not a raise. U.S. Scrum Master and agile delivery roles broadly sit in the $70,000–$110,000 range, but that spread is driven by experience and track record, not by the certificate itself. An entry-level or career-changer candidate who holds PSM I but has never run a team typically lands a coordinator or team-level role first, then grows into Scrum Master pay as they accumulate real facilitation experience.",
+    "Where the cert genuinely moves the needle is eligibility. In a job market saturated with certified candidates, PSM I gets your resume past automated and HR screens that list a Scrum credential, and it signals to hiring managers who know the space that you understand empiricism and the Scrum accountabilities rather than just the vocabulary. Experienced Scrum Masters and agile coaches in major markets regularly exceed $110K, but that reflects demonstrated delivery, with the cert acting as the ticket to the interview—not the reason for the offer."
+  ],
+  "study_difficulty": [
+    {
+      "cert": "Professional Scrum Master I (PSM I)",
+      "difficulty": "Beginner–Moderate",
+      "time": "2–4 weeks part-time",
+      "detail": "The content is small—the 2020 Scrum Guide is roughly 13 pages—but the exam is harder than its entry-level label suggests: 80 questions in 60 minutes with an 85% pass bar, about 45 seconds per question. Most failures come not from lack of study but from real-world 'Scrum-but' habits, so the work is unlearning workplace shortcuts and knowing the Guide's exact wording until you consistently ace the free Scrum Open assessment."
+    }
+  ],
+  "available_guides": [
+    {
+      "title": "Professional Scrum Master I (PSM I) Study Guide",
+      "level": "Foundation",
+      "description": "The full study plan for Scrum.org's entry credential: $200 exam, 80 questions in 60 minutes, 85% to pass, lifetime validity, plus a PSM I vs CSM comparison and free and paid prep resources.",
+      "slug": "psm-1",
+      "vendor_slug": "scrum-org",
+      "featured": true
+    }
+  ],
+  "more_certs": [
+    {
+      "title": "Professional Scrum Master II (PSM II)",
+      "level": "Advanced",
+      "description": "The next rung up: proves you can apply Scrum in complex, real-world situations rather than just recite the Guide. Best taken once you have genuine facilitation experience to validate—the scenarios assume it."
+    },
+    {
+      "title": "Professional Scrum Product Owner I (PSPO I)",
+      "level": "Foundation",
+      "description": "The product-ownership counterpart to PSM I—value maximization, backlog management, and stakeholder work. A common second cert for Scrum Masters whose role straddles product."
+    },
+    {
+      "title": "Professional Scrum Developer (PSD)",
+      "level": "Specialist",
+      "description": "Focused on how engineering team members deliver Done increments within Scrum, including technical practices like continuous integration and test automation. Aimed at developers rather than Scrum Masters."
+    },
+    {
+      "title": "Professional Scrum with Kanban (PSK)",
+      "level": "Specialist",
+      "description": "Blends flow metrics and Kanban practices into Scrum without breaking the framework. A specialty add-on for practitioners who want to improve predictability and delivery flow."
+    }
+  ],
+  "related_paths": [
+    {
+      "title": "IT Project Coordinator",
+      "href": "/paths/it-project-coordinator/",
+      "description": "The closest role to an entry Scrum Master—coordinating delivery, running ceremonies, and clearing blockers. PSM I is a natural credential for this track."
+    },
+    {
+      "title": "QA Engineer",
+      "href": "/paths/qa-engineer/",
+      "description": "Testers on Scrum teams named directly in the PSM I audience. Pairing PSM I with a testing credential formalizes both the craft and the agile context it runs in."
+    },
+    {
+      "title": "PMI Certifications",
+      "href": "/vendors/pmi/",
+      "description": "PMI's CAPM adds a traditional and agile project management credential that complements PSM I for coordinator and delivery-track roles."
+    }
+  ],
+  "cta": {
+    "heading": "Start with PSM I",
+    "blurb": "Scrum.org's entry credential is the most affordable credible agile cert: $200, no required course, valid for life. Our study guide walks you from the Scrum Guide to exam day.",
+    "href": "/vendors/scrum-org/psm-1/",
+    "label": "Read the PSM I study guide"
+  },
+  "faq": [
+    {
+      "question": "PSM I vs CSM—which should I get?",
+      "answer": "PSM I if you can self-study and want value: $200, no mandatory course, lifetime validity, and a harder exam that arguably signals more. CSM if your employer is paying, you want instructor-led training, or you are targeting organizations that specifically list CSM. Both are legitimate; the CSM's mandatory course and two-year renewal fees make it the far more expensive path over a career."
+    },
+    {
+      "question": "Do Scrum.org certifications expire?",
+      "answer": "No. All Scrum.org certifications—PSM, PSPO, and the rest—are valid for life with no renewal fees and no continuing education requirements. This is a deliberate contrast with Scrum Alliance, whose certifications require renewal every two years with fees and education credits."
+    },
+    {
+      "question": "Do I need to take a course before the PSM I exam?",
+      "answer": "No. Scrum.org courses exist and are good, but they are optional—you can buy the $200 exam password and self-study. The free Scrum Guide plus the free Scrum Open practice assessment on scrum.org are the core prep; most self-studiers who consistently score 95%+ on the Open pass the real exam."
+    },
+    {
+      "question": "How hard is the PSM I exam?",
+      "answer": "Harder than its entry-level label suggests: 80 questions in 60 minutes with an 85% pass mark, and questions test Scrum Guide precision, not general agile intuition. It is very passable with focused self-study, but people who skim the Scrum Guide and rely on workplace 'Scrum-but' experience regularly fail their first attempt. Each retake costs the full $200."
+    },
+    {
+      "question": "Will PSM I get me a Scrum Master job?",
+      "answer": "By itself, no—and be wary of anyone claiming otherwise. The Scrum Master market is saturated with certified candidates, and employers filter on real facilitation and delivery experience. PSM I earns credibility and clears HR checklists, but pair it with demonstrable agile experience, even from volunteer or internal projects, to be competitive."
+    }
+  ],
+  "seo_title": "Scrum.org Certifications – PSM I Study Guides | CertBlueprint",
+  "seo_description": "Scrum.org certification guides for PSM I, II, and III. Lifetime certs, no required course, and an honest PSM vs CSM comparison for Scrum Masters."
+}

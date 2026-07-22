@@ -1,0 +1,219 @@
+{
+  "title": "Microsoft AZ-900: Azure Fundamentals Study Guide",
+  "slug": "az-900",
+  "short_name": "AZ-900",
+  "vendor": "Microsoft",
+  "vendor_slug": "microsoft",
+  "level": "Foundation",
+  "description": "AZ-900 (Azure Fundamentals) is Microsoft's foundational cloud certification. The exam validates a broad understanding of cloud concepts and core Azure services, pricing, and governance—the most accessible entry point into the Microsoft Azure ecosystem.",
+  "audience": "Beginners and career changers entering cloud, non-technical professionals (sales, finance, project management) who work with Azure, and IT pros who want an entry credential before tackling AZ-104 or other role-based Azure exams.",
+  "why_get_it": "AZ-900 is the easiest way to get 'Azure certified' and prove cloud literacy in Microsoft environments. Azure is the dominant cloud in enterprise and government, so demonstrating you understand its services, pricing, and governance carries real weight—even in non-technical roles. For beginners it's a confidence-building first win and the foundation for the higher-value role-based certs (AZ-104, AZ-305, security and data tracks). Microsoft's free annual renewal model also means it costs little to maintain over time.",
+  "when_to_get_it": "Get AZ-900 if you're new to cloud and want an approachable first Azure certification, or if your role touches Azure without being deeply technical. If you already have IT experience and a technical goal, you can often go straight to AZ-104—but AZ-900 is a low-cost, low-risk way to build a foundation and confidence first, and it's a common requirement in some training programs.",
+  "exam_code": "AZ-900",
+  "exam_duration": "45 minutes",
+  "exam_format": "Roughly 40–60 questions: multiple choice, multiple response, and other interactive formats. Passing score: 700 (on a scale of 100–1000).",
+  "exam_questions": "~40–60 questions",
+  "official_url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/",
+  "official_pricing_url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/",
+  "recertification_note": "Microsoft Fundamentals certifications like AZ-900 do not expire—they have no renewal requirement. (Role-based certs such as AZ-104 renew annually for free via a Microsoft Learn assessment.)",
+  "salary_range": "$50,000 – $85,000",
+  "salary_note": "AZ-900 is a foundational credential, not a salary driver on its own—it typically adds a few thousand dollars to an existing IT salary and helps open the door to entry cloud roles ($50K–$70K). Its real value is as a stepping stone: pairing it with AZ-104 and hands-on Azure experience moves you toward the $75K–$110K administrator range and beyond.",
+  "skills_covered": [
+    {
+      "category": "Cloud Concepts (25–30%)",
+      "items": [
+        "The benefits and considerations of cloud computing",
+        "Infrastructure-, platform-, and software-as-a-service (IaaS, PaaS, SaaS)",
+        "Public, private, and hybrid cloud models",
+        "Capital vs operational expenditure and the consumption model",
+        "High availability, scalability, elasticity, and disaster recovery"
+      ]
+    },
+    {
+      "category": "Azure Architecture and Services (35–40%)",
+      "items": [
+        "Core architectural components: Regions, Availability Zones, resource groups",
+        "Compute services: virtual machines, App Service, containers, functions",
+        "Networking: virtual networks, VPN/ExpressRoute, DNS",
+        "Storage services and storage tiers",
+        "Identity: Microsoft Entra ID and authentication concepts"
+      ]
+    },
+    {
+      "category": "Azure Management and Governance (30–35%)",
+      "items": [
+        "Cost management: pricing calculator, TCO, and cost controls",
+        "Governance: tags, policies, resource locks, and Azure Policy",
+        "Tools for managing and deploying resources (portal, CLI, ARM/Bicep)",
+        "Monitoring tools: Azure Monitor, Service Health, and advisories",
+        "Service-level agreements and service lifecycle"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Read the official AZ-900 study guide",
+      "description": "Microsoft publishes a free AZ-900 study guide listing every skill measured and the latest exam updates. Start here so you study exactly what's tested—the objectives change periodically."
+    },
+    {
+      "step": 2,
+      "title": "Work through the free Microsoft Learn path",
+      "description": "Microsoft Learn has a free, structured AZ-900 learning path that covers 100% of the objectives with hands-on exercises. It's the single best free resource and uses the exact terminology the exam uses."
+    },
+    {
+      "step": 3,
+      "title": "Add a paid video course for structure",
+      "description": "A paid course (Scott Duffy's on Udemy is the most popular) adds a clear narrative and demos on top of Microsoft Learn. Helpful if you prefer video and want everything in one place. See the paid resources section."
+    },
+    {
+      "step": 4,
+      "title": "Create a free Azure account and explore",
+      "description": "Sign up for a free Azure account and click through the portal: create a resource group, deploy a VM, open Cost Management. A little hands-on time makes the services and governance topics concrete."
+    },
+    {
+      "step": 5,
+      "title": "Use the official free practice assessment",
+      "description": "Microsoft provides a free official AZ-900 practice assessment. It mirrors the real question style closely—use it to find weak areas before booking."
+    },
+    {
+      "step": 6,
+      "title": "Take additional practice exams",
+      "description": "Work through more full-length AZ-900 practice tests. Aim to score consistently above 85% before booking. Review every miss until the concept is clear."
+    },
+    {
+      "step": 7,
+      "title": "Schedule and sit the exam",
+      "description": "Register through Pearson VUE (test center or online proctored). The exam is short—about 45 minutes. Check for Microsoft's free voucher promotions (Learn challenges) before paying full price."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "AZ-900 Official Study Guide (Microsoft Learn)",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-900",
+      "type": "Official Documentation",
+      "note": "Microsoft's official list of skills measured plus the latest exam-update notes. Your study roadmap—start here."
+    },
+    {
+      "name": "Microsoft Learn – Azure Fundamentals Path (Free)",
+      "url": "https://learn.microsoft.com/en-us/training/courses/az-900t00",
+      "type": "Video Course",
+      "note": "A free, structured, hands-on learning path covering 100% of the AZ-900 objectives. The best free resource and the closest match to exam terminology."
+    },
+    {
+      "name": "Microsoft Azure Free Account",
+      "url": "https://azure.microsoft.com/en-us/free/",
+      "type": "Hands-on Labs",
+      "note": "A free Azure account for hands-on practice. Clicking through the portal makes the services, governance, and cost topics concrete."
+    },
+    {
+      "name": "John Savill's AZ-900 Study Cram (YouTube)",
+      "url": "https://www.youtube.com/@NTFAQGuy",
+      "type": "Video Course",
+      "note": "John Savill's free AZ-900 'study cram' is a community favorite—a thorough single-video review that pairs well with Microsoft Learn."
+    },
+    {
+      "name": "Microsoft AZ-900 Practice Assessment (Free, Official)",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/practice/assessment",
+      "type": "Practice Questions",
+      "note": "Microsoft's free official practice assessment. The question style closely matches the real exam—use it to gauge readiness."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Udemy – Scott Duffy AZ-900 Azure Fundamentals Course",
+      "type": "Video Course",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Most candidates – the most popular AZ-900 course, updated for current exam objectives with demos",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Faz900-azure%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_az900_duffy_course",
+      "affiliate": true,
+      "note": "Scott Duffy's AZ-900 course has 590K+ students and is kept current with exam updates. Frequently on sale."
+    },
+    {
+      "provider": "Udemy – AZ-900 Original Practice Tests",
+      "type": "Practice Exams",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Final exam preparation with realistic, full-length AZ-900 practice tests",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Faz900-azure-tests%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_az900_practice",
+      "affiliate": true,
+      "note": "Original (not brain-dump) AZ-900 practice questions with explanations. Use alongside the free official assessment."
+    },
+    {
+      "provider": "Exam Ref AZ-900 Microsoft Azure Fundamentals (Microsoft Press, Jim Cheshire)",
+      "type": "Book",
+      "price": "~$25–$40",
+      "best_for": "Candidates who want the official written reference organized by exam objective",
+      "affiliate_url": "https://www.amazon.com/dp/0137955146/?tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_az900_exam_ref",
+      "affiliate": true,
+      "note": "The official Microsoft Press Exam Ref (3rd edition). A concise reference best used alongside the free Microsoft Learn path."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Schedule the AZ-900 Exam – Microsoft",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/",
+      "note": "AZ-900 is $99 USD at standard pricing. Microsoft periodically offers free exam vouchers through Microsoft Learn challenges—check for current promotions before purchasing."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is AZ-900 worth it?",
+      "answer": "For beginners and non-technical roles, yes. It's the easiest way to get Azure-certified and prove cloud literacy, and it's a foundation for the higher-value role-based certs. Experienced IT pros with a technical goal sometimes skip straight to AZ-104."
+    },
+    {
+      "question": "How hard is the AZ-900 exam?",
+      "answer": "It's the easiest Azure exam—foundational and broad. Most candidates pass with a couple of weeks of study using the free Microsoft Learn path plus practice questions. No hands-on technical depth is required."
+    },
+    {
+      "question": "Does AZ-900 expire?",
+      "answer": "No. Microsoft Fundamentals certifications, including AZ-900, do not expire and have no renewal requirement. (Role-based certs like AZ-104 renew annually for free.)"
+    },
+    {
+      "question": "Do I need experience before AZ-900?",
+      "answer": "No. There are no prerequisites, and it's designed for beginners and non-technical professionals. A free Azure account for hands-on clicking is the only 'experience' you need."
+    },
+    {
+      "question": "AZ-900 or AZ-104 — which should I take?",
+      "answer": "AZ-900 is foundational and non-technical; AZ-104 is the role-based administrator cert and far more in-demand for jobs. If you have IT experience, you can often skip to AZ-104. If you're new, AZ-900 builds a foundation first."
+    },
+    {
+      "question": "How long does it take to study for AZ-900?",
+      "answer": "Most candidates spend 1 to 3 weeks part-time. The free Microsoft Learn path plus the official practice assessment is enough for many people. Those with IT backgrounds may be ready in a few days."
+    },
+    {
+      "question": "What comes after AZ-900?",
+      "answer": "The role-based certs: AZ-104 (Administrator) is the usual next step, with AZ-305 (Architect), AZ-500 (Security), and others beyond. SC-900 and AI-900 are sibling fundamentals if you want broader Microsoft coverage."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "Microsoft AZ-104",
+      "slug": "az-104",
+      "vendor": "Microsoft",
+      "vendor_slug": "microsoft",
+      "reason": "The role-based administrator cert and the usual next step after AZ-900. Where AZ-900 proves literacy, AZ-104 proves you can manage Azure day to day."
+    },
+    {
+      "title": "Microsoft SC-900",
+      "slug": "sc-900",
+      "vendor": "Microsoft",
+      "vendor_slug": "microsoft",
+      "reason": "The security, compliance, and identity fundamentals cert. A natural sibling to AZ-900 for building broad Microsoft cloud knowledge."
+    },
+    {
+      "title": "AWS Cloud Practitioner",
+      "slug": "aws-cloud-practitioner",
+      "vendor": "AWS",
+      "vendor_slug": "aws",
+      "reason": "The AWS equivalent foundational cloud cert. Many beginners get both to demonstrate cross-cloud literacy."
+    }
+  ],
+  "seo_title": "Microsoft AZ-900 Azure Fundamentals Study Guide | CertBlueprint",
+  "seo_description": "Complete Microsoft AZ-900 (Azure Fundamentals) guide: who it's for, salary, exam domains, study path, free Microsoft Learn resources, paid courses, and FAQ."
+}

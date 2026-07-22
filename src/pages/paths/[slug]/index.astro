@@ -1,0 +1,223 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const paths = await getCollection('paths');
+  return paths.map((p) => ({ params: { slug: p.data.slug }, props: { path: p.data } }));
+}
+
+const { path } = Astro.props;
+const domains = await getCollection('domains');
+const domain = domains.find((d) => d.data.slug === path.domain)?.data;
+
+const METERS = [
+  ['Communication', path.work_texture.communication],
+  ['Technical depth', path.work_texture.technical_depth],
+  ['Troubleshooting', path.work_texture.troubleshooting],
+  ['Customer contact', path.work_texture.customer],
+  ['On-call', path.work_texture.on_call],
+  ['Remote-friendly', path.work_texture.remote],
+];
+const levelWord = (v: number) => ['', 'Low', 'Medium', 'High', 'Very high'][Math.round(v)] || 'Medium';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Career Paths', href: '/paths/' },
+  { label: path.role, href: `/paths/${path.slug}/` },
+];
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Occupation',
+  name: path.role,
+  description: path.tagline,
+  occupationalCategory: domain?.title ?? path.domain,
+  estimatedSalary: { '@type': 'MonetaryAmountDistribution', name: 'base', currency: 'USD', median: path.salary.median.replace(/[^0-9]/g, '') || undefined },
+  skills: path.skills.map((s) => s.name).join(', '),
+};
+---
+
+<BaseLayout title={path.seo_title} description={path.seo_description} breadcrumbs={breadcrumbs} structuredData={structuredData}>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- breadcrumb -->
+    <nav class="pt-6 text-xs" style="color: var(--cb-text-muted);" aria-label="Breadcrumb">
+      <a href="/" style="color: var(--cb-text-muted);">Home</a> <span aria-hidden="true">/</span>
+      <a href="/paths/" style="color: var(--cb-text-muted);">Career Paths</a> <span aria-hidden="true">/</span>
+      <span style="color: var(--cb-text-sub);">{path.role}</span>
+    </nav>
+
+    <!-- hero -->
+    <header class="pt-6 pb-2">
+      <p class="font-mono text-xs uppercase tracking-widest mb-2" style="color: var(--cb-accent-text);">
+        {domain?.title ?? path.domain} &middot; {path.specialization}
+      </p>
+      <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-balance" style="color: var(--cb-text);">{path.role}</h1>
+      <p class="mt-3 text-lg leading-relaxed" style="color: var(--cb-text-sub); max-width: 60ch;">{path.tagline}</p>
+      <div class="mt-4 flex flex-wrap gap-2">
+        {path.entry_titles.map((t) => (
+          <span class="inline-flex rounded-full px-3 py-1 text-xs font-medium border" style="color: var(--cb-text-muted); background: var(--cb-bg-subtle); border-color: var(--cb-border);">{t}</span>
+        ))}
+      </div>
+    </header>
+
+    <!-- salary + assessment CTA card -->
+    <div class="my-6 rounded-xl border p-5 flex flex-col sm:flex-row sm:items-center gap-4" style="border-color: var(--cb-border); background: var(--cb-bg-subtle);">
+      <div class="flex-1">
+        <div class="font-mono text-sm" style="color: var(--cb-text);">{path.salary.median} median &middot; {path.salary.growth}</div>
+        <div class="text-xs mt-1" style="color: var(--cb-text-muted);">{path.salary.entry}. {path.salary.note}</div>
+      </div>
+      <a href="/navigator/" class="shrink-0 inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold text-white" style="background: var(--cb-accent);">
+        Is this you? Take the free assessment
+      </a>
+    </div>
+
+    <!-- what you do -->
+    <section class="py-4">
+      <h2 class="text-xl font-bold tracking-tight" style="color: var(--cb-text);">What you actually do</h2>
+      <p class="mt-2 leading-relaxed" style="color: var(--cb-text-sub); max-width: 64ch;">{path.what_you_do}</p>
+      <ul class="mt-4 space-y-1.5">
+        {path.day_in_life.map((d) => (
+          <li class="flex gap-2 text-sm" style="color: var(--cb-text-sub);"><span style="color: var(--cb-accent-text);">&bull;</span><span>{d}</span></li>
+        ))}
+      </ul>
+    </section>
+
+    <!-- work texture -->
+    <section class="py-4">
+      <h2 class="text-xl font-bold tracking-tight mb-3" style="color: var(--cb-text);">What the work feels like</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-3">
+        {METERS.map(([label, v]) => (
+          <div>
+            <div class="flex justify-between text-xs mb-1" style="color: var(--cb-text-sub);"><span>{label}</span><span class="font-mono" style="color: var(--cb-text-muted);">{levelWord(v as number)}</span></div>
+            <div class="flex gap-1">
+              {[1, 2, 3, 4].map((i) => (
+                <span class="h-1.5 flex-1 rounded-sm" style={`background: ${i <= Math.round(v as number) ? 'var(--cb-accent)' : 'var(--cb-border)'};`}></span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- fit -->
+    <section class="py-4 grid sm:grid-cols-2 gap-4">
+      <div class="rounded-xl border p-4" style="border-color: var(--cb-border);">
+        <h3 class="font-semibold text-sm mb-2" style="color: var(--cb-text);">This fits you if&hellip;</h3>
+        <ul class="space-y-1.5">{path.work_style.fits_if.map((f) => (<li class="text-sm flex gap-2" style="color: var(--cb-text-sub);"><span style="color: var(--cb-accent-text);">&checkmark;</span>{f}</li>))}</ul>
+      </div>
+      <div class="rounded-xl border p-4" style="border-color: var(--cb-border);">
+        <h3 class="font-semibold text-sm mb-2" style="color: var(--cb-text);">Less ideal if&hellip;</h3>
+        <ul class="space-y-1.5">{path.work_style.less_ideal_if.map((f) => (<li class="text-sm flex gap-2" style="color: var(--cb-text-muted);"><span>&minus;</span>{f}</li>))}</ul>
+      </div>
+    </section>
+
+    <!-- downsides -->
+    <section class="py-2">
+      <div class="rounded-lg p-4 text-sm" style="background: var(--cb-bg-subtle); color: var(--cb-text-sub); border-left: 3px solid var(--cb-text-muted);">
+        <strong style="color: var(--cb-text);">The honest downsides:</strong> {path.downsides}
+      </div>
+    </section>
+
+    <!-- skills -->
+    <section class="py-4">
+      <h2 class="text-xl font-bold tracking-tight mb-3" style="color: var(--cb-text);">Skills to build</h2>
+      <div class="space-y-2">
+        {path.skills.map((s) => (
+          <div class="flex flex-wrap items-baseline gap-2 rounded-lg border p-3" style="border-color: var(--cb-border);">
+            <span class="font-medium text-sm" style="color: var(--cb-text);">{s.name}</span>
+            <span class="font-mono text-xs px-2 py-0.5 rounded" style="background: var(--cb-accent-sub); color: var(--cb-accent-text);">{s.level}</span>
+            {s.note && <span class="text-xs w-full sm:w-auto" style="color: var(--cb-text-muted);">{s.note}</span>}
+          </div>
+        ))}
+      </div>
+      <div class="mt-3 flex flex-wrap gap-2">
+        {path.technologies.map((t) => (<span class="font-mono text-xs px-2 py-1 rounded border" style="color: var(--cb-text-sub); border-color: var(--cb-border);">{t}</span>))}
+      </div>
+    </section>
+
+    <!-- roadmap -->
+    <section class="py-4">
+      <h2 class="text-xl font-bold tracking-tight mb-1" style="color: var(--cb-text);">Your roadmap</h2>
+      <p class="text-sm mb-4" style="color: var(--cb-text-muted);">An ordered path from beginner to employable. Certifications are optional checkpoints, not the point &mdash; skills and a portfolio are.</p>
+      <ol class="space-y-3">
+        {path.roadmap.map((r) => (
+          <li class="flex gap-4">
+            <div class="shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-mono text-sm font-bold" style="background: var(--cb-accent-sub); color: var(--cb-accent-text);">{r.stage}</div>
+            <div class="flex-1 pb-1">
+              <div class="font-semibold" style="color: var(--cb-text);">{r.title}</div>
+              <p class="text-sm mt-0.5" style="color: var(--cb-text-sub);">{r.focus}</p>
+              {r.cert_slug && path.certs.find((c) => c.slug === r.cert_slug) && (
+                <a href={`/vendors/${path.certs.find((c) => c.slug === r.cert_slug)!.vendor_slug}/${r.cert_slug}/`} class="inline-flex items-center gap-1 mt-1.5 text-sm font-medium" style="color: var(--cb-accent-text);">
+                  Study guide: {path.certs.find((c) => c.slug === r.cert_slug)!.title} &rarr;
+                </a>
+              )}
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <!-- certifications facet -->
+    {(path.certs.length > 0 || path.cert_note) && (
+      <section class="py-4">
+        <h2 class="text-xl font-bold tracking-tight mb-1" style="color: var(--cb-text);">Certifications for this path</h2>
+        <p class="text-sm mb-4" style="color: var(--cb-text-muted);">A facet of the path, not the path itself &mdash; skills and a portfolio come first.</p>
+        {path.cert_note && (
+          <div class="rounded-lg p-4 text-sm mb-3" style="background: var(--cb-bg-subtle); color: var(--cb-text-sub);">{path.cert_note}</div>
+        )}
+        {path.certs.length > 0 && (
+          <div class="grid sm:grid-cols-2 gap-3">
+            {path.certs.map((c) => (
+              <a href={`/vendors/${c.vendor_slug}/${c.slug}/`} class="block rounded-xl border p-4 transition-colors hover:border-current" style="border-color: var(--cb-border);">
+                <div class="flex items-center justify-between">
+                  <span class="font-semibold" style="color: var(--cb-text);">{c.title}</span>
+                  <span class="font-mono text-xs px-2 py-0.5 rounded" style="background: var(--cb-bg-subtle); color: var(--cb-text-muted);">{c.stage}</span>
+                </div>
+                <p class="text-sm mt-1.5" style="color: var(--cb-text-sub);">{c.reason}</p>
+                <span class="inline-block mt-2 text-sm font-medium" style="color: var(--cb-accent-text);">View study guide &rarr;</span>
+              </a>
+            ))}
+          </div>
+        )}
+      </section>
+    )}
+
+    <!-- weekend trial -->
+    <section class="py-4">
+      <div class="rounded-xl border p-5" style="border-color: var(--cb-border); background: var(--cb-bg-subtle);">
+        <p class="font-mono text-xs uppercase tracking-widest mb-1" style="color: var(--cb-accent-text);">Try it this weekend</p>
+        <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{path.trial.objective}</p>
+        <div class="mt-3 flex flex-wrap gap-2 items-center">
+          <span class="font-mono text-xs px-2 py-1 rounded border" style="color: var(--cb-accent-text); border-color: var(--cb-border);">{path.trial.cost}</span>
+          <span class="font-mono text-xs px-2 py-1 rounded border" style="color: var(--cb-text-sub); border-color: var(--cb-border);">{path.trial.time}</span>
+          <span class="text-xs" style="color: var(--cb-text-muted);">{path.trial.disclosure}</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- adjacent paths -->
+    <section class="py-4">
+      <h2 class="text-xl font-bold tracking-tight mb-3" style="color: var(--cb-text);">Related paths</h2>
+      <div class="grid sm:grid-cols-2 gap-3">
+        {path.adjacent_paths.map((a) => (
+          <a href={`/paths/${a.slug}/`} class="block rounded-xl border p-4" style="border-color: var(--cb-border);">
+            <span class="font-semibold" style="color: var(--cb-text);">{a.role} &rarr;</span>
+            <p class="text-sm mt-1" style="color: var(--cb-text-sub);">{a.reason}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- assessment CTA -->
+    <section class="py-8 my-4 text-center">
+      <h2 class="text-2xl font-bold tracking-tight" style="color: var(--cb-text);">Not sure this is the one?</h2>
+      <p class="mt-2 text-sm" style="color: var(--cb-text-sub);">Take the free 10-minute assessment and see your three strongest IT paths.</p>
+      <a href="/navigator/" class="inline-flex items-center gap-2 mt-4 rounded-lg px-5 py-3 text-sm font-semibold text-white" style="background: var(--cb-accent);">
+        Take the IT Career Navigator &rarr;
+      </a>
+    </section>
+
+  </div>
+</BaseLayout>

@@ -1,0 +1,267 @@
+{
+  "title": "Cisco CCIE Enterprise Infrastructure Guide",
+  "slug": "ccie-enterprise-infrastructure",
+  "short_name": "CCIE Enterprise Infrastructure",
+  "vendor": "Cisco",
+  "vendor_slug": "cisco",
+  "level": "Expert",
+  "description": "The CCIE Enterprise Infrastructure is networking's most famous credential: the ENCOR written exam plus an 8-hour, $1,600-per-attempt hands-on lab that most candidates fail at least once. This guide is a destination briefing, not a cheerleading page — the real costs, the pass-rate folklore, the 1,000-hour question, and the honest 2026 answer to 'should I do this or stop at CCNP plus automation?'",
+  "audience": "Senior engineers already operating at CCNP-Enterprise level in large Cisco environments — routing at scale, SD-WAN, SD-Access daily — whose employer is a Cisco partner (CCIEs literally maintain partner discounts), aspiring consultants who bill on the number, and people who want mastery for its own sake and can afford 12–24 months of it. For most everyone else, the honest advice lives in the FAQ.",
+  "why_get_it": "Because in specific rooms, nothing else carries the same weight: Cisco partners need CCIEs on staff to hold partner status, ISPs and large Cisco-standardized enterprises treat the number as a seniority shortcut, and consulting rates for independent CCIEs commonly run $150–250/hour (anecdotal, but persistently so). Roughly 69,000 CCIE numbers have ever been issued across all tracks in 30+ years — scarcity is the product. And the honest counterweight: the market has genuinely shifted. CCNP Enterprise plus real automation skills (Python, Ansible, Terraform, CI) and cloud networking covers 80%+ of job postings at a fraction of the cost and time. Cisco itself wrote AI into ENCOR v1.2 and announced an AI module for the lab — that's the vendor telling you where the role is going. CCIE EI is the right mountain for a specific climber, not a default next step.",
+  "when_to_get_it": "When three things are simultaneously true: you're already senior-CCNP-level in daily practice (not just on paper), your employer or market genuinely values the number (partner status, consulting, ISP/enterprise seniority), and you can commit 12–24 months at 15–25 hours/week without wrecking your life. Timing note for 2026 starters: the current 3h Design + 5h Deploy lab format holds for EI until roughly February 2028, when the new 1-hour AI module arrives (Cisco marks the date 'to be confirmed') — a 12–18 month plan finishes under known rules; slower plans should budget for the AI module and practice with AI-assisted tooling regardless.",
+  "salary_range": "$130,000 – $200,000+ (senior/principal roles)",
+  "salary_note": "The spread is honest: Glassdoor-class data shows ~$180K averages for CCIE-tagged roles while ZipRecruiter's title-driven figures run ~$109K — the truth is the credential attaches to senior titles ($130–200K+) and consulting engagements above that, concentrated at Cisco partners, ISPs/MSPs, and large Cisco-standardized enterprises. The $150–250/hr independent-consulting folklore is persistent but anecdotal. Nothing here is official; Cisco publishes no salary data.",
+  "exam_code": "350-401 ENCOR + 8-hour lab",
+  "exam_duration": "Written: 120 minutes · Lab: 8 hours",
+  "exam_format": "Step 1: pass ENCOR (the same exam that anchors CCNP Enterprise — one pass serves both). Step 2: the 8-hour hands-on lab at a Cisco testing facility or mobile-lab event — currently Module 1 Design (3h, scenario-based, no device access, no backward navigation) + Module 2 Deploy/Operate/Optimize (5h, hands-on). You must beat per-module minimums AND the aggregate pass score. A 1-hour AI module joins around Feb 2028 (TBC). Fail the lab and you wait 30 days to rebook.",
+  "exam_questions": "Written: not published · Lab: scenario-based, not question-counted",
+  "exam_structure": [
+    {
+      "code": "350-401 ENCOR v1.2",
+      "name": "Implementing and Operating Cisco Enterprise Network Core Technologies",
+      "role": "Qualifying exam",
+      "price": "$400",
+      "note": "The same exam as CCNP Enterprise's core — one pass qualifies you for the lab AND banks the CCNP core. v1.2: wireless out, AI in."
+    },
+    {
+      "code": "CCIE EI Lab v1.1",
+      "name": "8-hour practical: 3h Design + 5h Deploy/Operate/Optimize",
+      "role": "Lab exam",
+      "price": "$1,600 per attempt",
+      "note": "At Cisco facilities or mobile-lab events ($1,900 with Cisco-provided kit at mobile labs). Travel and lodging on you. Most passers need 2–3 attempts. AI module joins ~Feb 2028 (TBC)."
+    }
+  ],
+  "official_url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/enterprise/ccie-enterprise-infrastructure/index.html",
+  "official_pricing_url": "https://ciscolearningservices.my.site.com/cln/s/article/book-your-expert-level-exams",
+  "recertification_note": "3-year cycle, 120 CE credits — and since exam passes auto-award CE, maintaining the number no longer requires re-passing anything if you keep learning (Cisco U courses, Cisco Live sessions, item writing). Let it fully lapse and you restart the entire process. Long-tenure CCIEs can reach Emeritus status.",
+  "last_verified": "July 2026",
+  "skills_covered": [
+    {
+      "category": "Network Infrastructure — the 30% core",
+      "items": [
+        "L2/L3 at expert depth: the routing protocols you know, at scale you probably don't",
+        "OSPF/BGP/IS-IS interactions, redistribution edge cases, convergence tuning",
+        "Multicast, QoS, and services under real constraints",
+        "IPv6 as a first-class citizen, not an afterthought",
+        "The depth difference: CCNP asks how; the lab asks why-and-what-breaks"
+      ]
+    },
+    {
+      "category": "Software-Defined Infrastructure (25%)",
+      "items": [
+        "Catalyst Center / SD-Access: fabric design, deployment, operation",
+        "Catalyst SD-WAN: controllers, policy, migration scenarios",
+        "The controller-based world the design module lives in",
+        "Integration between traditional and SD domains — where labs love to hurt you",
+        "Assurance and telemetry as operational tools"
+      ]
+    },
+    {
+      "category": "Transport, Security & Services (30%)",
+      "items": [
+        "Transport technologies: MPLS, DMVPN, and modern overlay choices",
+        "Infrastructure security: the CoPP/TrustSec/MACsec layer at expert depth",
+        "Services under failure: FHRP, NAT, NTP when things break at hour six",
+        "Design trade-offs the 3-hour module interrogates without a CLI",
+        "Operating and optimizing — not just deploying — under time pressure"
+      ]
+    },
+    {
+      "category": "Automation & Programmability (15%)",
+      "items": [
+        "Python, NETCONF/RESTCONF, YANG against real topologies",
+        "Model-driven telemetry and programmable infrastructure",
+        "Automation as a lab time-saver — scripting what others click",
+        "The coming AI module's territory: AI-assisted config, troubleshooting, and code",
+        "Where the lab is heading: Cisco published the direction; prep accordingly"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Run the go/no-go test honestly",
+      "description": "Three questions before a single lab hour: Are you operating at senior-CCNP level daily (not historically)? Does your market actually pay for the number — partner, ISP, consulting? Can you sustain 15–25 hours/week for 12–24 months? Two noes means the honest answer is CCNP + automation + cloud, and it isn't a consolation prize — it's the better career move for most engineers in 2026."
+    },
+    {
+      "step": 2,
+      "title": "Clear ENCOR if you haven't — it's the same exam as CCNP",
+      "description": "One $400 ENCOR pass banks the CCNP Enterprise core AND lab eligibility. Most CCIE candidates arrive holding CCNP Enterprise already; if you don't, our CCNP guide covers the ENCOR campaign. From your pass date, plan the lab within the eligibility window and verify current rules on the booking page."
+    },
+    {
+      "step": 3,
+      "title": "Budget for reality, not for optimism",
+      "description": "Paper minimum: $2,000 (written + one lab). Reality: most passers report 2–3 lab attempts ($3,200–4,800), travel and lodging per attempt ($300–2,000+ depending on your distance from a Cisco facility or mobile event), plus training/workbooks/rack time ($1,000–5,000). Realistic all-in: $5,000–12,000. Bootcamp-heavy paths run past $15,000. Write the number down before you start; mid-journey is a bad time to discover it."
+    },
+    {
+      "step": 4,
+      "title": "Build the lab engine: CML + INE workbooks + a schedule",
+      "description": "The standard self-study stack: CML Personal or Personal Plus ($199–349/yr, real images, legal) as the daily driver, INE's Enterprise Expert path (~$749–999/yr) for structured workbooks and full-scale labs, DevNet sandboxes for the Catalyst Center/SD-WAN controller side. The EVE-NG honesty note applies at this tier more than any: the emulator is legal, Cisco images outside a CML entitlement are not — and CCIE candidates lab publicly."
+    },
+    {
+      "step": 5,
+      "title": "Log the hours the folklore demands — yours may differ",
+      "description": "The 1,000-hour figure is roughly right for candidates without daily expert-level exposure: commonly 1,000–1,500 hours over 12–24 months. Engineers living in large-enterprise routing/SD-WAN/SDA daily land nearer 500–800. Track your hours honestly from day one — the number tells you when you're actually ready, not the calendar."
+    },
+    {
+      "step": 6,
+      "title": "Train the Design module separately — it's not a CLI event",
+      "description": "Module 1 is 3 hours of scenario-based design with no device access and no going back. It punishes config-first thinking: you're graded on requirements analysis and trade-off judgment. Practice with design scenarios (Cisco Live design sessions are free gold), not just racks. Most first-attempt failures cite this module as the surprise."
+    },
+    {
+      "step": 7,
+      "title": "Rehearse on Cisco's own graded infrastructure",
+      "description": "Cisco sells the closest thing to the real exam: official CCIE Practice Labs at $50 per 4-hour slot and Graded Labs at $1,000 (or 10 Learning Credits) on the actual grading engine. Before burning a $1,600 attempt plus travel, one graded rehearsal is the cheapest calibration that exists."
+    },
+    {
+      "step": 8,
+      "title": "Book the lab with logistics as part of the strategy",
+      "description": "Cisco facilities or traveling mobile-lab events ($1,600; $1,900 mobile with Cisco-provided kit). Book far ahead, plan travel to arrive rested, and know the retake rule: 30 days after a fail. Treat attempt one as reconnaissance if it goes wrong — most passers' stories include a failed first attempt and a much sharper second."
+    },
+    {
+      "step": 9,
+      "title": "After the number: maintain it the modern way",
+      "description": "120 CE credits per 3 years, and exam passes auto-award CE — but so do Cisco U courses and Cisco Live sessions, so the number stays alive through ordinary professional learning. Never let it fully lapse; expired means restarting everything. Emeritus exists for the long haul."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "CCIE EI v1.1 Practical Exam Topics",
+      "url": "https://learningnetwork.cisco.com/s/ccie-enterpr-infrastructure-exam-topics",
+      "type": "Official Documentation",
+      "note": "The contract for what the lab can ask — domain weights plus downloadable PDF."
+    },
+    {
+      "name": "Official AI-Module Announcement",
+      "url": "https://learningnetwork.cisco.com/s/article/CCIE-Practical-Exam-Format-with-AI-Module",
+      "type": "Official Documentation",
+      "note": "The per-track rollout dates for the new AI lab module (EI: ~Feb 2028, TBC). Read before committing to a timeline — and ignore dump-site 'news' claiming earlier dates."
+    },
+    {
+      "name": "Lab Booking & Logistics (Official)",
+      "url": "https://ciscolearningservices.my.site.com/cln/s/article/book-your-expert-level-exams",
+      "type": "Official Documentation",
+      "note": "The $1,600 fee, facility and mobile-lab options, scheduling mechanics, and retake rules — the logistics half of lab strategy."
+    },
+    {
+      "name": "Cisco Live On-Demand Library",
+      "url": "https://www.ciscolive.com/on-demand.html",
+      "type": "Video Sessions",
+      "note": "Free expert-level design and architecture sessions — the best free training for the Design module that exists."
+    },
+    {
+      "name": "CML Free Tier + DevNet Sandboxes",
+      "url": "https://developer.cisco.com/modeling-labs/",
+      "type": "Hands-on Labs",
+      "note": "Free 5-node CML for protocol drills; DevNet sandboxes for the controller side. Full-scale mock labs need the paid tiers — but the free layer covers daily reps."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "INE – Enterprise Expert Path",
+      "type": "Video + Workbooks + Racks",
+      "price": "~$749–$999/year",
+      "best_for": "The default self-study lab-prep stack — deep EI-specific workbooks and full-scale lab scenarios",
+      "affiliate_url": "https://ine.com/",
+      "affiliate_label": "View INE",
+      "affiliate_event": "ine_ccie_ei",
+      "affiliate": false,
+      "note": "Plain reference link, no commission."
+    },
+    {
+      "provider": "Cisco – Official Graded Labs & Practice Labs",
+      "type": "Official Lab Rehearsal",
+      "price": "$1,000 graded (or 10 CLCs) · $50 per 4-hour practice slot",
+      "best_for": "The only rehearsal on the actual grading engine — the cheapest calibration before a $1,600 attempt",
+      "affiliate_url": "https://u.cisco.com/",
+      "affiliate_label": "View on Cisco U",
+      "affiliate_event": "cisco_graded_labs_ei",
+      "affiliate": false,
+      "note": "Plain reference link. If your employer holds Learning Credits, this is the highest-value redemption in the catalog."
+    },
+    {
+      "provider": "Micronics Training (Narbik Kocharians)",
+      "type": "Instructor-led Bootcamp",
+      "price": "~$3,000–$4,500",
+      "best_for": "Final-stretch candidates who want brutal, instructor-graded full-scale labs from networking's most famous drill sergeant",
+      "affiliate_url": "https://www.micronicstraining.com/",
+      "affiliate_label": "View Micronics",
+      "affiliate_event": "micronics_ccie_ei",
+      "affiliate": false,
+      "note": "Plain reference link. Bootcamps are the accelerant, not the foundation — arrive already dangerous."
+    },
+    {
+      "provider": "Cisco Modeling Labs – Personal Plus",
+      "type": "Lab Platform",
+      "price": "$349/year (40 nodes)",
+      "best_for": "The daily-driver lab at CCIE scale — real images, legal, big enough for serious topologies",
+      "affiliate_url": "https://u.cisco.com/",
+      "affiliate_label": "View on Cisco U",
+      "affiliate_event": "cml_plus_ccie_ei",
+      "affiliate": false,
+      "note": "Plain reference link. The 20-node Personal tier ($199) works early; expert-scale topologies want the 40."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Written via Pearson VUE · Lab via Cisco's expert-exam booking",
+      "url": "https://ciscolearningservices.my.site.com/cln/s/article/book-your-expert-level-exams",
+      "note": "$400 written + $1,600 per lab attempt ($1,900 mobile-lab with Cisco kit); travel and lodging on you. Realistic all-in with 2–3 attempts: $5,000–12,000. Cisco Learning Credits redeem for all of it — including the $1,000 Graded Labs — so ask your employer before self-funding anything."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Should I do CCIE or stop at CCNP plus automation? The honest answer.",
+      "answer": "For most engineers in 2026: stop at CCNP plus automation — and that's not a consolation prize. CCNP Enterprise with real Python/Ansible/Terraform skills and cloud networking covers 80%+ of postings at a fraction of the cost and time, and Cisco's own blueprint changes (AI in ENCOR, an AI lab module coming) confirm the direction. CCIE EI is the right call in specific rooms: Cisco partners (the number maintains their discounts), consulting (you bill on it), ISPs and large Cisco-standardized enterprises (seniority shortcut), and personal-mastery goals with eyes open. Know which room you're in before you spend a year of evenings."
+    },
+    {
+      "question": "What does it really cost?",
+      "answer": "Paper: $2,000 ($400 written + $1,600 lab). Reality: most passers need 2–3 lab attempts, each with travel and lodging, plus 12–24 months of training and lab infrastructure — realistic all-in lands between $5,000 and $12,000, and bootcamp-heavy paths exceed $15,000. Budget for the realistic number up front; the mid-journey surprise is how people end up with an expensive half-finished attempt."
+    },
+    {
+      "question": "What's the actual pass rate?",
+      "answer": "Cisco has never published one — treat every specific number as folklore. The persistently cited figures: ~26% overall lab pass rate, 15–25% first attempt, most passers needing 2–3 tries. Whatever the true number, plan financially and emotionally for a failed first attempt; the passers' stories almost all include one."
+    },
+    {
+      "question": "Is the 1,000-hour prep figure real?",
+      "answer": "Roughly, for candidates without daily expert-level exposure: 1,000–1,500 hours over 12–24 months at 15–25 hours/week is the honest folklore. Engineers who live in large-enterprise routing/SD-WAN/SD-Access daily report 500–800. The variable isn't intelligence — it's how much of the blueprint you already operate under pressure at work."
+    },
+    {
+      "question": "What's changing with the AI module?",
+      "answer": "Cisco announced (May 2026) a new 1-hour 'AI Deploy, Operate and Optimize' module joining every CCIE lab — the format becomes 2h Design + 5h DOO + 1h AI DOO, testing use of AI assistants for config, troubleshooting, and code. Rollout is per-track: Data Center first (2027), EI around February 2028 (Cisco marks it TBC). Mid-2026 starters on a 12–18 month plan finish under current rules; slower plans should practice AI-assisted tooling regardless — it's where the job's going anyway."
+    },
+    {
+      "question": "How rare is a CCIE number, really?",
+      "answer": "Roughly 69,000 numbers ever issued across all tracks in 30+ years (third-party estimate), with maybe 45–50K active — against millions of networking professionals worldwide. That scarcity is the entire economic argument, and it's concentrated: in the rooms that value it (partners, ISPs, consulting), it's decisive; outside them, a hiring manager may not know what it is."
+    },
+    {
+      "question": "How does recertification work at this tier?",
+      "answer": "3-year cycle, 120 CE credits — and the modern system is genuinely humane: exam passes, Cisco U courses, and Cisco Live sessions all feed one credit ledger, so an active learner maintains the number through ordinary professional development without re-facing any exam. Let it fully lapse, though, and you restart from the written. Don't."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CCNP Enterprise",
+      "slug": "ccnp-enterprise",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The base camp — its ENCOR core is this cert's qualifying exam, and for most engineers it's also the honest summit."
+    },
+    {
+      "title": "CCIE Security",
+      "slug": "ccie-security",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The security-track twin — same lab economics, aimed at the Cisco security stack instead of enterprise routing."
+    },
+    {
+      "title": "CCDE",
+      "slug": "ccde",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The design-side expert alternative — no CLI in the exam at all; the classic senior-consultant stack is CCIE first, CCDE second."
+    }
+  ],
+  "seo_title": "CCIE Enterprise Infrastructure Guide – Real Costs, Pass Rates, and the CCNP Question | CertBlueprint",
+  "seo_description": "The honest CCIE EI briefing: $5–12K realistic all-in cost, the 8-hour lab format and coming AI module, 1,000-hour prep folklore vs reality, and who should stop at CCNP + automation instead."
+}

@@ -1,0 +1,234 @@
+{
+  "title": "CompTIA Linux+ (XK0-005) Study Guide",
+  "slug": "linux-plus",
+  "short_name": "Linux+",
+  "vendor": "CompTIA",
+  "vendor_slug": "comptia",
+  "level": "Intermediate",
+  "description": "CompTIA Linux+ is the vendor-neutral Linux administration certification. Exam XK0-005 validates the hands-on skills to configure, manage, secure, and troubleshoot Linux systems—the operating system that runs most servers, cloud workloads, and containers.",
+  "audience": "Systems administrators, cloud and DevOps hopefuls, and IT pros who need to prove real Linux command-line and administration skills. Best with some general IT or sysadmin background.",
+  "why_get_it": "Linux runs the internet—most servers, the majority of cloud workloads, and nearly all containers. Linux+ proves you can actually administer it from the command line: manage users and permissions, configure services, write shell scripts, work with containers, and troubleshoot. Because it's vendor-neutral, the skills apply across Red Hat, Ubuntu, and every other distribution. For anyone heading toward cloud, DevOps, cybersecurity, or systems administration, Linux fluency is a near-universal requirement, and Linux+ is a recognized way to validate it without committing to a single distro's ecosystem.",
+  "when_to_get_it": "Get Linux+ when you want to prove Linux administration skills for a sysadmin, cloud, DevOps, or security role. It pairs naturally with A+/Network+ (general IT foundation) and with cloud certs, since most cloud workloads run on Linux. If you're brand new to the command line, spend time in a Linux VM first—Linux+ assumes you can work comfortably in a terminal.",
+  "exam_code": "XK0-005",
+  "exam_duration": "90 minutes",
+  "exam_format": "Up to 90 questions: multiple choice and performance-based. Passing score: 720 (on a scale of 100–900).",
+  "exam_questions": "Up to 90 questions",
+  "official_url": "https://www.comptia.org/en-us/certifications/linux/",
+  "official_pricing_url": "https://www.comptia.org/en-us/certifications/linux/",
+  "recertification_note": "Valid for 3 years. Renew through CompTIA's Continuing Education (CE) program by earning CEUs, or by passing a higher-level CompTIA exam.",
+  "salary_range": "$75,000 – $120,000",
+  "salary_note": "Linux skills command strong pay because they underpin cloud and DevOps. Linux administrators commonly earn $75K–$100K, with experienced admins and cloud/DevOps-leaning roles reaching $105K–$120K+. Linux+ is most valuable stacked with cloud and automation skills, which move you toward the higher-paying DevOps and SRE tracks.",
+  "skills_covered": [
+    {
+      "category": "System Management (32%)",
+      "items": [
+        "Managing files, directories, and permissions",
+        "Users, groups, and access control",
+        "Software and package management (apt, dnf/yum, rpm)",
+        "Processes, services, and systemd",
+        "Storage, filesystems, and the boot process"
+      ]
+    },
+    {
+      "category": "Security (21%)",
+      "items": [
+        "File and directory permissions, ownership, and ACLs",
+        "SSH, key-based authentication, and remote access hardening",
+        "Firewalls (firewalld/iptables) and SELinux/AppArmor",
+        "User and privilege management (sudo)",
+        "Securing services and applying updates"
+      ]
+    },
+    {
+      "category": "Scripting, Containers & Automation (19%)",
+      "items": [
+        "Bash scripting fundamentals and control structures",
+        "Cron jobs and scheduled tasks",
+        "Containers (Docker/Podman) basics",
+        "Infrastructure automation concepts (Ansible)",
+        "Version control with Git"
+      ]
+    },
+    {
+      "category": "Troubleshooting (28%)",
+      "items": [
+        "Diagnosing storage, filesystem, and disk issues",
+        "Network connectivity troubleshooting",
+        "CPU, memory, and process performance issues",
+        "Service and boot failures",
+        "Reading logs (journald, /var/log) to find root causes"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Download the XK0-005 exam objectives",
+      "description": "Get the official Linux+ XK0-005 objectives from CompTIA. The domains span system management, security, scripting/automation, and troubleshooting—use them to structure your study."
+    },
+    {
+      "step": 2,
+      "title": "Set up a Linux lab you can break",
+      "description": "Install a Linux VM (Ubuntu, Fedora, or CentOS Stream) and live in the terminal. Linux+ is hands-on—nothing builds command-line fluency like actually running the commands and fixing what you break."
+    },
+    {
+      "step": 3,
+      "title": "Work through a primary video course",
+      "description": "Choose one comprehensive XK0-005 course and complete it end to end. Jason Dion's Linux+ course on Udemy covers all domains with demos and labs. See the paid resources section."
+    },
+    {
+      "step": 4,
+      "title": "Read the official study guide",
+      "description": "The Sybex Linux+ Study Guide (XK0-005) by Blum & Bresnahan is the standard written reference. Use it to deepen system management and troubleshooting, which reward detailed command knowledge."
+    },
+    {
+      "step": 5,
+      "title": "Practice the command line every day",
+      "description": "Drill core tasks until they're automatic: permissions, package management, services, networking, log reading, and basic Bash scripts. Sites like OverTheWire (Bandit) make terminal practice into a game."
+    },
+    {
+      "step": 6,
+      "title": "Drill performance-based questions",
+      "description": "Linux+ includes PBQs that ask you to perform real terminal tasks. Practice them specifically—knowing a command conceptually is different from typing it correctly under time pressure."
+    },
+    {
+      "step": 7,
+      "title": "Take timed practice exams",
+      "description": "Use full-length XK0-005 practice exams. Aim to score consistently above 85% before booking. Review every miss and re-run the command in your lab to lock it in."
+    },
+    {
+      "step": 8,
+      "title": "Schedule and sit the exam",
+      "description": "Register through Pearson VUE for the 90-minute exam (test center or online proctored). Book about two weeks out to set a deadline and keep your terminal practice sharp."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "CompTIA Linux+ XK0-005 Exam Objectives (Official)",
+      "url": "https://www.comptia.org/en-us/certifications/linux/",
+      "type": "Official Documentation",
+      "note": "The official XK0-005 objectives across all domains. Your study roadmap—start here."
+    },
+    {
+      "name": "OverTheWire – Bandit",
+      "url": "https://overthewire.org/wargames/bandit/",
+      "type": "Hands-on Labs",
+      "note": "A free, gamified way to build Linux command-line fluency level by level. Excellent for cementing the terminal skills Linux+ tests."
+    },
+    {
+      "name": "Linux Journey",
+      "url": "https://linuxjourney.com/",
+      "type": "Tutorial",
+      "note": "A free, beginner-friendly walkthrough of Linux fundamentals—filesystem, permissions, processes, networking. A good companion to a video course."
+    },
+    {
+      "name": "The Linux Command Line (free book by William Shotts)",
+      "url": "https://linuxcommand.org/tlcl.php",
+      "type": "Reference",
+      "note": "A free, comprehensive book on the Linux command line. Deep reference for the shell and scripting topics on the exam."
+    },
+    {
+      "name": "r/CompTIA on Reddit",
+      "url": "https://www.reddit.com/r/CompTIA/",
+      "type": "Community",
+      "note": "Active community with Linux+ study advice and recent XK0-005 pass reports. Search the Linux+ flair before posting."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Udemy – Jason Dion Linux+ (XK0-005) Course",
+      "type": "Video Course",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Most candidates – full video coverage of all XK0-005 domains with demos and labs",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomptia-linux-xk0-005%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_linux_complete_course",
+      "affiliate": true,
+      "note": "Jason Dion's Linux+ course covers all objectives with hands-on demonstrations. Pair with your own Linux VM for practice."
+    },
+    {
+      "provider": "Udemy – Linux+ (XK0-005) Practice Exams",
+      "type": "Practice Exams",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Final exam preparation with realistic, timed questions across all domains",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomptia-linux-exams%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_linux_practice",
+      "affiliate": true,
+      "note": "Use to gauge readiness before booking. Re-run any command you miss in your own terminal to lock it in."
+    },
+    {
+      "provider": "CompTIA Linux+ Study Guide XK0-005 (Sybex, Blum & Bresnahan)",
+      "type": "Book",
+      "price": "~$45–$60",
+      "best_for": "Candidates who want the definitive written reference covering 100% of the XK0-005 objectives",
+      "affiliate_url": "https://www.amazon.com/dp/1119878942/?tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_linux_sybex_guide",
+      "affiliate": true,
+      "note": "The standard Linux+ book. Best used alongside a video course and constant hands-on terminal practice."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Buy Linux+ Exam Voucher – CompTIA Store",
+      "url": "https://www.comptia.org/en-us/certifications/linux/",
+      "note": "The XK0-005 exam runs roughly $358–$369 USD. Verify current pricing on the official CompTIA store before purchasing; voucher + retake bundles are sometimes available."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is CompTIA Linux+ worth it?",
+      "answer": "Yes, especially for cloud, DevOps, and sysadmin paths. Linux runs most servers and cloud workloads, so proving Linux administration skill is broadly useful. Linux+ is vendor-neutral, so it applies across all distributions."
+    },
+    {
+      "question": "Is Linux+ good for beginners?",
+      "answer": "It's intermediate, not absolute-beginner. There's no formal prerequisite, but Linux+ assumes you can work comfortably in a terminal. Complete beginners should spend a few weeks in a Linux VM building command-line basics first."
+    },
+    {
+      "question": "How hard is the XK0-005 exam?",
+      "answer": "It's a hands-on exam. The performance-based questions ask you to perform real terminal tasks, so conceptual knowledge alone isn't enough. Candidates who practice daily in a real Linux environment find it very manageable."
+    },
+    {
+      "question": "How long does it take to study for Linux+?",
+      "answer": "Most candidates spend 2 to 4 months part-time. Those with existing Linux or sysadmin experience may move faster. Daily command-line practice matters far more than passive video watching."
+    },
+    {
+      "question": "Linux+ or Red Hat (RHCSA) — which should I get?",
+      "answer": "Linux+ is vendor-neutral and broader; RHCSA is Red Hat-specific and deeply hands-on. Linux+ is a strong general credential and good first step; RHCSA carries more weight specifically in Red Hat shops. Many people do Linux+ first."
+    },
+    {
+      "question": "What comes after Linux+?",
+      "answer": "Common next steps are cloud certifications (AWS, Azure—most workloads run on Linux), DevOps tooling and automation, or a vendor-specific Linux cert like RHCSA. Linux+ pairs naturally with cloud and DevOps paths."
+    },
+    {
+      "question": "Does Linux+ expire?",
+      "answer": "Yes. Linux+ is valid for three years. Renew through CompTIA's Continuing Education program by earning CEUs or passing a higher-level CompTIA exam."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CompTIA Cloud+",
+      "slug": "cloud-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "Most cloud workloads run on Linux. Linux+ and Cloud+ together build the operating-system and cloud-operations skills modern infrastructure roles demand."
+    },
+    {
+      "title": "AWS Solutions Architect Associate",
+      "slug": "aws-saa",
+      "vendor": "AWS",
+      "vendor_slug": "aws",
+      "reason": "Cloud infrastructure runs largely on Linux. Linux fluency directly accelerates AWS hands-on work and troubleshooting."
+    },
+    {
+      "title": "CompTIA Network+",
+      "slug": "network-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "Networking fundamentals underpin Linux server administration. A strong companion foundation for the troubleshooting and security domains."
+    }
+  ],
+  "seo_title": "CompTIA Linux+ XK0-005 Study Guide – Linux Administration | CertBlueprint",
+  "seo_description": "Complete CompTIA Linux+ (XK0-005) guide: who it's for, Linux administrator salary, exam domains, study path, free and paid resources, and FAQ."
+}

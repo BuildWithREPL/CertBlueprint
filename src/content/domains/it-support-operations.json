@@ -1,0 +1,12 @@
+{
+  "specializations": [
+    "Service Desk / Help Desk",
+    "Desktop & Endpoint Support",
+    "IT Operations / NOC",
+    "Field Services"
+  ],
+  "one_liner": "Keeping end-user and business IT running day to day — the most common way in.",
+  "order": 7,
+  "slug": "it-support-operations",
+  "title": "IT Support & Operations"
+}

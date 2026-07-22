@@ -1,0 +1,208 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import CertCard from '../../../components/CertCard.astro';
+import FAQAccordion from '../../../components/FAQAccordion.astro';
+import { getEntry } from 'astro:content';
+
+const aws = await getEntry('vendors', 'aws');
+const { data } = aws;
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Vendors', href: '/vendors/' },
+  { label: 'AWS', href: '/vendors/aws/' },
+];
+
+const upcomingCerts = [
+  { title: 'AWS SysOps Administrator Associate', level: 'Associate', description: 'Deploying, managing, and operating AWS workloads. The operations-focused counterpart to the Solutions Architect Associate.' },
+  { title: 'AWS Solutions Architect Professional', level: 'Professional', description: 'Advanced architecture design across complex AWS environments. Requires SAA and significant hands-on experience.' },
+];
+---
+
+<BaseLayout title={data.seo_title} description={data.seo_description} breadcrumbs={breadcrumbs}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumb crumbs={breadcrumbs} />
+
+    <header class="mt-3 mb-8 max-w-3xl">
+      <p class="text-xs font-semibold uppercase tracking-wider mb-2" style="color: var(--cb-accent-text);">Vendor</p>
+      <h1 class="text-2xl sm:text-3xl font-bold mb-3" style="color: var(--cb-text);">AWS Certifications Guide</h1>
+      <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{data.overview}</p>
+    </header>
+
+    <!-- Why AWS -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="why-aws-heading">
+      <div class="max-w-3xl">
+        <h2 id="why-aws-heading" class="text-base font-bold mb-3" style="color: var(--cb-text);">Why AWS certifications matter</h2>
+        <div class="space-y-4 text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+          {data.why_vendor_matters.split('\n\n').map((para: string) => (
+            <p>{para}</p>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Who it's for -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="audience-aws-heading">
+      <div class="max-w-3xl">
+        <h2 id="audience-aws-heading" class="text-base font-bold mb-3" style="color: var(--cb-text);">Who AWS certifications are for</h2>
+        <div class="space-y-3">
+          {[
+            { role: 'Cloud architects and solutions architects', detail: 'The SAA-C03 and SAP-C02 (Professional) are the primary credentials for architects designing systems on AWS. They appear in job postings for cloud architect, solutions architect, and senior cloud engineer roles.' },
+            { role: 'DevOps and platform engineers', detail: 'The DevOps Engineer Professional and SysOps Administrator Associate target engineers deploying, automating, and operating AWS workloads. Relevant for CI/CD, infrastructure as code, and platform engineering roles.' },
+            { role: 'Developers building on AWS', detail: 'The Developer Associate validates AWS SDK usage, serverless architecture, and deployment patterns relevant to software engineers building cloud-native applications.' },
+            { role: 'IT professionals transitioning to cloud', detail: 'Candidates with networking or systems administration backgrounds find the SAA-C03 a natural entry point. AWS knowledge of VPC, IAM, and EC2 directly maps to on-premises networking and virtualization concepts.' },
+          ].map((item) => (
+            <div class="rounded-xl border p-4" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+              <p class="font-semibold text-sm mb-1" style="color: var(--cb-text);">{item.role}</p>
+              <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{item.detail}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Salary and career impact -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="salary-aws-heading">
+      <div class="max-w-3xl">
+        <h2 id="salary-aws-heading" class="text-base font-bold mb-3" style="color: var(--cb-text);">Career and salary impact</h2>
+        <p class="text-sm leading-relaxed mb-3" style="color: var(--cb-text-sub);">
+          AWS certifications are among the highest-paying IT credentials globally. The Solutions Architect Associate is a recognized hiring signal for cloud roles at organizations of all sizes — from startups to Fortune 500 companies. Entry-level cloud engineers with SAA-C03 typically earn $80,000–$110,000. Solutions architects with SAA-C03 and 2–4 years of experience earn $110,000–$150,000+. Solutions Architect Professional holders with broader experience command $140,000–$180,000+ in competitive markets.
+        </p>
+        <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+          The salary premium for AWS certification is driven by supply and demand: cloud adoption has grown faster than the talent pool, keeping compensation elevated. Candidates who combine AWS certification with actual hands-on experience — particularly building and operating real AWS infrastructure — command the top of these ranges. The AWS free tier makes hands-on practice accessible during the study period at no cost, which candidates should take advantage of throughout preparation.
+        </p>
+      </div>
+    </section>
+
+    <!-- Study difficulty and timeline -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="difficulty-aws-heading">
+      <div class="max-w-3xl">
+        <h2 id="difficulty-aws-heading" class="text-base font-bold mb-4" style="color: var(--cb-text);">Study difficulty and time investment</h2>
+        <div class="space-y-3">
+          {[
+            { cert: 'AWS Cloud Practitioner', difficulty: 'Beginner', time: '2–4 weeks', detail: 'High-level overview of AWS services, pricing models, and cloud value proposition. Not recommended for technical candidates — go straight to SAA-C03 instead. Only useful for non-technical professionals who need AWS literacy.' },
+            { cert: 'AWS Solutions Architect Associate (SAA-C03)', difficulty: 'Moderate', time: '2–4 months part-time', detail: 'The core technical AWS cert. Requires understanding of EC2, S3, RDS, VPC, IAM, CloudFront, Route 53, and many other services — not just individually but how they interact in architecture. Hands-on practice using the AWS free tier is essential.' },
+            { cert: 'AWS Developer Associate', difficulty: 'Moderate', time: '2–3 months', detail: 'Focuses on application development patterns on AWS: Lambda, DynamoDB, API Gateway, Elastic Beanstalk, SQS, SNS, and CI/CD. Best suited for software engineers adding cloud to their skill set.' },
+            { cert: 'AWS Solutions Architect Professional (SAP-C02)', difficulty: 'Hard', time: '4–6 months', detail: 'Significantly harder than the associate. Covers complex multi-account architectures, hybrid connectivity, migrations, and cost optimization at scale. Requires real hands-on AWS experience — not recommended without 1–2 years of AWS work history.' },
+          ].map((item) => (
+            <div class="rounded-xl border p-4" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+              <div class="flex items-center justify-between mb-1.5">
+                <p class="font-semibold text-sm" style="color: var(--cb-text);">{item.cert}</p>
+                <div class="flex gap-2">
+                  <span class="text-xs px-2 py-0.5 rounded-full" style="background: var(--cb-bg-subtle); color: var(--cb-text-muted);">{item.difficulty}</span>
+                  <span class="text-xs px-2 py-0.5 rounded-full" style="background: var(--cb-accent-sub); color: var(--cb-accent-text);">{item.time}</span>
+                </div>
+              </div>
+              <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{item.detail}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Cert tracks -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="tracks-heading">
+      <h2 id="tracks-heading" class="text-base font-bold mb-4" style="color: var(--cb-text);">Certification tracks</h2>
+      <div class="grid sm:grid-cols-2 gap-3 max-w-4xl">
+        {data.certification_tracks.map((track) => (
+          <div class="rounded-xl border p-4" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+            <div class="flex items-center justify-between mb-1.5">
+              <h3 class="font-semibold text-sm" style="color: var(--cb-text);">{track.name}</h3>
+              <span class="text-xs px-2 py-0.5 rounded-full" style="color: var(--cb-text-muted); background: var(--cb-bg-subtle);">{track.level}</span>
+            </div>
+            <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{track.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Live guide -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="available-heading">
+      <h2 id="available-heading" class="text-base font-bold mb-4" style="color: var(--cb-text);">Available guides</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl">
+        <CertCard
+          title="AWS Cloud Practitioner (CLF-C02)"
+          vendor="AWS"
+          level="Foundation"
+          description="The foundational AWS certification. The most accessible entry point—core services, security, pricing, and cloud concepts for beginners and non-technical roles."
+          href="/vendors/aws/aws-cloud-practitioner/"
+          featured={true}
+        />
+        <CertCard
+          title="AWS Solutions Architect – Associate (SAA-C03)"
+          vendor="AWS"
+          level="Associate"
+          description="The most widely held AWS certification. Validates designing scalable, fault-tolerant, cost-optimized systems on AWS. Among the highest-paying cloud credentials."
+          href="/vendors/aws/aws-saa/"
+          featured={true}
+        />
+        <CertCard
+          title="AWS Developer – Associate (DVA-C02)"
+          vendor="AWS"
+          level="Associate"
+          description="The development-focused associate cert. Building, securing, deploying, and debugging cloud-native applications with Lambda, DynamoDB, and CI/CD."
+          href="/vendors/aws/aws-developer-associate/"
+        />
+      </div>
+    </section>
+
+    <!-- More certs -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="more-heading">
+      <h2 id="more-heading" class="text-base font-bold mb-4" style="color: var(--cb-text);">More AWS certifications</h2>
+      <div class="grid sm:grid-cols-2 gap-3 max-w-4xl">
+        {upcomingCerts.map((cert) => (
+          <div class="rounded-xl border p-4" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+            <div class="flex items-center justify-between mb-1.5">
+              <h3 class="font-semibold text-sm" style="color: var(--cb-text);">{cert.title}</h3>
+              <span class="text-xs px-2 py-0.5 rounded-full" style="color: var(--cb-text-muted); background: var(--cb-bg-subtle);">{cert.level}</span>
+            </div>
+            <p class="text-xs leading-relaxed" style="color: var(--cb-text-sub);">{cert.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="faq-heading">
+      <h2 id="faq-heading" class="text-base font-bold mb-4" style="color: var(--cb-text);">Frequently asked questions</h2>
+      <div class="max-w-3xl">
+        <FAQAccordion items={data.faq} />
+      </div>
+    </section>
+
+    <!-- Cross-links to related vendors -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="related-vendors-heading">
+      <h2 id="related-vendors-heading" class="text-base font-bold mb-4" style="color: var(--cb-text);">Related cert paths</h2>
+      <div class="grid sm:grid-cols-3 gap-3 max-w-3xl">
+        <a href="/vendors/microsoft/az-104/" class="rounded-xl border p-4 transition-colors block" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+          <p class="font-semibold text-sm mb-1" style="color: var(--cb-text);">Microsoft AZ-104</p>
+          <p class="text-xs leading-relaxed" style="color: var(--cb-text-sub);">Azure Administrator—the multi-cloud counterpart for Microsoft environments.</p>
+        </a>
+        <a href="/vendors/comptia/security-plus/" class="rounded-xl border p-4 transition-colors block" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+          <p class="font-semibold text-sm mb-1" style="color: var(--cb-text);">CompTIA Security+</p>
+          <p class="text-xs leading-relaxed" style="color: var(--cb-text-sub);">Security fundamentals that pair naturally with AWS cloud architecture skills.</p>
+        </a>
+        <a href="/vendors/cisco/ccna/" class="rounded-xl border p-4 transition-colors block" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+          <p class="font-semibold text-sm mb-1" style="color: var(--cb-text);">Cisco CCNA</p>
+          <p class="text-xs leading-relaxed" style="color: var(--cb-text-sub);">Networking fundamentals that accelerate AWS VPC and hybrid connectivity study.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);">
+      <div class="rounded-2xl p-7 text-center max-w-2xl text-white" style="background: linear-gradient(135deg, #d35400, #935116);">
+        <h2 class="text-xl font-bold mb-2">Start with AWS Solutions Architect Associate</h2>
+        <p class="text-sm mb-5 leading-relaxed" style="color: #fdebd0;">The most in-demand cloud cert globally. Study path, exam details, free resources, and recommended courses—all in one place.</p>
+        <a href="/vendors/aws/aws-saa/" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors" style="background: white; color: #d35400;">
+          View AWS SAA guide
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

@@ -1,0 +1,1972 @@
+[
+ {
+  "url": "https://0x2142.com/jncia-junos-study-resources/",
+  "files": [
+   "src/content\\certifications\\jncia-junos.json"
+  ]
+ },
+ {
+  "url": "https://astqb.org/certifications/foundation-level-certification/",
+  "files": [
+   "src/content\\certifications\\istqb-ctfl.json"
+  ]
+ },
+ {
+  "url": "https://atsqa.org/purchase",
+  "files": [
+   "src/content\\certifications\\istqb-ctfl.json"
+  ]
+ },
+ {
+  "url": "https://attack.mitre.org/",
+  "files": [
+   "src/content\\certifications\\ccnp-cybersecurity.json",
+   "src/content\\certifications\\cysa-plus.json"
+  ]
+ },
+ {
+  "url": "https://automatetheboringstuff.com",
+  "files": [
+   "src/content\\certifications\\google-it-automation.json"
+  ]
+ },
+ {
+  "url": "https://aws.amazon.com/certification/certified-cloud-practitioner/",
+  "files": [
+   "src/content\\certifications\\aws-cloud-practitioner.json"
+  ]
+ },
+ {
+  "url": "https://aws.amazon.com/certification/certified-developer-associate/",
+  "files": [
+   "src/content\\certifications\\aws-developer-associate.json"
+  ]
+ },
+ {
+  "url": "https://aws.amazon.com/certification/certified-solutions-architect-associate/",
+  "files": [
+   "src/content\\certifications\\aws-saa.json"
+  ]
+ },
+ {
+  "url": "https://aws.amazon.com/free/",
+  "files": [
+   "src/content\\certifications\\aws-cloud-practitioner.json",
+   "src/content\\certifications\\aws-developer-associate.json",
+   "src/content\\certifications\\aws-saa.json",
+   "src/content\\certifications\\cloud-plus.json"
+  ]
+ },
+ {
+  "url": "https://azure.microsoft.com/en-us/free/",
+  "files": [
+   "src/content\\certifications\\az-104.json",
+   "src/content\\certifications\\az-900.json"
+  ]
+ },
+ {
+  "url": "https://certblueprint.com/navigator-lab",
+  "files": [
+   "public/navigator-lab.html"
+  ]
+ },
+ {
+  "url": "https://certblueprint.com/navigator/",
+  "files": [
+   "src/pages\\navigator\\index.astro"
+  ]
+ },
+ {
+  "url": "https://certblueprint.com/paths/",
+  "files": [
+   "public/navigator-app.html"
+  ]
+ },
+ {
+  "url": "https://certblueprint.com/vendors/",
+  "files": [
+   "public/navigator-app.html"
+  ]
+ },
+ {
+  "url": "https://certiport.pearsonvue.com/Certifications/Cisco/Certified-Support-Technician/Overview",
+  "files": [
+   "src/content\\certifications\\ccst-cybersecurity.json",
+   "src/content\\certifications\\ccst-it-support.json",
+   "src/content\\certifications\\ccst-networking.json"
+  ]
+ },
+ {
+  "url": "https://ciscolearningservices.my.site.com/cln/s/article/book-your-expert-level-exams",
+  "files": [
+   "src/content\\certifications\\ccde.json",
+   "src/content\\certifications\\ccie-enterprise-infrastructure.json",
+   "src/content\\certifications\\ccie-security.json"
+  ]
+ },
+ {
+  "url": "https://community.isc2.org/",
+  "files": [
+   "src/content\\certifications\\cissp.json"
+  ]
+ },
+ {
+  "url": "https://cs50.harvard.edu/python/",
+  "files": [
+   "src/content\\certifications\\google-it-automation.json"
+  ]
+ },
+ {
+  "url": "https://dcloud.cisco.com",
+  "files": [
+   "src/content\\certifications\\ccnp-collaboration.json",
+   "src/content\\certifications\\ccnp-data-center.json",
+   "src/content\\certifications\\ccnp-wireless.json"
+  ]
+ },
+ {
+  "url": "https://developer.cisco.com/",
+  "files": [
+   "src/content\\certifications\\ccna-automation.json"
+  ]
+ },
+ {
+  "url": "https://developer.cisco.com/docs/modeling-labs/cml-free/",
+  "files": [
+   "src/content\\certifications\\ccnp-enterprise.json",
+   "src/content\\certifications\\ccnp-service-provider.json"
+  ]
+ },
+ {
+  "url": "https://developer.cisco.com/learning/",
+  "files": [
+   "src/content\\certifications\\ccna.json",
+   "src/content\\certifications\\ccnp-automation.json"
+  ]
+ },
+ {
+  "url": "https://developer.cisco.com/modeling-labs/",
+  "files": [
+   "src/content\\certifications\\ccie-enterprise-infrastructure.json"
+  ]
+ },
+ {
+  "url": "https://developer.cisco.com/site/sandbox/",
+  "files": [
+   "src/content\\certifications\\ccie-security.json",
+   "src/content\\certifications\\ccnp-automation.json",
+   "src/content\\certifications\\ccnp-cybersecurity.json",
+   "src/content\\certifications\\ccnp-data-center.json",
+   "src/content\\certifications\\ccnp-enterprise.json",
+   "src/content\\certifications\\ccnp-security.json",
+   "src/content\\certifications\\ccnp-wireless.json"
+  ]
+ },
+ {
+  "url": "https://docs.aws.amazon.com/",
+  "files": [
+   "src/content\\certifications\\aws-developer-associate.json"
+  ]
+ },
+ {
+  "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+  "files": [
+   "src/content\\certifications\\aws-saa.json"
+  ]
+ },
+ {
+  "url": "https://engage.isaca.org",
+  "files": [
+   "src/content\\certifications\\cism.json"
+  ]
+ },
+ {
+  "url": "https://exercism.org/tracks/python",
+  "files": [
+   "src/content\\certifications\\google-it-automation.json"
+  ]
+ },
+ {
+  "url": "https://git-scm.com/book/en/v2",
+  "files": [
+   "src/content\\certifications\\ccnp-automation.json",
+   "src/content\\certifications\\google-it-automation.json"
+  ]
+ },
+ {
+  "url": "https://glossary.istqb.org/",
+  "files": [
+   "src/content\\certifications\\istqb-ctfl.json"
+  ]
+ },
+ {
+  "url": "https://grow.google/certificates/business-intelligence/",
+  "files": [
+   "src/content\\certifications\\google-business-intelligence.json"
+  ]
+ },
+ {
+  "url": "https://grow.google/certificates/cybersecurity/",
+  "files": [
+   "src/content\\certifications\\google-cybersecurity.json"
+  ]
+ },
+ {
+  "url": "https://grow.google/certificates/data-analytics/",
+  "files": [
+   "src/content\\certifications\\google-data-analytics.json"
+  ]
+ },
+ {
+  "url": "https://grow.google/certificates/it-support/",
+  "files": [
+   "src/content\\certifications\\google-it-support.json"
+  ]
+ },
+ {
+  "url": "https://grow.google/certificates/project-management/",
+  "files": [
+   "src/content\\certifications\\google-project-management.json"
+  ]
+ },
+ {
+  "url": "https://ine.com/",
+  "files": [
+   "src/content\\certifications\\ccie-enterprise-infrastructure.json",
+   "src/content\\certifications\\ccie-security.json",
+   "src/content\\certifications\\ccnp-enterprise.json",
+   "src/content\\certifications\\jncia-junos.json"
+  ]
+ },
+ {
+  "url": "https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/",
+  "files": [
+   "src/content\\certifications\\istqb-ctfl.json"
+  ]
+ },
+ {
+  "url": "https://jlabs.juniper.net/vlabs/",
+  "files": [
+   "src/content\\certifications\\jncia-junos.json"
+  ]
+ },
+ {
+  "url": "https://learn.cantrill.io/p/aws-certified-solutions-architect-associate-saa-c03",
+  "files": [
+   "src/content\\certifications\\aws-saa.json"
+  ]
+ },
+ {
+  "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-administrator/",
+  "files": [
+   "src/content\\certifications\\az-104.json",
+   "src/pages\\vendors\\microsoft\\az-104\\index.astro"
+  ]
+ },
+ {
+  "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-administrator/#certification-exam-disclaimer",
+  "files": [
+   "src/content\\certifications\\az-104.json"
+  ]
+ },
+ {
+  "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/",
+  "files": [
+   "src/content\\certifications\\az-900.json"
+  ]
+ },
+ {
+  "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/practice/assessment",
+  "files": [
+   "src/content\\certifications\\az-900.json"
+  ]
+ },
+ {
+  "url": "https://learn.microsoft.com/en-us/credentials/certifications/data-analyst-associate/",
+  "files": [
+   "src/content\\certifications\\google-business-intelligence.json",
+   "src/content\\certifications\\pl-300.json"
+  ]
+ },
+ {
+  "url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ab-900/",
+  "files": [
+   "src/content\\certifications\\ms-900.json"
+  ]
+ },
+ {
+  "url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/md-102/",
+  "files": [
+   "src/content\\certifications\\md-102.json"
+  ]
+ },
+ {
+  "url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/md-102/practice/assessment?assessment-type=practice&assessmentId=76",
+  "files": [
+   "src/content\\certifications\\md-102.json"
+  ]
+ },
+ {
+  "url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ms-900/",
+  "files": [
+   "src/content\\certifications\\ms-900.json"
+  ]
+ },
+ {
+  "url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-300/",
+  "files": [
+   "src/content\\certifications\\pl-300.json"
+  ]
+ },
+ {
+  "url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-300/practice/assessment?assessment-type=practice&assessmentId=48",
+  "files": [
+   "src/content\\certifications\\pl-300.json"
+  ]
+ },
+ {
+  "url": "https://learn.microsoft.com/en-us/credentials/certifications/microsoft-365-fundamentals/",
+  "files": [
+   "src/content\\certifications\\ms-900.json"
+  ]
+ },
+ {
+  "url": "https://learn.microsoft.com/en-us/credentials/certifications/modern-desktop/",
+  "files": [
+   "src/content\\certifications\\md-102.json"
+  ]
+ },
+ {
+  "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-104",
+  "files": [
+   "src/content\\certifications\\az-104.json"
+  ]
+ },
+ {
+  "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-900",
+  "files": [
+   "src/content\\certifications\\az-900.json"
+  ]
+ },
+ {
+  "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/md-102",
+  "files": [
+   "src/content\\certifications\\md-102.json"
+  ]
+ },
+ {
+  "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ms-900",
+  "files": [
+   "src/content\\certifications\\ms-900.json"
+  ]
+ },
+ {
+  "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/pl-300",
+  "files": [
+   "src/content\\certifications\\pl-300.json"
+  ]
+ },
+ {
+  "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/sc-900",
+  "files": [
+   "src/content\\certifications\\sc-900.json"
+  ]
+ },
+ {
+  "url": "https://learn.microsoft.com/en-us/credentials/certifications/security-compliance-and-identity-fundamentals/",
+  "files": [
+   "src/content\\certifications\\sc-900.json"
+  ]
+ },
+ {
+  "url": "https://learn.microsoft.com/en-us/credentials/certifications/security-compliance-and-identity-fundamentals/practice/assessment",
+  "files": [
+   "src/content\\certifications\\sc-900.json"
+  ]
+ },
+ {
+  "url": "https://learn.microsoft.com/en-us/mem/intune/",
+  "files": [
+   "src/content\\certifications\\md-102.json"
+  ]
+ },
+ {
+  "url": "https://learn.microsoft.com/en-us/microsoft-365/",
+  "files": [
+   "src/content\\certifications\\ms-900.json"
+  ]
+ },
+ {
+  "url": "https://learn.microsoft.com/en-us/training/azure/",
+  "files": [
+   "src/content\\certifications\\cloud-plus.json"
+  ]
+ },
+ {
+  "url": "https://learn.microsoft.com/en-us/training/courses/az-900t00",
+  "files": [
+   "src/content\\certifications\\az-900.json"
+  ]
+ },
+ {
+  "url": "https://learn.microsoft.com/en-us/training/courses/pl-300t00",
+  "files": [
+   "src/content\\certifications\\pl-300.json"
+  ]
+ },
+ {
+  "url": "https://learn.microsoft.com/en-us/training/courses/sc-900t00",
+  "files": [
+   "src/content\\certifications\\sc-900.json"
+  ]
+ },
+ {
+  "url": "https://learning.cisa.gov/",
+  "files": [
+   "src/content\\certifications\\google-cybersecurity.json"
+  ]
+ },
+ {
+  "url": "https://learning.postman.com/",
+  "files": [
+   "src/content\\certifications\\ccna-automation.json"
+  ]
+ },
+ {
+  "url": "https://learningcontent.cisco.com/documents/marketing/exam-topics/CCDE_v3.1_Release_Notes_final_0523.pdf",
+  "files": [
+   "src/content\\certifications\\ccde.json"
+  ]
+ },
+ {
+  "url": "https://learningnetwork.cisco.com",
+  "files": [
+   "src/content\\certifications\\ccnp-collaboration.json",
+   "src/content\\certifications\\ccnp-cybersecurity.json",
+   "src/content\\certifications\\ccnp-security.json",
+   "src/content\\certifications\\ccnp-service-provider.json"
+  ]
+ },
+ {
+  "url": "https://learningnetwork.cisco.com/",
+  "files": [
+   "src/content\\certifications\\ccna-cybersecurity.json"
+  ]
+ },
+ {
+  "url": "https://learningnetwork.cisco.com/s/article/CCIE-Practical-Exam-Format-with-AI-Module",
+  "files": [
+   "src/content\\certifications\\ccie-enterprise-infrastructure.json",
+   "src/content\\certifications\\ccie-security.json"
+  ]
+ },
+ {
+  "url": "https://learningnetwork.cisco.com/s/autocor-exam-topics",
+  "files": [
+   "src/content\\certifications\\ccnp-automation.json"
+  ]
+ },
+ {
+  "url": "https://learningnetwork.cisco.com/s/blogs/a0DQO000004N0jN2AS/cisco-ccnp-security-gets-a-major-upgrade-what-you-need-to-know",
+  "files": [
+   "src/content\\certifications\\ccnp-security.json"
+  ]
+ },
+ {
+  "url": "https://learningnetwork.cisco.com/s/cbrcor-exam-topics",
+  "files": [
+   "src/content\\certifications\\ccnp-cybersecurity.json"
+  ]
+ },
+ {
+  "url": "https://learningnetwork.cisco.com/s/ccde-design-expert",
+  "files": [
+   "src/content\\certifications\\ccde.json"
+  ]
+ },
+ {
+  "url": "https://learningnetwork.cisco.com/s/ccde-v3-1-unified-exam-topics",
+  "files": [
+   "src/content\\certifications\\ccde.json"
+  ]
+ },
+ {
+  "url": "https://learningnetwork.cisco.com/s/ccie-enterpr-infrastructure-exam-topics",
+  "files": [
+   "src/content\\certifications\\ccie-enterprise-infrastructure.json"
+  ]
+ },
+ {
+  "url": "https://learningnetwork.cisco.com/s/ccie-security-exam-topics",
+  "files": [
+   "src/content\\certifications\\ccie-security.json"
+  ]
+ },
+ {
+  "url": "https://learningnetwork.cisco.com/s/ccnaauto-exam-topics",
+  "files": [
+   "src/content\\certifications\\ccna-automation.json"
+  ]
+ },
+ {
+  "url": "https://learningnetwork.cisco.com/s/ccnacbr-exam-topics",
+  "files": [
+   "src/content\\certifications\\ccna-cybersecurity.json"
+  ]
+ },
+ {
+  "url": "https://learningnetwork.cisco.com/s/ccst-cybersecurity-exam-topics",
+  "files": [
+   "src/content\\certifications\\ccst-cybersecurity.json"
+  ]
+ },
+ {
+  "url": "https://learningnetwork.cisco.com/s/ccst-it-support-exam-topics",
+  "files": [
+   "src/content\\certifications\\ccst-it-support.json"
+  ]
+ },
+ {
+  "url": "https://learningnetwork.cisco.com/s/ccst-networking-exam-topics",
+  "files": [
+   "src/content\\certifications\\ccst-networking.json"
+  ]
+ },
+ {
+  "url": "https://learningnetwork.cisco.com/s/clcor-exam-topics",
+  "files": [
+   "src/content\\certifications\\ccnp-collaboration.json"
+  ]
+ },
+ {
+  "url": "https://learningnetwork.cisco.com/s/dcai-exam-topics",
+  "files": [
+   "src/content\\certifications\\ccnp-data-center.json"
+  ]
+ },
+ {
+  "url": "https://learningnetwork.cisco.com/s/dccor-exam-topics",
+  "files": [
+   "src/content\\certifications\\ccnp-data-center.json"
+  ]
+ },
+ {
+  "url": "https://learningnetwork.cisco.com/s/encor-exam-topics",
+  "files": [
+   "src/content\\certifications\\ccnp-enterprise.json"
+  ]
+ },
+ {
+  "url": "https://learningnetwork.cisco.com/s/new-wireless-certifications",
+  "files": [
+   "src/content\\certifications\\ccnp-wireless.json"
+  ]
+ },
+ {
+  "url": "https://learningnetwork.cisco.com/s/scor-exam-topics",
+  "files": [
+   "src/content\\certifications\\ccie-security.json"
+  ]
+ },
+ {
+  "url": "https://learningnetwork.cisco.com/s/scor-v2-exam-topics",
+  "files": [
+   "src/content\\certifications\\ccnp-security.json"
+  ]
+ },
+ {
+  "url": "https://learningnetwork.cisco.com/s/spcor-exam-topics",
+  "files": [
+   "src/content\\certifications\\ccnp-service-provider.json"
+  ]
+ },
+ {
+  "url": "https://learningportal.juniper.net/juniper/user_activity_info.aspx?id=EXAM-JOL-JNCIA-JUNOS",
+  "files": [
+   "src/content\\certifications\\jncia-junos.json"
+  ]
+ },
+ {
+  "url": "https://learningportal.juniper.net/juniper/user_activity_info.aspx?id=JUNIPER-OPEN-LEARNING",
+  "files": [
+   "src/content\\certifications\\jncia-junos.json"
+  ]
+ },
+ {
+  "url": "https://linuxcommand.org/tlcl.php",
+  "files": [
+   "src/content\\certifications\\linux-plus.json"
+  ]
+ },
+ {
+  "url": "https://linuxjourney.com/",
+  "files": [
+   "src/content\\certifications\\linux-plus.json"
+  ]
+ },
+ {
+  "url": "https://orhanergun.net/",
+  "files": [
+   "src/content\\certifications\\ccde.json"
+  ]
+ },
+ {
+  "url": "https://overthewire.org/wargames/bandit/",
+  "files": [
+   "src/content\\certifications\\linux-plus.json"
+  ]
+ },
+ {
+  "url": "https://policies.google.com/privacy",
+  "files": [
+   "src/pages\\legal\\privacy-policy.astro"
+  ]
+ },
+ {
+  "url": "https://portal.tutorialsdojo.com/courses/aws-certified-developer-associate-practice-exams/",
+  "files": [
+   "src/content\\certifications\\aws-developer-associate.json"
+  ]
+ },
+ {
+  "url": "https://portal.tutorialsdojo.com/courses/aws-certified-solutions-architect-associate-practice-exams/",
+  "files": [
+   "src/content\\certifications\\aws-saa.json"
+  ]
+ },
+ {
+  "url": "https://public.tableau.com/",
+  "files": [
+   "src/content\\certifications\\google-business-intelligence.json"
+  ]
+ },
+ {
+  "url": "https://pynet.twb-tech.com/",
+  "files": [
+   "src/content\\certifications\\ccna-automation.json"
+  ]
+ },
+ {
+  "url": "https://pythoninstitute.org/pcep",
+  "files": [
+   "src/content\\certifications\\google-it-automation.json"
+  ]
+ },
+ {
+  "url": "https://quantumexams.com/",
+  "files": [
+   "src/content\\certifications\\cissp.json"
+  ]
+ },
+ {
+  "url": "https://schema.org",
+  "files": [
+   "src/pages\\navigator\\index.astro",
+   "src/pages\\paths\\[slug]\\index.astro"
+  ]
+ },
+ {
+  "url": "https://scrumguides.org/",
+  "files": [
+   "src/content\\certifications\\psm-1.json"
+  ]
+ },
+ {
+  "url": "https://skillbuilder.aws/",
+  "files": [
+   "src/content\\certifications\\aws-cloud-practitioner.json",
+   "src/content\\certifications\\aws-developer-associate.json",
+   "src/content\\certifications\\aws-saa.json"
+  ]
+ },
+ {
+  "url": "https://store.comptia.org/certification-vouchers/c/11184",
+  "files": [
+   "src/content\\certifications\\network-plus.json"
+  ]
+ },
+ {
+  "url": "https://store.comptia.org/certification-vouchers/c/11191",
+  "files": [
+   "src/content\\certifications\\security-plus.json"
+  ]
+ },
+ {
+  "url": "https://surewhynot.app",
+  "files": [
+   "src/pages\\about.astro"
+  ]
+ },
+ {
+  "url": "https://techcommunity.microsoft.com/blog/skills-hub-blog/certifications-refresh-ai-focused-and-fundamentals-updates/4446638",
+  "files": [
+   "src/content\\certifications\\ms-900.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2F70533-azure%2F",
+  "files": [
+   "src/content\\certifications\\az-104.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Faccredited-istqb-certified-tester-foundation-level-course%2F",
+  "files": [
+   "src/content\\certifications\\istqb-ctfl.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fautomate%2F",
+  "files": [
+   "src/content\\certifications\\google-it-automation.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Faws-certified-cloud-practitioner-new%2F",
+  "files": [
+   "src/content\\certifications\\aws-cloud-practitioner.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Faws-certified-developer-associate-dva-c01%2F",
+  "files": [
+   "src/content\\certifications\\aws-developer-associate.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Faws-certified-developer-associate-practice-tests-dva-c01%2F",
+  "files": [
+   "src/content\\certifications\\aws-developer-associate.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Faws-certified-solutions-architect-associate-saa-c03%2F",
+  "files": [
+   "src/content\\certifications\\aws-saa.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Faz-104-microsoft-azure-administrator-practice-test-questions%2F",
+  "files": [
+   "src/content\\certifications\\az-104.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Faz900-azure%2F",
+  "files": [
+   "src/content\\certifications\\az-900.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Faz900-azure-tests%2F",
+  "files": [
+   "src/content\\certifications\\az-900.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcapm-certification-training-prep-course%2F",
+  "files": [
+   "src/content\\certifications\\capm.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcapm-pmbok6%2F",
+  "files": [
+   "src/content\\certifications\\capm.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcisco-ccna-cyber-ops-the-complete-course%2F",
+  "files": [
+   "src/content\\certifications\\ccna-cybersecurity.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcisco-ccna-gns3-ultimate-labs-ccna-exam-prep-labs-pass-your-exam%2F",
+  "files": [
+   "src/content\\certifications\\ccna.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcisco-certified-cyberops-associate-200-201-practice-exams%2F",
+  "files": [
+   "src/content\\certifications\\ccna-cybersecurity.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcisco-certified-devnet-associate-devasc-200-901%2F",
+  "files": [
+   "src/content\\certifications\\ccna-automation.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcisco-devnet-associate-devasc-200-901-practice-tests%2F",
+  "files": [
+   "src/content\\certifications\\ccna-automation.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomplete-networking-fundamentals-course-ccna-start%2F",
+  "files": [
+   "src/content\\certifications\\ccna.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomptia-a-core-1%2F",
+  "files": [
+   "src/content\\certifications\\a-plus.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomptia-a-core-2%2F",
+  "files": [
+   "src/content\\certifications\\a-plus.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomptia-cloud-cv0-004-practice-exams%2F",
+  "files": [
+   "src/content\\certifications\\cloud-plus.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomptia-cloud-plus%2F",
+  "files": [
+   "src/content\\certifications\\cloud-plus.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomptia-cysa-003%2F",
+  "files": [
+   "src/content\\certifications\\cysa-plus.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomptia-cysa-cs0-003-practice-exams%2F",
+  "files": [
+   "src/content\\certifications\\cysa-plus.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomptia-linux-exams%2F",
+  "files": [
+   "src/content\\certifications\\linux-plus.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomptia-linux-xk0-005%2F",
+  "files": [
+   "src/content\\certifications\\linux-plus.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomptia-network-009%2F",
+  "files": [
+   "src/content\\certifications\\network-plus.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomptia-networkplus-practice-exams%2F",
+  "files": [
+   "src/content\\certifications\\network-plus.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomptia-pentest-pt0-003-6-practice-exams%2F",
+  "files": [
+   "src/content\\certifications\\pentest-plus.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomptia-security-sy0-701-practice-exams%2F",
+  "files": [
+   "src/content\\certifications\\security-plus.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fistqb-real%2F",
+  "files": [
+   "src/content\\certifications\\istqb-ctfl.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fitil-4-foundation-practice-certification-exams-6-exams-q%2F",
+  "files": [
+   "src/content\\certifications\\itil-4-foundation.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fmd-100windows10course%2F",
+  "files": [
+   "src/content\\certifications\\md-102.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fmicrosoft-power-bi-certification-da-100-exam-prep%2F",
+  "files": [
+   "src/content\\certifications\\pl-300.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fmicrosoft-power-bi-up-running-with-power-bi-desktop%2F",
+  "files": [
+   "src/content\\certifications\\pl-300.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fpentestplus%2F",
+  "files": [
+   "src/content\\certifications\\pentest-plus.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fpractice-exams-aws-certified-cloud-practitioner%2F",
+  "files": [
+   "src/content\\certifications\\aws-cloud-practitioner.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fprofessional-scrum-master-psm-certification-preparation%2F",
+  "files": [
+   "src/content\\certifications\\psm-1.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fsc-900-microsoft-security-compliance-and-identity%2F",
+  "files": [
+   "src/content\\certifications\\sc-900.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fsc-900-microsoft-security-complianceidentity-fundamentals%2F",
+  "files": [
+   "src/content\\certifications\\sc-900.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fscrum-master-psm-i-certification-masterclass%2F",
+  "files": [
+   "src/content\\certifications\\psm-1.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fsecurityplus%2F",
+  "files": [
+   "src/content\\certifications\\security-plus.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fservice-management-itil-4%2F",
+  "files": [
+   "src/content\\certifications\\itil-4-foundation.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fthe-complete-sql-bootcamp%2F",
+  "files": [
+   "src/content\\certifications\\google-data-analytics.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3DCAPM%2520exam%2520prep",
+  "files": [
+   "src/content\\certifications\\google-project-management.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3DCCST%2520Cybersecurity%2520100-160",
+  "files": [
+   "src/content\\certifications\\ccst-cybersecurity.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3DCCST%2520IT%2520Support%2520100-140",
+  "files": [
+   "src/content\\certifications\\ccst-it-support.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3DCCST%2520Networking%2520100-150",
+  "files": [
+   "src/content\\certifications\\ccst-networking.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3DCISM%2520Hemang%2520Doshi",
+  "files": [
+   "src/content\\certifications\\cism.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3DCISSP%2520ThorTeaches",
+  "files": [
+   "src/content\\certifications\\cissp.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3DCompTIA%2520A%252B%2520practice%2520exams%2520Dion",
+  "files": [
+   "src/content\\certifications\\google-it-support.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3DJNCIA-Junos%2520JN0-106",
+  "files": [
+   "src/content\\certifications\\jncia-junos.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3DJNCIA-Junos%2520practice%2520exams",
+  "files": [
+   "src/content\\certifications\\jncia-junos.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3DPower%2520BI%2520PL-300",
+  "files": [
+   "src/content\\certifications\\google-business-intelligence.json"
+  ]
+ },
+ {
+  "url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3DSecurity%252B%2520SY0-701%2520practice%2520exams%2520Dion",
+  "files": [
+   "src/content\\certifications\\google-cybersecurity.json"
+  ]
+ },
+ {
+  "url": "https://tryhackme.com/",
+  "files": [
+   "src/content\\certifications\\ccnp-cybersecurity.json",
+   "src/content\\certifications\\ccst-cybersecurity.json",
+   "src/content\\certifications\\google-cybersecurity.json",
+   "src/content\\certifications\\security-plus.json"
+  ]
+ },
+ {
+  "url": "https://tryhackme.com/path/outline/jrpenetrationtester",
+  "files": [
+   "src/content\\certifications\\pentest-plus.json"
+  ]
+ },
+ {
+  "url": "https://tryhackme.com/path/outline/soclevel1",
+  "files": [
+   "src/content\\certifications\\ccna-cybersecurity.json",
+   "src/content\\certifications\\cysa-plus.json"
+  ]
+ },
+ {
+  "url": "https://u.cisco.com",
+  "files": [
+   "src/content\\certifications\\ccnp-data-center.json"
+  ]
+ },
+ {
+  "url": "https://u.cisco.com/",
+  "files": [
+   "src/content\\certifications\\ccie-enterprise-infrastructure.json",
+   "src/content\\certifications\\ccie-security.json",
+   "src/content\\certifications\\ccnp-automation.json",
+   "src/content\\certifications\\ccnp-collaboration.json",
+   "src/content\\certifications\\ccnp-cybersecurity.json",
+   "src/content\\certifications\\ccnp-data-center.json",
+   "src/content\\certifications\\ccnp-enterprise.json",
+   "src/content\\certifications\\ccnp-security.json",
+   "src/content\\certifications\\ccnp-service-provider.json",
+   "src/content\\certifications\\ccnp-wireless.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/dp/0136642969/?tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\ccna-automation.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/dp/0136807836/?tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\ccna-cybersecurity.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/dp/0137955146/?tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\az-900.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/dp/0138221391/?tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\ccna.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/dp/0138345937/?tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\az-104.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/dp/0138363730/?tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\sc-900.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/dp/0981621732/?tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\network-plus.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/dp/1119878942/?tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\linux-plus.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/dp/1119982626/?tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\aws-saa.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/dp/1394182902/?tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\cysa-plus.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/dp/1394211384/?tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\security-plus.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/dp/1394211414/?tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\security-plus.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/dp/1394235631/?tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\aws-cloud-practitioner.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/dp/1394274807/?tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\aws-developer-associate.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/dp/1394285000/?tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\pentest-plus.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/dp/1394330030/?tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\a-plus.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/dp/1394333773/?tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\cloud-plus.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/dp/B09TPLNBQ2/?tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\network-plus.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/s?k=CBRCOR+350-201+Official+Cert+Guide&tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\ccnp-cybersecurity.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/s?k=CCDE+Official+Cert+Guide+Cisco&tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\ccde.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/s?k=CCNP+CCIE+Collaboration+Core+CLCOR+350-801+Official+Cert+Guide&tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\ccnp-collaboration.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/s?k=CCNP+CCIE+Data+Center+Core+DCCOR+350-601+Official+Cert+Guide&tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\ccnp-data-center.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/s?k=CCNP+CCIE+Enterprise+Core+ENCOR+350-401+Official+Cert+Guide&tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\ccnp-enterprise.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/s?k=CCNP+CCIE+Security+Core+SCOR+350-701+Official+Cert+Guide&tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\ccnp-security.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/s?k=CCNP+Service+Provider+SPCOR+350-501+Official+Cert+Guide&tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\ccnp-service-provider.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/s?k=CCST+Cybersecurity+100-160+Official+Cert+Guide&tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\ccst-cybersecurity.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/s?k=CCST+IT+Support+100-140+Official+Cert+Guide&tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\ccst-it-support.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/s?k=CCST+Networking+100-150+Official+Cert+Guide&tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\ccst-networking.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/s?k=CISM+All-in-One+Exam+Guide+Gregory&tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\cism.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/s?k=CISSP+Official+Study+Guide+10th+Edition+Sybex&tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\cissp.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/s?k=CWNA+Certified+Wireless+Network+Administrator+Study+Guide&tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\ccnp-wireless.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/s?k=Cisco+Catalyst+9100+access+point&tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\ccnp-wireless.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/s?k=DEVCOR+350-901+Official+Cert+Guide&tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\ccnp-automation.json"
+  ]
+ },
+ {
+  "url": "https://www.amazon.com/s?k=MPLS+in+the+SDN+Era&tag=certblueprint-20",
+  "files": [
+   "src/content\\certifications\\ccnp-service-provider.json"
+  ]
+ },
+ {
+  "url": "https://www.boson.com/practice-exam/200-301-cisco-ccna-practice-exam",
+  "files": [
+   "src/content\\certifications\\ccna.json"
+  ]
+ },
+ {
+  "url": "https://www.boson.com/practice-exam/350-401-cisco-exsim-max-practice-exam",
+  "files": [
+   "src/content\\certifications\\ccnp-enterprise.json"
+  ]
+ },
+ {
+  "url": "https://www.boson.com/practice-exam/350-701-cisco-exsim-max-practice-exam",
+  "files": [
+   "src/content\\certifications\\ccie-security.json",
+   "src/content\\certifications\\ccnp-security.json"
+  ]
+ },
+ {
+  "url": "https://www.cbtnuggets.com/it-training/cisco",
+  "files": [
+   "src/content\\certifications\\ccnp-automation.json",
+   "src/content\\certifications\\ccnp-collaboration.json"
+  ]
+ },
+ {
+  "url": "https://www.cbtnuggets.com/it-training/cisco/ccnp-data-center",
+  "files": [
+   "src/content\\certifications\\ccnp-data-center.json"
+  ]
+ },
+ {
+  "url": "https://www.cbtnuggets.com/it-training/cisco/ccnp-enterprise",
+  "files": [
+   "src/content\\certifications\\ccnp-enterprise.json"
+  ]
+ },
+ {
+  "url": "https://www.cbtnuggets.com/it-training/cisco/ccnp-security",
+  "files": [
+   "src/content\\certifications\\ccnp-security.json"
+  ]
+ },
+ {
+  "url": "https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/associate/ccna.html",
+  "files": [
+   "src/content\\certifications\\ccna.json"
+  ]
+ },
+ {
+  "url": "https://www.cisco.com/c/en/us/training-events/training-certifications/exams/current-list.html",
+  "files": [
+   "src/content\\certifications\\ccna-automation.json",
+   "src/content\\certifications\\ccna-cybersecurity.json",
+   "src/content\\certifications\\ccna.json"
+  ]
+ },
+ {
+  "url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/automation/ccnp-automation/index.html",
+  "files": [
+   "src/content\\certifications\\ccnp-automation.json"
+  ]
+ },
+ {
+  "url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/collaboration/ccnp-collaboration/index.html",
+  "files": [
+   "src/content\\certifications\\ccnp-collaboration.json"
+  ]
+ },
+ {
+  "url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/cybersecurity/ccnp-cybersecurity/index.html",
+  "files": [
+   "src/content\\certifications\\ccnp-cybersecurity.json"
+  ]
+ },
+ {
+  "url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/datacenter/ccnp-data-center/exams-and-training.html",
+  "files": [
+   "src/content\\certifications\\ccnp-data-center.json"
+  ]
+ },
+ {
+  "url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/design/ccde/exams-and-training.html",
+  "files": [
+   "src/content\\certifications\\ccde.json"
+  ]
+ },
+ {
+  "url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/enterprise/ccie-enterprise-infrastructure/index.html",
+  "files": [
+   "src/content\\certifications\\ccie-enterprise-infrastructure.json"
+  ]
+ },
+ {
+  "url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/enterprise/ccnp-enterprise/exams-and-training.html",
+  "files": [
+   "src/content\\certifications\\ccnp-enterprise.json"
+  ]
+ },
+ {
+  "url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/enterprise/ccnp-enterprise/index.html",
+  "files": [
+   "src/content\\certifications\\ccnp-enterprise.json"
+  ]
+ },
+ {
+  "url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/security/ccie-security/exams-and-training.html",
+  "files": [
+   "src/content\\certifications\\ccie-security.json"
+  ]
+ },
+ {
+  "url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/security/ccnp-security/exams-and-training.html",
+  "files": [
+   "src/content\\certifications\\ccnp-security.json"
+  ]
+ },
+ {
+  "url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/service-provider/ccnp-service-provider/index.html",
+  "files": [
+   "src/content\\certifications\\ccnp-service-provider.json"
+  ]
+ },
+ {
+  "url": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/ccnaauto.html",
+  "files": [
+   "src/content\\certifications\\ccna-automation.json"
+  ]
+ },
+ {
+  "url": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/ccnacbr.html",
+  "files": [
+   "src/content\\certifications\\ccna-cybersecurity.json"
+  ]
+ },
+ {
+  "url": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/ccst-networking.html",
+  "files": [
+   "src/content\\certifications\\ccst-networking.json"
+  ]
+ },
+ {
+  "url": "https://www.ciscolive.com/on-demand.html",
+  "files": [
+   "src/content\\certifications\\ccie-enterprise-infrastructure.json",
+   "src/content\\certifications\\ccie-security.json",
+   "src/content\\certifications\\ccnp-collaboration.json",
+   "src/content\\certifications\\ccnp-enterprise.json",
+   "src/content\\certifications\\ccnp-service-provider.json",
+   "src/content\\certifications\\ccnp-wireless.json"
+  ]
+ },
+ {
+  "url": "https://www.cloudskillsboost.google/",
+  "files": [
+   "src/content\\certifications\\google-business-intelligence.json"
+  ]
+ },
+ {
+  "url": "https://www.comptia.org/certifications/security",
+  "files": [
+   "src/content\\certifications\\security-plus.json"
+  ]
+ },
+ {
+  "url": "https://www.comptia.org/certifications/security#buy",
+  "files": [
+   "src/content\\certifications\\security-plus.json"
+  ]
+ },
+ {
+  "url": "https://www.comptia.org/en-us/certifications/a/",
+  "files": [
+   "src/content\\certifications\\a-plus.json",
+   "src/content\\certifications\\google-it-support.json"
+  ]
+ },
+ {
+  "url": "https://www.comptia.org/en-us/certifications/cloud/",
+  "files": [
+   "src/content\\certifications\\cloud-plus.json"
+  ]
+ },
+ {
+  "url": "https://www.comptia.org/en-us/certifications/cybersecurity-analyst/",
+  "files": [
+   "src/content\\certifications\\cysa-plus.json"
+  ]
+ },
+ {
+  "url": "https://www.comptia.org/en-us/certifications/linux/",
+  "files": [
+   "src/content\\certifications\\linux-plus.json"
+  ]
+ },
+ {
+  "url": "https://www.comptia.org/en-us/certifications/network/",
+  "files": [
+   "src/content\\certifications\\network-plus.json"
+  ]
+ },
+ {
+  "url": "https://www.comptia.org/en-us/certifications/pentest/",
+  "files": [
+   "src/content\\certifications\\pentest-plus.json"
+  ]
+ },
+ {
+  "url": "https://www.comptia.org/en-us/certifications/security/",
+  "files": [
+   "src/content\\certifications\\google-cybersecurity.json"
+  ]
+ },
+ {
+  "url": "https://www.cookieyes.com/privacy-policy/",
+  "files": [
+   "src/pages\\legal\\privacy-policy.astro"
+  ]
+ },
+ {
+  "url": "https://www.coursera.org/courseraplus",
+  "files": [
+   "src/content\\certifications\\google-data-analytics.json"
+  ]
+ },
+ {
+  "url": "https://www.coursera.org/professional-certificates/google-business-intelligence",
+  "files": [
+   "src/content\\certifications\\google-business-intelligence.json"
+  ]
+ },
+ {
+  "url": "https://www.coursera.org/professional-certificates/google-cybersecurity",
+  "files": [
+   "src/content\\certifications\\google-cybersecurity.json"
+  ]
+ },
+ {
+  "url": "https://www.coursera.org/professional-certificates/google-data-analytics",
+  "files": [
+   "src/content\\certifications\\google-data-analytics.json"
+  ]
+ },
+ {
+  "url": "https://www.coursera.org/professional-certificates/google-it-automation",
+  "files": [
+   "src/content\\certifications\\google-it-automation.json"
+  ]
+ },
+ {
+  "url": "https://www.coursera.org/professional-certificates/google-it-support",
+  "files": [
+   "src/content\\certifications\\google-it-support.json"
+  ]
+ },
+ {
+  "url": "https://www.coursera.org/professional-certificates/google-project-management",
+  "files": [
+   "src/content\\certifications\\capm.json",
+   "src/content\\certifications\\google-project-management.json"
+  ]
+ },
+ {
+  "url": "https://www.examcompass.com/",
+  "files": [
+   "src/content\\certifications\\a-plus.json",
+   "src/content\\certifications\\cloud-plus.json"
+  ]
+ },
+ {
+  "url": "https://www.google.com/settings/ads",
+  "files": [
+   "src/pages\\legal\\affiliate-disclosure.astro",
+   "src/pages\\legal\\privacy-policy.astro"
+  ]
+ },
+ {
+  "url": "https://www.hackthebox.com/",
+  "files": [
+   "src/content\\certifications\\pentest-plus.json"
+  ]
+ },
+ {
+  "url": "https://www.ipspace.net/",
+  "files": [
+   "src/content\\certifications\\ccde.json"
+  ]
+ },
+ {
+  "url": "https://www.isaca.org/credentialing/cism",
+  "files": [
+   "src/content\\certifications\\cism.json"
+  ]
+ },
+ {
+  "url": "https://www.isaca.org/credentialing/cism/cism-exam-content-outline",
+  "files": [
+   "src/content\\certifications\\cism.json"
+  ]
+ },
+ {
+  "url": "https://www.isaca.org/credentialing/cism/cism-practice-quiz",
+  "files": [
+   "src/content\\certifications\\cism.json"
+  ]
+ },
+ {
+  "url": "https://www.isc2.org/certifications/cissp",
+  "files": [
+   "src/content\\certifications\\cissp.json"
+  ]
+ },
+ {
+  "url": "https://www.isc2.org/certifications/cissp/cissp-certification-exam-outline",
+  "files": [
+   "src/content\\certifications\\cissp.json"
+  ]
+ },
+ {
+  "url": "https://www.isc2.org/register-for-exam",
+  "files": [
+   "src/content\\certifications\\cissp.json"
+  ]
+ },
+ {
+  "url": "https://www.isc2.org/register-for-exam/isc2-exam-pricing",
+  "files": [
+   "src/content\\certifications\\cissp.json"
+  ]
+ },
+ {
+  "url": "https://www.juniper.net/documentation/jnbooks/us/en/day-one-books",
+  "files": [
+   "src/content\\certifications\\jncia-junos.json"
+  ]
+ },
+ {
+  "url": "https://www.juniper.net/us/en/training/certification/tracks/junos/jncia-junos.html",
+  "files": [
+   "src/content\\certifications\\jncia-junos.json"
+  ]
+ },
+ {
+  "url": "https://www.kaggle.com/learn",
+  "files": [
+   "src/content\\certifications\\google-business-intelligence.json",
+   "src/content\\certifications\\google-data-analytics.json"
+  ]
+ },
+ {
+  "url": "https://www.micronicstraining.com/",
+  "files": [
+   "src/content\\certifications\\ccie-enterprise-infrastructure.json"
+  ]
+ },
+ {
+  "url": "https://www.microsoftpressstore.com/store/exam-ref-md-102-microsoft-endpoint-administrator-9780135417096",
+  "files": [
+   "src/content\\certifications\\md-102.json"
+  ]
+ },
+ {
+  "url": "https://www.netacad.com/career-paths",
+  "files": [
+   "src/content\\certifications\\ccst-it-support.json"
+  ]
+ },
+ {
+  "url": "https://www.netacad.com/career-paths/cybersecurity",
+  "files": [
+   "src/content\\certifications\\ccst-cybersecurity.json"
+  ]
+ },
+ {
+  "url": "https://www.netacad.com/career-paths/network-technician",
+  "files": [
+   "src/content\\certifications\\ccst-networking.json"
+  ]
+ },
+ {
+  "url": "https://www.netacad.com/catalog",
+  "files": [
+   "src/content\\certifications\\ccst-cybersecurity.json",
+   "src/content\\certifications\\ccst-it-support.json"
+  ]
+ },
+ {
+  "url": "https://www.netacad.com/cisco-packet-tracer",
+  "files": [
+   "src/content\\certifications\\ccst-networking.json"
+  ]
+ },
+ {
+  "url": "https://www.netacad.com/courses/introduction-to-cybersecurity",
+  "files": [
+   "src/content\\certifications\\google-cybersecurity.json"
+  ]
+ },
+ {
+  "url": "https://www.netacad.com/courses/packet-tracer",
+  "files": [
+   "src/content\\certifications\\ccna.json",
+   "src/content\\certifications\\network-plus.json"
+  ]
+ },
+ {
+  "url": "https://www.network-node.com",
+  "files": [
+   "src/content\\certifications\\ccnp-security.json"
+  ]
+ },
+ {
+  "url": "https://www.pearsonvue.com/us/en/junipernetworks.html",
+  "files": [
+   "src/content\\certifications\\jncia-junos.json"
+  ]
+ },
+ {
+  "url": "https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil-4-foundation-2565",
+  "files": [
+   "src/content\\certifications\\itil-4-foundation.json"
+  ]
+ },
+ {
+  "url": "https://www.peoplecert.org/browse-mock-exams/it-governance-and-service-management/ITIL-1/itil-4-foundation-mock-exam",
+  "files": [
+   "src/content\\certifications\\itil-4-foundation.json"
+  ]
+ },
+ {
+  "url": "https://www.peoplecert.org/help-and-support/faq-itil",
+  "files": [
+   "src/content\\certifications\\itil-4-foundation.json"
+  ]
+ },
+ {
+  "url": "https://www.pmi.org/-/media/pmi/documents/public/pdf/certifications/capm-exam-content-outline-english.pdf",
+  "files": [
+   "src/content\\certifications\\capm.json"
+  ]
+ },
+ {
+  "url": "https://www.pmi.org/certifications/certified-associate-capm",
+  "files": [
+   "src/content\\certifications\\capm.json",
+   "src/content\\certifications\\google-project-management.json"
+  ]
+ },
+ {
+  "url": "https://www.pmi.org/membership",
+  "files": [
+   "src/content\\certifications\\google-project-management.json"
+  ]
+ },
+ {
+  "url": "https://www.professormesser.com/free-a-plus-training/",
+  "files": [
+   "src/content\\certifications\\a-plus.json",
+   "src/content\\certifications\\google-it-support.json"
+  ]
+ },
+ {
+  "url": "https://www.professormesser.com/network-plus/n10-009/n10-009-video/n10-009-training-course/",
+  "files": [
+   "src/content\\certifications\\network-plus.json"
+  ]
+ },
+ {
+  "url": "https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/",
+  "files": [
+   "src/content\\certifications\\google-cybersecurity.json"
+  ]
+ },
+ {
+  "url": "https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/sy0-701-comptia-security-plus-course/",
+  "files": [
+   "src/content\\certifications\\security-plus.json"
+  ]
+ },
+ {
+  "url": "https://www.reddit.com/r/AWSCertifications/",
+  "files": [
+   "src/content\\certifications\\aws-cloud-practitioner.json",
+   "src/content\\certifications\\aws-developer-associate.json",
+   "src/content\\certifications\\aws-saa.json"
+  ]
+ },
+ {
+  "url": "https://www.reddit.com/r/AzureCertification/",
+  "files": [
+   "src/content\\certifications\\az-104.json",
+   "src/content\\certifications\\sc-900.json"
+  ]
+ },
+ {
+  "url": "https://www.reddit.com/r/CISM/",
+  "files": [
+   "src/content\\certifications\\cism.json"
+  ]
+ },
+ {
+  "url": "https://www.reddit.com/r/CompTIA/",
+  "files": [
+   "src/content\\certifications\\a-plus.json",
+   "src/content\\certifications\\cloud-plus.json",
+   "src/content\\certifications\\cysa-plus.json",
+   "src/content\\certifications\\linux-plus.json",
+   "src/content\\certifications\\network-plus.json",
+   "src/content\\certifications\\pentest-plus.json",
+   "src/content\\certifications\\security-plus.json"
+  ]
+ },
+ {
+  "url": "https://www.reddit.com/r/ITCareerQuestions/",
+  "files": [
+   "src/content\\certifications\\google-it-support.json"
+  ]
+ },
+ {
+  "url": "https://www.reddit.com/r/ITIL/",
+  "files": [
+   "src/content\\certifications\\itil-4-foundation.json"
+  ]
+ },
+ {
+  "url": "https://www.reddit.com/r/PowerBI/",
+  "files": [
+   "src/content\\certifications\\pl-300.json"
+  ]
+ },
+ {
+  "url": "https://www.reddit.com/r/ccna/",
+  "files": [
+   "src/content\\certifications\\ccna.json"
+  ]
+ },
+ {
+  "url": "https://www.reddit.com/r/cissp/",
+  "files": [
+   "src/content\\certifications\\cissp.json"
+  ]
+ },
+ {
+  "url": "https://www.reddit.com/r/cybersecurity/",
+  "files": [
+   "src/content\\certifications\\ccna-cybersecurity.json"
+  ]
+ },
+ {
+  "url": "https://www.reddit.com/r/dataanalysis/",
+  "files": [
+   "src/content\\certifications\\google-data-analytics.json"
+  ]
+ },
+ {
+  "url": "https://www.reddit.com/r/devnet/",
+  "files": [
+   "src/content\\certifications\\ccna-automation.json"
+  ]
+ },
+ {
+  "url": "https://www.reddit.com/r/pmp/",
+  "files": [
+   "src/content\\certifications\\capm.json"
+  ]
+ },
+ {
+  "url": "https://www.reddit.com/r/projectmanagement/wiki/index/",
+  "files": [
+   "src/content\\certifications\\google-project-management.json"
+  ]
+ },
+ {
+  "url": "https://www.reddit.com/r/softwaretesting/",
+  "files": [
+   "src/content\\certifications\\istqb-ctfl.json"
+  ]
+ },
+ {
+  "url": "https://www.scrum.org/assessments/professional-scrum-master-i-certification",
+  "files": [
+   "src/content\\certifications\\psm-1.json"
+  ]
+ },
+ {
+  "url": "https://www.scrum.org/open-assessments",
+  "files": [
+   "src/content\\certifications\\psm-1.json"
+  ]
+ },
+ {
+  "url": "https://www.scrum.org/open-assessments/scrum-open",
+  "files": [
+   "src/content\\certifications\\psm-1.json"
+  ]
+ },
+ {
+  "url": "https://www.scrum.org/support/how-do-i-prepare-scrumorg-assessment",
+  "files": [
+   "src/content\\certifications\\psm-1.json"
+  ]
+ },
+ {
+  "url": "https://www.segment-routing.net/",
+  "files": [
+   "src/content\\certifications\\ccnp-service-provider.json"
+  ]
+ },
+ {
+  "url": "https://www.sqlbi.com/",
+  "files": [
+   "src/content\\certifications\\pl-300.json"
+  ]
+ },
+ {
+  "url": "https://www.ucertify.com/p/cisco-cbrops-200-201.html",
+  "files": [
+   "src/content\\certifications\\ccna-cybersecurity.json"
+  ]
+ },
+ {
+  "url": "https://www.youtube.com/@DestinationCertification",
+  "files": [
+   "src/content\\certifications\\cissp.json"
+  ]
+ },
+ {
+  "url": "https://www.youtube.com/@InsideCloudAndSecurity",
+  "files": [
+   "src/content\\certifications\\cissp.json"
+  ]
+ },
+ {
+  "url": "https://www.youtube.com/@JeremysITLab",
+  "files": [
+   "src/content\\certifications\\ccna.json"
+  ]
+ },
+ {
+  "url": "https://www.youtube.com/@MyDFIR",
+  "files": [
+   "src/content\\certifications\\ccna-cybersecurity.json",
+   "src/content\\certifications\\cysa-plus.json"
+  ]
+ },
+ {
+  "url": "https://www.youtube.com/@NTFAQGuy",
+  "files": [
+   "src/content\\certifications\\az-900.json",
+   "src/content\\certifications\\sc-900.json"
+  ]
+ },
+ {
+  "url": "https://www.youtube.com/@PowerCertAnimatedVideos",
+  "files": [
+   "src/content\\certifications\\a-plus.json"
+  ]
+ },
+ {
+  "url": "https://www.youtube.com/@TCMSecurityAcademy",
+  "files": [
+   "src/content\\certifications\\pentest-plus.json"
+  ]
+ },
+ {
+  "url": "https://www.youtube.com/c/Freecodecamp",
+  "files": [
+   "src/content\\certifications\\aws-cloud-practitioner.json"
+  ]
+ },
+ {
+  "url": "https://www.youtube.com/playlist?list=PL0hT6hgexlYxrFj1NdUUqqHw9gStcbHX-",
+  "files": [
+   "src/content\\certifications\\cism.json"
+  ]
+ },
+ {
+  "url": "https://www.youtube.com/watch?v=10PbGbTUSAg",
+  "files": [
+   "src/content\\certifications\\az-104.json"
+  ]
+ },
+ {
+  "url": "https://youradchoices.com/control",
+  "files": [
+   "src/pages\\legal\\privacy-policy.astro"
+  ]
+ }
+]

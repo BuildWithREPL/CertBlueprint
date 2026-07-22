@@ -1,0 +1,138 @@
+{
+  "title": "Juniper",
+  "slug": "juniper",
+  "overview": "Juniper Networks (now part of HPE as 'HPE Juniper Networking') is the other serious network operating system — Junos runs the backbones of ISPs, carriers, and service providers worldwide, and its certification ladder (JNCIA → JNCIS → JNCIP → JNCIE) mirrors Cisco's across enterprise, service-provider, security, data center, and automation tracks. Its entry cert, JNCIA-Junos, is quietly the best financial deal in vendor certifications thanks to Juniper's free official training and 75%-off exam vouchers.",
+  "why_vendor_matters": "Juniper matters for two honest reasons. First, market reality: while Cisco dominates enterprise job postings, Junos owns a serious share of the service-provider, carrier, and ISP world — and in those shops, Juniper certs are the recognized currency. Because fewer engineers hold them than their Cisco equivalents, JNCIS/JNCIP-level skills carry a genuine scarcity premium. Second, the engineering: the Junos configuration model — candidate configurations, commit confirmed, rollback — enforces disciplined change management that many working engineers consider flatly better than IOS. Learning it makes you a better network engineer on any vendor's gear.\n\nThen there's the economics, which deserve their own paragraph: Juniper Open Learning gives away the official JNCIA courseware free, and completing it earns a 75%-off exam voucher — a legitimate routing & switching credential for about $50 all-in. For a beginner deciding between spending $300+ on a first vendor cert or $50, that difference is real. The honest caveat cuts the other way: CCNA still appears in far more job postings, so for general employability Cisco remains the safer first bet. Juniper is the smart pick for ISP/SP-bound careers, and the smart second cert for everyone else.",
+  "certification_tracks": [
+    {
+      "name": "Associate",
+      "level": "Foundation",
+      "description": "JNCIA-Junos (JN0-106) is the shared gateway — Junos OS, CLI, routing fundamentals. Parallel associate certs exist for security, cloud, DevOps, design, data center, and Mist AI/wireless."
+    },
+    {
+      "name": "Specialist",
+      "level": "Intermediate",
+      "description": "JNCIS splits by track — Enterprise Routing & Switching (ENT), Service Provider (SP), Security (SEC), Data Center (DC), and more. This is where Juniper careers differentiate and the scarcity premium starts."
+    },
+    {
+      "name": "Professional",
+      "level": "Advanced",
+      "description": "JNCIP tier — deep protocol work (OSPF, BGP, MPLS, EVPN) within your chosen track. The working-senior-engineer credential in Junos shops."
+    },
+    {
+      "name": "Expert",
+      "level": "Expert",
+      "description": "JNCIE — the hands-on lab exams ($1,400), Juniper's answer to the CCIE. Rare, respected, and genuinely hard; the service-provider JNCIE is among the most demanding lab exams in networking."
+    }
+  ],
+  "featured_certs": ["jncia-junos"],
+  "who_its_for": [
+    {
+      "role": "Aspiring network engineers on a budget",
+      "detail": "The Open Learning voucher path makes JNCIA-Junos a ~$50 credential with free official training and free hosted labs — the lowest-cost legitimate entry into vendor networking certs, full stop."
+    },
+    {
+      "role": "Engineers targeting ISP, carrier, or service-provider work",
+      "detail": "Junos runs the backbone world. If your target shop is a service provider, a carrier, or a big data center operation, Juniper certs speak the local language better than Cisco's."
+    },
+    {
+      "role": "CCNA holders building multi-vendor credibility",
+      "detail": "The fastest way to prove you're a networking engineer rather than a Cisco technician: add JNCIA-Junos for ~$50. The concepts transfer directly; only the configuration model is new — and it's the part worth learning."
+    },
+    {
+      "role": "Signal-corps veterans and transport-side techs",
+      "detail": "If your service work was transmission systems and network transport, the Junos R&S ladder is the civilian continuation of the logical side of that work — routing and switching, not cabling and antennas."
+    }
+  ],
+  "career_salary_impact": [
+    "Honest numbers: an associate cert doesn't set pay — junior network roles run roughly $54K–$71K regardless of the logo on your cert, and BLS puts mid-career network administration at $96,800 median (May 2024) with flat-to-declining headcount. Nobody should expect JNCIA-Junos alone to move a salary needle; it's a door-opener into NOC and junior engineering seats.",
+    "The Juniper-specific payoff sits higher up the ladder: because far fewer engineers hold JNCIS/JNCIP than the equivalent Cisco tiers, Junos skills command a scarcity premium in the shops that need them — service providers, carriers, ISPs, and large data centers. That's the honest calculus: modest entry value in the general market, outsized value in the Junos world, and near-zero cost to find out which world you're headed for."
+  ],
+  "study_difficulty": [
+    {
+      "cert": "JNCIA-Junos (JN0-106)",
+      "difficulty": "Beginner–Moderate",
+      "time": "4–8 weeks part-time",
+      "detail": "Gentler than CCNA — 65 multiple-choice questions in 90 minutes, no lab sims, narrower scope. The flip side: it's passable by memorization, which is why the free vLabs time matters more than the paper. Come in with Network+-level TCP/IP and the Junos-specific material lands in weeks."
+    }
+  ],
+  "available_guides": [
+    {
+      "title": "Juniper JNCIA-Junos (JN0-106) Study Guide",
+      "level": "Associate",
+      "description": "The ~$50 routing & switching cert — the free Open Learning path and 75%-off voucher, vLabs practice, and honest JNCIA-vs-CCNA advice.",
+      "slug": "jncia-junos",
+      "vendor_slug": "juniper",
+      "featured": true
+    }
+  ],
+  "more_certs": [
+    {
+      "title": "JNCIS-ENT (Enterprise Routing & Switching Specialist)",
+      "level": "Intermediate",
+      "description": "The natural next rung for the route/switch road — OSPF, BGP, spanning tree, and EVPN at working depth. Passing it auto-renews your JNCIA."
+    },
+    {
+      "title": "JNCIS-SP (Service Provider Specialist)",
+      "level": "Intermediate",
+      "description": "The carrier-side track — MPLS, IS-IS, and provider routing at the tier where Juniper's scarcity premium actually pays."
+    },
+    {
+      "title": "JNCIA-SEC / JNCIS-SEC (Security track)",
+      "level": "Foundation–Intermediate",
+      "description": "Juniper's SRX-centered security ladder — firewall policy, IPsec, and security services for engineers in Junos security shops."
+    },
+    {
+      "title": "JNCIE (Expert lab exams)",
+      "level": "Expert",
+      "description": "The hands-on summit — eight-hour lab exams per track. Rare and respected; the SP lab in particular is one of networking's hardest tests."
+    }
+  ],
+  "related_paths": [
+    {
+      "title": "Network Administrator",
+      "href": "/paths/network-administrator/",
+      "description": "The career path JNCIA-Junos feeds — see the honest roadmap where it sits alongside CCNA as the level-up rung."
+    },
+    {
+      "title": "Cisco",
+      "href": "/vendors/cisco/",
+      "description": "The other half of the decision. CCNA wins on job-posting volume; JNCIA wins on cost and the commit/rollback model. Serious engineers eventually touch both."
+    },
+    {
+      "title": "CompTIA",
+      "href": "/vendors/comptia/",
+      "description": "Network+ is the vendor-neutral foundation both ladders assume — build TCP/IP fundamentals there before picking a vendor track."
+    }
+  ],
+  "cta": {
+    "heading": "Start the Junos road for ~$50",
+    "blurb": "Free official training, free hosted labs, and a 75%-off exam voucher — the cheapest legitimate entry in vendor networking. Our guide walks the whole Open Learning play step by step.",
+    "href": "/vendors/juniper/jncia-junos/",
+    "label": "Read the JNCIA-Junos guide"
+  },
+  "faq": [
+    {
+      "question": "Juniper or Cisco — which certification track should I choose?",
+      "answer": "For general employability, Cisco — CCNA appears in far more postings and clears more HR filters. Choose Juniper first if you're targeting ISP/carrier/service-provider work where Junos dominates, or add JNCIA-Junos as a ~$50 second cert after CCNA to prove multi-vendor range. The concepts transfer both ways; this is a sequencing decision, not a loyalty oath."
+    },
+    {
+      "question": "Is the 75%-off voucher deal real?",
+      "answer": "Yes, and it's verified current: complete the free Juniper Open Learning path, score 70%+ on the Voucher Assessment Test (three attempts max), and you get a Pearson VUE voucher that drops the $200 exam to $50. The one trap: vouchers expire 30 days from issue with no extensions — earn it only when you're ready to book."
+    },
+    {
+      "question": "What changed with the JNCIA exam in 2026?",
+      "answer": "JN0-106 replaced JN0-105 on April 5, 2026. Existing JN0-105 certs remain valid for their full term, and content overlap is high — but plenty of popular courses still carry the old code in their titles, so verify anything you buy against the current JN0-106 objectives."
+    },
+    {
+      "question": "Does the HPE acquisition change anything?",
+      "answer": "HPE closed the Juniper acquisition in mid-2025 and the branding is shifting to 'HPE Juniper Networking,' but the certification program continues unchanged so far. Fair advice: it's one more reason to build a multi-vendor foundation rather than betting a whole career plan on any single vendor's track — which is true of Cisco too."
+    },
+    {
+      "question": "Do Juniper certifications expire?",
+      "answer": "Three-year validity, and the renewal model is the friendliest in networking: pass any higher-level exam in the track and everything beneath it renews automatically — including associate certs in other Juniper tracks. No annual fees, no CE-credit paperwork. Most people never re-take JNCIA; they just take the JNCIS they wanted anyway."
+    }
+  ],
+  "seo_title": "Juniper Certifications – JNCIA-Junos and the Junos Track | CertBlueprint",
+  "seo_description": "Juniper certification guides: the ~$50 JNCIA-Junos path via Open Learning vouchers, the JNCIS/JNCIP/JNCIE ladder, and honest Juniper-vs-Cisco advice."
+}

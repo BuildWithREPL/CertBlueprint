@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import FAQAccordion from '../../../components/FAQAccordion.astro';
+import CalloutBox from '../../../components/CalloutBox.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const comparisons = await getCollection('comparisons');
+  return comparisons.map((c) => ({ params: { slug: c.data.slug }, props: { data: c.data } }));
+}
+
+const { data } = Astro.props;
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Compare', href: '/compare/' },
+  { label: data.title, href: `/compare/${data.slug}/` },
+];
+---
+
+<BaseLayout title={data.seo_title} description={data.seo_description} breadcrumbs={breadcrumbs}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumb crumbs={breadcrumbs} />
+
+    <header class="mt-3 mb-8 max-w-3xl">
+      <p class="text-xs font-semibold uppercase tracking-wider mb-2" style="color: var(--cb-accent-text);">Head to head</p>
+      <h1 class="text-2xl sm:text-3xl font-bold mb-3" style="color: var(--cb-text);">{data.title}</h1>
+      <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{data.intro}</p>
+    </header>
+
+    <!-- The verdict, up front -->
+    <section class="mb-10 max-w-3xl" aria-labelledby="verdict-heading">
+      <div class="rounded-xl border-2 p-5" style="border-color: var(--cb-accent); background: var(--cb-bg-card);">
+        <h2 id="verdict-heading" class="text-sm font-bold uppercase tracking-wide mb-2" style="color: var(--cb-accent-text);">The short answer</h2>
+        <p class="text-sm leading-relaxed" style="color: var(--cb-text);">{data.verdict}</p>
+      </div>
+    </section>
+
+    <!-- The two contenders -->
+    <section class="mb-10" aria-label="The two certifications compared">
+      <div class="grid sm:grid-cols-2 gap-4 max-w-3xl">
+        {[data.a, data.b].map((side) => (
+          <a href={side.href} class="rounded-xl border p-4 block transition-all" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+            <p class="font-bold text-base mb-1" style="color: var(--cb-text);">{side.name}</p>
+            <p class="text-xs leading-relaxed mb-2" style="color: var(--cb-text-sub);">{side.tagline}</p>
+            <span class="text-xs font-semibold" style="color: var(--cb-accent-text);">Full study guide →</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Side-by-side table -->
+    <section class="mb-10" aria-labelledby="table-heading">
+      <h2 id="table-heading" class="text-lg font-bold mb-4 pb-2 border-b max-w-3xl" style="color: var(--cb-text); border-color: var(--cb-border);">Side by side</h2>
+      <div class="overflow-x-auto rounded-xl border max-w-3xl" style="border-color: var(--cb-border);">
+        <table class="w-full text-sm" style="background: var(--cb-bg-card);">
+          <thead>
+            <tr style="background: var(--cb-bg-subtle); border-bottom: 1px solid var(--cb-border);">
+              <th class="text-left px-4 py-3 font-semibold text-xs uppercase tracking-wider" style="color: var(--cb-text-muted);"></th>
+              <th class="text-left px-4 py-3 font-semibold text-xs" style="color: var(--cb-text);">{data.a.name}</th>
+              <th class="text-left px-4 py-3 font-semibold text-xs" style="color: var(--cb-text);">{data.b.name}</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y" style="border-color: var(--cb-border-sub);">
+            {data.rows.map((row) => (
+              <tr>
+                <td class="px-4 py-3 font-medium text-xs uppercase tracking-wide align-top" style="color: var(--cb-text-muted);">{row.label}</td>
+                <td class="px-4 py-3 align-top" style="color: var(--cb-text-sub);">{row.a}</td>
+                <td class="px-4 py-3 align-top" style="color: var(--cb-text-sub);">{row.b}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Pick if columns -->
+    <section class="mb-10" aria-labelledby="pick-heading">
+      <h2 id="pick-heading" class="text-lg font-bold mb-4 pb-2 border-b max-w-3xl" style="color: var(--cb-text); border-color: var(--cb-border);">Which one is yours</h2>
+      <div class="grid sm:grid-cols-2 gap-4 max-w-3xl">
+        <div class="rounded-xl border p-4" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+          <p class="font-semibold text-sm mb-3" style="color: var(--cb-text);">Pick {data.a.name} if…</p>
+          <ul class="space-y-2">
+            {data.pick_a_if.map((item) => (
+              <li class="text-sm flex items-start gap-2" style="color: var(--cb-text-sub);">
+                <svg class="w-3.5 h-3.5 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--cb-accent-text);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="rounded-xl border p-4" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+          <p class="font-semibold text-sm mb-3" style="color: var(--cb-text);">Pick {data.b.name} if…</p>
+          <ul class="space-y-2">
+            {data.pick_b_if.map((item) => (
+              <li class="text-sm flex items-start gap-2" style="color: var(--cb-text-sub);">
+                <svg class="w-3.5 h-3.5 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--cb-accent-text);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      {data.both_note && (
+        <div class="max-w-3xl mt-4">
+          <CalloutBox type="info" title="The 'both' answer">
+            <p class="text-sm">{data.both_note}</p>
+          </CalloutBox>
+        </div>
+      )}
+    </section>
+
+    <!-- FAQ -->
+    <section class="mb-10" aria-labelledby="faq-heading">
+      <h2 id="faq-heading" class="text-lg font-bold mb-4 pb-2 border-b max-w-3xl" style="color: var(--cb-text); border-color: var(--cb-border);">Frequently asked</h2>
+      <div class="max-w-3xl">
+        <FAQAccordion items={data.faq} />
+      </div>
+    </section>
+
+    <p class="text-xs max-w-3xl" style="color: var(--cb-text-muted);">Facts on this page last verified {data.last_verified}. Exam prices and structures change — confirm on the official vendor pages before booking.</p>
+  </div>
+</BaseLayout>

@@ -1,0 +1,229 @@
+{
+  "title": "Cisco CCNP Wireless Study Guide",
+  "slug": "ccnp-wireless",
+  "short_name": "CCNP Wireless",
+  "vendor": "Cisco",
+  "vendor_slug": "cisco",
+  "level": "Professional",
+  "description": "CCNP Wireless is Cisco's newest professional track — launched March 19, 2026, when all wireless content was carved out of CCNP Enterprise into a dedicated certification: the new WLCOR core plus a design (WLSD) or implementation (WLSI) concentration. If you're a wireless engineer who was studying ENWLSD/ENWLSI under the old structure, the transition rules matter and this guide covers them.",
+  "audience": "Wireless-focused network engineers — WLAN designers, Wi-Fi implementation specialists, and campus engineers whose real work is RF, roaming, and controllers rather than routing tables. Also the landing spot for engineers displaced by ENCOR v1.2's wireless removal: this track is where that career lane now lives.",
+  "why_get_it": "Because as of March 2026, this is the ONLY Cisco professional path for wireless careers — ENCOR v1.2 dropped all wireless content, and the old Enterprise wireless concentrations (ENWLSD/ENWLSI) tested for the last time on March 18, 2026. The new track brings the curriculum current: WLCOR covers wireless core technologies including the Wi-Fi 6/7 era, and the concentrations carry the renamed, realigned design and implementation exams. Every exam passed earns a Specialist credential, and WLCOR doubles as the qualifying exam for the renamed CCIE Wireless. Being early to a new track cuts both ways: the credential is maximally current, and the study ecosystem is minimal — mostly official sources for now.",
+  "when_to_get_it": "If wireless is your lane, now is genuinely a strategic moment: transition credit rules honor recent ENWLSD/ENWLSI passes (within 3 years) as WLSD/WLSI equivalents — meaning engineers holding one of those exams can complete CCNP Wireless by passing WLCOR alone. Check your CertMetrics status before planning. Fresh candidates need CCNA-level fundamentals plus real WLAN exposure; this is a professional-tier exam set, and wireless depth (RF behavior, roaming, controller architecture) can't be crammed from theory.",
+  "salary_range": "$95,000 – $135,000 (wireless/WLAN engineers)",
+  "salary_note": "No track-specific salary data exists yet for a certification this new — anchor to the role: senior WLAN and wireless network engineers typically post $95–135K in U.S. markets, with large-venue, healthcare, and warehouse-automation wireless (the genuinely hard RF environments) at the top. Directional and third-party; specialist scarcity in wireless has historically paid a modest premium over generalist campus roles.",
+  "exam_code": "350-101 WLCOR + 1 concentration",
+  "exam_duration": "WLCOR: 120 minutes · concentration: 90 minutes",
+  "exam_format": "Two proctored exams at Pearson VUE (test center or OnVUE): the WLCOR v1.0 core plus one concentration (WLSD design or WLSI implementation, both v1.2 — the renamed ENWLSD/ENWLSI). Counts and passing scores not published.",
+  "exam_questions": "Not published by Cisco",
+  "exam_structure": [
+    {
+      "code": "350-101 WLCOR v1.0",
+      "name": "Implementing and Operating Cisco Wireless Core Technologies",
+      "role": "Core exam — required",
+      "price": "$400",
+      "note": "Brand new (first test Mar 19, 2026). Also the qualifying exam for the renamed CCIE Wireless. Earns a Specialist credential."
+    },
+    {
+      "code": "300-110 WLSD v1.2",
+      "name": "Designing Cisco Wireless Networks",
+      "role": "Concentration — choose one",
+      "price": "$300",
+      "note": "The renamed/realigned 300-425 ENWLSD. Recent ENWLSD passes (within 3 years) count as WLSD credit."
+    },
+    {
+      "code": "300-120 WLSI v1.2",
+      "name": "Implementing Cisco Wireless Advanced Solutions",
+      "role": "Concentration — choose one",
+      "price": "$300",
+      "note": "The renamed/realigned 300-430 ENWLSI. Recent ENWLSI passes (within 3 years) count as WLSI credit."
+    }
+  ],
+  "official_url": "https://learningnetwork.cisco.com/s/new-wireless-certifications",
+  "official_pricing_url": "https://learningnetwork.cisco.com/s/new-wireless-certifications",
+  "recertification_note": "3-year cycle, 80 CE credits on the unified ledger — WLCOR re-pass = 80 CE, a concentration = 40. Standard professional-tier rules from day one of the new track.",
+  "last_verified": "July 2026",
+  "skills_covered": [
+    {
+      "category": "Wireless Core Technologies (WLCOR)",
+      "items": [
+        "WLAN architecture: controllers, APs, and cloud-managed models",
+        "RF fundamentals at professional depth — the physics the exams respect",
+        "Wi-Fi 6/6E/7 capabilities and design implications",
+        "Wireless security: WPA3, 802.1X integration, guest architectures",
+        "Roaming, QoS, and the client-experience engineering wireless lives on"
+      ]
+    },
+    {
+      "category": "Design Lane (WLSD)",
+      "items": [
+        "Site survey methodology — predictive, passive, and validation",
+        "Capacity and coverage design for real environments",
+        "High-density design: stadiums, auditoriums, lecture halls",
+        "Voice/video-grade wireless design requirements",
+        "The design deliverables enterprises actually pay for"
+      ]
+    },
+    {
+      "category": "Implementation Lane (WLSI)",
+      "items": [
+        "Advanced controller configuration and high availability",
+        "FlexConnect and branch wireless architectures",
+        "Location services and analytics deployment",
+        "Multicast and QoS implementation over wireless",
+        "Troubleshooting the airtime problems surveys didn't predict"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Check your transition credit before anything else",
+      "description": "If you passed ENWLSD (300-425) or ENWLSI (300-430) within the last 3 years, that pass counts as WLSD/WLSI credit — you may be one WLCOR exam away from the full CCNP Wireless. Verify your status in CertMetrics; this is the cheapest professional cert completion available to anyone it applies to."
+    },
+    {
+      "step": 2,
+      "title": "Study from official sources — the ecosystem is newborn",
+      "description": "A track launched in March 2026 has almost no third-party material yet: the WLCOR blueprint on CLN, Cisco U's official paths, and Cisco Live wireless sessions carry the load. Old ENWLSD/ENWLSI materials remain useful for the concentrations (they're renames), but WLCOR v1.0 is genuinely new — budget accordingly."
+    },
+    {
+      "step": 3,
+      "title": "Respect the RF floor",
+      "description": "Wireless is the one networking discipline where physics grades your work. If RF fundamentals are shaky — propagation, interference, channel planning — front-load them; every WLCOR domain assumes them. The CWNP vendor-neutral materials remain the community's favorite RF foundation even for Cisco tracks."
+    },
+    {
+      "step": 4,
+      "title": "Lab with what wireless allows",
+      "description": "Wireless labbing is inherently physical, but the controller side virtualizes: Cisco's DevNet sandboxes cover Catalyst wireless controllers and Meraki APIs, and dCloud runs guided wireless demos. For RF practice, a couple of used APs and a survey app teach more than any simulator."
+    },
+    {
+      "step": 5,
+      "title": "Pick the lane by your deliverable",
+      "description": "WLSD if your value is surveys, designs, and the documents that precede deployment. WLSI if it's controllers, cutover nights, and the airtime problems after. Shops usually need both skills; the exam choice just declares your lead foot."
+    },
+    {
+      "step": 6,
+      "title": "Sit WLCOR, then the concentration",
+      "description": "$400 + $300, standard professional format, no lab exam. Passing WLCOR also qualifies you for the renamed CCIE Wireless (whose practical went v1.1 with Wi-Fi 6/7 and Meraki content) if the expert tier calls later."
+    },
+    {
+      "step": 7,
+      "title": "Position for the moment",
+      "description": "Wi-Fi 7 refresh cycles, high-density venue buildouts, and warehouse automation are driving real wireless demand — and this brand-new credential is maximally current for all of it. Being early can read as currency in the shops that track Cisco's catalog — anecdotal, not measured, but the credential itself is verifiably the most current wireless cert Cisco has ever shipped."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "Official Wireless Track Announcement + Blueprints (CLN)",
+      "url": "https://learningnetwork.cisco.com/s/new-wireless-certifications",
+      "type": "Official Documentation",
+      "note": "The launch announcement with transition rules, plus links to the WLCOR/WLSD/WLSI exam topics — the primary source for a track this new."
+    },
+    {
+      "name": "Cisco DevNet Sandboxes (Wireless Controllers, Meraki)",
+      "url": "https://developer.cisco.com/site/sandbox/",
+      "type": "Hands-on Labs",
+      "note": "Free reservable controller environments — the virtualizable half of wireless labbing."
+    },
+    {
+      "name": "Cisco Live On-Demand — Wireless Sessions",
+      "url": "https://www.ciscolive.com/on-demand.html",
+      "type": "Video Sessions",
+      "note": "Free deep dives on Wi-Fi 6/7 design and high-density deployment from Cisco's own wireless engineers — the best free WLCOR-adjacent training that exists."
+    },
+    {
+      "name": "Cisco dCloud Wireless Demos",
+      "url": "https://dcloud.cisco.com",
+      "type": "Hands-on Labs",
+      "note": "Free guided wireless labs with any Cisco.com account."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Cisco U. (Essentials / All Access)",
+      "type": "Official Training",
+      "price": "~$1,800/yr Essentials · ~$6,000/yr All Access (list — verify current)",
+      "best_for": "Effectively the only structured WLCOR v1.0 prep while the third-party ecosystem catches up to the new track",
+      "affiliate_url": "https://u.cisco.com/",
+      "affiliate_label": "View Cisco U",
+      "affiliate_event": "ciscou_ccnp_wireless",
+      "affiliate": false,
+      "note": "Plain reference link. Employer funding or Learning Credits recommended."
+    },
+    {
+      "provider": "CWNP – CWNA materials (vendor-neutral RF foundation)",
+      "type": "Book + Course",
+      "price": "~$60–$100 for the study guide",
+      "best_for": "The RF fundamentals layer every Cisco wireless exam assumes — the community's standard recommendation for decades, still true",
+      "affiliate_url": "https://www.amazon.com/s?k=CWNA+Certified+Wireless+Network+Administrator+Study+Guide&tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_cwna_via_ccnp_wireless",
+      "affiliate": true,
+      "note": "Vendor-neutral on purpose — physics doesn't care whose logo is on the AP."
+    },
+    {
+      "provider": "Used enterprise APs + a survey app",
+      "type": "Physical Lab",
+      "price": "~$100–$300 secondhand",
+      "best_for": "The honest wireless lab — RF behavior can't be simulated; two used APs teach roaming and interference better than any course",
+      "affiliate_url": "https://www.amazon.com/s?k=Cisco+Catalyst+9100+access+point&tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_ap_lab_ccnp_wireless",
+      "affiliate": true,
+      "note": "eBay/refurb channels often beat retail for lab gear — the point is hands on radios, not new-in-box."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Book via Pearson VUE ($400 core + $300 concentration)",
+      "url": "https://learningnetwork.cisco.com/s/new-wireless-certifications",
+      "note": "$700 minimum — or just $400 if your recent ENWLSD/ENWLSI pass covers the concentration via transition credit. Check CertMetrics before paying for an exam you may not need."
+    }
+  ],
+  "faq": [
+    {
+      "question": "What happened to wireless in CCNP Enterprise?",
+      "answer": "It moved out entirely. ENCOR v1.2 (March 19, 2026) removed all wireless topics, and the Enterprise wireless concentrations ENWLSD/ENWLSI tested for the last time on March 18, 2026. Wireless careers now certify here: CCNP Wireless, with the new WLCOR core and the renamed WLSD/WLSI concentrations. One era's concentration became the next era's track."
+    },
+    {
+      "question": "I passed ENWLSD or ENWLSI — do I get credit?",
+      "answer": "Yes, if it's recent: passes within the last 3 years count as the equivalent WLSD/WLSI credit, meaning WLCOR alone completes your CCNP Wireless. Verify in CertMetrics and plan around it — this transition window is the cheapest professional-cert completion Cisco has offered in years."
+    },
+    {
+      "question": "Is it too early to pursue a track this new?",
+      "answer": "Depends on your tolerance for thin study ecosystems. The credential itself is maximally current (Wi-Fi 6/7 era content) and being early can read as currency in Cisco-tracking shops (anecdotal, not measured) — but third-party courses and question banks barely exist yet, so you'll lean on official sources, CWNP fundamentals, and real experience. Wireless veterans: fine time. Wireless newcomers: build the RF foundation first regardless."
+    },
+    {
+      "question": "What about CCIE Wireless?",
+      "answer": "It was renamed too — CCIE Enterprise Wireless became CCIE Wireless (March 19, 2026), its qualifying exam changed from ENCOR to WLCOR, and its practical went v1.1 with Wi-Fi 6/7 and Meraki content. Your WLCOR pass qualifies you. Same expert-tier economics as every CCIE: $1,600 per 8-hour lab attempt."
+    },
+    {
+      "question": "CCNP Wireless or CWNP's ladder?",
+      "answer": "Different bets, honestly both respectable: CWNP (CWNA→CWDP/CWAP→CWNE) is vendor-neutral, physics-first, and beloved by RF purists; CCNP Wireless is Cisco-stack-specific and reads louder in Cisco-standardized enterprises. The classic answer stands — CWNA-level RF knowledge underneath, vendor cert on top — and nothing about the new track changes it."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CCNP Enterprise",
+      "slug": "ccnp-enterprise",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The track wireless left — still the right home for routing/SD-x careers, now cleanly separated from this one."
+    },
+    {
+      "title": "Cisco CCNA",
+      "slug": "ccna",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The assumed foundation — WLCOR builds on CCNA-level networking before the RF depth begins."
+    },
+    {
+      "title": "CompTIA Network+",
+      "slug": "network-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "The vendor-neutral base layer — wireless engineers still need the wired fundamentals under the radios."
+    }
+  ],
+  "seo_title": "Cisco CCNP Wireless Study Guide – the New 2026 Track, WLCOR, Transition Credits | CertBlueprint",
+  "seo_description": "Complete CCNP Wireless guide: the March 2026 launch, WLCOR + WLSD/WLSI structure, ENWLSD/ENWLSI transition credit rules, and honest advice on certifying into a brand-new track."
+}

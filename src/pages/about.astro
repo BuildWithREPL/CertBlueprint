@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about/' },
+];
+---
+
+<BaseLayout
+  title="About CertBlueprint – IT Certification Directory"
+  description="CertBlueprint is an independent IT certification directory operated by SureWhyNot. Learn who we are, what we build, and how we evaluate resources."
+  breadcrumbs={breadcrumbs}
+>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
+    <Breadcrumb crumbs={breadcrumbs} />
+
+    <header class="mt-4 mb-10 pb-6" style="border-bottom: 1px solid var(--cb-border);">
+      <h1 class="text-2xl sm:text-3xl font-bold mb-3" style="color: var(--cb-text);">About CertBlueprint</h1>
+      <p class="text-base leading-relaxed" style="color: var(--cb-text-sub);">
+        An independent IT certification directory built to cut through marketing noise.
+      </p>
+    </header>
+
+    <div class="space-y-10 text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+
+      <section>
+        <h2 class="text-base font-bold mb-3" style="color: var(--cb-text);">What CertBlueprint is</h2>
+        <p>
+          CertBlueprint is a structured IT certification reference. For each certification, we cover what it actually tests, who it is and is not for, when it makes sense in a career sequence, and where to study—both free and paid resources, with honest assessments of each.
+        </p>
+        <p class="mt-3">
+          We do not produce AI-generated summaries. Every guide is written and reviewed by practitioners who have studied the material, passed the exams, or worked in the relevant field. If we cannot write something accurate and useful, we do not publish it.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-base font-bold mb-3" style="color: var(--cb-text);">Who operates this site</h2>
+        <p>
+          CertBlueprint is a project by <a href="https://surewhynot.app" target="_blank" rel="noopener noreferrer" class="underline hover:opacity-80 transition-opacity" style="color: var(--cb-accent-text);">SureWhyNot</a>, a small independent software and content operation. We build focused tools and reference sites for specific audiences who need accurate, structured information without the noise.
+        </p>
+        <p class="mt-3">
+          SureWhyNot is not a certification training company, an exam prep provider, or affiliated with any certification vendor. We are a reference publisher. Our job is to help you understand what a cert covers and whether it makes sense for you—before you spend time and money on it.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-base font-bold mb-3" style="color: var(--cb-text);">How we evaluate resources</h2>
+        <p>
+          Resources listed on CertBlueprint—courses, books, practice exams, lab tools—are selected based on community track record, content alignment with the official exam topics, and candidate outcomes. We include resources regardless of whether they have an affiliate program. Several of the resources we recommend most often are entirely free.
+        </p>
+        <p class="mt-3">
+          Some outbound links are affiliate links. Purchasing through them earns CertBlueprint a small commission at no extra cost to you. Affiliate relationships do not change which resources we recommend or how we describe them. See our <a href="/legal/affiliate-disclosure/" class="underline hover:opacity-80 transition-opacity" style="color: var(--cb-accent-text);">affiliate disclosure</a> for full details.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-base font-bold mb-3" style="color: var(--cb-text);">Independence and accuracy</h2>
+        <p>
+          CertBlueprint is not affiliated with, endorsed by, or sponsored by Cisco, CompTIA, Amazon Web Services, Microsoft, EC-Council, or any other certification body referenced on the site. All certification names, exam codes, and vendor trademarks are the property of their respective owners and are used here for informational purposes only.
+        </p>
+        <p class="mt-3">
+          Exam details including pricing, format, passing scores, and topic coverage change periodically. We update content as changes occur, but always direct readers to verify current details on the official vendor site before purchasing a voucher or scheduling an exam.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-base font-bold mb-3" style="color: var(--cb-text);">Contact</h2>
+        <p>
+          For questions, corrections, or feedback, reach us at <a href="mailto:contact@surewhynot.app" class="underline hover:opacity-80 transition-opacity" style="color: var(--cb-accent-text);">contact@surewhynot.app</a>. We read every message.
+        </p>
+        <div class="mt-4">
+          <a href="/contact/" class="inline-flex items-center gap-1.5 text-sm font-medium" style="color: var(--cb-accent-text);">
+            Contact page →
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>

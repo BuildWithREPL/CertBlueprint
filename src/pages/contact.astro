@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Contact', href: '/contact/' },
+];
+---
+
+<BaseLayout
+  title="Contact CertBlueprint"
+  description="Get in touch with CertBlueprint. Questions, corrections, feedback, and partnership inquiries."
+  breadcrumbs={breadcrumbs}
+>
+  <div class="max-w-2xl mx-auto px-4 sm:px-6 py-10">
+    <Breadcrumb crumbs={breadcrumbs} />
+
+    <header class="mt-4 mb-8 pb-6" style="border-bottom: 1px solid var(--cb-border);">
+      <h1 class="text-2xl sm:text-3xl font-bold mb-3" style="color: var(--cb-text);">Contact</h1>
+      <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+        CertBlueprint is operated by SureWhyNot. We read every message and aim to respond within a few business days.
+      </p>
+    </header>
+
+    <div class="space-y-8">
+
+      <div class="rounded-xl border p-6" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+        <h2 class="text-base font-bold mb-4" style="color: var(--cb-text);">Email us</h2>
+        <a
+          href="mailto:contact@surewhynot.app"
+          class="inline-flex items-center gap-2.5 text-sm font-medium transition-opacity hover:opacity-80"
+          style="color: var(--cb-accent-text);"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          contact@surewhynot.app
+        </a>
+      </div>
+
+      <div class="space-y-4 text-sm" style="color: var(--cb-text-sub);">
+        <div>
+          <p class="font-semibold mb-1" style="color: var(--cb-text);">Content corrections</p>
+          <p>If exam details, pricing, URLs, or any other content on the site is out of date or incorrect, let us know. Include the page URL and what needs to be fixed.</p>
+        </div>
+        <div>
+          <p class="font-semibold mb-1" style="color: var(--cb-text);">Feedback and suggestions</p>
+          <p>Missing a cert guide you'd find useful? Have a resource recommendation? We're building this out incrementally and reader feedback informs what gets prioritized.</p>
+        </div>
+        <div>
+          <p class="font-semibold mb-1" style="color: var(--cb-text);">Privacy inquiries</p>
+          <p>For data, cookie, or privacy-related questions, email <a href="mailto:privacy@surewhynot.app" class="underline hover:opacity-80 transition-opacity" style="color: var(--cb-accent-text);">privacy@surewhynot.app</a>. See our <a href="/legal/privacy-policy/" class="underline hover:opacity-80 transition-opacity" style="color: var(--cb-accent-text);">Privacy Policy</a> for details on how we handle data.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</BaseLayout>

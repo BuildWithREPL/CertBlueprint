@@ -1,0 +1,61 @@
+{
+  "slug": "field-telecom-technician",
+  "role": "Field / Telecom Technician",
+  "domain": "telecom-field",
+  "specialization": "Structured Cabling / Field Services",
+  "navigator_family": "Telecommunications, Cabling & Field Infrastructure",
+  "tagline": "The physical layer of IT — pull the cable, mount the gear, and make the connection actually exist.",
+  "what_you_do": "You build and repair the physical infrastructure every network runs on: pulling and terminating cable, testing and certifying runs, installing and maintaining telecom and transmission equipment, mounting antennas, and restoring service after storms and outages. It's hands-on, on-site work — a van, a tool bag, and a ticket queue instead of a desk. This is one of the few legitimate no-degree, no-coding entries into IT, and it maps almost directly onto military signal and comms experience.",
+  "day_in_life": [
+    "Load the van and drive to the first site — a new office buildout that needs forty cable drops pulled and terminated",
+    "Punch down and label each run, then certify it with a cable tester and document the results",
+    "Troubleshoot a dead jack by tracing it from the wall plate back through the patch panel",
+    "Climb a ladder to mount an access point or antenna and route its cable cleanly",
+    "Get pulled off schedule for an outage call — find the damaged span, splice or re-terminate, and restore service"
+  ],
+  "entry_titles": ["Cable Technician", "Field Service Technician", "Telecom Installer", "Low-Voltage Technician", "Broadband/ISP Installer"],
+  "work_texture": { "communication": 2, "technical_depth": 2, "troubleshooting": 3, "customer": 3, "on_call": 4, "remote": 1 },
+  "salary": {
+    "median": "$64,310",
+    "entry": "~$35,000–$48,000 to start (helper/installer)",
+    "growth": "Flat overall (-1 to -3%) as buildouts mature; the tower/wireless branch is the growing exception at ~7%+",
+    "note": "U.S. BLS figure for Telecom Equipment Installers & Repairers (49-2022); Radio/Cellular/Tower Installers (49-2021) median a similar $63,520. A median is the midpoint of everyone employed, so entry pay runs lower. Verify against the live BLS pages before deciding."
+  },
+  "downsides": "This is physical work: ladders, crawl spaces, attics in summer, weather that doesn't care about your schedule. Storm and outage restoration means on-call and long days when things break. It is not remote — ever. And the pay ceiling is lower than office IT unless you deliberately move toward network engineering or specialized fiber/tower work.",
+  "work_style": {
+    "fits_if": ["You'd rather work with your hands than sit at a desk all day", "You like finishing something you can physically see and test", "You want into IT without a degree or any coding"],
+    "less_ideal_if": ["You want remote or hybrid work — this is on-site by definition", "Physical labor, heights, or weather exposure is a dealbreaker", "You want the highest long-term pay ceiling without changing roles later"]
+  },
+  "skills": [
+    { "name": "PC & hardware fundamentals", "level": "Foundational", "note": "Components, connectors, safe handling — the base layer of all field-service work." },
+    { "name": "Copper cabling: pulling, terminating, testing", "level": "Foundational", "note": "Cat5e/Cat6 runs, punch-downs, RJ45 ends, and reading a cable tester." },
+    { "name": "Reading floor plans & cable maps", "level": "Working" },
+    { "name": "Structured troubleshooting in the field", "level": "Working", "note": "Isolate the fault: jack, run, patch panel, or the gear behind it." },
+    { "name": "Fiber basics (handling, connectors, light meters)", "level": "Working" },
+    { "name": "Safety practices (ladders, lifts, PPE, site rules)", "level": "Working" },
+    { "name": "Networking fundamentals (IP, switches, Wi-Fi)", "level": "Emerging", "note": "The bridge skill — this is what turns a cable tech into a network tech." }
+  ],
+  "technologies": ["Cat5e / Cat6 copper", "Fiber optic (single/multimode)", "Punch-down & crimp tools", "Cable certifiers / toners", "Optical power meters", "Coax / DOCSIS", "Antennas & wireless gear"],
+  "certs": [
+    { "title": "CompTIA A+", "slug": "a-plus", "vendor_slug": "comptia", "stage": "Start here", "reason": "Proves the hardware and troubleshooting fundamentals field-service work is built on." }
+  ],
+  "cert_note": "Certs matter less here than demonstrable hands-on skill — many techs are hired with none and trained on the job. The industry-specific signals are BICSI's cabling installation certs (Installer 1 and up) and the Fiber Optic Association's certs (CFOT) for fiber work; we don't have guides for those yet, so check their official sites. CompTIA A+ is the one broad cert that helps, mainly for the hardware/field-service side and for pivoting into office IT later.",
+  "trial": {
+    "objective": "Feel the hardware side of the job: open a spare desktop, identify every component, then reseat and reassemble it safely.",
+    "time": "60–90 minutes",
+    "cost": "Free with any spare/old PC",
+    "disclosure": "Your own hardware only, power disconnected. No spare machine? Follow a free iFixit teardown guide instead — or spend $15–25 on an Ethernet crimp kit to try the cabling side for real."
+  },
+  "roadmap": [
+    { "stage": "1", "title": "Learn hardware and cabling basics", "focus": "Study A+ material (free via Professor Messer) while getting your hands dirty: tear down a PC, crimp your own Ethernet cables, learn the connector types by touch.", "cert_slug": "a-plus" },
+    { "stage": "2", "title": "Prove the fundamentals", "focus": "Earn CompTIA A+ to show hardware and troubleshooting competence — useful for field-service roles and essential if you later pivot indoors.", "cert_slug": "a-plus" },
+    { "stage": "3", "title": "Get on a crew", "focus": "Apply to low-voltage contractors, ISPs, and telecom field-service outfits — helper and installer roles hire on attitude and basic skills, and train the rest. Military signal experience slots straight in here. BICSI Installer 1 is the industry credential worth pursuing once you're working." },
+    { "stage": "4", "title": "Specialize or climb", "focus": "Pick a branch: fiber (FOA CFOT — the higher-skill, better-paid copper alternative), tower/wireless work (the growing segment), or add Network+ knowledge and move into network administration — the classic route to a higher ceiling." }
+  ],
+  "adjacent_paths": [
+    { "role": "Network Administrator", "slug": "network-administrator", "reason": "Cabling and field work is the classic hands-on route into network engineering." },
+    { "role": "Help Desk Technician", "slug": "help-desk-technician", "reason": "The office-side twin — same troubleshooting instinct, indoors." }
+  ],
+  "seo_title": "Field / Telecom Technician Career Path — Hands-On IT, No Degree | CertBlueprint",
+  "seo_description": "Is field telecom work your way into IT? What cabling and field-service jobs really feel like, salary reality, a free hands-on trial, and the honest roadmap from installer to network engineer."
+}

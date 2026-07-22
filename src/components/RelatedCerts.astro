@@ -1,0 +1,65 @@
+---
+import { getCollection } from 'astro:content';
+
+interface RelatedCert {
+  title: string;
+  slug: string;
+  vendor: string;
+  vendor_slug: string;
+  reason: string;
+}
+interface Props {
+  certs: RelatedCert[];
+}
+
+const { certs } = Astro.props;
+
+// Live-link derivation is collection-driven so it can never go stale:
+// a related cert links to its guide the moment that guide's JSON exists.
+const allCerts = await getCollection('certifications');
+const allVendors = await getCollection('vendors');
+const liveGuides = new Set(allCerts.map((c) => `${c.data.vendor_slug}/${c.data.slug}`));
+const liveVendorSlugs = new Set(allVendors.map((v) => v.data.slug));
+
+function certHref(cert: RelatedCert): string {
+  if (liveGuides.has(`${cert.vendor_slug}/${cert.slug}`)) {
+    return `/vendors/${cert.vendor_slug}/${cert.slug}/`;
+  }
+  if (liveVendorSlugs.has(cert.vendor_slug)) {
+    return `/vendors/${cert.vendor_slug}/`;
+  }
+  return null as unknown as string;
+}
+---
+
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+  {certs.map((cert) => {
+    const href = certHref(cert);
+    return (
+      <div
+        class="rounded-xl border p-4 transition-all duration-200"
+        style={href
+          ? 'background: var(--cb-bg-card); border-color: var(--cb-border);'
+          : 'background: var(--cb-bg-subtle); border-color: var(--cb-border-sub); opacity: 0.65;'}
+      >
+        <p class="text-xs mb-0.5 font-medium" style="color: var(--cb-text-muted);">{cert.vendor}</p>
+        {href ? (
+          <a href={href} class="font-semibold text-sm hover:text-blue-500 transition-colors" style="color: var(--cb-text);">
+            {cert.title}
+          </a>
+        ) : (
+          <p class="font-semibold text-sm" style="color: var(--cb-text-sub);">{cert.title}</p>
+        )}
+        <p class="text-xs leading-relaxed mt-1.5" style="color: var(--cb-text-sub);">{cert.reason}</p>
+        {href && (
+          <a href={href} class="mt-2 inline-flex items-center gap-1 text-xs font-medium transition-colors" style="color: var(--cb-accent-text);">
+            View guide
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        )}
+      </div>
+    );
+  })}
+</div>

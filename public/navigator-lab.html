@@ -1,0 +1,245 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Talk It Out — IT Career Navigator | CertBlueprint</title>
+<meta name="description" content="Tell us how you like to work, in your own words — a real AI reader points you at the IT field that fits, with the honest road in. Free, no signup.">
+<link rel="canonical" href="https://certblueprint.com/navigator-lab">
+
+<style>
+  :root{
+    --ground:#f2f3f1; --surface:#ffffff; --surface-2:#eaece8;
+    --ink:#191b18; --ink-soft:#4a504b; --ink-faint:#7b817c;
+    --line:#dee1dc; --line-strong:#c7ccc5;
+    --accent:#0e7490; --accent-deep:#0b5e75; --accent-tint:#dcedf2;
+    --warm:#b45309; --warm-tint:#f6e8d4;
+    --focus:#15a0bd;
+    --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+    --mono:ui-monospace,"SF Mono","Cascadia Code","JetBrains Mono",Consolas,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --ground:#131512; --surface:#1b1e19; --surface-2:#232722;
+      --ink:#eef0ec; --ink-soft:#b1b7b0; --ink-faint:#828882;
+      --line:#2b302a; --line-strong:#3b413a;
+      --accent:#3bb6cf; --accent-deep:#6fd2e4; --accent-tint:#0f333c;
+      --warm:#e0923f; --warm-tint:#2d2012;
+      --focus:#4cc4dc;
+    }
+  }
+  :root[data-theme="light"]{
+    --ground:#f2f3f1;--surface:#fff;--surface-2:#eaece8;--ink:#191b18;--ink-soft:#4a504b;--ink-faint:#7b817c;--line:#dee1dc;--line-strong:#c7ccc5;--accent:#0e7490;--accent-deep:#0b5e75;--accent-tint:#dcedf2;--warm:#b45309;--warm-tint:#f6e8d4;--focus:#15a0bd;
+  }
+  :root[data-theme="dark"]{
+    --ground:#131512;--surface:#1b1e19;--surface-2:#232722;--ink:#eef0ec;--ink-soft:#b1b7b0;--ink-faint:#828882;--line:#2b302a;--line-strong:#3b413a;--accent:#3bb6cf;--accent-deep:#6fd2e4;--accent-tint:#0f333c;--warm:#e0923f;--warm-tint:#2d2012;--focus:#4cc4dc;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;}
+  .stage{
+    font-family:var(--sans); background:var(--ground); color:var(--ink);
+    min-height:100vh; -webkit-font-smoothing:antialiased;
+    display:flex; justify-content:center;
+    padding:clamp(1.5rem,6vw,4rem) 1.25rem 4rem;
+  }
+  .col{width:100%; max-width:660px;}
+  .eyebrow{font:600 .7rem/1.4 var(--mono); letter-spacing:.2em; text-transform:uppercase; color:var(--accent); margin:0 0 1.3rem;}
+  .eyebrow .dot{display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--accent); margin-right:.55rem; vertical-align:middle;}
+  .setup{font-size:1rem; line-height:1.6; color:var(--ink-soft); margin:0 0 1.4rem; max-width:52ch;}
+  .q{font-family:var(--serif); font-weight:400; font-size:clamp(1.45rem,4.2vw,2.05rem); line-height:1.3; letter-spacing:-.01em; margin:0 0 1.5rem; color:var(--ink); text-wrap:balance;}
+
+  .thread{margin:0 0 1.2rem;}
+  .you{font-family:var(--serif); font-size:1.05rem; line-height:1.55; color:var(--ink-faint); border-left:3px solid var(--line-strong); padding:.15rem 0 .15rem 1rem; margin:1.2rem 0; white-space:pre-wrap;}
+  .mentor{font-family:var(--serif); font-size:1.14rem; line-height:1.6; color:var(--ink); margin:1.2rem 0;}
+  .mentor .lbl{display:block; font:600 .66rem/1 var(--mono); letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin-bottom:.5rem; font-style:normal;}
+
+  .field{position:relative;}
+  textarea{
+    width:100%; min-height:120px; resize:vertical; font-family:var(--serif); font-size:1.1rem; line-height:1.6;
+    color:var(--ink); background:var(--surface); border:1.5px solid var(--line-strong); border-radius:14px;
+    padding:1rem 1.1rem; outline:none; transition:border-color .15s, box-shadow .15s;
+  }
+  textarea::placeholder{color:var(--ink-faint); font-style:italic;}
+  textarea:focus{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-tint);}
+  .row{display:flex; align-items:center; gap:1rem; flex-wrap:wrap; margin-top:1.1rem;}
+  .go{
+    font:650 1rem/1 var(--sans); color:#fff; background:var(--accent); border:none; border-radius:11px;
+    padding:.9rem 1.5rem; cursor:pointer; display:inline-flex; align-items:center; gap:.5rem; transition:.15s;
+  }
+  .go:hover{background:var(--accent-deep);}
+  .go:disabled{opacity:.5; cursor:wait;}
+
+  .thinking{display:none; padding:1.2rem 0; font:600 .8rem/1.5 var(--mono); letter-spacing:.06em; color:var(--ink-faint);}
+  .thinking.show{display:block;}
+  .thinking .d{display:inline-block; animation:blink 1.2s infinite;}
+  .thinking .d:nth-child(2){animation-delay:.2s;} .thinking .d:nth-child(3){animation-delay:.4s;}
+  @keyframes blink{0%,60%,100%{opacity:.25;}30%{opacity:1;}}
+
+  .reading{display:none;}
+  .reading.show{display:block; animation:rise .5s cubic-bezier(.16,1,.3,1);}
+  @keyframes rise{from{opacity:0; transform:translateY(12px);}to{opacity:1; transform:none;}}
+  .label{font:600 .68rem/1.4 var(--mono); letter-spacing:.14em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 .7rem; display:flex; align-items:center; gap:.6rem; flex-wrap:wrap;}
+  .voice{font-family:var(--serif); font-size:1.14rem; line-height:1.62; color:var(--ink-soft); margin:0 0 1.1rem;}
+  .voice strong{color:var(--ink);}
+  .fieldname{color:var(--warm); font-weight:700; background:linear-gradient(transparent 62%, var(--warm-tint) 62%); padding:0 .12em;}
+  .road{border-left:3px solid var(--accent); padding:.1rem 0 .1rem 1.15rem; margin:1.5rem 0;}
+  .flag{font:600 .6rem/1 var(--mono); letter-spacing:.08em; text-transform:uppercase; color:var(--warm); border:1px solid var(--warm); border-radius:5px; padding:.22rem .4rem;}
+  .weekend{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:1.05rem 1.2rem; margin:1.5rem 0 0;}
+  .weekend .wlabel{font:600 .68rem/1 var(--mono); letter-spacing:.12em; text-transform:uppercase; color:var(--accent); margin:0 0 .5rem; display:flex; align-items:center; gap:.45rem;}
+  .weekend p{margin:0; font-family:var(--serif); font-size:1.04rem; line-height:1.55; color:var(--ink);}
+  .also{font-family:var(--serif); font-size:1rem; line-height:1.55; color:var(--ink-faint); margin:1.3rem 0 0; font-style:italic;}
+
+  .error{display:none; background:var(--warm-tint); border:1px solid var(--warm); border-radius:12px; padding:1rem 1.15rem; margin:1.2rem 0; font-size:.95rem; line-height:1.5; color:var(--ink);}
+  .error.show{display:block;}
+
+  .reset{margin-top:1.6rem; background:none; border:none; color:var(--ink-faint); font:500 .9rem/1 var(--sans); cursor:pointer; padding:.4rem 0; text-decoration:underline; text-underline-offset:3px;}
+  .reset:hover{color:var(--accent);}
+  .foot{margin-top:2.4rem; padding-top:1.2rem; border-top:1px solid var(--line); font-size:.82rem; line-height:1.55; color:var(--ink-faint);}
+  .foot b{color:var(--ink-soft);}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important;}}
+</style>
+
+<div class="stage">
+  <div class="col">
+    <p class="eyebrow"><span class="dot"></span>Navigator Lab — a conversation, not a quiz</p>
+    <p class="setup" id="setup">No trivia, no bubbles to guess at. Answer the way you'd tell a friend — a real reader is on the other end, and it may ask you a follow-up before it points anywhere.</p>
+    <h1 class="q" id="question">Think about the last time you fell down a rabbit hole and lost track of time. What was it — and what kept you there?</h1>
+
+    <div class="thread" id="thread"></div>
+
+    <div id="composer">
+      <div class="field">
+        <textarea id="answer" placeholder="The more real, the better. A sentence or two is plenty."></textarea>
+      </div>
+      <div class="row">
+        <button class="go" id="go" type="button">Continue
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="thinking" id="thinking">reading what you actually wrote<span class="d">.</span><span class="d">.</span><span class="d">.</span></div>
+    <div class="error" id="error"></div>
+    <div class="reading" id="reading"></div>
+    <button class="reset" id="reset" type="button" hidden>← start over</button>
+
+    <p class="foot"><b>How this works:</b> a real AI model reads your answers on CertBlueprint's server (Cloudflare Workers AI) — the conversation resets when you leave. It can be wrong; treat it as a first conversation, not a verdict. Prefer a structured version? <a href="/navigator/#guided" style="color: var(--accent);">Take the guided assessment</a> — it's also where the military-translation module lives.</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var OPENER = document.getElementById("question").textContent.trim();
+  var messages = [];   // {role:"user"|"assistant", content:string}
+  var busy = false;
+
+  var thread=document.getElementById("thread");
+  var composer=document.getElementById("composer");
+  var answer=document.getElementById("answer");
+  var go=document.getElementById("go");
+  var thinking=document.getElementById("thinking");
+  var errBox=document.getElementById("error");
+  var reading=document.getElementById("reading");
+  var resetBtn=document.getElementById("reset");
+  var reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+  function addYou(text){
+    var d=document.createElement("div");
+    d.className="you"; d.textContent=text;
+    thread.appendChild(d);
+  }
+  function addMentor(say, ask){
+    var d=document.createElement("div");
+    d.className="mentor";
+    d.innerHTML='<span class="lbl">What I heard</span>'+esc(say)+' <strong>'+esc(ask)+'</strong>';
+    thread.appendChild(d);
+  }
+
+  function showError(msg){
+    errBox.textContent=msg;
+    errBox.classList.add("show");
+  }
+
+  function renderReading(r){
+    composer.style.display="none";
+    var flag = r.road_flag ? '<span class="flag">'+esc(r.road_flag)+'</span>' : '';
+    reading.innerHTML =
+      '<p class="label">What I heard</p>'+
+      '<p class="voice">'+esc(r.heard)+'</p>'+
+      '<p class="voice">That points at <span class="fieldname">'+esc(r.field)+'</span>. '+esc(r.body)+'</p>'+
+      '<div class="road"><p class="label">The honest road '+flag+'</p><p class="voice" style="font-size:1.05rem">'+esc(r.road)+'</p></div>'+
+      '<div class="weekend"><p class="wlabel">'+
+        '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v5l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/></svg> Try this weekend</p>'+
+        '<p>'+esc(r.weekend)+'</p></div>'+
+      (r.also ? '<p class="also">'+esc(r.also)+'</p>' : '');
+    reading.classList.add("show");
+    resetBtn.hidden=false;
+  }
+
+  function submit(){
+    if (busy) return;
+    var text=(answer.value||"").trim();
+    if (!text) { answer.focus(); return; }
+    if (text.length > 1400) { showError("That's a lot — trim it under ~1,400 characters and try again."); return; }
+    errBox.classList.remove("show");
+    busy=true; go.disabled=true;
+
+    // First turn carries the opening question for context.
+    var content = messages.length===0 ? 'Q: "'+OPENER+'"\nA: '+text : text;
+    messages.push({role:"user", content:content});
+    addYou(text);
+    answer.value="";
+    composer.style.display="none";
+    thinking.classList.add("show");
+
+    fetch("/api/navigator/read", {
+      method:"POST",
+      headers:{ "content-type":"application/json" },
+      body: JSON.stringify({ messages: messages })
+    })
+    .then(function(res){
+      if(!res.ok) throw new Error("http_"+res.status);
+      return res.json();
+    })
+    .then(function(data){
+      thinking.classList.remove("show");
+      busy=false; go.disabled=false;
+      if (data.type==="followup" && data.ask) {
+        messages.push({role:"assistant", content: JSON.stringify(data)});
+        addMentor(data.say||"", data.ask);
+        composer.style.display="block";
+        answer.placeholder="Answer straight — short is fine.";
+        try{ answer.focus(); }catch(e){}
+      } else if (data.type==="reading" && data.field) {
+        renderReading(data);
+        window.scrollTo({top:0, behavior:reduced?"auto":"smooth"});
+      } else {
+        throw new Error("bad_payload");
+      }
+    })
+    .catch(function(){
+      thinking.classList.remove("show");
+      busy=false; go.disabled=false;
+      // Roll back the failed turn so retry doesn't double it.
+      if (messages.length && messages[messages.length-1].role==="user") messages.pop();
+      var last=thread.querySelector(".you:last-child");
+      if (last) { answer.value=last.textContent; last.remove(); }
+      composer.style.display="block";
+      showError("The reader couldn't respond just now. Nothing was lost — hit Continue to try again.");
+    });
+  }
+
+  go.addEventListener("click", submit);
+  answer.addEventListener("keydown", function(e){
+    if ((e.ctrlKey||e.metaKey) && e.key==="Enter") submit();
+  });
+  resetBtn.addEventListener("click", function(){
+    messages=[]; thread.innerHTML=""; reading.innerHTML=""; reading.classList.remove("show");
+    errBox.classList.remove("show"); resetBtn.hidden=true;
+    composer.style.display="block"; answer.value=""; answer.placeholder="The more real, the better. A sentence or two is plenty.";
+    window.scrollTo({top:0, behavior:reduced?"auto":"smooth"});
+    try{ answer.focus(); }catch(e){}
+  });
+})();
+</script>

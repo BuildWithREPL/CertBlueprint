@@ -1,0 +1,168 @@
+{
+  "slug": "help-desk-technician",
+  "role": "Help Desk Technician",
+  "domain": "it-support-operations",
+  "specialization": "Service Desk / Desktop Support",
+  "navigator_family": "Technical Support & Help Desk",
+  "tagline": "The front door of IT — fix real problems for real people, and learn the whole stack one ticket at a time.",
+  "what_you_do": "You diagnose and fix the everyday tech problems a business runs into: locked accounts, laptops that won't boot, printers that won't print, software that won't install. You work over phone, chat, and remote sessions — or deskside — resolving what you can and escalating what you can't, documenting every ticket as you go. It's the most accessible front door into IT precisely because it exposes you to a little of everything: Windows, networking, hardware, accounts, and people. Almost every sysadmin and network admin started here.",
+  "day_in_life": [
+    "Work the ticket queue — password resets, account lockouts, and 'my email stopped working' triage",
+    "Remote into a user's laptop to fix a VPN client that won't connect, talking them through it calmly",
+    "Reimage a machine for a new hire and walk them through first-day setup",
+    "Escalate a recurring network drop to the network team with the evidence you gathered, not just 'it's broken'",
+    "Write up the fix in the knowledge base so the next tech resolves it in five minutes instead of forty"
+  ],
+  "entry_titles": [
+    "Help Desk Technician",
+    "IT Support Specialist",
+    "Service Desk Analyst",
+    "Desktop Support Technician",
+    "Technical Support Representative"
+  ],
+  "work_texture": {
+    "communication": 4,
+    "technical_depth": 2,
+    "troubleshooting": 3,
+    "customer": 4,
+    "on_call": 2,
+    "remote": 2
+  },
+  "salary": {
+    "median": "$60,340",
+    "entry": "~$38,000–$47,000 to start (L1 service desk)",
+    "growth": "-3% projected for the group, but ~50,500 openings a year from turnover — churn is exactly why the door stays open",
+    "note": "U.S. BLS figure for Computer User Support Specialists (15-1232); a median is the midpoint of everyone employed, so entry pay runs lower. Verify against the live BLS page before deciding."
+  },
+  "downsides": "A lot of it is repetitive — password resets and the same five problems on loop. Many desks measure you on handle time and tickets closed, which adds pressure. Some users treat support as low-status, and L1 phone work is the tier most exposed to AI chatbots and self-service portals. The fix for all of it is the same: treat help desk as a 1–2 year launchpad, not a destination.",
+  "work_style": {
+    "fits_if": [
+      "You genuinely like helping people and can stay patient when they're frustrated",
+      "You want the broadest possible exposure to IT before picking a specialty",
+      "You learn best by fixing real problems, not just reading about them"
+    ],
+    "less_ideal_if": [
+      "Talking to people all day drains you fast",
+      "Repetition frustrates you and you can't treat it as reps",
+      "You expect to start in security or engineering without a support rung first"
+    ]
+  },
+  "skills": [
+    {
+      "name": "Windows troubleshooting & administration",
+      "level": "Foundational",
+      "note": "The OS on most corporate desks — user profiles, updates, drivers, event logs."
+    },
+    {
+      "name": "Hardware & peripheral diagnostics",
+      "level": "Foundational"
+    },
+    {
+      "name": "Customer communication & de-escalation",
+      "level": "Foundational",
+      "note": "The skill that actually separates good techs — explain clearly, stay calm, never condescend."
+    },
+    {
+      "name": "Account & identity basics (AD, password resets, MFA)",
+      "level": "Working"
+    },
+    {
+      "name": "Networking fundamentals (IP, DNS, Wi-Fi, VPN)",
+      "level": "Working",
+      "note": "Knowing why it can't connect — not just rebooting the router — is what gets you promoted."
+    },
+    {
+      "name": "Ticketing hygiene & documentation",
+      "level": "Working"
+    },
+    {
+      "name": "Scripting basics (PowerShell)",
+      "level": "Emerging",
+      "note": "Automating the repetitive stuff is your escape route from it."
+    }
+  ],
+  "technologies": [
+    "Windows 10/11",
+    "Active Directory / Entra ID",
+    "Microsoft 365",
+    "ServiceNow / Jira / Zendesk",
+    "Remote support tools (TeamViewer / Quick Assist)",
+    "macOS basics",
+    "PowerShell"
+  ],
+  "certs": [
+    {
+      "title": "Google IT Support Certificate",
+      "slug": "google-it-support",
+      "vendor_slug": "google",
+      "stage": "Structured on-ramp",
+      "reason": "The cheapest structured way to learn the job from zero — and completers get 30% off the A+ vouchers that come next."
+    },
+    {
+      "title": "Cisco CCST IT Support",
+      "slug": "ccst-it-support",
+      "vendor_slug": "cisco",
+      "stage": "Budget alternative",
+      "reason": "One $125 exam versus A+'s two ~$274 vouchers — current content, smaller HR footprint. The honest trade-off is in the guide."
+    },
+    {
+      "title": "CompTIA A+",
+      "slug": "a-plus",
+      "vendor_slug": "comptia",
+      "stage": "Start here",
+      "reason": "THE recognized entry signal for support roles — hardware, OS, troubleshooting fundamentals."
+    },
+    {
+      "title": "CompTIA Network+",
+      "slug": "network-plus",
+      "vendor_slug": "comptia",
+      "stage": "Level up",
+      "reason": "The natural next rung — proves the networking fundamentals that unlock desktop support and NOC roles."
+    }
+  ],
+  "trial": {
+    "objective": "Do the actual job once: pick a real problem on your own computer, reproduce it, diagnose it methodically, fix it, and write it up like a ticket.",
+    "time": "60–90 minutes",
+    "cost": "Free",
+    "disclosure": "Fully local — your own machine, built-in tools only; nothing installed or transmitted."
+  },
+  "roadmap": [
+    {
+      "stage": "1",
+      "title": "Learn the fundamentals",
+      "focus": "Hardware, Windows, and troubleshooting method — free via Professor Messer's A+ series. Practice on your own machine: break things, fix them, write up what you did.",
+      "cert_slug": "a-plus"
+    },
+    {
+      "stage": "2",
+      "title": "Prove it and get hired",
+      "focus": "Earn CompTIA A+ to get past resume filters, then apply broadly — help desk, MSPs, school districts, hospitals. The first job matters more than the perfect job.",
+      "cert_slug": "a-plus"
+    },
+    {
+      "stage": "3",
+      "title": "Level up on the job",
+      "focus": "Volunteer for the harder tickets, learn the network behind them, and add CompTIA Network+ — the rung that moves you from L1 phones to desktop support and NOC roles.",
+      "cert_slug": "network-plus"
+    },
+    {
+      "stage": "4",
+      "title": "Pick your exit ramp",
+      "focus": "After 1–2 years, branch toward systems administration, networking, or security. Help desk is the launchpad — the whole point is to leave it upward."
+    }
+  ],
+  "adjacent_paths": [
+    {
+      "role": "Network Administrator",
+      "slug": "network-administrator",
+      "reason": "The classic promotion path once you know how the network behind the tickets works."
+    },
+    {
+      "role": "Systems Administrator",
+      "slug": "systems-administrator",
+      "reason": "Deskside experience with users and endpoints feeds directly into systems work."
+    }
+  ],
+  "seo_title": "Help Desk Technician Career Path — The Front Door Into IT | CertBlueprint",
+  "seo_description": "Is help desk the right way into IT? What the work really feels like, salary reality, a free 90-minute trial, and the exact roadmap from A+ to Network+ and beyond."
+}

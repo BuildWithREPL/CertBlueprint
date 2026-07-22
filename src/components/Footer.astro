@@ -1,0 +1,59 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-16 border-t" style="background: #0f172a; color: #94a3b8; border-color: #1e293b;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+      <div class="md:col-span-2">
+        <a href="/" class="inline-flex items-center gap-2 mb-3">
+          <svg class="w-6 h-6" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+            <rect x="2" y="2" width="24" height="24" rx="4" fill="#3b82f6" opacity="0.15"/>
+            <path d="M7 14h14M7 9h10M7 19h8" stroke="#60a5fa" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="21" cy="19" r="2.5" fill="#60a5fa"/>
+          </svg>
+          <span class="font-semibold text-white text-sm">Cert<span class="text-blue-400">Blueprint</span></span>
+        </a>
+        <p class="text-sm leading-relaxed max-w-sm" style="color: #64748b;">
+          A structured IT certification directory. Find the right cert, understand what it covers, and know where to study.
+        </p>
+        <p class="text-xs mt-3" style="color: #475569;">
+          A <a href="https://surewhynot.app" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-300">SureWhyNot</a> project.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-xs font-semibold uppercase tracking-wider mb-3" style="color: #475569;">Certifications</h3>
+        <ul class="space-y-2 text-sm" style="color: #64748b;">
+          <li><a href="/vendors/cisco/ccna/" class="hover:text-white transition-colors">Cisco CCNA</a></li>
+          <li><a href="/vendors/comptia/security-plus/" class="hover:text-white transition-colors">CompTIA Security+</a></li>
+          <li><a href="/vendors/comptia/network-plus/" class="hover:text-white transition-colors">CompTIA Network+</a></li>
+          <li><a href="/vendors/aws/aws-saa/" class="hover:text-white transition-colors">AWS Solutions Architect</a></li>
+          <li><a href="/vendors/microsoft/az-104/" class="hover:text-white transition-colors">Microsoft AZ-104</a></li>
+          <li><a href="/vendors/" class="hover:text-white transition-colors">All Vendors</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-xs font-semibold uppercase tracking-wider mb-3" style="color: #475569;">Company</h3>
+        <ul class="space-y-2 text-sm" style="color: #64748b;">
+          <li><a href="/about/" class="hover:text-white transition-colors">About</a></li>
+          <li><a href="/contact/" class="hover:text-white transition-colors">Contact</a></li>
+          <li><a href="/legal/affiliate-disclosure/" class="hover:text-white transition-colors">Affiliate Disclosure</a></li>
+          <li><a href="/legal/privacy-policy/" class="hover:text-white transition-colors">Privacy Policy</a></li>
+          <li><a href="/legal/terms-of-use/" class="hover:text-white transition-colors">Terms of Use</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="mt-8 pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs" style="border-top: 1px solid #1e293b; color: #475569;">
+      <p>&copy; {year} CertBlueprint — operated by SureWhyNot. All rights reserved.</p>
+      <p class="max-w-xs text-right leading-relaxed">
+        Independent resource. Not affiliated with Cisco, CompTIA, AWS, Microsoft, or any certification body.
+        <a href="/legal/affiliate-disclosure/" class="underline hover:text-slate-300">Affiliate disclosure →</a>
+      </p>
+    </div>
+  </div>
+</footer>

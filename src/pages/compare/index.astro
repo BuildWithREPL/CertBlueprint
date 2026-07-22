@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import { getCollection } from 'astro:content';
+
+const comparisons = await getCollection('comparisons');
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Compare', href: '/compare/' },
+];
+---
+
+<BaseLayout
+  title="Certification Comparisons – Honest Head-to-Heads | CertBlueprint"
+  description="CCNA vs Network+, CCNP vs CCIE, and more — honest, fact-checked certification comparisons with the short answer up front and full study guides behind each."
+  breadcrumbs={breadcrumbs}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumb crumbs={breadcrumbs} />
+
+    <header class="mt-3 mb-8 max-w-3xl">
+      <p class="text-xs font-semibold uppercase tracking-wider mb-2" style="color: var(--cb-accent-text);">Compare</p>
+      <h1 class="text-2xl sm:text-3xl font-bold mb-3" style="color: var(--cb-text);">Certification head-to-heads</h1>
+      <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+        The decisions people actually search for, answered honestly: the short answer up front, a real side-by-side, and "pick this if" lists that respect your situation — with full study guides one click behind each contender.
+      </p>
+    </header>
+
+    <div class="grid sm:grid-cols-2 gap-4 max-w-4xl">
+      {comparisons.map((c) => (
+        <a href={`/compare/${c.data.slug}/`} class="rounded-xl border p-5 block transition-all" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+          <p class="font-bold text-base mb-2" style="color: var(--cb-text);">{c.data.title}</p>
+          <p class="text-sm leading-relaxed mb-3" style="color: var(--cb-text-sub);">{c.data.intro}</p>
+          <span class="text-sm font-semibold" style="color: var(--cb-accent-text);">Read the comparison →</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

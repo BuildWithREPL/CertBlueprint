@@ -1,0 +1,240 @@
+{
+  "title": "AWS Certified Developer – Associate (DVA-C02) Study Guide",
+  "slug": "aws-developer-associate",
+  "short_name": "AWS Developer Associate",
+  "vendor": "AWS",
+  "vendor_slug": "aws",
+  "level": "Associate",
+  "description": "AWS Certified Developer – Associate validates the skills to build, deploy, and debug cloud-native applications on AWS. Exam DVA-C02 focuses on developing with AWS services, security, deployment, and troubleshooting—aimed at software engineers building on AWS.",
+  "audience": "Software developers building applications on AWS, engineers adding cloud to their skill set, and Solutions Architect or Cloud Practitioner holders who write code and want a development-focused AWS credential.",
+  "why_get_it": "The Developer Associate proves you can actually build on AWS—not just architect it, but write code against the SDKs, work with serverless (Lambda, API Gateway, DynamoDB), handle authentication and encryption, and ship through CI/CD. It's one of the most valuable associate AWS certs for software engineers because it maps directly to the day-to-day work of building cloud-native applications. As more development moves serverless and cloud-first, validating these skills is a strong signal to employers, and AWS developers consistently rank among the better-paid engineering roles.",
+  "when_to_get_it": "Get the Developer Associate if you write code and build applications on AWS, or want to. It pairs naturally with the Solutions Architect Associate—architecture plus development is a powerful combination. A coding background (any language) and familiarity with APIs and the command line make it much easier. If you're brand new to AWS, consider Cloud Practitioner or SAA-C03 first to build the foundational service knowledge.",
+  "exam_code": "DVA-C02",
+  "exam_duration": "130 minutes",
+  "exam_format": "65 questions: multiple choice and multiple response. Passing score: 720 (on a scale of 100–1000).",
+  "exam_questions": "65 questions",
+  "official_url": "https://aws.amazon.com/certification/certified-developer-associate/",
+  "official_pricing_url": "https://aws.amazon.com/certification/certified-developer-associate/",
+  "recertification_note": "Valid for 3 years. Recertify by passing the current Developer Associate exam, or by earning a higher-level AWS certification, which extends your validity.",
+  "salary_range": "$100,000 – $145,000",
+  "salary_note": "AWS development is well-paid engineering work. Developers with the DVA-C02 and cloud-native experience commonly earn $100K–$130K, with senior cloud and serverless engineers reaching $140K+. The cert is most valuable backed by a real portfolio—shipped applications and code matter as much as the credential to hiring managers.",
+  "skills_covered": [
+    {
+      "category": "Development with AWS Services (32%)",
+      "items": [
+        "Writing code using the AWS SDKs and CLI",
+        "Serverless development: Lambda, API Gateway, Step Functions",
+        "Working with DynamoDB and data modeling",
+        "Event-driven patterns: SQS, SNS, EventBridge",
+        "Authentication and authorization (Cognito, IAM roles)"
+      ]
+    },
+    {
+      "category": "Security (26%)",
+      "items": [
+        "IAM roles, policies, and least-privilege access for applications",
+        "Encryption at rest and in transit (KMS)",
+        "Managing secrets (Secrets Manager, Parameter Store)",
+        "Securing API and service-to-service communication",
+        "Cognito user and identity pools"
+      ]
+    },
+    {
+      "category": "Deployment (24%)",
+      "items": [
+        "CI/CD with CodePipeline, CodeBuild, and CodeDeploy",
+        "Infrastructure as code (CloudFormation, SAM)",
+        "Deployment strategies: blue/green, canary, rolling",
+        "Elastic Beanstalk and container deployment basics",
+        "Packaging and deploying Lambda functions"
+      ]
+    },
+    {
+      "category": "Troubleshooting and Optimization (18%)",
+      "items": [
+        "Debugging with CloudWatch Logs, Metrics, and X-Ray",
+        "Identifying and resolving deployment failures",
+        "Optimizing application performance and cost",
+        "Caching strategies (ElastiCache, DAX, CloudFront)",
+        "Interpreting errors and exceptions from AWS services"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Download the DVA-C02 exam guide",
+      "description": "Get the official AWS Certified Developer – Associate (DVA-C02) exam guide. The four domains center on building, securing, deploying, and debugging applications—use the weightings to focus your study."
+    },
+    {
+      "step": 2,
+      "title": "Work through a primary video course",
+      "description": "Choose one comprehensive DVA-C02 course and complete it end to end. Stephane Maarek's course on Udemy is the community standard and includes hands-on coding demos. See the paid resources section."
+    },
+    {
+      "step": 3,
+      "title": "Build something serverless in the free tier",
+      "description": "Theory isn't enough here. Build a small app: a Lambda function behind API Gateway writing to DynamoDB, with IAM roles and CloudWatch logging. Hands-on building makes the development and troubleshooting domains intuitive."
+    },
+    {
+      "step": 4,
+      "title": "Get comfortable with the SDK and CLI",
+      "description": "The exam assumes you can read and reason about SDK calls and CLI commands. Practice in your language of choice—make API calls, handle pagination and errors, and use the CLI for deployments."
+    },
+    {
+      "step": 5,
+      "title": "Learn the deployment toolchain",
+      "description": "Work through CI/CD with CodePipeline/CodeBuild/CodeDeploy and infrastructure as code with CloudFormation/SAM. Deployment is 24% of the exam and rewards hands-on familiarity with the AWS developer tools."
+    },
+    {
+      "step": 6,
+      "title": "Take practice exams",
+      "description": "Work through full-length DVA-C02 practice exams—Tutorials Dojo's are the community favorite. Aim for 85%+ consistently before booking. Review every miss and reproduce the scenario where you can."
+    },
+    {
+      "step": 7,
+      "title": "Schedule and sit the exam",
+      "description": "Register through Pearson VUE or PSI (test center or online proctored). The exam is 130 minutes. Read code and CLI snippets carefully—several questions hinge on small details."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "AWS Certified Developer – Associate Exam Guide (Official)",
+      "url": "https://aws.amazon.com/certification/certified-developer-associate/",
+      "type": "Official Documentation",
+      "note": "The official DVA-C02 exam guide with all four domains and weightings. Your study roadmap—start here."
+    },
+    {
+      "name": "AWS Free Tier",
+      "url": "https://aws.amazon.com/free/",
+      "type": "Hands-on Labs",
+      "note": "A free AWS account for building. Nothing prepares you for the development domains like actually shipping a small serverless app."
+    },
+    {
+      "name": "AWS Skill Builder (Free Digital Training)",
+      "url": "https://skillbuilder.aws/",
+      "type": "Video Course",
+      "note": "AWS's own free training, including developer-focused learning plans. The official terminology matches the exam."
+    },
+    {
+      "name": "AWS Documentation & Developer Guides",
+      "url": "https://docs.aws.amazon.com/",
+      "type": "Reference",
+      "note": "The Lambda, DynamoDB, and API Gateway developer guides are the authoritative source for the service behavior the exam tests."
+    },
+    {
+      "name": "r/AWSCertifications on Reddit",
+      "url": "https://www.reddit.com/r/AWSCertifications/",
+      "type": "Community",
+      "note": "Active community with recent DVA-C02 pass reports and resource recommendations."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Udemy – Stephane Maarek Developer Associate (DVA-C02) Course",
+      "type": "Video Course",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Most candidates – the community-standard DVA-C02 course with hands-on coding and deployment demos",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Faws-certified-developer-associate-dva-c01%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_dva_maarek_course",
+      "affiliate": true,
+      "note": "Stephane Maarek's DVA-C02 course covers 30+ AWS services with hands-on demos. Frequently on sale—check current pricing."
+    },
+    {
+      "provider": "Udemy – Developer Associate (DVA-C02) Practice Exams",
+      "type": "Practice Exams",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Final exam preparation with realistic, full-length DVA-C02 practice tests",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Faws-certified-developer-associate-practice-tests-dva-c01%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_dva_practice",
+      "affiliate": true,
+      "note": "Full-length practice exams matched to the real DVA-C02 difficulty. Use to confirm readiness before booking."
+    },
+    {
+      "provider": "AWS Certified Developer Study Guide DVA-C02 (Sybex, Brandon Rich)",
+      "type": "Book",
+      "price": "~$40–$55",
+      "best_for": "Candidates who want a thorough written reference with online practice questions",
+      "affiliate_url": "https://www.amazon.com/dp/1394274807/?tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_dva_sybex_guide",
+      "affiliate": true,
+      "note": "The standard DVA-C02 book. Best used alongside a video course and hands-on building in the free tier."
+    },
+    {
+      "provider": "Tutorials Dojo – DVA-C02 Practice Exams (Jon Bonso)",
+      "type": "Practice Exams",
+      "price": "~$15–$20",
+      "best_for": "Exam-style practice with detailed explanations—the community favorite for AWS practice tests",
+      "affiliate_url": "https://portal.tutorialsdojo.com/courses/aws-certified-developer-associate-practice-exams/",
+      "affiliate_label": "View Tutorials Dojo",
+      "affiliate_event": "tutorialsdojo_dva",
+      "affiliate": false,
+      "note": "Jon Bonso's practice exams are widely cited as the closest match to real AWS exam difficulty. Explanations are as valuable as the questions."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Schedule the DVA-C02 Exam – AWS Certification",
+      "url": "https://aws.amazon.com/certification/certified-developer-associate/",
+      "note": "The Developer Associate exam is $150 USD and is scheduled through Pearson VUE or PSI. Verify current pricing on the AWS certification page before booking."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is the AWS Developer Associate worth it?",
+      "answer": "For software engineers building on AWS, yes. It validates real development skills—SDKs, serverless, security, and CI/CD—that map to day-to-day cloud engineering work. It's most valuable paired with a portfolio of shipped applications."
+    },
+    {
+      "question": "Developer Associate or Solutions Architect Associate — which first?",
+      "answer": "SAA-C03 is more in-demand by name and broader; Developer Associate is more focused on building applications. If you write code, Developer Associate maps better to your work. Many engineers do both—architecture plus development is a strong combination."
+    },
+    {
+      "question": "Do I need to be a strong programmer for DVA-C02?",
+      "answer": "You need to be comfortable reading and reasoning about code and API calls, but you don't need to be an expert in any single language. The exam tests how you use AWS services from code, not advanced programming."
+    },
+    {
+      "question": "How hard is the DVA-C02 exam?",
+      "answer": "It's a genuine associate-level exam. The breadth—development, security, deployment, troubleshooting—is the challenge. Candidates who build hands-on (a serverless app in the free tier) find it much more approachable than those who only watch videos."
+    },
+    {
+      "question": "How long does it take to study for Developer Associate?",
+      "answer": "Most candidates spend 2 to 3 months part-time. Those with existing AWS or development experience may move faster. Budget time for hands-on building, not just video courses."
+    },
+    {
+      "question": "What comes after Developer Associate?",
+      "answer": "Common next steps are the DevOps Engineer Professional, the Solutions Architect Professional, or specialty certifications. Developer Associate plus SysOps or Solutions Architect Associate is also a strong combination."
+    },
+    {
+      "question": "Does the AWS Developer Associate expire?",
+      "answer": "Yes. It's valid for three years. Recertify by retaking the current exam or by earning a higher-level AWS certification, which extends your validity."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "AWS Solutions Architect Associate",
+      "slug": "aws-saa",
+      "vendor": "AWS",
+      "vendor_slug": "aws",
+      "reason": "The most popular AWS associate cert. Architecture plus development (SAA + Developer Associate) is a powerful, well-paid combination."
+    },
+    {
+      "title": "AWS Cloud Practitioner",
+      "slug": "aws-cloud-practitioner",
+      "vendor": "AWS",
+      "vendor_slug": "aws",
+      "reason": "The foundational AWS cert. A good first step before Developer Associate if you're new to AWS and want to build core service knowledge."
+    },
+    {
+      "title": "CompTIA Cloud+",
+      "slug": "cloud-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "Vendor-neutral cloud operations to complement deep AWS development skills—useful in multi-cloud and hybrid environments."
+    }
+  ],
+  "seo_title": "AWS Certified Developer Associate DVA-C02 Study Guide | CertBlueprint",
+  "seo_description": "Complete AWS Developer Associate (DVA-C02) guide: who it's for, developer salary, exam domains, study path, free and paid resources, and FAQ."
+}

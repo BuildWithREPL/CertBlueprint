@@ -1,0 +1,163 @@
+---
+const primaryNav = [
+  { label: 'Home',      href: '/' },
+  { label: 'Navigator', href: '/navigator/', highlight: true },
+  { label: 'Vendors',   href: '/vendors/' },
+  { label: 'Cisco',     href: '/vendors/cisco/' },
+  { label: 'CompTIA',   href: '/vendors/comptia/' },
+  { label: 'AWS',       href: '/vendors/aws/' },
+  { label: 'Microsoft', href: '/vendors/microsoft/' },
+  { label: 'Paths',     href: '/paths/' },
+  { label: 'About',     href: '/about/' },
+];
+
+const currentPath = Astro.url.pathname;
+
+function isActive(href: string): boolean {
+  if (href === '/') return currentPath === '/';
+  // /vendors/ only active on exactly /vendors/
+  if (href === '/vendors/') return currentPath === '/vendors/';
+  return currentPath.startsWith(href);
+}
+---
+
+<header
+  id="site-header"
+  class="sticky top-0 z-40 border-b"
+  style="background-color: var(--cb-nav-bg); border-color: var(--cb-nav-border);"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-14">
+
+      <a href="/" class="flex items-center gap-2 shrink-0" aria-label="CertBlueprint home">
+        <svg class="w-6 h-6" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect x="2" y="2" width="24" height="24" rx="4" fill="var(--cb-accent)" opacity="0.15"/>
+          <path d="M7 14h14M7 9h10M7 19h8" stroke="var(--cb-accent)" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="21" cy="19" r="2.5" fill="var(--cb-accent)"/>
+        </svg>
+        <span class="font-semibold text-sm tracking-tight" style="color: var(--cb-text);">
+          Cert<span style="color: var(--cb-accent-text);">Blueprint</span>
+        </span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-0.5" aria-label="Primary navigation">
+        {primaryNav.map(link => (
+          <a
+            href={link.href}
+            class="px-3 py-1.5 rounded-md text-sm transition-colors"
+            style={link.highlight
+              ? `color: #fff; background: var(--cb-accent); font-weight: 600; box-shadow: 0 1px 2px rgba(0,0,0,.12);${isActive(link.href) ? ' outline: 2px solid var(--cb-accent-text); outline-offset: 1px;' : ''}`
+              : isActive(link.href)
+                ? 'color: var(--cb-accent-text); background: var(--cb-accent-sub); font-weight: 600;'
+                : 'color: var(--cb-text-sub); font-weight: 500;'}
+            aria-current={isActive(link.href) ? 'page' : undefined}
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <div class="flex items-center gap-1.5">
+        <button
+          id="search-trigger"
+          aria-label="Search (Ctrl+K)"
+          class="hidden sm:flex items-center gap-2 px-2.5 py-1.5 rounded-md text-xs transition-colors border"
+          style="color: var(--cb-text-muted); background: var(--cb-bg-subtle); border-color: var(--cb-border);"
+          onclick="document.getElementById('search-modal')?.classList.remove('hidden'); setTimeout(()=>document.getElementById('search-input')?.focus(),30);"
+        >
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" stroke-width="2"/>
+            <path d="M21 21l-4.35-4.35" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Search
+          <kbd class="font-mono text-xs px-1 py-0.5 rounded border" style="border-color: var(--cb-border); color: var(--cb-text-muted);">⌃K</kbd>
+        </button>
+
+        <button
+          class="sm:hidden theme-btn"
+          aria-label="Search"
+          onclick="document.getElementById('search-modal')?.classList.remove('hidden'); setTimeout(()=>document.getElementById('search-input')?.focus(),30);"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" stroke-width="2"/>
+            <path d="M21 21l-4.35-4.35" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <button id="theme-dark-btn" class="theme-btn" aria-label="Toggle dark mode" aria-pressed="false" title="Dark mode">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+          </svg>
+        </button>
+
+        <button id="theme-hc-btn" class="theme-btn" aria-label="Toggle high contrast" aria-pressed="false" title="High contrast">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" stroke-width="2"/>
+            <path d="M12 3v18" stroke-width="2"/>
+            <path d="M12 3a9 9 0 000 18" fill="currentColor" stroke="none"/>
+          </svg>
+        </button>
+
+        <button id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" class="md:hidden theme-btn">
+          <svg id="menu-icon-open" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="menu-icon-close" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden border-t" style="background: var(--cb-nav-bg); border-color: var(--cb-nav-border);">
+    <nav class="max-w-7xl mx-auto px-4 py-2 space-y-0.5" aria-label="Mobile navigation">
+      {primaryNav.map(link => (
+        <a
+          href={link.href}
+          class="flex px-3 py-2 rounded-md text-sm font-medium transition-colors"
+          style={link.highlight
+            ? 'color: #fff; background: var(--cb-accent); font-weight: 600;'
+            : isActive(link.href)
+              ? 'color: var(--cb-accent-text); background: var(--cb-accent-sub);'
+              : 'color: var(--cb-text-sub);'}
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn')!;
+  const mobileMenu = document.getElementById('mobile-menu')!;
+  const iconOpen = document.getElementById('menu-icon-open')!;
+  const iconClose = document.getElementById('menu-icon-close')!;
+  menuBtn.addEventListener('click', () => {
+    const isOpen = !mobileMenu.classList.contains('hidden');
+    mobileMenu.classList.toggle('hidden', isOpen);
+    iconOpen.classList.toggle('hidden', !isOpen);
+    iconClose.classList.toggle('hidden', isOpen);
+    menuBtn.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  type Theme = 'light' | 'dark' | 'hc';
+  const root = document.documentElement;
+  const darkBtn = document.getElementById('theme-dark-btn')!;
+  const hcBtn = document.getElementById('theme-hc-btn')!;
+  function getTheme(): Theme { return (localStorage.getItem('cb-theme') as Theme) || 'light'; }
+  function applyTheme(theme: Theme) {
+    root.removeAttribute('data-theme');
+    if (theme !== 'light') root.setAttribute('data-theme', theme);
+    darkBtn.setAttribute('aria-pressed', String(theme === 'dark'));
+    hcBtn.setAttribute('aria-pressed', String(theme === 'hc'));
+    localStorage.setItem('cb-theme', theme);
+  }
+  const saved = getTheme();
+  darkBtn.setAttribute('aria-pressed', String(saved === 'dark'));
+  hcBtn.setAttribute('aria-pressed', String(saved === 'hc'));
+  darkBtn.addEventListener('click', () => applyTheme(getTheme() === 'dark' ? 'light' : 'dark'));
+  hcBtn.addEventListener('click', () => applyTheme(getTheme() === 'hc' ? 'light' : 'hc'));
+</script>

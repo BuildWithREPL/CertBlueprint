@@ -1,0 +1,13 @@
+{
+  "specializations": [
+    "Backend",
+    "Frontend / Web",
+    "Mobile",
+    "QA / Test Engineering",
+    "API & Integration"
+  ],
+  "one_liner": "Designing, building, and testing the software people use.",
+  "order": 5,
+  "slug": "software-engineering",
+  "title": "Software Engineering"
+}

@@ -1,0 +1,78 @@
+{
+  "slug": "ccnp-enterprise-vs-ccnp-security",
+  "title": "CCNP Enterprise vs CCNP Security",
+  "intro": "The two biggest Cisco professional tracks, one decision: the routing/SD-x generalist road or the firewall/identity specialist road. Same exam economics, genuinely different careers.",
+  "a": {
+    "name": "CCNP Enterprise",
+    "href": "/vendors/cisco/ccnp-enterprise/",
+    "tagline": "ENCOR + concentration — routing, switching, SD-WAN, SD-Access. The broadest professional networking credential."
+  },
+  "b": {
+    "name": "CCNP Security",
+    "href": "/vendors/cisco/ccnp-security/",
+    "tagline": "SCOR + concentration — firewalls, ISE, VPN/SSE. The highest-paying CCNP track, tied to the Cisco security stack."
+  },
+  "verdict": "Follow the work, not the salary table. Enterprise is the broader bet: more postings, more employer types, and the natural home for route/switch careers heading toward architecture. Security pays more per posting (it's consistently the top-paying CCNP) but binds tighter to the Cisco security stack — its value tracks whether your employers run Secure Firewall and ISE. If your tickets are routing and WAN, Enterprise; if you're already elbow-deep in firewall policy and NAC, Security. And if 'security' to you means SOC work — alerts, forensics, hunting — neither: that's CCNP Cybersecurity, a different cert entirely.",
+  "rows": [
+    {
+      "label": "Structure & cost",
+      "a": "350-401 ENCOR ($400) + 1 of 6 concentrations ($300)",
+      "b": "350-701 SCOR ($400) + 1 concentration ($300) — 7 options until Aug 26, 2026, then 4"
+    },
+    {
+      "label": "2026 disruption",
+      "a": "ENCOR v1.2 live since March: wireless removed, AI domain added",
+      "b": "Bigger: SCOR v2.0 launches Aug 27; three concentrations (SESA/SWSA/SVPN) retire Aug 26 with no replacements"
+    },
+    {
+      "label": "Job-posting footprint",
+      "a": "Broadest of any CCNP — named across enterprise, gov, MSP postings",
+      "b": "Fewer postings, higher pay per posting; concentrated in Cisco-security shops and federal/cleared work"
+    },
+    {
+      "label": "Salary band (third-party)",
+      "a": "~$95–130K, architect trajectory above",
+      "b": "~$110–155K — consistently cited as the top-paying CCNP track"
+    },
+    {
+      "label": "Vendor lock sensitivity",
+      "a": "Low — routing skills transfer anywhere",
+      "b": "High — value tracks the employer's Cisco security footprint; weaker in Palo Alto/Fortinet estates"
+    },
+    {
+      "label": "Expert-tier runway",
+      "a": "ENCOR qualifies you for the CCIE Enterprise Infrastructure lab",
+      "b": "SCOR qualifies you for the CCIE Security lab"
+    }
+  ],
+  "pick_a_if": [
+    "Your daily work is routing, switching, WAN, or SD-x — the generalist infrastructure lane",
+    "You want maximum employer optionality and the architecture trajectory",
+    "Your market is mixed-vendor and you need skills that read everywhere",
+    "The automation direction appeals — ENAUTO double-counts and the v1.2 AI domain pushes you there anyway"
+  ],
+  "pick_b_if": [
+    "You already touch Cisco Secure Firewall, ISE, or VPN estates at work",
+    "Federal/cleared or Fortune-500 security engineering is the target — where this track's premium concentrates",
+    "You want the top-paying CCNP and your market genuinely runs the Cisco stack",
+    "CCIE Security is the plausible summit"
+  ],
+  "both_note": "Plenty of senior engineers hold both — typically Enterprise first (the fundamentals generalize) then Security when their role specializes. There's no shared exam between them, so budget both fully. And triple-check the timing if choosing Security in 2026: the Aug 26/27 version boundary decides your study materials.",
+  "faq": [
+    {
+      "question": "Isn't CCNP Security the same as cybersecurity?",
+      "answer": "This is the trap the names set: CCNP Security is network-security ENGINEERING — you build and run firewalls, identity systems, and VPN/SSE. SOC-style cybersecurity — triage, incident response, threat hunting — is CCNP Cybersecurity, the renamed CyberOps Professional and a completely separate certification. Three different certs, three different chairs; our guides cover all three."
+    },
+    {
+      "question": "Which is harder?",
+      "answer": "Folklore calls them comparable with different textures: ENCOR is broad (six domains spanning routing to automation), SCOR is deep in an ecosystem (the whole Cisco security portfolio). The honest difficulty variable is your day job — engineers fail the track they don't practice. SCOR punishes people who've never touched a firewall exactly as ENCOR punishes people who've never run OSPF."
+    },
+    {
+      "question": "Does one lead to better long-term careers?",
+      "answer": "Different ceilings, both high: Enterprise trends toward network architect (BLS's growing +12% column); Security trends toward security engineering leadership and, paired later with CISSP, the security-architecture world. The declining column — pure keep-the-lights-on administration — is the only trajectory to avoid, and both tracks escape it if you add automation."
+    }
+  ],
+  "last_verified": "July 2026",
+  "seo_title": "CCNP Enterprise vs CCNP Security (2026) – Which Track, Honestly | CertBlueprint",
+  "seo_description": "CCNP Enterprise vs Security settled: posting breadth vs top pay, the Aug 2026 SCOR v2.0 boundary, vendor-lock honesty, and the CCNP Cybersecurity name-trap explained."
+}

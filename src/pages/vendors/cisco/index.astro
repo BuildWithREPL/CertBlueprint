@@ -1,0 +1,274 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import CertCard from '../../../components/CertCard.astro';
+import FAQAccordion from '../../../components/FAQAccordion.astro';
+import { getEntry } from 'astro:content';
+
+const cisco = await getEntry('vendors', 'cisco');
+const { data } = cisco;
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Vendors', href: '/vendors/' },
+  { label: 'Cisco', href: '/vendors/cisco/' },
+];
+
+// The certification ladder — every live CertBlueprint guide, grouped by tier.
+const guideLadder = [
+  {
+    tier: 'Entry — $125 each, no prerequisites',
+    guides: [
+      { title: 'CCST Networking (100-150)', description: 'The $125 first step toward CCNA — free official NetAcad training, 50-minute exam.', href: '/vendors/cisco/ccst-networking/' },
+      { title: 'CCST Cybersecurity (100-160)', description: 'The entry security checkpoint backed by 120 free NetAcad hours — honest framing included.', href: '/vendors/cisco/ccst-cybersecurity/' },
+      { title: 'CCST IT Support (100-140)', description: "Cisco's $125 answer to CompTIA A+ — one exam, current content, smaller HR footprint.", href: '/vendors/cisco/ccst-it-support/' },
+    ],
+  },
+  {
+    tier: 'Associate — $300 each',
+    guides: [
+      { title: 'CCNA (200-301)', description: 'The most recognized networking credential at any level. v2.0 refresh lands Feb 2027 — same code.', href: '/vendors/cisco/ccna/' },
+      { title: 'CCNA Cybersecurity (200-201)', description: "Cisco's SOC-analyst credential (formerly CyberOps Associate) — monitoring, intrusion analysis, response.", href: '/vendors/cisco/ccna-cybersecurity/' },
+      { title: 'CCNA Automation (200-901)', description: 'The network-automation lane (formerly DevNet Associate) — Python, REST APIs, Cisco platforms.', href: '/vendors/cisco/ccna-automation/' },
+    ],
+  },
+  {
+    tier: 'Professional — $400 core + $300 concentration',
+    guides: [
+      { title: 'CCNP Enterprise', description: 'ENCOR v1.2 (wireless out, AI in) plus your concentration — the default professional networking cert.', href: '/vendors/cisco/ccnp-enterprise/' },
+      { title: 'CCNP Security', description: 'SCOR + concentration — firewalls, ISE, VPN/SSE. Critical v2.0 transition Aug 2026; not a SOC cert.', href: '/vendors/cisco/ccnp-security/' },
+      { title: 'CCNP Data Center', description: 'DCCOR + concentration — Nexus, ACI, UCS, storage, and the new AI-infrastructure lane (DCAI).', href: '/vendors/cisco/ccnp-data-center/' },
+      { title: 'CCNP Cybersecurity', description: 'The SOC-operations track (formerly CyberOps Professional) — CBRCOR plus forensics or threat hunting.', href: '/vendors/cisco/ccnp-cybersecurity/' },
+      { title: 'CCNP Automation', description: 'The renamed DevNet Professional — AUTOCOR v2.0 (major overhaul) plus ENAUTO or DCNAUTO.', href: '/vendors/cisco/ccnp-automation/' },
+      { title: 'CCNP Wireless', description: 'The brand-new track (Mar 2026) — WLCOR plus WLSD/WLSI, where ENCOR’s wireless content now lives.', href: '/vendors/cisco/ccnp-wireless/' },
+      { title: 'CCNP Service Provider', description: 'The carrier track — SPCOR plus SPRI/SPVI/SPCNI: IS-IS, BGP at scale, MPLS and segment routing.', href: '/vendors/cisco/ccnp-service-provider/' },
+      { title: 'CCNP Collaboration', description: 'The UC/voice track after the Feb 2026 refresh — CLCOR v2.0 plus CLACC, CLHCT, or the new CLCCE.', href: '/vendors/cisco/ccnp-collaboration/' },
+    ],
+  },
+  {
+    tier: 'Expert — $400–450 written + $1,600/attempt lab',
+    guides: [
+      { title: 'CCIE Enterprise Infrastructure', description: 'The famous one — 8-hour lab, 2–3 attempts typical, $5–12K realistic all-in. Honest briefing inside.', href: '/vendors/cisco/ccie-enterprise-infrastructure/' },
+      { title: 'CCIE Security', description: 'The widest lab blueprint of any track — FTD/FMC, ISE, VPNs, content security. Cisco-stack shops only.', href: '/vendors/cisco/ccie-security/' },
+      { title: 'CCDE (Design Expert)', description: 'The rarest active Cisco cert — no CLI, ~6 exam dates a year, under ~1,000 holders worldwide.', href: '/vendors/cisco/ccde/' },
+    ],
+  },
+];
+
+// Active Cisco certifications not yet covered by a full guide.
+const upcomingCerts = [
+  { title: 'CCIE Data Center / Collaboration / SP / Automation / Wireless', level: 'Expert', description: 'The remaining expert labs — same $1,600-per-attempt economics as EI and Security. Data Center is first to receive the new AI lab module (2027).' },
+  { title: 'Cisco Certified Field Technician (800-150 FLDTEC)', level: 'Entry', description: 'The $200 hands-on field-hardware cert that replaced the old CCT program in Feb 2025.' },
+  { title: 'Cisco AI Technical Practitioner (810-110 AITECH)', level: 'Practitioner', description: 'New Dec 2025: a $150, 60-minute AI-fundamentals cert in the new practitioner tier below associate.' },
+];
+---
+
+<BaseLayout title={data.seo_title} description={data.seo_description} breadcrumbs={breadcrumbs}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumb crumbs={breadcrumbs} />
+
+    <header class="mt-3 mb-8 max-w-3xl">
+      <p class="text-xs font-semibold uppercase tracking-wider mb-2" style="color: var(--cb-accent-text);">Vendor</p>
+      <h1 class="text-2xl sm:text-3xl font-bold mb-3" style="color: var(--cb-text);">Cisco Certifications Guide</h1>
+      <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{data.overview}</p>
+    </header>
+
+    <!-- Why Cisco -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="why-cisco-heading">
+      <div class="max-w-3xl">
+        <h2 id="why-cisco-heading" class="text-base font-bold mb-3" style="color: var(--cb-text);">Why Cisco certifications matter</h2>
+        <div class="space-y-4 text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+          {data.why_vendor_matters.split('\n\n').map((para: string) => (
+            <p>{para}</p>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Who it's for -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="audience-cisco-heading">
+      <div class="max-w-3xl">
+        <h2 id="audience-cisco-heading" class="text-base font-bold mb-3" style="color: var(--cb-text);">Who Cisco certifications are for</h2>
+        <div class="space-y-3">
+          {[
+            { role: 'Students and true beginners', detail: 'The CCST tier ($125, no prerequisites, free official training) is the genuine ground floor — Networking, Cybersecurity, and IT Support flavors, each designed as a first-ever credential.' },
+            { role: 'Network engineers and administrators', detail: 'Cisco certs are the baseline expectation for anyone managing enterprise routing, switching, or WAN infrastructure. CCNA is the standard entry point; CCNP is the next step for senior roles.' },
+            { role: 'IT beginners targeting networking careers', detail: 'No prior experience is required for CCNA. Most candidates study 3–6 months part-time. The exam tests practical networking skills, not just vocabulary.' },
+            { role: 'Security professionals', detail: 'CCNA Cybersecurity (formerly CyberOps Associate) and CCNP Security provide Cisco-specific security credentials for SOC analysts, firewall engineers, and network security architects.' },
+            { role: 'Automation engineers', detail: 'CCNA Automation (formerly DevNet Associate) and CCNP Automation track for engineers adding network programmability and automation to a traditional networking background.' },
+          ].map((item) => (
+            <div class="rounded-xl border p-4" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+              <p class="font-semibold text-sm mb-1" style="color: var(--cb-text);">{item.role}</p>
+              <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{item.detail}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Salary and career impact -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="salary-cisco-heading">
+      <div class="max-w-3xl">
+        <h2 id="salary-cisco-heading" class="text-base font-bold mb-3" style="color: var(--cb-text);">Career and salary impact</h2>
+        <p class="text-sm leading-relaxed mb-3" style="color: var(--cb-text-sub);">
+          Cisco certifications are consistently associated with strong compensation in networking roles. Directionally (third-party estimates — Cisco publishes no salary data): CCNA-level network roles typically run $60,000–$85,000 depending on location and employer; CCNP-level professionals land $95,000–$155,000 by track, with Data Center and Security at the top of that band; CCIE and CCDE holders command $130,000–$200,000+ and are actively sought by Cisco partners, service providers, and large enterprises. Each guide below carries the honest per-cert breakdown.
+        </p>
+        <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+          Beyond compensation, Cisco certifications open specific career doors that are difficult to enter without them. Many mid-to-large enterprise networking teams require CCNA as a hiring baseline. CCNP is often listed as a requirement or strong preference for senior network engineer and network architect roles. The certification signals to employers that a candidate has been tested against a standardized, rigorous curriculum — not just that they have some networking experience.
+        </p>
+      </div>
+    </section>
+
+    <!-- Study difficulty and timeline -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="difficulty-cisco-heading">
+      <div class="max-w-3xl">
+        <h2 id="difficulty-cisco-heading" class="text-base font-bold mb-4" style="color: var(--cb-text);">Study difficulty and time investment</h2>
+        <div class="space-y-3">
+          {[
+            { cert: 'CCST (any of the three)', difficulty: 'Beginner', time: '1–3 months part-time', detail: 'The gentlest Cisco exams: 50 minutes, 40–50 questions, unlimited retakes, free official NetAcad prep. Note the 2025 change: CCSTs earned after July 15, 2025 are valid 5 years, not lifetime.' },
+            { cert: 'CCNA 200-301', difficulty: 'Moderate', time: '3–6 months part-time', detail: 'Requires genuine understanding of IP networking, not just memorization. Most candidates study 8–12 hours per week. Hands-on lab time in Cisco Packet Tracer is essential — the exam includes simulation questions.' },
+            { cert: 'CCNP (any track)', difficulty: 'Hard', time: '6–12 months', detail: 'CCNP exams assume solid CCNA-level knowledge plus hands-on networking experience. The core exam tests broad depth; the concentration exam tests specialized knowledge. Most candidates with 1–2 years of experience find this achievable.' },
+            { cert: 'CCIE Lab', difficulty: 'Expert', time: 'Years of preparation', detail: 'The CCIE lab exam is one of the most challenging in IT: 8 hours of design and hands-on scenarios at $1,600 per attempt. Cisco publishes no pass rates, but community folklore consistently says most passers need 2–3 attempts; most successful candidates have 5+ years of deep networking experience.' },
+          ].map((item) => (
+            <div class="rounded-xl border p-4" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+              <div class="flex items-center justify-between mb-1.5">
+                <p class="font-semibold text-sm" style="color: var(--cb-text);">{item.cert}</p>
+                <div class="flex gap-2">
+                  <span class="text-xs px-2 py-0.5 rounded-full" style="background: var(--cb-bg-subtle); color: var(--cb-text-muted);">{item.difficulty}</span>
+                  <span class="text-xs px-2 py-0.5 rounded-full" style="background: var(--cb-accent-sub); color: var(--cb-accent-text);">{item.time}</span>
+                </div>
+              </div>
+              <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{item.detail}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Cert structure -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="tracks-heading">
+      <h2 id="tracks-heading" class="text-base font-bold mb-4" style="color: var(--cb-text);">Certification structure</h2>
+      <div class="grid sm:grid-cols-2 gap-3 max-w-4xl">
+        {data.certification_tracks.map((track) => (
+          <div class="rounded-xl border p-4" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+            <div class="flex items-center justify-between mb-1.5">
+              <h3 class="font-semibold text-sm" style="color: var(--cb-text);">{track.name}</h3>
+              <span class="text-xs px-2 py-0.5 rounded-full" style="color: var(--cb-text-muted); background: var(--cb-bg-subtle);">{track.level}</span>
+            </div>
+            <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{track.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- The certification ladder: every live guide, grouped by tier -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="featured-heading">
+      <h2 id="featured-heading" class="text-base font-bold mb-2" style="color: var(--cb-text);">The Cisco ladder — 17 full study guides, every active CCNP track</h2>
+      <p class="text-sm mb-6 leading-relaxed max-w-3xl" style="color: var(--cb-text-sub);">
+        Entry to expert, in order — including all eight CCNP tracks. Every guide covers the honest costs, current exam versions (Cisco renamed and revised heavily in 2026 — our guides reflect it), study paths, and free-first resources.
+      </p>
+      <div class="space-y-8 max-w-4xl">
+        {guideLadder.map((tier) => (
+          <div>
+            <h3 class="text-xs font-semibold uppercase tracking-wider mb-3" style="color: var(--cb-accent-text);">{tier.tier}</h3>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {tier.guides.map((g) => (
+                <a href={g.href} class="rounded-xl border p-4 block transition-all" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+                  <p class="font-semibold text-sm mb-1.5" style="color: var(--cb-text);">{g.title}</p>
+                  <p class="text-xs leading-relaxed" style="color: var(--cb-text-sub);">{g.description}</p>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- More certs -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="more-heading">
+      <h2 id="more-heading" class="text-base font-bold mb-4" style="color: var(--cb-text);">More Cisco certifications</h2>
+      <div class="grid sm:grid-cols-2 gap-3 max-w-4xl">
+        {upcomingCerts.map((cert) => (
+          <div class="rounded-xl border p-4" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+            <h3 class="font-semibold text-sm mb-1.5" style="color: var(--cb-text);">{cert.title}</h3>
+            <p class="text-xs leading-relaxed" style="color: var(--cb-text-sub);">{cert.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Head-to-heads -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="compare-heading">
+      <h2 id="compare-heading" class="text-base font-bold mb-4" style="color: var(--cb-text);">Deciding between two? The head-to-heads</h2>
+      <div class="grid sm:grid-cols-2 gap-3 max-w-4xl">
+        {[
+          { title: 'CCNA vs Network+', href: '/compare/ccna-vs-network-plus/', desc: 'The first-networking-cert question, settled with honest 2026 prices and job-filter reality.' },
+          { title: 'CCNA vs CCST Networking', href: '/compare/ccna-vs-ccst-networking/', desc: 'Cisco’s two entry points — $300 vs $125, and what actually transfers between them.' },
+          { title: 'CCNP vs CCIE', href: '/compare/ccnp-vs-ccie/', desc: 'The senior-track decision: real costs, pass folklore, and who actually pays for the number.' },
+          { title: 'CCNP Enterprise vs CCNP Security', href: '/compare/ccnp-enterprise-vs-ccnp-security/', desc: 'Broadest track vs top-paying track — plus the CCNP Cybersecurity name-trap.' },
+        ].map((c) => (
+          <a href={c.href} class="rounded-xl border p-4 block transition-all" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+            <p class="font-semibold text-sm mb-1" style="color: var(--cb-text);">{c.title}</p>
+            <p class="text-xs leading-relaxed" style="color: var(--cb-text-sub);">{c.desc}</p>
+          </a>
+        ))}
+      </div>
+      <p class="mt-3 text-sm"><a href="/compare/" class="font-medium" style="color: var(--cb-accent-text);">All comparisons →</a></p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="faq-heading">
+      <h2 id="faq-heading" class="text-base font-bold mb-4" style="color: var(--cb-text);">Frequently asked questions</h2>
+      <div class="max-w-3xl">
+        <FAQAccordion items={data.faq} />
+      </div>
+    </section>
+
+    <!-- Related guides -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="related-guides-heading">
+      <h2 id="related-guides-heading" class="text-base font-bold mb-4" style="color: var(--cb-text);">Related certification guides</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 max-w-4xl">
+        <a href="/vendors/cisco/ccna/" class="rounded-xl border p-4 block transition-all" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+          <p class="text-xs font-medium mb-1" style="color: var(--cb-accent-text);">Networking · Associate</p>
+          <p class="font-semibold text-sm mb-1" style="color: var(--cb-text);">Cisco CCNA 200-301 Study Guide</p>
+          <p class="text-xs leading-relaxed" style="color: var(--cb-text-sub);">Full study guide with exam details, resources, and step-by-step study path.</p>
+        </a>
+        <a href="/vendors/comptia/network-plus/" class="rounded-xl border p-4 block transition-all" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+          <p class="text-xs font-medium mb-1" style="color: var(--cb-accent-text);">Networking · Associate</p>
+          <p class="font-semibold text-sm mb-1" style="color: var(--cb-text);">CompTIA Network+ N10-009 Study Guide</p>
+          <p class="text-xs leading-relaxed" style="color: var(--cb-text-sub);">Vendor-neutral networking foundations. Often studied alongside or before CCNA.</p>
+        </a>
+        <a href="/vendors/comptia/security-plus/" class="rounded-xl border p-4 block transition-all" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+          <p class="text-xs font-medium mb-1" style="color: var(--cb-accent-text);">Cybersecurity · Associate</p>
+          <p class="font-semibold text-sm mb-1" style="color: var(--cb-text);">CompTIA Security+ SY0-701 Study Guide</p>
+          <p class="text-xs leading-relaxed" style="color: var(--cb-text-sub);">DoD-approved security cert. A natural complement to CCNA for network security roles.</p>
+        </a>
+        <a href="/vendors/aws/aws-saa/" class="rounded-xl border p-4 block transition-all" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+          <p class="text-xs font-medium mb-1" style="color: var(--cb-accent-text);">Cloud · Associate</p>
+          <p class="font-semibold text-sm mb-1" style="color: var(--cb-text);">AWS Solutions Architect Associate Study Guide</p>
+          <p class="text-xs leading-relaxed" style="color: var(--cb-text-sub);">Cloud architecture for networking professionals moving into hybrid or cloud roles.</p>
+        </a>
+        <a href="/vendors/" class="rounded-xl border p-4 block transition-all" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+          <p class="text-xs font-medium mb-1" style="color: var(--cb-accent-text);">Overview</p>
+          <p class="font-semibold text-sm mb-1" style="color: var(--cb-text);">IT Certification Vendors Compared</p>
+          <p class="text-xs leading-relaxed" style="color: var(--cb-text-sub);">Compare Cisco, CompTIA, AWS, and Microsoft — find the right path for your role.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);">
+      <div class="rounded-2xl p-7 text-center max-w-2xl text-white" style="background: linear-gradient(135deg, #1d4ed8, #1e3a8a);">
+        <h2 class="text-xl font-bold mb-2">Start with CCNA</h2>
+        <p class="text-sm mb-5 leading-relaxed" style="color: #bfdbfe;">Study path, exam details, free resources, and paid course comparison—all in one place.</p>
+        <a href="/vendors/cisco/ccna/" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors" style="background: white; color: #1d4ed8;">
+          View CCNA guide
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

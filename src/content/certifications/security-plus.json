@@ -1,0 +1,250 @@
+{
+  "title": "CompTIA Security+ SY0-701 Study Guide",
+  "slug": "security-plus",
+  "vendor": "CompTIA",
+  "vendor_slug": "comptia",
+  "level": "Associate",
+  "description": "CompTIA Security+ (SY0-701) is the industry-standard entry-level cybersecurity certification. It validates core security skills including threat analysis, vulnerability management, identity management, cryptography, and incident response. Widely required by government and defense contractors, and recognized across private sector IT security roles.",
+  "audience": "IT professionals transitioning into security, help desk and sysadmin staff adding security skills, and entry-level cybersecurity candidates targeting analyst and SOC roles.",
+  "why_get_it": "Security+ is the most recognized entry-level security certification in the industry. It is DoD 8570/8140 approved, meaning it satisfies baseline requirements for U.S. government and military IT security roles. In the private sector, it appears in job listings for security analysts, SOC analysts, IT security specialists, and junior penetration testers. It covers a genuine cross-section of modern security knowledge: threats and vulnerabilities, architecture and design, implementation, operations, incident response, and governance. The exam has been updated regularly to reflect real-world threats—the current version (SY0-701) covers cloud, zero trust, and current attack patterns. For anyone targeting a security role without prior hands-on experience, Security+ is the recognized baseline that gets you past resume filters.",
+  "when_to_get_it": "Get Security+ when you are ready to move into a security-focused role. It pairs well after CompTIA A+ or Network+ if you are starting from scratch, or it can be your first cert if you already have some IT experience. If you are targeting DoD or federal contractor roles, it is often a hard requirement. Most candidates benefit from 1–2 years of general IT experience before starting Security+ study, though it is achievable without it. Do not delay it if cybersecurity is your clear target—the cert pays off quickly in role eligibility.",
+  "salary_range": "$65,000 – $95,000",
+  "salary_note": "Entry-level cybersecurity and SOC analyst roles with Security+ typically start in the $65K–$75K range. With 2–3 years of experience and additional certs (CySA+, CISSP), compensation frequently reaches $90K–$120K+. Government and federal contractor roles often come with strong benefits on top of base salary.",
+  "exam_code": "SY0-701",
+  "exam_duration": "90 minutes",
+  "exam_format": "Multiple choice and performance-based questions. Maximum 90 questions.",
+  "exam_questions": "Up to 90 questions (CompTIA does not publish exact count)",
+  "official_url": "https://www.comptia.org/certifications/security",
+  "official_pricing_url": "https://www.comptia.org/certifications/security#buy",
+  "recertification_note": "Security+ is valid for 3 years. Renew by earning 50 CEUs (Continuing Education Units) through the CompTIA CE program, or by passing a higher-level CompTIA exam before expiration.",
+  "skills_covered": [
+    {
+      "category": "Threats, Attacks, and Vulnerabilities",
+      "items": [
+        "Social engineering techniques (phishing, spear phishing, vishing)",
+        "Malware types: ransomware, trojans, worms, spyware",
+        "Application and network-based attacks",
+        "Threat intelligence and threat hunting concepts",
+        "Vulnerability scanning and penetration testing concepts"
+      ]
+    },
+    {
+      "category": "Architecture and Design",
+      "items": [
+        "Zero trust architecture",
+        "Cloud security models (IaaS, PaaS, SaaS)",
+        "Secure network topologies and segmentation",
+        "Application development and deployment security",
+        "Virtualization and containerization security"
+      ]
+    },
+    {
+      "category": "Implementation",
+      "items": [
+        "Cryptography protocols (PKI, TLS, AES)",
+        "Identity and access management (IAM, MFA, SSO)",
+        "Wireless security (WPA3, RADIUS, EAP)",
+        "Endpoint and mobile device security",
+        "Firewall rules, VPNs, and network security controls"
+      ]
+    },
+    {
+      "category": "Operations and Incident Response",
+      "items": [
+        "Incident response lifecycle",
+        "Digital forensics and evidence handling",
+        "Log analysis and SIEM basics",
+        "Disaster recovery and business continuity concepts",
+        "Security automation and orchestration basics"
+      ]
+    },
+    {
+      "category": "Governance, Risk, and Compliance",
+      "items": [
+        "Risk management frameworks",
+        "Security policies, standards, and procedures",
+        "Data privacy regulations (GDPR, HIPAA, PCI-DSS concepts)",
+        "Security controls classification",
+        "Third-party risk and supply chain security"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Download the official exam objectives",
+      "description": "Start by downloading the SY0-701 exam objectives PDF from CompTIA's website. Security+ covers a wide breadth of topics—knowing the exact scope before studying prevents wasted time. The objectives document is your study contract."
+    },
+    {
+      "step": 2,
+      "title": "Choose a primary study resource",
+      "description": "Pick one comprehensive course or book and follow it from start to finish. Professor Messer's free video course is the most popular starting point. Jason Dion's Udemy course is the top-rated paid option. Do not use multiple full courses simultaneously—it causes confusion and delays."
+    },
+    {
+      "step": 3,
+      "title": "Build vocabulary and concepts first",
+      "description": "Security+ is heavily terminology-driven. Invest the first few weeks understanding core concepts: CIA triad, types of controls, authentication methods, cryptography basics. Flash cards (Anki or Quizlet) are effective here. You cannot skip this phase—context-free memorization of attack names fails in performance-based questions."
+    },
+    {
+      "step": 4,
+      "title": "Work through hands-on labs",
+      "description": "Performance-based questions (PBQs) test practical skills, not just definitions. Use TryHackMe (beginner-friendly) or Professor Messer's practice PBQs to build hands-on familiarity with log analysis, firewall rule reading, and incident response scenarios. Skipping labs is the most common reason candidates fail on test day."
+    },
+    {
+      "step": 5,
+      "title": "Take full practice exams",
+      "description": "Once you have covered all exam objectives, take full-length practice exams under timed conditions. Jason Dion's Udemy practice exams and CompTIA's official CertMaster Practice are the most reliable options. Target consistent scores of 80%+ before scheduling your real exam."
+    },
+    {
+      "step": 6,
+      "title": "Review wrong answers systematically",
+      "description": "Every incorrect practice exam answer is a study directive. Do not just note what was wrong—understand why each distractor answer was wrong too. Security+ questions are deliberately close-call scenarios. Understanding the logic behind answers builds the pattern recognition you need."
+    },
+    {
+      "step": 7,
+      "title": "Schedule and sit the exam",
+      "description": "Book through Pearson VUE, either in-person or online proctored. Arrive (or log in) fresh—no cramming the night before. Read every question carefully; many Security+ questions are scenario-based and hinge on one key detail. Budget time for PBQs, which appear early and take longer."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "Professor Messer – SY0-701 Security+ Course (Free)",
+      "url": "https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/sy0-701-comptia-security-plus-course/",
+      "type": "Video Course",
+      "note": "The gold standard free Security+ resource. Covers every exam objective with clear explanations. Used by hundreds of thousands of candidates."
+    },
+    {
+      "name": "CompTIA Security+ Exam Objectives (SY0-701)",
+      "url": "https://www.comptia.org/certifications/security",
+      "type": "Official Documentation",
+      "note": "Download the official objectives PDF. This is the definitive list of what is and is not on the exam."
+    },
+    {
+      "name": "TryHackMe – Pre-Security and SOC Level 1 Paths",
+      "url": "https://tryhackme.com/",
+      "type": "Hands-on Labs",
+      "note": "Browser-based labs covering concepts tested in Security+. Free tier available. Excellent for building practical skills alongside your study course."
+    },
+    {
+      "name": "r/CompTIA on Reddit",
+      "url": "https://www.reddit.com/r/CompTIA/",
+      "type": "Community",
+      "note": "Active exam prep community. Exam pass reports are especially useful for understanding what to expect on test day."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Udemy – Jason Dion Security+ (SY0-701) Course",
+      "type": "Video Course",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Candidates who want a structured, scenario-focused course with practice exams included",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fsecurityplus%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_security_plus_dion",
+      "affiliate": true,
+      "note": "Jason Dion's courses are scenario-heavy, which aligns well with how Security+ questions are written. Practice exams are high quality."
+    },
+    {
+      "provider": "Udemy – Jason Dion Security+ Practice Exams",
+      "type": "Practice Exams",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Final exam preparation—realistic questions that match the difficulty and format of the real exam",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomptia-security-sy0-701-practice-exams%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_security_plus_practice",
+      "affiliate": true,
+      "note": "Buy separately if you already have a course. High pass rate reported by candidates who used these before the real exam."
+    },
+    {
+      "provider": "Mike Chapple & David Seidl – CompTIA Security+ Study Guide (Sybex)",
+      "type": "Book",
+      "price": "~$40–$55",
+      "best_for": "Candidates who prefer reading over video, or need a written reference alongside a course",
+      "affiliate_url": "https://www.amazon.com/dp/1394211414/?tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_security_plus_sybex",
+      "affiliate": true,
+      "note": "Well-organized, matches the exam objectives closely. Includes practice questions at the end of each chapter."
+    },
+    {
+      "provider": "CompTIA Security+ Practice Tests — Sybex (SY0-701)",
+      "type": "Practice Questions (Book)",
+      "price": "~$30–$40",
+      "best_for": "Extra question volume — 1,000 practice questions across all SY0-701 domains",
+      "affiliate_url": "https://www.amazon.com/dp/1394211384/?tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_security_plus_practice_tests",
+      "affiliate": true,
+      "note": "Companion to the Chapple & Seidl study guide. Pure question bank — best in the final weeks before the exam."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Buy Security+ Exam Voucher – CompTIA Store",
+      "url": "https://store.comptia.org/",
+      "note": "Always verify current pricing on CompTIA's official store. Exam prices change. Check for bundle discounts that include retake insurance."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is Security+ worth it?",
+      "answer": "Yes, especially for U.S.-based candidates targeting government, defense, or federal contractor roles where DoD 8570/8140 compliance is required. In the private sector, it satisfies the baseline security credential filter for analyst and SOC roles. It is one of the fastest certs to turn into a job offer for candidates transitioning into security."
+    },
+    {
+      "question": "How hard is the Security+ exam?",
+      "answer": "It is a legitimate exam that requires dedicated study—typically 6 to 12 weeks depending on your existing IT background. The performance-based questions (PBQs) catch many candidates off guard. Consistent use of practice exams and hands-on labs before test day is what separates passing candidates."
+    },
+    {
+      "question": "Do I need A+ or Network+ before Security+?",
+      "answer": "CompTIA recommends Network+ plus two years of IT experience, but there are no hard prerequisites. Candidates with general IT backgrounds often go directly to Security+. If you have zero IT experience, completing CompTIA A+ or Network+ first will make Security+ study considerably easier."
+    },
+    {
+      "question": "How long does it take to study for Security+?",
+      "answer": "Most candidates spend 6 to 12 weeks studying part-time. Those with existing security or IT experience may be ready in 4 to 6 weeks. Complete beginners should plan for 10 to 14 weeks to ensure adequate time for hands-on practice."
+    },
+    {
+      "question": "What jobs can I get with Security+?",
+      "answer": "SOC Analyst, IT Security Analyst, Security Administrator, Systems Administrator (with security duties), Junior Penetration Tester, and Cybersecurity Specialist roles commonly list Security+ as a requirement or strong preference. Government and federal contractor roles often require it specifically."
+    },
+    {
+      "question": "What is the passing score for Security+?",
+      "answer": "The passing score for SY0-701 is 750 on a scale of 100 to 900. CompTIA uses scaled scoring, so point values per question vary."
+    },
+    {
+      "question": "What comes after Security+?",
+      "answer": "CompTIA CySA+ (Cybersecurity Analyst) is the natural next step for defensive security roles. CompTIA PenTest+ for offensive/red team paths. CASP+ for advanced practitioners. Many candidates also pursue vendor-specific certs: AWS Security Specialty, Microsoft SC-900 series, or Certified Ethical Hacker (CEH)."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CompTIA Network+",
+      "slug": "network-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "Recommended before or alongside Security+. Builds the networking foundation that Security+ concepts rely on."
+    },
+    {
+      "title": "CompTIA CySA+",
+      "slug": "cysa-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "The next step after Security+ for analysts targeting threat detection and incident response roles."
+    },
+    {
+      "title": "Cisco CCNA",
+      "slug": "ccna",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "Strong networking foundation that complements Security+ for candidates targeting network security roles."
+    },
+    {
+      "title": "AWS Solutions Architect Associate",
+      "slug": "aws-saa",
+      "vendor": "AWS",
+      "vendor_slug": "aws",
+      "reason": "Pairs well with Security+ for candidates targeting cloud security roles and positions."
+    }
+  ],
+  "seo_title": "CompTIA Security+ (SY0-701) Study Guide – Exam Details, Study Plan, Resources | CertBlueprint",
+  "seo_description": "Complete CompTIA Security+ SY0-701 guide: who it's for, salary expectations, exam breakdown, step-by-step study plan, free and paid resources, and FAQ."
+}

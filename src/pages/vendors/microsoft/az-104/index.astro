@@ -1,0 +1,295 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import { techArticleSchema } from '../../../../lib/schema.js';
+import Breadcrumb from '../../../../components/Breadcrumb.astro';
+import ExamInfoBox from '../../../../components/ExamInfoBox.astro';
+import StudyPath from '../../../../components/StudyPath.astro';
+import ResourceCard from '../../../../components/ResourceCard.astro';
+import ResourceTable from '../../../../components/ResourceTable.astro';
+import FAQAccordion from '../../../../components/FAQAccordion.astro';
+import RelatedCerts from '../../../../components/RelatedCerts.astro';
+import AffiliateCTA from '../../../../components/AffiliateCTA.astro';
+import CalloutBox from '../../../../components/CalloutBox.astro';
+import { getEntry } from 'astro:content';
+
+const cert = await getEntry('certifications', 'az-104');
+const { data } = cert;
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Vendors', href: '/vendors/' },
+  { label: 'Microsoft', href: '/vendors/microsoft/' },
+  { label: 'AZ-104', href: '/vendors/microsoft/az-104/' },
+];
+
+const sections = [
+  { id: 'overview', label: 'Overview' },
+  { id: 'why-get-it', label: 'Why get AZ-104' },
+  { id: 'salary', label: 'Salary expectations' },
+  { id: 'when-to-get-it', label: 'When to get it' },
+  { id: 'exam-details', label: 'Exam details' },
+  { id: 'skills', label: 'Skills covered' },
+  { id: 'study-path', label: 'Study path' },
+  { id: 'free-resources', label: 'Free resources' },
+  { id: 'paid-resources', label: 'Paid resources' },
+  { id: 'vouchers', label: 'Vouchers & cost' },
+  { id: 'faq', label: 'FAQ' },
+  { id: 'related', label: 'Related certs' },
+];
+---
+
+<BaseLayout title={data.seo_title} description={data.seo_description} breadcrumbs={breadcrumbs} structuredData={techArticleSchema(data, Astro.url.href)}>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumb crumbs={breadcrumbs} />
+
+    <header class="mt-3 mb-8">
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        <span class="text-xs font-medium px-2.5 py-1 rounded-full" style="background: #f0fdf4; color: #15803d;">Associate</span>
+        <span class="text-xs" style="color: var(--cb-text-muted);">Microsoft · Exam {data.exam_code}</span>
+      </div>
+      <h1 class="text-2xl sm:text-3xl font-bold mb-3" style="color: var(--cb-text);">{data.title}</h1>
+      <p class="text-base max-w-3xl leading-relaxed" style="color: var(--cb-text-sub);">{data.description}</p>
+    </header>
+
+    <div class="lg:grid lg:grid-cols-[1fr_268px] gap-10 items-start">
+
+      <!-- ─── Main content ─────────────────────────────── -->
+      <div class="min-w-0 space-y-12">
+
+        <!-- Overview -->
+        <section id="overview" aria-labelledby="overview-heading">
+          <h2 id="overview-heading" class="text-lg font-bold mb-4 pb-2 border-b" style="color: var(--cb-text); border-color: var(--cb-border);">Overview</h2>
+          <div class="grid sm:grid-cols-3 gap-3">
+            {[
+              { label: 'Level', value: data.level },
+              { label: 'Vendor', value: data.vendor },
+              { label: 'Audience', value: data.audience },
+            ].map(({ label, value }) => (
+              <div class="rounded-lg border p-3" style="background: var(--cb-bg-subtle); border-color: var(--cb-border-sub);">
+                <p class="text-xs font-medium uppercase tracking-wide mb-1" style="color: var(--cb-text-muted);">{label}</p>
+                <p class="text-sm font-medium leading-snug" style="color: var(--cb-text);">{value}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <!-- Why get it -->
+        <section id="why-get-it" aria-labelledby="why-heading">
+          <h2 id="why-heading" class="text-lg font-bold mb-4 pb-2 border-b" style="color: var(--cb-text); border-color: var(--cb-border);">Why get AZ-104</h2>
+          <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{data.why_get_it}</p>
+        </section>
+
+        <!-- Salary -->
+        {data.salary_range && (
+          <section id="salary" aria-labelledby="salary-heading">
+            <h2 id="salary-heading" class="text-lg font-bold mb-4 pb-2 border-b" style="color: var(--cb-text); border-color: var(--cb-border);">Salary expectations</h2>
+            <div class="rounded-xl border p-5 mb-4" style="background: var(--cb-bg-subtle); border-color: var(--cb-border-sub);">
+              <p class="text-xs font-semibold uppercase tracking-wide mb-1" style="color: var(--cb-text-muted);">Typical salary range</p>
+              <p class="text-2xl font-bold mb-2" style="color: var(--cb-text);">{data.salary_range}</p>
+              <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{data.salary_note}</p>
+            </div>
+            <CalloutBox type="warning" title="Salary data is directional, not guaranteed">
+              <p class="text-sm">Compensation varies by location, employer, experience, and full skill set. Verify with current job listings in your target market before making decisions.</p>
+            </CalloutBox>
+          </section>
+        )}
+
+        <!-- When to get it -->
+        <section id="when-to-get-it" aria-labelledby="when-heading">
+          <h2 id="when-heading" class="text-lg font-bold mb-4 pb-2 border-b" style="color: var(--cb-text); border-color: var(--cb-border);">When to get AZ-104</h2>
+          <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{data.when_to_get_it}</p>
+        </section>
+
+        <!-- Exam details -->
+        <section id="exam-details" aria-labelledby="exam-heading">
+          <h2 id="exam-heading" class="text-lg font-bold mb-4 pb-2 border-b" style="color: var(--cb-text); border-color: var(--cb-border);">Exam details</h2>
+          <div class="max-w-sm mb-4">
+            <ExamInfoBox
+              examCode={data.exam_code}
+              vendor={data.vendor}
+              level={data.level}
+              duration={data.exam_duration}
+              format={data.exam_format}
+              questions={data.exam_questions}
+              officialUrl={data.official_url}
+              pricingUrl={data.official_pricing_url}
+              recertNote={data.recertification_note}
+            />
+          </div>
+          <CalloutBox type="warning" title="Verify before you book">
+            <p class="text-sm">Exam pricing and format can change. Always confirm on the official Microsoft certification page before purchasing. Check for free voucher promotions on Microsoft Learn before buying.</p>
+          </CalloutBox>
+        </section>
+
+        <!-- Skills covered -->
+        <section id="skills" aria-labelledby="skills-heading">
+          <h2 id="skills-heading" class="text-lg font-bold mb-4 pb-2 border-b" style="color: var(--cb-text); border-color: var(--cb-border);">Skills covered</h2>
+          <div class="space-y-4">
+            {data.skills_covered.map((domain) => (
+              <div class="rounded-xl border overflow-hidden" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+                <div class="px-4 py-2.5 border-b" style="background: var(--cb-bg-subtle); border-color: var(--cb-border-sub);">
+                  <h3 class="font-semibold text-sm" style="color: var(--cb-text);">{domain.category}</h3>
+                </div>
+                <ul class="divide-y" style="border-color: var(--cb-border-sub);">
+                  {domain.items.map((item) => (
+                    <li class="px-4 py-2 text-sm flex items-start gap-2" style="color: var(--cb-text-sub);">
+                      <svg class="w-3.5 h-3.5 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--cb-accent-text);">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <!-- Study path -->
+        <section id="study-path" aria-labelledby="study-heading">
+          <h2 id="study-heading" class="text-lg font-bold mb-2 pb-2 border-b" style="color: var(--cb-text); border-color: var(--cb-border);">Step-by-step study path</h2>
+          <p class="text-sm mb-5 leading-relaxed" style="color: var(--cb-text-sub);">
+            AZ-104 is an operational exam—configuration experience in the Azure portal matters as much as course completion.
+          </p>
+          <StudyPath steps={data.study_steps} />
+          <div class="mt-5 rounded-xl border p-4" style="background: var(--cb-accent-sub); border-color: var(--cb-border);">
+            <p class="text-sm font-semibold mb-1" style="color: var(--cb-text);">Microsoft Learn is essential</p>
+            <p class="text-sm mb-2" style="color: var(--cb-text-sub);">The free Microsoft Learn path for AZ-104 is the single most aligned study resource available. Use it alongside any course you choose.</p>
+            <a href="https://learn.microsoft.com/en-us/credentials/certifications/azure-administrator/" target="_blank" rel="noopener noreferrer" class="text-sm font-medium" style="color: var(--cb-accent-text);">Open Microsoft Learn →</a>
+          </div>
+        </section>
+
+        <!-- Free resources -->
+        <section id="free-resources" aria-labelledby="free-heading">
+          <h2 id="free-heading" class="text-lg font-bold mb-4 pb-2 border-b" style="color: var(--cb-text); border-color: var(--cb-border);">Free resources</h2>
+          <div class="space-y-2.5">
+            {data.free_resources.map((r) => (
+              <ResourceCard name={r.name} url={r.url} type={r.type} note={r.note} />
+            ))}
+          </div>
+        </section>
+
+        <!-- Paid resources -->
+        <section id="paid-resources" aria-labelledby="paid-heading">
+          <h2 id="paid-heading" class="text-lg font-bold mb-2 pb-2 border-b" style="color: var(--cb-text); border-color: var(--cb-border);">Paid resources</h2>
+          <p class="text-sm mb-4 leading-relaxed" style="color: var(--cb-text-sub);">
+            These are the resources most consistently recommended by candidates who pass AZ-104 on their first attempt.
+          </p>
+          <CalloutBox type="affiliate">
+            <p class="text-sm" style="color: var(--cb-text-sub);">Some links below are affiliate links. Purchasing through them supports CertBlueprint at no extra cost to you. <a href="/legal/affiliate-disclosure/" class="underline" style="color: var(--cb-accent-text);">Affiliate disclosure →</a></p>
+          </CalloutBox>
+          <div class="mt-4">
+            <ResourceTable resources={data.paid_resources} />
+          </div>
+        </section>
+
+        <!-- Vouchers -->
+        <section id="vouchers" aria-labelledby="vouchers-heading">
+          <h2 id="vouchers-heading" class="text-lg font-bold mb-4 pb-2 border-b" style="color: var(--cb-text); border-color: var(--cb-border);">Vouchers & exam cost</h2>
+          <CalloutBox type="warning" title="Check for free voucher promotions first">
+            <p class="text-sm">Microsoft regularly offers free exam vouchers through Microsoft Learn challenge events. Check the Microsoft Certification portal and Microsoft Learn before purchasing at the standard $165 USD price.</p>
+          </CalloutBox>
+          <div class="mt-4 space-y-2.5">
+            {data.voucher_links.map((v) => (
+              <a
+                href={v.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center justify-between gap-3 p-4 rounded-lg border transition-all text-sm"
+                style="background: var(--cb-bg-card); border-color: var(--cb-border); color: var(--cb-text);"
+              >
+                <span class="font-medium">{v.label}</span>
+                <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--cb-text-muted);">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" aria-labelledby="faq-heading">
+          <h2 id="faq-heading" class="text-lg font-bold mb-4 pb-2 border-b" style="color: var(--cb-text); border-color: var(--cb-border);">Frequently asked questions</h2>
+          <FAQAccordion items={data.faq} />
+        </section>
+
+        <!-- Related certs -->
+        <section id="related" aria-labelledby="related-heading">
+          <h2 id="related-heading" class="text-lg font-bold mb-2 pb-2 border-b" style="color: var(--cb-text); border-color: var(--cb-border);">Related certifications</h2>
+          <p class="text-sm mb-4 leading-relaxed" style="color: var(--cb-text-sub);">
+            AZ-104 is the foundation for the entire Azure certification path. Where you go next depends on your role focus.
+          </p>
+          <RelatedCerts certs={data.related_certs} />
+        </section>
+
+        <!-- Bottom CTA -->
+        <section class="border-t pt-10" style="border-color: var(--cb-border);">
+          <div class="rounded-2xl p-7 text-center text-white" style="background: linear-gradient(135deg, #0078d4, #004e8c);">
+            <h2 class="text-xl font-bold mb-2">Ready to start with AZ-104?</h2>
+            <p class="text-sm mb-5 max-w-md mx-auto leading-relaxed" style="color: #cce4f6;">
+              Combine Microsoft Learn's free path with Scott Duffy's Udemy course, build in the Azure portal throughout, and use practice exams before scheduling.
+            </p>
+            <div class="flex flex-wrap gap-3 justify-center">
+              <AffiliateCTA
+                href={data.paid_resources[0].affiliate_url}
+                label="View recommended course"
+                event={data.paid_resources[0].affiliate_event}
+                provider="Udemy"
+                variant="secondary"
+              />
+              <a href="/vendors/microsoft/" class="px-4 py-2 rounded-lg text-sm font-medium border transition-colors" style="background: rgba(255,255,255,0.1); color: white; border-color: rgba(255,255,255,0.2);">
+                Explore Microsoft certs
+              </a>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- ─── Sidebar ──────────────────────────────────── -->
+      <aside class="hidden lg:block sticky top-24 space-y-5" aria-label="Page navigation">
+
+        <nav aria-label="On this page">
+          <p class="text-xs font-semibold uppercase tracking-wider mb-2" style="color: var(--cb-text-muted);">On this page</p>
+          <ul class="space-y-0.5">
+            {sections.map((s) => (
+              <li>
+                <a href={`#${s.id}`} class="block text-sm px-2 py-1 rounded transition-colors" style="color: var(--cb-text-sub);"
+                  onmouseover="this.style.color='var(--cb-accent-text)'; this.style.background='var(--cb-accent-sub)';"
+                  onmouseout="this.style.color='var(--cb-text-sub)'; this.style.background='';">
+                  {s.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <ExamInfoBox
+          examCode={data.exam_code}
+          vendor={data.vendor}
+          level={data.level}
+          duration={data.exam_duration}
+          format={data.exam_format}
+          officialUrl={data.official_url}
+          pricingUrl={data.official_pricing_url}
+        />
+
+        <div class="rounded-xl border p-4" style="background: var(--cb-accent-sub); border-color: var(--cb-border);">
+          <p class="text-sm font-semibold mb-1" style="color: var(--cb-text);">Top-rated AZ-104 course</p>
+          <p class="text-xs mb-3 leading-relaxed" style="color: var(--cb-text-sub);">Scott Duffy on Udemy — consistently updated for current AZ-104 exam content, includes practice questions.</p>
+          <AffiliateCTA
+            href={data.paid_resources[0].affiliate_url}
+            label="View on Udemy"
+            event={data.paid_resources[0].affiliate_event}
+            provider="Udemy"
+            variant="primary"
+          />
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+
+</BaseLayout>

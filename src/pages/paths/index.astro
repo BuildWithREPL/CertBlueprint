@@ -1,0 +1,59 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const domains = (await getCollection('domains')).map((d) => d.data).sort((a, b) => a.order - b.order);
+const paths = (await getCollection('paths')).map((p) => p.data);
+const pathsByDomain = (slug: string) => paths.filter((p) => p.domain === slug);
+
+const title = 'IT Career Paths — Explore Every IT Field & Role | CertBlueprint';
+const description = 'The full map of IT career fields and the roles inside them — what each does, the skills, and the roadmap. Not sure where you fit? Take the free aptitude assessment.';
+const breadcrumbs = [{ label: 'Home', href: '/' }, { label: 'Career Paths', href: '/paths/' }];
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs}>
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-4">
+    <p class="font-mono text-xs uppercase tracking-widest mb-3" style="color: var(--cb-accent-text);">The field map</p>
+    <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-balance" style="color: var(--cb-text);">Every IT field, and the roles inside it.</h1>
+    <p class="mt-4 text-lg leading-relaxed" style="color: var(--cb-text-sub); max-width: 62ch;">
+      IT is far more than four vendors. Browse the fields of practice below and the specific roles inside each &mdash; every role page shows what the work feels like, the skills to build, a weekend trial, and a certification roadmap. Not sure where you fit?
+      <a href="/navigator/" style="color: var(--cb-accent-text); font-weight: 600;">Take the free assessment</a>.
+    </p>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <div class="grid sm:grid-cols-2 gap-4">
+      {domains.map((d) => {
+        const rolePaths = pathsByDomain(d.slug);
+        return (
+          <div class="rounded-xl border p-5" style="border-color: var(--cb-border); background: var(--cb-bg-subtle);">
+            <h2 class="text-lg font-bold tracking-tight" style="color: var(--cb-text);">{d.title}</h2>
+            <p class="text-sm mt-1 mb-3" style="color: var(--cb-text-sub);">{d.one_liner}</p>
+            {rolePaths.length > 0 ? (
+              <ul class="space-y-1.5">
+                {rolePaths.map((p) => (
+                  <li>
+                    <a href={`/paths/${p.slug}/`} class="inline-flex items-center gap-1 text-sm font-semibold" style="color: var(--cb-accent-text);">{p.role} &rarr;</a>
+                    <span class="block text-xs" style="color: var(--cb-text-muted);">{p.specialization}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p class="font-mono text-xs" style="color: var(--cb-text-muted);">Role paths coming soon</p>
+            )}
+            {d.specializations.length > 0 && (
+              <p class="mt-3 text-xs" style="color: var(--cb-text-muted);">Specializations: {d.specializations.join(' &middot; ')}</p>
+            )}
+          </div>
+        );
+      })}
+    </div>
+
+    <div class="mt-8 rounded-xl border p-6 text-center" style="border-color: var(--cb-border);">
+      <p class="text-sm" style="color: var(--cb-text-sub);">Don't know which field fits how you like to work?</p>
+      <a href="/navigator/" class="inline-flex items-center gap-2 mt-3 rounded-lg px-5 py-3 text-sm font-semibold text-white" style="background: var(--cb-accent);">
+        Take the free IT Career Navigator &rarr;
+      </a>
+    </div>
+  </section>
+</BaseLayout>

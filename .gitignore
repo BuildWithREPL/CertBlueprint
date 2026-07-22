@@ -1,0 +1,9 @@
+.env
+.env.*
+node_modules/
+.wrangler/
+dist/
+.astro/
+nppBackup/
+service-account.json
+.gsc-progress.json

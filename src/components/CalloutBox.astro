@@ -1,0 +1,25 @@
+---
+interface Props {
+  type?: 'info' | 'warning' | 'tip' | 'affiliate';
+  title?: string;
+}
+
+const { type = 'info', title } = Astro.props;
+
+const styleMap = {
+  info:      { background: 'var(--cb-accent-sub)', border: 'var(--cb-accent)', color: 'var(--cb-text)' },
+  warning:   { background: '#fefce8', border: '#fde047', color: '#713f12' },
+  tip:       { background: '#f0fdf4', border: '#86efac', color: '#14532d' },
+  affiliate: { background: 'var(--cb-bg-subtle)', border: 'var(--cb-border)', color: 'var(--cb-text-sub)' },
+};
+
+const s = styleMap[type];
+---
+
+<aside
+  class="rounded-lg border px-4 py-3 text-sm leading-relaxed"
+  style={`background: ${s.background}; border-color: ${s.border}; color: ${s.color};`}
+>
+  {title && <p class="font-semibold mb-1">{title}</p>}
+  <slot />
+</aside>

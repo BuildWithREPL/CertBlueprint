@@ -1,0 +1,257 @@
+{
+  "title": "Cisco CCNA Automation 200-901 Study Guide",
+  "slug": "ccna-automation",
+  "vendor": "Cisco",
+  "vendor_slug": "cisco",
+  "level": "Associate",
+  "description": "CCNA Automation (formerly DevNet Associate) is Cisco's associate-level credential for network automation and programmability. Exam 200-901 (CCNAAUTO) validates skills in software development, REST APIs, Python, Cisco platforms, application security, and infrastructure automation.",
+  "audience": "Network engineers adding automation and programmability skills, developers working with network infrastructure, and IT professionals moving toward NetDevOps, network automation, and infrastructure-as-code roles.",
+  "why_get_it": "CCNA Automation proves you can bridge traditional networking and modern software automation—reading and writing Python, calling REST APIs, and automating infrastructure on Cisco platforms like DNA Center, Meraki, and ACI. That overlap is exactly what employers pay a premium for: network automation engineers consistently earn more than traditional network engineers at the same experience level. It is also the entry point to Cisco's Automation track (formerly DevNet), leading to CCNP Automation. For anyone in networking who wants to stay relevant as infrastructure becomes code-driven, this is the credential that signals you've made the jump.",
+  "when_to_get_it": "Get CCNA Automation if you want to move into network automation, NetDevOps, or infrastructure-as-code, or to add programmability to an existing networking role. It pairs naturally with CCNA: a solid networking foundation makes the Network Fundamentals and Infrastructure and Automation domains far easier. Some comfort with Python and the command line helps a great deal—if you've never written code, budget extra time for the software development and API domains. If your goal is pure networking or security operations rather than automation, CCNA or CCNA Cybersecurity may fit better first.",
+  "exam_code": "200-901",
+  "exam_duration": "120 minutes",
+  "exam_format": "Multiple-choice and multiple-response questions. Approximately 100 questions.",
+  "exam_questions": "~100 questions (approximate; Cisco does not publish the exact count). Passing score is scaled, typically 800–850 of 1000.",
+  "official_url": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/ccnaauto.html",
+  "official_pricing_url": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/list.html",
+  "recertification_note": "Valid for 3 years. Renew by passing another Cisco exam, earning Continuing Education credits through the Cisco CE program, or achieving a higher-level Cisco certification before expiration.",
+  "salary_range": "$75,000 – $140,000",
+  "salary_note": "Network automation is a premium niche. Engineers who combine networking with automation typically earn 15–30% more than traditional network engineers at the same level. Early-career roles blending networking and scripting commonly land around $75K–$95K; experienced network automation / NetDevOps engineers frequently reach $110K–$140K, with senior and cloud-heavy roles going higher. Demand is strongest where infrastructure is moving to code (large enterprises, service providers, cloud teams).",
+  "skills_covered": [
+    {
+      "category": "Software Development and Design (15%)",
+      "items": [
+        "Python data structures, functions, and error handling",
+        "Code organization, modularity, and version control with Git",
+        "Common design patterns (MVC) and software development methods (agile, waterfall)",
+        "Parsing and constructing data formats: JSON, XML, YAML",
+        "Unit testing concepts"
+      ]
+    },
+    {
+      "category": "Understanding and Using APIs (20%)",
+      "items": [
+        "REST API principles: methods, status codes, and headers",
+        "Authentication mechanisms (basic, token, OAuth)",
+        "Constructing and interpreting API requests and responses",
+        "Rate limiting, pagination, and error handling",
+        "Webhooks and common API tools (Postman, curl, requests)"
+      ]
+    },
+    {
+      "category": "Cisco Platforms and Development (15%)",
+      "items": [
+        "Cisco DNA Center, Meraki, and ACI APIs",
+        "Cisco Webex, Umbrella, and security platform APIs",
+        "Model-driven programmability (NETCONF, RESTCONF, YANG)",
+        "Network device APIs and configuration management",
+        "Cisco SDKs and the DevNet ecosystem"
+      ]
+    },
+    {
+      "category": "Application Deployment and Security (15%)",
+      "items": [
+        "Deployment models: on-premises, private, public, and hybrid cloud",
+        "Containers and Docker fundamentals",
+        "CI/CD pipelines and DevOps concepts",
+        "Application security and the OWASP Top 10",
+        "Bug fixing, debugging, and logging"
+      ]
+    },
+    {
+      "category": "Infrastructure and Automation (20%)",
+      "items": [
+        "Controller-based vs device-level network management",
+        "Infrastructure as code and automation tools (Ansible, Puppet, Chef)",
+        "Automating configuration with APIs and scripts",
+        "CI/CD for network automation",
+        "Interpreting basic automation scripts and their outcomes"
+      ]
+    },
+    {
+      "category": "Network Fundamentals (15%)",
+      "items": [
+        "IP addressing, subnets, and common protocols",
+        "Networking devices: switches, routers, firewalls, load balancers",
+        "OSI and TCP/IP models",
+        "Network troubleshooting basics relevant to automation",
+        "How automation interacts with the data, control, and management planes"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Download the official 200-901 exam topics",
+      "description": "Get the official CCNAAUTO (200-901) exam topics from the Cisco Learning Network. The six domains and their weightings are your roadmap—review them before buying anything so you study what the exam actually tests."
+    },
+    {
+      "step": 2,
+      "title": "Get comfortable with Python basics",
+      "description": "The software development and API domains assume working Python: variables, data structures, functions, and the requests library. If you've never coded, start here. A free course like Kirk Byers' Python for Network Engineers is aimed squarely at this audience."
+    },
+    {
+      "step": 3,
+      "title": "Work through a primary video course",
+      "description": "Choose one comprehensive 200-901 course and complete it end to end. A full DevNet Associate / CCNA Automation course on Udemy covers all six domains with code walkthroughs. See the paid resources section for options."
+    },
+    {
+      "step": 4,
+      "title": "Read the official cert guide",
+      "description": "The Cisco Press DEVASC 200-901 Official Cert Guide is the Cisco-approved book for this exam. Use its 'Do I Know This Already?' quizzes and exam-prep tasks to find and close gaps in the API, platform, and automation chapters."
+    },
+    {
+      "step": 5,
+      "title": "Practice hands-on with Cisco DevNet",
+      "description": "This exam rewards real reps. Use the free Cisco DevNet Learning Labs and always-on Sandbox to call real Cisco platform APIs (DNA Center, Meraki, ACI). Practice REST calls in Postman and write small Python scripts that hit those APIs."
+    },
+    {
+      "step": 6,
+      "title": "Build small automation projects",
+      "description": "Reinforce the concepts by automating something concrete: pull device inventory via an API, push a config change with a script, or parse JSON/YAML output. Hands-on projects make the infrastructure-and-automation questions intuitive instead of abstract."
+    },
+    {
+      "step": 7,
+      "title": "Take timed practice exams",
+      "description": "Once you've covered all six domains, work through practice exams under timed conditions. Aim to score consistently above 85% before booking. Review every wrong answer until you understand the concept, not just the right option."
+    },
+    {
+      "step": 8,
+      "title": "Schedule and sit the exam",
+      "description": "Register through Pearson VUE and take the 120-minute exam at a test center or online proctored. Book about two weeks out to set a firm deadline. Get comfortable reading short code and API snippets quickly—several questions hinge on that."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "Cisco 200-901 CCNAAUTO Exam Topics (Official)",
+      "url": "https://learningnetwork.cisco.com/s/ccnaauto-exam-topics",
+      "type": "Official Documentation",
+      "note": "The official exam blueprint with all six domains and their weightings. This is your study roadmap—start here."
+    },
+    {
+      "name": "Cisco DevNet – Learning Labs & Sandbox",
+      "url": "https://developer.cisco.com/",
+      "type": "Hands-on Labs",
+      "note": "Cisco's free developer platform. The Learning Labs and always-on Sandbox let you call real Cisco platform APIs—the single best free resource for this exam."
+    },
+    {
+      "name": "Postman Learning Center",
+      "url": "https://learning.postman.com/",
+      "type": "Hands-on Labs",
+      "note": "Free, practical lessons on REST APIs, authentication, and requests. APIs are 20% of the exam—Postman is the standard tool for learning them hands-on."
+    },
+    {
+      "name": "Kirk Byers – Python for Network Engineers",
+      "url": "https://pynet.twb-tech.com/",
+      "type": "Video Course",
+      "note": "A free, well-known course teaching Python specifically for networking automation. Ideal for building the coding foundation the exam assumes."
+    },
+    {
+      "name": "r/devnet on Reddit",
+      "url": "https://www.reddit.com/r/devnet/",
+      "type": "Community",
+      "note": "Active community for DevNet / CCNA Automation candidates. Recent exam-experience posts are useful for understanding the current question style."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Udemy – DevNet Associate / CCNA Automation (200-901) Course",
+      "type": "Video Course",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Most candidates – full video coverage of all six 200-901 domains with code and API walkthroughs",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcisco-certified-devnet-associate-devasc-200-901%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_devnet_complete_course",
+      "affiliate": true,
+      "note": "A complete DevNet Associate (now CCNA Automation) course aligned to the 200-901 blueprint. Frequently on sale—check for current pricing."
+    },
+    {
+      "provider": "Udemy – DevNet Associate (200-901) Practice Tests",
+      "type": "Practice Exams",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Final exam preparation with realistic, domain-by-domain practice questions",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcisco-devnet-associate-devasc-200-901-practice-tests%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_devnet_practice",
+      "affiliate": true,
+      "note": "Buy separately if you already have a course. Useful for gauging readiness before booking the real exam."
+    },
+    {
+      "provider": "Cisco Press – DevNet Associate DEVASC 200-901 Official Cert Guide",
+      "type": "Book",
+      "price": "~$45–$60",
+      "best_for": "Candidates who want the definitive written reference—the Cisco-approved official guide for the 200-901 exam",
+      "affiliate_url": "https://www.amazon.com/dp/0136642969/?tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_devnet_cert_guide",
+      "affiliate": true,
+      "note": "Thorough and exam-aligned (the exam was renamed CCNA Automation but the 200-901 content is the same). Best used alongside hands-on DevNet labs rather than alone."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Buy 200-901 Exam Voucher – Cisco Official",
+      "url": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/list.html",
+      "note": "The 200-901 exam is $300 USD at standard pricing and is scheduled through Pearson VUE. Always verify current pricing on the official Cisco site before purchasing."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is CCNA Automation the same as DevNet Associate?",
+      "answer": "Yes. As part of Cisco's 2026 certification rebrand, the Cisco Certified DevNet Associate was renamed CCNA Automation. The exam code (200-901) and core content are the same—only the name and some branding changed. You'll see both names used interchangeably for a while, and the DevNet developer platform itself keeps the DevNet name."
+    },
+    {
+      "question": "Do I need to know how to code or program in Python?",
+      "answer": "Some Python is essential. The software development and API domains assume you can read and write basic Python—variables, data structures, functions, and the requests library. You don't need to be a software engineer, but a complete non-coder should budget extra time to build that foundation first."
+    },
+    {
+      "question": "Is CCNA Automation good for beginners?",
+      "answer": "It's beginner-friendly for the automation path but assumes some networking and coding comfort. People with a networking background (CCNA-level) who are new to automation are the ideal audience. True beginners can do it, but should expect to learn networking basics and Python alongside the exam material."
+    },
+    {
+      "question": "How hard is the 200-901 exam?",
+      "answer": "It's a genuine associate-level exam that spans two worlds—networking and software. The breadth is the challenge: you need working knowledge of Python, REST APIs, Cisco platform APIs, containers, CI/CD, and automation tools. Hands-on practice with the free Cisco DevNet labs makes a big difference."
+    },
+    {
+      "question": "How long does it take to study for CCNA Automation?",
+      "answer": "Most candidates spend 2 to 4 months part-time. Those who already code or have DevOps experience may be ready in 6 to 8 weeks; networking pros new to programming should plan for the longer end while they build Python and API skills."
+    },
+    {
+      "question": "Do I need CCNA (networking) first?",
+      "answer": "Not formally, and there's no prerequisite. But networking knowledge helps—the Network Fundamentals and Infrastructure and Automation domains assume you understand how networks work. Many people take CCNA first, then CCNA Automation to add programmability."
+    },
+    {
+      "question": "What certification comes after CCNA Automation?",
+      "answer": "The natural Cisco progression is CCNP Automation (formerly DevNet Professional). Many automation engineers also branch into cloud (AWS, Azure), DevOps tooling, and infrastructure-as-code as they specialize."
+    },
+    {
+      "question": "Does CCNA Automation expire?",
+      "answer": "Yes. Like all Cisco associate certifications, it's valid for three years. Renew it by passing another Cisco exam, earning Continuing Education credits through the Cisco CE program, or achieving a higher-level Cisco certification before it expires."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "Cisco CCNA",
+      "slug": "ccna",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The networking foundation that makes the Network Fundamentals and Infrastructure and Automation domains far easier. Most CCNA Automation candidates have CCNA-level knowledge first."
+    },
+    {
+      "title": "CCNA Cybersecurity",
+      "slug": "ccna-cybersecurity",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The third Cisco associate cert (formerly CyberOps Associate). A different specialization—security operations—for networking pros choosing between an automation and a security path."
+    },
+    {
+      "title": "AWS Solutions Architect Associate",
+      "slug": "aws-saa",
+      "vendor": "AWS",
+      "vendor_slug": "aws",
+      "reason": "Cloud infrastructure and APIs overlap heavily with network automation. A strong complement for engineers moving toward infrastructure-as-code and hybrid-cloud automation."
+    }
+  ],
+  "seo_title": "CCNA Automation 200-901 (DevNet Associate) Study Guide | CertBlueprint",
+  "seo_description": "Complete CCNA Automation (200-901, formerly DevNet Associate) guide: who it's for, network automation salary, exam domains, APIs and Python, study path, free and paid resources, and FAQ."
+}

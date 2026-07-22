@@ -1,0 +1,242 @@
+{
+  "title": "CompTIA Network+ N10-009 Study Guide",
+  "slug": "network-plus",
+  "short_name": "Network+",
+  "vendor": "CompTIA",
+  "vendor_slug": "comptia",
+  "level": "Associate",
+  "description": "CompTIA Network+ (N10-009) is the leading vendor-neutral networking certification. It validates the ability to design, configure, manage, and troubleshoot wired and wireless networks across any platform. Widely recognized for help desk and junior network roles, and a common prerequisite for security certifications.",
+  "audience": "IT support staff moving into networking, help desk technicians seeking a formal networking credential, and career changers who want a vendor-neutral foundation before specializing in Cisco, security, or cloud.",
+  "why_get_it": "Network+ is the most recognized vendor-neutral networking certification available. Unlike CCNA, which is Cisco-specific, Network+ knowledge applies across vendors—Cisco, Juniper, HP, Palo Alto, and cloud networking alike. It covers a broad foundation: network topologies, TCP/IP, routing and switching concepts, wireless, security, and troubleshooting methodology. For IT support professionals, it demonstrates competence beyond basic helpdesk skills. For career changers, it provides structured knowledge that accelerates understanding of any IT environment. It is also a natural prerequisite for CompTIA Security+ and other security certifications, as many of the concepts tested in security exams assume solid networking knowledge.",
+  "when_to_get_it": "Get Network+ if you want a vendor-neutral networking credential that applies broadly across IT roles. It is often the right move before Security+ or before committing to a vendor-specific track like Cisco. If you already know you want Cisco networking specifically, CCNA may be the better direct path. Network+ and CCNA are not the same certification—Network+ is broader and shallower; CCNA is narrower and deeper. Many professionals hold both.",
+  "salary_range": "$55,000 – $80,000",
+  "salary_note": "Network+ holders in junior network technician and IT support roles typically earn $55K–$70K. With experience and additional certs (CCNA, Security+), salaries commonly reach $75K–$95K. The cert is frequently a stepping stone rather than a destination—the salary jump comes when it is paired with experience or higher certs.",
+  "exam_code": "N10-009",
+  "exam_duration": "90 minutes",
+  "exam_format": "Multiple choice, drag-and-drop, and performance-based questions. Maximum 90 questions.",
+  "exam_questions": "Up to 90 questions (CompTIA does not publish exact count)",
+  "official_url": "https://www.comptia.org/en-us/certifications/network/",
+  "official_pricing_url": "https://store.comptia.org/",
+  "recertification_note": "Network+ is valid for 3 years. Renew by earning 30 CEUs through CompTIA's Continuing Education program, or by passing a higher-level CompTIA exam before expiration.",
+  "skills_covered": [
+    {
+      "category": "Networking Concepts",
+      "items": [
+        "OSI and TCP/IP models in depth",
+        "IP addressing and subnetting (IPv4 and IPv6)",
+        "Common ports and protocols (DNS, DHCP, HTTP/S, FTP, SSH)",
+        "Network topologies (star, mesh, bus, ring)",
+        "Routing concepts and protocols (static routes, RIP, OSPF concepts)"
+      ]
+    },
+    {
+      "category": "Network Infrastructure",
+      "items": [
+        "Switching and VLANs",
+        "Wireless standards (802.11a/b/g/n/ac/ax)",
+        "WAN technologies and connectivity (MPLS, fiber, broadband)",
+        "Network hardware: routers, switches, firewalls, access points",
+        "Virtual networking and cloud network concepts"
+      ]
+    },
+    {
+      "category": "Network Operations",
+      "items": [
+        "Network monitoring tools and methodologies",
+        "Log management and network documentation",
+        "Change management and configuration management basics",
+        "Backup, recovery, and high availability concepts",
+        "Remote access technologies (VPN, RDP, SSH)"
+      ]
+    },
+    {
+      "category": "Network Security",
+      "items": [
+        "Common network attacks (DDoS, man-in-the-middle, spoofing)",
+        "Firewalls, IDS/IPS, and DMZ configurations",
+        "Network access control and port security",
+        "Wireless security protocols (WPA2/WPA3)",
+        "Physical security and network hardening"
+      ]
+    },
+    {
+      "category": "Network Troubleshooting",
+      "items": [
+        "Structured troubleshooting methodology",
+        "Cabling and physical layer issues",
+        "Wireless connectivity troubleshooting",
+        "Network diagnostic tools (ping, traceroute, nslookup, netstat)",
+        "Common routing and switching problems"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Review the official exam objectives",
+      "description": "Download the N10-009 exam objectives from CompTIA's website. The current version was updated to reflect modern networking realities including cloud and automation concepts. Map your existing knowledge against the objectives to identify where you need the most work."
+    },
+    {
+      "step": 2,
+      "title": "Study networking fundamentals first",
+      "description": "If IP addressing and the OSI model are not already solid, start there. Subnetting in particular needs to be reliable under exam pressure. Use free subnet calculators to check your work, but learn to do it manually—the exam includes questions where understanding the process matters."
+    },
+    {
+      "step": 3,
+      "title": "Work through a full course",
+      "description": "Professor Messer's free Network+ course covers every objective and is the go-to resource for most candidates. Jason Dion's Udemy course is a strong paid alternative with scenario practice and performance-based question prep. Complete your chosen course before taking practice exams."
+    },
+    {
+      "step": 4,
+      "title": "Build hands-on skills with a home lab or simulator",
+      "description": "Network+ includes performance-based questions that require practical knowledge. Cisco Packet Tracer (free) or GNS3 let you practice configuring switches, setting up VLANs, and tracing connectivity issues. Even 30 minutes of hands-on time per study session significantly improves retention."
+    },
+    {
+      "step": 5,
+      "title": "Take full-length practice exams",
+      "description": "Jason Dion's and Total Seminars' Udemy practice tests are widely regarded as the most accurate available. Take your first practice exam after completing your course, identify weak domains, review those topics, then take additional exams until you are scoring 80%+ consistently."
+    },
+    {
+      "step": 6,
+      "title": "Schedule and sit the exam",
+      "description": "Book through Pearson VUE. Performance-based questions appear first—budget extra time for them and do not get stuck. If a PBQ is unclear, flag it and return after completing the multiple choice section. The exam is 90 minutes; time management matters."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "Professor Messer – N10-009 Network+ Course (Free)",
+      "url": "https://www.professormesser.com/network-plus/n10-009/n10-009-video/n10-009-training-course/",
+      "type": "Video Course",
+      "note": "The most widely used free Network+ resource. Clear, objective-aligned, and updated for N10-009. A reliable study backbone for most candidates."
+    },
+    {
+      "name": "CompTIA Network+ Exam Objectives (N10-009)",
+      "url": "https://www.comptia.org/en-us/certifications/network/",
+      "type": "Official Documentation",
+      "note": "Download the official objectives PDF. This is the authoritative guide to what is and is not on the exam."
+    },
+    {
+      "name": "Cisco Packet Tracer",
+      "url": "https://www.netacad.com/courses/packet-tracer",
+      "type": "Lab Tool",
+      "note": "Free network simulation tool from Cisco. Requires a free Networking Academy account. Excellent for practicing subnetting, VLANs, and routing concepts."
+    },
+    {
+      "name": "r/CompTIA on Reddit",
+      "url": "https://www.reddit.com/r/CompTIA/",
+      "type": "Community",
+      "note": "Read recent exam pass posts for insight into what current candidates faced on test day."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Udemy – Jason Dion Network+ (N10-009) Full Course",
+      "type": "Video Course",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Most candidates – full N10-009 video coverage with scenario practice and PBQ prep",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomptia-network-009%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_network_plus_dion_course",
+      "affiliate": true,
+      "note": "Jason Dion's N10-009 course is one of the most enrolled Network+ courses on Udemy, with a downloadable study guide and practice exam included. Frequently on sale."
+    },
+    {
+      "provider": "Total Seminars – CompTIA Network+ (N10-009) Practice Exams",
+      "type": "Practice Exams",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Final exam preparation with full-length N10-009 practice tests from a different question bank than your course",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomptia-networkplus-practice-exams%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_network_plus_total_practice",
+      "affiliate": true,
+      "note": "The TOTAL: CompTIA Network+ practice exams (Mike Meyers' Total Seminars team). A second question bank to confirm readiness before booking."
+    },
+    {
+      "provider": "Mike Meyers – CompTIA Network+ All-in-One Exam Guide (McGraw-Hill)",
+      "type": "Book",
+      "price": "~$40–$55",
+      "best_for": "Candidates who prefer reading, or want a comprehensive written reference alongside video content",
+      "affiliate_url": "https://www.amazon.com/dp/0981621732/?tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_network_plus_meyers_book",
+      "affiliate": true,
+      "note": "The All-in-One series is the most complete single-volume Network+ reference available. Detailed without being inaccessible."
+    },
+    {
+      "provider": "Klein Tools RJ45 Cable Tester + Crimper Kit (Amazon)",
+      "type": "Lab Hardware",
+      "price": "~$60",
+      "best_for": "Hands-on practice terminating, crimping, and testing real Ethernet cable — the physical-layer skills Network+ actually tests",
+      "affiliate_url": "https://www.amazon.com/dp/B09TPLNBQ2/?tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_network_plus_klein_kit",
+      "affiliate": true,
+      "note": "Optional but valuable. Network+ covers cabling standards and termination; practicing on real RJ45 connectors makes those topics stick."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Buy Network+ Exam Voucher – CompTIA Store",
+      "url": "https://store.comptia.org/",
+      "note": "Verify current pricing on CompTIA's official store. Bundle options with retake insurance are worth considering for first-time test-takers."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is Network+ harder than A+?",
+      "answer": "Yes, generally. Network+ goes deeper into networking concepts, requires more subnetting knowledge, and includes performance-based questions that require practical skill. A+ is broader across IT support topics but less depth per topic. Most candidates find Network+ the step up in rigor."
+    },
+    {
+      "question": "Should I get Network+ or CCNA?",
+      "answer": "Depends on your goal. If you want to work specifically in enterprise networking with Cisco equipment, CCNA is the stronger credential and goes deeper. If you want vendor-neutral knowledge or a stepping stone to security certifications, Network+ is the right choice. Many professionals hold both."
+    },
+    {
+      "question": "How long does it take to study for Network+?",
+      "answer": "Most candidates spend 6 to 10 weeks studying part-time. Candidates with existing networking or IT experience may be ready in 4 to 6 weeks. Those new to IT should plan for 8 to 12 weeks and invest time in hands-on practice, not just video watching."
+    },
+    {
+      "question": "What jobs does Network+ qualify me for?",
+      "answer": "Network Technician, IT Support Specialist, Help Desk Analyst (with networking focus), Junior Network Administrator, and NOC Technician roles frequently list Network+ as a requirement or strong preference. It also satisfies a baseline for many government IT roles."
+    },
+    {
+      "question": "Is Network+ enough to get a job in networking?",
+      "answer": "It helps significantly, but pairing it with hands-on experience—even a home lab—improves your odds considerably. The cert gets you through resume filters; the interview requires demonstrated competence. Network+ plus Cisco Packet Tracer lab work is a strong entry-level combination."
+    },
+    {
+      "question": "What is the passing score for Network+?",
+      "answer": "The passing score for N10-009 is 720 on a scale of 100 to 900. CompTIA uses scaled scoring."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CompTIA Security+",
+      "slug": "security-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "The most common next step after Network+. Security concepts build directly on the networking foundation Network+ establishes."
+    },
+    {
+      "title": "Cisco CCNA",
+      "slug": "ccna",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "A vendor-specific alternative or follow-on. CCNA goes deeper into enterprise networking than Network+."
+    },
+    {
+      "title": "AWS Solutions Architect Associate",
+      "slug": "aws-saa",
+      "vendor": "AWS",
+      "vendor_slug": "aws",
+      "reason": "For Network+ holders targeting cloud infrastructure roles, AWS SAA is a valuable next credential."
+    },
+    {
+      "title": "CompTIA A+",
+      "slug": "a-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "The foundational IT support cert. Many people take A+ before Network+ in the classic A+ → Network+ → Security+ path."
+    }
+  ],
+  "seo_title": "CompTIA Network+ (N10-009) Study Guide – Exam Details, Study Plan, Resources | CertBlueprint",
+  "seo_description": "Complete CompTIA Network+ N10-009 guide: who it's for, salary expectations, exam breakdown, step-by-step study plan, free and paid resources, and FAQ."
+}

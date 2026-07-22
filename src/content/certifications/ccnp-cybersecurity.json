@@ -1,0 +1,236 @@
+{
+  "title": "Cisco CCNP Cybersecurity Study Guide",
+  "slug": "ccnp-cybersecurity",
+  "short_name": "CCNP Cybersecurity",
+  "vendor": "Cisco",
+  "vendor_slug": "cisco",
+  "level": "Professional",
+  "former_name": "CyberOps Professional",
+  "description": "CCNP Cybersecurity is Cisco's SOC-operations professional certification — the renamed CyberOps Professional (February 2026): the CBRCOR core plus a forensics or threat-hunting concentration. It's the defender-analyst track: incident response, forensic analysis, and hunting — and it is NOT CCNP Security, which is a different cert about building firewalls. That confusion wastes careers; this guide won't let it.",
+  "audience": "Working SOC analysts stepping toward senior-analyst, incident-response, and threat-hunting roles — people who already live in SIEMs and want the professional credential for the operations side. Assumes CCNA Cybersecurity-level knowledge (or equivalent SOC experience), not beginner status.",
+  "why_get_it": "It's the only Cisco professional cert aimed squarely at the SOC chair: CBRCOR covers fundamentals, techniques, processes, and automation of security operations, and the two concentrations certify the highest-value analyst specializations — forensics/IR (CBRFIR) or threat hunting (CBRTHD). Every exam passed earns a standalone Specialist credential. The honest scope note: this track's ecosystem is thinner than CCNP Security's — fewer job postings name it explicitly, and third-party study material is sparse. Its value is strongest for analysts in Cisco-tooling SOCs and as a structured skill ladder; for pure HR-filter power, CySA+ and eventually CISSP still dominate the operations lane. Pair, don't substitute.",
+  "when_to_get_it": "After a year or two of real SOC work, when CCNA Cybersecurity-level material feels like Monday morning rather than a challenge. The rename matters for your study materials: this was CyberOps Professional until February 3, 2026 — exams and content are unchanged (350-201 CBRCOR, 300-215 CBRFIR, 300-220 CBRTHD), so 'CyberOps Professional' books and courses remain valid; they just wear the old name. And decide the fork honestly first: if what you actually want is to BUILD security infrastructure — firewalls, ISE, VPNs — stop and read our CCNP Security guide instead.",
+  "salary_range": "$90,000 – $130,000 (senior SOC / IR analysts)",
+  "salary_note": "No cert-specific salary data exists for this track — anchor to the role instead: BLS puts Information Security Analysts at a $124,910 median (May 2024) — but that category spans the whole security-analyst field and skews above SOC-specific pay. Senior SOC, incident-response, and threat-hunting seats typically land $90–130K in U.S. markets, with federal/cleared work above that. Directional, third-party, and role-driven — the cert signals readiness for the senior tier; it doesn't create it.",
+  "exam_code": "350-201 CBRCOR + 1 concentration",
+  "exam_duration": "CBRCOR: 120 minutes · concentration: 90 minutes",
+  "exam_format": "Two proctored exams at Pearson VUE (test center or OnVUE): the CBRCOR core plus one of two concentrations. Multiple-choice and scenario items; counts and passing scores not published. Results in ~48 hours.",
+  "exam_questions": "Not published by Cisco",
+  "exam_structure": [
+    {
+      "code": "350-201 CBRCOR",
+      "name": "Performing Cybersecurity Using Cisco Security Technologies",
+      "role": "Core exam — required",
+      "price": "$400",
+      "note": "Security-operations fundamentals, techniques, processes, and automation. Earns a Specialist credential on its own. Unchanged by the Feb 2026 rename."
+    },
+    {
+      "code": "300-215 CBRFIR",
+      "name": "Conducting Forensic Analysis and Incident Response Using Cisco Technologies for Cybersecurity",
+      "role": "Concentration — choose one",
+      "price": "$300",
+      "note": "The forensics/IR lane — evidence handling, artifact analysis, response process at professional depth."
+    },
+    {
+      "code": "300-220 CBRTHD",
+      "name": "Conducting Threat Hunting and Defending Using Cisco Technologies for Cybersecurity",
+      "role": "Concentration — choose one",
+      "price": "$300",
+      "note": "The threat-hunting lane — hypothesis-driven hunting, adversary techniques, detection engineering."
+    }
+  ],
+  "official_url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/cybersecurity/ccnp-cybersecurity/index.html",
+  "official_pricing_url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/cybersecurity/ccnp-cybersecurity/index.html",
+  "recertification_note": "3-year cycle, 80 CE credits on the unified ledger: CBRCOR re-pass = 80 CE, a concentration = 40, Cisco U training counts, excess rolls over. Taking the second concentration next cycle is the natural renewal — and completes your coverage of both analyst specializations.",
+  "last_verified": "July 2026",
+  "skills_covered": [
+    {
+      "category": "Security Operations at Professional Depth (CBRCOR)",
+      "items": [
+        "SOC processes, playbooks, and metrics beyond the tier-1 view",
+        "Advanced monitoring: correlating across network, endpoint, and identity telemetry",
+        "Risk assessment and asset context in triage decisions",
+        "Cisco security stack integration as the SOC sees it",
+        "Automation of security operations — SOAR concepts and scripting"
+      ]
+    },
+    {
+      "category": "Forensics & Incident Response (CBRFIR lane)",
+      "items": [
+        "Evidence collection and handling that survives scrutiny",
+        "Host and memory artifact analysis fundamentals",
+        "Malware behavior analysis at the analyst (not reverse-engineer) level",
+        "The response lifecycle run properly: contain, eradicate, recover, learn",
+        "Writing findings the legal and leadership layers can act on"
+      ]
+    },
+    {
+      "category": "Threat Hunting & Detection (CBRTHD lane)",
+      "items": [
+        "Hypothesis-driven hunting — starting from adversary behavior, not alerts",
+        "MITRE ATT&CK as a working tool rather than a poster",
+        "Detection engineering: turning hunt findings into durable coverage",
+        "Threat intelligence application at the operational level",
+        "The proactive muscle that separates senior analysts from alert-clickers"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Confirm the fork: operations, not engineering",
+      "description": "Thirty seconds that saves a year, in the other direction this time: CCNP Cybersecurity = SOC operations (triage, forensics, hunting). CCNP Security = building the security infrastructure. If firewalls and ISE are the pull, switch guides now. If SIEMs and incidents are home, you're in the right place."
+    },
+    {
+      "step": 2,
+      "title": "Use the rename to your advantage when buying materials",
+      "description": "The Feb 2026 rename changed names, not content — so 'CyberOps Professional' and 'CBRCOR' books, courses, and question banks remain fully valid, and some sell at old-name discounts. Third-party material for this track is thin either way; the official CLN exam-topics pages and Cisco U carry most of the load."
+    },
+    {
+      "step": 3,
+      "title": "Build CBRCOR on your daily work plus the blueprint",
+      "description": "The core rewards working analysts: map every blueprint topic to something you've actually done, and lab the gaps. Cisco U's paths cover it officially; the free CLN study groups fill the discussion void where Reddit-scale communities don't exist for this track."
+    },
+    {
+      "step": 4,
+      "title": "Lab the analyst stack free",
+      "description": "Cisco's free DevNet sandboxes (Secure Firewall, XDR APIs) plus TryHackMe's SOC and DFIR paths give hands-on reps for both concentration lanes. Splunk's free tier and Security Onion round out a zero-cost professional-depth lab."
+    },
+    {
+      "step": 5,
+      "title": "Pick the concentration by the chair you want",
+      "description": "CBRFIR if incident response and forensics is the destination — the more common senior-analyst road. CBRTHD if proactive hunting and detection engineering pulls you — rarer skills, increasingly demanded. Either passes alone earns a Specialist credential; the second one makes a natural recert cycle later."
+    },
+    {
+      "step": 6,
+      "title": "Sit both exams while momentum holds",
+      "description": "CBRCOR ($400, 120 min), then the concentration ($300, 90 min) — no lab exam at this tier. Results in ~48 hours each. The professional cert completes on the second pass."
+    },
+    {
+      "step": 7,
+      "title": "Stack the vendor-neutral layer for the filters",
+      "description": "The blunt truth about the SOC hiring lane: CySA+ and (later) CISSP dominate the HR filters this cert doesn't reach. CCNP Cybersecurity proves professional-depth operations skill; pair it with the neutral credentials that get the resume opened. Our CySA+ and CISSP guides cover both — and the SOC Analyst path shows the whole ladder."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "Official CBRCOR Exam Topics (Cisco Learning Network)",
+      "url": "https://learningnetwork.cisco.com/s/cbrcor-exam-topics",
+      "type": "Official Documentation",
+      "note": "The authoritative core blueprint — with this track's thin third-party ecosystem, the official topic list matters more than usual."
+    },
+    {
+      "name": "Cisco DevNet Sandboxes (Security)",
+      "url": "https://developer.cisco.com/site/sandbox/",
+      "type": "Hands-on Labs",
+      "note": "Free reservable Cisco security product environments — the stack CBRCOR assumes you can operate."
+    },
+    {
+      "name": "TryHackMe – SOC & DFIR Paths",
+      "url": "https://tryhackme.com/",
+      "type": "Hands-on Labs",
+      "note": "The practical reps for both concentration lanes — forensics rooms for CBRFIR, hunting rooms for CBRTHD."
+    },
+    {
+      "name": "MITRE ATT&CK",
+      "url": "https://attack.mitre.org/",
+      "type": "Reference",
+      "note": "The framework CBRTHD hunting methodology stands on — free and canonical."
+    },
+    {
+      "name": "Cisco Learning Network Cybersecurity Community",
+      "url": "https://learningnetwork.cisco.com",
+      "type": "Community",
+      "note": "The official study groups — this track's main discussion venue, given its smaller candidate pool."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Cisco U. (Essentials / All Access)",
+      "type": "Official Training",
+      "price": "~$1,800/yr Essentials · ~$6,000/yr All Access (list — verify current)",
+      "best_for": "The primary structured prep for this track — official paths for CBRCOR and both concentrations, with CE credits on completion",
+      "affiliate_url": "https://u.cisco.com/",
+      "affiliate_label": "View Cisco U",
+      "affiliate_event": "ciscou_ccnp_cyber",
+      "affiliate": false,
+      "note": "Plain reference link. With thin third-party coverage, official training carries more of the load here than in other tracks — employer funding or Learning Credits recommended."
+    },
+    {
+      "provider": "Cisco Press – CyberOps-era Official Cert Guides",
+      "type": "Book",
+      "price": "~$50–$70",
+      "best_for": "The CBRCOR core text — still sold under the CyberOps Professional name; content remains valid post-rename",
+      "affiliate_url": "https://www.amazon.com/s?k=CBRCOR+350-201+Official+Cert+Guide&tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_cbrcor_ocg",
+      "affiliate": true,
+      "note": "Check publication dates against the current blueprint — the rename didn't change content, but editions vary."
+    },
+    {
+      "provider": "TryHackMe Premium",
+      "type": "Hands-on Labs",
+      "price": "~$14/month",
+      "best_for": "Guided DFIR and hunting paths that map to the concentration skills — cheaper than any formal course for the hands-on layer",
+      "affiliate_url": "https://tryhackme.com/",
+      "affiliate_label": "View TryHackMe",
+      "affiliate_event": "tryhackme_ccnp_cyber",
+      "affiliate": false,
+      "note": "Plain reference link."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Book via Pearson VUE ($400 core + $300 concentration)",
+      "url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/cybersecurity/ccnp-cybersecurity/index.html",
+      "note": "$700 minimum for the pair. SOCs running Cisco tooling usually sit inside companies holding Cisco Learning Credits — ask before self-funding."
+    }
+  ],
+  "faq": [
+    {
+      "question": "CCNP Cybersecurity vs CCNP Security — settle it once.",
+      "answer": "Different careers wearing similar names. CCNP Cybersecurity (this guide, formerly CyberOps Professional) is the SOC-OPERATIONS track: triage, incident response, forensics, threat hunting — the defender-analyst chair. CCNP Security is the ENGINEERING track: building and running firewalls, ISE, and VPN/SSE. Cisco's February 2026 renames made this collision worse, not better — pick by the chair, not the name."
+    },
+    {
+      "question": "Is my old CyberOps Professional study material still valid?",
+      "answer": "Yes, fully — the February 2026 change renamed the certification but left exams and content untouched: same 350-201 CBRCOR core, same CBRFIR/CBRTHD concentrations, same blueprints. Books and courses wearing the old name remain accurate; existing CyberOps Professional holders were migrated automatically."
+    },
+    {
+      "question": "Which concentration — forensics or threat hunting?",
+      "answer": "CBRFIR (forensics/IR) is the more common senior-analyst road and maps to incident-responder roles directly. CBRTHD (threat hunting) certifies rarer, increasingly demanded proactive skills — hypothesis-driven hunting and detection engineering. Honest tiebreaker: pick the one your current SOC actually lets you practice; the other makes a perfect recertification cycle in three years."
+    },
+    {
+      "question": "Does this cert get me past HR filters?",
+      "answer": "Less than it should, honestly. Fewer postings name it than name CySA+ or CISSP in the operations lane, and its recognition concentrates in Cisco-tooling SOCs. Its real value is professional-depth skill validation and internal advancement. The winning stack for the SOC ladder: CySA+ for the filters, this for the depth, CISSP when the experience years arrive — our SOC Analyst path maps the whole road."
+    },
+    {
+      "question": "How does it renew?",
+      "answer": "3-year cycle, 80 CE credits on Cisco's unified ledger — a CBRCOR re-pass covers it alone (80 CE), or take the concentration you skipped (40 CE) plus modest training credits. The two-concentration route has the nice side effect of certifying both analyst specializations."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CCNA Cybersecurity",
+      "slug": "ccna-cybersecurity",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The assumed foundation — the associate-tier SOC cert (formerly CyberOps Associate) this track builds directly upon."
+    },
+    {
+      "title": "CompTIA CySA+",
+      "slug": "cysa-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "The vendor-neutral analyst cert that dominates the HR filters this track doesn't reach — pair them, don't choose."
+    },
+    {
+      "title": "CCNP Security",
+      "slug": "ccnp-security",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The name-twin that's actually a different career — the engineering side. Read both intros before committing a year."
+    }
+  ],
+  "seo_title": "Cisco CCNP Cybersecurity Study Guide – the SOC Professional Track (ex-CyberOps) | CertBlueprint",
+  "seo_description": "Complete CCNP Cybersecurity guide: CBRCOR core, forensics vs threat-hunting concentrations, the CCNP-Security name-collision explained, and the honest HR-filter reality."
+}

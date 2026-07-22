@@ -1,0 +1,295 @@
+{
+  "title": "Cisco CCNA 200-301 Study Guide",
+  "slug": "ccna",
+  "vendor": "Cisco",
+  "vendor_slug": "cisco",
+  "level": "Associate",
+  "description": "The Cisco Certified Network Associate (CCNA) is the foundational networking certification from Cisco. It validates the ability to install, configure, operate, and troubleshoot small to medium-sized networks.",
+  "audience": "IT beginners with some computer literacy, help desk technicians moving into networking, and career changers targeting infrastructure or network engineering roles.",
+  "why_get_it": "CCNA establishes credibility in networking. It demonstrates you understand how IP networks function—not just that you followed a tutorial. Employers use it as a baseline filter for network technician and junior engineer roles. The exam covers real-world skills: subnetting, routing protocols, switching, VLANs, security fundamentals, and network automation basics. It also satisfies a meaningful portion of the knowledge base needed for higher-level Cisco and non-Cisco certifications.",
+  "when_to_get_it": "Get CCNA if you want to work in networking, network security, or infrastructure. Get it early—it opens doors before you have work experience. If you already have 2+ years of hands-on networking experience and are targeting a senior role, you may consider going directly for CCNP. CompTIA Network+ is an alternative for those who want a more vendor-neutral foundation first.",
+  "salary_range": "$60,000 – $110,000",
+  "salary_note": "Entry-level roles—network technician, junior network engineer, and help-desk-to-networking transitions—typically start around $55K–$70K. With 2–3 years of hands-on experience, network engineer roles commonly reach $85K–$110K. Specializing in network automation or advancing to CCNP pushes compensation past $120K. Figures vary widely by region, employer, and the full scope of your skills.",
+  "exam_code": "200-301",
+  "exam_duration": "120 minutes",
+  "exam_format": "Multiple choice, drag-and-drop, and simulation questions. Approximately 100–120 questions. Version note: the current v1.1 exam has a last test date of Feb 2, 2027 — the refreshed 'new CCNA' v2.0 (adds AI topics, restructures to 5 domains) launches Feb 3, 2027 under the SAME 200-301 code. Testing in 2026? Study v1.1 materials confidently. Planning for mid-2027 or later? Wait for v2.0-aligned materials.",
+  "exam_questions": "100–120 questions (approximate; Cisco does not publish the exact count)",
+  "official_url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/enterprise/ccna/index.html",
+  "official_pricing_url": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/list.html",
+  "recertification_note": "CCNA is valid for 3 years. Renew by passing any Cisco exam, completing continuing education credits through the Cisco Continuing Education Program, or earning a higher-level Cisco certification.",
+  "skills_covered": [
+    {
+      "category": "Network Fundamentals",
+      "items": [
+        "OSI and TCP/IP models",
+        "IP addressing and subnetting (IPv4 and IPv6)",
+        "Ethernet and LAN switching basics",
+        "Wireless LAN fundamentals",
+        "Network topology types"
+      ]
+    },
+    {
+      "category": "IP Connectivity",
+      "items": [
+        "Static routing",
+        "OSPF (single area)",
+        "Default routes",
+        "IP routing concepts and forwarding decisions"
+      ]
+    },
+    {
+      "category": "IP Services",
+      "items": [
+        "NAT and PAT",
+        "DHCP",
+        "DNS",
+        "NTP",
+        "SNMP",
+        "Syslog",
+        "QoS concepts"
+      ]
+    },
+    {
+      "category": "Security Fundamentals",
+      "items": [
+        "VPN concepts",
+        "Access control lists (ACLs)",
+        "Layer 2 security (port security, DHCP snooping, dynamic ARP inspection)",
+        "AAA concepts",
+        "Wireless security protocols (WPA2, WPA3)"
+      ]
+    },
+    {
+      "category": "Automation and Programmability",
+      "items": [
+        "Network automation concepts",
+        "REST APIs",
+        "JSON data formats",
+        "Cisco DNA Center overview",
+        "SDN and controller-based networking concepts",
+        "Python scripting basics (conceptual)"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Understand the exam scope",
+      "description": "Download the official CCNA 200-301 exam topics from Cisco's website. Review every topic area before buying any course material. Knowing what the exam actually covers prevents wasted study time on irrelevant material."
+    },
+    {
+      "step": 2,
+      "title": "Learn networking fundamentals first",
+      "description": "If you are new to networking, start with the OSI model, IP addressing, and subnetting before touching a video course. Subnetting must become second nature before exam day. Use practice tools until you can subnet quickly without a calculator."
+    },
+    {
+      "step": 3,
+      "title": "Work through a primary video course",
+      "description": "Choose one comprehensive video course and work through it completely. Do not jump between multiple courses at the same time. Udemy instructors like Jeremy's IT Lab offer full CCNA courses that align directly with the exam topics. Watch, pause, and practice as you go."
+    },
+    {
+      "step": 4,
+      "title": "Read supporting material",
+      "description": "The official Cisco Press CCNA 200-301 Official Cert Guide (two-volume set) is the most thorough written resource. Use it alongside your video course to reinforce concepts, especially for topics that need more depth than video alone provides."
+    },
+    {
+      "step": 5,
+      "title": "Build hands-on lab skills",
+      "description": "Cisco Packet Tracer (free, requires a Cisco Networking Academy account) is the primary lab tool for most CCNA candidates. GNS3 and EVE-NG are alternatives for those who want closer-to-real-hardware simulation. Lab work is not optional—the exam includes simulation questions."
+    },
+    {
+      "step": 6,
+      "title": "Take practice exams",
+      "description": "Begin practice exams once you have covered all topics. Boson ExSim is widely considered the gold standard for CCNA practice tests. Aim to consistently score above 85% before scheduling your real exam. Review every wrong answer—understand why, not just what."
+    },
+    {
+      "step": 7,
+      "title": "Review weak areas systematically",
+      "description": "Use your practice exam results to identify weak areas. Return to your video course, notes, or the official cert guide for those specific topics. Repeat targeted practice until the weak areas become strengths."
+    },
+    {
+      "step": 8,
+      "title": "Schedule and sit the exam",
+      "description": "Schedule your exam through Pearson VUE. You can take it at a testing center or online proctored. Book about two weeks out to give yourself a clear deadline. The exam is 120 minutes. Arrive rested and do not cram the night before."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "Cisco CCNA Exam Topics (Official)",
+      "url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/enterprise/ccna/index.html",
+      "type": "Official Documentation",
+      "note": "Download the official exam topics PDF directly from Cisco. This is your study roadmap."
+    },
+    {
+      "name": "Jeremy's IT Lab – Full CCNA Course (YouTube)",
+      "url": "https://www.youtube.com/@JeremysITLab",
+      "type": "Video Course",
+      "note": "Free, comprehensive CCNA course on YouTube. Widely regarded as one of the best free CCNA resources available."
+    },
+    {
+      "name": "Cisco Packet Tracer",
+      "url": "https://www.netacad.com/courses/packet-tracer",
+      "type": "Lab Tool",
+      "note": "Free network simulation tool from Cisco. Requires a free Cisco Networking Academy account."
+    },
+    {
+      "name": "Cisco DevNet Learning Labs",
+      "url": "https://developer.cisco.com/learning/",
+      "type": "Hands-on Labs",
+      "note": "Free interactive labs covering automation and programmability topics on the CCNA exam."
+    },
+    {
+      "name": "r/ccna on Reddit",
+      "url": "https://www.reddit.com/r/ccna/",
+      "type": "Community",
+      "note": "Active study community. Search before posting—most common questions are already answered."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Udemy – Jeremy's IT Lab CCNA Course",
+      "type": "Video Course",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Most beginners and those who want the most thorough video-based coverage available",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomplete-networking-fundamentals-course-ccna-start%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_ccna_jeremys_it_lab",
+      "affiliate": true,
+      "note": "The premium version includes additional labs, flashcards, and quizzes beyond the free YouTube version. Frequently on sale."
+    },
+    {
+      "provider": "Udemy – David Bombal CCNA GNS3 Ultimate Labs",
+      "type": "Video Course + Labs",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Candidates who want strong hands-on lab coverage alongside video instruction",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcisco-ccna-gns3-ultimate-labs-ccna-exam-prep-labs-pass-your-exam%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_ccna_david_bombal",
+      "affiliate": true,
+      "note": "Includes GNS3 lab exercises. Good complement to Jeremy's IT Lab."
+    },
+    {
+      "provider": "Boson ExSim for CCNA",
+      "type": "Practice Exam Software",
+      "price": "~$99",
+      "best_for": "Serious exam preparation. The most accurate CCNA practice tests available.",
+      "affiliate_url": "https://www.boson.com/practice-exam/200-301-cisco-ccna-practice-exam",
+      "affiliate_label": "View Boson ExSim",
+      "affiliate_event": "boson_exsim_ccna",
+      "affiliate": false,
+      "note": "Not the cheapest option, but consistently cited by passing candidates as essential."
+    },
+    {
+      "provider": "Cisco Press Official Cert Guide (Vol 1 + 2)",
+      "type": "Book",
+      "price": "~$70–$90",
+      "best_for": "Candidates who want the definitive written reference aligned to exam topics",
+      "affiliate_url": "https://www.amazon.com/dp/0138221391/?tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_ccna_cert_guide",
+      "affiliate": true,
+      "note": "Thorough but dense. Best used alongside a video course, not as a standalone resource."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Buy CCNA Exam Voucher – Cisco Official",
+      "url": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/list.html",
+      "note": "Always verify current pricing on the official Cisco site before purchasing. Prices change periodically."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is CCNA good for beginners?",
+      "answer": "Yes, if you are serious about networking. It is not a trivial certification—expect 3 to 6 months of dedicated study. But it is designed as an entry-level credential and does not require prior IT experience to pass."
+    },
+    {
+      "question": "How long does it take to study for CCNA?",
+      "answer": "Most candidates spend 3 to 6 months studying part-time. Those with existing networking experience may prepare in 6 to 8 weeks. Those brand new to IT should plan for the longer end of that range."
+    },
+    {
+      "question": "How hard is the CCNA exam?",
+      "answer": "It is a legitimately challenging exam. The simulation questions require hands-on skill, not just memorization. Consistent study over several months, combined with lab practice and practice exams, is what separates passing candidates from failing ones."
+    },
+    {
+      "question": "What score do you need to pass CCNA?",
+      "answer": "Cisco uses a scaled scoring system with a maximum score of 1000. The passing score for CCNA 200-301 is 825. Cisco does not publish individual question weights."
+    },
+    {
+      "question": "Can I get a job with just CCNA?",
+      "answer": "Yes. CCNA is recognized by employers as a qualification for network technician, junior network engineer, and helpdesk-to-networking transition roles. Pairing it with hands-on homelab or real work experience significantly improves job prospects."
+    },
+    {
+      "question": "Is CompTIA Network+ better than CCNA?",
+      "answer": "They serve different goals. Network+ is vendor-neutral and broader; CCNA is vendor-specific and deeper. CCNA carries more weight in enterprise networking roles. Network+ is a reasonable first step if you want a gentler introduction before committing to CCNA."
+    },
+    {
+      "question": "What certification comes after CCNA?",
+      "answer": "The natural progression is CCNP Enterprise for networking roles, CCNP Security for security roles, or CCNA Automation (formerly Cisco DevNet Associate) for automation/programmability. The path depends on the direction you want to take your career."
+    },
+    {
+      "question": "Does CCNA expire?",
+      "answer": "Yes. CCNA is valid for three years. Renew it by passing any Cisco exam, completing Cisco Continuing Education credits, or earning a higher-level Cisco certification before the expiration date."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CCNA Cybersecurity",
+      "slug": "ccna-cybersecurity",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "Cisco's SOC-analyst credential (formerly CyberOps Associate). A natural next step for CCNA holders moving toward security operations—your networking foundation directly accelerates the intrusion-analysis domains."
+    },
+    {
+      "title": "CompTIA Network+",
+      "slug": "network-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "A vendor-neutral networking credential that pairs well with CCNA for candidates who want broader, platform-agnostic coverage."
+    },
+    {
+      "title": "CompTIA Security+",
+      "slug": "security-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "A strong follow-on for CCNA holders targeting network security or SOC analyst roles. DoD-approved and broadly recognized."
+    },
+    {
+      "title": "AWS Solutions Architect Associate",
+      "slug": "aws-saa",
+      "vendor": "AWS",
+      "vendor_slug": "aws",
+      "reason": "For CCNA candidates pivoting toward cloud infrastructure roles. CCNA networking fundamentals directly accelerate AWS VPC and hybrid connectivity study."
+    },
+    {
+      "title": "Microsoft AZ-104",
+      "slug": "az-104",
+      "vendor": "Microsoft",
+      "vendor_slug": "microsoft",
+      "reason": "Azure Administrator for networking professionals in Microsoft-heavy environments. CCNA knowledge applies directly to Azure VNet and hybrid networking."
+    },
+    {
+      "title": "CCNA Automation",
+      "slug": "ccna-automation",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "Cisco's network automation credential (formerly DevNet Associate). The natural next step for networking pros adding Python, APIs, and infrastructure-as-code skills."
+    },
+    {
+      "title": "CCNP Enterprise",
+      "slug": "ccnp-enterprise",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The next rung — ENCOR plus a concentration, once CCNA-level work is second nature. Our guide covers the v1.2 changes and concentration strategy."
+    },
+    {
+      "title": "Cisco CCST Networking",
+      "slug": "ccst-networking",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The $125 rung below — for students and budget starts who want a checkpoint before committing to CCNA."
+    }
+  ],
+  "seo_title": "Cisco CCNA 200-301 Study Guide – Resources, Study Path, Exam Details | CertBlueprint",
+  "seo_description": "Complete CCNA 200-301 guide: who it’s for, salary expectations, exam details, step-by-step study path, free and paid resources, skills covered, and FAQ."
+}

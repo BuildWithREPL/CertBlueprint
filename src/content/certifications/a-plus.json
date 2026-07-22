@@ -1,0 +1,244 @@
+{
+  "title": "CompTIA A+ (220-1201 & 220-1202) Study Guide",
+  "slug": "a-plus",
+  "short_name": "A+",
+  "vendor": "CompTIA",
+  "vendor_slug": "comptia",
+  "level": "Foundation",
+  "description": "CompTIA A+ is the recognized starting point for an IT career. It validates the core support skills employers expect for help desk, desktop support, and field technician roles. A+ is a two-exam certification: Core 1 (220-1201) and Core 2 (220-1202)—you must pass both.",
+  "audience": "Career changers entering IT, students, help desk and desktop support hopefuls, and anyone who wants the employer-recognized baseline for their first IT job. No prior experience required.",
+  "why_get_it": "A+ is the cert that gets you your first IT job. It is the most widely recognized entry-level IT credential, and it appears explicitly in a huge share of help desk, desktop support, and IT support postings. Unlike single-topic certs, A+ proves broad practical competence across hardware, operating systems, networking basics, security, and troubleshooting—exactly the mix a tier-1 support role demands. Because it is vendor-neutral, the skills travel with you regardless of the employer's stack. For someone with no IT work history, A+ is the clearest, most credible way to signal 'job-ready' to a hiring manager.",
+  "when_to_get_it": "Get A+ first if you're entering IT with little or no experience and want a support, help desk, or technician role. If you already have hands-on IT experience, you may be able to skip straight to Network+ or Security+—but A+ is rarely a wasted step, and it's a prerequisite mindset for the whole CompTIA path (A+ → Network+ → Security+). If your goal is purely networking or security and you have some background, weigh going directly to those instead.",
+  "exam_code": "220-1201 & 220-1202",
+  "exam_duration": "90 minutes per exam (two exams)",
+  "exam_format": "Up to 90 questions per exam: multiple choice, drag-and-drop, and performance-based. Passing scores: 675/900 (Core 1), 700/900 (Core 2). You must pass both.",
+  "exam_questions": "Up to 90 questions per exam",
+  "official_url": "https://www.comptia.org/en-us/certifications/a/",
+  "official_pricing_url": "https://www.comptia.org/en-us/certifications/a/",
+  "recertification_note": "A+ is valid for 3 years. Renew through CompTIA's Continuing Education (CE) program by earning CEUs, or by passing a higher-level CompTIA exam—no need to retake A+.",
+  "salary_range": "$40,000 – $65,000",
+  "salary_note": "A+ is a door-opener more than a salary driver. Entry-level help desk and IT support roles typically start around $40K–$55K. With 1–2 years of experience, desktop support and junior technician roles commonly reach $55K–$65K. A+ pays off most when paired with hands-on experience and stacked toward Network+ and Security+, which open higher-paying networking and security paths.",
+  "skills_covered": [
+    {
+      "category": "Core 1 (220-1201): Hardware (25%)",
+      "items": [
+        "Installing and configuring PC components, RAM, and storage",
+        "Power supplies, motherboards, CPUs, and cooling",
+        "Cables, connectors, and peripheral devices",
+        "Printers and multifunction device maintenance",
+        "Custom PC configurations for specific use cases"
+      ]
+    },
+    {
+      "category": "Core 1 (220-1201): Networking & Troubleshooting (51%)",
+      "items": [
+        "TCP/IP, ports, protocols, and IP addressing basics",
+        "Wireless standards, SOHO networks, and network hardware",
+        "Mobile device hardware and connectivity",
+        "Virtualization and cloud computing concepts",
+        "Troubleshooting hardware, networks, and printers methodically"
+      ]
+    },
+    {
+      "category": "Core 2 (220-1202): Operating Systems",
+      "items": [
+        "Windows installation, configuration, and command line",
+        "macOS and Linux fundamentals",
+        "Mobile OS configuration and management",
+        "Application installation and OS troubleshooting",
+        "Workstation and account management"
+      ]
+    },
+    {
+      "category": "Core 2 (220-1202): Security",
+      "items": [
+        "Physical and logical security measures",
+        "Malware detection, removal, and prevention",
+        "Securing workstations, mobile devices, and SOHO networks",
+        "Social engineering, threats, and vulnerabilities",
+        "Data destruction and disposal"
+      ]
+    },
+    {
+      "category": "Core 2 (220-1202): Software Troubleshooting & Operational Procedures",
+      "items": [
+        "Troubleshooting OS, application, and security issues",
+        "Documentation, change management, and ticketing",
+        "Safety, environmental, and disposal procedures",
+        "Communication, professionalism, and incident response basics",
+        "Scripting and remote-access technology fundamentals"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Download both sets of exam objectives",
+      "description": "Get the official 220-1201 (Core 1) and 220-1202 (Core 2) objectives from CompTIA. A+ is broad—knowing exactly what each exam covers keeps you from over-studying niche topics."
+    },
+    {
+      "step": 2,
+      "title": "Start with Professor Messer's free course",
+      "description": "Professor Messer's free A+ video series covers every objective for both exams. It's the most-recommended free starting point. Watch a section, then reinforce it before moving on."
+    },
+    {
+      "step": 3,
+      "title": "Add a structured paid course for depth",
+      "description": "A paid Core 1 and Core 2 course (for example, Jason Dion's on Udemy) adds labs, demos, and performance-based question (PBQ) practice that free videos don't fully cover. See the paid resources section."
+    },
+    {
+      "step": 4,
+      "title": "Get hands-on with real hardware and OSes",
+      "description": "A+ rewards practical familiarity. Take apart an old PC, install Windows and Linux in virtual machines, configure a home router. PBQs simulate real tasks—reps make them easy."
+    },
+    {
+      "step": 5,
+      "title": "Use a study guide as your reference",
+      "description": "Keep a comprehensive book (such as the Sybex A+ Complete Study Guide) on hand to go deeper on topics a video glosses over. Use it to fill gaps, not as your only resource."
+    },
+    {
+      "step": 6,
+      "title": "Drill performance-based questions",
+      "description": "Both exams include PBQs—simulations that ask you to perform a task. Practice them specifically. They carry more weight than a single multiple-choice question and trip up unprepared candidates."
+    },
+    {
+      "step": 7,
+      "title": "Take practice exams for each core",
+      "description": "Use full-length practice exams for Core 1 and Core 2 separately. Aim to score consistently above 85% on each before booking. Review every miss until you understand why."
+    },
+    {
+      "step": 8,
+      "title": "Schedule and pass both exams",
+      "description": "Register through Pearson VUE. Many candidates take Core 1 first, then Core 2 a few weeks later. You hold the certification only once both are passed—plan your booking accordingly."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "CompTIA A+ Exam Objectives (Official)",
+      "url": "https://www.comptia.org/en-us/certifications/a/",
+      "type": "Official Documentation",
+      "note": "The official objectives for both Core 1 (220-1201) and Core 2 (220-1202). Your study roadmap—download both."
+    },
+    {
+      "name": "Professor Messer's Free A+ Training",
+      "url": "https://www.professormesser.com/free-a-plus-training/",
+      "type": "Video Course",
+      "note": "A complete, free A+ video course covering every objective for both exams. The single most-recommended free A+ resource."
+    },
+    {
+      "name": "PowerCert Animated Videos (YouTube)",
+      "url": "https://www.youtube.com/@PowerCertAnimatedVideos",
+      "type": "Video Course",
+      "note": "Short animated explainers that make A+ hardware and networking concepts click. Great for visual learners."
+    },
+    {
+      "name": "ExamCompass – Free A+ Practice Questions",
+      "url": "https://www.examcompass.com/",
+      "type": "Practice Questions",
+      "note": "Free topic-by-topic practice questions for both A+ cores. Useful for finding weak areas before you pay for full practice exams."
+    },
+    {
+      "name": "r/CompTIA on Reddit",
+      "url": "https://www.reddit.com/r/CompTIA/",
+      "type": "Community",
+      "note": "Active community with study advice and recent A+ pass reports. Search before posting—most beginner questions are already answered."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Udemy – Jason Dion A+ Core 1 (220-1201) Course",
+      "type": "Video Course",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Core 1 prep – hardware, networking, mobile, virtualization, and troubleshooting with PBQ practice",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomptia-a-core-1%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_aplus_core1",
+      "affiliate": true,
+      "note": "Jason Dion's courses are scenario-focused and include practice exams. Pair with the free Professor Messer videos."
+    },
+    {
+      "provider": "Udemy – Jason Dion A+ Core 2 (220-1202) Course",
+      "type": "Video Course",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Core 2 prep – operating systems, security, software troubleshooting, and operational procedures",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomptia-a-core-2%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_aplus_core2",
+      "affiliate": true,
+      "note": "The companion to Core 1. Buy both—A+ requires passing both exams. Frequently discounted."
+    },
+    {
+      "provider": "CompTIA A+ Complete Study Guide, 2-Volume Set (Sybex)",
+      "type": "Book",
+      "price": "~$50–$70",
+      "best_for": "Candidates who want a thorough written reference covering both Core 1 (220-1201) and Core 2 (220-1202)",
+      "affiliate_url": "https://www.amazon.com/dp/1394330030/?tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_aplus_sybex_set",
+      "affiliate": true,
+      "note": "Docter & Buhagiar's two-volume Sybex set covers both exams with online practice. Best used alongside video courses."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Buy A+ Exam Vouchers – CompTIA Store",
+      "url": "https://www.comptia.org/en-us/certifications/a/",
+      "note": "Each A+ exam (Core 1 and Core 2) is $274 USD as of mid-2026 (CompTIA raised prices in June 2026), so both total roughly $548. CompTIA sometimes offers voucher + retake bundles—check the official store for current pricing."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is CompTIA A+ worth it for beginners?",
+      "answer": "Yes. A+ is the most recognized entry-level IT certification and is specifically requested in help desk and IT support job postings. For someone with no IT work history, it's the clearest way to prove you're job-ready to a hiring manager."
+    },
+    {
+      "question": "How many exams is CompTIA A+?",
+      "answer": "Two: Core 1 (220-1201) and Core 2 (220-1202). You must pass both to earn the certification. Most people take them a few weeks apart."
+    },
+    {
+      "question": "How much does the CompTIA A+ cost?",
+      "answer": "Each exam is $274 USD as of mid-2026, so both together total roughly $548. CompTIA occasionally bundles vouchers with retake insurance—check the official store before buying."
+    },
+    {
+      "question": "How long does it take to study for A+?",
+      "answer": "Most beginners spend 2 to 4 months part-time across both exams. Those with some hands-on PC experience may move faster. Hands-on practice with real hardware and operating systems matters as much as video courses."
+    },
+    {
+      "question": "Do I need experience before taking A+?",
+      "answer": "No formal experience is required. CompTIA suggests around 12 months of hands-on IT experience as a guideline, but many candidates pass through self-study and lab practice alone, with no prior job experience."
+    },
+    {
+      "question": "What certification should I get after A+?",
+      "answer": "Network+ is the usual next step for networking-focused roles, and Security+ for cybersecurity. The classic CompTIA path is A+ → Network+ → Security+. If you've found a specialty, you can branch from there."
+    },
+    {
+      "question": "Does CompTIA A+ expire?",
+      "answer": "Yes. A+ is valid for three years. Renew through CompTIA's Continuing Education program by earning CEUs or by passing a higher-level CompTIA exam—you don't have to retake A+."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CompTIA Network+",
+      "slug": "network-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "The standard next step after A+. Builds the networking depth that A+ only introduces, and opens networking-focused support and admin roles."
+    },
+    {
+      "title": "CompTIA Security+",
+      "slug": "security-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "The DoD-approved security baseline. The third step in the classic A+ → Network+ → Security+ path toward cybersecurity roles."
+    },
+    {
+      "title": "Cisco CCNA",
+      "slug": "ccna",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "For A+ holders who want to go deep on networking with the most recognized vendor-specific entry credential."
+    }
+  ],
+  "seo_title": "CompTIA A+ 220-1201 & 220-1202 Study Guide | CertBlueprint",
+  "seo_description": "Complete CompTIA A+ (220-1201 & 220-1202) guide: who it's for, IT support salary, both exams' domains, study path, free and paid resources, and FAQ."
+}

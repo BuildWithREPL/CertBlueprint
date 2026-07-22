@@ -1,0 +1,49 @@
+{
+  "title": "Microsoft",
+  "slug": "microsoft",
+  "overview": "Microsoft Azure is the second-largest cloud platform globally and the dominant choice in enterprise Microsoft-centric environments. Microsoft certifications validate skills across Azure infrastructure, security, development, and data. They are particularly strong for professionals in organizations already running Windows Server, Active Directory, and Microsoft 365.",
+  "why_vendor_matters": "Microsoft certifications have a unique advantage: they sit at the intersection of traditional enterprise IT and modern cloud. Organizations running on-premises Microsoft infrastructure are migrating to Azure in large numbers, creating strong demand for administrators who understand both environments. Microsoft's certification renewal model is also candidate-friendly—associate and expert certifications renew annually through a free online assessment, eliminating the need to re-pay for and re-take the full exam each renewal cycle. The breadth of the Microsoft ecosystem (Azure, Microsoft 365, Dynamics, Power Platform) means certified professionals have opportunities across multiple product areas.\n\nAzure is the second-largest cloud platform globally and the dominant choice in enterprise environments that are already standardized on Microsoft technology. For IT professionals who come from a Windows Server, Active Directory, or Exchange background, Azure is the natural progression: the concepts, the identity model, and the management paradigm are consistent. This is a meaningful study advantage that candidates without a Microsoft background do not have on AWS.\n\nAZ-104, the Azure Administrator Associate exam, is the core operational credential in the Microsoft certification path. It validates the ability to manage Azure identities and governance, implement and manage storage, deploy and manage compute resources, configure and manage virtual networking, and monitor and maintain Azure resources. These are the day-to-day skills of an Azure administrator—the person responsible for keeping cloud infrastructure running, secure, and cost-effective.\n\nMicrosoft's renewal model deserves special attention for candidates concerned about certification maintenance costs. Unlike AWS and Cisco, which require re-taking and re-paying for exams every three years, Microsoft associate and expert certifications (earned after June 2021) renew annually through a free online assessment on Microsoft Learn. You pay once for the initial exam and maintain the certification indefinitely through annual assessments at no additional cost—a significant long-term financial advantage.",
+  "certification_tracks": [
+    {
+      "name": "Azure Fundamentals",
+      "level": "Foundation",
+      "description": "AZ-900 provides a foundational overview of Azure services, pricing, and cloud concepts. Suitable for non-technical professionals or those completely new to Azure."
+    },
+    {
+      "name": "Azure Administration",
+      "level": "Associate",
+      "description": "AZ-104 Azure Administrator validates operational skills: managing identities, storage, virtual machines, networking, and monitoring. The core Azure operations credential."
+    },
+    {
+      "name": "Azure Architecture",
+      "level": "Expert",
+      "description": "AZ-305 Azure Solutions Architect Expert is the advanced design credential. Requires AZ-104 as a prerequisite and validates high-level architectural decision-making."
+    },
+    {
+      "name": "Azure Security and DevOps",
+      "level": "Associate to Expert",
+      "description": "AZ-500 (Security Engineer), AZ-400 (DevOps Engineer), and SC-series security certifications cover specialized Azure roles beyond administration."
+    }
+  ],
+  "featured_certs": ["az-900", "az-104", "sc-900"],
+  "faq": [
+    {
+      "question": "Which Microsoft Azure certification should I start with?",
+      "answer": "For technical professionals: AZ-104 Azure Administrator Associate. Skip AZ-900 unless you have no IT background. AZ-104 is the operational foundation that most advanced Azure certifications build on."
+    },
+    {
+      "question": "Do Microsoft certifications expire?",
+      "answer": "Microsoft Associate and Expert certifications (earned after June 2021) use an annual renewal model via Microsoft Learn. You complete a free renewal assessment each year to stay certified. There is no recurring exam fee—you only pay once for the initial exam."
+    },
+    {
+      "question": "Is Azure harder than AWS to learn?",
+      "answer": "They are comparable in complexity but different in focus areas. Azure aligns closely with Microsoft enterprise technologies (Active Directory, Windows Server, SQL Server), which makes it easier for Windows-background professionals. AWS has a broader global market share but Azure dominates in Microsoft-heavy enterprise environments."
+    },
+    {
+      "question": "What is the Azure Administrator exam price?",
+      "answer": "AZ-104 is $165 USD at standard pricing. Microsoft periodically offers free exam vouchers through Microsoft Learn challenge programs. Check the Microsoft Certification portal for current promotions before purchasing at full price."
+    }
+  ],
+  "seo_title": "Microsoft Azure Certifications – AZ-104, AZ-305 Study Guides | CertBlueprint",
+  "seo_description": "Microsoft Azure certification guides for AZ-104 Azure Administrator and beyond. Structured study paths, exam details, salary expectations, and resource recommendations."
+}

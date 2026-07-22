@@ -1,0 +1,225 @@
+{
+  "title": "Google Business Intelligence Certificate Guide",
+  "slug": "google-business-intelligence",
+  "short_name": "Google BI",
+  "vendor": "Google",
+  "vendor_slug": "google",
+  "level": "Intermediate",
+  "description": "The Google Business Intelligence Professional Certificate is the advanced, shortest Google data credential — about two months covering data modeling, ETL/ELT pipelines in BigQuery and Dataflow, and stakeholder dashboards in Tableau. It's the bridge from 'analyzing data' to 'building the systems that deliver it,' aimed at Data Analytics Certificate graduates.",
+  "audience": "Google Data Analytics Certificate grads formalizing the step up, and working analysts with solid SQL who want pipeline and modeling skills on top of reporting. Explicitly advanced: if you can't write a SQL JOIN yet, this isn't your entry point.",
+  "why_get_it": "BI analyst is where the Data & Analytics path's pay curve bends upward, and this is the cheapest structured route into its systems side: data models, pipelines, and dashboards built for decision-makers rather than one-off analyses. It's the shortest Google cert (~70 hours — one or two $49 billing cycles), its advanced audience actually finishes it, and the portfolio case studies are genuinely interview-usable. Know the honest quirk before enrolling: despite the Google name, it teaches Tableau — not Google's own Looker, and not Power BI, which dominates enterprise BI. That's why the smart sequence pairs this cert's pipeline fundamentals with Microsoft's PL-300 for the resume keyword.",
+  "when_to_get_it": "Right after the Data Analytics Certificate while the SQL is warm, or whenever your analyst work starts including 'can you build a dashboard the VP can use every week?' If you're choosing exactly one BI credential for job hunting, PL-300 is the stronger single line — this cert wins when used as the systems-thinking layer underneath it.",
+  "salary_range": "$60,000 – $80,000 (entry BI analyst)",
+  "salary_note": "Google's '$98,000+ median' is a Lightcast blend of the whole field — treat it as the mid-career ceiling. Entry reality: ZipRecruiter puts entry BI analysts at ~$80K average (middle band $54–100K), PayScale ~$80K overall. A realistic first BI offer for a career-switcher with this cert plus a portfolio runs $60–80K in most U.S. metros, higher in tech hubs — noticeably above general data-analyst entry, which is the point of the step up.",
+  "exam_code": "Coursera Certificate",
+  "exam_duration": "Self-paced — Google says under 2 months at 10 hrs/week (~70 hours of content); motivated learners with the assumed background finish in 3–6 weeks",
+  "exam_format": "No proctored exam. Four self-paced Coursera courses with auto-graded quizzes, 50+ practice assessments, and hands-on case studies building pipelines in BigQuery/Dataflow and dashboards in Tableau. No human feedback on projects — a fair criticism in reviews.",
+  "exam_questions": "No final exam — quizzes and portfolio case-study projects",
+  "official_url": "https://grow.google/certificates/business-intelligence/",
+  "official_pricing_url": "https://www.coursera.org/professional-certificates/google-business-intelligence",
+  "recertification_note": "Never expires — course-completion certificate with a permanent Credly badge. No exam-voucher pairing exists (no discounted PL-300 or Tableau exam), so budget the follow-on credential separately.",
+  "skills_covered": [
+    {
+      "category": "BI Foundations (Course 1)",
+      "items": [
+        "What BI professionals do — and how the role differs from data analyst",
+        "The BI lifecycle: from business question to monitored dashboard",
+        "Stakeholder requirements gathering that prevents rebuild churn",
+        "BI project planning and documentation",
+        "Key metrics, KPIs, and what makes a measurement useful"
+      ]
+    },
+    {
+      "category": "Data Models & Pipelines (Course 2)",
+      "items": [
+        "Data modeling: star schemas, snowflakes, and design tradeoffs",
+        "ETL vs ELT and when each pattern fits",
+        "Building pipelines with BigQuery and Dataflow",
+        "Data quality checks and pipeline monitoring",
+        "Optimizing databases for analysis rather than storage"
+      ]
+    },
+    {
+      "category": "Dashboards & Reporting (Course 3)",
+      "items": [
+        "Dashboard design that answers questions instead of decorating them",
+        "Tableau fundamentals: charts, filters, interactivity",
+        "Presenting to stakeholders and iterating on feedback",
+        "Automated reporting and refresh strategies",
+        "The case-study portfolio pieces that carry interviews"
+      ]
+    },
+    {
+      "category": "Assumed Foundation (from Data Analytics or equivalent)",
+      "items": [
+        "SQL including JOINs and aggregation — assumed fluent, not taught",
+        "Spreadsheet analysis and data cleaning",
+        "Data types, structures, and basic visualization",
+        "Basic programming concepts",
+        "If these are shaky, start with the Data Analytics Certificate instead"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Honestly audit your SQL first",
+      "description": "This program assumes you can write JOINs and aggregations without looking anything up. If that's not true yet, do the Data Analytics Certificate or Kaggle's free SQL micro-courses first — beginners who skip straight here consistently report being lost."
+    },
+    {
+      "step": 2,
+      "title": "Push to finish inside one billing cycle",
+      "description": "At ~70 hours, this is the shortest Google cert — 15–20 focused hours a week finishes it in one $49 month. Fast finishers have completed course one inside the 7-day free trial. The subscription clock is your friend here, not your enemy."
+    },
+    {
+      "step": 3,
+      "title": "Treat the pipeline course as the differentiator",
+      "description": "Course 2 (Data Models and Pipelines) is what separates this from every dashboard tutorial on YouTube — star schemas, ETL/ELT, BigQuery, Dataflow. It's also the material that reads as 'analytics engineering lite' on a resume. Go slow there."
+    },
+    {
+      "step": 4,
+      "title": "Build the case studies like client work",
+      "description": "The portfolio projects are the real product — a pipeline you can diagram and a dashboard you can defend. Interviewers will test your decisions ('why this schema? why this chart?'), so document the reasoning as you build, not after."
+    },
+    {
+      "step": 5,
+      "title": "Publish dashboards on Tableau Public",
+      "description": "A dashboard nobody can click is a screenshot. Publish your case-study work to Tableau Public and put the links on your resume — BI hiring managers actually open them, and the skills rot fast without a public portfolio forcing polish."
+    },
+    {
+      "step": 6,
+      "title": "Add PL-300 for the resume keyword",
+      "description": "Power BI dominates enterprise BI and ATS filters literally search 'PL-300' — a keyword this Tableau-based cert can't give you. Prep is free on Microsoft Learn; the exam is $165. This cert's pipeline fundamentals plus PL-300's tool credential is the strongest entry-BI stack going."
+    },
+    {
+      "step": 7,
+      "title": "Aim applications at the hybrid titles",
+      "description": "Search 'BI analyst,' 'reporting analyst,' 'analytics engineer (junior),' and 'data analyst II' — the step-up titles this stack fits. Lead every application with the portfolio links, not the badge list."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "Coursera Audit Mode + Financial Aid",
+      "url": "https://www.coursera.org/professional-certificates/google-business-intelligence",
+      "type": "Official Course Access",
+      "note": "Audit courses free (no graded work), or apply per-course financial aid — the 7-day trial alone covers course one for fast movers."
+    },
+    {
+      "name": "Microsoft Learn – PL-300 Path",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/data-analyst-associate/",
+      "type": "Free Official Prep",
+      "note": "Completely free prep for the competing Power BI credential — the resume keyword this cert lacks. You only ever pay the $165 exam."
+    },
+    {
+      "name": "Google Cloud Skills Boost",
+      "url": "https://www.skills.google/",
+      "type": "Hands-on Labs",
+      "note": "Free-tier BigQuery and Dataflow labs to keep the pipeline skills sharp after the guided exercises end."
+    },
+    {
+      "name": "Tableau Public",
+      "url": "https://public.tableau.com/",
+      "type": "Portfolio Platform",
+      "note": "The free tier where your case-study dashboards should live — clickable portfolio links beat badge lists in BI hiring."
+    },
+    {
+      "name": "Kaggle Learn – SQL Courses",
+      "url": "https://www.kaggle.com/learn",
+      "type": "Prerequisite Prep",
+      "note": "Free micro-courses to shore up the SQL this advanced cert assumes you already have."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Coursera – the certificate itself",
+      "type": "Subscription",
+      "price": "$49/month after 7-day trial (~$50–150 total)",
+      "best_for": "Data Analytics grads formalizing the move from analysis to pipelines and stakeholder dashboards",
+      "affiliate_url": "https://www.coursera.org/professional-certificates/google-business-intelligence",
+      "affiliate_label": "View on Coursera",
+      "affiliate_event": "coursera_google_bi",
+      "affiliate": false,
+      "note": "Plain reference link, no commission. Shortest Google cert — one focused month is realistic."
+    },
+    {
+      "provider": "Microsoft PL-300 exam (Pearson VUE)",
+      "type": "Certification Exam",
+      "price": "$165",
+      "best_for": "The stronger single resume line for U.S. BI-analyst openings — ATS filters search 'PL-300' by name and prep is free on Microsoft Learn",
+      "affiliate_url": "https://learn.microsoft.com/en-us/credentials/certifications/data-analyst-associate/",
+      "affiliate_label": "View PL-300",
+      "affiliate_event": "pl300_via_google_bi",
+      "affiliate": false,
+      "note": "See our full PL-300 guide — the intended pairing: this cert's pipeline fundamentals + PL-300's tool keyword."
+    },
+    {
+      "provider": "Udemy / Maven Analytics – Power BI or Tableau deep dives",
+      "type": "Video Course",
+      "price": "~$13–$40 (on sale)",
+      "best_for": "Deeper tool mastery than either cert provides — the Google cert's Tableau coverage is introductory",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3DPower%2520BI%2520PL-300",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_powerbi_via_google_bi",
+      "affiliate": true,
+      "note": "Buy on Udemy's routine sales. Pick the tool your target employers actually run — check their job postings first."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Enroll – Google Business Intelligence on Coursera",
+      "url": "https://www.coursera.org/professional-certificates/google-business-intelligence",
+      "note": "No exam voucher — Coursera subscription (~$49/month U.S. after a 7-day trial; financial aid available). Unlike the IT Support and Cybersecurity certs, no discounted follow-on exam is attached — budget PL-300's $165 separately if you take our recommended pairing."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Do I need the Google Data Analytics Certificate first?",
+      "answer": "Not formally — it's a standalone purchase — but functionally this is its sequel. Coursera's own page says it's designed for Data Analytics graduates or people with equivalent experience, and the content assumes fluent SQL and data-cleaning basics. Beginners who skip straight to it consistently report being lost. Equivalent working-analyst experience counts just as well as the cert."
+    },
+    {
+      "question": "Google BI Certificate or Microsoft PL-300 — which gets me hired?",
+      "answer": "For a single credential in U.S. BI hiring, PL-300 — Power BI dominates enterprise BI and applicant-tracking filters search the exam code by name. This cert wins on breadth (pipelines and modeling, not one tool), costs less, and has no exam to fail. The honest best play is both: Google BI for the systems fundamentals, PL-300 for the keyword — roughly $215–315 all-in combined."
+    },
+    {
+      "question": "Why does a Google certificate teach Tableau instead of Looker or Power BI?",
+      "answer": "Genuinely one of the odder facts about it: despite the Google brand, dashboards are taught in Tableau — Google's own Looker gets at most a passing mention, and Power BI (the market leader) isn't taught at all. The visualization principles transfer across tools, but if your target employers run Power BI, plan on PL-300 or a Power BI course to close the tool gap."
+    },
+    {
+      "question": "How long does it really take?",
+      "answer": "It's the shortest Google cert — about 70 hours. Google says under 2 months at 10 hours/week; the advanced, self-selected audience routinely finishes in 3–6 weeks, and fast movers have knocked out course one inside the free trial. One to two $49 billing cycles is the realistic budget."
+    },
+    {
+      "question": "Is it recognized by employers?",
+      "answer": "At tech and data-forward companies, yes as a positive signal; at smaller or less data-mature firms, expect near-zero brand pull. Everywhere, it signals initiative rather than proven competence — interviewers will test your SQL and dashboard reasoning regardless. The graduates who do well lead with the portfolio and treat the badge as the caption."
+    },
+    {
+      "question": "Does it expire, and is there college credit?",
+      "answer": "Never expires — permanent Credly badge. College credit: there's an ACE recommendation, but the sources disagree on the number (Coursera currently says up to 9 U.S. credits; grow.google has advertised 12) — verify with your institution before counting on a figure."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "Google Data Analytics Certificate",
+      "slug": "google-data-analytics",
+      "vendor": "Google",
+      "vendor_slug": "google",
+      "reason": "The functional prerequisite — this program assumes its SQL and data-cleaning foundation and picks up exactly where it ends."
+    },
+    {
+      "title": "Microsoft PL-300",
+      "slug": "pl-300",
+      "vendor": "Microsoft",
+      "vendor_slug": "microsoft",
+      "reason": "The intended pairing — the exam-backed Power BI keyword that U.S. BI job filters search, on top of this cert's pipeline fundamentals."
+    },
+    {
+      "title": "Google IT Automation with Python",
+      "slug": "google-it-automation",
+      "vendor": "Google",
+      "vendor_slug": "google",
+      "reason": "The scripting sibling — Python plus Git rounds out the pipeline skills here toward junior analytics-engineering territory."
+    }
+  ],
+  "seo_title": "Google Business Intelligence Certificate Review – Cost, vs PL-300, Worth It | CertBlueprint",
+  "seo_description": "Honest Google BI Certificate guide: the ~2-month program, BigQuery/Dataflow pipelines, the Tableau-not-Looker quirk, PL-300 pairing strategy, and entry BI salary reality."
+}

@@ -1,0 +1,200 @@
+{
+  "slug": "soc-analyst",
+  "role": "SOC Analyst",
+  "domain": "cybersecurity",
+  "specialization": "Security Operations",
+  "navigator_family": "Cybersecurity",
+  "tagline": "The front line of defense — watch for threats, triage alerts, and investigate what's really happening.",
+  "what_you_do": "You work in a Security Operations Center monitoring alerts from security tools, deciding which are real, and investigating incidents before they become breaches. It's methodical, evidence-driven work: read logs, correlate events, follow the incident-response playbook, and write up clear findings. It is real, growing, and well-paid — but almost never a first job. You reach it through a support, networking, or systems rung, which is why this roadmap starts by building that foundation.",
+  "day_in_life": [
+    "Work the alert queue — triage what the SIEM flagged overnight, dismiss the noise, escalate the real",
+    "Pivot through logs to reconstruct what a suspicious login actually did",
+    "Follow the incident-response runbook and document every step for the record",
+    "Tune a noisy detection rule so tomorrow's queue is cleaner",
+    "Hand off a confirmed incident with a clear written timeline"
+  ],
+  "entry_titles": [
+    "SOC Analyst I",
+    "Security Analyst",
+    "Incident Response Analyst (Jr)",
+    "GRC Analyst",
+    "IAM Analyst"
+  ],
+  "work_texture": {
+    "communication": 3,
+    "technical_depth": 3,
+    "troubleshooting": 3,
+    "customer": 2,
+    "on_call": 3,
+    "remote": 3
+  },
+  "salary": {
+    "median": "$124,910",
+    "entry": "SOC I ~$55,000–$75,000; GRC ~$60,000–$80,000 to start",
+    "growth": "+29% — one of the fastest-growing IT occupations",
+    "note": "U.S. BLS figure for Information Security Analysts (15-1212); BLS notes these roles typically require prior related experience, so treat the median as a mid-career number and verify against the live source."
+  },
+  "downsides": "'Entry-level' listings routinely demand 2–3 years, and the gate is crowded. SOC work is shift-based with alert fatigue. The honest route in is through help desk, networking, or sysadmin first — plan for that, don't fight it.",
+  "work_style": {
+    "fits_if": [
+      "You're investigative and like digging into a pile of clues",
+      "You have a protect-and-comply instinct",
+      "You're detail-oriented and calm under pressure"
+    ],
+    "less_ideal_if": [
+      "You want to skip the IT foundation and start in security directly",
+      "You dislike rules, procedure, and documentation",
+      "You want purely creative, build-from-scratch work"
+    ]
+  },
+  "skills": [
+    {
+      "name": "IT & networking fundamentals",
+      "level": "Foundational",
+      "note": "You can't defend what you don't understand — this is the prerequisite most beginners skip."
+    },
+    {
+      "name": "Operating systems & logging (Windows/Linux)",
+      "level": "Foundational"
+    },
+    {
+      "name": "Security concepts (CIA, controls, threats)",
+      "level": "Foundational"
+    },
+    {
+      "name": "Log analysis & SIEM basics",
+      "level": "Working",
+      "note": "Read events, correlate, spot the anomaly."
+    },
+    {
+      "name": "Incident response process",
+      "level": "Working"
+    },
+    {
+      "name": "Identity & access fundamentals (IAM)",
+      "level": "Working"
+    },
+    {
+      "name": "Scripting for security automation",
+      "level": "Emerging"
+    }
+  ],
+  "technologies": [
+    "SIEM (Splunk / Sentinel)",
+    "EDR",
+    "Windows Event Logs",
+    "Linux / syslog",
+    "MITRE ATT&CK",
+    "Okta / Entra ID"
+  ],
+  "certs": [
+    {
+      "title": "Google Cybersecurity Certificate",
+      "slug": "google-cybersecurity",
+      "vendor_slug": "google",
+      "stage": "Structured on-ramp",
+      "reason": "A zero-prerequisite curriculum (Linux, SQL, Python, SIEM concepts) — with 30% off Security+ on completion, feeding the gate directly."
+    },
+    {
+      "title": "Microsoft SC-900",
+      "slug": "sc-900",
+      "vendor_slug": "microsoft",
+      "stage": "Orientation",
+      "reason": "A gentle, low-cost first look at security, compliance, and identity concepts."
+    },
+    {
+      "title": "CompTIA Security+",
+      "slug": "security-plus",
+      "vendor_slug": "comptia",
+      "stage": "The gate",
+      "reason": "The recognized baseline security cert and a DoD 8570/8140 requirement — the one that gets you past filters."
+    },
+    {
+      "title": "CompTIA CySA+",
+      "slug": "cysa-plus",
+      "vendor_slug": "comptia",
+      "stage": "Level up",
+      "reason": "The defensive-analyst next step: threat detection and incident response for SOC roles."
+    },
+    {
+      "title": "CCNA Cybersecurity",
+      "slug": "ccna-cybersecurity",
+      "vendor_slug": "cisco",
+      "stage": "Level up (Cisco lane)",
+      "reason": "Cisco's SOC-analyst associate cert (formerly CyberOps Associate) — the alternative analyst rung, strongest in Cisco-tooling SOCs."
+    },
+    {
+      "title": "CCNP Cybersecurity",
+      "slug": "ccnp-cybersecurity",
+      "vendor_slug": "cisco",
+      "stage": "Professional tier",
+      "reason": "The SOC-operations professional cert (formerly CyberOps Professional) — forensics or threat-hunting depth between the analyst rungs and the summit."
+    },
+    {
+      "title": "ISC2 CISSP",
+      "slug": "cissp",
+      "vendor_slug": "isc2",
+      "stage": "The summit",
+      "reason": "The senior security credential — experience-gated (5 years), but the one management and federal roles ask for by name."
+    },
+    {
+      "title": "ISACA CISM",
+      "slug": "cism",
+      "vendor_slug": "isaca",
+      "stage": "The summit",
+      "reason": "The management-track summit: security governance, risk, and program leadership rather than hands-on defense."
+    }
+  ],
+  "trial": {
+    "objective": "Experience entry-adjacent security work: a methodical security review of your own accounts, written up as findings.",
+    "time": "60–90 minutes",
+    "cost": "Free",
+    "disclosure": "Fully local — review your own accounts only; nothing installed or transmitted."
+  },
+  "roadmap": [
+    {
+      "stage": "1",
+      "title": "Build the IT foundation",
+      "focus": "Get comfortable with networking and systems first (see the Network Administrator or IT Support paths). Security sits on top of this — skipping it is why most beginners stall.",
+      "cert_slug": "network-plus"
+    },
+    {
+      "stage": "2",
+      "title": "Orient with the concepts",
+      "focus": "Microsoft SC-900 gives you the vocabulary of security, compliance, and identity cheaply and quickly.",
+      "cert_slug": "sc-900"
+    },
+    {
+      "stage": "3",
+      "title": "Clear the gate",
+      "focus": "Earn CompTIA Security+ — the baseline credential that unlocks SOC and analyst roles (and federal eligibility). Practice hands-on labs on TryHackMe.",
+      "cert_slug": "security-plus"
+    },
+    {
+      "stage": "4",
+      "title": "Specialize into detection",
+      "focus": "CompTIA CySA+ for threat detection and incident response, or branch toward GRC/IAM — the more accessible security rungs.",
+      "cert_slug": "cysa-plus"
+    },
+    {
+      "stage": "5",
+      "title": "The senior tier (years in)",
+      "focus": "With ~5 years of experience, CISSP (technical-leadership breadth) or CISM (security management) become realistic — they're the credentials senior and federal postings name explicitly.",
+      "cert_slug": "cissp"
+    }
+  ],
+  "adjacent_paths": [
+    {
+      "role": "Network Administrator",
+      "slug": "network-administrator",
+      "reason": "The most common feeder into security — you defend networks, so you must understand them."
+    },
+    {
+      "role": "Cloud Engineer",
+      "slug": "cloud-engineer",
+      "reason": "Cloud security is a fast-growing specialization once you have a security base."
+    }
+  ],
+  "seo_title": "SOC Analyst Career Path — How to Break Into Cybersecurity | CertBlueprint",
+  "seo_description": "How to actually become a SOC Analyst: what the work feels like, the honest 'it's not entry-level' path in, a free weekend trial, salary reality, and the certification roadmap (SC-900 → Security+ → CySA+)."
+}

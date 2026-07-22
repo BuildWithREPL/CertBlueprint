@@ -1,0 +1,67 @@
+{
+  "title": "Cisco",
+  "slug": "cisco",
+  "overview": "Cisco is the global standard in enterprise networking. Their certifications validate real-world skills in routing, switching, security, automation, and cloud infrastructure—skills that employers actively hire for at every level. The ladder now genuinely starts at the ground floor: the $125 CCST entry certs for true beginners, then CCNA — still the most widely recognized associate-level networking credential in the industry — up through CCNP and the expert-tier CCIE and CCDE.",
+  "why_vendor_matters": "Cisco certifications carry weight because they are tied to the infrastructure that runs most enterprise networks. The majority of large organizations—financial institutions, healthcare systems, government agencies, telecommunications providers—rely on Cisco hardware and software for their core network infrastructure. When employers post networking roles, they typically list Cisco certifications explicitly because they want candidates who understand the actual equipment they will be managing.\n\nCCNA in particular is one of the most cited certifications in networking job postings at the associate and junior level. It covers foundational concepts—IP addressing, routing protocols, switching, security basics, and network automation—in enough depth that passing it demonstrates genuine competence, not just familiarity with vocabulary.\n\nCisco's certification structure is also well-defined. The progression from Associate to Professional to Expert gives candidates a clear, multi-year development path, and each step carries market value on its own. CCNP-level certifications are recognized in senior networking roles and often required by larger employers. CCIE, the expert-level credential, is held by a small percentage of networking professionals globally and commands some of the highest compensation in the field.\n\nThe curriculum is also broadly transferable. Even when professionals move to environments using Juniper, Palo Alto, or other vendors, the networking fundamentals instilled by Cisco certification remain directly applicable.",
+  "certification_tracks": [
+    {
+      "name": "Entry (CCST)",
+      "level": "Entry",
+      "description": "Three $125 Cisco Certified Support Technician exams — Networking, Cybersecurity, and IT Support — with free official NetAcad training and no prerequisites. The genuine pre-CCNA on-ramp; note CCSTs earned after July 15, 2025 are valid 5 years."
+    },
+    {
+      "name": "Associate",
+      "level": "Associate",
+      "description": "CCNA is the flagship associate-level credential. It covers networking fundamentals, IP connectivity, security basics, and automation. A strong foundation for any IT career path."
+    },
+    {
+      "name": "Professional",
+      "level": "Professional",
+      "description": "CCNP tracks exist for Enterprise, Security, Cybersecurity (the renamed CyberOps Professional), Data Center, Service Provider, Collaboration, Automation, and the new Wireless track (Mar 2026). Each requires a core exam plus one concentration exam — and every exam passed earns a standalone Specialist credential."
+    },
+    {
+      "name": "Specialist",
+      "level": "Specialist",
+      "description": "Specialist exams validate focused, role-specific skills without requiring a full professional certification. Good for targeted upskilling."
+    },
+    {
+      "name": "Expert",
+      "level": "Expert",
+      "description": "CCIE and CCDE are the pinnacle of Cisco certification. Both include a rigorous lab exam. Held by a small percentage of networking professionals worldwide."
+    }
+  ],
+  "featured_certs": [
+    "ccna",
+    "ccna-cybersecurity",
+    "ccna-automation",
+    "ccst-networking",
+    "ccst-cybersecurity",
+    "ccst-it-support",
+    "ccnp-enterprise",
+    "ccnp-security",
+    "ccnp-data-center",
+    "ccie-enterprise-infrastructure",
+    "ccie-security",
+    "ccde"
+  ],
+  "faq": [
+    {
+      "question": "Which Cisco certification should I get first?",
+      "answer": "For most people with any IT footing, CCNA — it remains the credential employers recognize and covers fundamentals that apply across every Cisco track. True beginners, students, and tight budgets have a real ground floor now: the $125 CCST exams (Networking, Cybersecurity, or IT Support) with free official training, designed as the first step toward CCNA."
+    },
+    {
+      "question": "Do Cisco certifications expire?",
+      "answer": "Mostly three years. CCNA and above are valid for 3 years, renewable by passing qualifying exams or earning Continuing Education credits — every exam pass now auto-awards CE credits on one unified ledger. The exception is the entry tier: CCSTs earned on or after July 15, 2025 are valid 5 years and renew only by passing another Cisco exam (CE credits don't apply there); CCSTs earned earlier never expire."
+    },
+    {
+      "question": "Is CCNA required before CCNP?",
+      "answer": "No. There is no formal prerequisite, but CCNA knowledge is assumed. Attempting CCNP without that foundation is significantly harder and not recommended."
+    },
+    {
+      "question": "How much do Cisco exams cost?",
+      "answer": "By tier: CCST entry exams are $125, CCNA and other associate exams are $300, CCNP core exams are $400 plus $300 per concentration, the CCDE written is $400–450 (Cisco's own pages currently disagree), and CCIE lab attempts run $1,600. All USD list prices — verify on the official Cisco page before booking, and ask your employer about Cisco Learning Credits first."
+    }
+  ],
+  "seo_title": "Cisco Certifications Guide – CCNA, CCNP, CCIE and More | CertBlueprint",
+  "seo_description": "Explore all Cisco certification tracks—CCNA, CCNP, CCIE, Automation, and Specialist paths. Find the right cert for your IT career and where to study."
+}

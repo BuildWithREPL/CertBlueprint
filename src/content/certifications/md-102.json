@@ -1,0 +1,230 @@
+{
+  "title": "Microsoft MD-102 Endpoint Administrator Study Guide",
+  "slug": "md-102",
+  "vendor": "Microsoft",
+  "vendor_slug": "microsoft",
+  "level": "Associate",
+  "short_name": "MD-102",
+  "former_name": "Modern Desktop Administrator Associate (MD-100/MD-101)",
+  "description": "MD-102 is the exam for the Microsoft 365 Certified: Endpoint Administrator Associate certification. It validates the skills to deploy, manage, and protect Windows clients and mobile devices at scale using Microsoft Intune, Windows Autopilot, Microsoft Entra ID, and Microsoft Defender for Endpoint. It replaced the older two-exam MD-100/MD-101 Modern Desktop Administrator track and is the standard credential for endpoint and Intune administrators.",
+  "audience": "Desktop support technicians and help desk staff moving into device management, Microsoft 365 administrators who own Intune in their tenant, and sysadmins shifting from on-premises imaging and Group Policy to cloud-based endpoint management.",
+  "why_get_it": "Endpoint management has consolidated around Microsoft Intune, and MD-102 is the credential that maps directly to that job. Organizations that run Microsoft 365 need people who can enroll and configure devices with Autopilot, enforce compliance and Conditional Access, push apps, manage Windows updates, and integrate Defender for Endpoint—exactly what this exam tests. It appears in job listings for Endpoint Administrator, Intune Administrator, Modern Workplace Engineer, and M365 Administrator roles. For desktop support professionals, it is the clearest documented step from break/fix ticket work into device management at scale, which is where the salary progression actually happens. Be realistic about what it is: MD-102 signals competence with a specific, widely deployed toolset. It carries the most weight when you can pair it with hands-on Intune experience—even lab experience in a trial tenant—rather than as a standalone line on a resume.",
+  "when_to_get_it": "Get MD-102 when you have some real IT support experience—typically 1–2 years on a help desk or desktop support team—and your organization (or target employers) run Microsoft 365 with Intune. It assumes working familiarity with Microsoft Entra ID and Windows administration, so complete beginners should start with CompTIA A+ or Microsoft MS-900 first. Timing note: the English version of the exam was updated on July 24, 2026, adding a fifth domain on automation, monitoring, and reporting (including Security Copilot agents in Intune). If you are studying now, make sure your materials match the current study guide on Microsoft Learn—older courses built for the four-domain outline will have gaps.",
+  "salary_range": "$60,000 – $95,000",
+  "salary_note": "Desktop support roles that MD-102 candidates typically come from pay $45K–$60K. Endpoint administrator and Intune administrator roles generally land in the $60K–$85K range, with experienced modern workplace and endpoint engineers reaching $90K–$115K+. The certification supports the transition, but hands-on Intune and Autopilot experience is what actually moves compensation—treat the cert as documentation of skills, not a substitute for them.",
+  "exam_code": "MD-102",
+  "exam_duration": "100 minutes",
+  "exam_format": "Multiple choice, case studies, and interactive question types. Proctored through Pearson VUE (test center or online). Passing score is 700 on a scale of 1000.",
+  "exam_questions": "Typically 40–60 questions (Microsoft does not publish an exact count)",
+  "official_url": "https://learn.microsoft.com/en-us/credentials/certifications/modern-desktop/",
+  "official_pricing_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/md-102/",
+  "recertification_note": "The Endpoint Administrator Associate certification is valid for 1 year. Renewal is free: pass an online, unproctored renewal assessment on Microsoft Learn, available starting six months before your certification expires. No exam fee, no retake pressure—but you do have to actually take it every year or the certification lapses.",
+  "skills_covered": [
+    {
+      "category": "Prepare Infrastructure for Devices (20–25%)",
+      "items": [
+        "Microsoft Entra join, registration, and device group management",
+        "Intune enrollment for Windows, macOS, iOS/iPadOS, and Android",
+        "Apple Business Manager and Android enterprise enrollment integration",
+        "Compliance policies and Conditional Access based on compliance status",
+        "Windows Hello for Business, Windows LAPS, and role-based administration"
+      ]
+    },
+    {
+      "category": "Manage and Maintain Devices (25–30%)",
+      "items": [
+        "Windows Autopilot deployment profiles, modes, and Enrollment Status Pages",
+        "Device configuration profiles across platforms, ADMX import, and Group Policy analytics",
+        "Windows 365 Cloud PC provisioning and Windows 11 upgrades via Intune",
+        "Intune Suite add-ons: Endpoint Privilege Management, Remote Help, Cloud PKI, Advanced Analytics",
+        "Remote actions: wipe, retire, BitLocker key rotation, and device query with KQL"
+      ]
+    },
+    {
+      "category": "Protect Devices (15–20%)",
+      "items": [
+        "Antivirus, disk encryption (BitLocker), and firewall policies via Intune",
+        "Attack surface reduction policies and security baselines",
+        "Microsoft Defender for Endpoint onboarding and EDR policy configuration",
+        "Update rings, feature and quality updates, Windows Autopatch and Hotpatch",
+        "Update policies for iOS/iPadOS, macOS, and Android devices"
+      ]
+    },
+    {
+      "category": "Manage and Secure Applications (15–20%)",
+      "items": [
+        "Deploying Win32, line-of-business, and Microsoft Store apps with Intune",
+        "Microsoft 365 Apps deployment, including during Autopilot provisioning",
+        "App protection policies for managed and BYOD devices",
+        "App configuration policies and Conditional Access for apps",
+        "Monitoring app deployment status and troubleshooting install failures"
+      ]
+    },
+    {
+      "category": "Automation, Monitoring, and Reporting (10–15%)",
+      "items": [
+        "Automating Intune tasks with PowerShell and Microsoft Graph",
+        "Security Copilot agents in Intune: threat investigation and recommendations",
+        "Endpoint Analytics: device health scores and proactive remediation scripts",
+        "Custom reports, workbooks, dashboards, and data export in Intune",
+        "Alerts for compliance drift, enrollment failures, and configuration conflicts"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Download the current MD-102 study guide",
+      "description": "Start with the official study guide on Microsoft Learn. This matters more than usual for MD-102: the exam was restructured on July 24, 2026 from four domains to five, adding automation, monitoring, and Security Copilot content. Verify any course you buy covers the current outline—plenty of material published for the older version is still being sold."
+    },
+    {
+      "step": 2,
+      "title": "Get a tenant you can break",
+      "description": "MD-102 is a hands-on exam about a hands-on job. Set up a Microsoft Intune trial tenant (or use a sandbox tenant at work if you have one) so you can actually enroll devices, build compliance policies, and run an Autopilot deployment. A Windows 11 VM or spare machine to enroll makes the labs real. Reading about the Intune admin center is not the same as clicking through it."
+    },
+    {
+      "step": 3,
+      "title": "Work through the free Microsoft Learn paths",
+      "description": "Microsoft publishes free self-paced learning paths mapped to the exam on the MD-102 exam page. They are dry but authoritative and free. Use them as your baseline, then add a video course if you want more structure and exam-focused framing."
+    },
+    {
+      "step": 4,
+      "title": "Drill the big three: enrollment, Autopilot, and compliance",
+      "description": "The heaviest-weighted domains are infrastructure preparation and device management. Know the enrollment paths for every platform (Windows automatic enrollment, Apple Business Manager, Android work profiles), the differences between Autopilot deployment modes, and how compliance policies feed Conditional Access. These distinctions—which join type, which enrollment method, which policy type—are exactly what the scenario questions test."
+    },
+    {
+      "step": 5,
+      "title": "Take the free official practice assessment",
+      "description": "Microsoft offers a free practice assessment for MD-102 on Microsoft Learn. Take it early to find your weak domains, not just at the end to feel good. Follow up with third-party practice exams under timed conditions and target consistent scores well above passing before you book."
+    },
+    {
+      "step": 6,
+      "title": "Close gaps with the Intune docs, not more videos",
+      "description": "When you miss practice questions, go to the Microsoft Intune documentation for that feature rather than rewatching course sections. The exam is written against product behavior, and the docs are where the details live—especially for newer areas like Endpoint Privilege Management, Windows Autopatch, and Endpoint Analytics."
+    },
+    {
+      "step": 7,
+      "title": "Schedule through Pearson VUE",
+      "description": "Book in-person or online proctored. You get 100 minutes; case-study and scenario questions cost more time than they look, so pace accordingly. If you fail, you can retake after 24 hours—the fee applies again, so use the free practice assessment to make sure the first attempt is the real one. Once you pass, set a calendar reminder: renewal is annual via a free online assessment."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "Official MD-102 Study Guide (Microsoft Learn)",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/md-102",
+      "type": "Official Documentation",
+      "note": "The definitive skills-measured list, including the change log for the July 24, 2026 exam update. Read this before buying anything."
+    },
+    {
+      "name": "Free MD-102 Practice Assessment (Microsoft Learn)",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/md-102/practice/assessment?assessment-type=practice&assessmentId=76",
+      "type": "Practice Exam",
+      "note": "Official, free, and matches the style and wording of real exam questions. Take it early to diagnose weak domains and again before booking."
+    },
+    {
+      "name": "Microsoft Certification Page – Endpoint Administrator Associate",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/modern-desktop/",
+      "type": "Official Documentation",
+      "note": "The certification landing page with free self-paced learning paths, the exam sandbox, scheduling, and renewal details."
+    },
+    {
+      "name": "Microsoft Intune Documentation",
+      "url": "https://learn.microsoft.com/en-us/mem/intune/",
+      "type": "Official Documentation",
+      "note": "The product docs the exam is written against. Use them to close gaps on specific features—enrollment, Autopilot, compliance, Intune Suite add-ons."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Udemy – MD-102 Endpoint Administrator Course with SIMS (John Christopher)",
+      "type": "Video Course",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Candidates who want a structured video course with hands-on simulations and lab walkthroughs of the Intune admin center",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fmd-100windows10course%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_md102_christopher_sims",
+      "affiliate": true,
+      "note": "Long-running, regularly updated MD-102 course with performance-based simulations. Confirm in the course description that it covers the July 2026 objective update before relying on it alone."
+    },
+    {
+      "provider": "Microsoft Press – Exam Ref MD-102 Microsoft Endpoint Administrator (2nd Edition)",
+      "type": "Book",
+      "price": "~$40–$50",
+      "best_for": "Candidates who prefer a written reference organized exactly by exam objective",
+      "affiliate_url": "https://www.microsoftpressstore.com/store/exam-ref-md-102-microsoft-endpoint-administrator-9780135417096",
+      "affiliate_label": "View on Microsoft Press",
+      "affiliate_event": "mspress_md102_exam_ref",
+      "affiliate": false,
+      "note": "The official Exam Ref line from Microsoft Press. Terse by design—best used alongside hands-on lab time, not as a standalone teach-yourself book."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Schedule Exam MD-102 – Microsoft Learn (Pearson VUE)",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/md-102/",
+      "note": "US price is $165; pricing varies by country and is confirmed at checkout on the official exam page. Register with a personal Microsoft account, not a work account—exam records tied to an employer account are lost if you leave."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is MD-102 worth it?",
+      "answer": "If you work in (or are targeting) an organization that runs Microsoft 365 with Intune, yes—it maps directly to the endpoint administrator job and appears in listings for Intune and modern workplace roles. If your environment is not a Microsoft shop, its value drops sharply. It is a role-specific credential, not a general-purpose one like Security+."
+    },
+    {
+      "question": "How hard is the MD-102 exam?",
+      "answer": "Moderate. It is harder than fundamentals exams like MS-900 because it tests applied product knowledge—which enrollment method, which policy type, which Autopilot mode for a given scenario. Candidates with real Intune experience typically prepare in 4–8 weeks; those coming from pure help desk backgrounds without Intune exposure should plan for 8–12 weeks including serious lab time."
+    },
+    {
+      "question": "Are there prerequisites for MD-102?",
+      "answer": "No formal prerequisites—you can sit the exam directly. Microsoft recommends experience with Microsoft Entra ID, Microsoft 365, and Windows client administration. In practice, trying MD-102 with zero Intune hands-on experience is the most common failure mode; a trial tenant fixes that cheaply."
+    },
+    {
+      "question": "How much does MD-102 cost?",
+      "answer": "The US price is $165, and pricing varies by country or region—confirm on the official exam page when scheduling. If you fail, you can retake after 24 hours, paying the fee again each attempt. Microsoft periodically offers Exam Replay bundles that include a retake; check the deals page before buying."
+    },
+    {
+      "question": "How long is the certification valid?",
+      "answer": "One year. Renewal is free: an online, unproctored assessment on Microsoft Learn, available starting six months before expiration. This is easier than recertifying with most vendors, but it does mean an annual commitment—miss it and the certification expires."
+    },
+    {
+      "question": "What changed in the July 2026 exam update?",
+      "answer": "On July 24, 2026, the English exam moved from four domains to five. A new domain—Optimize endpoint operations by using automation, monitoring, and reporting (10–15%)—covers PowerShell and Microsoft Graph automation, Security Copilot agents in Intune, and Endpoint Analytics. 'Manage applications' became 'Manage and secure applications,' and enrollment and deployment objectives were reworked. Localized exam versions update roughly eight weeks after English. Study from the current study guide."
+    },
+    {
+      "question": "What jobs can I get with MD-102?",
+      "answer": "Endpoint Administrator, Intune Administrator, Modern Workplace Engineer, Desktop Engineer, and Microsoft 365 Administrator roles are the direct targets. For current desktop support staff, it is a lever for moving into device management rather than an immediate salary jump—the pay increase comes with the role change, and the role change usually requires demonstrable Intune skills, not just the badge."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "Microsoft MS-900",
+      "slug": "ms-900",
+      "vendor": "Microsoft",
+      "vendor_slug": "microsoft",
+      "reason": "The Microsoft 365 fundamentals cert—a gentler starting point if MD-102's assumed Entra ID and M365 knowledge is not there yet."
+    },
+    {
+      "title": "Microsoft SC-900",
+      "slug": "sc-900",
+      "vendor": "Microsoft",
+      "vendor_slug": "microsoft",
+      "reason": "Security and identity fundamentals that underpin MD-102's compliance, Conditional Access, and Defender for Endpoint content."
+    },
+    {
+      "title": "Microsoft AZ-104",
+      "slug": "az-104",
+      "vendor": "Microsoft",
+      "vendor_slug": "microsoft",
+      "reason": "The natural expansion from endpoint administration into broader Azure infrastructure administration."
+    },
+    {
+      "title": "CompTIA A+",
+      "slug": "a-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "The standard entry point for the desktop support roles that feed into endpoint administration—get it before MD-102 if you are starting from scratch."
+    }
+  ],
+  "seo_title": "Microsoft MD-102 Endpoint Administrator Study Guide – Exam Details, Study Plan, Resources | CertBlueprint",
+  "seo_description": "Complete Microsoft MD-102 Endpoint Administrator guide: exam details, Intune and Autopilot skills, salary expectations, step-by-step study plan, and FAQ."
+}

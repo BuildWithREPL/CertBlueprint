@@ -1,0 +1,168 @@
+{
+  "slug": "it-project-coordinator",
+  "role": "IT Project Coordinator",
+  "domain": "business-project",
+  "specialization": "Project Coordination / Business Analysis",
+  "navigator_family": "Business, Project & Technical Communication",
+  "tagline": "The person who keeps tech projects moving — schedules, scope, stakeholders, and the notes everyone actually reads.",
+  "what_you_do": "You keep IT projects on track without writing the code yourself. Day to day you coordinate schedules and dependencies, gather and document what the business actually needs, translate between technical teams and everyone else, chase down blockers, and run the meetings — standups, planning, retros — that keep work visible. It's one of the few genuine non-coder first roles in tech: employers hire coordinators and junior business analysts for organization and communication, then teach them the domain.",
+  "day_in_life": [
+    "Run the morning standup and capture blockers before they become slipped deadlines",
+    "Sit with a business stakeholder to pin down what 'the report should be faster' actually means, then write it up as requirements",
+    "Update the project plan after a vendor delay and walk the team through what moves",
+    "Translate a developer's technical constraint into plain language for the steering committee",
+    "Chase three people for the sign-offs the project can't proceed without"
+  ],
+  "entry_titles": [
+    "IT Project Coordinator",
+    "Junior Business Analyst",
+    "Project Administrator",
+    "Scrum Team Coordinator",
+    "PMO Analyst"
+  ],
+  "work_texture": {
+    "communication": 4,
+    "technical_depth": 2,
+    "troubleshooting": 2,
+    "customer": 3,
+    "on_call": 1,
+    "remote": 3
+  },
+  "salary": {
+    "median": "$100,750",
+    "entry": "~$59,830 to start — coordinator and junior BA roles sit at the bottom of the range",
+    "growth": "+6% for project specialists; the analyst track (median $103,790) is growing faster at +9%",
+    "note": "U.S. BLS figures for Project Management Specialists (13-1082) and Computer Systems Analysts (15-1211); a median is the midpoint of everyone employed, so entry pay runs well below it. Verify against the live BLS pages before deciding."
+  },
+  "downsides": "You carry responsibility for the deadline without authority over the people who can miss it. Herding stakeholders, absorbing scope creep, and translating for both sides all day is genuinely tiring — and when a project slips, the coordinator is the visible face of it. Early roles can be heavy on note-taking and chasing before you earn real ownership.",
+  "work_style": {
+    "fits_if": [
+      "You're naturally organized and people trust you to follow through",
+      "You like talking to people all day and turning conversations into structure",
+      "You want into tech without making coding your job"
+    ],
+    "less_ideal_if": [
+      "You want deep, heads-down technical work with minimal meetings",
+      "Chasing people for updates would drain you",
+      "You need clear authority to feel effective — this role runs on influence"
+    ]
+  },
+  "skills": [
+    {
+      "name": "Written and verbal communication",
+      "level": "Foundational",
+      "note": "The core tool of the job — clear notes, clear asks, clear status."
+    },
+    {
+      "name": "Organization & scheduling",
+      "level": "Foundational",
+      "note": "Dependencies, milestones, and who's waiting on whom."
+    },
+    {
+      "name": "Requirements elicitation & documentation",
+      "level": "Working",
+      "note": "Asking the questions that turn a vague wish into something a team can build."
+    },
+    {
+      "name": "Agile & waterfall fundamentals",
+      "level": "Working",
+      "note": "Enough to run ceremonies and know which method fits which project."
+    },
+    {
+      "name": "Stakeholder management",
+      "level": "Working"
+    },
+    {
+      "name": "Tooling fluency (task trackers, spreadsheets, docs)",
+      "level": "Working"
+    },
+    {
+      "name": "Data literacy (SQL basics, reading dashboards)",
+      "level": "Emerging",
+      "note": "What separates coordinators from analysts — and raises your ceiling."
+    }
+  ],
+  "technologies": [
+    "Jira / Azure DevOps",
+    "Confluence / SharePoint",
+    "Microsoft 365 / Google Workspace",
+    "Excel / Google Sheets",
+    "Miro / Visio",
+    "Smartsheet / MS Project",
+    "Slack / Teams"
+  ],
+  "certs": [
+    {
+      "title": "Google Project Management Certificate",
+      "slug": "google-project-management",
+      "vendor_slug": "google",
+      "stage": "Structured on-ramp",
+      "reason": "Builds the vocabulary and a portfolio capstone — banks 100+ PMI education hours and takes $175 off the CAPM exam that follows."
+    },
+    {
+      "title": "PMI CAPM",
+      "slug": "capm",
+      "vendor_slug": "pmi",
+      "stage": "Entry credential",
+      "reason": "PMI's genuine foundation cert — the recognized entry signal for project roles (PMP comes later, after documented experience)."
+    },
+    {
+      "title": "Professional Scrum Master I (PSM I)",
+      "slug": "psm-1",
+      "vendor_slug": "scrum-org",
+      "stage": "Agile lane",
+      "reason": "The no-course-required Scrum credential with lifetime validity — ideal if the jobs you're seeing are agile teams."
+    },
+    {
+      "title": "ITIL 4 Foundation",
+      "slug": "itil-4-foundation",
+      "vendor_slug": "peoplecert",
+      "stage": "Service-management lane",
+      "reason": "The IT service-management vocabulary enterprises run on — strongest for service desk and ITSM-adjacent coordination."
+    }
+  ],
+  "cert_note": "Honest priority check: this is a portfolio-first path — evidence you've coordinated real work beats any credential. Pick ONE of these to match the jobs you're actually seeing locally; PMP is not entry-level (it requires documented project experience first).",
+  "trial": {
+    "objective": "Do the actual job on a real-life project — a move, an event, a trip: elicit what people need, structure a plan with milestones and risks in a spreadsheet, and get someone to agree to it.",
+    "time": "60–90 minutes",
+    "cost": "Free",
+    "disclosure": "Fully local — any spreadsheet you already have; nothing installed or transmitted."
+  },
+  "roadmap": [
+    {
+      "stage": "1",
+      "title": "Learn the vocabulary",
+      "focus": "Agile, Scrum, and waterfall basics plus the tooling — free via Scrum.org's Scrum Guide, Atlassian's agile guides, and a Jira free tier. Learn to build a real project plan in a spreadsheet."
+    },
+    {
+      "stage": "2",
+      "title": "Build coordination evidence",
+      "focus": "Coordinate something real: a volunteer project, a community event, a process fix at your current job. Document the requirements, the plan, the risks, and the outcome — that write-up is your portfolio."
+    },
+    {
+      "stage": "3",
+      "title": "Add an entry credential",
+      "focus": "CAPM, PSM I, or ITIL 4 Foundation — pick the one matching the jobs you're seeing locally. These validate the vocabulary; your portfolio proves you can use it.",
+      "cert_slug": "capm"
+    },
+    {
+      "stage": "4",
+      "title": "Pick your lane",
+      "focus": "Project management (toward PMP once you have the experience it requires), business analysis (add SQL and data skills), or platform ownership (become the Jira/M365 person). Each is a real career, not just a rung."
+    }
+  ],
+  "adjacent_paths": [
+    {
+      "role": "Data Analyst",
+      "slug": "data-analyst",
+      "reason": "BA work and analytics share the requirements-and-evidence mindset."
+    },
+    {
+      "role": "Microsoft 365 Administrator",
+      "slug": "microsoft-365-administrator",
+      "reason": "Coordinators who learn the collaboration platform often grow into administering it."
+    }
+  ],
+  "seo_title": "IT Project Coordinator Career Path — A Non-Coding Way Into Tech | CertBlueprint",
+  "seo_description": "Break into IT without coding: what project coordinators and junior BAs really do, salary reality, the honest downsides, a free trial project, and a portfolio-first roadmap."
+}

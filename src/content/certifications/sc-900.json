@@ -1,0 +1,229 @@
+{
+  "title": "Microsoft SC-900: Security, Compliance & Identity Fundamentals Study Guide",
+  "slug": "sc-900",
+  "short_name": "SC-900",
+  "vendor": "Microsoft",
+  "vendor_slug": "microsoft",
+  "level": "Foundation",
+  "description": "SC-900 (Security, Compliance, and Identity Fundamentals) is Microsoft's foundational security certification. The exam validates a broad understanding of security, compliance, and identity concepts and the Microsoft solutions—Entra, Defender, Purview, and Sentinel—that deliver them.",
+  "audience": "Beginners entering cybersecurity, IT and business professionals working with Microsoft 365 and Azure security, and anyone who wants a foundational security credential before role-based security certs like SC-200 or AZ-500.",
+  "why_get_it": "SC-900 is an approachable on-ramp to Microsoft's security ecosystem—the identity, security, and compliance tooling that protects most enterprises running Microsoft 365 and Azure. It proves you understand the concepts (Zero Trust, identity, encryption, compliance) and can map them to Microsoft solutions like Entra ID, Microsoft Defender, and Purview. For anyone targeting a security career in a Microsoft shop, or any IT role that touches identity and compliance, it's a low-cost, recognized way to demonstrate baseline security literacy and a foundation for the role-based security certifications.",
+  "when_to_get_it": "Get SC-900 if you're new to security or work with Microsoft 365/Azure and want to prove foundational security, compliance, and identity knowledge. It pairs well with AZ-900 (broad Azure literacy) and with CompTIA Security+ (vendor-neutral security fundamentals). If you already have security experience and a technical goal, you may go straight to role-based certs like SC-200 (Security Operations) or AZ-500—but SC-900 is a quick, useful foundation first.",
+  "exam_code": "SC-900",
+  "exam_duration": "45 minutes",
+  "exam_format": "Roughly 40–60 questions: multiple choice, multiple response, and other interactive formats. Passing score: 700 (on a scale of 100–1000).",
+  "exam_questions": "~40–60 questions",
+  "official_url": "https://learn.microsoft.com/en-us/credentials/certifications/security-compliance-and-identity-fundamentals/",
+  "official_pricing_url": "https://learn.microsoft.com/en-us/credentials/certifications/security-compliance-and-identity-fundamentals/",
+  "recertification_note": "Microsoft Fundamentals certifications like SC-900 do not expire—they have no renewal requirement. (Role-based certs such as SC-200 renew annually for free via a Microsoft Learn assessment.)",
+  "salary_range": "$55,000 – $95,000",
+  "salary_note": "SC-900 is a foundational security credential rather than a salary driver on its own. It helps open entry security and identity-focused IT roles ($55K–$75K) and signals security literacy in Microsoft environments. Its value compounds as a stepping stone toward role-based security certs (SC-200, AZ-500) and hands-on experience, which move you into the $90K+ security-analyst and engineer ranges.",
+  "skills_covered": [
+    {
+      "category": "Concepts of Security, Compliance & Identity (10–15%)",
+      "items": [
+        "The Zero Trust model and its guiding principles",
+        "The shared-responsibility model",
+        "Defense in depth and common security concepts",
+        "Encryption and hashing fundamentals",
+        "Core identity, authentication, and authorization concepts"
+      ]
+    },
+    {
+      "category": "Capabilities of Microsoft Entra (25–30%)",
+      "items": [
+        "Microsoft Entra ID (formerly Azure AD) and identity types",
+        "Authentication methods and multi-factor authentication",
+        "Conditional Access and identity protection",
+        "Identity governance: access reviews, entitlement management, PIM",
+        "Hybrid identity and external identities"
+      ]
+    },
+    {
+      "category": "Capabilities of Microsoft Security Solutions (35–40%)",
+      "items": [
+        "Microsoft Defender (for cloud, endpoint, Office 365, identity)",
+        "Microsoft Sentinel (SIEM/SOAR) at an awareness level",
+        "Azure network security: firewalls, DDoS protection, NSGs",
+        "Microsoft Defender for Cloud and secure score",
+        "Security management and threat protection concepts"
+      ]
+    },
+    {
+      "category": "Capabilities of Microsoft Compliance Solutions (20–25%)",
+      "items": [
+        "Microsoft Purview: information protection and data governance",
+        "Data classification, sensitivity labels, and DLP",
+        "Insider risk, eDiscovery, and audit capabilities",
+        "Compliance management and the Compliance Manager",
+        "Privacy and regulatory compliance concepts"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Read the official SC-900 study guide",
+      "description": "Microsoft publishes a free SC-900 study guide listing every skill measured plus the latest exam updates. Start here so you study exactly what's tested—the objectives change as Microsoft renames and adds tools."
+    },
+    {
+      "step": 2,
+      "title": "Work through the free Microsoft Learn path",
+      "description": "Microsoft Learn has a free, structured SC-900 learning path covering all four domains. It uses the exact terminology the exam uses and is the single best free resource."
+    },
+    {
+      "step": 3,
+      "title": "Learn the Microsoft security product names",
+      "description": "Much of SC-900 is matching concepts to Microsoft products—Entra, Defender, Sentinel, Purview. Microsoft renames these often, so focus on knowing what each current product does and which problem it solves."
+    },
+    {
+      "step": 4,
+      "title": "Add a paid video course for structure",
+      "description": "A paid course ties the concepts together with a clear narrative and demos. See the paid resources section. Helpful if you prefer video over reading the Learn modules."
+    },
+    {
+      "step": 5,
+      "title": "Explore the portals hands-on (optional)",
+      "description": "If you have access to a Microsoft 365 or Azure trial, click through the Entra admin center, the Defender portal, and Purview. Seeing the tools makes the security-and-compliance domains far more memorable."
+    },
+    {
+      "step": 6,
+      "title": "Use the free official practice assessment",
+      "description": "Microsoft provides a free official SC-900 practice assessment that mirrors the real question style. Use it to find weak areas, then drill additional practice questions until you're consistently above 85%."
+    },
+    {
+      "step": 7,
+      "title": "Schedule and sit the exam",
+      "description": "Register through Pearson VUE (test center or online proctored). The exam is short—about 45 minutes. Check for Microsoft's free voucher promotions (Learn challenges) before paying full price."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "SC-900 Official Study Guide (Microsoft Learn)",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/sc-900",
+      "type": "Official Documentation",
+      "note": "Microsoft's official list of skills measured plus the latest exam-update notes. Your study roadmap—start here."
+    },
+    {
+      "name": "Microsoft Learn – SC-900 Path (Free)",
+      "url": "https://learn.microsoft.com/en-us/training/courses/sc-900t00",
+      "type": "Video Course",
+      "note": "A free, structured learning path covering all four SC-900 domains. The best free resource and the closest match to exam terminology."
+    },
+    {
+      "name": "John Savill's SC-900 Study Cram (YouTube)",
+      "url": "https://www.youtube.com/@NTFAQGuy",
+      "type": "Video Course",
+      "note": "John Savill's free SC-900 'study cram' is a community favorite—a thorough single-video review that pairs well with Microsoft Learn."
+    },
+    {
+      "name": "Microsoft SC-900 Practice Assessment (Free, Official)",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/security-compliance-and-identity-fundamentals/practice/assessment",
+      "type": "Practice Questions",
+      "note": "Microsoft's free official practice assessment. The question style closely matches the real exam—use it to gauge readiness."
+    },
+    {
+      "name": "r/AzureCertification on Reddit",
+      "url": "https://www.reddit.com/r/AzureCertification/",
+      "type": "Community",
+      "note": "Active community with recent SC-900 pass reports and resource recommendations. Useful for current exam experience."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Udemy – SC-900 Security, Compliance & Identity Fundamentals Course",
+      "type": "Video Course",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Most candidates – full video coverage of all four SC-900 domains, kept current with exam updates",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fsc-900-microsoft-security-complianceidentity-fundamentals%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_sc900_course",
+      "affiliate": true,
+      "note": "A comprehensive SC-900 course updated for the latest exam objectives. Pair with the free Microsoft Learn path."
+    },
+    {
+      "provider": "Udemy – SC-900 Course + Practice Test",
+      "type": "Video Course + Practice",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Candidates who want a course bundled with practice questions to confirm readiness",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fsc-900-microsoft-security-compliance-and-identity%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_sc900_course_test",
+      "affiliate": true,
+      "note": "Foundational coverage plus practice tests in one course. Useful as a second perspective alongside Microsoft Learn."
+    },
+    {
+      "provider": "Exam Ref SC-900 (Microsoft Press, Diogenes et al.)",
+      "type": "Book",
+      "price": "~$30–$45",
+      "best_for": "Candidates who want the official written reference organized by exam objective",
+      "affiliate_url": "https://www.amazon.com/dp/0138363730/?tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_sc900_exam_ref",
+      "affiliate": true,
+      "note": "The official Microsoft Press Exam Ref for SC-900. A concise reference best used alongside the free Microsoft Learn path."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Schedule the SC-900 Exam – Microsoft",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/security-compliance-and-identity-fundamentals/",
+      "note": "SC-900 is $99 USD at standard pricing. Microsoft periodically offers free exam vouchers through Microsoft Learn challenges—check for current promotions before purchasing."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is SC-900 worth it?",
+      "answer": "For beginners and anyone working in Microsoft-heavy environments, yes. It's an approachable way to prove foundational security, compliance, and identity knowledge and to learn the Microsoft security product landscape. It's most valuable as a foundation for role-based security certs."
+    },
+    {
+      "question": "How hard is the SC-900 exam?",
+      "answer": "It's a fundamentals exam—broad and conceptual rather than deep. The main challenge is matching concepts to the (frequently renamed) Microsoft products. Most candidates pass with one to two weeks of study using the free Microsoft Learn path plus practice questions."
+    },
+    {
+      "question": "Does SC-900 expire?",
+      "answer": "No. Microsoft Fundamentals certifications, including SC-900, do not expire and have no renewal requirement. (Role-based security certs like SC-200 renew annually for free.)"
+    },
+    {
+      "question": "SC-900 or CompTIA Security+ — which should I take?",
+      "answer": "They complement each other. Security+ is vendor-neutral, broader, and more widely required (including DoD roles). SC-900 is Microsoft-specific and lighter. If you work in a Microsoft environment, SC-900 adds product-specific literacy on top of Security+ fundamentals."
+    },
+    {
+      "question": "Do I need experience before SC-900?",
+      "answer": "No. There are no prerequisites, and it's designed for beginners and business professionals as well as IT pros. Some familiarity with Microsoft 365 or Azure helps but isn't required."
+    },
+    {
+      "question": "What comes after SC-900?",
+      "answer": "Role-based Microsoft security certs: SC-200 (Security Operations Analyst), SC-300 (Identity and Access Administrator), or AZ-500 (Azure Security Engineer). SC-900 is the foundation those build on."
+    },
+    {
+      "question": "How long does it take to study for SC-900?",
+      "answer": "Most candidates spend 1 to 2 weeks part-time. The free Microsoft Learn path plus the official practice assessment is enough for many people. Those with IT or security backgrounds may be ready in a few days."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CompTIA Security+",
+      "slug": "security-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "The vendor-neutral security baseline. Security+ for broad fundamentals, SC-900 for Microsoft-specific product literacy—a strong pairing for security beginners."
+    },
+    {
+      "title": "Microsoft AZ-900",
+      "slug": "az-900",
+      "vendor": "Microsoft",
+      "vendor_slug": "microsoft",
+      "reason": "The sibling Azure fundamentals cert. Together, AZ-900 and SC-900 give broad foundational coverage of the Microsoft cloud and its security."
+    },
+    {
+      "title": "Microsoft AZ-104",
+      "slug": "az-104",
+      "vendor": "Microsoft",
+      "vendor_slug": "microsoft",
+      "reason": "The Azure administrator cert. Identity and security knowledge from SC-900 directly supports the governance and identity topics on AZ-104."
+    }
+  ],
+  "seo_title": "Microsoft SC-900 Security, Compliance & Identity Fundamentals Study Guide | CertBlueprint",
+  "seo_description": "Complete Microsoft SC-900 guide: who it's for, salary, exam domains (Entra, Defender, Purview), study path, free Microsoft Learn resources, paid courses, and FAQ."
+}

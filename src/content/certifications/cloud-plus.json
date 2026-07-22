@@ -1,0 +1,244 @@
+{
+  "title": "CompTIA Cloud+ (CV0-004) Study Guide",
+  "slug": "cloud-plus",
+  "short_name": "Cloud+",
+  "vendor": "CompTIA",
+  "vendor_slug": "comptia",
+  "level": "Intermediate",
+  "description": "CompTIA Cloud+ is the vendor-neutral cloud operations certification. Exam CV0-004 validates the skills to deploy, secure, operate, and troubleshoot cloud infrastructure across multiple providers—not tied to AWS, Azure, or any single platform.",
+  "audience": "Systems administrators, cloud and infrastructure engineers, and IT pros moving into multi-cloud operations. Best with networking and systems-administration fundamentals already in place.",
+  "why_get_it": "Cloud+ is the cloud cert that isn't locked to one provider. Where AWS and Azure certifications prove you know a specific platform, Cloud+ proves you understand cloud operations as a discipline—architecture, deployment, security, automation, and troubleshooting that transfer across providers. That's valuable for hybrid and multi-cloud environments, which most enterprises now run. CV0-004 was rebuilt to include DevOps and automation fundamentals, reflecting how cloud is actually operated today. For sysadmins and infrastructure engineers moving into cloud roles, it validates the operational breadth employers need.",
+  "when_to_get_it": "Get Cloud+ once you have networking and systems-administration fundamentals (Network+ level or equivalent experience) and you're moving toward cloud operations. It pairs well with a provider cert: many people hold Cloud+ for vendor-neutral breadth plus an AWS or Azure associate cert for platform depth. If you only ever plan to work in one cloud, a provider-specific cert may be a more direct fit.",
+  "exam_code": "CV0-004",
+  "exam_duration": "90 minutes",
+  "exam_format": "Up to 90 questions: multiple choice and performance-based. Pass/fail (CompTIA does not publish a numeric passing score for CV0-004).",
+  "exam_questions": "Up to 90 questions",
+  "official_url": "https://www.comptia.org/en-us/certifications/cloud/",
+  "official_pricing_url": "https://www.comptia.org/en-us/certifications/cloud/",
+  "recertification_note": "Valid for 3 years. Renew through CompTIA's Continuing Education (CE) program by earning CEUs, or by passing a higher-level CompTIA exam.",
+  "salary_range": "$90,000 – $150,000",
+  "salary_note": "Cloud roles are among the best-paid in IT. Cloud-focused systems and infrastructure engineers commonly earn $90K–$120K early on, with experienced cloud engineers reaching $130K–$150K+ and specialists going higher. Cloud+ is most valuable stacked with hands-on platform experience (AWS/Azure) and automation skills, which push compensation toward the top of the range.",
+  "skills_covered": [
+    {
+      "category": "Cloud Architecture (23%)",
+      "items": [
+        "Cloud service and deployment models (IaaS, PaaS, SaaS; public, private, hybrid)",
+        "Designing for high availability, scalability, and elasticity",
+        "Compute, storage, and network resource planning",
+        "Capacity planning and cost optimization",
+        "Cloud migration strategies"
+      ]
+    },
+    {
+      "category": "Deployment (19%)",
+      "items": [
+        "Provisioning compute, storage, and networking resources",
+        "Configuring identity and access management",
+        "Templates and infrastructure-as-code basics",
+        "Connectivity, DNS, and load balancing",
+        "Validating and testing deployments"
+      ]
+    },
+    {
+      "category": "Security (19%)",
+      "items": [
+        "Identity, access control, and least privilege in the cloud",
+        "Data security, encryption, and key management",
+        "Network security: segmentation, firewalls, and security groups",
+        "Compliance, governance, and shared-responsibility model",
+        "Hardening and vulnerability management"
+      ]
+    },
+    {
+      "category": "Operations & Troubleshooting (29%)",
+      "items": [
+        "Monitoring, logging, and alerting",
+        "Backup, recovery, and business continuity",
+        "Performance optimization and resource scaling",
+        "Troubleshooting connectivity, capacity, and deployment issues",
+        "Automation of routine operational tasks"
+      ]
+    },
+    {
+      "category": "DevOps Fundamentals (10%)",
+      "items": [
+        "CI/CD pipelines and release concepts",
+        "Containers and orchestration basics",
+        "Configuration management and automation tools",
+        "Version control and collaboration",
+        "Integrating automation into cloud operations"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Download the CV0-004 exam objectives",
+      "description": "Get the official Cloud+ CV0-004 objectives from CompTIA. The blueprint spans architecture, deployment, security, operations, and DevOps—use it to structure your study and find gaps."
+    },
+    {
+      "step": 2,
+      "title": "Confirm your networking and sysadmin base",
+      "description": "Cloud+ assumes networking (Network+ level) and systems-administration fundamentals. If subnetting, DNS, firewalls, or basic Linux/Windows admin are shaky, shore those up first—cloud builds on them."
+    },
+    {
+      "step": 3,
+      "title": "Work through a primary video course",
+      "description": "Choose one comprehensive CV0-004 course and complete it end to end. An all-in-one Cloud+ course on Udemy covers every domain with demos. See the paid resources section."
+    },
+    {
+      "step": 4,
+      "title": "Read the official study guide",
+      "description": "The Sybex Cloud+ Study Guide (CV0-004) by Ben Piper is the standard written reference. Use it to deepen the architecture and security domains, which reward conceptual clarity."
+    },
+    {
+      "step": 5,
+      "title": "Get hands-on in a real cloud",
+      "description": "Spin up free-tier resources on AWS or Azure: deploy a VM, configure a virtual network and security group, set up monitoring. Cloud+ is provider-neutral, but real reps in any cloud make the concepts concrete."
+    },
+    {
+      "step": 6,
+      "title": "Practice the operational scenarios",
+      "description": "Cloud+ leans on troubleshooting and operations. Drill scenarios: a deployment fails, capacity runs out, a resource is unreachable. Practice reasoning to the root cause—the PBQs test exactly this."
+    },
+    {
+      "step": 7,
+      "title": "Take timed practice exams",
+      "description": "Use full-length CV0-004 practice exams. Aim to score consistently above 85% before booking. Review every miss and re-study the weak domain."
+    },
+    {
+      "step": 8,
+      "title": "Schedule and sit the exam",
+      "description": "Register through Pearson VUE for the 90-minute exam (test center or online proctored). Book about two weeks out to set a deadline and keep your prep focused."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "CompTIA Cloud+ CV0-004 Exam Objectives (Official)",
+      "url": "https://www.comptia.org/en-us/certifications/cloud/",
+      "type": "Official Documentation",
+      "note": "The official CV0-004 objectives across all domains. Your study roadmap—start here."
+    },
+    {
+      "name": "AWS Free Tier",
+      "url": "https://aws.amazon.com/free/",
+      "type": "Hands-on Labs",
+      "note": "Free-tier AWS resources for hands-on practice. Cloud+ is vendor-neutral, but real reps deploying compute, storage, and networking make the concepts stick."
+    },
+    {
+      "name": "Microsoft Learn – Azure Fundamentals",
+      "url": "https://learn.microsoft.com/en-us/training/azure/",
+      "type": "Video Course",
+      "note": "Free, hands-on Microsoft Learn modules. A good second perspective on cloud architecture and operations alongside AWS."
+    },
+    {
+      "name": "Gwen Sebastian / Cloud+ community study notes",
+      "url": "https://www.reddit.com/r/CompTIA/",
+      "type": "Community",
+      "note": "The r/CompTIA community has shared Cloud+ study notes and recent CV0-004 pass reports. Search the Cloud+ flair before posting."
+    },
+    {
+      "name": "ExamCompass – Free Cloud+ Practice Questions",
+      "url": "https://www.examcompass.com/",
+      "type": "Practice Questions",
+      "note": "Free practice questions to find weak areas before investing in full-length practice exams."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Udemy – CompTIA Cloud+ (CV0-004) All-In-One Course",
+      "type": "Video Course",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Most candidates – full video coverage of all CV0-004 domains with demos",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomptia-cloud-plus%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_cloud_complete_course",
+      "affiliate": true,
+      "note": "A comprehensive CV0-004 course updated for the current exam. Pair with hands-on cloud practice for best results."
+    },
+    {
+      "provider": "Udemy – CompTIA Cloud+ (CV0-004) Practice Exams",
+      "type": "Practice Exams",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Final exam preparation with realistic, scenario-style questions",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomptia-cloud-cv0-004-practice-exams%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_cloud_practice",
+      "affiliate": true,
+      "note": "Use to gauge readiness before booking. Focus your review on whichever domain scores lowest."
+    },
+    {
+      "provider": "CompTIA Cloud+ Study Guide CV0-004 (Sybex, Ben Piper)",
+      "type": "Book",
+      "price": "~$45–$60",
+      "best_for": "Candidates who want the definitive written reference with full domain coverage and online practice",
+      "affiliate_url": "https://www.amazon.com/dp/1394333773/?tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_cloud_sybex_guide",
+      "affiliate": true,
+      "note": "Ben Piper's Sybex guide covers 100% of the CV0-004 objectives. Best used alongside a video course and hands-on labs."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Buy Cloud+ Exam Voucher – CompTIA Store",
+      "url": "https://www.comptia.org/en-us/certifications/cloud/",
+      "note": "The CV0-004 exam runs roughly $350–$390 USD. Verify current pricing on the official CompTIA store before purchasing; voucher + retake bundles are sometimes available."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is CompTIA Cloud+ worth it?",
+      "answer": "For multi-cloud and hybrid operations roles, yes. Cloud+ proves vendor-neutral cloud operations skills that transfer across AWS, Azure, and others. It's most valuable paired with hands-on platform experience and a provider-specific cert."
+    },
+    {
+      "question": "Cloud+ vs AWS Solutions Architect — which should I get?",
+      "answer": "They serve different goals. AWS SAA proves deep skill on one platform and is in higher demand by name. Cloud+ proves broad, vendor-neutral cloud operations knowledge. Many people get both: a provider cert for depth, Cloud+ for breadth."
+    },
+    {
+      "question": "Do I need experience before Cloud+?",
+      "answer": "No formal prerequisite, but CompTIA recommends networking and systems-administration knowledge (Network+ level) plus some cloud or data-center experience. Hands-on time in any cloud makes the exam much easier."
+    },
+    {
+      "question": "How hard is the CV0-004 exam?",
+      "answer": "It's an intermediate exam covering broad ground—architecture, deployment, security, operations, and DevOps. The breadth is the challenge. Performance-based questions test troubleshooting and operational reasoning, so hands-on practice is important."
+    },
+    {
+      "question": "How long does it take to study for Cloud+?",
+      "answer": "Most candidates spend 2 to 4 months part-time. Those with existing cloud or sysadmin experience may move faster. Budget time for hands-on labs, not just video courses."
+    },
+    {
+      "question": "What comes after Cloud+?",
+      "answer": "Common next steps include provider-specific certs (AWS, Azure), or deeper specializations in cloud security and DevOps. Cloud+ pairs naturally with an AWS or Azure associate certification."
+    },
+    {
+      "question": "Does Cloud+ expire?",
+      "answer": "Yes. Cloud+ is valid for three years. Renew through CompTIA's Continuing Education program by earning CEUs or passing a higher-level CompTIA exam."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "AWS Solutions Architect Associate",
+      "slug": "aws-saa",
+      "vendor": "AWS",
+      "vendor_slug": "aws",
+      "reason": "The provider-specific counterpart to Cloud+. Pair vendor-neutral cloud operations (Cloud+) with deep AWS platform skills for a strong cloud resume."
+    },
+    {
+      "title": "CompTIA Network+",
+      "slug": "network-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "The networking foundation Cloud+ assumes. Subnetting, DNS, and firewall knowledge from Network+ directly support the cloud networking topics."
+    },
+    {
+      "title": "Microsoft AZ-104",
+      "slug": "az-104",
+      "vendor": "Microsoft",
+      "vendor_slug": "microsoft",
+      "reason": "Azure's administrator credential. A natural platform-specific pairing for Cloud+ holders working in Microsoft-heavy environments."
+    }
+  ],
+  "seo_title": "CompTIA Cloud+ CV0-004 Study Guide – Multi-Cloud Operations | CertBlueprint",
+  "seo_description": "Complete CompTIA Cloud+ (CV0-004) guide: who it's for, cloud engineer salary, exam domains, study path, free and paid resources, and FAQ."
+}

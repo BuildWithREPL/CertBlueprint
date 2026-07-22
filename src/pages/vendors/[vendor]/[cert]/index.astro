@@ -1,0 +1,29 @@
+---
+// Generic certification-guide route, collection-driven. Renders through the SAME
+// canonical CertGuide component the bespoke a-plus / network-plus pages use, so
+// every collection-added cert page is byte-identical in structure (overview,
+// salary, exam, skills, step-by-step study path, free + paid resources, vouchers,
+// FAQ, related certs, sidebar quick-reference + ExamInfoBox + affiliate box, and
+// the bottom "Ready to study?" CTA). The 16 original certs are bespoke static
+// routes and take priority; this route generates every cert NOT in STATIC_CERTS,
+// so new guides need only a JSON file in src/content/certifications/.
+import { getCollection } from 'astro:content';
+import CertGuide from '../../../../components/CertGuide.astro';
+
+export async function getStaticPaths() {
+  const STATIC_CERTS = [
+    'a-plus', 'network-plus', 'security-plus', 'cysa-plus', 'linux-plus', 'cloud-plus', 'pentest-plus',
+    'ccna', 'ccna-automation', 'ccna-cybersecurity',
+    'az-104', 'az-900', 'sc-900',
+    'aws-cloud-practitioner', 'aws-developer-associate', 'aws-saa',
+  ];
+  const certs = await getCollection('certifications');
+  return certs
+    .filter((c) => !STATIC_CERTS.includes(c.data.slug))
+    .map((c) => ({ params: { vendor: c.data.vendor_slug, cert: c.data.slug }, props: { data: c.data } }));
+}
+
+const { data } = Astro.props;
+---
+
+<CertGuide data={data} />

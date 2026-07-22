@@ -1,0 +1,241 @@
+{
+  "title": "ISACA CISM Study Guide",
+  "slug": "cism",
+  "short_name": "CISM",
+  "vendor": "ISACA",
+  "vendor_slug": "isaca",
+  "level": "Advanced",
+  "description": "The CISM (Certified Information Security Manager) is ISACA's security-leadership credential — governance, risk, security-program management, and incident management from the manager's chair. Where CISSP proves breadth across security practice, CISM proves you can run a security program: it's the credential for security manager, GRC lead, and CISO-track roles.",
+  "audience": "Mid-career security and IT professionals moving from doing the work to running the program — SOC leads, security engineers stepping into management, GRC analysts, and IT managers taking over security responsibility. Like CISSP, it's experience-gated: this is not a beginner cert, and chasing it at year two of your career is premature.",
+  "why_get_it": "CISM is consistently a top-5 paying certification in industry salary surveys and appears in security-manager and CISO-track postings almost interchangeably with CISSP — but it stakes out different ground: management and governance rather than technical breadth. It's DoD 8140-recognized, HR-filter strong, and it certifies the exact skill hiring committees struggle to verify any other way: that you can align a security program with business risk rather than just configure controls. If your trajectory is security manager → director → CISO, this is the credential built for that road.",
+  "when_to_get_it": "When you have (or can see) five years of infosec experience including three years of security management across at least three of the four domains. Waivers trim up to two years off the general requirement — a current CISSP or CISA waives two, a postgrad security degree waives two — but the three years of management experience cannot be waived. You can sit the exam early and apply for certification within five years of passing, so the smart play for a senior IC eyeing management is: pass now, certify when the management years land.",
+  "salary_range": "$140,000 – $170,000",
+  "salary_note": "Skillsoft's salary reports put CISM holders around $155K–$167K average in the U.S. — regularly top-5 among all certs tracked. Read that honestly: CISM holders average 10+ years of experience and skew into management, so the number reflects who holds it, not a raise the letters confer. The relevant BLS anchors bracket it: Information Security Analysts at $124,910 median, Computer & Information Systems Managers around $171K (May 2024).",
+  "exam_code": "CISM",
+  "exam_duration": "4 hours (240 minutes)",
+  "exam_format": "150 multiple-choice questions at PSI test centers or via remote online proctoring. Scored 200–800; 450 to pass (roughly 60–65% of scored items). Your exam eligibility window is 6 months from registration — schedule inside it or forfeit the fee.",
+  "exam_questions": "150 questions",
+  "official_url": "https://www.isaca.org/credentialing/cism",
+  "official_pricing_url": "https://www.isaca.org/credentialing/cism",
+  "recertification_note": "Annual maintenance: $45 members / $85 non-members, plus 120 CPE hours per 3-year cycle (minimum 20 reported each year), subject to random audit. Passing the exam does NOT certify you — you must apply within 5 years with verified experience and a $50 processing fee.",
+  "skills_covered": [
+    {
+      "category": "Information Security Governance (17%)",
+      "items": [
+        "Building a security strategy aligned to organizational goals",
+        "Governance frameworks, roles, and accountability structures",
+        "Security policy hierarchy and standards development",
+        "Reporting security posture to boards and executives",
+        "Legal, regulatory, and contractual requirement integration"
+      ]
+    },
+    {
+      "category": "Information Security Risk Management (20%)",
+      "items": [
+        "Risk identification, assessment, and analysis methods",
+        "Risk treatment: mitigate, transfer, accept, avoid",
+        "Risk appetite, tolerance, and business alignment",
+        "Third-party and supply-chain risk management",
+        "Monitoring, reporting, and keeping risk registers honest"
+      ]
+    },
+    {
+      "category": "Information Security Program (33%)",
+      "items": [
+        "Building and running the security program end to end",
+        "Security budgets, resources, and roadmap management",
+        "Control selection, implementation, and measurement",
+        "Security awareness and training programs",
+        "Metrics, KPIs, and program reporting that executives act on"
+      ]
+    },
+    {
+      "category": "Incident Management (30%)",
+      "items": [
+        "Incident response planning and organizational readiness",
+        "Classification, escalation, and communication during incidents",
+        "Business continuity and disaster recovery integration",
+        "Post-incident review and program improvement",
+        "Running the response as a manager — not the keyboard"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Check the experience math before anything",
+      "description": "Five years in infosec, of which three years must be security MANAGEMENT across 3+ of the 4 domains. Waivers (CISSP/CISA, postgrad degree) trim up to two years off the general portion only — the three management years are non-negotiable. If they're not in sight yet, this cert can wait."
+    },
+    {
+      "step": 2,
+      "title": "Mind the November 2026 outline change",
+      "description": "The CISM exam content outline updates effective 3 November 2026, and ISACA has said current study-material purchases won't include revised content. Either book your exam before the switch or wait and buy the new-edition materials — don't get caught mid-cycle with stale prep."
+    },
+    {
+      "step": 3,
+      "title": "Take ISACA's free practice quiz first",
+      "description": "Before spending a dollar, take the free official 10-question quiz. It calibrates you to the 'ISACA way' — risk-based, business-aligned, manager-first answers — which decides this exam more than technical knowledge does."
+    },
+    {
+      "step": 4,
+      "title": "Work a primary text",
+      "description": "The official CISM Review Manual is the source of truth but famously dry; Peter Gregory's All-in-One guide covers the same ground more readably. Pick one and finish it — most candidates need 2–4 months part-time."
+    },
+    {
+      "step": 5,
+      "title": "Drill the official QAE database",
+      "description": "The ISACA Questions, Answers & Explanations database (1,000+ questions, 12-month sub) is the single most-recommended purchase by people who passed — the questions come from the exam's own body. Consistently scoring 70%+ there is the community's readiness benchmark."
+    },
+    {
+      "step": 6,
+      "title": "Rewire your instincts to the manager's chair",
+      "description": "The #1 reason technical people fail CISM: answering as the engineer. The exam wants the risk-based, business-aligned, delegate-and-govern answer every time. When two options look right, pick the one a security MANAGER does — assess risk, align to business, communicate up."
+    },
+    {
+      "step": 7,
+      "title": "Register smart, then sit the exam",
+      "description": "Join ISACA first if you're buying any study materials — the member discount on exam plus QAE plus manual beats non-member pricing by $100–300 all-in. Register only when ready: the 6-month eligibility window starts at purchase and is non-refundable. Four hours, 150 questions — pace at ~90 seconds each."
+    },
+    {
+      "step": 8,
+      "title": "Apply for certification — passing isn't holding",
+      "description": "After passing, apply within five years: verified experience, a supervisor's sign-off, and the $50 processing fee. Plenty of people pass and stall here — don't. The letters only count when ISACA approves the application."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "ISACA Free CISM Practice Quiz",
+      "url": "https://www.isaca.org/credentialing/cism/cism-practice-quiz",
+      "type": "Official Practice Questions",
+      "note": "Ten real-difficulty questions from ISACA's own prep pool — the best free calibration of the 'ISACA answer' before you spend money."
+    },
+    {
+      "name": "CISM Exam Content Outline (Official)",
+      "url": "https://www.isaca.org/credentialing/cism/cism-exam-content-outline",
+      "type": "Official Documentation",
+      "note": "The authoritative domain and task breakdown. Note the outline changes effective 3 Nov 2026 — check which version applies to your test date."
+    },
+    {
+      "name": "Prabh Nair – CISM Learning Playlist (YouTube)",
+      "url": "https://www.youtube.com/playlist?list=PL0hT6hgexlYxrFj1NdUUqqHw9gStcbHX-",
+      "type": "Video Course",
+      "note": "Free domain-by-domain walkthroughs from a respected GRC mentor — strong on the manager-not-technician mindset the exam actually tests."
+    },
+    {
+      "name": "r/CISM on Reddit",
+      "url": "https://www.reddit.com/r/CISM/",
+      "type": "Community",
+      "note": "Recent exam-experience threads and honest takes on which materials matched the real thing."
+    },
+    {
+      "name": "ISACA Engage Community",
+      "url": "https://engage.isaca.org",
+      "type": "Community",
+      "note": "ISACA's official forums with CISM study groups — free to join even without membership."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "ISACA – CISM QAE Database (12-month subscription)",
+      "type": "Practice Exams",
+      "price": "$299 member / $399 non-member",
+      "best_for": "The near-mandatory purchase — 1,000+ questions written by the exam's own body; the community readiness benchmark is a consistent 70%+ here",
+      "affiliate_url": "https://www.isaca.org/credentialing/cism",
+      "affiliate_label": "View on ISACA",
+      "affiliate_event": "isaca_cism_qae",
+      "affiliate": false,
+      "note": "Official ISACA product — plain reference link, no commission. Member pricing alone justifies joining ISACA first."
+    },
+    {
+      "provider": "CISM Review Manual, 16th Edition (ISACA)",
+      "type": "Book",
+      "price": "$109 member / $139 non-member",
+      "best_for": "The canonical reference — dry, but it is the source of truth for how ISACA words concepts",
+      "affiliate_url": "https://www.isaca.org/credentialing/cism",
+      "affiliate_label": "View on ISACA",
+      "affiliate_event": "isaca_cism_manual",
+      "affiliate": false,
+      "note": "Watch for the new edition ahead of the Nov 2026 outline change before buying."
+    },
+    {
+      "provider": "CISM All-in-One Exam Guide (Peter H. Gregory, McGraw-Hill)",
+      "type": "Book",
+      "price": "~$50–$60",
+      "best_for": "A far more readable alternative to the Review Manual — same coverage, human prose; pairs well with the QAE database",
+      "affiliate_url": "https://www.amazon.com/s?k=CISM+All-in-One+Exam+Guide+Gregory&tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_cism_allinone",
+      "affiliate": true,
+      "note": "The usual pick for people who find ISACA's official prose unbearable."
+    },
+    {
+      "provider": "Hemang Doshi – CISM Course (Udemy)",
+      "type": "Video Course",
+      "price": "~$15–$25 (on sale)",
+      "best_for": "Budget structured video prep with a big CISA/CISM following — builds the manager mindset cheaply before you invest in the QAE",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3DCISM%2520Hemang%2520Doshi",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_cism_doshi",
+      "affiliate": true,
+      "note": "Buy on Udemy's routine sales. Confirm the course reflects the outline version you'll test under."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Register via myISACA",
+      "url": "https://www.isaca.org/credentialing/cism",
+      "note": "$575 member / $760 non-member — no third-party vouchers exist. The membership math favors joining first (~$145/yr international dues + chapter dues): roughly break-even on the exam alone, then $100–300 ahead once you buy the QAE database or Review Manual at member pricing. Retakes are full price, so don't register until you're genuinely close."
+    }
+  ],
+  "faq": [
+    {
+      "question": "CISM or CISSP — which one should I pursue?",
+      "answer": "Different chairs at the same table. CISSP is broader and more technical-leadership flavored; CISM is squarely management — governance, risk, running the program. Job postings frequently list them interchangeably, so for pure HR-filter value they're comparable. Pick by trajectory: architect/technical leadership → CISSP; security manager/CISO-track/GRC → CISM. Holding CISSP first also waives two years of CISM's general experience requirement."
+    },
+    {
+      "question": "Can I take the CISM exam without the experience?",
+      "answer": "Yes — you can sit the exam any time and apply for certification within five years of passing. The gate is at the application: five years of infosec experience including three years of security management across 3+ domains, verified by a supervisor. The management years cannot be waived, so plan honestly around them."
+    },
+    {
+      "question": "Why do technical people fail CISM?",
+      "answer": "Because they answer as engineers. The exam rewards the 'ISACA answer' — risk-based, business-aligned, always the manager's move — over the technically correct one. When two options both look right, the winner assesses risk, aligns to the business, or communicates upward. The official QAE question bank exists precisely to drill this reflex, which is why passers call it near-mandatory."
+    },
+    {
+      "question": "Is ISACA membership worth it for the exam?",
+      "answer": "Usually yes, if you're buying any study materials. Non-member exam: $760. Member exam plus dues: roughly the same all-in — but membership then saves ~$100 on the QAE database, $30 on the Review Manual, and $40/year on maintenance, plus free CPE webinars that make renewal cheaper long-term."
+    },
+    {
+      "question": "Does CISM expire?",
+      "answer": "It's maintained annually: $45 member / $85 non-member fee due each January, plus 120 CPE hours per 3-year cycle with at least 20 per year. ISACA runs random CPE audits, so keep documentation. Fall out of compliance and the credential is revoked — budget the lifetime cost, not just the exam."
+    },
+    {
+      "question": "What's this about the exam changing in late 2026?",
+      "answer": "ISACA's updated CISM exam content outline takes effect 3 November 2026, with updated study materials arriving from September 2026 — and ISACA has said current purchases won't include revised content. If you're testing in late 2026, either sit the exam before the switch or wait and buy the new materials. Don't straddle it."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "ISC2 CISSP",
+      "slug": "cissp",
+      "vendor": "ISC2",
+      "vendor_slug": "isc2",
+      "reason": "The technical-leadership sibling — postings accept either, and holding CISSP waives two years of CISM's general experience requirement."
+    },
+    {
+      "title": "CompTIA Security+",
+      "slug": "security-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "The baseline on the road here — and a skill-based cert that waives one year of CISM's general experience requirement."
+    },
+    {
+      "title": "ITIL 4 Foundation",
+      "slug": "itil-4-foundation",
+      "vendor": "PeopleCert",
+      "vendor_slug": "peoplecert",
+      "reason": "Security programs run inside service organizations — ITIL's governance and process vocabulary pairs naturally with CISM's program-management lens."
+    }
+  ],
+  "seo_title": "ISACA CISM Study Guide – Requirements, Cost, Study Plan | CertBlueprint",
+  "seo_description": "Complete CISM guide: the experience requirements (and what can't be waived), member vs non-member exam math, the four domains, the manager's-answer mindset, and an honest salary read."
+}

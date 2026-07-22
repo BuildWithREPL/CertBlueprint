@@ -1,0 +1,272 @@
+{
+  "title": "Cisco CCNA Cybersecurity 200-201 Study Guide",
+  "slug": "ccna-cybersecurity",
+  "vendor": "Cisco",
+  "vendor_slug": "cisco",
+  "level": "Associate",
+  "description": "CCNA Cybersecurity (formerly CyberOps Associate) is Cisco's associate-level credential for security operations. Exam 200-201 (CCNACBR) validates the skills needed to work in a security operations center (SOC): monitoring, detecting, analyzing, and responding to cybersecurity threats.",
+  "audience": "Aspiring SOC analysts, blue-team and security-operations beginners, help desk or networking technicians moving into cybersecurity, and career changers targeting entry-level threat monitoring and incident response roles.",
+  "why_get_it": "CCNA Cybersecurity proves you can do the day-one work of a SOC tier-1 analyst: read logs, spot intrusions, analyze network and host data, and follow an incident-response process. It is one of the few associate-level certifications built specifically around security operations rather than general security theory, which maps directly to real SOC job tasks. Employers hiring for SOC and blue-team roles treat it as evidence that a candidate understands monitoring tooling, attacker techniques, and the analyst workflow—not just terminology. It also pairs naturally with CompTIA Security+ (a broad security baseline) and CCNA (a networking foundation), forming a strong entry-level cybersecurity resume.",
+  "when_to_get_it": "Get CCNA Cybersecurity if you want to work in a SOC, threat detection, or incident response. It is ideal after—or alongside—CompTIA Security+, which gives broader security fundamentals. A basic grasp of networking (TCP/IP, ports, protocols) makes the network intrusion analysis domain far easier, so some CCNA or Network+ exposure first is a real advantage. If your goal is offensive security (pen testing) or governance/risk rather than defensive operations, other certifications may fit better.",
+  "exam_code": "200-201",
+  "exam_duration": "120 minutes",
+  "exam_format": "Multiple-choice and multiple-response questions. Approximately 95–105 questions.",
+  "exam_questions": "95–105 questions (approximate; Cisco does not publish the exact count)",
+  "official_url": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/ccnacbr.html",
+  "official_pricing_url": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/list.html",
+  "recertification_note": "Valid for 3 years. Renew by passing another Cisco exam, earning Continuing Education credits through the Cisco CE program, or achieving a higher-level Cisco certification before expiration.",
+  "salary_range": "$60,000 – $110,000",
+  "salary_note": "Entry-level SOC tier-1 analyst roles typically start around $55K–$75K depending on location and clearance. With 2–3 years of monitoring and incident-response experience, SOC analyst and security analyst roles commonly reach $90K–$110K, and senior/blue-team specialists go higher. Government and federal-contractor SOC roles often add strong benefits and clearance premiums on top of base salary.",
+  "skills_covered": [
+    {
+      "category": "Security Concepts (20%)",
+      "items": [
+        "The CIA triad and core security principles",
+        "Common attack types, the cyber kill chain, and MITRE ATT&CK",
+        "Defense-in-depth and security deployment models",
+        "Risk, vulnerabilities, exploits, and threat actors",
+        "Access control models and security terminology"
+      ]
+    },
+    {
+      "category": "Security Monitoring (25%)",
+      "items": [
+        "Network data types: full packet capture, session/NetFlow, and transaction data",
+        "Reading and interpreting logs from common sources",
+        "Detecting attacks in network traffic (DNS, web, and email-based)",
+        "Impact of encryption, NAT, and tunneling on visibility",
+        "Common artifacts used to identify malicious activity"
+      ]
+    },
+    {
+      "category": "Host-Based Analysis (20%)",
+      "items": [
+        "Endpoint components: processes, the registry, and file systems",
+        "Endpoint logs and host-based intrusion detection",
+        "Interpreting malware analysis reports",
+        "Identifying indicators of compromise on a host",
+        "Windows and Linux host investigation basics"
+      ]
+    },
+    {
+      "category": "Network Intrusion Analysis (20%)",
+      "items": [
+        "Interpreting IDS/IPS and firewall events",
+        "Analyzing packet captures with Wireshark and tcpdump",
+        "Mapping events to protocol headers and PDUs",
+        "Extracting files and artifacts from captured traffic",
+        "Distinguishing true positives, false positives, and benign traffic"
+      ]
+    },
+    {
+      "category": "Security Policies and Procedures (15%)",
+      "items": [
+        "The incident response process (NIST SP 800-61)",
+        "SOC metrics, runbooks, and the analyst workflow",
+        "Evidence handling and chain of custody",
+        "The VERIS framework and incident categorization",
+        "Network and server profiling concepts"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Download the official 200-201 exam topics",
+      "description": "Get the official CCNACBR (200-201) exam topics from the Cisco Learning Network. The five domains and their weightings are your study roadmap—review them before buying any course so you study what the exam actually tests."
+    },
+    {
+      "step": 2,
+      "title": "Shore up networking fundamentals",
+      "description": "The Security Monitoring and Network Intrusion Analysis domains together are 45% of the exam, and both assume you can read TCP/IP, ports, and protocol behavior. If networking is new to you, spend time here first—CCNA or Network+ material is more than enough background."
+    },
+    {
+      "step": 3,
+      "title": "Work through a primary video course",
+      "description": "Choose one comprehensive 200-201 video course and complete it end to end rather than jumping between several. A full CyberOps Associate course on Udemy covers all five domains with worked examples. See the paid resources section for options."
+    },
+    {
+      "step": 4,
+      "title": "Read the official cert guide",
+      "description": "The Cisco Press CyberOps Associate Official Cert Guide by Omar Santos is the only Cisco-approved self-study book. Use it alongside your video course to reinforce the host-based and intrusion-analysis topics that need more depth than video alone."
+    },
+    {
+      "step": 5,
+      "title": "Get hands-on with SOC tools",
+      "description": "This exam rewards practical analyst skills. Practice with Wireshark on sample captures, explore logs in a tool like Security Onion, and work through TryHackMe's SOC Level 1 path. Hands-on reps make the monitoring and intrusion-analysis questions far easier."
+    },
+    {
+      "step": 6,
+      "title": "Practice reading logs and packet captures",
+      "description": "Drill the core analyst task: given a log entry or packet capture, decide whether it is malicious, benign, or a false positive—and why. Many exam questions are scenario-based and test exactly this judgment, not memorization."
+    },
+    {
+      "step": 7,
+      "title": "Take timed practice exams",
+      "description": "Once you have covered all five domains, work through practice exams under timed conditions. Aim to score consistently above 85% before booking. Review every wrong answer until you understand the underlying concept, not just the correct option."
+    },
+    {
+      "step": 8,
+      "title": "Schedule and sit the exam",
+      "description": "Register through Pearson VUE and take the 120-minute exam at a test center or online proctored. Book about two weeks out to set a firm deadline. Arrive rested—scenario questions reward clear thinking over cramming."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "Cisco 200-201 CCNACBR Exam Topics (Official)",
+      "url": "https://learningnetwork.cisco.com/s/ccnacbr-exam-topics",
+      "type": "Official Documentation",
+      "note": "The official exam blueprint with all five domains and their weightings. This is your study roadmap—start here."
+    },
+    {
+      "name": "Cisco Learning Network – CyberOps Community",
+      "url": "https://learningnetwork.cisco.com/",
+      "type": "Community",
+      "note": "Official study groups, discussion forums, and free study materials for the CCNACBR exam. Search before posting—most common questions are already answered."
+    },
+    {
+      "name": "TryHackMe – SOC Level 1 Learning Path",
+      "url": "https://tryhackme.com/path/outline/soclevel1",
+      "type": "Hands-on Labs",
+      "note": "Browser-based blue-team labs covering log analysis, SIEM, network and endpoint investigation. The free rooms map directly to 200-201 monitoring and intrusion-analysis skills."
+    },
+    {
+      "name": "MyDFIR – SOC Analyst Series (YouTube)",
+      "url": "https://www.youtube.com/@MyDFIR",
+      "type": "Video Course",
+      "note": "Free, practical SOC-analyst content on detection, log analysis, and incident response—useful for building the hands-on intuition the exam tests."
+    },
+    {
+      "name": "r/cybersecurity on Reddit",
+      "url": "https://www.reddit.com/r/cybersecurity/",
+      "type": "Community",
+      "note": "Active community with SOC career advice and recent exam-experience reports. Useful for understanding what tier-1 SOC work actually looks like."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Udemy – CyberOps Associate (200-201) Complete Course",
+      "type": "Video Course",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Most candidates – full video coverage of all five 200-201 exam domains with worked examples",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcisco-ccna-cyber-ops-the-complete-course%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_cyberops_complete_course",
+      "affiliate": true,
+      "note": "A complete CyberOps Associate course aligned to the current 200-201 blueprint. Frequently on sale—check for current pricing."
+    },
+    {
+      "provider": "Udemy – CyberOps Associate (200-201) Practice Tests",
+      "type": "Practice Exams",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Final exam preparation with realistic, scenario-style questions across all five domains",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcisco-certified-cyberops-associate-200-201-practice-exams%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_cyberops_practice",
+      "affiliate": true,
+      "note": "Buy separately if you already have a course. Useful for gauging readiness before booking the real exam."
+    },
+    {
+      "provider": "Cisco Press – CyberOps Associate Official Cert Guide (Omar Santos)",
+      "type": "Book",
+      "price": "~$45–$60",
+      "best_for": "Candidates who want the definitive written reference—the only Cisco-approved self-study guide for 200-201",
+      "affiliate_url": "https://www.amazon.com/dp/0136807836/?tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_cyberops_cert_guide",
+      "affiliate": true,
+      "note": "Thorough and exam-aligned. Best used alongside a video course and hands-on labs rather than as a standalone resource."
+    },
+    {
+      "provider": "uCertify – CBROPS 200-201 Course + Labs",
+      "type": "Course + Virtual Labs",
+      "price": "~$80–$120",
+      "best_for": "Candidates who want an all-in-one platform with integrated hands-on labs and assessments",
+      "affiliate_url": "https://www.ucertify.com/p/cisco-cbrops-200-201.html",
+      "affiliate_label": "View uCertify",
+      "affiliate_event": "ucertify_cyberops_200_201",
+      "affiliate": false,
+      "note": "More expensive than Udemy, but bundles labs, quizzes, and flashcards in one platform. Good for learners who prefer structured, guided practice."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Buy 200-201 CyberOps Exam Voucher – Cisco Official",
+      "url": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/list.html",
+      "note": "The 200-201 exam is $300 USD at standard pricing and is scheduled through Pearson VUE. Always verify current pricing on the official Cisco site before purchasing."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is CCNA Cybersecurity the same as CyberOps Associate?",
+      "answer": "Yes. As part of Cisco's 2026 certification rebrand, the Cisco Certified CyberOps Associate was renamed CCNA Cybersecurity. The exam code (200-201) and content are essentially the same—only the name changed. You will still see both names used interchangeably for a while."
+    },
+    {
+      "question": "Is CCNA Cybersecurity good for beginners?",
+      "answer": "Yes, for people targeting security operations. There are no formal prerequisites. It is genuinely entry-level for the SOC analyst path, but it assumes some comfort with networking (TCP/IP, ports, protocols). Complete beginners should spend a few weeks on networking basics first."
+    },
+    {
+      "question": "How hard is the 200-201 exam?",
+      "answer": "It is a real associate-level exam. The questions are scenario-based and test analyst judgment—reading logs and packet captures and deciding what is malicious—rather than pure memorization. Most candidates find the monitoring and intrusion-analysis domains the toughest because they require hands-on practice."
+    },
+    {
+      "question": "How long does it take to study for CCNA Cybersecurity?",
+      "answer": "Most candidates spend 2 to 4 months part-time. Those with existing networking or security experience (for example, after Security+) may be ready in 6 to 8 weeks. Hands-on practice with tools like Wireshark and TryHackMe matters as much as video completion."
+    },
+    {
+      "question": "Do I need CCNA or networking knowledge first?",
+      "answer": "Not formally, but it helps a lot. Nearly half the exam involves analyzing network traffic and intrusions, which is far easier if you already understand IP addressing, ports, and protocols. CCNA or CompTIA Network+ material is more than enough background—you do not need to pass them first."
+    },
+    {
+      "question": "CCNA Cybersecurity or CompTIA Security+ — which should I get first?",
+      "answer": "Security+ is broader and is the more common hiring baseline, so many people start there. CCNA Cybersecurity is more focused on hands-on SOC operations. They complement each other well: Security+ for the broad fundamentals, CCNA Cybersecurity to prove you can do real monitoring and analysis work."
+    },
+    {
+      "question": "What certification comes after CCNA Cybersecurity?",
+      "answer": "The natural Cisco progression is CCNP Cybersecurity (formerly CyberOps Professional). Many SOC analysts also branch out to vendor-neutral certs like CompTIA CySA+ for threat detection, or pursue blue-team/DFIR credentials as they specialize."
+    },
+    {
+      "question": "Does CCNA Cybersecurity expire?",
+      "answer": "Yes. Like all Cisco associate certifications, it is valid for three years. Renew it by passing another Cisco exam, earning Continuing Education credits through the Cisco CE program, or achieving a higher-level Cisco certification before it expires."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CompTIA Security+",
+      "slug": "security-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "The broad, DoD-approved security baseline. Most SOC candidates pair it with CCNA Cybersecurity—Security+ for fundamentals, CCNA Cybersecurity for hands-on operations."
+    },
+    {
+      "title": "Cisco CCNA",
+      "slug": "ccna",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The networking foundation that makes the network-intrusion-analysis half of the 200-201 exam dramatically easier. Strong companion or prerequisite knowledge."
+    },
+    {
+      "title": "CompTIA Network+",
+      "slug": "network-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "A vendor-neutral networking foundation. A gentler way to build the TCP/IP and protocol knowledge the monitoring and intrusion-analysis domains assume."
+    },
+    {
+      "title": "CCNA Automation",
+      "slug": "ccna-automation",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "Cisco's network automation credential (formerly DevNet Associate). The natural next step for networking pros adding Python, APIs, and infrastructure-as-code skills."
+    },
+    {
+      "title": "CCNP Security",
+      "slug": "ccnp-security",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The engineering-side professional tier — firewalls, ISE, and VPN/SSE — if building defenses pulls you more than analyzing alerts."
+    }
+  ],
+  "seo_title": "CCNA Cybersecurity 200-201 (CyberOps Associate) Study Guide | CertBlueprint",
+  "seo_description": "Complete CCNA Cybersecurity (200-201 CBROPS, formerly CyberOps Associate) guide: who it's for, SOC analyst salary, exam domains, study path, free and paid resources, and FAQ."
+}

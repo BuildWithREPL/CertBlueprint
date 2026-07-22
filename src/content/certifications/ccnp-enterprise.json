@@ -1,0 +1,325 @@
+{
+  "title": "Cisco CCNP Enterprise Study Guide",
+  "slug": "ccnp-enterprise",
+  "short_name": "CCNP Enterprise",
+  "vendor": "Cisco",
+  "vendor_slug": "cisco",
+  "level": "Professional",
+  "description": "CCNP Enterprise is the most recognized professional-level networking certification — two exams (the ENCOR core plus one concentration of your choice) covering enterprise routing, switching, SD-WAN, SD-Access, security, and now AI-era automation. Major 2026 change to know before buying anything: ENCOR moved to v1.2 in March — all wireless content was removed to a new dedicated Wireless track, and a renamed 'Automation and AI' domain took its place.",
+  "audience": "Working network engineers with CCNA-level fundamentals and ideally 1–3 years of hands-on experience — NOC engineers stepping up, network admins formalizing real skills, and route/switch people aiming at senior enterprise roles. Not a beginner cert: ENCOR assumes CCNA is genuinely internalized, not just passed.",
+  "why_get_it": "It remains the professional networking credential with the broadest job-posting footprint, and its structure rewards you along the way: every exam you pass earns a standalone Cisco Certified Specialist credential, so even the halfway point is resume-real. ENCOR also double-counts as the CCIE Enterprise Infrastructure qualifying exam — passing it opens both doors with one $400 sitting. The career math matters more than the badge: BLS shows traditional network administration declining 4% this decade while network architecture grows 12%. CCNP Enterprise — especially taken with an automation-flavored concentration — is precisely the move from the shrinking column to the growing one. A CCNP who can also drive APIs, Python, and controllers is dramatically more employable than one who can't; Cisco just wrote that opinion into the exam itself.",
+  "when_to_get_it": "After CCNA plus a year or two of real work — ENCOR punishes paper-CCNA candidates. Timing matters in 2026: v1.2 went live March 19, so verify that every course, book, and question bank you buy targets v1.2 — v1.1 materials teach dead wireless content and miss the new AI/automation material. Wireless-focused engineers should now pursue the new CCNP Wireless track (WLCOR core) instead; that entire lane moved out of Enterprise. Plan 6–12 months total: 4–6 months for ENCOR at 8–12 hours/week, then 6–12 weeks for your concentration.",
+  "salary_range": "$95,000 – $130,000 (U.S. enterprise network engineers)",
+  "salary_note": "BLS anchors (May 2024): Network/Computer Systems Administrators median $96,800 but projected −4% decline through 2034; Computer Network Architects $130,390 median with +12% growth. Market reality for CCNP holders runs $95–130K by metro and stack, with SD-WAN, cloud connectivity, and automation skills pushing toward the architect band above $130K. That spread between the declining admin curve and the growing architect curve is the entire career message of this cert.",
+  "exam_code": "350-401 ENCOR + 1 concentration",
+  "exam_duration": "ENCOR: 120 minutes · concentration: 90 minutes",
+  "exam_format": "Two proctored exams at Pearson VUE (test center or OnVUE online): the ENCOR core (multiple-choice, drag-and-drop, and performance-based items; question count and passing score not published — community folklore says ~90–110 questions, treat as folklore) plus one concentration exam of your choice. Results within ~48 hours.",
+  "exam_questions": "Not published by Cisco (performance-based items make counts variable)",
+  "exam_structure": [
+    {
+      "code": "350-401 ENCOR v1.2",
+      "name": "Implementing and Operating Cisco Enterprise Network Core Technologies",
+      "role": "Core exam — required",
+      "price": "$400",
+      "note": "v1.2 live since March 19, 2026: wireless removed, 'Automation and AI' domain added. Also the CCIE Enterprise Infrastructure qualifying exam. Earns Specialist – Enterprise Core."
+    },
+    {
+      "code": "300-410 ENARSI",
+      "name": "Implementing Cisco Enterprise Advanced Routing and Services",
+      "role": "Concentration — choose one",
+      "price": "$300",
+      "note": "The classic deep-routing choice — most respected, hardest, and the best CCIE runway."
+    },
+    {
+      "code": "300-415 ENSDWI",
+      "name": "Implementing Cisco Catalyst SD-WAN Solutions",
+      "role": "Concentration — choose one",
+      "price": "$300",
+      "note": "The most job-market-aligned pick right now — SD-WAN roles name it directly."
+    },
+    {
+      "code": "300-420 ENSLD",
+      "name": "Designing Cisco Enterprise Networks",
+      "role": "Concentration — choose one",
+      "price": "$300",
+      "note": "The design-leaning option; pairs naturally with an eventual CCDE ambition."
+    },
+    {
+      "code": "300-435 ENAUTO",
+      "name": "Automating and Programming Cisco Enterprise Solutions",
+      "role": "Concentration — choose one",
+      "price": "$300",
+      "note": "The future-proofing pick — Python/APIs against enterprise gear; also counts toward CCNP Automation."
+    },
+    {
+      "code": "300-440 ENCC",
+      "name": "Designing and Implementing Secure Cloud Connectivity",
+      "role": "Concentration — choose one",
+      "price": "$300",
+      "note": "Newer exam; thin third-party study ecosystem — mostly Cisco U for prep."
+    },
+    {
+      "code": "300-445 ENNA",
+      "name": "Designing and Implementing Enterprise Network Assurance",
+      "role": "Concentration — choose one",
+      "price": "$300",
+      "note": "Newest of the menu; English only, thin prep ecosystem."
+    }
+  ],
+  "official_url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/enterprise/ccnp-enterprise/index.html",
+  "official_pricing_url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/enterprise/ccnp-enterprise/exams-and-training.html",
+  "recertification_note": "3-year cycle, 80 CE credits. Cisco unified everything onto one credit ledger: exams auto-award CE (core = 80, concentration = 40, associate = 30), so re-passing ENCOR alone recertifies you, two concentrations do it, or mix training CE from Cisco U / Cisco Live. Excess credits roll over. The elegant play: your concentration already banked 40 — one more concentration next cycle keeps you current without ever re-facing ENCOR.",
+  "last_verified": "July 2026",
+  "skills_covered": [
+    {
+      "category": "Infrastructure — the heaviest domain (30%)",
+      "items": [
+        "Layer 2: VLANs, trunking, EtherChannel, spanning tree at depth",
+        "Layer 3: OSPF and eBGP/iBGP configuration and verification",
+        "IP services: NAT, NTP, HSRP/VRRP, multicast concepts",
+        "The routing depth that separates CCNP from CCNA — expect it everywhere",
+        "Wireless is GONE from v1.2 — don't study it here anymore"
+      ]
+    },
+    {
+      "category": "Architecture & Virtualization (25%)",
+      "items": [
+        "Enterprise design: campus, WAN, branch, high availability",
+        "Catalyst SD-WAN and SD-Access architecture and components",
+        "Cloud design considerations and hybrid connectivity",
+        "Virtualization: VRF, GRE, LISP, VXLAN fundamentals",
+        "Where controller-based networking changes the design rules"
+      ]
+    },
+    {
+      "category": "Security & Assurance (30%)",
+      "items": [
+        "Device security: AAA, CoPP, TrustSec, MACsec",
+        "Network assurance with Catalyst Center: telemetry, NETCONF/RESTCONF",
+        "Threat-defense and endpoint security concepts per the v1.2 blueprint",
+        "REST API security fundamentals",
+        "Infrastructure security the way enterprise audits expect it"
+      ]
+    },
+    {
+      "category": "Automation & AI (15% — the new domain)",
+      "items": [
+        "Python fundamentals against network devices",
+        "YANG models, NETCONF, RESTCONF in practice",
+        "Configuration management concepts and tooling",
+        "AI-assisted network operations — new in v1.2 and a signal of where Cisco thinks the role is going",
+        "The domain that decides whether you're in the growing or shrinking career column"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Verify everything you buy targets v1.2",
+      "description": "The March 2026 blueprint change is the trap of the year: v1.1 materials teach dead wireless content and miss the AI/automation additions. Check the blueprint version on every course, book, and question bank. The current ENCOR Official Cert Guide (2nd Ed.) was written to v1.1 — Pearson ships digital updates, but verify v1.2 coverage before relying on print alone."
+    },
+    {
+      "step": 2,
+      "title": "Pick your concentration before starting ENCOR",
+      "description": "The choice shapes your study arc and your career story. ENARSI for deep routing respect and a CCIE runway; ENSDWI for the hottest job-posting alignment; ENSLD for design leanings; ENAUTO if you need the automation skills anyway (and it double-counts toward CCNP Automation). ENCC/ENNA are newest with the thinnest prep ecosystems — pick them only if your job demands the content."
+    },
+    {
+      "step": 3,
+      "title": "Build the lab foundation — and skip Packet Tracer",
+      "description": "Honest tooling advice: Packet Tracer is a CCNA-tier simulator and lacks the IOS-XE depth CCNP labs need. Start with CML-Free (5 nodes, real Cisco images, legal, free) for protocol work, and DevNet sandboxes for the controller side — Catalyst Center and SD-WAN Manager, which ENCOR v1.2 now emphasizes and almost nobody can home-lab otherwise."
+    },
+    {
+      "step": 4,
+      "title": "Work ENCOR domain by domain, weighted",
+      "description": "Infrastructure is 30% — give it 30% of your time, mostly hands-on. Architecture and the SD-x material reward reading plus sandbox time. Budget genuine hours for the Automation & AI domain even if you're a CLI native: Python basics, YANG/NETCONF/RESTCONF, and API calls are now first-class exam citizens."
+    },
+    {
+      "step": 5,
+      "title": "Layer video on top of the OCG, not instead of it",
+      "description": "The classic stack: Official Cert Guide as the spine, CBT Nuggets or INE video for the hard-to-read topics (SD-Access especially), Cisco Live on-demand sessions for free deep dives from the engineers who built the tech. INE's material doubles as CCIE foundation if that's the trajectory."
+    },
+    {
+      "step": 6,
+      "title": "Calibrate with Boson before booking ENCOR",
+      "description": "Boson ExSim-Max for ENCOR is near-universally regarded as the best legit practice exam — harder than the real thing with excellent explanations. Consistent mid-80s on Boson is the community's green light. Confirm the v1.2-aligned version. At $400 per ENCOR attempt, a $99 calibration is cheap insurance."
+    },
+    {
+      "step": 7,
+      "title": "Sit ENCOR, bank the Specialist credential",
+      "description": "120 minutes at Pearson VUE, results in ~48 hours. Passing earns Cisco Certified Specialist – Enterprise Core immediately — put it on the resume now — and simultaneously qualifies you for the CCIE Enterprise Infrastructure lab if that road ever calls."
+    },
+    {
+      "step": 8,
+      "title": "Ride momentum into the concentration",
+      "description": "Don't let the gap grow — ENCOR knowledge feeds every concentration. ENSDWI and ENSLD are the lighter lifts (6–10 weeks typical); ENARSI is a genuine second mountain (up to 3 months — it's the deepest routing exam Cisco offers below CCIE). 90 minutes, $300, and your CCNP is done."
+    },
+    {
+      "step": 9,
+      "title": "Set up the low-cost recert loop",
+      "description": "Your concentration banked 40 CE credits. Next cycle: one more concentration (another 40) or free 'Rev Up to Recert' Cisco U promos keep you certified without re-facing ENCOR — the renewal system now genuinely rewards forward motion over re-testing."
+    },
+    {
+      "step": 10,
+      "title": "Pair the cert with proof of automation",
+      "description": "The market's verdict is consistent: CCNP plus a GitHub with real Python/Ansible against network gear outcompetes CCNP alone, everywhere. Push your ENCOR automation-domain lab work into a public repo — it's the difference between the shrinking column and the growing one."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "Official ENCOR v1.2 Exam Topics (Cisco Learning Network)",
+      "url": "https://learningnetwork.cisco.com/s/encor-exam-topics",
+      "type": "Official Documentation",
+      "note": "The authoritative v1.2 blueprint with PDF — also links every concentration's topic list. Start here and check versions of everything else against it."
+    },
+    {
+      "name": "Cisco Modeling Labs — Free Tier",
+      "url": "https://developer.cisco.com/docs/modeling-labs/cml-free/",
+      "type": "Hands-on Labs",
+      "note": "Free, legal, real Cisco images — 5 simultaneous nodes. The right starting lab at this tier (Packet Tracer isn't)."
+    },
+    {
+      "name": "Cisco DevNet Sandboxes",
+      "url": "https://developer.cisco.com/site/sandbox/",
+      "type": "Hands-on Labs",
+      "note": "Free reservable Catalyst Center, SD-WAN Manager, and IOS-XE environments — the only free way to touch the controller side v1.2 emphasizes."
+    },
+    {
+      "name": "Cisco Live On-Demand Library",
+      "url": "https://www.ciscolive.com/on-demand.html",
+      "type": "Video Sessions",
+      "note": "Free deep-dive breakouts on SD-WAN, SD-Access, BGP, and AI ops from Cisco's own engineers — excellent ENCOR supplements."
+    },
+    {
+      "name": "Cisco U. Free Tier",
+      "url": "https://u.cisco.com/",
+      "type": "Official Training",
+      "note": "Free account gets selected courses and webinars, plus the recurring 'Rev Up to Recert' promos worth free CE credits later."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Cisco Press – CCNP/CCIE Enterprise Core ENCOR 350-401 Official Cert Guide",
+      "type": "Book",
+      "price": "~$50–$70",
+      "best_for": "The canonical spine text — with the v1.2 caveat: current 2nd Edition targets v1.1; verify digital-update coverage of the AI/automation additions before relying on print alone",
+      "affiliate_url": "https://www.amazon.com/s?k=CCNP+CCIE+Enterprise+Core+ENCOR+350-401+Official+Cert+Guide&tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_encor_ocg",
+      "affiliate": true,
+      "note": "Pair with the ENARSI OCG if that's your concentration — the two-book library is the classic CCNP shelf."
+    },
+    {
+      "provider": "Boson ExSim-Max for ENCOR 350-401",
+      "type": "Practice Exams",
+      "price": "~$99",
+      "best_for": "The gold-standard readiness check — harder than the real exam, with explanations that teach. Confirm v1.2 alignment",
+      "affiliate_url": "https://www.boson.com/product/exsim-max-for-cisco-350-401-encor/",
+      "affiliate_label": "View on Boson",
+      "affiliate_event": "boson_encor_exsim",
+      "affiliate": false,
+      "note": "Plain reference link, no commission. At $400 per ENCOR attempt, this is cheap insurance."
+    },
+    {
+      "provider": "CBT Nuggets – CCNP Enterprise",
+      "type": "Video Course",
+      "price": "~$59/month",
+      "best_for": "Video-first learners — engaging ENCOR + concentration coverage, already publishing v1.2-update content",
+      "affiliate_url": "https://www.cbtnuggets.com/it-training/cisco/ccnp-enterprise",
+      "affiliate_label": "View CBT Nuggets",
+      "affiliate_event": "cbtnuggets_ccnp_ent",
+      "affiliate": false,
+      "note": "Plain reference link. Monthly billing rewards a committed pace."
+    },
+    {
+      "provider": "Cisco Modeling Labs – Personal",
+      "type": "Lab Platform",
+      "price": "$199/year (20 nodes) / $349/year (40 nodes)",
+      "best_for": "The legal lab foundation for serious CCNP+ study once topologies outgrow the free 5-node tier",
+      "affiliate_url": "https://u.cisco.com/",
+      "affiliate_label": "View on Cisco U",
+      "affiliate_event": "cml_personal_via_ccnp",
+      "affiliate": false,
+      "note": "On EVE-NG/GNS3: the emulators are legal, but Cisco images are licensed — outside a CML entitlement, sourcing them violates Cisco's EULA. Worth knowing if you lab publicly or work for a partner."
+    },
+    {
+      "provider": "INE – Enterprise learning path",
+      "type": "Video + Workbooks",
+      "price": "~$49/month and up",
+      "best_for": "The deepest technical rigor — the right pick if CCIE Enterprise Infrastructure is the end goal, since the material doubles as CCIE foundation",
+      "affiliate_url": "https://ine.com/",
+      "affiliate_label": "View INE",
+      "affiliate_event": "ine_ccnp_ent",
+      "affiliate": false,
+      "note": "Plain reference link. Overkill for CCNP alone; right-sized if the expert tier is calling."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Book via Pearson VUE ($400 core + $300 concentration)",
+      "url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/enterprise/ccnp-enterprise/exams-and-training.html",
+      "note": "$700 minimum for both exams; budget $800–1,200 realistically with materials or a retake. If your employer buys Cisco gear, ask about Cisco Learning Credits (1 CLC ≈ $100) — they redeem for exams and often expire unused."
+    }
+  ],
+  "faq": [
+    {
+      "question": "What changed with ENCOR v1.2 — and does my old study material still work?",
+      "answer": "As of March 19, 2026: all wireless content removed (it moved to the new dedicated CCNP Wireless track), and domain 6 became 'Automation and Artificial Intelligence' at 15%. v1.1 materials therefore teach content that can't appear and miss content that will. Books ride it out partially via digital updates; older video courses and question banks are the real risk. Check the blueprint version on everything."
+    },
+    {
+      "question": "Do I need CCNA before CCNP Enterprise?",
+      "answer": "Formally no — Cisco dropped prerequisites in 2020; you can sit ENCOR cold. Practically, ENCOR assumes CCNA-level fundamentals are automatic: subnetting, OSPF basics, spanning tree, and now basic Python/REST familiarity. Skipping CCNA on paper is fine if the knowledge is real; skipping the knowledge multiplies your $400 attempts."
+    },
+    {
+      "question": "Which concentration should I choose?",
+      "answer": "By destination: ENARSI for deep-routing respect and the CCIE runway (also the hardest); ENSDWI for maximum job-posting alignment right now; ENSLD if design work calls; ENAUTO if you'd benefit from being forced through the automation material — it also double-counts toward CCNP Automation. ENCC and ENNA are newest with the thinnest third-party prep; choose them only when the content matches your actual job."
+    },
+    {
+      "question": "Is it true I get a certification even before finishing both exams?",
+      "answer": "Yes — every exam passed earns a standalone Cisco Certified Specialist credential immediately: ENCOR grants Specialist – Enterprise Core, each concentration grants its own Specialist title. Put them on the resume as you go; the halfway point of CCNP is itself a credential."
+    },
+    {
+      "question": "Does ENCOR really count toward CCIE?",
+      "answer": "Yes — ENCOR is simultaneously the CCNP Enterprise core and the CCIE Enterprise Infrastructure qualifying exam. Pass it once and you're lab-eligible. That's the efficient on-ramp: finish CCNP, and if the expert tier calls, the written half of CCIE is already behind you."
+    },
+    {
+      "question": "How does recertification work now?",
+      "answer": "Better than it used to: 3-year cycle, 80 CE credits, and every exam pass auto-awards credits (core 80, concentration 40, associate 30). Re-pass ENCOR once, or take two concentrations, or mix in free Cisco U 'Rev Up to Recert' promos — one credit ledger, excess rolls over. Staying certified no longer requires re-facing the big exam."
+    },
+    {
+      "question": "Is CCNP Enterprise still worth it against cloud and automation trends?",
+      "answer": "Yes, with the honest asterisk: by itself it certifies a role that's slowly shrinking (BLS: −4% for network admins), while paired with automation and cloud skills it feeds the role that's growing (+12% for architects). Cisco effectively agreed by putting AI into the v1.2 blueprint. Get the cert, and let the automation domain push you into building public proof — that combination covers most of what the market posts."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "Cisco CCNA",
+      "slug": "ccna",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The assumed foundation — ENCOR treats CCNA knowledge as automatic, and the jump in depth is real."
+    },
+    {
+      "title": "CCIE Enterprise Infrastructure",
+      "slug": "ccie-enterprise-infrastructure",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The summit this road leads to — your ENCOR pass already qualifies you for the lab."
+    },
+    {
+      "title": "CCNA Automation",
+      "slug": "ccna-automation",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The parallel automation lane (formerly DevNet Associate) — the skills ENCOR's new AI domain samples, certified in full."
+    },
+    {
+      "title": "Juniper JNCIA-Junos",
+      "slug": "jncia-junos",
+      "vendor": "Juniper",
+      "vendor_slug": "juniper",
+      "reason": "The ~$50 multi-vendor credibility add-on — senior enterprise engineers increasingly work across both stacks."
+    }
+  ],
+  "seo_title": "Cisco CCNP Enterprise Study Guide – ENCOR v1.2, Concentrations, Honest Costs | CertBlueprint",
+  "seo_description": "Complete CCNP Enterprise guide: the ENCOR v1.2 changes (wireless out, AI in), how core + concentration works, which concentration to pick, real lab strategy beyond Packet Tracer, and the CE-credit recert loop."
+}

@@ -1,0 +1,162 @@
+{
+  "slug": "data-analyst",
+  "role": "Data Analyst",
+  "domain": "data-analytics",
+  "specialization": "Data Analytics / Business Intelligence",
+  "navigator_family": "Data & Analytics",
+  "tagline": "Turn raw data into answers people actually act on — queries, dashboards, and plain-English findings.",
+  "what_you_do": "You take messy raw data and turn it into answers: write SQL queries to pull it, clean it until it's trustworthy, build dashboards in Power BI or Tableau, and explain what the numbers mean in plain language to people who will make decisions with them. It's one of the most accessible, least code-heavy on-ramps into modern IT — SQL plus strong spreadsheet skills is the realistic baseline, and junior roles rarely gate on a degree. The craft is half technical, half communication: the query is worthless if nobody understands the answer.",
+  "day_in_life": [
+    "Write a SQL query to pull last quarter's numbers, then spend twice as long cleaning duplicates and mismatched categories",
+    "Update the weekly KPI dashboard and chase down why one metric moved before someone asks",
+    "Turn a vague request ('why are sales down?') into a specific, answerable question",
+    "Walk a manager through a chart in plain English — what it says, what it doesn't, and what's still uncertain",
+    "Document where a dataset came from and what you did to it, so the analysis can be trusted and repeated"
+  ],
+  "entry_titles": [
+    "Data Analyst",
+    "Junior Data Analyst",
+    "Business Intelligence Analyst",
+    "Reporting Analyst",
+    "Operations Analyst"
+  ],
+  "work_texture": {
+    "communication": 3,
+    "technical_depth": 2,
+    "troubleshooting": 2,
+    "customer": 2,
+    "on_call": 1,
+    "remote": 4
+  },
+  "salary": {
+    "median": "$112,590",
+    "entry": "~$55,000–$85,000 to start (industry figure, not BLS)",
+    "growth": "+34% — among the fastest-growing occupations BLS tracks",
+    "note": "U.S. BLS figure for the umbrella Data Scientists category (15-2051), which includes senior and specialized roles and runs well above typical data-analyst pay; the entry range is an industry figure. A median is the midpoint of everyone employed, so entry runs lower — verify against the live BLS page before deciding."
+  },
+  "downsides": "Most of the job is cleaning messy, ungoverned data, not elegant analysis. You'll field ambiguous requests, drown in ad-hoc 'quick pulls' that derail planned work, and sometimes face pressure to make the chart say what someone already decided. Title inflation is rampant — two 'Data Analyst' postings can be wildly different jobs, so read the actual duties.",
+  "work_style": {
+    "fits_if": [
+      "You like finding the story hiding in a pile of numbers",
+      "You're patient with tedious cleanup because you know the answer depends on it",
+      "You enjoy explaining things simply as much as figuring them out"
+    ],
+    "less_ideal_if": [
+      "You want deep programming work — this is queries and tools, not software engineering",
+      "Vague, shifting requests frustrate you more than they intrigue you",
+      "You'd rather not present or defend your findings to non-technical people"
+    ]
+  },
+  "skills": [
+    {
+      "name": "Spreadsheets (Excel)",
+      "level": "Foundational",
+      "note": "Pivot tables, lookups, and clean formatting — still the lingua franca of business data."
+    },
+    {
+      "name": "SQL",
+      "level": "Foundational",
+      "note": "The single highest-leverage skill on this path; nearly every posting asks for it."
+    },
+    {
+      "name": "Data cleaning & preparation",
+      "level": "Working",
+      "note": "Where most of the real time goes — dedupe, standardize, sanity-check."
+    },
+    {
+      "name": "Dashboards & visualization (Power BI / Tableau)",
+      "level": "Working"
+    },
+    {
+      "name": "Statistics fundamentals",
+      "level": "Working",
+      "note": "Enough to know when a trend is real and when it's noise."
+    },
+    {
+      "name": "Communicating findings plainly",
+      "level": "Working"
+    },
+    {
+      "name": "Python for analysis (pandas)",
+      "level": "Emerging",
+      "note": "Not required for junior roles, but it raises your ceiling and opens the data-engineering door."
+    }
+  ],
+  "technologies": [
+    "SQL",
+    "Excel / Google Sheets",
+    "Power BI",
+    "Tableau",
+    "PostgreSQL / MySQL",
+    "Python (pandas)",
+    "Jupyter notebooks"
+  ],
+  "certs": [
+    {
+      "title": "Google Data Analytics Certificate",
+      "slug": "google-data-analytics",
+      "vendor_slug": "google",
+      "stage": "Structured on-ramp",
+      "reason": "A guided, project-based introduction that doubles as portfolio material — the gentlest structured start."
+    },
+    {
+      "title": "Microsoft PL-300 (Power BI Data Analyst)",
+      "slug": "pl-300",
+      "vendor_slug": "microsoft",
+      "stage": "The proctored signal",
+      "reason": "The recognized, exam-backed credential for BI/analyst roles in Microsoft shops."
+    },
+    {
+      "title": "Google Business Intelligence Certificate",
+      "slug": "google-business-intelligence",
+      "vendor_slug": "google",
+      "stage": "The BI step up",
+      "reason": "The ~2-month sequel to Data Analytics — pipelines and stakeholder dashboards, the skills behind the better-paid BI-analyst tier."
+    }
+  ],
+  "cert_note": "Honest priority check: a public portfolio of two or three dashboards or notebooks showing real analysis on real data will do more for a junior application than either credential — use the certs to structure your learning and pass resume filters, not as a substitute for shown work.",
+  "trial": {
+    "objective": "Do the actual job in miniature: take a real public dataset, clean it, find one genuine insight, and state it in one plain sentence.",
+    "time": "60–90 minutes",
+    "cost": "Free",
+    "disclosure": "Download any CSV from data.gov and open it in a spreadsheet you already have (Excel, or free LibreOffice Calc). No account, nothing installed beyond the spreadsheet, nothing leaves your machine."
+  },
+  "roadmap": [
+    {
+      "stage": "1",
+      "title": "Master the baseline",
+      "focus": "Get genuinely good at Excel (pivot tables, lookups) and learn SQL — free via SQLBolt, Mode's SQL tutorial, or Khan Academy. Practice on real public datasets, not toy ones."
+    },
+    {
+      "stage": "2",
+      "title": "Learn a BI tool and basic statistics",
+      "focus": "Pick Power BI (bigger corporate footprint) or Tableau and rebuild your spreadsheet analyses as dashboards. Learn enough statistics to know when a difference actually means something. The Google Data Analytics Certificate can structure this whole stage.",
+      "cert_slug": "google-data-analytics"
+    },
+    {
+      "stage": "3",
+      "title": "Build a public portfolio",
+      "focus": "Publish two or three end-to-end projects — messy source data, documented cleaning, a dashboard, and a short plain-English writeup. This is what gets junior interviews; add PL-300 if you're targeting Microsoft/Power BI shops.",
+      "cert_slug": "pl-300"
+    },
+    {
+      "stage": "4",
+      "title": "Land the first role and pick a direction",
+      "focus": "Apply broadly — reporting, operations, and BI analyst titles are all this job. Once in, add Python (pandas) to grow toward data engineering, or go deeper on the business side toward analytics or BA leadership."
+    }
+  ],
+  "adjacent_paths": [
+    {
+      "role": "Software Developer",
+      "slug": "software-developer",
+      "reason": "Python and engineering discipline turn analysts into data engineers."
+    },
+    {
+      "role": "IT Project Coordinator",
+      "slug": "it-project-coordinator",
+      "reason": "Analyst communication skills overlap heavily with BA work."
+    }
+  ],
+  "seo_title": "Data Analyst Career Path — Skills, Roadmap & Portfolio | CertBlueprint",
+  "seo_description": "Is Data Analyst the right path for you? What the work feels like, the SQL and dashboard skills to build, a free trial project, salary reality, and a portfolio-first roadmap."
+}

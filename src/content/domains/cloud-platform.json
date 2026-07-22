@@ -1,0 +1,12 @@
+{
+  "specializations": [
+    "Cloud Engineering",
+    "Platform / IaC Engineering",
+    "Container Orchestration",
+    "Site Reliability (SRE)"
+  ],
+  "one_liner": "Building and operating cloud platforms, infrastructure-as-code, and developer platforms.",
+  "order": 4,
+  "slug": "cloud-platform",
+  "title": "Cloud & Platform Engineering"
+}

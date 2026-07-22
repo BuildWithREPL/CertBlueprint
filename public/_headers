@@ -1,0 +1,8 @@
+# Sitemaps must never be served stale to crawlers — Google reads these to
+# discover new pages, and a cached copy from a previous deploy under-reports
+# the site. no-store forces a fresh read end to end.
+/sitemap-index.xml
+  Cache-Control: no-store
+
+/sitemap-0.xml
+  Cache-Control: no-store

@@ -1,0 +1,196 @@
+{
+  "title": "Microsoft 365 Fundamentals MS-900 Study Guide (Retired)",
+  "slug": "ms-900",
+  "short_name": "MS-900",
+  "vendor": "Microsoft",
+  "vendor_slug": "microsoft",
+  "level": "Foundation",
+  "description": "Microsoft 365 Fundamentals (MS-900) was Microsoft's entry-level certification for the Microsoft 365 ecosystem: cloud concepts, apps and services, security and compliance basics, and licensing and support. Microsoft retired the exam on March 31, 2026 — it can no longer be scheduled. Certifications already earned remain valid indefinitely, and AB-900 (Copilot and Agent Administration Fundamentals) is its official successor.",
+  "audience": "People who hold MS-900 and want to know what it is still worth, candidates who had it on a study plan and need a replacement, and help desk or non-technical staff looking for today's Microsoft 365 entry point.",
+  "why_get_it": "The first thing to know: you can no longer get MS-900. Microsoft retired the exam on March 31, 2026, as part of a broader certifications refresh that replaced several fundamentals exams with AI-focused successors. Before retirement, MS-900 was the standard entry point into the Microsoft 365 ecosystem — a low-stakes, roughly $99, 45-minute exam that validated a working vocabulary of Microsoft 365 apps and services, security and compliance basics, and licensing and support options. It was popular with help desk staff, aspiring M365 administrators, and non-technical roles like sales engineers and project managers who needed to speak the platform's language. That knowledge still matters — Microsoft 365 runs a huge share of workplaces — but the credential itself is closed to new candidates. Its official successor is AB-900 (Microsoft 365 Certified: Copilot and Agent Administration Fundamentals), which keeps the M365 core-services baseline but narrows the focus to administering Copilot and AI agents. If you already hold MS-900, it remains permanently valid on your Microsoft Learn transcript. If you were planning to take it, your realistic options are AB-900, SC-900 (security fundamentals), or AZ-900 (Azure fundamentals), depending on where you are headed.",
+  "when_to_get_it": "You can't — MS-900 stopped being schedulable on March 31, 2026 (the retirement was originally set for December 31, 2025 and was extended once). If you passed it before then, nothing changes: Microsoft fundamentals certifications never expire, and MS-900 stays active on your transcript indefinitely. If it was on your study plan, redirect now rather than studying toward a dead exam. Choose AB-900 if you want the direct successor and an M365 administration angle with a Copilot focus, SC-900 if security and compliance is your goal, or AZ-900 if you are heading toward Azure infrastructure. If you only wanted the knowledge and not the badge, the MS-900 study guide is still online and remains a solid free curriculum for Microsoft 365 basics.",
+  "salary_range": "$40,000 – $65,000",
+  "salary_note": "MS-900 never moved salary directly, and a retired fundamentals cert moves it even less. The range above reflects the entry-level help desk and Microsoft 365 support roles it pointed toward. Treat it as a knowledge checkpoint and a resume line, not a raise — role-based certs like MD-102 plus hands-on experience are what change compensation.",
+  "exam_code": "MS-900",
+  "exam_duration": "45 minutes (when offered; exam retired March 31, 2026)",
+  "exam_format": "Multiple choice and multi-select questions, proctored online or at a test center via Pearson VUE. Passing score was 700 on Microsoft's 100–1000 scale. No longer available to schedule.",
+  "exam_questions": "~40–60 questions (Microsoft did not publish an exact count)",
+  "official_url": "https://learn.microsoft.com/en-us/credentials/certifications/microsoft-365-fundamentals/",
+  "official_pricing_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ms-900/",
+  "recertification_note": "MS-900, like all Microsoft fundamentals certifications, never expires. If you passed before the March 31, 2026 retirement, the certification remains permanently active on your Microsoft Learn transcript with no renewal required. Retirement only means new candidates can no longer sit the exam.",
+  "skills_covered": [
+    {
+      "category": "Cloud Concepts (5–10%)",
+      "items": [
+        "SaaS, IaaS, and PaaS concepts and use cases",
+        "Differences between Office 365 and Microsoft 365",
+        "Public, private, and hybrid cloud models",
+        "Cost and advantage comparisons: cloud vs. hybrid vs. on-premises",
+        "Hybrid work and flexible work concepts"
+      ]
+    },
+    {
+      "category": "Microsoft 365 Apps and Services (45–50%)",
+      "items": [
+        "Core productivity apps: Word, Excel, PowerPoint, OneNote, Planner, Forms",
+        "Microsoft 365 Copilot and Copilot Chat capabilities",
+        "Collaboration: Teams, SharePoint, OneDrive, Exchange/Outlook, and Viva",
+        "Endpoint management: Intune, Windows Autopilot, Windows 365 vs. Azure Virtual Desktop",
+        "Microsoft 365 admin center capabilities and reporting"
+      ]
+    },
+    {
+      "category": "Security, Compliance, Privacy, and Trust (25–30%)",
+      "items": [
+        "Microsoft Entra ID identity and access management",
+        "Cloud, on-premises, and hybrid identity concepts",
+        "MFA, self-service password reset, and conditional access",
+        "Microsoft Defender XDR family and Secure Score",
+        "Zero Trust model and Microsoft Purview compliance solutions"
+      ]
+    },
+    {
+      "category": "Pricing, Licensing, and Support (10–15%)",
+      "items": [
+        "Pricing models: enterprise agreements, cloud solution providers, direct billing",
+        "Billing frequency and payment management options",
+        "Base licensing vs. add-on licensing",
+        "Support requests, support options, and SLAs with service credits",
+        "Service health monitoring in the Microsoft 365 and Entra admin centers"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Confirm what you actually need",
+      "description": "MS-900 is retired — you cannot schedule it, and you should not pay for MS-900 prep material. Decide whether you wanted the credential (a line on your resume) or the knowledge (how Microsoft 365 works). The credential path now runs through a different exam; the knowledge path is still free."
+    },
+    {
+      "step": 2,
+      "title": "Pick your replacement exam deliberately",
+      "description": "AB-900 (Copilot and Agent Administration Fundamentals) is the official successor and keeps the M365 core-services baseline with a heavier Copilot/AI-agent focus. SC-900 covers the security, compliance, and identity portion — roughly a quarter of what MS-900 tested — in more depth. AZ-900 is the right call if your target is Azure infrastructure rather than the productivity suite. Do not pick by exam number; pick by the job you want."
+    },
+    {
+      "step": 3,
+      "title": "Download the study guide for the exam you chose",
+      "description": "Every Microsoft exam has an official study guide on Microsoft Learn listing exactly what is tested and at what weight. It is your study contract — read it before touching any course. The retired MS-900 study guide is also still online and useful as a topic map for general M365 literacy."
+    },
+    {
+      "step": 4,
+      "title": "Work through Microsoft Learn's free self-paced paths",
+      "description": "Microsoft Learn's official learning paths are free, map directly to exam objectives, and are genuinely good at the fundamentals level. For a fundamentals exam you rarely need anything paid — most passers use Microsoft Learn plus a practice assessment and nothing else."
+    },
+    {
+      "step": 5,
+      "title": "Get hands-on with a Microsoft 365 trial tenant",
+      "description": "Spin up a Microsoft 365 Business trial and click through the surfaces the exams describe: the Microsoft 365 admin center, Entra admin center, Teams admin center, and Purview. Fundamentals questions are conceptual, but having actually seen the admin centers makes the terminology stick and is the difference between memorizing and understanding."
+    },
+    {
+      "step": 6,
+      "title": "Take the free practice assessment, then schedule",
+      "description": "Microsoft publishes free official practice assessments for its active exams. Score consistently above 80% before booking. Schedule through Pearson VUE, and register with a personal Microsoft account rather than a work/school account — Microsoft warns that exam records tied to an organizational account are lost if you leave that organization."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "Official MS-900 Study Guide (Microsoft Learn)",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ms-900",
+      "type": "Official Documentation",
+      "note": "Still online despite the retirement, with the full final exam objectives. Useful as a free topic map for Microsoft 365 literacy even though the exam itself is gone."
+    },
+    {
+      "name": "Microsoft's retirement announcement (Certifications refresh)",
+      "url": "https://techcommunity.microsoft.com/blog/skills-hub-blog/certifications-refresh-ai-focused-and-fundamentals-updates/4446638",
+      "type": "Announcement",
+      "note": "The official word on which fundamentals exams retired, why, and what replaced them. Read this before choosing a replacement exam."
+    },
+    {
+      "name": "Exam AB-900 – the official successor",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ab-900/",
+      "type": "Official Exam Page",
+      "note": "Microsoft 365 Certified: Copilot and Agent Administration Fundamentals. 45-minute exam, free practice assessment linked from the page, scheduled through Pearson VUE."
+    },
+    {
+      "name": "Microsoft 365 documentation",
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/",
+      "type": "Official Documentation",
+      "note": "The product documentation behind everything MS-900 tested. Free, current, and the reference Microsoft's own study guide pointed candidates to."
+    }
+  ],
+  "paid_resources": [],
+  "voucher_links": [
+    {
+      "label": "MS-900 Exam Page – Microsoft Learn (retired)",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ms-900/",
+      "note": "The official exam page, kept for reference. Scheduling and voucher purchase closed on March 31, 2026 — do not buy an MS-900 voucher from any third party."
+    },
+    {
+      "label": "Schedule AB-900 (successor) – Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ab-900/",
+      "note": "The replacement exam you can actually book. Verify current pricing on the page — Microsoft prices vary by country, and fundamentals exams have historically run about $99 USD."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is the MS-900 exam retired?",
+      "answer": "Yes. Microsoft retired MS-900 on March 31, 2026, at 11:59 PM Central Time as part of a certifications refresh that replaced several fundamentals exams with AI-focused successors. The retirement was originally announced for December 31, 2025 and extended once. You can no longer schedule or purchase the exam."
+    },
+    {
+      "question": "Is my MS-900 certification still valid?",
+      "answer": "Yes, permanently. Microsoft fundamentals certifications never expire, and retiring an exam does not revoke earned credentials. MS-900 remains in the Active Certifications section of your Microsoft Learn transcript, and you can keep listing it on your resume."
+    },
+    {
+      "question": "What replaced MS-900?",
+      "answer": "AB-900 — Microsoft 365 Certified: Copilot and Agent Administration Fundamentals. It is not a one-to-one replacement: where MS-900 surveyed the whole Microsoft 365 platform broadly, AB-900 keeps the M365 core-services baseline and goes deeper on administering Copilot and AI agents. It is a 45-minute proctored exam scheduled through Pearson VUE, currently offered in English."
+    },
+    {
+      "question": "Should I take AB-900, SC-900, or AZ-900 instead?",
+      "answer": "Pick by destination, not by exam number. AB-900 if you want the M365 administration track and the direct MS-900 successor. SC-900 if security, compliance, and identity is your target — it covers that slice of MS-900 in more depth and feeds naturally into security roles. AZ-900 if you are heading toward Azure cloud infrastructure rather than the productivity suite. All three are inexpensive fundamentals exams with free official prep on Microsoft Learn."
+    },
+    {
+      "question": "What did the MS-900 exam cost and look like?",
+      "answer": "It was $99 USD (varying by country), 45 minutes long, with roughly 40–60 multiple-choice and multi-select questions — Microsoft never published an exact count. The passing score was 700 on Microsoft's 100–1000 scale, and it was offered in 12 languages, proctored online or at test centers through Pearson VUE."
+    },
+    {
+      "question": "Is the MS-900 material still worth studying?",
+      "answer": "The knowledge, yes — the exam prep, no. Microsoft 365 fundamentals (what Teams, SharePoint, Entra ID, Intune, and Purview do; how licensing works) are still exactly what help desk and junior admin roles need. The MS-900 study guide remains online as a free topic map. Just don't buy MS-900 courses or practice exams: point that money and time at AB-900, SC-900, or a role-based cert like MD-102 instead."
+    },
+    {
+      "question": "Do employers still care about MS-900?",
+      "answer": "If you earned it, it still signals baseline Microsoft 365 literacy and initiative, and it stays valid forever. But recognition will fade as job listings shift to AB-900 and SC-900, and fundamentals certs were never hiring differentiators on their own. Pair it with hands-on experience or a role-based cert if you want it to matter in a hiring decision."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "Microsoft SC-900",
+      "slug": "sc-900",
+      "vendor": "Microsoft",
+      "vendor_slug": "microsoft",
+      "reason": "The closest still-available Microsoft fundamentals exam for the security, compliance, and identity portion of what MS-900 covered."
+    },
+    {
+      "title": "Microsoft AZ-900",
+      "slug": "az-900",
+      "vendor": "Microsoft",
+      "vendor_slug": "microsoft",
+      "reason": "Microsoft's Azure fundamentals exam — still available, and the better choice if your interest is cloud infrastructure rather than the M365 productivity suite."
+    },
+    {
+      "title": "Microsoft MD-102",
+      "slug": "md-102",
+      "vendor": "Microsoft",
+      "vendor_slug": "microsoft",
+      "reason": "The role-based Endpoint Administrator cert — the natural next step for anyone who wanted MS-900 as an on-ramp to Microsoft 365 administration."
+    },
+    {
+      "title": "CompTIA A+",
+      "slug": "a-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "For help desk candidates who were eyeing MS-900 as a first cert, A+ is the broader, vendor-neutral, still-current entry point."
+    }
+  ],
+  "seo_title": "Microsoft 365 Fundamentals MS-900 Guide – Retired March 2026, What to Do Instead | CertBlueprint",
+  "seo_description": "MS-900 retired March 31, 2026. What Microsoft 365 Fundamentals covered, whether earned certs stay valid, and what to take instead: AB-900, SC-900, or AZ-900."
+}

@@ -1,0 +1,247 @@
+{
+  "title": "Cisco CCIE Security Guide",
+  "slug": "ccie-security",
+  "short_name": "CCIE Security",
+  "vendor": "Cisco",
+  "vendor_slug": "cisco",
+  "level": "Expert",
+  "description": "CCIE Security is the expert summit of the Cisco security stack: the SCOR written plus an 8-hour, $1,600-per-attempt lab spanning firewalls, identity, VPN, and content security — commonly called the widest blueprint of any current CCIE track. Destination briefing, honestly told: who it pays for, what it truly costs, and the SCOR v2.0 timing decision facing every 2026 candidate.",
+  "audience": "Engineers embedded in the Cisco security stack — large FTD/FMC estates, serious ISE deployments, Cisco-standardized enterprises and partners — where the cert maps one-to-one to daily work. Explicitly not for CISO-track or multi-vendor architecture careers; the FAQ covers why CISSP plus CCNP Security usually serves those better.",
+  "why_get_it": "In its rooms, it's decisive: CCIE Security holders command a consistent 10–20% premium over generalist CCIEs (Glassdoor-class data shows ~$177K averages for tagged roles), ISE and firewall-migration expertise is among the most billable Cisco skill work at partners, and the partner-status economics that keep CCIEs employed apply doubly to the security track. The clear-eyed framing: this is a Cisco-product expert credential, not a vendor-neutral security architecture one. Its value tracks the Cisco footprint of your employer and market — in Palo Alto or Fortinet shops it buys far less than it used to.",
+  "when_to_get_it": "When you're already fluent across the Cisco security portfolio daily — FTD/FMC, ISE, secure connectivity, content security — and your market is one where the number pays. And 2026 adds a genuine timing decision: SCOR v1.1's last test day is August 26, 2026, with v2.0 (AI security, SSE/SASE, post-quantum) launching August 27. Pass SCOR mid-2026 and you get a clean ~12-month lab window under known rules — the v6.1 lab is stable until the AI module arrives around September 2027 (Cisco marks it TBC).",
+  "salary_range": "$140,000 – $200,000+ (senior security engineering/consulting)",
+  "salary_note": "CCIE Security-tagged roles average ~$177K in Glassdoor-class data with the usual title-skew caveats, and the track carries a consistent 10–20% premium over generalist CCIE roles. Contract rates of $150–250/hr circulate persistently but anecdotally. Concentrated where the Cisco security stack is standard: partners, federal/cleared work, large enterprises. Nothing official — Cisco publishes no salary data.",
+  "exam_code": "350-701 SCOR + 8-hour lab",
+  "exam_duration": "Written: 120 minutes · Lab: 8 hours",
+  "exam_format": "Step 1: pass SCOR (also CCNP Security's core — one pass serves both). Step 2: the 8-hour lab (v6.1): 3h Design + 5h Deploy/Operate/Optimize across a dual-stack enterprise security build — per-module minimums plus aggregate pass score. The 1-hour AI module reaches the Security lab around September 2027 (TBC). 30-day wait after a failed lab.",
+  "exam_questions": "Written: not published · Lab: scenario-based",
+  "exam_structure": [
+    {
+      "code": "350-701 SCOR",
+      "name": "Implementing and Operating Cisco Security Core Technologies",
+      "role": "Qualifying exam",
+      "price": "$400",
+      "note": "Same exam as CCNP Security's core. v1.1 last test day Aug 26, 2026; v2.0 from Aug 27 (AI/LLM security, SSE/SASE, post-quantum). Earns Specialist – Security Core."
+    },
+    {
+      "code": "CCIE Security Lab v6.1",
+      "name": "8-hour practical: 3h Design + 5h Deploy/Operate/Optimize",
+      "role": "Lab exam",
+      "price": "$1,600 per attempt",
+      "note": "The widest blueprint of the current tracks: FTD/FMC, ISE, VPNs, content security, programmability. AI module ~Sept 2027 (TBC). Product licensing makes self-hosted labs harder than EI — budget rack rentals."
+    }
+  ],
+  "official_url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/security/ccie-security/exams-and-training.html",
+  "official_pricing_url": "https://ciscolearningservices.my.site.com/cln/s/article/book-your-expert-level-exams",
+  "recertification_note": "Identical to all CCIEs: 3-year cycle, 120 CE credits on the unified ledger (exam passes auto-award CE). Maintaining the number is now ordinary professional learning; losing it entirely means restarting from the written.",
+  "last_verified": "July 2026",
+  "skills_covered": [
+    {
+      "category": "Perimeter & Intrusion Prevention (20%)",
+      "items": [
+        "Cisco Secure Firewall (FTD/FMC) at expert depth: policy, HA, clustering",
+        "IPS tuning and evasion-resistant design",
+        "NAT and routing integration under security constraints",
+        "Migration scenarios — the billable skill in the real world",
+        "What breaks at hour six of the lab: integration, not features"
+      ]
+    },
+    {
+      "category": "Identity & Access Control — the 25% heavyweight",
+      "items": [
+        "ISE at scale: 802.1X, profiling, posture, BYOD, guest",
+        "TrustSec end to end: SGTs, enforcement, propagation",
+        "Identity federation and directory integration",
+        "The identity layer as the lab's connective tissue",
+        "Why ISE fluency is the single most billable skill on this blueprint"
+      ]
+    },
+    {
+      "category": "Secure Connectivity & Segmentation (20%)",
+      "items": [
+        "Site-to-site and remote-access VPNs: IKEv2, FlexVPN, DMVPN with crypto",
+        "Segmentation architecture across campus and DC",
+        "Dual-stack (IPv4/IPv6) security — assumed everywhere in v6.1",
+        "SSE/SASE concepts as they enter the blueprint via SCOR v2.0",
+        "Design-module territory: justify the architecture, not just build it"
+      ]
+    },
+    {
+      "category": "Threat Protection, Content & Automation (35%)",
+      "items": [
+        "Advanced threat protection and Cisco Secure suite integration",
+        "Content security surviving the SESA/SWSA retirement in core form",
+        "Security infrastructure: management-plane hardening at expert depth",
+        "Programmability against security products: APIs, automation of policy",
+        "The AI-module future: AI-assisted security ops, arriving ~Sept 2027"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Confirm the market math for YOUR situation",
+      "description": "This track's ROI is the most footprint-dependent of any CCIE: decisive at Cisco partners, federal/cleared shops, and FTD/ISE estates; weak in Palo Alto/Fortinet markets; wrong for CISO-track trajectories (that's CISSP territory). Write down who pays for this number in your market before spending a year earning it."
+    },
+    {
+      "step": 2,
+      "title": "Make the SCOR version call — the 2026 decision",
+      "description": "Pass SCOR v1.1 by August 26, 2026 with mature study materials, or wait for v2.0 (August 27) if AI-security/SASE content matches your work — knowing official training lags into Q4. Either way, a mid-2026 SCOR pass opens a clean ~12-month lab window under the stable v6.1 rules before the AI module lands ~Sept 2027."
+    },
+    {
+      "step": 3,
+      "title": "Budget with the security-lab surcharge",
+      "description": "Same base economics as every CCIE — $400 written, $1,600 per lab attempt, 2–3 attempts typical, travel each time, $5,000–12,000 realistic all-in — plus this track's specific tax: FMC, ISE, and content-security licensing makes fully self-hosted labs genuinely hard, so budget rack rentals as a line item, not a maybe."
+    },
+    {
+      "step": 4,
+      "title": "Lab the stack on DevNet sandboxes first, racks second",
+      "description": "Cisco's free DevNet sandboxes carry reservable FMC and ISE instances — the cheapest legitimate hands-on for the exact blueprint products. Build daily fluency there, then graduate to INE's security racks for full-scale integration scenarios closer to the lab."
+    },
+    {
+      "step": 5,
+      "title": "Train the width, not just the depth",
+      "description": "The v6.1 blueprint is commonly called the widest of any current track: firewalls, ISE, VPNs, content security, AND programmability. Most failed attempts die on the product you use least at work. Inventory your weak quadrant on day one and give it disproportionate hours — the lab finds it either way."
+    },
+    {
+      "step": 6,
+      "title": "Drill the Design module as its own discipline",
+      "description": "Three hours, no device access, no going back — security architecture judged as design: trade-offs, requirements, justification. Cisco Live security architecture sessions (free, on-demand) are the best training that exists for this module. Config mastery alone fails it."
+    },
+    {
+      "step": 7,
+      "title": "Rehearse, book, and plan for attempt two",
+      "description": "Same honest playbook as every CCIE: calibrate before burning $1,600 plus travel, book far ahead, arrive rested, and treat a failed first attempt as the statistically normal outcome it is — 30-day wait, sharper second run. The passers' stories almost all include one."
+    },
+    {
+      "step": 8,
+      "title": "Maintain the number through the work itself",
+      "description": "120 CE per 3 years, and security work generates it naturally — Cisco U courses on the products you run, Cisco Live sessions, exam passes all feed one ledger. Active security engineers rarely struggle to keep this current; lapsed ones restart from the written."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "CCIE Security v6.1 Practical Exam Topics",
+      "url": "https://learningnetwork.cisco.com/s/ccie-security-exam-topics",
+      "type": "Official Documentation",
+      "note": "Domain weights and PDF — the page also carries the SCOR v2.0 and AI-module change banners worth re-checking."
+    },
+    {
+      "name": "SCOR Exam Topics (v1.1 → v2.0 Transition)",
+      "url": "https://learningnetwork.cisco.com/s/scor-exam-topics",
+      "type": "Official Documentation",
+      "note": "The authoritative statement of the Aug 26/27, 2026 cutover — check before scheduling the written."
+    },
+    {
+      "name": "DevNet Sandboxes (FMC, ISE)",
+      "url": "https://developer.cisco.com/site/sandbox/",
+      "type": "Hands-on Labs",
+      "note": "Free reservable instances of the exact blueprint products — the cheapest legitimate FTD/ISE hands-on time anywhere."
+    },
+    {
+      "name": "Official AI-Module Announcement",
+      "url": "https://learningnetwork.cisco.com/s/article/CCIE-Practical-Exam-Format-with-AI-Module",
+      "type": "Official Documentation",
+      "note": "Security lab gets the AI module ~Sept 2027 (TBC) — the timing anchor for your lab window."
+    },
+    {
+      "name": "Cisco Live On-Demand — Security Architecture Sessions",
+      "url": "https://www.ciscolive.com/on-demand.html",
+      "type": "Video Sessions",
+      "note": "Free expert-level security design content — the best available training for the Design module."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "INE – Security Expert Path",
+      "type": "Video + Workbooks + Racks",
+      "price": "~$749–$999/year",
+      "best_for": "Structured v6.x lab prep with rack access to the full security stack — the answer to this track's licensing problem",
+      "affiliate_url": "https://ine.com/",
+      "affiliate_label": "View INE",
+      "affiliate_event": "ine_ccie_sec",
+      "affiliate": false,
+      "note": "Plain reference link, no commission."
+    },
+    {
+      "provider": "Boson ExSim for SCOR 350-701",
+      "type": "Practice Exams",
+      "price": "~$99",
+      "best_for": "Written-exam readiness before the $400 sitting — version-check against your side of the v1.1/v2.0 boundary",
+      "affiliate_url": "https://www.boson.com/product/exsim-max-for-cisco-350-701-scor/",
+      "affiliate_label": "View on Boson",
+      "affiliate_event": "boson_scor_ccie",
+      "affiliate": false,
+      "note": "Plain reference link."
+    },
+    {
+      "provider": "Cisco U. – Security Paths + Official Practice",
+      "type": "Official Training",
+      "price": "Varies — commonly employer-funded via Learning Credits",
+      "best_for": "Blueprint-aligned official prep including v2.0 content as it lands in Q3–Q4 2026",
+      "affiliate_url": "https://u.cisco.com/",
+      "affiliate_label": "View Cisco U",
+      "affiliate_event": "ciscou_ccie_sec",
+      "affiliate": false,
+      "note": "Plain reference link. Security teams at Cisco shops almost always have Learning Credits — ask."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Written via Pearson VUE · Lab via Cisco's expert-exam booking",
+      "url": "https://ciscolearningservices.my.site.com/cln/s/article/book-your-expert-level-exams",
+      "note": "$400 written + $1,600 per lab attempt; travel on you, and this track adds rack-rental costs most others don't. Realistic all-in: $5,000–12,000+. Learning Credits redeem for all of it."
+    }
+  ],
+  "faq": [
+    {
+      "question": "CCIE Security or CISSP — which does a security career need?",
+      "answer": "They answer different questions. CCIE Security proves you can build and operate the Cisco security stack at expert depth — engineering mastery, vendor-specific. CISSP proves breadth and seniority across security practice — vendor-neutral, HR-filter gold, management-track. Heading toward CISO/architecture? CISSP (plus CCNP Security for depth) is usually the better spend. Deep in a Cisco security estate or partner? This is the one that pays. Plenty of senior people eventually hold both — in that order or reverse depending on the room."
+    },
+    {
+      "question": "How does the August 2026 SCOR change affect CCIE candidates?",
+      "answer": "Directly — SCOR is your qualifying exam. Pass v1.1 by August 26, 2026 (mature materials) or start clean on v2.0 from August 27 (AI security, SSE/SASE, post-quantum — with training that lags into Q4). The strategic sweetener for mid-2026: the v6.1 lab stays stable until the AI module arrives around September 2027, so a SCOR pass now buys a clean ~12-month lab window under known rules."
+    },
+    {
+      "question": "Is the Security lab really the hardest?",
+      "answer": "'Widest' is the more accurate folklore: FTD/FMC, ISE, VPNs at depth, content security, and programmability — more distinct products than any other current track. Most failed attempts die on the quadrant the candidate uses least at work. It's also the most expensive to self-lab (product licensing), which is why rack rentals are a standard line item here and not elsewhere."
+    },
+    {
+      "question": "What does it actually cost all-in?",
+      "answer": "Same base as every CCIE — $400 written, $1,600 per lab attempt, most passers needing 2–3 attempts plus travel — landing realistically at $5,000–12,000. Add this track's surcharge: rack rentals for the licensed security stack, since free sandboxes cover fluency but not full-scale integration rehearsal. Learning Credits, if your employer has them, blunt all of it."
+    },
+    {
+      "question": "Is it worth it if my shop runs Palo Alto or Fortinet?",
+      "answer": "Honestly: probably not as your next move. This is a Cisco-product expert credential whose premium concentrates where that stack is standard. In a multi-vendor or non-Cisco perimeter environment, CCNP Security plus vendor-relevant certs plus CISSP covers more ground for less. The exception: consultants who deliberately serve Cisco-stack clients regardless of their own employer's gear."
+    },
+    {
+      "question": "What comes after the number?",
+      "answer": "Maintenance is the easy part now (120 CE per 3 years through ordinary learning). Career-wise, CCIE Security typically forks three ways: principal/architect roles inside large Cisco estates, partner consulting where the number itself bills, or broadening into CISSP/cloud-security for the leadership track. The number opens the rooms; what you do in them is the actual career."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CCNP Security",
+      "slug": "ccnp-security",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The base camp — its SCOR core is this cert's qualifying exam, and for most security engineers it's the honest stopping point."
+    },
+    {
+      "title": "ISC2 CISSP",
+      "slug": "cissp",
+      "vendor": "ISC2",
+      "vendor_slug": "isc2",
+      "reason": "The vendor-neutral senior credential — the better spend for CISO-track and architecture careers, and a frequent eventual pairing."
+    },
+    {
+      "title": "CCIE Enterprise Infrastructure",
+      "slug": "ccie-enterprise-infrastructure",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The enterprise-track twin — same lab economics and folklore, aimed at routing/SD-x instead of the security stack."
+    }
+  ],
+  "seo_title": "CCIE Security Guide – Real Costs, the Widest Lab, and the CISSP Question | CertBlueprint",
+  "seo_description": "The honest CCIE Security briefing: SCOR v2.0 timing, the v6.1 lab's product breadth, rack-rental economics, the 10–20% premium data, and when CISSP + CCNP Security is the smarter spend."
+}

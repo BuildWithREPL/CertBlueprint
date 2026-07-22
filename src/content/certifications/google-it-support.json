@@ -1,0 +1,225 @@
+{
+  "title": "Google IT Support Certificate Guide",
+  "slug": "google-it-support",
+  "short_name": "Google IT Support",
+  "vendor": "Google",
+  "vendor_slug": "google",
+  "level": "Foundation",
+  "description": "The Google IT Support Professional Certificate is the original Google Career Certificate — a six-course, zero-prerequisite program on Coursera covering troubleshooting, networking, operating systems, system administration, and security basics, with browser-based VM labs. Completers get 30% off CompTIA A+ exam vouchers and a dual Google+CompTIA badge for passing both.",
+  "audience": "Absolute beginners deciding whether IT is for them, and career changers from retail, service, or any non-technical field who need a structured curriculum more than they need another YouTube playlist. No degree, no experience, just consistent weekly hours.",
+  "why_get_it": "It's the cheapest legitimate answer to 'is IT actually for me?' — $49 a month against the ~$550 you'd spend on A+ vouchers to find out the hard way. The curriculum is genuinely broader than A+ prep: real Linux and sysadmin coverage that A+ barely touches, hands-on VM labs, and a Google brand that gets resume attention. And the exit perk matters: completers get 30% off CompTIA A+ vouchers (~$192 each instead of $274 at mid-2026 pricing), which converts your coursework into the credential HR filters actually search for. Over 2.1 million people have enrolled; the honest way to be one of the ~14% who finish is to treat it like a scheduled class, not a someday hobby.",
+  "when_to_get_it": "At the very start — before A+, not instead of it. The community consensus in 2026 is settled: do the Google cert first for the learning experience, then use the discount to sit A+ for the resume line, and list both. Skip the Google cert if you already have hands-on IT exposure; go straight to A+ and put your money into vouchers.",
+  "salary_range": "$38,000 – $55,000 (first help desk role)",
+  "salary_note": "Google's '$70,000 median for IT support jobs' covers zero-to-five years of experience — don't expect it on offer one. Honest first-job numbers: BLS median for computer support specialists is $59,660 across all experience levels; ZipRecruiter averages ~$48K for help desk technicians; PayScale puts sub-1-year IT support at ~$46K. Realistic first role: $38–55K in most U.S. markets, $55–65K in high-cost metros — with real jumps in years 1–3 as you move toward desktop support and sysadmin work.",
+  "exam_code": "Coursera Certificate",
+  "exam_duration": "Self-paced — Google claims 3 months at 10 hrs/week; ~80–115 hours of content, so realistic finishes run 2–4 months (weeks, with any IT background)",
+  "exam_format": "No proctored exam. Six self-paced Coursera courses with auto-graded quizzes and hands-on Qwiklabs — browser-based VMs for real Linux, Windows, and networking exercises.",
+  "exam_questions": "No final exam — graded quizzes and hands-on labs throughout",
+  "official_url": "https://grow.google/certificates/it-support/",
+  "official_pricing_url": "https://www.coursera.org/professional-certificates/google-it-support",
+  "recertification_note": "Never expires — course-completion certificate with a permanent Credly badge, no renewal cycle or fees. Employers accordingly read it as training evidence; the A+ pairing is what adds exam-tested weight.",
+  "skills_covered": [
+    {
+      "category": "Technical Support & Networking (Courses 1–2)",
+      "items": [
+        "The troubleshooting mindset: reproduce, isolate, resolve, document",
+        "Computer assembly, operating system installation, and hardware basics",
+        "TCP/IP, DNS, DHCP, and how the internet actually works",
+        "Network troubleshooting from the support seat",
+        "Customer service under ticket pressure — the real job skill"
+      ]
+    },
+    {
+      "category": "Operating Systems (Course 3)",
+      "items": [
+        "Windows and Linux side by side — GUI and command line",
+        "File systems, permissions, and user management",
+        "Process management and system monitoring",
+        "Software installation and package management",
+        "Hands-on VM labs in both operating systems"
+      ]
+    },
+    {
+      "category": "System Administration (Course 4)",
+      "items": [
+        "Directory services: Active Directory and OpenLDAP concepts",
+        "Cloud services and infrastructure-as-a-service basics",
+        "User and hardware provisioning at organizational scale",
+        "Backup, recovery, and disaster planning fundamentals",
+        "The bridge topics between help desk and junior sysadmin"
+      ]
+    },
+    {
+      "category": "IT Security (Course 5)",
+      "items": [
+        "Security threats, malware types, and social engineering",
+        "Encryption, hashing, and the three A's: authentication, authorization, accounting",
+        "Network hardening and Wi-Fi security",
+        "Defense in depth for the support tier",
+        "The security vocabulary every IT role now assumes"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Audit course one free before subscribing",
+      "description": "Audit 'Technical Support Fundamentals' at no cost — all videos and readings, no graded labs. If it holds your attention for two weeks, subscribe. If money is the blocker, apply for Coursera financial aid (~15-day review) and get the whole program free."
+    },
+    {
+      "step": 2,
+      "title": "Set a 3-month pace before the trial starts",
+      "description": "The single biggest failure mode isn't difficulty — it's drift. Only ~14% of U.S. Coursera learners finish certificates they start. Block ten hours a week on your calendar; at that pace you're done in ~3 months (~$147 total) instead of paying $49/month indefinitely."
+    },
+    {
+      "step": 3,
+      "title": "Do every Qwiklab like it's a ticket",
+      "description": "The browser VMs are the program's real value — actual Linux and Windows practice, not videos about them. Treat each lab as a help-desk ticket: read it, solve it, and write one line about what you did. That habit is the job."
+    },
+    {
+      "step": 4,
+      "title": "Give courses 3 and 4 extra weight",
+      "description": "Operating Systems and System Administration are where this program genuinely outteaches A+ prep — the Linux and directory-services material is what separates 'help desk forever' from 'help desk, then sysadmin.' Slow down there."
+    },
+    {
+      "step": 5,
+      "title": "Watch for the A+ discount email on completion",
+      "description": "Completers get an emailed offer: 30% off CompTIA A+ vouchers (~$192 vs $274 list as of mid-2026, for each of the two exams). Coursera support threads note the email can be delayed or missed — check spam, and chase support if it doesn't arrive. Passing both A+ exams adds a dual Google+CompTIA Credly badge."
+    },
+    {
+      "step": 6,
+      "title": "Bridge to A+ with Professor Messer",
+      "description": "The Google cert taught concepts; A+ tests them under proctored pressure with its own exam vocabulary. Professor Messer's free Core 1/Core 2 series plus a $20 practice-exam bank closes that gap. Aim for consistent 85%+ on practice exams before booking either voucher."
+    },
+    {
+      "step": 7,
+      "title": "Apply while you study — don't wait for perfect",
+      "description": "Help desk hiring values availability, communication, and any customer-service history alongside credentials. Start applying once the Google cert is done and A+ study is underway — 'A+ in progress' with the Google cert on the resume is a legitimate, common entry position."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "Coursera Audit Mode + Financial Aid",
+      "url": "https://www.coursera.org/professional-certificates/google-it-support",
+      "type": "Official Course Access",
+      "note": "Audit any of the six courses free, or apply per-course financial aid to earn the full certificate at no cost."
+    },
+    {
+      "name": "Professor Messer – Free A+ Training",
+      "url": "https://www.professormesser.com/free-a-plus-training/",
+      "type": "Video Course",
+      "note": "The standard free companion for the Google-cert-then-A+ path — covers the current Core 1 and Core 2 objectives."
+    },
+    {
+      "name": "grow.google IT Support Page",
+      "url": "https://grow.google/certificates/it-support/",
+      "type": "Official Documentation",
+      "note": "The authoritative source for pricing, the employer consortium, ACE credit, and the CompTIA dual-credential details."
+    },
+    {
+      "name": "r/ITCareerQuestions",
+      "url": "https://www.reddit.com/r/ITCareerQuestions/",
+      "type": "Community",
+      "note": "Blunt, current field reports on whether the cert moved the needle in specific markets — and what first jobs really pay."
+    },
+    {
+      "name": "Our Help Desk Technician path",
+      "url": "/paths/help-desk-technician/",
+      "type": "Career Roadmap",
+      "note": "Where this certificate leads — the honest day-to-day, salary bands, and the roadmap from first ticket to sysadmin."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Coursera – the certificate itself",
+      "type": "Subscription",
+      "price": "$49/month after 7-day trial (~$147–294 total)",
+      "best_for": "The cheapest structured zero-to-help-desk curriculum from a brand-name company",
+      "affiliate_url": "https://www.coursera.org/professional-certificates/google-it-support",
+      "affiliate_label": "View on Coursera",
+      "affiliate_event": "coursera_google_itsupport",
+      "affiliate": false,
+      "note": "Plain reference link, no commission. Pace is money — plan for 3 months."
+    },
+    {
+      "provider": "CompTIA A+ vouchers (with completer discount)",
+      "type": "Certification Exams",
+      "price": "~$192 each with 30% off (list $274 each as of mid-2026, two exams)",
+      "best_for": "Converting the coursework into the credential HR filters search — A+ appears in roughly 65% of support listings",
+      "affiliate_url": "https://www.comptia.org/en-us/certifications/a/",
+      "affiliate_label": "View CompTIA A+",
+      "affiliate_event": "comptia_aplus_via_google",
+      "affiliate": false,
+      "note": "The discount email arrives after completion and is easy to miss — check spam. See our full A+ guide for the study plan."
+    },
+    {
+      "provider": "Udemy – A+ practice exams (Jason Dion)",
+      "type": "Practice Exams",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Exam-readiness check before spending ~$384 on the two discounted A+ vouchers",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourses%2Fsearch%2F%3Fq%3DCompTIA%2520A%252B%2520practice%2520exams%2520Dion",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_aplus_practice_via_google",
+      "affiliate": true,
+      "note": "Buy on sale, never list price. Consistent 85%+ means you're ready to book."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Enroll – Google IT Support on Coursera",
+      "url": "https://www.coursera.org/professional-certificates/google-it-support",
+      "note": "No exam voucher exists — it's a Coursera subscription (~$49/month U.S. after a 7-day trial); financial aid can waive it entirely. The voucher that matters comes at the end: 30% off both CompTIA A+ exams for completers."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Google IT Support Certificate or CompTIA A+ — which one first?",
+      "answer": "Both, in that order — that's the settled 2026 consensus. The Google cert is the better learning experience (broader, cheaper, hands-on VMs, actual Linux); A+ is the better resume line (it appears in ~65% of support listings, while almost none require the Google cert by name). Do the Google cert, claim the 30% A+ discount, pass both, list both."
+    },
+    {
+      "question": "Can this certificate alone get me hired?",
+      "answer": "Sometimes, for the right person — help desk is the one genuinely entry-level IT tier, and hiring managers respect the cert as proof you can learn and finish. But a candidate with A+ plus any customer-service history usually beats a Google-cert-only resume. Treat it as the on-ramp that starts the engine, with A+ as the credential that clears the filters."
+    },
+    {
+      "question": "How much does it really cost?",
+      "answer": "$49/month after the 7-day trial. Content is ~80–115 hours: finish in Google's 3-month estimate and it's ~$147; drift to the more realistic 6 months and it's ~$294. Financial aid can make it free. The 30% A+ discount (~$164 total across both vouchers at mid-2026 pricing) claws back most of the cost if you continue — which is the point."
+    },
+    {
+      "question": "What's the employer consortium worth?",
+      "answer": "Access, not offers: 150+ U.S. employers (Deloitte, Target, Verizon, Wells Fargo, AT&T, Google itself) agree to consider graduates, via a job board for completers. It's a real perk and a bad reason to enroll — the coursework and the A+ bridge are the reasons."
+    },
+    {
+      "question": "Is there college credit?",
+      "answer": "Yes — one of the largest ACE recommendations among Google certs: up to 15 U.S. college credits (about five bachelor-level courses) at participating schools, though acceptance is each school's call. If a degree is anywhere in your future plans, claim the Credly badge and keep it."
+    },
+    {
+      "question": "Does it expire?",
+      "answer": "No — permanent course-completion certificate, no renewal or fees. Pair it with A+ (renewable, exam-tested) and you cover both what employers respect and what filters require."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CompTIA A+",
+      "slug": "a-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "The intended pairing — completers get 30% off both A+ vouchers, and A+ is the keyword support-job filters actually search."
+    },
+    {
+      "title": "Google IT Automation with Python",
+      "slug": "google-it-automation",
+      "vendor": "Google",
+      "vendor_slug": "google",
+      "reason": "Google's official sequel — the scripting and automation skills that break the help-desk ceiling toward sysadmin work."
+    },
+    {
+      "title": "CompTIA Network+",
+      "slug": "network-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "The natural second proctored cert — deepens the networking course here into the credential NOC and admin roles look for."
+    }
+  ],
+  "seo_title": "Google IT Support Certificate Review – Cost, vs CompTIA A+, Worth It | CertBlueprint",
+  "seo_description": "Honest Google IT Support Certificate guide: real cost, the six courses, the 30% CompTIA A+ discount, first-job salary reality, and the Google-then-A+ sequence that actually works."
+}

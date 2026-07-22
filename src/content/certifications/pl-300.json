@@ -1,0 +1,226 @@
+{
+  "title": "Microsoft PL-300 Power BI Data Analyst Study Guide",
+  "slug": "pl-300",
+  "short_name": "PL-300",
+  "former_name": "DA-100",
+  "vendor": "Microsoft",
+  "vendor_slug": "microsoft",
+  "level": "Associate",
+  "description": "Microsoft Certified: Power BI Data Analyst Associate (exam PL-300) is the recognized credential for data analysts working in the Microsoft ecosystem. It validates the full Power BI workflow: preparing and cleaning data with Power Query, building data models with DAX, creating reports and dashboards, and managing and securing content in the Power BI service. For business intelligence roles at companies running Microsoft, it is the default analyst certification.",
+  "audience": "Aspiring data analysts, BI developers, report builders, and Excel power users who want to formalize Power BI skills. Also useful for finance, operations, and marketing analysts whose companies run on the Microsoft stack.",
+  "why_get_it": "Power BI is the most widely deployed BI tool in the enterprise, and PL-300 is the credential hiring managers recognize for it. It appears by name in job listings for Data Analyst, BI Analyst, BI Developer, and Reporting Analyst roles—especially at companies already invested in Microsoft 365 and Azure. Unlike vendor-neutral analytics credentials, PL-300 tests hands-on tool skills: Power Query transformations, star-schema modeling, DAX measures (CALCULATE, time intelligence), and service-side administration like row-level security and scheduled refresh. That specificity is its value—passing it signals you can actually build and ship reports, not just talk about analytics concepts. The exam was refreshed in April 2026 and now includes Copilot-assisted report building and DirectLake, so the current version reflects how Power BI is genuinely used today. It will not get you hired on its own—a portfolio of real reports matters at least as much—but combined with demonstrable work, it gets you past resume filters in Microsoft shops.",
+  "when_to_get_it": "Get PL-300 when you are targeting data analyst or BI roles and can already build a basic report in Power BI Desktop. It is a poor first step for complete beginners—spend a few weeks with the free Microsoft Learn modules and real data first, because the exam assumes working familiarity with Power Query and DAX. Excel power users (PivotTables, Power Query in Excel) can usually ramp up quickly since the underlying engines are the same. If you are choosing between PL-300 and a general analytics certificate, pick PL-300 when your target employers run Microsoft; pick a broader program if you are still deciding on a toolset. There are no prerequisites and the renewal is free, so there is little reason to delay once you are job-hunting in this space.",
+  "salary_range": "$60,000 – $95,000",
+  "salary_note": "Entry-level data analyst and reporting analyst roles typically start in the $60K–$75K range in the U.S. Mid-level BI analyst and BI developer roles commonly reach $80K–$100K, and senior BI developers with strong DAX and SQL frequently exceed $110K. Be realistic: PL-300 alone does not command a premium—employers pay for the combination of the credential, a portfolio of real reports, and SQL skills. It functions as a door-opener, not a salary lever.",
+  "exam_code": "PL-300",
+  "exam_duration": "100 minutes",
+  "exam_format": "Multiple choice, multiple select, drag-and-drop, and other interactive question types; may include a case study. Proctored through Pearson VUE, in person or online. Passing score is 700 on a 100–1000 scale.",
+  "exam_questions": "Typically 40–60 questions (Microsoft does not publish an exact count)",
+  "official_url": "https://learn.microsoft.com/en-us/credentials/certifications/data-analyst-associate/",
+  "official_pricing_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-300/",
+  "recertification_note": "The certification expires after 12 months but renewal is free: pass an online, unproctored renewal assessment on Microsoft Learn. The renewal window opens six months before expiration. No fees, no retaking the full exam—just do not miss the window, or the certification lapses and you must retake PL-300.",
+  "skills_covered": [
+    {
+      "category": "Prepare the Data (25–30%)",
+      "items": [
+        "Connecting to data sources and shared semantic models",
+        "Choosing between Import, DirectQuery, and DirectLake storage modes",
+        "Profiling data: column statistics, nulls, and data quality issues",
+        "Power Query transformations: merge, append, pivot/unpivot, grouping",
+        "Building fact and dimension tables with appropriate keys"
+      ]
+    },
+    {
+      "category": "Model the Data (25–30%)",
+      "items": [
+        "Star-schema design: relationships, cardinality, cross-filter direction",
+        "Common date tables and role-playing dimensions",
+        "DAX measures: CALCULATE, time intelligence, semi-additive measures",
+        "Calculated columns, calculated tables, and calculation groups",
+        "Performance tuning with Performance Analyzer and DAX query view"
+      ]
+    },
+    {
+      "category": "Visualize and Analyze the Data (25–30%)",
+      "items": [
+        "Choosing and configuring visuals, themes, and conditional formatting",
+        "Bookmarks, drillthrough, sync slicers, and report navigation",
+        "Copilot features: narrative visuals and report page suggestions",
+        "AI visuals, forecasting, reference lines, and anomaly detection",
+        "Accessibility, mobile layouts, and paginated report use cases"
+      ]
+    },
+    {
+      "category": "Manage and Secure Power BI (15–20%)",
+      "items": [
+        "Workspaces, apps, and content distribution methods",
+        "Scheduled refresh, gateways, and semantic model settings",
+        "Row-level security roles and group membership",
+        "Item-level access and semantic model permissions",
+        "Sensitivity labels and content endorsement (promote/certify)"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Download the official study guide",
+      "description": "Start with Microsoft's official PL-300 study guide, which lists every skill measured with current weightings. The exam was updated April 20, 2026 (Copilot features and DirectLake are now in scope), so ignore any prep material that still references 'Deploy and maintain assets' as the fourth domain—it is now 'Manage and secure Power BI.'"
+    },
+    {
+      "step": 2,
+      "title": "Work through the free Microsoft Learn path",
+      "description": "Microsoft Learn's free self-paced PL-300 modules cover every exam domain and are the single best-aligned resource because Microsoft writes both the modules and the exam. Do the exercises, not just the reading—the exam tests applied skills like choosing the right transformation or storage mode."
+    },
+    {
+      "step": 3,
+      "title": "Build real reports with real data",
+      "description": "Power BI Desktop is free. Pick a dataset you actually care about, pull it through Power Query, model it as a star schema, and publish it to the service. The exam's scenario questions assume you have felt the difference between a calculated column and a measure, and know what breaks when relationships are set wrong. Two or three end-to-end projects also become your portfolio—which matters more to employers than the cert itself."
+    },
+    {
+      "step": 4,
+      "title": "Go deep on DAX and data modeling",
+      "description": "DAX is where most candidates lose points. CALCULATE and filter context, time intelligence functions, and semi-additive measures all appear on the exam. SQLBI's free articles and videos are the best DAX resource anywhere. Do not memorize function signatures—understand evaluation context, because the questions are written to punish surface-level memorization."
+    },
+    {
+      "step": 5,
+      "title": "Take the free official practice assessment",
+      "description": "Microsoft provides a free official practice assessment for PL-300 on Microsoft Learn. Take it early to find weak domains, then again after targeted review. It mirrors the real exam's style and wording. If you want more question volume, add a paid practice exam set, but do the free official one first."
+    },
+    {
+      "step": 6,
+      "title": "Drill your weak domains systematically",
+      "description": "Score each practice attempt by domain and review every wrong answer until you understand why the right answer wins and each distractor fails. The four domains are weighted almost evenly, so you cannot afford to write off any of them. Manage and Secure Power BI is the smallest domain but frequently neglected—know your workspace roles and row-level security cold."
+    },
+    {
+      "step": 7,
+      "title": "Schedule and sit the exam",
+      "description": "Book through Pearson VUE, in person or online proctored. You get 100 minutes; budget extra time for case-study questions. If you fail, you can retake after 24 hours (waiting periods increase for later attempts). Check for discounts before paying full price—Microsoft Virtual Training Days and student pricing regularly cut the fee substantially."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "Microsoft Learn – PL-300 Study Guide",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/pl-300",
+      "type": "Official Documentation",
+      "note": "The definitive list of skills measured, with weightings and a change log. Check it first and last—it defines exactly what is on the exam."
+    },
+    {
+      "name": "Microsoft Learn – PL-300 Course (Self-Paced, Free)",
+      "url": "https://learn.microsoft.com/en-us/training/courses/pl-300t00",
+      "type": "Official Learning Path",
+      "note": "Microsoft's own free training aligned to the exam: data prep, modeling, visualization, and managing Power BI. The exercises matter more than the reading."
+    },
+    {
+      "name": "Official PL-300 Practice Assessment (Free)",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-300/practice/assessment?assessment-type=practice&assessmentId=48",
+      "type": "Practice Exam",
+      "note": "Free official practice questions in the real exam's style and difficulty. Take it before paying for any third-party practice exams."
+    },
+    {
+      "name": "SQLBI – Free DAX Articles and Videos",
+      "url": "https://www.sqlbi.com/",
+      "type": "Video / Articles",
+      "note": "Marco Russo and Alberto Ferrari's site is the best DAX and data-modeling resource available. Essential for the Model the Data domain."
+    },
+    {
+      "name": "r/PowerBI on Reddit",
+      "url": "https://www.reddit.com/r/PowerBI/",
+      "type": "Community",
+      "note": "Active community with PL-300 pass reports, study advice, and real-world Power BI problem-solving. Search 'PL-300' for recent exam experiences."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Udemy – Maven Analytics: Microsoft Power BI PL-300 Certification Prep",
+      "type": "Video Course",
+      "price": "~$15–$25 (on sale)",
+      "best_for": "Candidates who want a structured, project-based course mapped directly to the PL-300 exam objectives",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fmicrosoft-power-bi-certification-da-100-exam-prep%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_pl300_maven_cert_prep",
+      "affiliate": true,
+      "note": "Built around one end-to-end business intelligence project covering every exam domain, with study guides and a full-length practice exam included."
+    },
+    {
+      "provider": "Udemy – Maven Analytics: Microsoft Power BI Desktop for Business Intelligence",
+      "type": "Video Course",
+      "price": "~$15–$25 (on sale)",
+      "best_for": "Beginners who need to build Power BI fundamentals before exam-focused prep",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fmicrosoft-power-bi-up-running-with-power-bi-desktop%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_pl300_maven_desktop",
+      "affiliate": true,
+      "note": "One of the most popular Power BI courses on Udemy. Not exam-specific—use it to build hands-on skills first, then switch to PL-300-focused prep."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Schedule PL-300 – Microsoft Learn (via Pearson VUE)",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-300/",
+      "note": "US price is $165; pricing varies by country and is set at scheduling time. Check for student pricing and Microsoft Virtual Training Day discounts before paying full price. Register with a personal Microsoft account, not a work account, so your certification record survives job changes."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is the PL-300 certification worth it?",
+      "answer": "If you are targeting data analyst or BI roles at companies using Microsoft tools, yes—it is the credential recruiters search for when hiring Power BI analysts. It is less useful if your target employers run Tableau or Looker. Be clear-eyed about what it does: it gets you past resume filters and validates tool skills, but employers hire on the combination of the cert, a portfolio of real reports, and usually SQL. On its own it guarantees nothing."
+    },
+    {
+      "question": "How hard is the PL-300 exam?",
+      "answer": "Moderately hard. It assumes real working familiarity with Power BI—candidates who only watched videos without building reports commonly fail. DAX questions (filter context, time intelligence) and the scenario-based format are the main difficulty. Most candidates with some Power BI exposure need 4–8 weeks of part-time study; complete beginners should plan for 2–3 months including hands-on practice."
+    },
+    {
+      "question": "How much does the PL-300 exam cost?",
+      "answer": "$165 USD in the United States; pricing varies by country. Students can get academic pricing in most countries, and Microsoft regularly offers 50% or 100% discount vouchers through Virtual Training Days and promotional sweepstakes—check for those before paying full price. If you fail, retakes cost full price each time, though Exam Replay bundles with a retake are sometimes available."
+    },
+    {
+      "question": "Does PL-300 expire? What does renewal cost?",
+      "answer": "The certification is valid for 12 months, but renewal is free and easy: pass an online, unproctored assessment on Microsoft Learn any time in the six months before expiration. You can retake the renewal assessment as often as needed at no cost. This is genuinely one of the friendliest renewal models in the industry—just set a calendar reminder, because a lapsed certification requires retaking the full exam."
+    },
+    {
+      "question": "Do I need experience before taking PL-300?",
+      "answer": "There are no formal prerequisites, but Microsoft's audience profile assumes proficiency with Power Query and DAX. Practically, you should have built several reports end-to-end—from connecting to data through publishing and sharing—before sitting the exam. Excel power users with PivotTable and Power Query experience adapt fastest since Power BI uses the same underlying engines."
+    },
+    {
+      "question": "What jobs can I get with PL-300?",
+      "answer": "Data Analyst, Business Intelligence Analyst, BI Developer, Reporting Analyst, and Analytics Consultant roles commonly list PL-300 as a requirement or preference—especially at Microsoft-stack companies and consultancies. It pairs almost universally with SQL requirements, so build SQL skills alongside it. It is not a data engineering or data science credential; for those paths look at Fabric and Azure data certifications instead."
+    },
+    {
+      "question": "Is PL-300 the same as the old DA-100 exam?",
+      "answer": "PL-300 replaced DA-100 in 2022; the certification title (Power BI Data Analyst Associate) is the same. The exam content has been updated several times since—most recently April 2026, when the fourth domain became 'Manage and secure Power BI' and Copilot-assisted report building and DirectLake entered the objectives. Make sure any course or practice exam you buy has been updated for the current objectives, not DA-100-era content."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "Google Data Analytics Certificate",
+      "slug": "google-data-analytics",
+      "vendor": "Google",
+      "vendor_slug": "google",
+      "reason": "Alternative entry point into data analytics that is tool-agnostic and beginner-friendly. Choose PL-300 for Microsoft shops; Google's certificate for broader fundamentals first."
+    },
+    {
+      "title": "Microsoft AZ-900",
+      "slug": "az-900",
+      "vendor": "Microsoft",
+      "vendor_slug": "microsoft",
+      "reason": "Azure fundamentals give useful context for where enterprise data lives. A common, low-cost companion for analysts working in Azure-centric organizations."
+    },
+    {
+      "title": "Microsoft SC-900",
+      "slug": "sc-900",
+      "vendor": "Microsoft",
+      "vendor_slug": "microsoft",
+      "reason": "Security and compliance fundamentals complement the governance side of PL-300—row-level security, sensitivity labels, and data protection concepts."
+    },
+    {
+      "title": "Microsoft MS-900",
+      "slug": "ms-900",
+      "vendor": "Microsoft",
+      "vendor_slug": "microsoft",
+      "reason": "Microsoft 365 fundamentals for understanding the ecosystem where Power BI content is shared, from Teams integration to tenant administration."
+    }
+  ],
+  "seo_title": "Microsoft PL-300 Power BI Data Analyst Study Guide – Exam Details, Study Plan, Resources | CertBlueprint",
+  "seo_description": "Complete Microsoft PL-300 Power BI Data Analyst guide: exam cost and format, salary expectations, step-by-step study plan, free and paid resources, and FAQ."
+}

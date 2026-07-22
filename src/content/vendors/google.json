@@ -1,0 +1,208 @@
+{
+  "title": "Google",
+  "slug": "google",
+  "overview": "Google Career Certificates are beginner-focused professional certificates delivered through Coursera and promoted via the Grow with Google initiative. They target job-ready skills in fields like data analytics, IT support, project management, UX design, and cybersecurity—no degree or prior experience required. Google positions them as an alternative entry route into tech, backed by an employer consortium that considers certificate graduates for open roles.",
+  "why_vendor_matters": "Google Career Certificates solve a specific problem: getting a structured, employer-recognized starting point without spending years or thousands of dollars. The certificates run on a Coursera subscription (around $49/month) and most learners finish in three to six months of part-time study, which puts the typical total cost in the low hundreds of dollars. Because the Google brand carries weight with recruiters and the curriculum is built around practical tools—spreadsheets, SQL, Tableau and Python for the Data Analytics certificate, for example—these certificates function well as proof that a career changer has done real, hands-on work, not just watched videos. Google also maintains an employer consortium of companies that accept the certificates as a credential for entry-level hiring.\n\nIt is important to be clear about what these certificates are and are not. They are course-completion credentials, not proctored professional exams—there is no independent test of your knowledge the way there is with CompTIA or ISTQB. That makes them best understood as a strong foundation and portfolio-builder rather than a gatekeeping credential employers require. Note also that Google Career Certificates are a separate program from Google Cloud certifications (Associate Cloud Engineer, Professional Cloud Architect, and others), which are proctored, exam-based credentials aimed at cloud practitioners. CertBlueprint does not cover the Google Cloud track yet—the guides here focus on the Career Certificates.",
+  "certification_tracks": [
+    {
+      "name": "Data and Analytics",
+      "level": "Foundation",
+      "description": "The Google Data Analytics Certificate covers spreadsheets, SQL, Tableau, and Python for entry-level analyst roles. An Advanced Data Analytics certificate continues into statistics, Python, and machine learning basics."
+    },
+    {
+      "name": "IT and Cybersecurity",
+      "level": "Foundation",
+      "description": "The IT Support certificate covers troubleshooting, networking, operating systems, and system administration fundamentals. The Cybersecurity certificate adds security frameworks, SIEM tools, Linux, and SQL."
+    },
+    {
+      "name": "Business and Design",
+      "level": "Foundation",
+      "description": "Project Management, UX Design, and Digital Marketing & E-commerce certificates target non-engineering roles in tech. The Project Management certificate is a common on-ramp toward CAPM or agile credentials."
+    },
+    {
+      "name": "Google Cloud Certifications",
+      "level": "Associate to Professional",
+      "description": "A separate, exam-based program covering Google Cloud Platform roles like Associate Cloud Engineer and Professional Cloud Architect. Not yet covered on CertBlueprint—these guides focus on the Career Certificates."
+    }
+  ],
+  "featured_certs": ["google-data-analytics", "google-it-support", "google-cybersecurity", "google-project-management", "google-it-automation", "google-business-intelligence"],
+  "who_its_for": [
+    {
+      "role": "Complete beginners testing an IT or data direction",
+      "detail": "Every foundational certificate here (IT Support, Cybersecurity, Data Analytics, Project Management) assumes zero experience and costs ~$49/month to try. That makes them the cheapest structured way to find out whether help desk, security, data, or project work actually suits you — before spending hundreds on a proctored exam voucher."
+    },
+    {
+      "role": "Career changers who need structure",
+      "detail": "Coming from retail, teaching, hospitality, or any non-technical field, you get a complete course sequence with hands-on work that produces real portfolio pieces — plus the Google name on a resume and access to the employer consortium job board for certificate holders."
+    },
+    {
+      "role": "IT workers ready for the next rung",
+      "detail": "The two intermediate certificates are built for people already in the field: IT Automation with Python for support techs who feel the ticket-queue ceiling, and Business Intelligence for analysts stepping up from reporting to pipelines and dashboards."
+    },
+    {
+      "role": "Anyone chasing the exam-discount bridges",
+      "detail": "Three of these programs discount the proctored cert that should follow them: IT Support earns 30% off CompTIA A+, Cybersecurity earns 30% off Security+, and Project Management banks 100+ PMI education hours plus $175 off the CAPM exam. Used deliberately, the perks claw back most of what the subscription cost."
+    }
+  ],
+  "career_salary_impact": [
+    "Be realistic about the numbers, because Google's marketing quotes field-wide medians for people with zero-to-five years of experience. Honest first-job ranges for the roles these certificates feed: help desk $38K–$55K, entry SOC analyst $45K–$70K, project coordinator $45K–$65K, entry data analyst $50K–$75K, and entry BI analyst $60K–$80K — all market-dependent, all below the headline figures on grow.google. These are on-ramps to real careers, not shortcuts past the entry tier.",
+    "More importantly, no Google certificate commands a pay premium by itself — hundreds of thousands of people hold each one, and none are proctored. What they demonstrably do is get you into the applicant pool, produce the portfolio pieces interviews run on, and discount the proctored credentials (A+, Security+, CAPM) that actually clear HR filters. Treat each certificate as training plus a coupon toward the exam that matters, and let the portfolio and proctored cert do the salary negotiation."
+  ],
+  "study_difficulty": [
+    {
+      "cert": "Google Data Analytics Professional Certificate",
+      "difficulty": "Beginner",
+      "time": "3–6 months part-time (~10 hrs/week, ~180 hours total)",
+      "detail": "There is no proctored exam to fear—progress comes from graded quizzes, hands-on activities, and a capstone, and the courses assume no prior experience. The genuine challenge is not difficulty but discipline: it is subscription-priced, so a wandering pace literally costs more, and the SQL and capstone sections reward learners who slow down and actually do the work rather than speed-running the quizzes."
+    },
+    {
+      "cert": "Google IT Support Professional Certificate",
+      "difficulty": "Beginner",
+      "time": "2–4 months part-time (~80–115 hours)",
+      "detail": "The gentlest on-ramp Google offers — the risk is drift, not difficulty. Only ~14% of U.S. Coursera learners finish certificates they start; scheduled weekly hours are the whole game. The Qwiklabs VM exercises are where the real learning lives."
+    },
+    {
+      "cert": "Google Cybersecurity Professional Certificate",
+      "difficulty": "Beginner",
+      "time": "2–3 months part-time (~133 hours)",
+      "detail": "Zero-prerequisite but meatier than it looks — the Linux/SQL course and Python course reward real practice. Quizzes are easy multiple-choice, which is exactly why the portfolio activities and outside labs (TryHackMe) matter more than the badge."
+    },
+    {
+      "cert": "Google Project Management Professional Certificate",
+      "difficulty": "Beginner",
+      "time": "2–3 months part-time (~142 hours)",
+      "detail": "Approachable content with a genuinely substantial capstone (~39 hours). The discipline risk is skipping the capstone's deliverables — which are the portfolio pieces that make the certificate worth anything in interviews."
+    },
+    {
+      "cert": "Google IT Automation with Python Certificate",
+      "difficulty": "Moderate",
+      "time": "1–4 months part-time (~130 hours)",
+      "detail": "One of two follow-on certs in the lineup (with BI): it assumes IT literacy and drops into Bash quickly. Coding is muscle memory — learners who type every example and push to GitHub finish with a portfolio; quiz-skimmers finish with nothing."
+    },
+    {
+      "cert": "Google Business Intelligence Certificate",
+      "difficulty": "Moderate (assumes SQL)",
+      "time": "1–2 months part-time (~70 hours)",
+      "detail": "The shortest Google cert, aimed at Data Analytics grads — fluent SQL is assumed, not taught. Its advanced, self-selected audience finishes at a much higher rate than the beginner certs; beginners who skip the prerequisite consistently report being lost."
+    }
+  ],
+  "available_guides": [
+    {
+      "title": "Google Data Analytics Professional Certificate",
+      "level": "Foundation",
+      "description": "A nine-course, course-based credential on Coursera that teaches the full analyst workflow—spreadsheets, SQL, Tableau, and Python—with a portfolio capstone.",
+      "slug": "google-data-analytics",
+      "vendor_slug": "google",
+      "featured": true
+    },
+    {
+      "title": "Google IT Support Professional Certificate",
+      "level": "Foundation",
+      "description": "The original Google cert for help-desk careers — troubleshooting, networking, OSes, and sysadmin basics, with 30% off CompTIA A+ vouchers on completion.",
+      "slug": "google-it-support",
+      "vendor_slug": "google",
+      "featured": true
+    },
+    {
+      "title": "Google Cybersecurity Professional Certificate",
+      "level": "Foundation",
+      "description": "Nine courses of zero-to-basics security — Linux, SQL, Python, SIEM concepts — with 30% off the CompTIA Security+ exam for completers.",
+      "slug": "google-cybersecurity",
+      "vendor_slug": "google",
+      "featured": true
+    },
+    {
+      "title": "Google Project Management Professional Certificate",
+      "level": "Foundation",
+      "description": "The project lifecycle plus agile, with a portfolio capstone — banks 100+ PMI education hours and earns $175 off the CAPM exam.",
+      "slug": "google-project-management",
+      "vendor_slug": "google",
+      "featured": false
+    },
+    {
+      "title": "Google IT Automation with Python Certificate",
+      "level": "Intermediate",
+      "description": "The advanced follow-on to IT Support — Python, Git, debugging, and configuration management for support techs breaking the ticket-queue ceiling.",
+      "slug": "google-it-automation",
+      "vendor_slug": "google",
+      "featured": false
+    },
+    {
+      "title": "Google Business Intelligence Certificate",
+      "level": "Intermediate",
+      "description": "The shortest Google data cert (~2 months) — data modeling, BigQuery/Dataflow pipelines, and Tableau dashboards for the analyst-to-BI step up.",
+      "slug": "google-business-intelligence",
+      "vendor_slug": "google",
+      "featured": false
+    }
+  ],
+  "more_certs": [
+    {
+      "title": "Google Advanced Data Analytics Certificate",
+      "level": "Intermediate",
+      "description": "The statistics-and-Python continuation after Data Analytics — regression and machine-learning basics for those aiming past pure reporting roles."
+    },
+    {
+      "title": "Google UX Design Certificate",
+      "level": "Foundation",
+      "description": "The design-side Career Certificate — research, wireframing, and prototyping in Figma. A different lane than IT operations; portfolio quality decides everything in UX hiring."
+    },
+    {
+      "title": "Google Digital Marketing & E-commerce Certificate",
+      "level": "Foundation",
+      "description": "The marketing-side program — SEO, ads, analytics, and e-commerce basics. Adjacent to tech rather than IT; useful mainly if your target is marketing operations."
+    }
+  ],
+  "related_paths": [
+    {
+      "title": "Help Desk Technician",
+      "href": "/paths/help-desk-technician/",
+      "description": "Where the IT Support certificate leads — the honest day-to-day, salary bands, and the Google-then-A+ sequence on the roadmap."
+    },
+    {
+      "title": "SOC Analyst",
+      "href": "/paths/soc-analyst/",
+      "description": "The security destination — the Cybersecurity certificate is the structured on-ramp at the bottom of a ladder that runs through Security+ to the CISSP/CISM summit."
+    },
+    {
+      "title": "Data Analyst",
+      "href": "/paths/data-analyst/",
+      "description": "The data destination — Data Analytics as the on-ramp, PL-300 as the proctored signal, and the BI certificate as the step up."
+    },
+    {
+      "title": "Career Navigator",
+      "href": "/navigator/",
+      "description": "Not sure which of these lanes fits? Answer a few questions and get matched to the roles and certifications that fit how you actually like to work."
+    }
+  ],
+  "cta": {
+    "heading": "Start with the Google Data Analytics guide",
+    "blurb": "See exactly what the certificate costs, the full nine-course breakdown, an honest take on its career value, and a step-by-step study plan that turns the coursework into a real portfolio.",
+    "href": "/vendors/google/google-data-analytics/",
+    "label": "Read the Data Analytics guide"
+  },
+  "faq": [
+    {
+      "question": "Are Google Career Certificates worth it?",
+      "answer": "For career changers with no tech background, yes—they are one of the cheapest structured entry points into data, IT, or UX, and the Google name gets attention on a resume. They are not a job guarantee, and for competitive roles you will still need a portfolio and often additional credentials. Treat them as a foundation, not a finish line."
+    },
+    {
+      "question": "How much do Google Career Certificates cost?",
+      "answer": "You pay for Coursera access at roughly $49/month rather than a fixed exam fee. Most learners finish in 3-6 months at under 10 hours per week, so the typical total is $150-$300. Coursera financial aid and Google-funded scholarships can reduce that to free for eligible learners. A 7-day free trial is usually available."
+    },
+    {
+      "question": "Do Google Career Certificates expire?",
+      "answer": "No. They are course-completion certificates, not exam-based credentials with a renewal cycle. Once you complete one, it is yours permanently—though because there is no recertification, employers weigh them as evidence of training rather than proof of current, tested competency."
+    },
+    {
+      "question": "Is a Google Career Certificate the same as a Google Cloud certification?",
+      "answer": "No, and the distinction matters. Career Certificates are beginner-level Coursera courses aimed at people entering the field. Google Cloud certifications are separate proctored exams (like Associate Cloud Engineer) aimed at practitioners working on Google Cloud Platform, and they are significantly harder and more expensive. Job postings asking for 'Google certified' cloud engineers mean the latter."
+    },
+    {
+      "question": "Do employers actually recognize Google Career Certificates?",
+      "answer": "Recognition is real but uneven. Google maintains an employer consortium of companies that consider certificate graduates, and the certificates carry ACE credit recommendations at some universities. However, they do not carry the requirement-level weight of certs like Security+ or PMP in job postings. They work best combined with a portfolio of projects from the coursework."
+    }
+  ],
+  "seo_title": "Google Career Certificates – Data Analytics, IT Support Guides | CertBlueprint",
+  "seo_description": "Google Career Certificate guides: Data Analytics, IT Support, and more. What they cost, how long they take, and what employers actually think."
+}

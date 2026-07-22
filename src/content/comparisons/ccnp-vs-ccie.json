@@ -1,0 +1,83 @@
+{
+  "slug": "ccnp-vs-ccie",
+  "title": "CCNP vs CCIE",
+  "intro": "The decision every senior-track network engineer eventually faces: stop at the professional tier, or commit 12–24 months and $5,000–12,000 to the expert lab. In 2026, the honest answer has shifted — and even Cisco's own blueprint changes say so.",
+  "a": {
+    "name": "CCNP (Enterprise)",
+    "href": "/vendors/cisco/ccnp-enterprise/",
+    "tagline": "The professional tier — ENCOR + a concentration, ~$700 in exam fees, 6–12 months. Where most senior networking careers are actually built."
+  },
+  "b": {
+    "name": "CCIE (Enterprise Infrastructure)",
+    "href": "/vendors/cisco/ccie-enterprise-infrastructure/",
+    "tagline": "The famous 8-hour lab — $1,600 per attempt, 2–3 attempts typical, 1,000+ prep hours folklore. Decisive in specific rooms, unnecessary in most."
+  },
+  "verdict": "For most engineers in 2026: CCNP plus real automation skills (Python, Ansible, Terraform) and cloud networking beats CCIE on career return — it covers 80%+ of job postings at a fraction of the cost and time, and Cisco's own moves (AI written into ENCOR v1.2, an AI module coming to the lab) confirm where the role is going. CCIE remains the right call in specific rooms: Cisco partners (the number literally maintains their discounts), consulting (you bill on it), ISPs and large Cisco-standardized enterprises, and personal mastery pursued with open eyes. Know which room you're in before spending a year of evenings.",
+  "rows": [
+    {
+      "label": "Structure",
+      "a": "Two written exams: core ($400) + concentration ($300)",
+      "b": "Core written ($400, same ENCOR) + 8-hour hands-on lab ($1,600/attempt)"
+    },
+    {
+      "label": "Realistic total cost",
+      "a": "$800–1,200 with materials and a possible retake",
+      "b": "$5,000–12,000 with typical 2–3 lab attempts, travel, training; bootcamp paths $15,000+"
+    },
+    {
+      "label": "Time investment",
+      "a": "6–12 months part-time from solid CCNA level",
+      "b": "12–24 months at 15–25 hrs/week from solid CCNP level; 1,000–1,500 prep hours common folklore"
+    },
+    {
+      "label": "Pass reality",
+      "a": "Demanding but routinely passed with disciplined prep",
+      "b": "Cisco publishes no rates; folklore says ~26% lab pass, most passers need 2–3 attempts"
+    },
+    {
+      "label": "Market weight",
+      "a": "Named in most senior network engineer postings — the working standard",
+      "b": "Decisive at partners/ISPs/consulting; invisible or unknown in many general markets"
+    },
+    {
+      "label": "Salary bands (third-party)",
+      "a": "~$95–155K by track",
+      "b": "~$130–200K+, concentrated in partner/consulting/ISP contexts"
+    },
+    {
+      "label": "2026 wrinkle",
+      "a": "ENCOR v1.2: wireless out, AI in — check material versions",
+      "b": "1-hour AI lab module rolling out per-track 2027–2028; current format holds for EI until ~Feb 2028 (TBC)"
+    }
+  ],
+  "pick_a_if": [
+    "Your market is general enterprise/mid-market — where CCNP is the ceiling postings actually name",
+    "You'd rather invest the difference in automation skills and cloud networking (the higher-ROI stack in 2026)",
+    "Family/time budgets make a 1,000-hour commitment dishonest to promise",
+    "You want optionality — CCNP's ENCOR pass banks CCIE lab eligibility (commonly cited as a ~3-year window — verify current rules at booking)"
+  ],
+  "pick_b_if": [
+    "Your employer is a Cisco partner — CCIEs maintain partner status and the number has direct business value",
+    "Consulting is the plan and the number is the billing rate",
+    "You're at an ISP/MSP or large Cisco-standardized enterprise where the number is the seniority shortcut",
+    "Mastery for its own sake genuinely motivates you, with eyes open about cost and attempts"
+  ],
+  "both_note": "The efficient truth: ENCOR is simultaneously CCNP Enterprise's core and CCIE EI's qualifying exam — so finishing CCNP costs you nothing extra toward CCIE (the ENCOR pass carries lab eligibility for a limited window — commonly cited ~3 years; verify at booking). The rational default is CCNP now, then let your actual room (partner? consulting? ISP?) decide whether the lab is ever worth booking.",
+  "faq": [
+    {
+      "question": "Can I skip CCNP and go straight for CCIE?",
+      "answer": "Formally yes — there are no prerequisites, and ENCOR alone qualifies you for the lab. Practically it's how people donate $1,600 to Cisco repeatedly: the lab assumes CCNP-and-beyond fluency executed under 8-hour pressure. Nearly every passer's story runs through CCNP-level mastery first, whether or not they collected the certificate."
+    },
+    {
+      "question": "Is CCIE still worth it with AI and automation changing networking?",
+      "answer": "In its rooms, yes; as a general career default, less than it used to be — and Cisco's own actions are the tell: AI added to ENCOR v1.2, an AI 'Deploy, Operate, Optimize' module joining every CCIE lab from 2027–28. The market increasingly pays CCNP-plus-automation profiles what it used to reserve for CCIEs. The number's value has concentrated, not collapsed: partners, consulting, and ISPs still pay it gladly."
+    },
+    {
+      "question": "What about CCDE instead of CCIE?",
+      "answer": "A real alternative for design-minded seniors: no CLI anywhere, an 8-hour scenario practical, an estimated (unofficial) fewer than 1,000 holders worldwide. But it's harder logistics (about six exam dates a year at Cisco facilities only) and near-invisible outside senior networking circles. The classic consultant stack remains CCIE first, CCDE second — our CCDE guide covers the full honest picture."
+    }
+  ],
+  "last_verified": "July 2026",
+  "seo_title": "CCNP vs CCIE (2026) – the Honest Career Math | CertBlueprint",
+  "seo_description": "CCNP vs CCIE settled with real numbers: $800 vs $5–12K all-in, the pass-rate folklore, who actually pays for the CCIE number, and why CCNP + automation wins for most engineers in 2026."
+}

@@ -1,0 +1,241 @@
+{
+  "title": "CompTIA CySA+ (CS0-003) Study Guide",
+  "slug": "cysa-plus",
+  "short_name": "CySA+",
+  "vendor": "CompTIA",
+  "vendor_slug": "comptia",
+  "level": "Intermediate",
+  "description": "CompTIA CySA+ (Cybersecurity Analyst) is the intermediate security-analyst certification. Exam CS0-003 validates the hands-on skills needed for security operations: continuous monitoring, threat detection, vulnerability management, and incident response.",
+  "audience": "Security analysts, SOC analysts, threat hunters, and Security+ holders ready to move from security fundamentals into hands-on detection and response work. Best with some IT or security experience.",
+  "why_get_it": "CySA+ is the natural step up from Security+: where Security+ proves you understand security concepts, CySA+ proves you can do the analyst work—reading alerts, triaging vulnerabilities, and running an incident-response process. It is performance-based and built around the real workflow of a SOC, which is exactly what employers hiring analysts want to see. It also carries DoD 8140 approval for several cybersecurity workforce roles, giving it weight in government and defense hiring. For anyone targeting a SOC analyst, threat-detection, or vulnerability-management role, CySA+ is a strong, recognized signal of job-ready skill.",
+  "when_to_get_it": "Get CySA+ after Security+, ideally with some hands-on IT or security exposure. CompTIA recommends Security+ plus 3–4 years of experience, but many candidates pass with less by doing serious lab work. If you're brand new to security, start with Security+ first. If you already work in or near a SOC, CySA+ formalizes and validates what you do day to day.",
+  "exam_code": "CS0-003",
+  "exam_duration": "165 minutes",
+  "exam_format": "Up to 85 questions: multiple choice and performance-based. Passing score: 750 (on a scale of 100–900).",
+  "exam_questions": "Up to 85 questions",
+  "official_url": "https://www.comptia.org/en-us/certifications/cybersecurity-analyst/",
+  "official_pricing_url": "https://www.comptia.org/en-us/certifications/cybersecurity-analyst/",
+  "recertification_note": "Valid for 3 years. Renew through CompTIA's Continuing Education (CE) program by earning CEUs, or by passing a higher-level CompTIA exam. CySA+ also renews lower CompTIA certs like Security+.",
+  "salary_range": "$80,000 – $120,000",
+  "salary_note": "CySA+ targets the analyst tier of cybersecurity. Cybersecurity and SOC analysts with CySA+ commonly earn $85K–$115K, with experienced analysts and senior SOC roles reaching $120K–$145K. Government and defense roles (where CySA+ is DoD-8140 approved) add clearance premiums and strong benefits on top of base salary.",
+  "skills_covered": [
+    {
+      "category": "Security Operations (33%)",
+      "items": [
+        "Continuous security monitoring and log analysis",
+        "Detecting malicious activity across network, host, and identity data",
+        "Threat intelligence and threat hunting concepts",
+        "Tuning detection rules and reducing false positives",
+        "Common attack techniques (mapped to MITRE ATT&CK)"
+      ]
+    },
+    {
+      "category": "Vulnerability Management (30%)",
+      "items": [
+        "Running and interpreting vulnerability scans",
+        "Prioritizing vulnerabilities with CVSS and asset context",
+        "Validating findings and managing remediation",
+        "Common vulnerabilities in networks, hosts, web apps, and cloud",
+        "Attack-surface and exposure management"
+      ]
+    },
+    {
+      "category": "Incident Response & Management (20%)",
+      "items": [
+        "The incident response lifecycle (NIST SP 800-61)",
+        "Detection, containment, eradication, and recovery",
+        "Evidence handling and basic forensics concepts",
+        "Indicators of compromise and post-incident analysis",
+        "Playbooks, runbooks, and escalation"
+      ]
+    },
+    {
+      "category": "Reporting & Communication (17%)",
+      "items": [
+        "Communicating vulnerability and incident findings to stakeholders",
+        "Writing clear, actionable reports",
+        "Metrics, KPIs, and risk communication",
+        "Compliance and audit reporting basics",
+        "Collaboration across security and business teams"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Download the CS0-003 exam objectives",
+      "description": "Get the official CySA+ CS0-003 objectives from CompTIA. The four domains map to a real analyst's workflow—use them to structure your study and spot weak areas early."
+    },
+    {
+      "step": 2,
+      "title": "Make sure your Security+ foundation is solid",
+      "description": "CySA+ assumes Security+ level knowledge. If any Security+ topics are shaky (cryptography, network security, identity), shore them up first—CySA+ builds directly on them."
+    },
+    {
+      "step": 3,
+      "title": "Work through a primary video course",
+      "description": "Choose one comprehensive CS0-003 course and complete it end to end. Jason Dion's CySA+ course on Udemy covers all four domains with scenario practice. See the paid resources section."
+    },
+    {
+      "step": 4,
+      "title": "Read the official study guide",
+      "description": "The Sybex CySA+ Study Guide (CS0-003) by Chapple & Seidl is the standard written reference. Use it to deepen the vulnerability-management and incident-response domains, which reward detail."
+    },
+    {
+      "step": 5,
+      "title": "Get hands-on with real tools",
+      "description": "Practice the analyst workflow: run a vulnerability scanner, read SIEM alerts, analyze logs and packet captures. Free labs on TryHackMe (SOC Level 1/2 paths) and Blue Team exercises make the scenario questions intuitive."
+    },
+    {
+      "step": 6,
+      "title": "Drill performance-based questions",
+      "description": "CySA+ leans heavily on PBQs that ask you to analyze output and make a decision. Practice interpreting scan results, logs, and alerts under time pressure—this is where the exam is won or lost."
+    },
+    {
+      "step": 7,
+      "title": "Take timed practice exams",
+      "description": "Use full-length CS0-003 practice exams. Aim to score consistently above 85% before booking. Review every miss until you understand the analyst reasoning, not just the answer."
+    },
+    {
+      "step": 8,
+      "title": "Schedule and sit the exam",
+      "description": "Register through Pearson VUE for the 165-minute exam (test center or online proctored). Book about two weeks out to set a deadline. Pace yourself—PBQs take longer than multiple-choice."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "CompTIA CySA+ CS0-003 Exam Objectives (Official)",
+      "url": "https://www.comptia.org/en-us/certifications/cybersecurity-analyst/",
+      "type": "Official Documentation",
+      "note": "The official CS0-003 objectives across all four domains. Your study roadmap—start here."
+    },
+    {
+      "name": "TryHackMe – SOC Level 1 & 2 Paths",
+      "url": "https://tryhackme.com/path/outline/soclevel1",
+      "type": "Hands-on Labs",
+      "note": "Browser-based blue-team labs on SIEM, log analysis, threat detection, and incident response. The closest free match to real CySA+ analyst tasks."
+    },
+    {
+      "name": "MITRE ATT&CK Framework",
+      "url": "https://attack.mitre.org/",
+      "type": "Reference",
+      "note": "The free knowledge base of adversary tactics and techniques that underpins modern detection. Worth knowing for the security-operations domain."
+    },
+    {
+      "name": "MyDFIR – SOC Analyst Series (YouTube)",
+      "url": "https://www.youtube.com/@MyDFIR",
+      "type": "Video Course",
+      "note": "Free, practical content on detection, log analysis, and incident response—useful for building the analyst intuition the exam tests."
+    },
+    {
+      "name": "r/CompTIA on Reddit",
+      "url": "https://www.reddit.com/r/CompTIA/",
+      "type": "Community",
+      "note": "Active community with CySA+ study advice and recent pass reports. Useful for understanding the current exam experience."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Udemy – Jason Dion CySA+ (CS0-003) Complete Course",
+      "type": "Video Course",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Most candidates – full coverage of all four CS0-003 domains with a downloadable study guide and practice exam",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomptia-cysa-003%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_cysa_complete_course",
+      "affiliate": true,
+      "note": "Jason Dion's scenario-heavy style fits CySA+ well. Frequently on sale—check for current pricing."
+    },
+    {
+      "provider": "Udemy – Jason Dion CySA+ (CS0-003) Practice Exams",
+      "type": "Practice Exams",
+      "price": "~$15–$20 (on sale)",
+      "best_for": "Final exam preparation with realistic, timed questions across all four domains",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomptia-cysa-cs0-003-practice-exams%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_cysa_practice",
+      "affiliate": true,
+      "note": "Six full-length practice exams timed to match the real CS0-003. Best used in the final weeks before your exam."
+    },
+    {
+      "provider": "CompTIA CySA+ Study Guide CS0-003 (Sybex, Chapple & Seidl)",
+      "type": "Book",
+      "price": "~$45–$60",
+      "best_for": "Candidates who want the definitive written reference with full domain coverage and online practice",
+      "affiliate_url": "https://www.amazon.com/dp/1394182902/?tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_cysa_sybex_guide",
+      "affiliate": true,
+      "note": "The standard CySA+ book. Pairs well with a video course; use it to go deep on vulnerability management and incident response."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Buy CySA+ Exam Voucher – CompTIA Store",
+      "url": "https://www.comptia.org/en-us/certifications/cybersecurity-analyst/",
+      "note": "The CS0-003 exam runs about $370–$425 USD. CompTIA sometimes bundles vouchers with retake insurance—verify current pricing on the official store before purchasing."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is CySA+ harder than Security+?",
+      "answer": "Yes. CySA+ is more advanced and more hands-on. Security+ tests whether you understand security concepts; CySA+ tests whether you can analyze real data—logs, scans, alerts—and make analyst decisions. Expect more performance-based questions."
+    },
+    {
+      "question": "Should I take Security+ before CySA+?",
+      "answer": "Strongly recommended. CySA+ assumes Security+ level knowledge and builds directly on it. Most people take Security+ first, then CySA+ once they have some hands-on security exposure."
+    },
+    {
+      "question": "Is CySA+ DoD approved?",
+      "answer": "Yes. CySA+ is approved under DoD Directive 8140 for several cybersecurity workforce roles, which gives it real weight in government and defense-contractor hiring."
+    },
+    {
+      "question": "How long does it take to study for CySA+?",
+      "answer": "Most candidates spend 3 to 5 months. Those already working in or near a SOC may be ready sooner. Hands-on practice with SIEM, scanning, and log analysis matters as much as video completion."
+    },
+    {
+      "question": "Is CySA+ worth it?",
+      "answer": "For analyst-track roles, yes. It maps directly to SOC and security-analyst job tasks, carries DoD approval, and bridges the gap between Security+ and senior credentials. It's most valuable paired with hands-on experience."
+    },
+    {
+      "question": "What comes after CySA+?",
+      "answer": "Depending on direction: CompTIA SecurityX (formerly CASP+) for advanced practitioners, PenTest+ for offensive security, or vendor/role certs like CISSP as you gain experience. Many analysts also pursue cloud security next."
+    },
+    {
+      "question": "Does CySA+ expire?",
+      "answer": "Yes. CySA+ is valid for three years. Renew through CompTIA's Continuing Education program by earning CEUs or passing a higher-level CompTIA exam. Renewing CySA+ also renews lower certs like Security+."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CompTIA Security+",
+      "slug": "security-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "The prerequisite-level foundation. CySA+ builds directly on Security+; take Security+ first, then step up to the analyst tier."
+    },
+    {
+      "title": "CCNA Cybersecurity",
+      "slug": "ccna-cybersecurity",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "Cisco's SOC-analyst credential (formerly CyberOps Associate). Heavy overlap with CySA+ on monitoring and intrusion analysis—strong to pair for SOC roles."
+    },
+    {
+      "title": "CompTIA PenTest+",
+      "slug": "pentest-plus",
+      "vendor": "CompTIA",
+      "vendor_slug": "comptia",
+      "reason": "The offensive-security counterpart. Analysts who want to understand the attacker's side often pursue PenTest+ alongside or after CySA+."
+    },
+    {
+      "title": "ISC2 CISSP",
+      "slug": "cissp",
+      "vendor": "ISC2",
+      "vendor_slug": "isc2",
+      "reason": "The senior destination once the analyst years accumulate — CySA+-level operations work counts directly toward CISSP's experience requirement."
+    }
+  ],
+  "seo_title": "CompTIA CySA+ CS0-003 Study Guide – Cybersecurity Analyst | CertBlueprint",
+  "seo_description": "Complete CompTIA CySA+ (CS0-003) guide: who it's for, security analyst salary, exam domains, study path, free and paid resources, and FAQ."
+}

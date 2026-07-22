@@ -1,0 +1,12 @@
+{
+  "title": "Telecommunications, Cabling & Field Infrastructure",
+  "specializations": [
+    "Structured Cabling",
+    "RF & Tower",
+    "Field Services",
+    "Telecom Transport"
+  ],
+  "one_liner": "The physical layer of IT — the cabling, radios, towers, and on-site equipment every network depends on.",
+  "order": 10,
+  "slug": "telecom-field"
+}

@@ -1,0 +1,195 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SearchModal from '../components/SearchModal.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalUrl?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  breadcrumbs?: Array<{ label: string; href: string }>;
+  structuredData?: Record<string, unknown> | null;
+}
+
+const {
+  title,
+  description,
+  canonicalUrl,
+  ogTitle,
+  ogDescription,
+  ogImage = '/og-default.png',
+  breadcrumbs,
+  structuredData,
+} = Astro.props;
+
+const siteUrl = 'https://certblueprint.com';
+const resolvedCanonical = canonicalUrl ?? Astro.url.href;
+const resolvedOgTitle = ogTitle ?? title;
+const resolvedOgDescription = ogDescription ?? description;
+
+const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: breadcrumbs.map((crumb, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: crumb.label,
+        item: crumb.href.startsWith('http') ? crumb.href : `${siteUrl}${crumb.href}`,
+      })),
+    }
+  : null;
+
+// ─── Sitewide entity schema (brand understanding in search) ──────
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'CertBlueprint',
+  url: siteUrl,
+  logo: `${siteUrl}/og-default.png`,
+  description: 'IT certification roadmaps, study plans, and curated free and paid resources.',
+  parentOrganization: { '@type': 'Organization', name: 'SureWhyNot', url: 'https://surewhynot.app' },
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'CertBlueprint',
+  url: siteUrl,
+};
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name='impact-site-verification' value='3b615039-a364-4715-829c-86e2ab2e588a'>
+
+    <!-- ─── Prevent theme flash ──────────────────────────── -->
+    <script is:inline>
+      (function() {
+        var t = localStorage.getItem('cb-theme');
+        if (t && t !== 'light') document.documentElement.setAttribute('data-theme', t);
+      })();
+    </script>
+
+    <!-- ─── Primary Meta ──────────────────────────────────── -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={resolvedCanonical} />
+
+    <!-- ─── Open Graph ────────────────────────────────────── -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={resolvedOgTitle} />
+    <meta property="og:description" content={resolvedOgDescription} />
+    <meta property="og:url" content={resolvedCanonical} />
+    <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+    <meta property="og:site_name" content="CertBlueprint" />
+
+    <!-- ─── Twitter / X Card ─────────────────────────────── -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={resolvedOgTitle} />
+    <meta name="twitter:description" content={resolvedOgDescription} />
+    <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
+
+    <!-- ─── Favicon ───────────────────────────────────────── -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- ─── CookieYes ─────────────────────────────────────── -->
+    <script
+      id="cookieyes"
+      type="text/javascript"
+      src="https://cdn-cookieyes.com/client_data/8f2c0220105406f434b1225f094eb808/script.js"
+    ></script>
+
+    <!-- ─── Google Tag Manager ────────────────────────────── -->
+    <script is:inline>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-N4MMF28L' + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-N4MMF28L');
+    </script>
+
+    <!-- ─── Google Analytics 4 ────────────────────────────── -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TZF5JSYH7W"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-TZF5JSYH7W');
+    </script>
+
+    <!-- ─── Google AdSense ────────────────────────────────── -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7167291111213614"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- ─── Structured Data ───────────────────────────────── -->
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+    {breadcrumbSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    )}
+    {structuredData && (
+      <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    )}
+  </head>
+
+  <body class="min-h-screen flex flex-col">
+
+    <!-- ─── Google Tag Manager (noscript) ─────────────────── -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-N4MMF28L"
+        height="0" width="0"
+        style="display:none;visibility:hidden"
+      ></iframe>
+    </noscript>
+
+    <Header />
+    <SearchModal />
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <Footer />
+
+    <!-- ─── Keyboard shortcut: Ctrl+K ─────────────────────── -->
+    <script>
+      document.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          const modal = document.getElementById('search-modal');
+          if (modal) {
+            modal.classList.toggle('hidden');
+            if (!modal.classList.contains('hidden')) {
+              setTimeout(() => (modal.querySelector('#search-input') as HTMLInputElement | null)?.focus(), 30);
+            }
+          }
+        }
+        if (e.key === 'Escape') {
+          const modal = document.getElementById('search-modal');
+          if (modal && !modal.classList.contains('hidden')) {
+            modal.classList.add('hidden');
+          }
+        }
+      });
+    </script>
+
+  </body>
+</html>

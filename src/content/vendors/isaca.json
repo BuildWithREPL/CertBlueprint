@@ -1,0 +1,138 @@
+{
+  "title": "ISACA",
+  "slug": "isaca",
+  "overview": "ISACA is the professional body for the governance side of technology — audit, risk, security management, and privacy. Its credentials anchor the GRC world: CISA for IT audit, CISM for security management, CRISC for risk, and CGEIT for enterprise IT governance. Where technical certs prove you can configure the control, ISACA certs prove you can decide which controls matter, measure whether they work, and explain it to a board.",
+  "why_vendor_matters": "ISACA matters because governance roles are where security meets the business — and they're chronically misunderstood by technical people who assume 'less technical' means 'less valuable.' The salary data says otherwise: CISM sits in the top five paying certifications nearly every year (roughly $155K–$167K averages), CISA is the de facto standard for IT audit worldwide, and CRISC anchors risk-management hiring. These are the credentials behind security-manager, GRC lead, audit, and CISO-track postings, and CISM is DoD 8140-recognized alongside CISSP.\n\nThe honest framing for beginners: ISACA certs are mid-career credentials by design. CISM requires five years including three of security management that cannot be waived; CISA requires audit experience. They're where an IT career matures into leadership, not where one starts. If governance interests you early, that's genuinely useful self-knowledge — aim your first years at IT fundamentals plus Security+, take on process and compliance work when it appears, and ISACA's ladder will be waiting when the experience clock catches up.",
+  "certification_tracks": [
+    {
+      "name": "Audit",
+      "level": "Professional",
+      "description": "CISA (Certified Information Systems Auditor) — the global standard for IT audit, required or preferred in most audit postings. Five years of experience with waivers available."
+    },
+    {
+      "name": "Security Management",
+      "level": "Advanced",
+      "description": "CISM (Certified Information Security Manager) — security governance, risk, program management, and incident management from the manager's chair. The CISO-track credential."
+    },
+    {
+      "name": "Risk",
+      "level": "Advanced",
+      "description": "CRISC (Certified in Risk and Information Systems Control) — enterprise IT risk identification, assessment, and response. The specialist credential for risk managers and GRC leads."
+    },
+    {
+      "name": "Governance & Privacy",
+      "level": "Expert",
+      "description": "CGEIT for enterprise IT governance at the executive level, and CDPSE for privacy engineering — narrower audiences, strong recognition inside their niches."
+    }
+  ],
+  "featured_certs": ["cism"],
+  "who_its_for": [
+    {
+      "role": "Security professionals moving into management",
+      "detail": "When the next rung is running the program instead of running the tools, CISM is the credential built for that move — and the one security-manager postings actually name."
+    },
+    {
+      "role": "IT auditors and aspiring auditors",
+      "detail": "CISA is the closest thing to mandatory in IT audit — Big Four firms, internal audit shops, and regulators all recognize it as the standard. If audit is the goal, CISA is the destination."
+    },
+    {
+      "role": "GRC and risk practitioners",
+      "detail": "Governance, risk, and compliance roles are among the most accessible security-adjacent careers — process and communication skills matter as much as packet analysis — and CRISC/CISM formalize exactly that skill set."
+    },
+    {
+      "role": "Military and structured-environment veterans",
+      "detail": "If your service years built discipline around procedures, accountability, and reporting, governance work rewards precisely those instincts — and CISM is DoD 8140-recognized for security-management roles."
+    }
+  ],
+  "career_salary_impact": [
+    "The governance side pays better than most technical people expect: CISM averages $155K–$167K in salary surveys (top-5 among all certs), CISA holders anchor the IT-audit market, and CRISC regularly posts similar numbers. Read the numbers honestly — ISACA holders average a decade of experience and skew into management, so the figures describe who earns these certs, not an automatic raise for passing an exam.",
+    "The eligibility effect is the real lever, same as CISSP: security-manager, GRC-lead, and audit postings that require these credentials don't interview without them. And factor the lifetime costs into the decision — annual maintenance fees, 120 CPE hours per 3-year cycle, and ISACA membership (usually worth it for the exam and materials discounts alone) are part of what you're signing up for."
+  ],
+  "study_difficulty": [
+    {
+      "cert": "CISM",
+      "difficulty": "Moderate–Hard",
+      "time": "2–4 months part-time (for experienced professionals)",
+      "detail": "The content isn't deeply technical — the difficulty is unlearning the engineer's reflex. CISM rewards the 'ISACA answer': risk-based, business-aligned, always the manager's move. Technical people who fail, fail on mindset, which is why the official question database is near-mandatory prep."
+    }
+  ],
+  "available_guides": [
+    {
+      "title": "ISACA CISM Study Guide",
+      "level": "Advanced",
+      "description": "The security-management credential — experience requirements (and what can't be waived), member-vs-non-member exam math, the four domains, and the manager's-answer mindset.",
+      "slug": "cism",
+      "vendor_slug": "isaca",
+      "featured": true
+    }
+  ],
+  "more_certs": [
+    {
+      "title": "CISA (Certified Information Systems Auditor)",
+      "level": "Professional",
+      "description": "The global IT-audit standard since 1978 — required or preferred in most audit postings. Five years of experience with partial waivers; the anchor credential of the audit world."
+    },
+    {
+      "title": "CRISC (Certified in Risk and Information Systems Control)",
+      "level": "Advanced",
+      "description": "Enterprise IT risk and control — the specialist credential for risk managers, GRC leads, and anyone who owns a risk register. Frequently paired with CISM in senior GRC postings."
+    },
+    {
+      "title": "CGEIT (Certified in the Governance of Enterprise IT)",
+      "level": "Expert",
+      "description": "IT governance at the executive tier — for senior leaders aligning technology investment with enterprise strategy. Small audience, strong recognition within it."
+    },
+    {
+      "title": "CDPSE (Certified Data Privacy Solutions Engineer)",
+      "level": "Advanced",
+      "description": "Privacy engineering — building privacy into systems rather than auditing it afterward. A growing niche as privacy regulation keeps expanding."
+    }
+  ],
+  "related_paths": [
+    {
+      "title": "SOC Analyst",
+      "href": "/paths/soc-analyst/",
+      "description": "The security path where CISM sits at the management summit — including the GRC branch that's often the most accessible way into security work."
+    },
+    {
+      "title": "ISC2",
+      "href": "/vendors/isc2/",
+      "description": "The technical-leadership counterpart — CISSP and CISM are the two summit credentials of security, and holding CISSP waives two years of CISM's general experience requirement."
+    },
+    {
+      "title": "IT Project Coordinator",
+      "href": "/paths/it-project-coordinator/",
+      "description": "Governance work and project coordination share the same core muscles — process, stakeholders, documentation — and feed each other career-wise."
+    }
+  ],
+  "cta": {
+    "heading": "Headed for security management?",
+    "blurb": "CISM is the credential the CISO track runs on — governance, risk, and running the program. Our guide covers the experience math, the membership economics, and the mindset shift that decides the exam.",
+    "href": "/vendors/isaca/cism/",
+    "label": "Read the CISM guide"
+  },
+  "faq": [
+    {
+      "question": "Are ISACA certs too 'non-technical' to be worth it?",
+      "answer": "That instinct is exactly backwards at the senior level. The highest-leverage security decisions — what to protect, how much to spend, which risks to accept — are governance decisions, and CISM/CRISC certify the ability to make them. The salary surveys reflect it: CISM is a perennial top-5 payer, ahead of most deeply technical certs."
+    },
+    {
+      "question": "Which ISACA cert should I target first?",
+      "answer": "By destination: security management → CISM; IT audit → CISA; risk/GRC → CRISC. There's no ladder between them — they're parallel tracks for different chairs. And all of them are mid-career credentials; if you're early, build IT fundamentals and Security+ first."
+    },
+    {
+      "question": "Is ISACA membership worth the annual dues?",
+      "answer": "If you're taking an exam or buying study materials, usually yes: the member exam discount ($185 on CISM) roughly covers the dues, and member pricing on the question databases and manuals puts you $100–300 ahead — plus free CPE webinars that make maintenance cheaper every year after."
+    },
+    {
+      "question": "Can I take an ISACA exam before I have the experience?",
+      "answer": "Yes — you can sit the exam any time and apply for certification within five years of passing, once the experience is in place. The gate is at the application, where a supervisor verifies your years. For CISM specifically, remember the three years of security-management experience can't be waived by anything."
+    },
+    {
+      "question": "Do ISACA certifications expire?",
+      "answer": "They're maintained, not re-examined: annual fees ($45–$85 depending on membership) plus 120 CPE hours per 3-year cycle with a 20-hour annual minimum, subject to random audit. Sustained non-compliance means revocation, so treat the maintenance as part of the total cost."
+    }
+  ],
+  "seo_title": "ISACA Certifications – CISM, CISA, CRISC Guides | CertBlueprint",
+  "seo_description": "ISACA certification guides: CISM for security management, plus honest advice on CISA, CRISC, and when the governance track is the right career move."
+}

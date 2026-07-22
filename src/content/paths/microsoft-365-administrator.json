@@ -1,0 +1,63 @@
+{
+  "slug": "microsoft-365-administrator",
+  "role": "Microsoft 365 Administrator",
+  "domain": "enterprise-applications",
+  "specialization": "Collaboration / M365",
+  "navigator_family": "Systems & Infrastructure Administration",
+  "tagline": "Run the platform the business lives in — identity, email, Teams, files, and the policies that keep them safe.",
+  "what_you_do": "You administer the Microsoft 365 tenant a company works inside all day: creating and offboarding users in Entra ID, assigning licenses, keeping Exchange Online mail flowing, managing Teams and SharePoint/OneDrive sharing, enrolling laptops and phones through Intune, and rolling out the security and compliance policies that hold it all together. It's a huge, real slice of the job market that career sites mostly ignore. It's usually a second rung, not a first job — most people reach it from the help desk, where M365 tickets are already half the queue.",
+  "day_in_life": [
+    "Work the morning queue — a locked-out account, a license request, a 'my email is missing' ticket",
+    "Trace a mail-flow problem through Exchange Online message trace to a misfiring transport rule",
+    "Stand up a Team and SharePoint site for a new project, with sharing settings that won't leak data",
+    "Pilot a conditional access policy on a test group before it touches the whole company",
+    "Read the Microsoft 365 message center and flag which of this month's changes will break someone's workflow"
+  ],
+  "entry_titles": ["Microsoft 365 Administrator", "Office 365 Administrator", "M365 Support Specialist", "IT Administrator", "Junior Systems Administrator"],
+  "work_texture": { "communication": 3, "technical_depth": 2, "troubleshooting": 3, "customer": 3, "on_call": 2, "remote": 3 },
+  "salary": {
+    "median": "$96,800",
+    "entry": "~$55,000–$75,000 to start (industry figure for junior M365/collaboration admin roles)",
+    "growth": "Steady — nearly every business runs on M365 and someone has to administer it",
+    "note": "U.S. BLS figure for Network and Computer Systems Administrators (15-1244) — the closest BLS proxy, since there's no dedicated M365 admin code. A median is the midpoint of everyone employed, so entry pay runs lower, and the entry range here is an industry estimate, not BLS. Verify against the live BLS page before deciding."
+  },
+  "downsides": "The work is ticket-driven, so your day gets interrupted constantly. Microsoft moves the cheese relentlessly — admin centers reorganize, licenses get renamed, features shift between plans — and you re-learn the map every year. Change windows are political: everyone wants improvements, nobody wants downtime. And when email breaks, you get blamed whether or not it was your change. It's also rarely a first job — plan to earn it from the help desk.",
+  "work_style": {
+    "fits_if": ["You like being the person who knows how the whole platform fits together", "You're patient with end users and good at translating tech into plain language", "You enjoy steady operational improvement more than greenfield building"],
+    "less_ideal_if": ["You want deep engineering work over broad administration", "Constant interruptions and ticket queues drain you", "You'd rather not live inside one vendor's ecosystem"]
+  },
+  "skills": [
+    { "name": "Identity fundamentals (Entra ID)", "level": "Foundational", "note": "Users, groups, licensing, MFA — identity is the spine of everything else in M365." },
+    { "name": "Exchange Online & mail flow", "level": "Working", "note": "Mailboxes, message trace, transport rules — the skill you'll be judged on when email breaks." },
+    { "name": "Teams & SharePoint/OneDrive administration", "level": "Working" },
+    { "name": "Security & compliance policies", "level": "Working", "note": "Conditional access, sharing controls, retention — where admin work meets real risk." },
+    { "name": "Endpoint enrollment (Intune)", "level": "Working" },
+    { "name": "PowerShell & Microsoft Graph", "level": "Emerging", "note": "The difference between clicking through portals and administering at scale." },
+    { "name": "Change communication", "level": "Foundational", "note": "Warning users before you move their cheese is half the job." }
+  ],
+  "technologies": ["Microsoft Entra ID", "Exchange Online", "Microsoft Teams", "SharePoint / OneDrive", "Intune", "PowerShell / Microsoft Graph", "Defender & Purview"],
+  "certs": [
+    { "title": "Microsoft SC-900", "slug": "sc-900", "vendor_slug": "microsoft", "stage": "Start here", "reason": "Security, compliance, and identity fundamentals — the concepts M365 administration is built on, and the right fundamentals entry now that MS-900 is retired." },
+    { "title": "Microsoft MD-102", "slug": "md-102", "vendor_slug": "microsoft", "stage": "Level up", "reason": "Endpoint Administrator — the associate cert proving you can manage devices with Intune, the step up from fundamentals." },
+    { "title": "MS-900 (Retired)", "slug": "ms-900", "vendor_slug": "microsoft", "stage": "Retired — read first", "reason": "Microsoft retired the old M365 fundamentals exam on March 31, 2026. If it was on your plan, read this before studying toward a dead exam." }
+  ],
+  "cert_note": "Honest priority check: a documented tenant you built yourself outweighs any of these on a junior resume — the certs structure the learning and pass filters. Note: MS-900, the old fundamentals exam, was retired in March 2026 (AB-900 is its successor) — SC-900 is the sensible fundamentals start today.",
+  "trial": {
+    "objective": "Administer a real Microsoft 365 tenant: create users and groups, assign licenses, and set a sharing policy — the actual daily work, not a simulation.",
+    "time": "60–90 minutes",
+    "cost": "Free",
+    "disclosure": "Requires creating a free Microsoft account and a Microsoft 365 Developer/trial tenant. Fully local fallback: map your own household's accounts, sharing, and permissions on paper as an admin design exercise."
+  },
+  "roadmap": [
+    { "stage": "1", "title": "Learn the platform from the admin side", "focus": "Spin up a free Microsoft 365 Developer/trial tenant and work through Microsoft Learn's free M365 admin paths. Break things in your tenant, not someone's business." },
+    { "stage": "2", "title": "Ground the concepts", "focus": "Earn Microsoft SC-900 — security, compliance, and identity are the ideas every M365 decision hangs on, and it's the cheapest credible signal you can put on a resume.", "cert_slug": "sc-900" },
+    { "stage": "3", "title": "Build a documented tenant", "focus": "In your lab tenant: users and groups, licensing, conditional access, a Teams/SharePoint structure with sane sharing, and an Intune-enrolled device. Write it up — that document is your portfolio. MD-102 validates the endpoint half.", "cert_slug": "md-102" },
+    { "stage": "4", "title": "Earn it from the help desk", "focus": "Take every M365 ticket you can, become the escalation person for Exchange and Teams problems, then apply for junior M365/collaboration admin roles inside and outside your company." }
+  ],
+  "adjacent_paths": [
+    { "role": "Systems Administrator", "slug": "systems-administrator", "reason": "The same identity-and-endpoint discipline at the infrastructure layer." },
+    { "role": "Help Desk Technician", "slug": "help-desk-technician", "reason": "The most common feeder role — M365 tickets are half the help desk queue." }
+  ],
+  "seo_title": "Microsoft 365 Administrator Career Path — Skills, Roadmap & Certs | CertBlueprint",
+  "seo_description": "Is Microsoft 365 Administrator right for you? The work, the skills, a free trial-tenant exercise, honest salary numbers, and the roadmap up from help desk."
+}

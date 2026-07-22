@@ -1,0 +1,212 @@
+{
+  "title": "PMI CAPM (Certified Associate in Project Management) Study Guide",
+  "slug": "capm",
+  "vendor": "PMI",
+  "vendor_slug": "pmi",
+  "level": "Foundation",
+  "short_name": "CAPM",
+  "description": "The Certified Associate in Project Management (CAPM) is PMI's genuine entry-level project management certification. It validates foundational knowledge across predictive (waterfall) methodologies, agile frameworks, and business analysis — the vocabulary and core concepts used on real project teams. Unlike the PMP, it requires no professional project experience, making it the standard first credential for aspiring project coordinators and analysts.",
+  "audience": "Career changers and students targeting project coordinator or junior project manager roles, IT professionals who coordinate projects without the PM title, and business analysts who want formal project management grounding. If you cannot yet meet the PMP's 36-month experience requirement, CAPM is the PMI credential built for you.",
+  "why_get_it": "CAPM matters because the PMP — the certification most people actually want — is not an entry-level credential: it requires 36+ months of documented project leadership experience. CAPM is PMI's answer for everyone earlier in the pipeline. It gets 'PMI-certified' onto a resume with no experience requirement, which helps entry candidates pass HR filters for project coordinator, project analyst, and PMO assistant roles. The 2023 exam overhaul made it more relevant than it used to be: agile frameworks (20%) and business analysis (27%) now make up nearly half the exam, so it maps to how modern teams actually work rather than pure waterfall theory. It also front-loads PMP preparation — the terminology, process logic, and PMI mindset transfer directly when you later qualify for PMP. Be realistic: CAPM is a door-opener and a signal of seriousness, not a role guarantee. It works best paired with any hands-on coordination experience you can point to, even informal.",
+  "when_to_get_it": "Get CAPM when you are targeting your first project-flavored role and cannot yet qualify for the PMP. Typical timing: final year of a degree program, early in an IT or business analyst career, or during a career change into project work. The only prerequisites are a secondary degree (high school diploma or global equivalent) and 23 contact hours of project management education — PMI removed the alternative experience path in 2024, so the education route is now the way in. If you already have 3+ years leading projects, skip CAPM and go straight for the PMP; CAPM is not a required stepping stone and holding it grants no PMP exam waiver.",
+  "salary_range": "$55,000 – $80,000",
+  "salary_note": "Honest framing: CAPM by itself does not command a large salary premium — it is a resume signal, not a pay lever. Project coordinator and junior PM roles that list CAPM typically pay $55K–$80K in the US depending on industry and market; surveys put certified holders roughly 5–10% above uncertified peers at entry level. The real compensation jump comes later with experience and the PMP, where $100K+ is common. Treat CAPM as an investment in getting the first role, not in raising its pay.",
+  "exam_code": "CAPM",
+  "exam_duration": "3 hours (180 minutes)",
+  "exam_format": "Computer-based via Pearson VUE, at a test center or online proctored. Multiple-choice and multiple-response questions with an optional 10-minute break at the midpoint.",
+  "exam_questions": "150 questions (135 scored, 15 unscored pretest)",
+  "official_url": "https://www.pmi.org/certifications/certified-associate-capm",
+  "official_pricing_url": "https://www.pmi.org/certifications/certified-associate-capm",
+  "recertification_note": "CAPM is valid for 3 years and renews via PMI's Continuing Certification Requirements (CCR) program: earn 15 PDUs per 3-year cycle (including a minimum of 2 PDUs in each PMI Talent Triangle area) and pay the renewal fee (~$60 for PMI members, ~$150 for non-members). This replaced the old rule where CAPM expired after five years and required a full retake — you no longer re-sit the exam. Verify current CCR details on PMI's site.",
+  "skills_covered": [
+    {
+      "category": "Project Management Fundamentals and Core Concepts (36%)",
+      "items": [
+        "Project life cycles, processes, and the role of the project manager",
+        "Core terminology: scope, schedule, cost, quality, risk, stakeholders",
+        "Organizational structures and project governance",
+        "Planning fundamentals and baseline concepts",
+        "Problem-solving and how projects deliver business value"
+      ]
+    },
+    {
+      "category": "Predictive, Plan-Based Methodologies (17%)",
+      "items": [
+        "When a predictive (waterfall) approach is appropriate",
+        "Work breakdown structures and scope decomposition",
+        "Schedule development: critical path, dependencies, milestones",
+        "Budgeting, estimating, and earned value basics",
+        "Change control in plan-driven projects"
+      ]
+    },
+    {
+      "category": "Agile Frameworks and Methodologies (20%)",
+      "items": [
+        "When adaptive approaches fit better than predictive",
+        "Scrum roles, events, and artifacts",
+        "Backlogs, iterations, and incremental delivery",
+        "Agile planning: story points, velocity, burn charts",
+        "Servant leadership and self-organizing teams"
+      ]
+    },
+    {
+      "category": "Business Analysis Frameworks (27%)",
+      "items": [
+        "The business analyst role and how it interacts with project teams",
+        "Requirements gathering, elicitation, and traceability",
+        "Stakeholder communication and engagement",
+        "Product roadmaps and their influence on delivery",
+        "Validating requirements against business value"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Confirm eligibility and plan your 23 contact hours",
+      "description": "CAPM requires a secondary degree plus 23 contact hours of project management education completed before you sit the exam. Plan the contact hours first because most good prep courses satisfy the requirement while teaching the material — one purchase covers both. The Google Project Management Certificate, PM PrepCast, and the major Udemy CAPM courses all count."
+    },
+    {
+      "step": 2,
+      "title": "Download the CAPM Exam Content Outline",
+      "description": "Get the official Exam Content Outline (ECO) PDF from PMI. The 2023-onward exam is four domains: Fundamentals (36%), Predictive (17%), Agile (20%), and Business Analysis (27%). Note what that means: agile plus business analysis is nearly half the exam. If your study materials are waterfall-only leftovers from the old exam, they will fail you."
+    },
+    {
+      "step": 3,
+      "title": "Complete one primary course end to end",
+      "description": "Pick a single comprehensive course and finish it. Joseph Phillips and Andrew Ramdayal on Udemy are the most popular paid options and both include enough contact hours for eligibility. The Google Project Management Certificate on Coursera is a solid alternative that doubles as its own resume line. Do not stack multiple full courses — it slows you down without improving retention."
+    },
+    {
+      "step": 4,
+      "title": "Learn the vocabulary cold",
+      "description": "CAPM is heavily terminology-driven: process groups, Scrum events, requirement types, estimation techniques. Flash cards (Anki or Quizlet) work well here. PMI members get free digital access to the PMBOK Guide and Agile Practice Guide — worth joining before you study, since membership also discounts the exam by more than it costs if you qualify for student pricing."
+    },
+    {
+      "step": 5,
+      "title": "Drill practice questions across all four domains",
+      "description": "Work practice question banks until you consistently score 75–80% across every domain, not just overall. Candidates from IT backgrounds routinely under-prepare the business analysis domain (27% of the exam) because it feels unfamiliar — check your per-domain scores and attack the weakest one. PMI's official Study Hall is the closest match to real question style."
+    },
+    {
+      "step": 6,
+      "title": "Apply through PMI and schedule with Pearson VUE",
+      "description": "Submit your application on pmi.org documenting your education and contact hours. Join PMI first if the math works: membership ($139/year, or $32 for students) drops the exam fee from $300 to $225 and includes the PMBOK Guide. Once approved, schedule through Pearson VUE — online proctored or test center."
+    },
+    {
+      "step": 7,
+      "title": "Sit the exam with a pacing plan",
+      "description": "150 questions in 180 minutes is a comfortable pace, but do not linger: flag hard questions and return to them. Take the optional 10-minute break at the midpoint — you cannot revisit earlier questions after it, so review flagged items first. Read scenario questions for the approach being described (predictive vs agile) before picking an answer; that framing decides many questions."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "PMI – Official CAPM Exam Content Outline",
+      "url": "https://www.pmi.org/-/media/pmi/documents/public/pdf/certifications/capm-exam-content-outline-english.pdf",
+      "type": "Official Documentation",
+      "note": "The definitive list of what the exam covers, with domain weightings. Read this before buying anything."
+    },
+    {
+      "name": "PMI – Official CAPM Certification Page",
+      "url": "https://www.pmi.org/certifications/certified-associate-capm",
+      "type": "Official Documentation",
+      "note": "Current eligibility rules, pricing, and the application portal. Exam facts change — this page is the source of truth."
+    },
+    {
+      "name": "Google Project Management Certificate (Coursera)",
+      "url": "https://www.coursera.org/professional-certificates/google-project-management",
+      "type": "Video Course",
+      "note": "Not fully free (Coursera subscription, ~$49/month, financial aid available) but PMI-recognized — its 100+ education hours satisfy the 23-contact-hour requirement, and it is a standalone resume line for entry candidates."
+    },
+    {
+      "name": "r/pmp on Reddit",
+      "url": "https://www.reddit.com/r/pmp/",
+      "type": "Community",
+      "note": "PMI certification prep community covering CAPM and PMP. Pass reports and study-plan threads are useful for calibrating your prep."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Udemy – Joseph Phillips CAPM Exam Prep Seminar",
+      "type": "Video Course",
+      "price": "~$15–$25 (on sale)",
+      "best_for": "Candidates who want one course that covers the current exam and satisfies the contact-hours eligibility requirement",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcapm-pmbok6%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_capm_phillips",
+      "affiliate": true,
+      "note": "Updated for the 2023-onward exam and includes 25 contact hours — more than the 23 PMI requires, so this one course clears eligibility."
+    },
+    {
+      "provider": "Udemy – Andrew Ramdayal CAPM Exam Prep Course",
+      "type": "Video Course",
+      "price": "~$15–$25 (on sale)",
+      "best_for": "Candidates who prefer Ramdayal's direct, exam-focused teaching style (well known from his PMP course)",
+      "affiliate_url": "https://trk.udemy.com/c/7196459/3193860/39854?u=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcapm-certification-training-prep-course%2F",
+      "affiliate_label": "View on Udemy",
+      "affiliate_event": "udemy_capm_ramdayal",
+      "affiliate": true,
+      "note": "Includes 25 contact hours for eligibility. Ramdayal's exam-mindset coaching translates well to PMI's scenario-style questions."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Apply for the CAPM Exam – PMI.org",
+      "url": "https://www.pmi.org/certifications/certified-associate-capm",
+      "note": "PMI does not sell vouchers through resellers like CompTIA does — you apply and pay on pmi.org ($225 members / $300 non-members). Join PMI first if eligible for student membership ($32); the member discount exceeds the membership cost."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is CAPM worth it?",
+      "answer": "It depends on where you are. For candidates with no project experience targeting coordinator, analyst, or PMO roles, yes — it is the recognized entry credential from the organization whose PMP dominates the field, and it helps pass resume filters. For anyone with 3+ years leading projects, no — go straight to the PMP. CAPM is a door-opener, not a career-maker; pair it with any real coordination experience you can demonstrate."
+    },
+    {
+      "question": "CAPM vs PMP — which should I get?",
+      "answer": "This is decided for you by eligibility. The PMP requires 36+ months of project leadership experience; if you have that, get the PMP — it carries far more weight. If you do not, the PMP is simply unavailable and CAPM is PMI's credential for you. CAPM is not a prerequisite for the PMP and does not waive any PMP requirements, but the material overlaps heavily, so the study effort transfers."
+    },
+    {
+      "question": "What are the CAPM prerequisites?",
+      "answer": "A secondary degree (high school diploma, GED, or global equivalent) and 23 contact hours of project management education completed before you take the exam. PMI removed the old 1,500-hour experience alternative in 2024, so the education route is now the only path. Most prep courses — Udemy's major CAPM courses, PM PrepCast, and the Google Project Management Certificate — satisfy the contact hours."
+    },
+    {
+      "question": "How hard is the CAPM exam?",
+      "answer": "It is the easiest PMI exam, but not free: 150 questions in 3 hours across four domains, and the 2023 overhaul added agile (20%) and business analysis (27%) content that trips up candidates studying from outdated waterfall-only material. PMI does not publish a numeric passing score — results are scored psychometrically and reported as proficiency levels. Most candidates prepare in 4 to 8 weeks part-time."
+    },
+    {
+      "question": "How much does the CAPM cost?",
+      "answer": "The exam is $225 for PMI members and $300 for non-members (verify current pricing on pmi.org). PMI membership is $139/year plus a $10 application fee — or $32/year for students, which makes membership clearly worth it since the member discount is $75. Retakes are ~$150 for members / ~$200 for non-members. Add a prep course and total cost typically lands between $350 and $600."
+    },
+    {
+      "question": "Does the CAPM expire?",
+      "answer": "Yes — CAPM is valid for 3 years and renews through PMI's CCR program: 15 PDUs per cycle (minimum 2 in each Talent Triangle area) plus a renewal fee (~$60 members / ~$150 non-members). This replaced the old five-year expiration that forced a full exam retake. PDUs are easy to earn through free webinars and PMI content, so renewal is low-effort if you stay engaged."
+    },
+    {
+      "question": "What jobs can I get with CAPM?",
+      "answer": "Project Coordinator, Project Analyst, PMO Assistant/Analyst, Junior Project Manager, and IT coordinator roles that carry project duties. Business analysts also use it to formalize project management skills. Be realistic: most listings for these roles ask for the cert or experience, not the cert alone — CAPM strengthens an application, it does not replace internships, portfolio work, or demonstrated coordination experience."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "Professional Scrum Master I",
+      "slug": "psm-1",
+      "vendor": "Scrum.org",
+      "vendor_slug": "scrum-org",
+      "reason": "The natural agile-side complement. CAPM introduces Scrum concepts; PSM I proves them in depth, and agile is 20% of the CAPM exam."
+    },
+    {
+      "title": "ITIL 4 Foundation",
+      "slug": "itil-4-foundation",
+      "vendor": "PeopleCert",
+      "vendor_slug": "peoplecert",
+      "reason": "Pairs well for IT project coordinators — ITIL covers how IT services run day-to-day, while CAPM covers how changes to them get delivered."
+    },
+    {
+      "title": "Microsoft AZ-900",
+      "slug": "az-900",
+      "vendor": "Microsoft",
+      "vendor_slug": "microsoft",
+      "reason": "Cloud fluency for coordinators managing IT projects — AZ-900 gives you the vocabulary to run cloud migration and infrastructure projects credibly."
+    }
+  ],
+  "seo_title": "PMI CAPM Study Guide – Exam Details, Study Plan, Resources | CertBlueprint",
+  "seo_description": "Complete PMI CAPM guide: who it's for, exam cost and format, the 23-contact-hour requirement, step-by-step study plan, free and paid resources, and FAQ."
+}

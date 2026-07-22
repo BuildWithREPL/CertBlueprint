@@ -1,0 +1,12 @@
+{
+  "specializations": [
+    "ERP (SAP/Oracle)",
+    "CRM (Salesforce/Dynamics)",
+    "Collaboration / M365",
+    "ITSM Platforms"
+  ],
+  "one_liner": "Administering the packaged platforms businesses actually run on.",
+  "order": 8,
+  "slug": "enterprise-applications",
+  "title": "Enterprise Applications & Business Systems"
+}

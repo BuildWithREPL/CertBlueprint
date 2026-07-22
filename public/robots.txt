@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://certblueprint.com/sitemap-index.xml

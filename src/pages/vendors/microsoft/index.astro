@@ -1,0 +1,230 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import CertCard from '../../../components/CertCard.astro';
+import FAQAccordion from '../../../components/FAQAccordion.astro';
+import { getEntry } from 'astro:content';
+
+const microsoft = await getEntry('vendors', 'microsoft');
+const { data } = microsoft;
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Vendors', href: '/vendors/' },
+  { label: 'Microsoft', href: '/vendors/microsoft/' },
+];
+
+const upcomingCerts = [
+  { title: 'AZ-305: Azure Solutions Architect Expert', level: 'Expert', description: 'Advanced Azure architecture design. Requires AZ-104 and significant cloud experience. High-value credential for architect roles.' },
+  { title: 'AZ-500: Azure Security Engineer', level: 'Associate', description: 'Securing Azure identities, platforms, data, and applications. Strong pairing with Security+ and SC-900 for cloud security roles.' },
+  { title: 'AZ-400: DevOps Engineer Expert', level: 'Expert', description: 'Designing and implementing DevOps practices using Azure DevOps and GitHub. Requires AZ-104 or AZ-204.' },
+];
+---
+
+<BaseLayout title={data.seo_title} description={data.seo_description} breadcrumbs={breadcrumbs}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumb crumbs={breadcrumbs} />
+
+    <header class="mt-3 mb-8 max-w-3xl">
+      <p class="text-xs font-semibold uppercase tracking-wider mb-2" style="color: var(--cb-accent-text);">Vendor</p>
+      <h1 class="text-2xl sm:text-3xl font-bold mb-3" style="color: var(--cb-text);">Microsoft Azure Certifications Guide</h1>
+      <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{data.overview}</p>
+    </header>
+
+    <!-- Why Microsoft -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="why-microsoft-heading">
+      <div class="max-w-3xl">
+        <h2 id="why-microsoft-heading" class="text-base font-bold mb-3" style="color: var(--cb-text);">Why Microsoft Azure certifications matter</h2>
+        <div class="space-y-4 text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+          {data.why_vendor_matters.split('\n\n').map((para: string) => (
+            <p>{para}</p>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Who it's for -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="audience-microsoft-heading">
+      <div class="max-w-3xl">
+        <h2 id="audience-microsoft-heading" class="text-base font-bold mb-3" style="color: var(--cb-text);">Who Microsoft Azure certifications are for</h2>
+        <div class="space-y-3">
+          {[
+            { role: 'Systems administrators moving to cloud', detail: 'IT professionals managing Windows Server, Active Directory, and on-premises infrastructure find AZ-104 the most natural transition. The concepts map directly and the learning curve is significantly lower than AWS for this background.' },
+            { role: 'Azure administrators and cloud operations staff', detail: 'AZ-104 is the core operations credential for anyone responsible for managing Azure resources day-to-day. Identities, storage, compute, networking, and monitoring are all covered.' },
+            { role: 'Cloud architects', detail: 'AZ-305 (Solutions Architect Expert) is the advanced design credential for professionals with AZ-104 and significant hands-on cloud experience. It covers governance, infrastructure design, data storage, and business continuity at scale.' },
+            { role: 'Security and DevOps engineers', detail: 'AZ-500 (Security Engineer) and AZ-400 (DevOps Engineer Expert) serve professionals specializing in Azure security posture and CI/CD pipeline engineering respectively.' },
+          ].map((item) => (
+            <div class="rounded-xl border p-4" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+              <p class="font-semibold text-sm mb-1" style="color: var(--cb-text);">{item.role}</p>
+              <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{item.detail}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Salary and career impact -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="salary-microsoft-heading">
+      <div class="max-w-3xl">
+        <h2 id="salary-microsoft-heading" class="text-base font-bold mb-3" style="color: var(--cb-text);">Career and salary impact</h2>
+        <p class="text-sm leading-relaxed mb-3" style="color: var(--cb-text-sub);">
+          Azure certifications carry strong compensation in enterprise environments. Azure administrators with AZ-104 typically earn $75,000–$110,000 depending on experience and location. Azure architects (AZ-305) with significant hands-on Azure experience command $120,000–$160,000+. Security engineers (AZ-500) in enterprise organizations earn $100,000–$140,000.
+        </p>
+        <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+          The Microsoft renewal model adds meaningful long-term value: you pay once for the initial exam and renew annually for free via Microsoft Learn assessments. Over a five-year period, an Azure certification costs significantly less to maintain than equivalent AWS or Cisco credentials, which require re-examination fees at each renewal cycle. For professionals planning a long-term Azure career, this is a non-trivial financial advantage. Additionally, Microsoft regularly runs free exam voucher promotions through their Microsoft Learn challenge programs — worth checking before purchasing at standard pricing.
+        </p>
+      </div>
+    </section>
+
+    <!-- Study difficulty and timeline -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="difficulty-microsoft-heading">
+      <div class="max-w-3xl">
+        <h2 id="difficulty-microsoft-heading" class="text-base font-bold mb-4" style="color: var(--cb-text);">Study difficulty and time investment</h2>
+        <div class="space-y-3">
+          {[
+            { cert: 'AZ-900: Azure Fundamentals', difficulty: 'Beginner', time: '1–3 weeks', detail: 'Non-technical overview of Azure cloud concepts, services, pricing, and compliance. Skip this if you have any IT background — go straight to AZ-104. AZ-900 is useful only for business stakeholders or complete newcomers.' },
+            { cert: 'AZ-104: Azure Administrator', difficulty: 'Moderate', time: '2–4 months part-time', detail: 'Covers identity and governance, storage, compute, networking, and monitoring. Candidates with Windows Server or Active Directory experience have a significant advantage — many concepts transfer directly. Microsoft Learn provides free, structured study paths aligned to the exam.' },
+            { cert: 'AZ-305: Azure Solutions Architect Expert', difficulty: 'Hard', time: '4–6 months', detail: 'Requires AZ-104 as prerequisite. Covers infrastructure design, data storage architecture, business continuity, and governance at scale. Needs real Azure hands-on experience — most successful candidates have AZ-104 plus 1–2 years of Azure operations experience.' },
+            { cert: 'AZ-500: Azure Security Engineer', difficulty: 'Moderate–Hard', time: '3–5 months', detail: 'Focuses on identity security, platform protection, data security, and security operations in Azure. Good pairing with CompTIA Security+ for candidates targeting cloud security roles. Assumes solid Azure fundamentals and some security background.' },
+          ].map((item) => (
+            <div class="rounded-xl border p-4" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+              <div class="flex items-center justify-between mb-1.5">
+                <p class="font-semibold text-sm" style="color: var(--cb-text);">{item.cert}</p>
+                <div class="flex gap-2">
+                  <span class="text-xs px-2 py-0.5 rounded-full" style="background: var(--cb-bg-subtle); color: var(--cb-text-muted);">{item.difficulty}</span>
+                  <span class="text-xs px-2 py-0.5 rounded-full" style="background: var(--cb-accent-sub); color: var(--cb-accent-text);">{item.time}</span>
+                </div>
+              </div>
+              <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{item.detail}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Cert tracks -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="tracks-heading">
+      <h2 id="tracks-heading" class="text-base font-bold mb-4" style="color: var(--cb-text);">Certification tracks</h2>
+      <div class="grid sm:grid-cols-2 gap-3 max-w-4xl">
+        {data.certification_tracks.map((track) => (
+          <div class="rounded-xl border p-4" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+            <div class="flex items-center justify-between mb-1.5">
+              <h3 class="font-semibold text-sm" style="color: var(--cb-text);">{track.name}</h3>
+              <span class="text-xs px-2 py-0.5 rounded-full" style="color: var(--cb-text-muted); background: var(--cb-bg-subtle);">{track.level}</span>
+            </div>
+            <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{track.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Live guide -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="available-heading">
+      <h2 id="available-heading" class="text-base font-bold mb-4" style="color: var(--cb-text);">Available guides</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl">
+        <CertCard
+          title="Microsoft AZ-900: Azure Fundamentals"
+          vendor="Microsoft"
+          level="Foundation"
+          description="The foundational Azure certification. Cloud concepts, core Azure services, pricing, and governance—the most accessible entry into the Microsoft cloud."
+          href="/vendors/microsoft/az-900/"
+          featured={true}
+        />
+        <CertCard
+          title="Microsoft AZ-104: Azure Administrator Associate"
+          vendor="Microsoft"
+          level="Associate"
+          description="The core Azure operations credential. Validates managing identities, storage, virtual machines, networking, and monitoring in Microsoft Azure environments."
+          href="/vendors/microsoft/az-104/"
+          featured={true}
+        />
+        <CertCard
+          title="Microsoft SC-900: Security, Compliance & Identity"
+          vendor="Microsoft"
+          level="Foundation"
+          description="The foundational Microsoft security cert. Security, compliance, and identity concepts mapped to Entra, Defender, and Purview."
+          href="/vendors/microsoft/sc-900/"
+        />
+        <CertCard
+          title="Microsoft PL-300: Power BI Data Analyst"
+          vendor="Microsoft"
+          level="Associate"
+          description="The recognized data-analyst credential for Microsoft shops. Preparing, modeling, visualizing, and analyzing data in Power BI."
+          href="/vendors/microsoft/pl-300/"
+        />
+        <CertCard
+          title="Microsoft MD-102: Endpoint Administrator"
+          vendor="Microsoft"
+          level="Associate"
+          description="Deploying and managing Windows clients with Intune, Autopilot, and compliance policies. The step up from fundamentals for endpoint roles."
+          href="/vendors/microsoft/md-102/"
+        />
+        <CertCard
+          title="Microsoft MS-900: 365 Fundamentals (Retired)"
+          vendor="Microsoft"
+          level="Foundation"
+          description="Retired March 2026. Kept as a reference for anyone who held it or is deciding what to study instead (SC-900 / AB-900)."
+          href="/vendors/microsoft/ms-900/"
+        />
+      </div>
+    </section>
+
+    <!-- More certs -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="more-heading">
+      <h2 id="more-heading" class="text-base font-bold mb-4" style="color: var(--cb-text);">More Microsoft Azure certifications</h2>
+      <div class="grid sm:grid-cols-2 gap-3 max-w-4xl">
+        {upcomingCerts.map((cert) => (
+          <div class="rounded-xl border p-4" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+            <div class="flex items-center justify-between mb-1.5">
+              <h3 class="font-semibold text-sm" style="color: var(--cb-text);">{cert.title}</h3>
+              <span class="text-xs px-2 py-0.5 rounded-full" style="color: var(--cb-text-muted); background: var(--cb-bg-subtle);">{cert.level}</span>
+            </div>
+            <p class="text-xs leading-relaxed" style="color: var(--cb-text-sub);">{cert.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="faq-heading">
+      <h2 id="faq-heading" class="text-base font-bold mb-4" style="color: var(--cb-text);">Frequently asked questions</h2>
+      <div class="max-w-3xl">
+        <FAQAccordion items={data.faq} />
+      </div>
+    </section>
+
+    <!-- Cross-links to related vendors -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="related-vendors-heading">
+      <h2 id="related-vendors-heading" class="text-base font-bold mb-4" style="color: var(--cb-text);">Related cert paths</h2>
+      <div class="grid sm:grid-cols-3 gap-3 max-w-3xl">
+        <a href="/vendors/aws/aws-saa/" class="rounded-xl border p-4 transition-colors block" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+          <p class="font-semibold text-sm mb-1" style="color: var(--cb-text);">AWS Solutions Architect</p>
+          <p class="text-xs leading-relaxed" style="color: var(--cb-text-sub);">The multi-cloud counterpart on AWS. Many Azure admins pursue both.</p>
+        </a>
+        <a href="/vendors/comptia/security-plus/" class="rounded-xl border p-4 transition-colors block" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+          <p class="font-semibold text-sm mb-1" style="color: var(--cb-text);">CompTIA Security+</p>
+          <p class="text-xs leading-relaxed" style="color: var(--cb-text-sub);">Security fundamentals that complement Azure administration and AZ-500 preparation.</p>
+        </a>
+        <a href="/vendors/cisco/ccna/" class="rounded-xl border p-4 transition-colors block" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+          <p class="font-semibold text-sm mb-1" style="color: var(--cb-text);">Cisco CCNA</p>
+          <p class="text-xs leading-relaxed" style="color: var(--cb-text-sub);">Networking fundamentals that support Azure VNet design and hybrid connectivity.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);">
+      <div class="rounded-2xl p-7 text-center max-w-2xl text-white" style="background: linear-gradient(135deg, #0078d4, #004e8c);">
+        <h2 class="text-xl font-bold mb-2">Start with AZ-104: Azure Administrator</h2>
+        <p class="text-sm mb-5 leading-relaxed" style="color: #cce4f6;">The foundational Azure operations credential. Study path, exam details, free resources, and recommended courses—all in one place.</p>
+        <a href="/vendors/microsoft/az-104/" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors" style="background: white; color: #0078d4;">
+          View AZ-104 guide
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

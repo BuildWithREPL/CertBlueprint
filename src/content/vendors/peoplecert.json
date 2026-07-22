@@ -1,0 +1,138 @@
+{
+  "title": "PeopleCert",
+  "slug": "peoplecert",
+  "overview": "PeopleCert is the global exam institute behind ITIL and PRINCE2, the two dominant frameworks for IT service management and structured project management. Originally the exclusive exam delivery partner for Axelos, PeopleCert acquired Axelos outright in 2021, making it both the owner and the examiner of the ITIL and PRINCE2 certification schemes. Its flagship credential, ITIL 4 Foundation, is one of the most widely held IT certifications in the world.",
+  "why_vendor_matters": "PeopleCert matters because it controls certifications that enterprise IT effectively runs on. ITIL is the de facto vocabulary of IT service management—incident, problem, and change management as practiced in most large IT organizations comes straight from it—and ITIL 4 Foundation is a standing requirement or strong preference in service desk, systems administration, and IT operations job postings, especially in the UK, Europe, and government-adjacent sectors. PRINCE2 plays a similar role for project management in the UK and Commonwealth markets, where it rivals or exceeds the PMP in recognition. Since the 2021 Axelos acquisition (a deal valued around £380m), PeopleCert has been the single point of ownership: it writes the syllabi, accredits the trainers, and delivers every exam.\n\nThat consolidation is also the honest caveat. As both scheme owner and monopoly examiner, PeopleCert has raised prices and introduced policies that the practitioner community has openly criticized—most notably a renewal scheme requiring certifications to be renewed every three years (via re-examination, a further certification, or logged professional development points), where ITIL and PRINCE2 certs were previously valid for life. Exam vouchers frequently come bundled with official eBooks and 'Take2' resit insurance whether you want them or not, and higher-level ITIL modules require accredited (paid) training. None of this erases the market value of ITIL 4 Foundation or PRINCE2—demand is real—but budget for the full cost and read the current renewal rules before committing to the upper tiers of either scheme.",
+  "certification_tracks": [
+    {
+      "name": "ITIL 4 – IT Service Management",
+      "level": "Foundation to Master",
+      "description": "ITIL 4 Foundation covers the service value system and core ITSM practices. Beyond it sit the Practice Manager, Managing Professional, and Strategic Leader designations, culminating in ITIL Master. Foundation alone satisfies most job-posting requirements."
+    },
+    {
+      "name": "PRINCE2 – Project Management",
+      "level": "Foundation to Practitioner",
+      "description": "PRINCE2 (currently PRINCE2 7) is a process-based project management method dominant in the UK, Europe, and Commonwealth public sectors. Foundation tests the method; Practitioner tests applying and tailoring it to real projects."
+    },
+    {
+      "name": "PRINCE2 Agile",
+      "level": "Foundation to Practitioner",
+      "description": "Blends PRINCE2 governance with agile delivery techniques like Scrum and Kanban. Aimed at organizations that need PRINCE2's control structure but run agile teams underneath it."
+    },
+    {
+      "name": "DevOps and Specialist",
+      "level": "Foundation to Advanced",
+      "description": "Through its acquisition of the DevOps Institute, PeopleCert also offers DevOps Foundation and related credentials, plus specialist schemes like MSP (programme management) inherited from the Axelos portfolio."
+    }
+  ],
+  "featured_certs": ["itil-4-foundation"],
+  "who_its_for": [
+    {
+      "role": "Service desk and IT support staff",
+      "detail": "If you work (or want to work) on an enterprise service desk, ITIL 4 Foundation teaches the exact vocabulary your ticketing system and processes are built on—incidents versus problems, change enablement, service requests. It is a frequent HR filter for these roles and pairs naturally with a hands-on cert like CompTIA A+."
+    },
+    {
+      "role": "ITSM coordinators and aspiring service delivery managers",
+      "detail": "For people moving up into ITSM analyst, service delivery, or process management roles, Foundation is the entry ticket to the service management career ladder. The framework literacy it certifies is used daily in organizations standardized on ITIL."
+    },
+    {
+      "role": "Project and programme professionals in UK and Commonwealth markets",
+      "detail": "PRINCE2 is the dominant project management method across UK, European, and Commonwealth public sectors, where it rivals or exceeds the PMP in recognition. If your target market or employer runs PRINCE2, its certifications are often listed by name in job postings."
+    },
+    {
+      "role": "Career changers who need an enterprise-recognized checkbox",
+      "detail": "Foundation has no prerequisites and is one of the fastest IT certs to earn, which makes it an efficient way to clear an HR filter for enterprise IT operations roles. Just treat it as a complement to technical skills, not a substitute for them."
+    }
+  ],
+  "career_salary_impact": [
+    "Be honest with yourself about what ITIL does to a paycheck: on its own, ITIL 4 Foundation rarely commands a direct salary premium. Service desk roles where it is listed typically pay $45K–$60K, ITSM analyst and coordinator roles run $55K–$75K, and service delivery or process manager roles reach $85K–$110K+ with experience. The certification's real leverage is role eligibility in enterprise ITSM shops, not a line-item raise—it moves salary indirectly by qualifying you for the service management career ladder rather than by bumping your rate the day you pass.",
+    "That makes ITIL a credential you stack rather than lead with. Combined with hands-on support experience or a technical cert like CompTIA A+, it strengthens candidacy for service desk and IT support roles; combined with project or process experience, it supports the move into coordinator and manager positions. PRINCE2 works the same way in project management markets—it opens doors in organizations that require the method, but experience and delivery track record still set the actual pay. Directionally, PeopleCert credentials earn their keep by widening the set of jobs you qualify for, and that is where the salary growth ultimately comes from."
+  ],
+  "study_difficulty": [
+    {
+      "cert": "ITIL 4 Foundation",
+      "difficulty": "Beginner",
+      "time": "1–3 weeks part-time",
+      "detail": "This is one of the easier entry-level IT certifications: 40 multiple-choice questions in 60 minutes, 65% (26 correct) to pass, and the content is definitional rather than applied—no labs, no troubleshooting, no configuration. The one real trap is imprecise vocabulary, because the exam deliberately offers near-miss definitions as distractors, so flashcard-level precision on the seven guiding principles, the four dimensions, and the practices is what separates a pass from a fail."
+    }
+  ],
+  "available_guides": [
+    {
+      "title": "ITIL 4 Foundation Study Guide",
+      "level": "Foundation",
+      "description": "The entry-level IT service management certification—exam facts, the ITIL 4 to Version 5 transition, honest salary expectations, and a tight self-study plan.",
+      "slug": "itil-4-foundation",
+      "vendor_slug": "peoplecert",
+      "featured": true
+    }
+  ],
+  "more_certs": [
+    {
+      "title": "ITIL 4 Managing Professional (MP)",
+      "level": "Intermediate",
+      "description": "A multi-module stream (including Create, Deliver & Support and Drive Stakeholder Value) for practitioners running ITSM day to day. Note that the modules above Foundation require accredited, paid training as a condition of sitting the exam."
+    },
+    {
+      "title": "PRINCE2 Foundation",
+      "level": "Foundation",
+      "description": "The entry credential for the process-based PRINCE2 project management method—dominant in UK, European, and Commonwealth public sectors. Tests knowledge of the method's principles, themes, and processes."
+    },
+    {
+      "title": "PRINCE2 Practitioner",
+      "level": "Practitioner",
+      "description": "The applied tier above PRINCE2 Foundation, testing your ability to tailor and apply the method to a real project scenario. Commonly requested by name in UK project management job postings."
+    },
+    {
+      "title": "DevOps Foundation",
+      "level": "Foundation",
+      "description": "Inherited from PeopleCert's acquisition of the DevOps Institute, this covers DevOps principles, culture, and practices. A vocabulary credential for teams blending development and operations rather than a hands-on engineering cert."
+    }
+  ],
+  "related_paths": [
+    {
+      "title": "Help Desk Technician",
+      "href": "/paths/help-desk-technician/",
+      "description": "The service desk is where ITIL vocabulary is used most directly—incidents, service requests, and change coordination. ITIL 4 Foundation pairs with a hands-on cert like A+ for these roles."
+    },
+    {
+      "title": "IT Project Coordinator",
+      "href": "/paths/it-project-coordinator/",
+      "description": "Coordinators sit at the intersection of service management and project delivery, exactly where ITIL's ITSM literacy and PeopleCert's PRINCE2 project method both earn their keep."
+    },
+    {
+      "title": "Systems Administrator",
+      "href": "/paths/systems-administrator/",
+      "description": "In enterprise IT operations, sysadmins work inside ITIL-based change and incident processes daily. Foundation is a common preference in these postings, especially in large or government-adjacent organizations."
+    }
+  ],
+  "cta": {
+    "heading": "Ready to learn the language of enterprise IT operations?",
+    "blurb": "ITIL 4 Foundation is one of the fastest IT certs to earn and a common HR filter for service desk and ITSM roles. Start with the full study guide—exam facts, the Version 5 transition, and an honest self-study plan.",
+    "href": "/vendors/peoplecert/itil-4-foundation/",
+    "label": "Read the ITIL 4 Foundation guide"
+  },
+  "faq": [
+    {
+      "question": "What is the relationship between PeopleCert, Axelos, and ITIL?",
+      "answer": "Axelos was a 2013 UK Cabinet Office/Capita joint venture that owned ITIL and PRINCE2; PeopleCert was its exclusive exam institute from 2018. In 2021 PeopleCert acquired Axelos entirely, so today PeopleCert owns the frameworks, accredits the training organizations, and administers every exam. If you sit an ITIL exam anywhere in the world, PeopleCert is running it."
+    },
+    {
+      "question": "Do ITIL and PRINCE2 certifications expire now?",
+      "answer": "Effectively yes—and this is a sore point in the community. PeopleCert introduced a renewal scheme requiring certifications to be renewed every three years, via retaking the exam, earning a further certification in the same product line, or logging continuing professional development points through a paid membership. Certifications earned before the policy remain usable on your CV, but 'current' status now requires ongoing action. Check PeopleCert's site for the exact rules at your exam date."
+    },
+    {
+      "question": "How much does ITIL 4 Foundation cost?",
+      "answer": "More than most entry-level IT certs. Exam-only vouchers typically run $400-$600 depending on region and bundled extras (official eBook, Take2 resit insurance), and accredited course-plus-exam packages commonly run $500-$1,500. Unlike CompTIA there is no cheap voucher market. Factor the full cost against the real demand for ITIL in your target job market before committing."
+    },
+    {
+      "question": "Can I self-study for ITIL 4 Foundation, or is training mandatory?",
+      "answer": "Foundation can be self-studied—accredited training is optional at this level, and plenty of candidates pass with the official eBook plus third-party prep. The catch is that most ITIL modules above Foundation, including the Managing Professional stream, require accredited training as a condition of sitting the exam, which raises the real cost of the upper scheme considerably."
+    },
+    {
+      "question": "Is ITIL 4 Foundation worth it compared to other entry-level IT certs?",
+      "answer": "It depends on your target role. For service desk, IT operations, and ITSM-adjacent roles—especially in the UK, EU, or large enterprises running ServiceNow-style processes—ITIL 4 Foundation is frequently requested and worth the cost. For hands-on technical tracks like networking or security, CompTIA certs deliver more per dollar. ITIL certifies process fluency, not technical skill; treat it as a complement, not a substitute."
+    }
+  ],
+  "seo_title": "PeopleCert Certifications – ITIL 4 and PRINCE2 Guides | CertBlueprint",
+  "seo_description": "PeopleCert certification guides for ITIL 4 Foundation and PRINCE2. Exam details, renewal rules, and what the Axelos acquisition means for you."
+}

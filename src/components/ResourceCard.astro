@@ -1,0 +1,47 @@
+---
+interface Props {
+  name: string;
+  url: string;
+  type: string;
+  note?: string;
+  external?: boolean;
+}
+
+const { name, url, type, note, external = true } = Astro.props;
+
+const typeColors: Record<string, { bg: string; color: string }> = {
+  'Video Course':            { bg: '#fef2f2', color: '#b91c1c' },
+  'Official Documentation':  { bg: '#eff6ff', color: '#1d4ed8' },
+  'Lab Tool':                { bg: '#f0fdf4', color: '#15803d' },
+  'Hands-on Labs':           { bg: '#f0fdfa', color: '#0f766e' },
+  'Community':               { bg: '#f5f3ff', color: '#7c3aed' },
+  'Practice Exam':           { bg: '#fff7ed', color: '#c2410c' },
+  'Book':                    { bg: '#fefce8', color: '#a16207' },
+};
+
+const badge = typeColors[type] ?? { bg: 'var(--cb-bg-subtle)', color: 'var(--cb-text-muted)' };
+---
+
+<a
+  href={url}
+  target={external ? '_blank' : '_self'}
+  rel={external ? 'noopener noreferrer' : undefined}
+  class="group flex items-start gap-4 p-4 rounded-lg transition-all duration-200"
+  style="border: 1px solid var(--cb-border); background: var(--cb-bg-card);"
+  onmouseover="this.style.borderColor='var(--cb-accent)'"
+  onmouseout="this.style.borderColor='var(--cb-border)'"
+>
+  <div class="flex-1 min-w-0">
+    <div class="flex flex-wrap items-center gap-2 mb-1">
+      <span
+        class="text-xs font-medium px-2 py-0.5 rounded-full shrink-0"
+        style={`background: ${badge.bg}; color: ${badge.color};`}
+      >{type}</span>
+      <span class="font-medium text-sm transition-colors group-hover:opacity-80" style="color: var(--cb-text);">{name}</span>
+    </div>
+    {note && <p class="text-xs leading-relaxed" style="color: var(--cb-text-muted);">{note}</p>}
+  </div>
+  <svg class="w-4 h-4 shrink-0 mt-0.5 transition-colors" style="color: var(--cb-text-muted);" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+  </svg>
+</a>

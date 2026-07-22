@@ -1,0 +1,286 @@
+{
+  "title": "Cisco CCNP Data Center Study Guide",
+  "slug": "ccnp-data-center",
+  "short_name": "CCNP Data Center",
+  "vendor": "Cisco",
+  "vendor_slug": "cisco",
+  "level": "Professional",
+  "description": "CCNP Data Center is the niche-but-lucrative Cisco professional track — DCCOR core plus one concentration across Nexus/NX-OS, ACI, UCS compute, storage networking, and now AI infrastructure. The 2026 story: the AI data-center buildout is inflating demand for exactly these skills, and the brand-new DCAI concentration is the most direct certification path into AI-infrastructure engineering in Cisco's portfolio.",
+  "audience": "Engineers already touching Nexus, ACI, or UCS at work, and infrastructure people deliberately targeting on-prem/colo data center estates — finance, healthcare, government, service providers, and the AI-infrastructure boom. NOT for cloud-only aspirants: this cert is about physical fabrics, not AWS consoles.",
+  "why_get_it": "The honest pitch is scarcity economics: fewer postings than CCNP Enterprise or Security, but far less competition, and the shops that need Nexus/ACI/UCS/MDS people pay above market because those people are genuinely hard to find. Typical holder ranges run $130–153K, ACI/VXLAN-EVPN specialists clear $150K, and the AI data-center buildout is actively widening the gap. Every exam earns a standalone Specialist credential, DCCOR doubles as the CCIE Data Center qualifying exam, and the new DCAI concentration (live February 2026) makes this the one Cisco track with a direct, certified lane into AI infrastructure — the hottest sub-market in networking.",
+  "when_to_get_it": "When your work already includes (or is about to include) Nexus, ACI, or UCS — this track rewards proximity to real gear more than any other CCNP. Solid CCNA-level networking is the floor; ACI and UCS can be learned during prep. The classic warning applies double here: pure route/switch people consistently underestimate the Storage Network domain — 20% of DCCOR is Fibre Channel, zoning, and NPV/NPIV, and it's the single most common fail point. Budget real time for it. The DCCOR core is English-only (as are most concentrations; DCNAUTO is also offered in Japanese) — worth knowing for non-native speakers.",
+  "salary_range": "$130,000 – $153,000 (U.S. data center network engineers)",
+  "salary_note": "Read the numbers carefully: ZipRecruiter shows ~$147.5K average for CCNP-DC-tagged roles, but that figure duplicates its generic data-center-engineer number — treat it as a role proxy, not a cert premium. Independent trackers put typical holders at $130–153K, ACI/VXLAN-EVPN specialists at $150K+, and CCIE Data Center at $142–168K. The AI buildout is actively inflating demand. All third-party estimates.",
+  "exam_code": "350-601 DCCOR + 1 concentration",
+  "exam_duration": "DCCOR: 120 minutes · concentration: 90 minutes",
+  "exam_format": "Two proctored exams at Pearson VUE (test center or OnVUE): the English-only DCCOR v1.2 core plus one concentration. Multiple-choice, drag-and-drop, performance-based items; counts and passing scores not published. Results in ~48 hours.",
+  "exam_questions": "Not published by Cisco",
+  "exam_structure": [
+    {
+      "code": "350-601 DCCOR v1.2",
+      "name": "Implementing and Operating Cisco Data Center Core Technologies",
+      "role": "Core exam — required",
+      "price": "$400",
+      "note": "v1.2 includes the 'Automation and AI' domain. Also the CCIE Data Center qualifying exam. Earns Specialist – Data Center Core. English only."
+    },
+    {
+      "code": "300-620 DCACI v1.2",
+      "name": "Implementing Cisco Application Centric Infrastructure",
+      "role": "Concentration — choose one",
+      "price": "$300",
+      "note": "The highest-job-volume pick — ACI skills anchor the market. Absorbed the retired advanced-ACI exam's content in the 2025 refresh."
+    },
+    {
+      "code": "300-640 DCAI v1.0",
+      "name": "Implementing Cisco Data Center AI Infrastructure",
+      "role": "Concentration — choose one",
+      "price": "$300",
+      "note": "Brand new (first test Feb 2026) — the forward-looking pick and the most direct certified lane into AI-infrastructure engineering. Also earns the Data Center AI Infrastructure Specialist credential."
+    },
+    {
+      "code": "300-610 DCID v1.2",
+      "name": "Designing Cisco Data Center Infrastructure",
+      "role": "Concentration — choose one",
+      "price": "$300",
+      "note": "The design lane."
+    },
+    {
+      "code": "300-615 DCIT v1.2",
+      "name": "Troubleshooting Cisco Data Center Infrastructure",
+      "role": "Concentration — choose one",
+      "price": "$300",
+      "note": "The ops/troubleshooting lane."
+    },
+    {
+      "code": "300-635 DCNAUTO v2.0",
+      "name": "Automating Cisco Data Center Networking Solutions",
+      "role": "Concentration — choose one",
+      "price": "$300",
+      "note": "The two-for-one play: uniquely counts toward BOTH CCNP Data Center and CCNP Automation (renamed from DCAUTO in the Feb 2026 rebrand)."
+    }
+  ],
+  "official_url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/datacenter/ccnp-data-center/exams-and-training.html",
+  "official_pricing_url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/datacenter/ccnp-data-center/exams-and-training.html",
+  "recertification_note": "3-year cycle, 80 CE credits on the unified ledger: DCCOR re-pass = 80 CE, concentrations = 40 each, Cisco U training counts, excess rolls over. The DCNAUTO concentration is the strategic renewal pick — its 40 CE serves this cert while also advancing CCNP Automation.",
+  "last_verified": "July 2026",
+  "skills_covered": [
+    {
+      "category": "Network — Nexus & Fabrics (25%)",
+      "items": [
+        "NX-OS switching and routing in data center topologies",
+        "VXLAN-EVPN fabric concepts — the modern DC underlay/overlay",
+        "vPC, fabric extenders, and DC-specific L2/L3 patterns",
+        "Overlay routing and multi-site concepts",
+        "Where DC networking genuinely differs from campus"
+      ]
+    },
+    {
+      "category": "Compute — UCS (25%)",
+      "items": [
+        "UCS architecture: fabric interconnects, service profiles",
+        "Intersight management concepts",
+        "Server provisioning the data-center way — identity abstracted from hardware",
+        "Firmware and lifecycle management",
+        "The compute domain campus engineers have never touched"
+      ]
+    },
+    {
+      "category": "Storage Network — the classic fail point (20%)",
+      "items": [
+        "Fibre Channel fundamentals: fabrics, WWNs, flogi",
+        "Zoning: why, how, and what breaks without it",
+        "NPV and NPIV — the concepts that confuse everyone at first",
+        "FCoE and unified fabric concepts",
+        "Budget double study time here if you've never touched SAN — 20% of the exam lives in territory route/switch people have never seen"
+      ]
+    },
+    {
+      "category": "Automation, AI & Security (30%)",
+      "items": [
+        "The v1.2 'Automation and AI' domain: APIs, Ansible, Python against NX-OS/ACI",
+        "AI infrastructure concepts entering the core blueprint",
+        "ACI policy model fundamentals",
+        "DC security: segmentation, microsegmentation concepts",
+        "The direction of travel: fabric-as-code and AI-cluster networking"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Gut-check your storage exposure first",
+      "description": "The single most common DCCOR fail story: strong network engineer, never touched Fibre Channel, lost the Storage Network domain. It's 20% of the exam. If SAN is new to you, front-load it — FC fundamentals, zoning, NPV/NPIV — before the comfortable networking domains, not after."
+    },
+    {
+      "step": 2,
+      "title": "Choose the concentration by trajectory",
+      "description": "DCACI for the most job postings (ACI anchors the market); DCAI if AI infrastructure is the goal — it's the most direct certified lane anywhere in Cisco's portfolio and doubles as its own Specialist credential; DCNAUTO for the two-for-one toward CCNP Automation; DCID/DCIT for design and ops lanes. Decide early — lab time compounds."
+    },
+    {
+      "step": 3,
+      "title": "Solve the lab problem with simulators, not hardware",
+      "description": "Nobody home-labs an ACI fabric or UCS chassis — accept it and use the real answer: Cisco's free DevNet ACI simulator and NX-OS sandboxes, dCloud's guided labs (free with a Cisco account), and CML Personal ($199/yr) for Nexus 9000v networking domains. CML can't emulate ACI or UCS — the sandboxes are not optional extras here, they're the lab."
+    },
+    {
+      "step": 4,
+      "title": "Work DCCOR with the OCG plus blueprint deltas",
+      "description": "The DCCOR Official Cert Guide (2nd Ed.) is the standard text but targets v1.1 — supplement the v1.2 'Automation and AI' domain straight from the blueprint and Cisco U's free AI-for-network-engineers primer. CBT Nuggets is one of the few third-party courses already on v1.2."
+    },
+    {
+      "step": 5,
+      "title": "Respect the compute domain",
+      "description": "UCS is 25% and it's conceptually different from anything campus: service profiles abstract server identity from hardware, and the exam expects you to think that way. dCloud's UCS/Intersight demos plus the OCG chapters cover it — don't leave it as the 'I'll skim it' domain."
+    },
+    {
+      "step": 6,
+      "title": "Sit DCCOR, bank the Specialist and the CCIE door",
+      "description": "120 minutes, English only, results in ~48 hours. Passing earns Specialist – Data Center Core and qualifies you for the CCIE Data Center lab. Note for planning: CCIE DC is first in line for the new AI lab module (practice labs Feb 2027, full release June 2027) if the expert tier is in your future."
+    },
+    {
+      "step": 7,
+      "title": "Close the concentration while fabric concepts are hot",
+      "description": "90 minutes, $300. DCACI rewards your simulator hours directly; DCAI's blueprint (AI fundamentals 20%, infrastructure 30%, deployment 30%, operations 20%) leans on the core's AI domain plus GPU-cluster networking concepts. Passing completes the CCNP and banks 40 CE."
+    },
+    {
+      "step": 8,
+      "title": "Position for the AI buildout deliberately",
+      "description": "The market moment is real: AI data centers are being built faster than people who can network them exist. DCCOR + DCAI plus a public write-up of your lab work (VXLAN fabric design, GPU-cluster networking notes) is a differentiated profile almost nobody holds yet. This is the rare case where being early to a cert is the whole play."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "Official DCCOR v1.2 Exam Topics",
+      "url": "https://learningnetwork.cisco.com/s/dccor-exam-topics",
+      "type": "Official Documentation",
+      "note": "The authoritative blueprint confirming the v1.2 Automation-and-AI domain weighting."
+    },
+    {
+      "name": "Official DCAI 300-640 Exam Topics",
+      "url": "https://learningnetwork.cisco.com/s/dcai-exam-topics",
+      "type": "Official Documentation",
+      "note": "The new AI-infrastructure concentration's blueprint — live since February 2026 (ignore cisco.com's stale 'coming soon' banner)."
+    },
+    {
+      "name": "DevNet Sandboxes — ACI Simulator & NX-OS",
+      "url": "https://developer.cisco.com/site/sandbox/",
+      "type": "Hands-on Labs",
+      "note": "The only realistic zero-cost ACI lab in existence. Not an extra — this IS the lab for DCACI/DCCOR ACI content."
+    },
+    {
+      "name": "Cisco dCloud Data Center Labs",
+      "url": "https://dcloud.cisco.com",
+      "type": "Hands-on Labs",
+      "note": "Free guided ACI, Nexus Dashboard, and UCS/Intersight labs with any Cisco.com account."
+    },
+    {
+      "name": "Cisco U. Free — AI for Network Engineers Primer",
+      "url": "https://u.cisco.com",
+      "type": "Official Training",
+      "note": "Free 55-minute primer mapping directly onto the new AI domains in DCCOR v1.2 and DCAI."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Cisco Press – DCCOR 350-601 Official Cert Guide, 2nd Ed.",
+      "type": "Book",
+      "price": "~$60–$70",
+      "best_for": "The standard spine text — supplement the v1.2 AI/automation domain from the blueprint until a refreshed edition ships",
+      "affiliate_url": "https://www.amazon.com/s?k=CCNP+CCIE+Data+Center+Core+DCCOR+350-601+Official+Cert+Guide&tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_dccor_ocg",
+      "affiliate": true,
+      "note": "Give the storage chapters two passes if SAN is new to you."
+    },
+    {
+      "provider": "CBT Nuggets – DCCOR v1.2",
+      "type": "Video Course",
+      "price": "~$59/month",
+      "best_for": "One of the few third-party courses already updated to the v1.2 blueprint",
+      "affiliate_url": "https://www.cbtnuggets.com/it-training/cisco/ccnp-data-center",
+      "affiliate_label": "View CBT Nuggets",
+      "affiliate_event": "cbtnuggets_ccnp_dc",
+      "affiliate": false,
+      "note": "Plain reference link."
+    },
+    {
+      "provider": "Cisco Modeling Labs – Personal",
+      "type": "Lab Platform",
+      "price": "$199/year",
+      "best_for": "Nexus 9000v labbing for the DCCOR networking domain — knowing its limits: no ACI fabric or UCS emulation; the free sandboxes carry those",
+      "affiliate_url": "https://u.cisco.com/",
+      "affiliate_label": "View on Cisco U",
+      "affiliate_event": "cml_via_ccnp_dc",
+      "affiliate": false,
+      "note": "Plain reference link."
+    },
+    {
+      "provider": "Cisco U. (Essentials / All Access)",
+      "type": "Official Training",
+      "price": "~$1,800/yr Essentials · ~$6,000/yr All Access (list — verify current)",
+      "best_for": "The only place with official DCAI prep: the ~34-hour AI-infrastructure essentials course sits on the Essentials tier, the operate/troubleshoot course on All Access",
+      "affiliate_url": "https://u.cisco.com/",
+      "affiliate_label": "View Cisco U",
+      "affiliate_event": "ciscou_ccnp_dc",
+      "affiliate": false,
+      "note": "For DCAI specifically, official training is currently the only substantial prep that exists — factor that into the concentration choice if self-funding."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Book via Pearson VUE ($400 core + $300 concentration)",
+      "url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/datacenter/ccnp-data-center/exams-and-training.html",
+      "note": "$700 minimum; DCCOR is English-only (DCNAUTO also offered in Japanese). Data center shops are exactly where employers hold unused Cisco Learning Credits — ask before self-funding."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is CCNP Data Center worth it versus CCNP Enterprise?",
+      "answer": "Different bets. Enterprise has more postings and broader applicability; Data Center has less competition and higher pay per posting, because Nexus/ACI/UCS people are scarce and the shops that need them (finance, healthcare, government, colos, AI buildouts) pay for scarcity. If your work touches DC gear or you're deliberately targeting that world, this track's ROI runs higher. If you want maximum optionality, Enterprise."
+    },
+    {
+      "question": "What's the DCAI concentration and should I take it?",
+      "answer": "The newest exam in the track (live February 2026): implementing AI infrastructure in the data center — GPU-cluster networking, deployment, data management, operations. Take it if AI infrastructure is your direction: it's the most direct certified lane into that market anywhere in Cisco's portfolio, and being early is the play. Caveat: official Cisco U training is currently the only substantial prep, so budget accordingly. DCACI remains the highest-job-volume pick."
+    },
+    {
+      "question": "Why does everyone warn about the storage domain?",
+      "answer": "Because it's 20% of DCCOR and lives in territory route/switch people have never seen: Fibre Channel fabrics, zoning, NPV/NPIV, FCoE. It's the single most common fail story on this exam. If SAN is new to you, study it first and twice — the networking domains will still be comfortable when you come back."
+    },
+    {
+      "question": "How do I lab ACI and UCS without a data center?",
+      "answer": "You don't own them — nobody does at home. The realistic stack: Cisco's free DevNet ACI simulator (the only zero-cost ACI lab in existence), free dCloud guided labs for UCS/Intersight and Nexus Dashboard, and CML Personal ($199/yr) for the Nexus 9000v networking domains. The simulators aren't the budget option here; they're the only option, and the exam is written accordingly."
+    },
+    {
+      "question": "What's the DCNAUTO two-for-one?",
+      "answer": "The 300-635 DCNAUTO concentration (renamed from DCAUTO in February 2026) uniquely counts toward BOTH CCNP Data Center and CCNP Automation. If automation is anywhere in your plans, it's the most efficient exam in the Cisco catalog — one $300 sitting advances two professional certs and banks 40 CE."
+    },
+    {
+      "question": "Does DCCOR count toward CCIE Data Center?",
+      "answer": "Yes — same pattern as every track: DCCOR is the CCIE DC qualifying exam. Planning note if the expert tier calls: CCIE Data Center is first in line for the new AI lab module (practice labs February 2027, full release June 2027), so the lab you'd face is evolving — check the current format before committing to a timeline."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CCNP Enterprise",
+      "slug": "ccnp-enterprise",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The broader sibling — more postings, more competition. The honest comparison for anyone choosing a professional track."
+    },
+    {
+      "title": "Cisco CCNA",
+      "slug": "ccna",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The assumed floor — DCCOR builds on CCNA-level networking before adding the compute and storage domains."
+    },
+    {
+      "title": "CCNA Automation",
+      "slug": "ccna-automation",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The automation on-ramp — pairs naturally with DCNAUTO's two-for-one toward CCNP Automation."
+    }
+  ],
+  "seo_title": "Cisco CCNP Data Center Study Guide – DCCOR, DCAI, and the AI Buildout | CertBlueprint",
+  "seo_description": "Complete CCNP Data Center guide: DCCOR v1.2, the new AI-infrastructure concentration, the storage-domain trap, simulator-first lab strategy, and the scarcity economics that make this niche pay."
+}

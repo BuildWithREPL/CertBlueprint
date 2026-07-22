@@ -1,0 +1,241 @@
+{
+  "title": "Cisco CCDE (Design Expert) Guide",
+  "slug": "ccde",
+  "short_name": "CCDE",
+  "vendor": "Cisco",
+  "vendor_slug": "cisco",
+  "level": "Expert",
+  "description": "The CCDE is Cisco's rarest active credential — fewer than a thousand holders worldwide by common estimate, versus ~69,000 CCIE numbers ever issued. It's the expert cert with no CLI anywhere: a written exam plus an 8-hour scenario practical that grades design judgment, trade-off reasoning, and business-requirement translation. Offered only ~6 fixed dates a year at Cisco facilities — the logistics are genuinely part of the difficulty.",
+  "audience": "Practicing senior network architects and consultants whose day is already whiteboards, requirements documents, and defending trade-offs to stakeholders. CCIE-level technical depth helps, but implementation skill alone does not carry the practical — business-requirements reasoning is what's graded. Engineers below senior level should read the FAQ's honest 'skip both for now' answer first.",
+  "why_get_it": "Scarcity with teeth: under ~1,000 CCDEs worldwide (unofficial but persistently cited) makes it a genuine differentiator in senior networking circles — principal architect roles, SP and partner consulting, and increasingly the AI-datacenter design world, which the v3.1 practical addresses directly with a dedicated AI Infrastructure elective. The honest counterweight: the scarcity premium is narrow. Hiring managers who know the CCDE pay for it; generic HR filters often don't recognize it at all. Its value concentrates in senior, network-heavy organizations — inside those rooms it's near-unmatched, outside them it's nearly invisible.",
+  "when_to_get_it": "When design is already your job, not your aspiration — the practical punishes technology-first thinking and rewards people who've spent years translating business requirements into architecture. Typical journey for a practicing architect: 9–18 months including one practical attempt cycle. And plan around the calendar before anything else: roughly six practical sittings a year (2026: April, May at Cisco Live, June, August, October, December), Cisco facilities only, 30-day wait after a fail — a missed or failed attempt costs a quarter of a year. Pick your exam date first and build the study plan backward from it.",
+  "salary_range": "$140,000 – $200,000+ (principal/consulting architects)",
+  "salary_note": "CCDE-tagged roles average around $160K in aggregator data (range roughly $140–200K+), typically attached to principal and consulting network architect titles at large enterprises, service providers, partners, and increasingly AI-datacenter builders. The premium is real but concentrated — organizations that know the credential pay for it; those that don't, don't. All unofficial.",
+  "exam_code": "400-007 written + practical",
+  "exam_duration": "Written: 2 hours · Practical: 8 hours",
+  "exam_format": "Step 1: the 400-007 written — 2 hours, 90–110 questions, closed book, expert design judgment; passing earns the CCDE Specialist credential and unlocks practical scheduling. Step 2: the 8-hour scenario practical — NO device access at any point. Four modules: three Core (enterprise architecture) plus one elective chosen at exam start from AI Infrastructure, Large Scale Networks, On-Prem and Cloud Services, or Workforce Mobility. Each elective passed earns its own Expert Specialist credential.",
+  "exam_questions": "Written: 90–110 · Practical: scenario-based, no device access",
+  "exam_structure": [
+    {
+      "code": "400-007",
+      "name": "CCDE Written Exam",
+      "role": "Qualifying exam",
+      "price": "$400–$450 (Cisco's own pages currently disagree — verify at booking)",
+      "note": "2 hours, closed book. Passing earns the CCDE Specialist credential and unlocks the practical. Yes, Cisco's exam page and its CCDE hub genuinely list different prices right now — we're telling you rather than picking one."
+    },
+    {
+      "code": "CCDE Practical v3.1",
+      "name": "8-hour scenario exam: 3 Core modules + 1 elective",
+      "role": "Lab exam (no CLI)",
+      "price": "$1,600 per attempt",
+      "note": "Electives: AI Infrastructure (new), Large Scale Networks, On-Prem & Cloud Services, Workforce Mobility. ~6 fixed dates/year, Cisco facilities only — the calendar is part of the difficulty."
+    }
+  ],
+  "official_url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/design/ccde/exams-and-training.html",
+  "official_pricing_url": "https://ciscolearningservices.my.site.com/cln/s/article/book-your-expert-level-exams",
+  "recertification_note": "Expert-tier standard: 3-year cycle, 120 CE credits on the unified ledger (a CCDE written re-pass alone banks 120). No extensions; a full lapse restarts the journey.",
+  "last_verified": "July 2026",
+  "skills_covered": [
+    {
+      "category": "Network Design — the 30% heart",
+      "items": [
+        "Translating ambiguous business requirements into defensible architecture",
+        "Resilience, convergence, and failure-domain design at scale",
+        "Technology selection under constraint — and defending the trade-off",
+        "Greenfield vs migration design reasoning",
+        "The discipline: requirements first, technology second, always"
+      ]
+    },
+    {
+      "category": "Control/Data/Management Plane & Operations (25%)",
+      "items": [
+        "Routing design: OSPF/IS-IS/BGP as design instruments, not configs",
+        "Overlay and underlay design reasoning (MPLS, EVPN, SD-x)",
+        "Management-plane and operational design — day-2 thinking graded",
+        "Automation and telemetry as design considerations",
+        "Where implementation instinct actively hurts: the exam grades judgment"
+      ]
+    },
+    {
+      "category": "Business Strategy, Service & Security Design (45% combined)",
+      "items": [
+        "Business strategy design: reading what the customer actually needs (15%)",
+        "Service design: QoS, multicast, and services as products (15%)",
+        "Security design woven through architecture, not bolted on (15%)",
+        "Cost, risk, and organizational constraints as first-class design inputs",
+        "The v3.1 additions: AI/ML networking and cloud-delivered services emphasis"
+      ]
+    },
+    {
+      "category": "The Elective System (choose at exam start)",
+      "items": [
+        "AI Infrastructure — new in v3.1, mapping to the hottest design work in the industry",
+        "Large Scale Networks — the SP/carrier design lane",
+        "On-Prem and Cloud Services — the hybrid enterprise lane",
+        "Workforce Mobility — the campus/wireless design lane",
+        "Each elective passed earns its own Expert Specialist credential — read all four topic lists before choosing"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Confirm you're the CCDE's candidate — the profile is specific",
+      "description": "The practical grades design judgment: requirements analysis, trade-offs, justification — never configuration. If your day is already architecture documents and stakeholder trade-off debates, you're the profile. If your strength is implementation mastery, the classic senior-consultant stack is CCIE first, CCDE second — in that order for a reason."
+    },
+    {
+      "step": 2,
+      "title": "Pick your exam date FIRST, then build backward",
+      "description": "Roughly six practical sittings a year, Cisco facilities only, seats limited. The logistics are strategy: choose your target date from the official schedule, book travel early, and lay the study plan backward from it. Budget two attempts spanning 6+ months — a failed attempt plus the 30-day wait plus the next window costs a quarter of a year."
+    },
+    {
+      "step": 3,
+      "title": "Clear the 400-007 written",
+      "description": "Two hours, 90–110 questions, closed book — expert design judgment in multiple-choice form. Passing banks the CCDE Specialist credential and unlocks practical scheduling. Price note: Cisco's own pages currently show both $400 and $450 — verify at Pearson VUE checkout and don't let blogs argue you out of either number."
+    },
+    {
+      "step": 4,
+      "title": "Read the CLN book list — this cert is won by reading",
+      "description": "No racks required, genuinely: CCDE prep is the official book list (Optimal Routing Design, the definitive MPLS/QoS/BGP design texts), the CCDE Official Cert Guide, and years of accumulated design judgment compressed into months of deliberate study. The CLN CCDE community maintains the canonical syllabus."
+    },
+    {
+      "step": 5,
+      "title": "Choose your elective by your actual practice",
+      "description": "Read all four elective topic lists before deciding. AI Infrastructure is the market's hottest lane and the boldest differentiation; Large Scale for SP people; On-Prem and Cloud for hybrid enterprise architects; Workforce Mobility for campus/wireless. You choose at exam start — but train for one deliberately."
+    },
+    {
+      "step": 6,
+      "title": "Drill scenarios, not technologies",
+      "description": "The failure mode is technology-first thinking: candidates who reach for the shiniest protocol instead of the requirement-satisfying one. Practice with design scenarios — Orhan Ergun's program has the largest scenario bank and alumni pool; ipSpace.net webinars sharpen the vendor-neutral judgment the grading actually rewards."
+    },
+    {
+      "step": 7,
+      "title": "Sit the practical with exam-craft discipline",
+      "description": "Eight hours, four modules, no device access, no going back within modules. Read the business requirements twice before touching any answer — the scenario always contains the constraint that eliminates the 'obvious' technical choice. That's the design being graded."
+    },
+    {
+      "step": 8,
+      "title": "Wear the rarity accordingly",
+      "description": "Under ~1,000 holders worldwide: inside senior networking circles the credential needs no explanation; outside them, expect to explain it. Position it where it lands — principal architecture, SP/partner consulting, AI-datacenter design — and keep it alive with 120 CE per cycle, which a working architect accumulates almost by accident."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "CCDE v3.1 Unified Exam Topics",
+      "url": "https://learningnetwork.cisco.com/s/ccde-v3-1-unified-exam-topics",
+      "type": "Official Documentation",
+      "note": "One blueprint covers written + practical, linking all four elective topic lists — read those before choosing your lane."
+    },
+    {
+      "name": "CCDE v3.1 Release Notes",
+      "url": "https://learningcontent.cisco.com/documents/marketing/exam-topics/CCDE_v3.1_Release_Notes_final_0523.pdf",
+      "type": "Official Documentation",
+      "note": "What changed from v3.0 — the AI/ML networking and cloud-services additions explained."
+    },
+    {
+      "name": "Practical Exam Dates & Booking (Official)",
+      "url": "https://ciscolearningservices.my.site.com/cln/s/article/book-your-expert-level-exams",
+      "type": "Official Documentation",
+      "note": "The ~6-dates-per-year schedule lives here. Plan the whole campaign around it."
+    },
+    {
+      "name": "CCDE Community + Official Book List (CLN)",
+      "url": "https://learningnetwork.cisco.com/s/ccde-design-expert",
+      "type": "Community",
+      "note": "Small, senior community — and the CLN-maintained book list is the canonical reading syllabus for the whole credential."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Cisco Press – CCDE Official Cert Guide + the design canon",
+      "type": "Books",
+      "price": "~$50–$70 each",
+      "best_for": "The core of CCDE prep — this cert is won by reading and design reps, not racks",
+      "affiliate_url": "https://www.amazon.com/s?k=CCDE+Official+Cert+Guide+Cisco&tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_ccde_ocg",
+      "affiliate": true,
+      "note": "Pair with the CLN book list's design classics — Optimal Routing Design remains the perennial recommendation."
+    },
+    {
+      "provider": "Orhan Ergun – CCDE Program",
+      "type": "Course + Scenarios + Bootcamps",
+      "price": "~$1,000–$2,000 by bundle",
+      "best_for": "The best-known CCDE-specific scenario practice with the largest alumni pool — scenario reps are this exam's rack time",
+      "affiliate_url": "https://orhanergun.net/",
+      "affiliate_label": "View Orhan Ergun",
+      "affiliate_event": "ergun_ccde",
+      "affiliate": false,
+      "note": "Plain reference link, no commission."
+    },
+    {
+      "provider": "ipSpace.net (Ivan Pepelnjak)",
+      "type": "Design Webinars",
+      "price": "~$100–$500/year by tier",
+      "best_for": "Sharpening the vendor-neutral design judgment and trade-off reasoning the practical actually grades",
+      "affiliate_url": "https://www.ipspace.net/",
+      "affiliate_label": "View ipSpace",
+      "affiliate_event": "ipspace_ccde",
+      "affiliate": false,
+      "note": "Plain reference link. The anti-vendor-koolaid supplement every architect benefits from anyway."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Written via Pearson VUE · Practical via Cisco's expert-exam booking",
+      "url": "https://ciscolearningservices.my.site.com/cln/s/article/book-your-expert-level-exams",
+      "note": "Written $400–450 (Cisco's pages disagree — verify at checkout) + $1,600 per practical attempt. Realistic all-in $3,500–8,000+: cheaper than a typical CCIE in exam fees, but every attempt carries near-mandatory travel and quarter-year calendar risk."
+    }
+  ],
+  "faq": [
+    {
+      "question": "CCDE or CCIE — the honest answer for design-minded engineers?",
+      "answer": "Choose CCDE if your day is already whiteboards, requirements, and defending trade-offs — and your trajectory is principal/consulting architect. The practical never touches a CLI and is vendor-neutral in spirit. Choose CCIE first if you still need implementation credibility or your market's filters only recognize 'CCIE' — the classic senior-consultant stack is CCIE first, CCDE second. And don't treat CCDE as 'the easier expert cert because no racks': the grading punishes technology-first thinking, and the calendar punishes everything else."
+    },
+    {
+      "question": "Why do the logistics matter so much?",
+      "answer": "Because there are only ~6 practical sittings a year, at Cisco facilities only, with limited seats and a 30-day post-fail wait — so a failed or missed attempt costs roughly a quarter of a year. That's why the strategy inverts: pick your exam date first, build the study plan backward from it, and budget two attempts spanning 6+ months as the realistic base case."
+    },
+    {
+      "question": "How rare is the CCDE, really?",
+      "answer": "The rarest active Cisco credential by a wide margin: a tracked community list counted ~430 holders in 2019, and 'fewer than 1,000 worldwide' remains the commonly cited figure — against ~69,000 CCIE numbers ever issued. The scarcity cuts both ways: inside senior networking circles it's near-unmatched; outside them, plan on explaining what it is."
+    },
+    {
+      "question": "What's the AI Infrastructure elective about?",
+      "answer": "New in the v3.1 refresh: designing networks for AI workloads — the GPU-cluster, high-radix, lossless-fabric design world that the AI datacenter buildout is hiring for right now. For architects positioning toward that market, it's arguably the most directly monetizable elective Cisco has ever offered. Read its topic list against Large Scale, On-Prem/Cloud, and Workforce Mobility before choosing."
+    },
+    {
+      "question": "How much does the whole journey cost?",
+      "answer": "Exam fees are the friendly part: written $400–450 (Cisco's own pages disagree — verify at booking) plus $1,600 per practical attempt. The real budget adds near-mandatory travel per attempt, books and scenario programs ($1,000–2,500 typical), and the calendar cost of the fixed schedule. Realistic all-in: $3,500–8,000+ over 9–18 months — cheaper than most CCIE journeys in dollars, harsher in logistics."
+    },
+    {
+      "question": "Who should skip both CCDE and CCIE in 2026?",
+      "answer": "Engineers below senior level, and anyone whose actual gap is automation or cloud skills. CCNP plus a real automation portfolio plus cloud networking closes more job doors than an expert cert attempted early — the expert tier amplifies an established position; it doesn't create one. Come back when the whiteboard is already your office."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CCIE Enterprise Infrastructure",
+      "slug": "ccie-enterprise-infrastructure",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The implementation-side twin — the classic senior-consultant stack is CCIE first, CCDE second."
+    },
+    {
+      "title": "CCNP Enterprise",
+      "slug": "ccnp-enterprise",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The professional base — its ENSLD design concentration is the natural earlier stop on the design lane."
+    },
+    {
+      "title": "ISC2 CISSP",
+      "slug": "cissp",
+      "vendor": "ISC2",
+      "vendor_slug": "isc2",
+      "reason": "The other expert-tier credential architects meet at the top — security architecture breadth beside CCDE's network design depth."
+    }
+  ],
+  "seo_title": "Cisco CCDE Guide – the Sub-1,000-Holder Design Expert, Honestly | CertBlueprint",
+  "seo_description": "The honest CCDE briefing: no-CLI practical, the ~6-dates-a-year logistics problem, the new AI Infrastructure elective, real costs, and the CCIE-vs-CCDE decision for design careers."
+}

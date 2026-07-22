@@ -1,0 +1,83 @@
+{
+  "slug": "ccna-vs-network-plus",
+  "title": "CCNA vs Network+",
+  "intro": "The most-asked first-cert question in networking: Cisco's hands-on standard or CompTIA's vendor-neutral foundation. Both are legitimate; they're built for different moments.",
+  "a": {
+    "name": "Cisco CCNA",
+    "href": "/vendors/cisco/ccna/",
+    "tagline": "The most recognized networking credential at any level — 200-301, $300, hands-on with simulations, Cisco-flavored but universally respected."
+  },
+  "b": {
+    "name": "CompTIA Network+",
+    "href": "/vendors/comptia/network-plus/",
+    "tagline": "The vendor-neutral fundamentals cert — N10-009, gentler on-ramp, DoD-recognized, works across any vendor's gear."
+  },
+  "verdict": "If you can only take one and you want to work in networking: CCNA — it appears in more networking job postings than any other cert at its level, goes deeper, and costs less ($300 vs ~$400). Pick Network+ instead when you need the gentler ramp (no Cisco CLI simulations — PBQs still, but no configuration depth), you're staying vendor-neutral on purpose, or a DoD 8570-recognized checkbox is the actual requirement. Plenty of people do Network+ then CCNA; almost nobody regrets going straight to CCNA if they can handle the labs.",
+  "rows": [
+    {
+      "label": "Exam",
+      "a": "200-301, single exam, $300",
+      "b": "N10-009, single exam, ~$400"
+    },
+    {
+      "label": "Depth",
+      "a": "Deeper — real routing/switching configuration, simulation questions expect CLI hands-on",
+      "b": "Broader but shallower — concepts across vendors, multiple-choice and PBQs, no Cisco CLI"
+    },
+    {
+      "label": "Job-posting weight",
+      "a": "The most-cited networking cert at its level; the NOC/network-engineer keyword",
+      "b": "Strong for general IT and help-desk-plus roles; DoD 8570/8140-recognized"
+    },
+    {
+      "label": "Study time",
+      "a": "3–6 months part-time; Packet Tracer lab hours are non-negotiable",
+      "b": "2–4 months part-time; passable from books and videos alone"
+    },
+    {
+      "label": "Validity & renewal",
+      "a": "3 years — renew via any associate-or-higher Cisco exam or 30 CE credits (exam passes now auto-award credits)",
+      "b": "3 years — renew via CompTIA CE program or a higher CompTIA exam"
+    },
+    {
+      "label": "Version note (2026)",
+      "a": "v1.1 tests through Feb 2, 2027; the AI-updated v2.0 launches Feb 3, 2027 under the same code",
+      "b": "N10-009 current; no announced changeover"
+    },
+    {
+      "label": "Where it leads",
+      "a": "CCNP tracks, CCIE — the full Cisco ladder",
+      "b": "Anywhere — it's the neutral base under any vendor track"
+    }
+  ],
+  "pick_a_if": [
+    "Networking is your declared lane — NOC, network admin, network engineer",
+    "You can commit to hands-on lab time (the simulations reward it, the job requires it)",
+    "You want maximum job-posting keyword value per dollar",
+    "The Cisco ladder (CCNP, someday CCIE) is plausibly your road"
+  ],
+  "pick_b_if": [
+    "You're still deciding between IT lanes and want a foundation that closes no doors",
+    "You need a gentler first networking exam — no CLI simulations",
+    "A DoD 8570/8140-recognized credential is the actual checkbox you're clearing",
+    "Your shop runs Juniper, Aruba, or mixed gear and vendor-neutral reads better internally"
+  ],
+  "both_note": "The classic sequence — Network+ then CCNA — remains legitimate for people who want the ramp: the concepts overlap heavily, so the second exam comes faster. But budget honestly: that's ~$700 in exam fees to end up where CCNA-first arrives for $300. Our Network Administrator career path lays out the full ladder either way.",
+  "faq": [
+    {
+      "question": "Is Network+ required before CCNA?",
+      "answer": "No — there are no prerequisites for either exam, and CCNA covers the fundamentals Network+ teaches (plus configuration depth Network+ never reaches). Take Network+ first only if you want the gentler ramp or need its DoD recognition along the way."
+    },
+    {
+      "question": "Which one gets a beginner hired faster?",
+      "answer": "For networking-specific roles (NOC, network support), CCNA — it's the keyword those filters search. For general IT support roles where networking is one duty among many, Network+ (often beside A+) matches the postings better. Match the cert to the job listings you're actually applying to; thirty minutes reading postings in your market answers this better than any comparison page."
+    },
+    {
+      "question": "Does CCNA being 'Cisco-flavored' limit it?",
+      "answer": "Less than you'd think. The protocols it teaches — OSPF, VLANs, STP, NAT — are the same physics everywhere; only the CLI syntax is Cisco's. Employers running other vendors still respect CCNA because the fundamentals transfer, and the discipline of passing it signals more than vocabulary familiarity. That said, in a deliberately multi-vendor shop, Network+ plus the Juniper JNCIA ($200 list, routinely ~$50 with Juniper Open Learning vouchers) is a legitimately clever alternative stack."
+    }
+  ],
+  "last_verified": "July 2026",
+  "seo_title": "CCNA vs Network+ (2026) – Which First Networking Cert, Honestly | CertBlueprint",
+  "seo_description": "CCNA vs Network+ settled honestly: costs ($300 vs ~$400), depth, job-posting weight, DoD recognition, the 2027 CCNA v2.0 timing, and exactly who should pick which."
+}

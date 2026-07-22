@@ -1,0 +1,12 @@
+{
+  "title": "IT Project, Business Analysis & Communication",
+  "specializations": [
+    "Project Coordination",
+    "Business Analysis",
+    "Technical Writing",
+    "Service Management (ITIL)"
+  ],
+  "one_liner": "The non-coding, people-and-process side of IT — coordinating projects, translating business needs, and documenting how things work.",
+  "order": 9,
+  "slug": "business-project"
+}

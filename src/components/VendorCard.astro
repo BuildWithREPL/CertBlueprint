@@ -1,0 +1,41 @@
+---
+interface Props {
+  title: string;
+  href: string;
+  description: string;
+  certCount?: number;
+  available?: boolean;
+}
+
+const { title, href, description, certCount, available = true } = Astro.props;
+---
+
+{available ? (
+  <a
+    href={href}
+    class="group block rounded-xl border p-5 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
+    style="background: var(--cb-bg-card); border-color: var(--cb-border);"
+  >
+    <div class="flex items-center justify-between mb-2">
+      <h3 class="font-semibold text-sm transition-colors group-hover:text-blue-500" style="color: var(--cb-text);">{title}</h3>
+      {certCount && (
+        <span class="text-xs px-2 py-0.5 rounded-full" style="color: var(--cb-text-muted); background: var(--cb-bg-subtle);">{certCount}+</span>
+      )}
+    </div>
+    <p class="text-sm leading-relaxed mb-3" style="color: var(--cb-text-sub);">{description}</p>
+    <span class="text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all" style="color: var(--cb-accent-text);">
+      Explore certs
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </span>
+  </a>
+) : (
+  <div
+    class="block rounded-xl border p-5 opacity-50"
+    style="background: var(--cb-bg-subtle); border-color: var(--cb-border-sub);"
+  >
+    <h3 class="font-semibold text-sm mb-2" style="color: var(--cb-text-sub);">{title}</h3>
+    <p class="text-sm leading-relaxed" style="color: var(--cb-text-muted);">{description}</p>
+  </div>
+)}

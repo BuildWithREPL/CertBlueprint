@@ -1,0 +1,186 @@
+---
+// Generic vendor page for collection-driven vendors, at full parity with the
+// bespoke CompTIA/Cisco pages. Static vendors (comptia/cisco/aws/microsoft) take
+// route priority; this route only generates vendors NOT in STATIC_VENDORS, so
+// there is never a build conflict. New vendors need only a JSON file.
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import CertCard from '../../../components/CertCard.astro';
+import FAQAccordion from '../../../components/FAQAccordion.astro';
+
+export async function getStaticPaths() {
+  const STATIC_VENDORS = ['comptia', 'cisco', 'aws', 'microsoft'];
+  const vendors = await getCollection('vendors');
+  return vendors
+    .filter((v) => !STATIC_VENDORS.includes(v.data.slug))
+    .map((v) => ({ params: { vendor: v.data.slug }, props: { data: v.data } }));
+}
+
+const { data } = Astro.props;
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Vendors', href: '/vendors/' },
+  { label: data.title, href: `/vendors/${data.slug}/` },
+];
+---
+
+<BaseLayout title={data.seo_title} description={data.seo_description} breadcrumbs={breadcrumbs}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumb crumbs={breadcrumbs} />
+
+    <header class="mt-3 mb-8 max-w-3xl">
+      <p class="text-xs font-semibold uppercase tracking-wider mb-2" style="color: var(--cb-accent-text);">Vendor</p>
+      <h1 class="text-2xl sm:text-3xl font-bold mb-3" style="color: var(--cb-text);">{data.title} Certifications Guide</h1>
+      <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{data.overview}</p>
+    </header>
+
+    <!-- Why this vendor -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="why-heading">
+      <div class="max-w-3xl">
+        <h2 id="why-heading" class="text-base font-bold mb-3" style="color: var(--cb-text);">Why {data.title} certifications matter</h2>
+        <div class="space-y-4 text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+          {data.why_vendor_matters.split('\n\n').map((para: string) => (<p>{para}</p>))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Who it's for -->
+    {data.who_its_for && data.who_its_for.length > 0 && (
+      <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="audience-heading">
+        <div class="max-w-3xl">
+          <h2 id="audience-heading" class="text-base font-bold mb-3" style="color: var(--cb-text);">Who {data.title} certifications are for</h2>
+          <div class="space-y-3">
+            {data.who_its_for.map((item) => (
+              <div class="rounded-xl border p-4" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+                <p class="font-semibold text-sm mb-1" style="color: var(--cb-text);">{item.role}</p>
+                <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Career and salary impact -->
+    {data.career_salary_impact && data.career_salary_impact.length > 0 && (
+      <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="salary-heading">
+        <div class="max-w-3xl">
+          <h2 id="salary-heading" class="text-base font-bold mb-3" style="color: var(--cb-text);">Career and salary impact</h2>
+          <div class="space-y-3 text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+            {data.career_salary_impact.map((para) => (<p>{para}</p>))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Study difficulty and time -->
+    {data.study_difficulty && data.study_difficulty.length > 0 && (
+      <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="difficulty-heading">
+        <div class="max-w-3xl">
+          <h2 id="difficulty-heading" class="text-base font-bold mb-4" style="color: var(--cb-text);">Study difficulty and time investment</h2>
+          <div class="space-y-3">
+            {data.study_difficulty.map((item) => (
+              <div class="rounded-xl border p-4" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+                <div class="flex items-center justify-between mb-1.5 gap-2 flex-wrap">
+                  <p class="font-semibold text-sm" style="color: var(--cb-text);">{item.cert}</p>
+                  <div class="flex gap-2">
+                    <span class="text-xs px-2 py-0.5 rounded-full" style="background: var(--cb-bg-subtle); color: var(--cb-text-muted);">{item.difficulty}</span>
+                    <span class="text-xs px-2 py-0.5 rounded-full" style="background: var(--cb-accent-sub); color: var(--cb-accent-text);">{item.time}</span>
+                  </div>
+                </div>
+                <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Certification tracks -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="tracks-heading">
+      <h2 id="tracks-heading" class="text-base font-bold mb-4" style="color: var(--cb-text);">Certification tracks</h2>
+      <div class="grid sm:grid-cols-2 gap-3 max-w-4xl">
+        {data.certification_tracks.map((track) => (
+          <div class="rounded-xl border p-4" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+            <div class="flex items-center justify-between mb-1.5">
+              <h3 class="font-semibold text-sm" style="color: var(--cb-text);">{track.name}</h3>
+              <span class="text-xs px-2 py-0.5 rounded-full" style="color: var(--cb-text-muted); background: var(--cb-bg-subtle);">{track.level}</span>
+            </div>
+            <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{track.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Available guides -->
+    {data.available_guides && data.available_guides.length > 0 && (
+      <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="guides-heading">
+        <h2 id="guides-heading" class="text-base font-bold mb-4" style="color: var(--cb-text);">Available guides</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl">
+          {data.available_guides.map((g) => (
+            <CertCard title={g.title} vendor={data.title} level={g.level} description={g.description} href={`/vendors/${g.vendor_slug}/${g.slug}/`} featured={g.featured} />
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- More certs -->
+    {data.more_certs && data.more_certs.length > 0 && (
+      <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="more-heading">
+        <h2 id="more-heading" class="text-base font-bold mb-4" style="color: var(--cb-text);">More {data.title} certifications</h2>
+        <div class="grid sm:grid-cols-2 gap-3 max-w-4xl">
+          {data.more_certs.map((cert) => (
+            <div class="rounded-xl border p-4" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+              <div class="flex items-center justify-between mb-1.5">
+                <h3 class="font-semibold text-sm" style="color: var(--cb-text);">{cert.title}</h3>
+                <span class="text-xs px-2 py-0.5 rounded-full" style="color: var(--cb-text-muted); background: var(--cb-bg-subtle);">{cert.level}</span>
+              </div>
+              <p class="text-xs leading-relaxed" style="color: var(--cb-text-sub);">{cert.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- FAQ -->
+    <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="faq-heading">
+      <div class="max-w-3xl">
+        <h2 id="faq-heading" class="text-base font-bold mb-4" style="color: var(--cb-text);">Frequently asked questions</h2>
+        <FAQAccordion items={data.faq} />
+      </div>
+    </section>
+
+    <!-- Related paths -->
+    {data.related_paths && data.related_paths.length > 0 && (
+      <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="related-heading">
+        <h2 id="related-heading" class="text-base font-bold mb-4" style="color: var(--cb-text);">Related paths</h2>
+        <div class="grid sm:grid-cols-3 gap-3 max-w-3xl">
+          {data.related_paths.map((r) => (
+            <a href={r.href} class="rounded-xl border p-4 transition-colors block" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+              <p class="font-semibold text-sm mb-1" style="color: var(--cb-text);">{r.title}</p>
+              <p class="text-xs leading-relaxed" style="color: var(--cb-text-sub);">{r.description}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- CTA -->
+    {data.cta && (
+      <section class="py-8 border-t" style="border-color: var(--cb-border);">
+        <div class="rounded-2xl p-7 text-center max-w-2xl mx-auto text-white" style="background: linear-gradient(135deg, var(--cb-accent), var(--cb-accent-text));">
+          <h2 class="text-xl font-bold mb-2">{data.cta.heading}</h2>
+          <p class="text-sm mb-5 leading-relaxed" style="color: rgba(255,255,255,0.85);">{data.cta.blurb}</p>
+          <a href={data.cta.href} class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors" style="background: white; color: var(--cb-accent-text);">
+            {data.cta.label}
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </section>
+    )}
+
+  </div>
+</BaseLayout>

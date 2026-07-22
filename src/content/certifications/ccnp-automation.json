@@ -1,0 +1,230 @@
+{
+  "title": "Cisco CCNP Automation Study Guide",
+  "slug": "ccnp-automation",
+  "short_name": "CCNP Automation",
+  "vendor": "Cisco",
+  "vendor_slug": "cisco",
+  "level": "Professional",
+  "former_name": "DevNet Professional",
+  "description": "CCNP Automation is the renamed DevNet Professional (February 2026) — and the rename came with teeth: the AUTOCOR core got a major v2.0 content overhaul, and the concentration menu was cut from eight exams to two. This is Cisco's professional credential for network automation engineers: the people who drive infrastructure with Python, APIs, and pipelines instead of box-by-box CLI.",
+  "audience": "Network engineers who've crossed the automation line — CCNA Automation holders, CCNP-track engineers whose Ansible repos outgrew their rack time, and NetDevOps practitioners formalizing real skills. Assumes genuine Python and API fluency; this is not where you learn to code.",
+  "why_get_it": "Because the market pays the premium this cert certifies: network engineers who genuinely automate consistently out-earn traditional peers at the same experience level, and the roles converting fastest to the growing architect column (BLS: +12%) are exactly the automation-fluent ones. The 2026 overhaul makes the credential more honest too — AUTOCOR v2.0 was a major topic update, not a sticker swap, so a fresh pass certifies current NetDevOps practice: automation systems design, deployment, and management. Every exam earns a standalone Specialist credential, and AUTOCOR doubles as the CCIE Automation qualifying exam.",
+  "when_to_get_it": "When automation is your actual job or provably your next one — after CCNA Automation (or equivalent: comfortable Python, REST APIs, Git, and one config-management tool in real use). Material warning bigger than most tracks: the v2.0 core landed February 2026 with MAJOR topic changes — old DEVCOR courses and books teach a meaningfully different exam. Verify v2.0 alignment on everything, and expect the third-party ecosystem to lag well into 2026–27.",
+  "salary_range": "$105,000 – $145,000 (network automation / NetDevOps engineers)",
+  "salary_note": "No official cert-specific data exists — anchor to the role: network automation engineers consistently earn above traditional network engineers at equal experience (the premium this skill set commands), with U.S. NetDevOps roles typically posting $105–145K and senior/platform positions above that, converging on the BLS architect band ($130,390 median, +12% growth). Third-party and directional, as always.",
+  "exam_code": "350-901 AUTOCOR + 1 concentration",
+  "exam_duration": "AUTOCOR: 120 minutes · concentration: 90 minutes",
+  "exam_format": "Two proctored exams at Pearson VUE (test center or OnVUE): the AUTOCOR v2.0 core plus one of two concentrations. Multiple-choice, scenario, and code-reading items; counts and passing scores not published. Results in ~48 hours.",
+  "exam_questions": "Not published by Cisco",
+  "exam_structure": [
+    {
+      "code": "350-901 AUTOCOR v2.0",
+      "name": "Designing, Deploying and Managing Network Automation Systems",
+      "role": "Core exam — required",
+      "price": "$400",
+      "note": "Same code as the old DEVCOR, but v2.0 (Feb 2026) carried MAJOR topic updates — old DEVCOR materials teach a different exam. Also the CCIE Automation qualifying exam."
+    },
+    {
+      "code": "300-435 ENAUTO v2.0",
+      "name": "Automating and Programming Cisco Enterprise Solutions",
+      "role": "Concentration — choose one",
+      "price": "$300",
+      "note": "The enterprise-side lane — also counts toward CCNP Enterprise. The natural pick for campus/WAN engineers."
+    },
+    {
+      "code": "300-635 DCNAUTO v2.0",
+      "name": "Automating Cisco Data Center Networking Solutions",
+      "role": "Concentration — choose one",
+      "price": "$300",
+      "note": "The data-center lane — also counts toward CCNP Data Center. English/Japanese. The two-for-one pick for DC-bound engineers."
+    }
+  ],
+  "official_url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/automation/ccnp-automation/index.html",
+  "official_pricing_url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/automation/ccnp-automation/index.html",
+  "recertification_note": "3-year cycle, 80 CE credits on the unified ledger — AUTOCOR re-pass = 80 CE, a concentration = 40. Note both concentrations double-count toward sibling CCNPs (Enterprise for ENAUTO, Data Center for DCNAUTO), making this the most renewal-efficient track in the catalog for multi-cert holders.",
+  "last_verified": "July 2026",
+  "skills_covered": [
+    {
+      "category": "Automation Systems Design (AUTOCOR v2.0)",
+      "items": [
+        "Designing automation architectures, not just scripts — the v2.0 shift",
+        "API design and consumption at professional depth: REST, gRPC concepts, webhooks",
+        "Application deployment models and CI/CD for network tooling",
+        "Version control workflows: Git as the source of truth for infrastructure",
+        "The systems thinking that separates automation engineers from script writers"
+      ]
+    },
+    {
+      "category": "Platform Integration",
+      "items": [
+        "Cisco platform APIs in anger: Catalyst Center, SD-WAN Manager, Meraki, NX-OS",
+        "Model-driven programmability: YANG, NETCONF, RESTCONF at depth",
+        "Telemetry pipelines and event-driven automation",
+        "Webex and collaboration APIs where they survive in v2.0",
+        "Choosing the right interface per platform — the daily judgment call"
+      ]
+    },
+    {
+      "category": "Operations & the Chosen Lane",
+      "items": [
+        "Securing automation: secrets, tokens, API security practice",
+        "Testing and reliability for network code — because broken automation breaks everything at once",
+        "ENAUTO lane: enterprise platform automation (also feeds CCNP Enterprise)",
+        "DCNAUTO lane: fabric and DC automation (also feeds CCNP Data Center)",
+        "Where this ladder tops out: the CCIE Automation practical"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Verify v2.0 on every single resource — this track's biggest trap",
+      "description": "AUTOCOR v2.0 (February 2026) was a major content overhaul on an unchanged exam code — the most dangerous kind of revision. Old DEVCOR courses, books, and question banks teach a meaningfully different exam. Check blueprint alignment on everything, and expect thin v2.0 coverage from third parties into 2027; the official CLN topics page is the contract."
+    },
+    {
+      "step": 2,
+      "title": "Choose the concentration by your sibling ambitions",
+      "description": "Both options double-count: ENAUTO also advances CCNP Enterprise, DCNAUTO also advances CCNP Data Center (and is offered in Japanese). If either sibling CCNP is anywhere in your plans, the choice makes itself — one $300 exam, two certs advanced."
+    },
+    {
+      "step": 3,
+      "title": "Lab on the platforms, free",
+      "description": "Cisco's DevNet sandboxes remain the core lab (the platform kept the DevNet name even though the certs didn't): reservable Catalyst Center, SD-WAN, Meraki, and NX-OS environments to run real code against. CML-Free adds device-level API practice."
+    },
+    {
+      "step": 4,
+      "title": "Build the portfolio in parallel — it outranks the cert",
+      "description": "The consistent market verdict: hiring managers for automation roles open your GitHub before your certs. Every lab you write for AUTOCOR belongs in a public repo with a README. The cert proves the floor; the portfolio gets the interview."
+    },
+    {
+      "step": 5,
+      "title": "Sit AUTOCOR, bank two doors",
+      "description": "$400, 120 minutes. Passing earns the Specialist credential and simultaneously qualifies you for the CCIE Automation practical — the expert lab formerly known as DevNet Expert, whose holders were granted CCIE numbers in the 2026 migration."
+    },
+    {
+      "step": 6,
+      "title": "Close the concentration and set the renewal loop",
+      "description": "90 minutes, $300, done. Renewal math favors this track uniquely: your concentration's 40 CE also served a sibling CCNP if you hold one, and the next cycle's concentration can do the same in the other direction."
+    },
+    {
+      "step": 7,
+      "title": "Aim the credential where it converts",
+      "description": "NetDevOps, platform engineering, and automation-lead roles at Cisco-standardized enterprises and partners are where this cert reads loudest. Pair it with cloud networking (AWS/Azure) and Terraform fluency and you're describing the fastest-growing profile in networking."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "Official AUTOCOR v2.0 Exam Topics",
+      "url": "https://learningnetwork.cisco.com/s/autocor-exam-topics",
+      "type": "Official Documentation",
+      "note": "The v2.0 contract — with major changes from DEVCOR and a lagging third-party ecosystem, this list is your primary study source."
+    },
+    {
+      "name": "Cisco DevNet Sandboxes",
+      "url": "https://developer.cisco.com/site/sandbox/",
+      "type": "Hands-on Labs",
+      "note": "Free reservable platform environments — Catalyst Center, SD-WAN, Meraki, NX-OS. The lab this cert assumes."
+    },
+    {
+      "name": "Cisco DevNet Learning Labs",
+      "url": "https://developer.cisco.com/learning/",
+      "type": "Official Training",
+      "note": "Free guided labs across the API surface — the platform kept its DevNet name and its free tier."
+    },
+    {
+      "name": "Pro Git + Official Python Tutorial",
+      "url": "https://git-scm.com/book/en/v2",
+      "type": "Reference",
+      "note": "The free canonical texts for the fluency AUTOCOR assumes rather than teaches."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Cisco U. (Essentials / All Access)",
+      "type": "Official Training",
+      "price": "~$1,800/yr Essentials · ~$6,000/yr All Access (list — verify current)",
+      "best_for": "The only substantial v2.0-aligned training while third parties catch up — official paths plus CE credits",
+      "affiliate_url": "https://u.cisco.com/",
+      "affiliate_label": "View Cisco U",
+      "affiliate_event": "ciscou_ccnp_auto",
+      "affiliate": false,
+      "note": "Plain reference link. Employer funding or Learning Credits strongly recommended at these prices."
+    },
+    {
+      "provider": "CBT Nuggets – Network Automation Training",
+      "type": "Video Course",
+      "price": "~$59/month",
+      "best_for": "Video-first learners — verify v2.0 alignment before subscribing; DEVCOR-era content persists in catalogs",
+      "affiliate_url": "https://www.cbtnuggets.com/it-training/cisco",
+      "affiliate_label": "View CBT Nuggets",
+      "affiliate_event": "cbtnuggets_ccnp_auto",
+      "affiliate": false,
+      "note": "Plain reference link."
+    },
+    {
+      "provider": "Cisco Press – DEVCOR-era Official Cert Guide",
+      "type": "Book",
+      "price": "~$50–$70",
+      "best_for": "The durable fundamentals only — API design, Git, deployment concepts survive; treat v2.0's new topics as uncovered until a refreshed edition ships",
+      "affiliate_url": "https://www.amazon.com/s?k=DEVCOR+350-901+Official+Cert+Guide&tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_autocor_ocg",
+      "affiliate": true,
+      "note": "Buy knowingly: it targets the pre-v2.0 blueprint. The blueprint delta is your reading list for the rest."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Book via Pearson VUE ($400 core + $300 concentration)",
+      "url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/automation/ccnp-automation/index.html",
+      "note": "$700 minimum. Automation teams live inside the enterprises most likely to hold unused Cisco Learning Credits — ask first."
+    }
+  ],
+  "faq": [
+    {
+      "question": "What actually changed in the DevNet → Automation rebrand?",
+      "answer": "More than the name, at this tier. CCNA Automation kept its content untouched; CCNP Automation did not — the 350-901 core went DEVCOR → AUTOCOR v2.0 with major topic updates (February 2026), and the concentration menu was cut from eight exams to two (ENAUTO and DCNAUTO; DEVOPS, SAUTO, SPAUTO, and CLAUTO all retired). DevNet Professional holders were migrated automatically, but new candidates face a genuinely revised exam."
+    },
+    {
+      "question": "Is my old DEVCOR study material usable?",
+      "answer": "Partially, and dangerously so. The durable fundamentals — API design, Git workflows, deployment models — survive. But v2.0's major updates mean old courses miss real exam content while teaching some that's gone. Use DEVCOR-era materials for foundations only, and study the v2.0 blueprint deltas from official sources. Same code, different exam — the worst kind of trap."
+    },
+    {
+      "question": "Which concentration — ENAUTO or DCNAUTO?",
+      "answer": "By your infrastructure world: ENAUTO for campus/WAN/enterprise platforms, DCNAUTO for data-center fabrics. The strategic kicker: each double-counts toward its sibling CCNP (Enterprise or Data Center), so if either is in your plans, one $300 exam advances two professional certs — the most efficient purchase in Cisco's catalog."
+    },
+    {
+      "question": "CCNP Automation or just a strong GitHub?",
+      "answer": "Honest answer: the GitHub converts more interviews, and hiring managers for automation roles say so consistently. The cert's value is the floor it proves (systematic coverage, not just the scripts you happened to write), partner/enterprise recognition, and the CCIE Automation runway. The winning combination is obviously both — and AUTOCOR study naturally produces portfolio material if you publish as you lab."
+    },
+    {
+      "question": "Where does this ladder top out?",
+      "answer": "CCIE Automation — the renamed DevNet Expert, whose practical exam continues unchanged and whose holders received CCIE numbers in the February 2026 migration. Your AUTOCOR pass is its qualifying exam. It's almost certainly the smallest CCIE population — Cisco publishes no per-track counts, but DevNet Expert's short 2022–2026 run produced few holders — for better and worse."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CCNA Automation",
+      "slug": "ccna-automation",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The assumed foundation — the associate tier (formerly DevNet Associate) whose content survived the rebrand untouched."
+    },
+    {
+      "title": "CCNP Enterprise",
+      "slug": "ccnp-enterprise",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The sibling your ENAUTO concentration double-counts toward — many engineers run both tracks in parallel."
+    },
+    {
+      "title": "CCNP Data Center",
+      "slug": "ccnp-data-center",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The other double-count sibling via DCNAUTO — and the track whose AI buildout most wants automation-fluent engineers."
+    }
+  ],
+  "seo_title": "Cisco CCNP Automation Study Guide – AUTOCOR v2.0, the DevNet Rebrand, Honest Value | CertBlueprint",
+  "seo_description": "Complete CCNP Automation guide: the AUTOCOR v2.0 overhaul, the 8→2 concentration cut, double-counting toward sibling CCNPs, and the GitHub-vs-cert truth for automation careers."
+}
