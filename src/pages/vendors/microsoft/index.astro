@@ -6,6 +6,7 @@ import FAQAccordion from '../../../components/FAQAccordion.astro';
 import { getEntry } from 'astro:content';
 
 const microsoft = await getEntry('vendors', 'microsoft');
+if (!microsoft) throw new Error('Missing vendors entry: microsoft');
 const { data } = microsoft;
 
 const breadcrumbs = [

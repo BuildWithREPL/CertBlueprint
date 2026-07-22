@@ -6,6 +6,7 @@ import FAQAccordion from '../../../components/FAQAccordion.astro';
 import { getEntry } from 'astro:content';
 
 const aws = await getEntry('vendors', 'aws');
+if (!aws) throw new Error('Missing vendors entry: aws');
 const { data } = aws;
 
 const breadcrumbs = [

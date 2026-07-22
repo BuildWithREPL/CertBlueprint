@@ -13,6 +13,7 @@ import CalloutBox from '../../../../components/CalloutBox.astro';
 import { getEntry } from 'astro:content';
 
 const cert = await getEntry('certifications', 'ccna-automation');
+if (!cert) throw new Error('Missing certifications entry: ccna-automation');
 const { data } = cert;
 
 const breadcrumbs = [

@@ -6,6 +6,9 @@ main = "worker/index.js"
 [assets]
 directory = "./dist"
 binding = "ASSETS"
+# Serve the built dist/404.html (with 404 status) for unknown URLs.
+# Without this, Workers assets defaults to "none" and returns an empty 404 body.
+not_found_handling = "404-page"
 
 [ai]
 binding = "AI"

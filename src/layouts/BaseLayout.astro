@@ -69,7 +69,9 @@ const websiteSchema = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-    <meta name='impact-site-verification' value='3b615039-a364-4715-829c-86e2ab2e588a'>
+    {/* Impact.com verification requires the non-standard `value` attribute verbatim,
+        which the HTML type definitions reject — emit it raw to keep output identical. */}
+    <Fragment set:html={`<meta name='impact-site-verification' value='3b615039-a364-4715-829c-86e2ab2e588a'>`} />
 
     <!-- ─── Prevent theme flash ──────────────────────────── -->
     <script is:inline>

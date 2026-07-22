@@ -6,6 +6,7 @@ import FAQAccordion from '../../../components/FAQAccordion.astro';
 import { getEntry } from 'astro:content';
 
 const comptia = await getEntry('vendors', 'comptia');
+if (!comptia) throw new Error('Missing vendors entry: comptia');
 const { data } = comptia;
 
 const breadcrumbs = [

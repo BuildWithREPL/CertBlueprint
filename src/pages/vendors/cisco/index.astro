@@ -6,6 +6,7 @@ import FAQAccordion from '../../../components/FAQAccordion.astro';
 import { getEntry } from 'astro:content';
 
 const cisco = await getEntry('vendors', 'cisco');
+if (!cisco) throw new Error('Missing vendors entry: cisco');
 const { data } = cisco;
 
 const breadcrumbs = [

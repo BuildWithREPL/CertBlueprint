@@ -3,6 +3,7 @@ import CertGuide from '../../../../components/CertGuide.astro';
 import { getEntry } from 'astro:content';
 
 const cert = await getEntry('certifications', 'cysa-plus');
+if (!cert) throw new Error('Missing certifications entry: cysa-plus');
 ---
 
 <CertGuide data={cert.data} />

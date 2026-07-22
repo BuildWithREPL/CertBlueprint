@@ -20,8 +20,10 @@ import RelatedCerts from './RelatedCerts.astro';
 import AffiliateCTA from './AffiliateCTA.astro';
 import CalloutBox from './CalloutBox.astro';
 
+import type { CollectionEntry } from 'astro:content';
+
 interface Props {
-  data: any;
+  data: CollectionEntry<'certifications'>['data'];
 }
 const { data } = Astro.props;
 

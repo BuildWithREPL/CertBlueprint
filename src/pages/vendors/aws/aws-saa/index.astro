@@ -13,6 +13,7 @@ import CalloutBox from '../../../../components/CalloutBox.astro';
 import { getEntry } from 'astro:content';
 
 const cert = await getEntry('certifications', 'aws-saa');
+if (!cert) throw new Error('Missing certifications entry: aws-saa');
 const { data } = cert;
 
 const breadcrumbs = [
