@@ -26,9 +26,6 @@
     "minisearch": "^7.2.0",
     "wrangler": "^4.82.2"
   },
-  "description": "```sh npm create astro@latest -- --template minimal ```",
-  "main": "index.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "private": true,
+  "description": "CertBlueprint.com — IT certification roadmaps, study plans, and the IT Career Navigator. Astro static site + Cloudflare Worker (Workers AI)."
 }

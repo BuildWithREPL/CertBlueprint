@@ -1,3 +1,10 @@
+# Baseline hardening for every response. Deliberately conservative:
+# no CSP / frame policy here so AdSense, GTM, CookieYes and the same-origin
+# navigator iframe keep working untouched.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
 # Sitemaps must never be served stale to crawlers — Google reads these to
 # discover new pages, and a cached copy from a previous deploy under-reports
 # the site. no-store forces a fresh read end to end.

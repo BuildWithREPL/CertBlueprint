@@ -1,43 +1,61 @@
-# Astro Starter Kit: Minimal
+# CertBlueprint.com
 
-```sh
-npm create astro@latest -- --template minimal
+IT-certification roadmaps, study plans, and curated resources — plus the
+**IT Career Navigator** (a guided assessment and an AI "talk it out" reader).
+
+- **Stack:** Astro 6 (fully static output) + Tailwind CSS 4, deployed as a
+  Cloudflare **Worker with static assets** (`wrangler.toml`). The Worker
+  (`worker/index.js`) serves one API route, `POST /api/navigator/read`,
+  backed by **Workers AI** (Llama 3.3 70B) for the Navigator Lab; everything
+  else falls through to the built `dist/` assets.
+- **Content model:** all guide/vendor/path/comparison content lives as JSON in
+  `src/content/` validated by strict Zod schemas in `src/content.config.ts`
+  (rich-content floors: a cert guide cannot be published thin — the build fails).
+  Sixteen original cert guides are bespoke static routes; everything newer is
+  collection-driven through `src/pages/vendors/[vendor]/[cert]/` and renders via
+  the shared `CertGuide` component.
+
+## Layout
+
 ```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
+certblueprint/
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── content/          # JSON content collections (certifications, vendors, domains, paths, comparisons)
+│   ├── pages/            # Astro routes (bespoke + collection-driven)
+│   ├── components/       # CertGuide, AffiliateCTA, SearchModal, etc.
+│   ├── layouts/          # BaseLayout (SEO/OG/JSON-LD, analytics, theming), LegalLayout
+│   └── lib/schema.js     # structured-data builders
+├── public/               # static passthrough: robots.txt, _headers, ads.txt,
+│                         #   navigator-app.html (guided assessment, iframed),
+│                         #   navigator-lab.html (AI conversation UI)
+├── worker/index.js       # Cloudflare Worker: /api/navigator/read + asset fallback
+├── scripts/submit-indexnow.mjs  # IndexNow ping, last step of `npm run deploy`
+├── gsc-index.mjs         # optional Google Indexing API nudger (needs service-account.json
+│                         #   + `npm i google-auth-library`; both intentionally not committed)
+└── audit-content.cjs     # crawls the live site and flags thin pages
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Commands
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+| Command           | Action                                                   |
+| :---------------- | :------------------------------------------------------- |
+| `npm install`     | Install dependencies                                     |
+| `npm run dev`     | Astro dev server at `localhost:4321` (site only, no API) |
+| `npx wrangler dev`| Full local run: Worker + built assets (build first)      |
+| `npm run build`   | Build the static site to `./dist/`                       |
+| `npm run astro -- check` | Typecheck (`.astro` + TS) — keep this at 0 errors |
+| `npm run deploy`  | Build, `wrangler deploy`, then IndexNow submit           |
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Operational notes
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **Secrets:** `.env` holds `CLOUDFLARE_API_TOKEN` for wrangler and is
+  gitignored. Never commit it. `service-account.json` (Google Indexing API)
+  is likewise gitignored.
+- **404s:** `wrangler.toml` sets `not_found_handling = "404-page"` so the
+  built `dist/404.html` is served for unknown URLs.
+- **Affiliate links:** Amazon links carry the `certblueprint-20` tag and render
+  through `AffiliateCTA` (`rel="sponsored"` only for true affiliate links).
+- **Search:** `SearchModal.astro` uses a hand-maintained `SEARCH_INDEX` array —
+  add an entry when adding a page.
+- **Navigator lab:** conversation state lives entirely in the client; the
+  Worker is stateless and enforces turn/length caps before calling Workers AI.
