@@ -1,0 +1,29 @@
+---
+import { GLOSSARY_BY_KEY } from '../../lib/navigator/data/glossary';
+
+interface Props {
+  /** Glossary key. Unknown keys render the label plainly rather than breaking. */
+  termKey: string;
+  /** Override the displayed text; defaults to the glossary term itself. */
+  label?: string;
+}
+
+const { termKey, label } = Astro.props;
+const entry = GLOSSARY_BY_KEY[termKey];
+---
+
+{
+  entry ? (
+    /* A <details> rather than a hover tooltip: hover is unusable on touch and
+       invisible to keyboard users, and this needs to work for someone who has
+       never heard the word before. It opens on click, on Enter, and on tap. */
+    <details class="nav-term">
+      <summary aria-label={`What is ${entry.term}?`}>{label ?? entry.term}</summary>
+      <span class="nav-term__body">
+        <strong>{entry.term}</strong> — {entry.plain}
+      </span>
+    </details>
+  ) : (
+    <span>{label ?? termKey}</span>
+  )
+}

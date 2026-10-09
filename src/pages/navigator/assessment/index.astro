@@ -1,0 +1,443 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import '../../../styles/navigator.css';
+import FAQAccordion from '../../../components/FAQAccordion.astro';
+import { SCENARIOS, BROAD_SCENARIOS, SCENARIO_BY_ID } from '../../../lib/navigator/data/scenarios';
+import { GROUPS, GROUP_LABEL, DIMENSIONS_BY_GROUP } from '../../../lib/navigator/data/dimensions';
+import { ROLE_CORES } from '../../../lib/navigator/data/roles/cores';
+import { BROAD_PHASE_LENGTH, MIN_QUESTIONS, MAX_QUESTIONS } from '../../../lib/navigator/engine/adaptive';
+
+// A real scenario from the bank, shown read-only so people (and crawlers) can
+// see what they are signing up for. Pulled from data, never retyped.
+const example = SCENARIO_BY_ID['b01-night-outage'] ?? BROAD_SCENARIOS[0];
+const dimensionCount = GROUPS.reduce((n, g) => n + DIMENSIONS_BY_GROUP[g].length, 0);
+
+const steps = [
+  {
+    title: `Breadth — the first ${BROAD_PHASE_LENGTH} scenarios`,
+    body: 'Drawn from very different kinds of work — outages, suspicious traffic, performance problems, people who need help, and more — so that no single field dominates the start. Nothing adapts yet: there is no signal to adapt to, and guessing early produces a confidently wrong result.',
+  },
+  {
+    title: 'Sharpening — only the questions that could change the answer',
+    body: `For every remaining scenario, the engine checks whether different choices would change which role comes out on top. Scenarios where every option leads to the same place are skipped. It stops once the leader is clear and stable — never before ${MIN_QUESTIONS} questions, never after ${MAX_QUESTIONS}.`,
+  },
+  {
+    title: 'Matching — similarity, not buckets',
+    body: `Your choices build a profile across ${dimensionCount} dimensions, which is compared with the profile of each of the ${ROLE_CORES.length} roles. The score is adjusted for which scenarios you happened to be shown, so a topic that came up more often cannot inflate a result.`,
+  },
+];
+
+const faq = [
+  {
+    question: 'Is this a personality test?',
+    answer: 'No. It never assigns you a type and it never asks how you would describe yourself. It records which parts of real technical situations you choose to work on, and compares that pattern with what people in each role actually spend their days doing.',
+  },
+  {
+    question: 'How long does it take?',
+    answer: `Usually 11 to 15 questions, and most people finish in under ten minutes. It adapts: it will not stop before ${MIN_QUESTIONS} questions and never asks more than ${MAX_QUESTIONS}. A clear, consistent pattern finishes sooner.`,
+  },
+  {
+    question: 'Do I need IT experience or technical knowledge?',
+    answer: 'No. The scenarios are written so you can choose the kind of work that appeals to you without knowing how to do it. Any technical term has a plain-English explanation attached, and reading one does not count as an answer.',
+  },
+  {
+    question: 'What do the percentages on the results page mean?',
+    answer: 'They are similarity scores: how closely the work you kept choosing resembles the day-to-day work of each role. They are not a probability that you will succeed or be hired. An unrelated role reads close to 0%, and nothing reads 100%, because no real person is a perfect copy of a job profile.',
+  },
+  {
+    question: 'What if my top results are very close?',
+    answer: 'Then the results page says so instead of pretending to rank them. When roles are within a few points of each other, it tells you your answers point almost equally at them — which usually means those roles overlap heavily in practice and people move between them.',
+  },
+  {
+    question: 'Can I change an answer?',
+    answer: 'Yes. Back shows you the answer you gave, with your choice still selected. If you change it, the questions after it are cleared, because they were chosen based on the answer you just changed.',
+  },
+  {
+    question: 'Does it recommend certifications?',
+    answer: 'It points you at roles first. Each role page lists the certifications worth knowing about for that job and why, and certification guides show which roles use them. No role or certification is ranked higher because of an affiliate link.',
+  },
+];
+
+const title = 'Find Your IT Path — Scenario-Based Career Discovery | CertBlueprint';
+const description =
+  'Real situations from real IT jobs. Choose the work you would actually want to dig into, and see which technical problems you keep gravitating toward. Adaptive, ~12 questions, entirely private.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Career Navigator', href: '/navigator/' },
+  { label: 'Find my path', href: '/navigator/assessment/' },
+];
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs}>
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-16">
+    {/* ── Intro ─────────────────────────────────────────────────── */}
+    <div id="nav-intro">
+      <p class="font-mono text-xs uppercase tracking-widest mb-3" style="color: var(--cb-accent-text);">
+        Find my path
+      </p>
+      <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-balance" style="color: var(--cb-text);">
+        We’ll show you the problems. You tell us which ones you want.
+      </h1>
+
+      <div class="mt-5 space-y-3 text-base leading-relaxed" style="color: var(--cb-text-sub); max-width: 62ch;">
+        <p>
+          Each screen is a real situation from a real job. Nothing is a trick, nothing tests whether
+          you already know the answer, and there is no correct choice — several competent people would
+          pick differently on every single one.
+        </p>
+        <p>
+          Pick the part <em>you</em> would want to be the one to dig into. If a word is unfamiliar,
+          there is a link under the option that explains it in plain English. Reading the explanation
+          costs you nothing and does not count as an answer.
+        </p>
+      </div>
+
+      <div class="mt-6 grid sm:grid-cols-3 gap-3">
+        <div class="nav-card p-4">
+          <p class="font-semibold text-sm mb-1" style="color: var(--cb-text);">Usually 11–15 questions</p>
+          <p class="text-xs leading-relaxed" style="color: var(--cb-text-sub);">
+            It adapts. Once the picture is clear it stops rather than padding.
+          </p>
+        </div>
+        <div class="nav-card p-4">
+          <p class="font-semibold text-sm mb-1" style="color: var(--cb-text);">No background needed</p>
+          <p class="text-xs leading-relaxed" style="color: var(--cb-text-sub);">
+            Every technical term has a one-line explanation attached.
+          </p>
+        </div>
+        <div class="nav-card p-4">
+          <p class="font-semibold text-sm mb-1" style="color: var(--cb-text);">Entirely private</p>
+          <p class="text-xs leading-relaxed" style="color: var(--cb-text-sub);">
+            Scored in your browser. Your answers are never sent to us. No account.
+          </p>
+        </div>
+      </div>
+
+      <button
+        id="nav-start"
+        type="button"
+        class="mt-7 px-5 py-2.5 rounded-lg font-semibold text-sm"
+        style="background: var(--cb-accent); color: #fff;"
+      >
+        Start
+      </button>
+
+      <p id="nav-resume-note" class="mt-3 text-sm" style="color: var(--cb-text-muted);" hidden>
+        You have an assessment in progress. Starting will continue where you left off.
+        <button id="nav-restart" type="button" class="underline" style="color: var(--cb-accent-text);">
+          Start over instead
+        </button>
+      </p>
+
+      {/* ── Explainer — part of the intro, so it disappears once questions start ── */}
+      <div class="mt-14 space-y-12">
+        <section aria-labelledby="example-heading">
+          <h2 id="example-heading" class="text-xl font-bold tracking-tight mb-2" style="color: var(--cb-text);">
+            What a question looks like
+          </h2>
+          <p class="text-sm leading-relaxed mb-4" style="color: var(--cb-text-sub); max-width: 62ch;">
+            A real scenario from the assessment, shown here read-only. It may come up in your run — if it
+            does, answer it fresh.
+          </p>
+          <div class="nav-card p-5" style="--nav-accent: var(--cb-border);">
+            <p class="text-sm leading-relaxed" style="color: var(--cb-text);">{example.setup}</p>
+            <p class="text-sm font-semibold mt-3 mb-2" style="color: var(--cb-text);">{example.frame}</p>
+            <ul class="space-y-1.5">
+              {example.options.map((o) => (
+                <li class="text-sm leading-relaxed rounded-md border px-3 py-2" style="border-color: var(--cb-border); color: var(--cb-text-sub);">{o.label}</li>
+              ))}
+            </ul>
+          </div>
+          <p class="text-sm leading-relaxed mt-3" style="color: var(--cb-text-sub); max-width: 62ch;">
+            None of those is the right answer. A network engineer, a security analyst, a systems
+            administrator and an automation engineer would each reach for a different one first — which is
+            exactly why the choice tells us something.
+          </p>
+        </section>
+
+        <section aria-labelledby="how-heading">
+          <h2 id="how-heading" class="text-xl font-bold tracking-tight mb-4" style="color: var(--cb-text);">
+            How it works
+          </h2>
+          <ol class="space-y-4">
+            {steps.map((s, i) => (
+              <li class="flex gap-3">
+                <span class="flex items-center justify-center w-7 h-7 rounded-full text-sm font-bold shrink-0" style="background: var(--cb-accent); color: #fff;">{i + 1}</span>
+                <div>
+                  <h3 class="font-semibold text-sm" style="color: var(--cb-text);">{s.title}</h3>
+                  <p class="text-sm leading-relaxed mt-0.5" style="color: var(--cb-text-sub); max-width: 62ch;">{s.body}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <p class="text-sm leading-relaxed mt-5 mb-3" style="color: var(--cb-text-sub); max-width: 62ch;">
+            The {dimensionCount} dimensions fall into five groups, so two people who both like security can
+            still come out very differently:
+          </p>
+          <dl class="grid sm:grid-cols-2 gap-3">
+            {GROUPS.map((g) => (
+              <div class="nav-card p-4" style="--nav-accent: var(--cb-border);">
+                <dt class="font-semibold text-sm mb-1" style="color: var(--cb-text);">{GROUP_LABEL[g]} <span class="font-normal" style="color: var(--cb-text-muted);">· {DIMENSIONS_BY_GROUP[g].length}</span></dt>
+                <dd class="text-xs leading-relaxed" style="color: var(--cb-text-sub);">{DIMENSIONS_BY_GROUP[g].map((d) => d.label).join(', ')}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+
+        <section aria-labelledby="get-heading">
+          <h2 id="get-heading" class="text-xl font-bold tracking-tight mb-3" style="color: var(--cb-text);">
+            What you get at the end
+          </h2>
+          <ul class="space-y-2 text-sm leading-relaxed" style="color: var(--cb-text-sub); max-width: 62ch;">
+            <li>· <strong style="color: var(--cb-text);">Your closest roles</strong>, each with the parts of your answers that put it there, and the recurring themes in the choices you made — not a generic description.</li>
+            <li>· <strong style="color: var(--cb-text);">An honest confidence statement.</strong> When the top roles are too close to separate, it says so rather than inventing a winner.</li>
+            <li>· <strong style="color: var(--cb-text);">Roles that sit between fields</strong>, flagged only when your answers showed real interest in both sides.</li>
+            <li>· <strong style="color: var(--cb-text);">A way in:</strong> every role links to a full page covering the daily work, the honest downside, pay, and the certifications worth knowing — plus <a href="/navigator/trials/" class="underline" style="color: var(--cb-accent-text);">free weekend trials</a> and <a href="/navigator/compare/" class="underline" style="color: var(--cb-accent-text);">side-by-side comparisons</a> of roles people confuse.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="privacy-heading" class="nav-card p-5" style="--nav-accent: var(--nav-emerald);">
+          <h2 id="privacy-heading" class="text-lg font-bold mb-2" style="color: var(--cb-text);">Where your answers go</h2>
+          <ul class="space-y-1.5 text-sm leading-relaxed" style="color: var(--cb-text-sub); max-width: 62ch;">
+            <li>· Scoring runs in this page. Your answers are not sent to our server or to analytics.</li>
+            <li>· An assessment in progress is held in this browser tab, and is gone when you close it.</li>
+            <li>· At the end you can choose to save the result in this browser, print it, or make a share link. The answers in a share link sit after the <code>#</code>, the part of an address browsers do not send to websites.</li>
+          </ul>
+          <p class="text-xs leading-relaxed mt-3" style="color: var(--cb-text-muted); max-width: 62ch;">
+            Like the rest of the site, this page loads analytics and advertising only as described in the
+            <a href="/legal/privacy-policy/" class="underline">privacy policy</a> and your cookie choices.
+          </p>
+        </section>
+
+        <section aria-labelledby="exp-heading">
+          <h2 id="exp-heading" class="text-xl font-bold tracking-tight mb-3" style="color: var(--cb-text);">
+            Already have experience?
+          </h2>
+          <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub); max-width: 62ch;">
+            If you work in IT now, <a href="/navigator/inventory/" class="underline" style="color: var(--cb-accent-text);">tick the technologies you have used</a>;
+            if you served, start from <a href="/navigator/military/" class="underline" style="color: var(--cb-accent-text);">what you did in uniform</a>.
+            Either is factored into the assessment automatically, at a deliberately lower weight than your
+            answers — having done something is weaker evidence of what you would enjoy than choosing it when
+            nothing made you.
+          </p>
+          <p class="text-sm leading-relaxed mt-3" style="color: var(--cb-text-sub); max-width: 62ch;">
+            Would rather describe yourself in your own words than click through scenarios? The
+            <a href="/navigator-lab" class="underline" style="color: var(--cb-accent-text);">Navigator Lab</a>
+            is a short conversation with an AI reader that points you at a field — labelled as AI, and linked to the same checked role pages.
+          </p>
+        </section>
+
+        <section aria-labelledby="faq-heading">
+          <h2 id="faq-heading" class="text-xl font-bold tracking-tight mb-4" style="color: var(--cb-text);">
+            Questions people ask first
+          </h2>
+          <FAQAccordion items={faq} />
+        </section>
+
+        <div class="text-center">
+          <button
+            type="button"
+            class="nav-start-again px-5 py-2.5 rounded-lg font-semibold text-sm"
+            style="background: var(--cb-accent); color: #fff;"
+          >
+            Start the assessment
+          </button>
+          <p class="mt-3 text-sm" style="color: var(--cb-text-muted);">
+            Rather browse first? <a href="/navigator/explore/" class="underline" style="color: var(--cb-accent-text);">Explore every role and field</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {/* ── Question stage ────────────────────────────────────────── */}
+    <div id="nav-stage" hidden>
+      {/* Ambient progress only. A "question 3 of 47" counter would be a lie —
+          the length is not fixed — and per-dimension meters here would teach
+          people to steer their answers. This shows momentum, not scoring. */}
+      <div class="flex items-center justify-between gap-4 mb-6">
+        <div>
+          <p class="text-xs font-medium mb-1.5" style="color: var(--cb-text-muted);" id="nav-progress-label">
+            Building a picture…
+          </p>
+          <div class="nav-progress" id="nav-progress" aria-hidden="true"></div>
+        </div>
+        <button
+          id="nav-back"
+          type="button"
+          class="text-xs font-medium px-3 py-1.5 rounded-md border"
+          style="color: var(--cb-text-sub); border-color: var(--cb-border); background: var(--cb-bg-card);"
+        >
+          Back
+        </button>
+      </div>
+
+      <div id="nav-question" aria-live="polite"></div>
+
+      <p class="mt-8 text-xs leading-relaxed" style="color: var(--cb-text-muted);">
+        Answers are held in this browser tab only, and are cleared when you close it unless you
+        choose to save your result at the end.
+      </p>
+    </div>
+
+    {/* ── No-JS fallback ────────────────────────────────────────── */}
+    <noscript>
+      <div class="nav-card p-5 mt-6">
+        <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+          The scenarios need JavaScript, because the questions adapt to your answers and everything is
+          scored locally in your browser rather than on a server. You can still
+          <a href="/navigator/explore/" style="color: var(--cb-accent-text);">browse every role and field</a>
+          without it — the full map, all {SCENARIOS.length} scenarios’ worth of subject matter, is
+          plain HTML.
+        </p>
+      </div>
+    </noscript>
+  </section>
+</BaseLayout>
+
+<script>
+  import { nextScenario, MIN_QUESTIONS } from '../../../lib/navigator/engine/adaptive';
+  import { scoreAssessment } from '../../../lib/navigator/engine/scoring';
+  import { seedVectorFrom } from '../../../lib/navigator/engine/inventory';
+  import { loadSession, setAnswers, clearSession } from '../../../lib/navigator/engine/session';
+  import { SCENARIO_BY_ID } from '../../../lib/navigator/data/scenarios';
+  import { renderScenario } from '../../../lib/navigator/ui/render';
+  import type { SessionState } from '../../../lib/navigator/types';
+
+  const intro = document.getElementById('nav-intro')!;
+  const stage = document.getElementById('nav-stage')!;
+  const question = document.getElementById('nav-question')!;
+  const progress = document.getElementById('nav-progress')!;
+  const progressLabel = document.getElementById('nav-progress-label')!;
+  const backBtn = document.getElementById('nav-back') as HTMLButtonElement;
+  const startBtn = document.getElementById('nav-start')!;
+  const restartBtn = document.getElementById('nav-restart')!;
+  const resumeNote = document.getElementById('nav-resume-note')!;
+
+  let state: SessionState = loadSession();
+
+  if (state.answers.length > 0) {
+    resumeNote.hidden = false;
+    startBtn.textContent = 'Continue';
+  }
+
+  /**
+   * Prior experience contributes a seed vector — from the technology inventory,
+   * the military translator, or both. It is deliberately a seed rather than an
+   * override: what you have touched informs the picture, but what you CHOOSE in
+   * the scenarios is the stronger signal about what you would enjoy.
+   */
+  function seedVector() {
+    return state.inventory.length > 0 || state.military.length > 0
+      ? seedVectorFrom(state.inventory, state.military)
+      : {};
+  }
+
+  const PROGRESS_DOTS = MIN_QUESTIONS;
+
+  function paintProgress(answered: number, fraction: number) {
+    progress.replaceChildren();
+    const lit = Math.round(fraction * PROGRESS_DOTS);
+    for (let i = 0; i < PROGRESS_DOTS; i++) {
+      const dot = document.createElement('span');
+      dot.className = 'nav-progress__dot';
+      if (i < lit) dot.dataset.on = '1';
+      progress.appendChild(dot);
+    }
+    progressLabel.textContent =
+      answered < 4
+        ? 'Building a picture…'
+        : answered < 8
+          ? 'Some patterns are showing…'
+          : 'Narrowing down the close calls…';
+    backBtn.disabled = answered === 0;
+    backBtn.style.opacity = answered === 0 ? '0.4' : '1';
+  }
+
+  /**
+   * Which question is on screen, as an index into the answered sequence.
+   *
+   * Normally this equals answers.length — we are showing the next unanswered
+   * question. Going Back moves it earlier, so the user is REVIEWING an answer
+   * they already gave rather than having it deleted. That distinction is the
+   * whole point: seeing what you picked is what lets you decide whether to
+   * change it.
+   */
+  let cursor = state.answers.length;
+
+  function show(scenario: import('../../../lib/navigator/types').Scenario, selectedId: string | undefined, fraction: number) {
+    paintProgress(cursor, fraction);
+
+    const view = renderScenario(scenario, (optionId) => choose(scenario.id, optionId), selectedId);
+
+    question.replaceChildren(view.root);
+    // Move focus to the new question so screen-reader and keyboard users land on
+    // the content rather than being silently teleported to the top of the page.
+    view.heading.focus();
+  }
+
+  function choose(scenarioId: string, optionId: string) {
+    // Truncate at the cursor before appending. When the user is reviewing an
+    // earlier question, everything after it was chosen adaptively on the basis
+    // of the answer they are now changing, so it can no longer be trusted.
+    const answers = state.answers.slice(0, cursor);
+    answers.push({ scenarioId, optionId, at: Date.now() });
+    state = setAnswers(state, answers);
+    cursor = state.answers.length;
+    advance();
+  }
+
+  function advance() {
+    // Reviewing an answer the user already gave — replay it with their choice
+    // still selected, rather than recomputing what comes next.
+    if (cursor < state.answers.length) {
+      const prior = state.answers[cursor];
+      const scenario = SCENARIO_BY_ID[prior.scenarioId];
+      if (scenario) {
+        show(scenario, prior.optionId, cursor / MIN_QUESTIONS);
+        return;
+      }
+      // Unknown scenario id (content changed under a resumed session): drop it
+      // and everything after, then fall through to picking a fresh question.
+      state = setAnswers(state, state.answers.slice(0, cursor));
+      cursor = state.answers.length;
+    }
+
+    const result = scoreAssessment(state.answers, seedVector());
+    const step = nextScenario(state.answers, state.startedAt, result.confidence.level === 'high');
+
+    if (step.done || !step.scenario) {
+      window.location.href = '/navigator/results/';
+      return;
+    }
+
+    show(step.scenario, undefined, step.progress);
+  }
+
+  function begin() {
+    intro.hidden = true;
+    stage.hidden = false;
+    // The intro is long now; without this a start from the bottom button
+    // leaves the first question scrolled out of view.
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    advance();
+  }
+
+  startBtn.addEventListener('click', begin);
+  document.querySelectorAll('.nav-start-again').forEach((b) => b.addEventListener('click', begin));
+
+  restartBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    clearSession();
+    state = loadSession();
+    cursor = 0;
+    resumeNote.hidden = true;
+    begin();
+  });
+
+  backBtn.addEventListener('click', () => {
+    if (cursor === 0) return;
+    cursor -= 1;
+    advance();
+  });
+</script>

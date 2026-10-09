@@ -1,0 +1,476 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import '../../../styles/navigator.css';
+import { PAIR_KEYS } from '../../../lib/navigator/data/role-pairs';
+import { assertShareCodecIntegrity } from '../../../lib/navigator/engine/share';
+
+// The share encoding depends on every scenario having a unique numeric prefix.
+// Break that and old links resolve to the wrong scenario, silently.
+assertShareCodecIntegrity();
+
+// Which role pairs have a comparison page. Emitted as data rather than imported
+// by the results script: the pair set is derived partly from role adjacency,
+// which lives in role content and must never be bundled into a browser script.
+const pairKeys = JSON.stringify([...PAIR_KEYS]);
+
+const title = 'Your Results — IT Career Navigator | CertBlueprint';
+const description =
+  'Your strongest IT role matches, why they appeared, and the interest pattern underneath them. Calculated in your browser — nothing is stored or sent.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Career Navigator', href: '/navigator/' },
+  { label: 'Results', href: '/navigator/results/' },
+];
+---
+
+{/* noindex: the entire page is built in the browser from session state, so a
+    crawler sees an empty shell. Nothing here should be in the index. */}
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} noindex>
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-16">
+    {/* ── Shown when there is nothing to show ───────────────────── */}
+    <div id="nav-empty" hidden>
+      <h1 class="text-3xl font-bold tracking-tight" style="color: var(--cb-text);">No results in this tab</h1>
+      <p class="mt-3 text-base leading-relaxed" style="color: var(--cb-text-sub); max-width: 60ch;">
+        Results live in the browser tab you took the assessment in, and are cleared when it closes —
+        that is deliberate, and it is why we never needed an account from you.
+      </p>
+      <div class="mt-5 flex flex-wrap gap-3">
+        <a
+          href="/navigator/assessment/"
+          class="px-5 py-2.5 rounded-lg font-semibold text-sm"
+          style="background: var(--cb-accent); color: #fff;"
+        >
+          Take the assessment
+        </a>
+        <a
+          href="/navigator/explore/"
+          class="px-5 py-2.5 rounded-lg font-semibold text-sm border"
+          style="color: var(--cb-text); border-color: var(--cb-border);"
+        >
+          Browse the map
+        </a>
+      </div>
+      <p id="nav-saved-note" class="mt-5 text-sm" style="color: var(--cb-text-sub);" hidden>
+        You do have a previously saved result.
+        <button id="nav-load-saved" type="button" class="underline font-semibold" style="color: var(--cb-accent-text);">
+          Load it
+        </button>
+      </p>
+    </div>
+
+    {/* ── Results ───────────────────────────────────────────────── */}
+    <div id="nav-results-wrap" hidden>
+      <header class="mb-8">
+        <p class="font-mono text-xs uppercase tracking-widest mb-3" style="color: var(--cb-accent-text);">
+          <span id="nav-eyebrow">Your pattern</span>
+        </p>
+        <h1 id="nav-heading" class="text-3xl sm:text-4xl font-bold tracking-tight text-balance" style="color: var(--cb-text);">
+          Here is what you kept reaching for.
+        </h1>
+        {/* The framing rule for this whole page: describe attraction, never
+            identity. "Your responses show a strong pull toward X" — never
+            "you are an X". */}
+        <p id="nav-intro" class="mt-4 text-base leading-relaxed" style="color: var(--cb-text-sub); max-width: 62ch;">
+          This is not a verdict on who you are or what you are capable of. It is a description of
+          which kinds of technical problems you chose, repeatedly, when nobody was watching and there
+          was no correct answer.
+        </p>
+        <p id="nav-inventory-note" class="mt-3 text-sm" style="color: var(--cb-text-muted);" hidden></p>
+        <p id="nav-explored-note" class="mt-1 text-sm" style="color: var(--cb-text-muted);" hidden></p>
+      </header>
+
+      {/* Shown instead of the personal framing when the page was opened from a
+          shared link. Presenting someone else's answers as "what you kept
+          reaching for" would be the single most misleading thing this page
+          could do. */}
+      <div id="nav-shared-banner" class="nav-card nav-card--railed p-5 pl-6 mb-8" style="--nav-accent: var(--nav-violet);" hidden>
+        <h2 class="font-bold text-base mb-2" style="color: var(--cb-text);">
+          You are looking at someone else's result
+        </h2>
+        <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub); max-width: 62ch;">
+          This page was opened from a shared link. Everything below was recalculated in your browser
+          from the answers in that link — <span id="nav-shared-count"></span>
+        </p>
+        <p id="nav-shared-dropped" class="text-sm leading-relaxed mt-2" style="color: var(--nav-warn); max-width: 62ch;" hidden></p>
+      </div>
+
+      <div id="nav-results"></div>
+      <script type="application/json" id="nav-pairs" set:html={pairKeys} />
+
+      {/* ── Controls ────────────────────────────────────────────── */}
+      {/* ── Shared-view controls ────────────────────────────────── */}
+      <div id="nav-shared-controls" class="nav-noprint mt-4 pt-6 border-t" style="border-color: var(--cb-border);" hidden>
+        <h2 class="text-sm font-bold mb-3" style="color: var(--cb-text);">This is not your result</h2>
+        <p class="text-sm leading-relaxed mb-4" style="color: var(--cb-text-sub); max-width: 62ch;">
+          Nothing here was saved to your browser, and nothing about you was read to produce it. The
+          fastest way to find out whether any of it applies to you is to answer the scenarios yourself
+          — it takes about ten minutes.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <a
+            href="/navigator/assessment/"
+            class="px-4 py-2 rounded-lg text-sm font-semibold"
+            style="background: var(--cb-accent); color: #fff;"
+          >
+            Answer them yourself
+          </a>
+          <button
+            id="nav-shared-print"
+            type="button"
+            class="px-4 py-2 rounded-lg text-sm font-semibold border"
+            style="color: var(--cb-text); border-color: var(--cb-border); background: var(--cb-bg-card);"
+          >
+            Print or save as PDF
+          </button>
+          <a
+            id="nav-back-to-mine"
+            href="/navigator/results/"
+            class="px-4 py-2 rounded-lg text-sm font-semibold border"
+            style="color: var(--cb-text); border-color: var(--cb-border); background: var(--cb-bg-card);"
+            hidden
+          >
+            Back to my own result
+          </a>
+        </div>
+      </div>
+
+      <div id="nav-own-controls" class="nav-noprint mt-4 pt-6 border-t" style="border-color: var(--cb-border);">
+        <h2 class="text-sm font-bold mb-3" style="color: var(--cb-text);">Your data</h2>
+        <p class="text-sm leading-relaxed mb-4" style="color: var(--cb-text-sub); max-width: 62ch;">
+          Nothing on this page has been sent anywhere. It was calculated in your browser from the
+          choices you made, and it disappears when you close this tab unless you choose otherwise.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <button
+            id="nav-save"
+            type="button"
+            class="px-4 py-2 rounded-lg text-sm font-semibold border"
+            style="color: var(--cb-text); border-color: var(--cb-border); background: var(--cb-bg-card);"
+          >
+            Keep this result on this device
+          </button>
+          <button
+            id="nav-print"
+            type="button"
+            class="px-4 py-2 rounded-lg text-sm font-semibold border"
+            style="color: var(--cb-text); border-color: var(--cb-border); background: var(--cb-bg-card);"
+          >
+            Print or save as PDF
+          </button>
+          <a
+            href="/navigator/assessment/"
+            class="px-4 py-2 rounded-lg text-sm font-semibold border"
+            style="color: var(--cb-text); border-color: var(--cb-border); background: var(--cb-bg-card);"
+          >
+            Answer a few more
+          </a>
+          <button
+            id="nav-share"
+            type="button"
+            class="px-4 py-2 rounded-lg text-sm font-semibold border"
+            style="color: var(--cb-text); border-color: var(--cb-border); background: var(--cb-bg-card);"
+          >
+            Get a shareable link
+          </button>
+          <button
+            id="nav-clear"
+            type="button"
+            class="px-4 py-2 rounded-lg text-sm font-semibold border"
+            style="color: var(--nav-fail); border-color: var(--cb-border); background: var(--cb-bg-card);"
+          >
+            Erase everything
+          </button>
+        </div>
+        <p id="nav-status" class="mt-3 text-sm" style="color: var(--nav-emerald);" role="status"></p>
+
+        {/* ── The share link ──────────────────────────────────────── */}
+        <div id="nav-share-box" class="nav-card p-4 mt-4" style="--nav-accent: var(--nav-violet);" hidden>
+          <label for="nav-share-url" class="block text-sm font-bold mb-2" style="color: var(--cb-text);">
+            Your shareable link
+          </label>
+          <div class="flex flex-col sm:flex-row gap-2">
+            <input
+              id="nav-share-url"
+              type="text"
+              readonly
+              class="flex-1 min-w-0 px-3 py-2 rounded-lg border font-mono text-xs"
+              style="color: var(--cb-text); border-color: var(--cb-border); background: var(--cb-bg-subtle);"
+            />
+            <button
+              id="nav-share-copy"
+              type="button"
+              class="px-4 py-2 rounded-lg text-sm font-semibold shrink-0"
+              style="background: var(--cb-accent); color: #fff;"
+            >
+              Copy
+            </button>
+          </div>
+
+          {/* The specifics matter more than a reassuring adjective. Everything
+              in this list is checkable by the person reading it. */}
+          <ul class="mt-3 space-y-1.5 text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+            <li>
+              · The part after the <code style="color: var(--cb-text);">#</code> holds your answers. Browsers
+              never send that part to a server, so this site's host never receives it — the link is read
+              entirely by whoever opens it.
+            </li>
+            <li>· Anyone with the link can see which options you chose. Send it the way you would a photo.</li>
+            <li>· Nothing was uploaded, and no record of this link exists anywhere, including here.</li>
+            <li id="nav-share-inventory" hidden></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="mt-8 text-xs leading-relaxed" style="color: var(--cb-text-muted); max-width: 70ch;">
+        Match percentages are similarity scores between your answers and a profile of each role — not
+        predictions, and not aptitude. Two roles within a few points of each other are, for this
+        tool’s purposes, the same answer. Nothing here is ranked by what earns anyone money.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import { scoreAssessment } from '../../../lib/navigator/engine/scoring';
+  import { seedVectorFrom } from '../../../lib/navigator/engine/inventory';
+  import {
+    loadSession,
+    loadSavedResult,
+    saveResult,
+    clearEverything,
+    clearExplored,
+  } from '../../../lib/navigator/engine/session';
+  import { renderResults } from '../../../lib/navigator/ui/results';
+  import { encodeAnswers, decodeAnswers } from '../../../lib/navigator/engine/share';
+  // Cores, not the merged role set — this only needs names, and importing
+  // ../data/roles would pull every role's full page content into this bundle.
+  import { ROLE_CORE_BY_SLUG } from '../../../lib/navigator/data/roles/cores';
+  import { TECHNOLOGY_BY_SLUG } from '../../../lib/navigator/data/technologies';
+  import type { Answer } from '../../../lib/navigator/types';
+
+  const empty = document.getElementById('nav-empty')!;
+  const wrap = document.getElementById('nav-results-wrap')!;
+  const mount = document.getElementById('nav-results')!;
+  const status = document.getElementById('nav-status')!;
+  const inventoryNote = document.getElementById('nav-inventory-note')!;
+  const exploredNote = document.getElementById('nav-explored-note')!;
+  const savedNote = document.getElementById('nav-saved-note')!;
+
+  const session = loadSession();
+
+  function show(answers: Answer[], inventory: string[], shared?: { dropped: number }) {
+    // A shared link carries answers only, so someone else's result is never
+    // seeded with this browser's experience.
+    const military = shared ? [] : session.military;
+    const seed =
+      inventory.length > 0 || military.length > 0 ? seedVectorFrom(inventory, military) : {};
+    const result = scoreAssessment(answers, seed);
+
+    empty.hidden = true;
+    wrap.hidden = false;
+    renderResults(mount, result);
+
+    if (shared) {
+      renderShared(answers.length, shared.dropped);
+      return;
+    }
+
+    // Anything that influenced the numbers is stated. A seed the reader cannot
+    // see is the same problem as a hidden weighting, however small its effect.
+    const influences: string[] = [];
+    if (inventory.length > 0) {
+      const names = inventory
+        .map((s) => TECHNOLOGY_BY_SLUG[s]?.name)
+        .filter(Boolean)
+        .slice(0, 4);
+      influences.push(
+        `your technology inventory (${names.join(', ')}${
+          inventory.length > names.length ? `, +${inventory.length - names.length} more` : ''
+        })`,
+      );
+    }
+    if (military.length > 0) {
+      influences.push(
+        `the ${military.length} ${military.length === 1 ? 'capability' : 'capabilities'} you confirmed on the military translator`,
+      );
+    }
+    if (influences.length > 0) {
+      inventoryNote.hidden = false;
+      inventoryNote.textContent = `Also factored in, at a lower weight than your answers: ${influences.join(', and ')}.`;
+    }
+
+    // Explore history is surfaced as an observation, never used to weight the
+    // result. Saying it out loud — with a way to erase it — is the difference
+    // between a useful reflection and something that feels like surveillance.
+    if (session.explored.length >= 3) {
+      const names = session.explored
+        .map((s) => ROLE_CORE_BY_SLUG[s]?.name)
+        .filter(Boolean)
+        .slice(0, 3);
+      if (names.length >= 3) {
+        exploredNote.hidden = false;
+        exploredNote.textContent = `Separately: you spent time reading about ${names.join(', ')}. That is not counted in the scores above.`;
+        const clearBtn = document.createElement('button');
+        clearBtn.type = 'button';
+        clearBtn.textContent = 'Forget that';
+        clearBtn.className = 'underline nav-noprint';
+        clearBtn.style.marginLeft = '0.4rem';
+        clearBtn.style.color = 'var(--cb-accent-text)';
+        clearBtn.addEventListener('click', () => {
+          clearExplored();
+          exploredNote.hidden = true;
+        });
+        exploredNote.appendChild(clearBtn);
+      }
+    }
+
+    document.getElementById('nav-save')!.addEventListener('click', () => {
+      saveResult({
+        savedAt: Date.now(),
+        answers,
+        inventory,
+        topRoles: result.matches.slice(0, 5).map((m) => m.slug),
+      });
+      status.textContent = 'Saved to this device only. Nothing was uploaded.';
+    });
+
+    document.getElementById('nav-print')!.addEventListener('click', () => window.print());
+
+    document.getElementById('nav-clear')!.addEventListener('click', () => {
+      clearEverything();
+      status.textContent = 'Erased. Nothing about this session remains in this browser.';
+      window.setTimeout(() => window.location.reload(), 900);
+    });
+  }
+
+  /**
+   * A shared result is somebody else's. It gets its own framing, none of the
+   * personal controls, and — importantly — never touches this browser's stored
+   * session. Someone opening a friend's link must not have their own result
+   * quietly replaced.
+   */
+  function renderShared(answered: number, dropped: number) {
+    document.getElementById('nav-eyebrow')!.textContent = 'A shared result';
+    document.getElementById('nav-heading')!.textContent = 'Here is what they kept reaching for.';
+    document.getElementById('nav-intro')!.textContent =
+      'This describes which kinds of technical problems this person chose, repeatedly, when there was no correct answer. It is not a verdict on them, and it says nothing about you.';
+
+    const banner = document.getElementById('nav-shared-banner')!;
+    banner.hidden = false;
+    document.getElementById('nav-shared-count')!.textContent =
+      `${answered} answer${answered === 1 ? '' : 's'}, recalculated here. Nothing was uploaded and nothing was stored.`;
+
+    if (dropped > 0) {
+      const note = document.getElementById('nav-shared-dropped')!;
+      note.hidden = false;
+      note.textContent = `${dropped} answer${dropped === 1 ? '' : 's'} in this link referred to scenarios this site no longer has, so ${dropped === 1 ? 'it was' : 'they were'} left out. The result below is based on the rest.`;
+    }
+
+    document.getElementById('nav-own-controls')!.hidden = true;
+    const controls = document.getElementById('nav-shared-controls')!;
+    controls.hidden = false;
+    document.getElementById('nav-shared-print')!.addEventListener('click', () => window.print());
+
+    // Only offered if they actually have one to go back to.
+    if (session.answers.length > 0) {
+      document.getElementById('nav-back-to-mine')!.hidden = false;
+    }
+  }
+
+  function wireShare(answers: Answer[], inventory: string[]) {
+    const button = document.getElementById('nav-share') as HTMLButtonElement;
+    const box = document.getElementById('nav-share-box')!;
+    const field = document.getElementById('nav-share-url') as HTMLInputElement;
+    const copy = document.getElementById('nav-share-copy') as HTMLButtonElement;
+
+    button.addEventListener('click', () => {
+      const url = `${window.location.origin}/navigator/results/#r=${encodeAnswers(answers)}`;
+      field.value = url;
+      box.hidden = false;
+
+      // The link carries answers only. If an inventory shifted this person's
+      // own ranking, the recipient will see something different — better to say
+      // exactly that than to let them wonder why the link disagrees with them.
+      if (inventory.length > 0 || session.military.length > 0) {
+        const withoutInventory = scoreAssessment(answers, {});
+        const mineTop = scoreAssessment(answers, seedVectorFrom(inventory, session.military)).matches[0];
+        const theirTop = withoutInventory.matches[0];
+        const note = document.getElementById('nav-share-inventory')!;
+        note.hidden = false;
+        // Names whichever source is actually in play. Saying "your technology
+        // inventory" to someone who only used the military translator would be
+        // pointing them at a page they never filled in.
+        const sources: string[] = [];
+        if (inventory.length > 0) sources.push('technology inventory');
+        if (session.military.length > 0) sources.push('military capability list');
+        const what = sources.join(' and ');
+        const verb = sources.length > 1 ? 'are' : 'is';
+        const them = sources.length > 1 ? 'them' : 'it';
+
+        note.textContent =
+          theirTop.slug === mineTop.slug
+            ? `· Your ${what} ${verb} not in the link — that stays on this device. It does not change which role comes out on top here.`
+            : `· Your ${what} ${verb} not in the link — that stays on this device. Without ${them} the top match reads ${theirTop.role.name} rather than ${mineTop.role.name}, so the link will not match your screen exactly.`;
+      }
+
+      field.focus();
+      field.select();
+    });
+
+    copy.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(field.value);
+        copy.textContent = 'Copied';
+      } catch {
+        // Clipboard access is refused in plenty of ordinary situations. The
+        // field is selectable and already selected, so nothing is actually lost.
+        field.select();
+        copy.textContent = 'Press Ctrl+C';
+      }
+      window.setTimeout(() => {
+        copy.textContent = 'Copy';
+      }, 2400);
+    });
+  }
+
+  // Pasting a share link while already on this page changes only the fragment,
+  // which does not reload the document — so the script above never re-runs and
+  // the page sits there showing the previous result as though the link were
+  // broken. Re-running from scratch is both the simplest fix and the correct
+  // one: nothing on this page is expensive and nothing is lost.
+  window.addEventListener('hashchange', () => window.location.reload());
+
+  // A shared link wins over this browser's own session: someone who clicked a
+  // link came here to see that, not their own from last week.
+  const hash = window.location.hash.replace(/^#/, '');
+  const sharedCode = hash.startsWith('r=') ? decodeURIComponent(hash.slice(2)) : null;
+  const shared = sharedCode ? decodeAnswers(sharedCode) : null;
+
+  if (sharedCode && !shared) {
+    empty.hidden = false;
+    const broken = document.createElement('p');
+    broken.className = 'mt-4 text-base leading-relaxed';
+    broken.style.color = 'var(--nav-warn)';
+    broken.style.maxWidth = '60ch';
+    broken.textContent =
+      'That shared link could not be read. It may have been shortened, cut off in a message, or made by a much older version of this page. Ask for it again, or take the assessment yourself below.';
+    empty.appendChild(broken);
+  } else if (shared) {
+    show(shared.answers, [], { dropped: shared.dropped });
+  } else if (session.answers.length > 0) {
+    show(session.answers, session.inventory);
+    wireShare(session.answers, session.inventory);
+  } else {
+    empty.hidden = false;
+    const saved = loadSavedResult();
+    if (saved) {
+      savedNote.hidden = false;
+      document.getElementById('nav-load-saved')!.addEventListener('click', () => {
+        show(saved.answers, saved.inventory);
+        // A loaded result is just as shareable as a fresh one.
+        wireShare(saved.answers, saved.inventory);
+      });
+    }
+  }
+</script>

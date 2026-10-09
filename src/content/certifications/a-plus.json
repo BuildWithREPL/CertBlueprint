@@ -5,13 +5,13 @@
   "vendor": "CompTIA",
   "vendor_slug": "comptia",
   "level": "Foundation",
-  "description": "CompTIA A+ is the recognized starting point for an IT career. It validates the core support skills employers expect for help desk, desktop support, and field technician roles. A+ is a two-exam certification: Core 1 (220-1201) and Core 2 (220-1202)—you must pass both.",
-  "audience": "Career changers entering IT, students, help desk and desktop support hopefuls, and anyone who wants the employer-recognized baseline for their first IT job. No prior experience required.",
+  "description": "CompTIA A+ is the entry-level IT support certification and appears in more support job listings than any other credential. The current version is V15: two exams, Core 1 (220-1201) for hardware, networking, mobile devices and troubleshooting, and Core 2 (220-1202) for operating systems, security, software and operational procedures. Both launched on 25 March 2025, each runs 90 minutes with a maximum of 90 questions, and you must pass both — in either order — to be certified. V15 is expected to run until roughly 2028.",
+  "audience": "People with no IT experience who want a first credential, career changers, and support technicians whose employer or government contract asks for it by name. CompTIA recommends around twelve months of hands-on experience in an IT support role; in practice most candidates pass it as their first certification, with lab time and a home PC standing in for the job. It is also DoD 8140 approved for technical support specialist, system administrator and cyber defense infrastructure support roles.",
   "why_get_it": "A+ is the cert that gets you your first IT job. It is the most widely recognized entry-level IT credential, and it appears explicitly in a huge share of help desk, desktop support, and IT support postings. Unlike single-topic certs, A+ proves broad practical competence across hardware, operating systems, networking basics, security, and troubleshooting—exactly the mix a tier-1 support role demands. Because it is vendor-neutral, the skills travel with you regardless of the employer's stack. For someone with no IT work history, A+ is the clearest, most credible way to signal 'job-ready' to a hiring manager.",
-  "when_to_get_it": "Get A+ first if you're entering IT with little or no experience and want a support, help desk, or technician role. If you already have hands-on IT experience, you may be able to skip straight to Network+ or Security+—but A+ is rarely a wasted step, and it's a prerequisite mindset for the whole CompTIA path (A+ → Network+ → Security+). If your goal is purely networking or security and you have some background, weigh going directly to those instead.",
+  "when_to_get_it": "Take A+ when you want the fastest credible route into help desk or desktop support, or when postings you are reading list it. It is the standard first rung, and the one certification where \"start here\" is genuinely the right advice for a beginner. Two caveats worth knowing before you commit. First, it is two exams, so budget for both — and take them from the same version, because CompTIA does not allow mixing V15 with an older Core. Second, if you already work in IT and are aiming at networking or security, Network+ or Security+ will move a hiring decision further than A+ will; A+ earns its place when you have nothing else on the resume yet.",
   "exam_code": "220-1201 & 220-1202",
   "exam_duration": "90 minutes per exam (two exams)",
-  "exam_format": "Up to 90 questions per exam: multiple choice, drag-and-drop, and performance-based. Passing scores: 675/900 (Core 1), 700/900 (Core 2). You must pass both.",
+  "exam_format": "Maximum of 90 questions per exam: multiple choice (single and multiple response), drag-and-drop, and performance-based. 90 minutes each. Passing scores: 675/900 (Core 1) and 700/900 (Core 2). Both exams must come from the same version — no mixing V15 with an older Core. Offered in English, German and Japanese.",
   "exam_questions": "Up to 90 questions per exam",
   "official_url": "https://www.comptia.org/en-us/certifications/a/",
   "official_pricing_url": "https://www.comptia.org/en-us/certifications/a/",
@@ -183,7 +183,7 @@
     {
       "label": "Buy A+ Exam Vouchers – CompTIA Store",
       "url": "https://www.comptia.org/en-us/certifications/a/",
-      "note": "Each A+ exam (Core 1 and Core 2) is $274 USD as of mid-2026 (CompTIA raised prices in June 2026), so both total roughly $548. CompTIA sometimes offers voucher + retake bundles—check the official store for current pricing."
+      "note": "A+ is two separate exams, so you buy two vouchers. CompTIA publishes voucher pricing only inside its own store checkout — confirm both prices there before budgeting, and compare against the bundles, which pair vouchers with retake assurance and CertMaster Practice."
     }
   ],
   "faq": [
@@ -197,7 +197,7 @@
     },
     {
       "question": "How much does the CompTIA A+ cost?",
-      "answer": "Each exam is $274 USD as of mid-2026, so both together total roughly $548. CompTIA occasionally bundles vouchers with retake insurance—check the official store before buying."
+      "answer": "A+ is two exams, so you buy two vouchers. CompTIA publishes voucher pricing only inside its own store checkout, so price both there before budgeting — and compare against the bundles, which pair vouchers with retake assurance and CertMaster Practice and are usually cheaper than buying a second attempt after a fail."
     },
     {
       "question": "How long does it take to study for A+?",
@@ -240,5 +240,6 @@
     }
   ],
   "seo_title": "CompTIA A+ 220-1201 & 220-1202 Study Guide | CertBlueprint",
-  "seo_description": "Complete CompTIA A+ (220-1201 & 220-1202) guide: who it's for, IT support salary, both exams' domains, study path, free and paid resources, and FAQ."
+  "seo_description": "Complete CompTIA A+ (220-1201 & 220-1202) guide: who it's for, IT support salary, both exams' domains, study path, free and paid resources, and FAQ.",
+  "last_verified": "September 24, 2026"
 }

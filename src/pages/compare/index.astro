@@ -2,12 +2,20 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import { getCollection } from 'astro:content';
+import { ROLE_PAIRS } from '../../lib/navigator/data/role-pairs';
 
 const comparisons = await getCollection('comparisons');
 
 const breadcrumbs = [
   { label: 'Home', href: '/' },
   { label: 'Compare', href: '/compare/' },
+];
+
+const method = [
+  { title: 'Short answer first', body: 'Every comparison opens with a verdict you can act on, then shows the reasoning behind it.' },
+  { title: 'Checked facts', body: 'Exam codes, prices, formats, and prerequisites are checked against each vendor’s official pages and dated.' },
+  { title: '“Pick this if” lists', body: 'Your situation decides it — budget, current job, the roles you are targeting — so both sides get honest reasons.' },
+  { title: 'Full guides behind each', body: 'Each contender links to its complete study guide: exam details, study path, and free resources.' },
 ];
 ---
 
@@ -30,11 +38,38 @@ const breadcrumbs = [
     <div class="grid sm:grid-cols-2 gap-4 max-w-4xl">
       {comparisons.map((c) => (
         <a href={`/compare/${c.data.slug}/`} class="rounded-xl border p-5 block transition-all" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
-          <p class="font-bold text-base mb-2" style="color: var(--cb-text);">{c.data.title}</p>
+          <h2 class="font-bold text-base mb-2" style="color: var(--cb-text);">{c.data.title}</h2>
           <p class="text-sm leading-relaxed mb-3" style="color: var(--cb-text-sub);">{c.data.intro}</p>
           <span class="text-sm font-semibold" style="color: var(--cb-accent-text);">Read the comparison →</span>
         </a>
       ))}
     </div>
+
+    <section class="mt-12 max-w-4xl" aria-labelledby="method-heading">
+      <h2 id="method-heading" class="text-lg font-bold mb-4" style="color: var(--cb-text);">How these comparisons are built</h2>
+      <div class="grid sm:grid-cols-2 gap-3">
+        {method.map((m) => (
+          <div class="rounded-lg border p-4" style="background: var(--cb-bg-subtle); border-color: var(--cb-border-sub);">
+            <h3 class="font-semibold text-sm mb-1" style="color: var(--cb-text);">{m.title}</h3>
+            <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{m.body}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-sm leading-relaxed mt-4" style="color: var(--cb-text-sub);">
+        A certification comparison only helps once you know the kind of job you are aiming for. Two certs can both be "good" and still point at very different days at work. Read more about <a href="/about/#how-we-work" class="underline" style="color: var(--cb-accent-text);">how content is written and checked</a>.
+      </p>
+    </section>
+
+    <section class="mt-10 max-w-4xl rounded-xl border p-6" style="background: var(--cb-bg-card); border-color: var(--cb-border);" aria-labelledby="roles-heading">
+      <h2 id="roles-heading" class="text-lg font-bold mb-2" style="color: var(--cb-text);">Deciding between jobs, not certs?</h2>
+      <p class="text-sm leading-relaxed mb-4" style="color: var(--cb-text-sub);">
+        The Career Navigator has {ROLE_PAIRS.length} side-by-side role comparisons — network administrator vs network engineer, SOC analyst vs penetration tester, and more — showing where the daily work overlaps, where it genuinely differs, and a free weekend trial for each side.
+      </p>
+      <div class="flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
+        <a href="/navigator/compare/" style="color: var(--cb-accent-text);">Compare two IT roles →</a>
+        <a href="/navigator/assessment/" style="color: var(--cb-accent-text);">Find which roles fit you →</a>
+        <a href="/paths/" style="color: var(--cb-accent-text);">Browse career paths →</a>
+      </div>
+    </section>
   </div>
 </BaseLayout>

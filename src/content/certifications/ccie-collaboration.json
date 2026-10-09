@@ -1,0 +1,273 @@
+{
+  "title": "Cisco CCIE Collaboration Guide",
+  "slug": "ccie-collaboration",
+  "short_name": "CCIE Collaboration",
+  "vendor": "Cisco",
+  "vendor_slug": "cisco",
+  "level": "Expert",
+  "description": "CCIE Collaboration is the expert credential for the engineers who keep enterprise voice and video alive: the CLCOR written plus an 8-hour, $1,600-per-attempt lab spanning CUCM, gateways, Expressway — and, since the v3.1 refresh, a serious share of Webex Calling and cloud PSTN. Destination briefing, honestly told: the shrinking on-prem market math, the real costs, the hardest home-lab problem of any track, and who this number still pays for in 2026.",
+  "audience": "Senior UC engineers who already run the estate daily — CUCM/IM&P/Unity clusters, CUBE and SIP trunking, Expressway edges, and increasingly Webex Calling hybrid integrations. The people healthcare, government, and finance call when the phones break. Explicitly a specialist's summit in a consolidating niche: if you haven't read our CCNP Collaboration guide's honest market take, start there — this page carries the same math to expert altitude.",
+  "why_get_it": "The contrarian economics from the CCNP tier get sharper at CCIE. Yes, on-prem UC is genuinely shrinking — Metrigy's 2025 numbers show the global on-prem PBX/UC market down 4.6% to $1.8B with an 8.7% decline forecast for 2026, while UCaaS grew 6.1% to $23B. But Cisco holds 45.8% of the on-prem revenue that remains, which means the surviving estates are disproportionately CUCM estates — big, compliance-bound, and slow to leave — and, by most accounts in the community, the engineers who can run AND migrate them are leaving the field faster than the estates are. That's the scarcity play: postings still list 'CCIE Collaboration preferred,' recruiters still chase the remaining deep-CUCM people, and the highest-billing work in the niche — moving estates to Webex Calling and hybrid PSTN — is exactly what the v3.1 lab now tests. The equally honest counterweight: this is the smallest room of any CCIE track, and outside it the number means little. Take this mountain because you're already in the room, not to get into one.",
+  "when_to_get_it": "When you're operating at CCNP Collaboration level daily — not historically — and your market is one of the rooms that pays: a Cisco partner delivering collab, a large CUCM-standardized enterprise, or migration consulting. The 2026 version picture matters: CLCOR moved to v2.0 on February 3, 2026 (now 25% cloud and hybrid), while the lab remains v3.1 from July 2023 with no successor announced — so today's candidates sit a cloud-heavier written and a known, stable lab. The AI-module lab format change starts with CCIE Data Center in 2027 and reaches other tracks in phases; Cisco has announced no date for Collaboration, so a 12–18 month plan started now likely finishes under current rules — but verify the exam-topics page before booking, not after.",
+  "salary_range": "$120,000 – $190,000+ (senior collaboration engineering and consulting)",
+  "salary_note": "Hedge everything here: ZipRecruiter's 'CCIE Collaboration' page (June 2026) shows a ~$167K average with a $141–192K middle band, while its broader Cisco UC engineer figure runs ~$114K — keyword-scraped aggregates with opaque methodology, so treat them as rough bands, not promises. The realistic read: the credential attaches to senior estate-owner and migration-consultant roles concentrated at Cisco partners and compliance-bound enterprises, and migration work bills above steady-state administration. Cisco publishes no salary data.",
+  "exam_code": "350-801 CLCOR + 8-hour lab",
+  "exam_duration": "Written: 120 minutes · Lab: 8 hours",
+  "exam_format": "Step 1: pass CLCOR 350-801 (the same exam that anchors CCNP Collaboration — one pass serves both and earns Specialist – Collaboration Core). Step 2: the 8-hour hands-on lab (v3.1): Module 1 Design (3 hours, scenario-based, no device access, no backward navigation) + Module 2 Deploy, Operate and Optimize (5 hours, hands-on across CUCM, IM&P, Unity, Expressway, IOS XE gateways, and Webex Control Hub). Per-module minimums plus an aggregate pass score. Automation is woven through both modules — including a Webex bot task built from a provided Python skeleton. Fail the lab and you wait 30 days to rebook.",
+  "exam_questions": "Written: not published · Lab: scenario-based, not question-counted",
+  "exam_structure": [
+    {
+      "code": "350-801 CLCOR v2.0",
+      "name": "Implementing Cisco Collaboration Core Technologies",
+      "role": "Qualifying exam",
+      "price": "$400",
+      "note": "Same exam as CCNP Collaboration's core — one pass banks both. v2.0 live February 3, 2026: On-Prem Call Control 30%, Cloud & Hybrid Services 25% — Cisco's own '50/50 cloud and on-premises' rebalance. H.323 is gone; Webex Calling routing is in."
+    },
+    {
+      "code": "CCIE Collaboration Lab v3.1",
+      "name": "8-hour practical: 3h Design + 5h Deploy/Operate/Optimize",
+      "role": "Lab exam",
+      "price": "$1,600 per attempt",
+      "note": "v3.1 since July 2023 and still current as of July 2026 — no refresh announced to track CLCOR v2.0. Published platform: CUCM/IM&P/Unity 14.0, Expressway 14.2, Catalyst 8000V IOS XE 17.6, Webex Control Hub (delivered builds may run newer). The AI-module format change starts with Data Center in 2027; Collaboration timing unannounced."
+    }
+  ],
+  "official_url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/collaboration/ccie-collaboration/index.html",
+  "official_pricing_url": "https://ciscolearningservices.my.site.com/cln/s/article/book-your-expert-level-exams",
+  "recertification_note": "Standard CCIE terms: 3-year cycle, 120 CE credits on the unified ledger (or exam-mix options like 40 CE plus a core exam) — and since exam passes, Cisco U courses, and Cisco Live sessions all feed the same ledger, an active engineer maintains the number through ordinary professional learning. CE claims must be filed within 365 days of the activity. Let it fully lapse and you restart from the written.",
+  "last_verified": "July 2026",
+  "skills_covered": [
+    {
+      "category": "Call Control & Dial Plan — the 20% heart",
+      "items": [
+        "CUCM at expert depth: clustering, globalized dial plan design, calling privileges, transformations",
+        "SIP trunking and CUBE — including the multi-tenancy scenarios v3.1 added",
+        "Toll-fraud prevention and class-of-service design under exam pressure",
+        "Survivability the modern way: Webex Calling Survivability Gateway, not the retired ISDN/MGCP world",
+        "The depth difference: CCNP configures a dial plan; the lab defends one against six hours of edge cases"
+      ]
+    },
+    {
+      "category": "Edge Services & the Webex Calling Pivot (20%)",
+      "items": [
+        "Expressway for MRA and B2B — certificate work at expert depth, not wizard depth",
+        "Webex Calling PSTN options: Local Gateway in both registration- and certificate-based trunk modes",
+        "Cloud vs premises PSTN trade-offs — the design-module territory of the migration era",
+        "Edge Audio and the hybrid meeting edge",
+        "Endpoint security v3.1 doubled down on: SIP OAuth, CAPF, LSC-based authentication"
+      ]
+    },
+    {
+      "category": "Media, Meetings & Applications (30% combined)",
+      "items": [
+        "Media resources — transcoding, conferencing, MoH — engineered rather than defaulted",
+        "Webex meetings, meeting security, and Video Mesh (Cisco Meeting Server is gone from the blueprint)",
+        "Unity Connection: call handlers, SSO, and the voicemail estate nobody else at the company understands",
+        "Webex Contact Center fundamentals — the replacement for the retired UCCX/Finesse content",
+        "Media-quality troubleshooting in Control Hub — cloud-side diagnostics as a graded skill"
+      ]
+    },
+    {
+      "category": "Protocols, Infrastructure & Automation (30% combined)",
+      "items": [
+        "SIP at read-the-trace-cold depth — the protocol this entire track lives on",
+        "QoS for real-time traffic end to end: the network half of every call-quality ticket",
+        "Collaboration APIs and programmability — woven through both lab modules",
+        "The Python task: v3.1 grades a working Webex bot built from a provided code skeleton",
+        "User and endpoint management at scale: LDAP, SCIM into Control Hub, Cloud Connected UC"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Run the go/no-go test with this niche's extra question",
+      "description": "The standard CCIE questions apply — operating at CCNP level daily? market that pays for the number? 15–25 hours a week for 12–24 months? — plus one this track adds: is your career bet on collaboration itself sound? The niche is consolidating (on-prem UC revenue fell 4.6% in 2025 and is forecast to fall 8.7% in 2026), and the scarcity leverage only pays if you genuinely want this work and your market has Cisco estates worth expert money. Two noes means CCNP Collaboration plus migration project experience is the smarter spend — and that's advice, not consolation."
+    },
+    {
+      "step": 2,
+      "title": "Study to two blueprints — the written and lab have diverged",
+      "description": "CLCOR v2.0 (live February 2026) is 25% cloud and hybrid services with H.323 removed; the lab is still the July 2023 v3.1 blueprint. They overlap heavily but are not the same document — download both the CLCOR v2.0 exam-topics PDF and the v3.1 lab revision notes, and note what v3.1 already dropped: ISDN/PRI, MGCP, JTAPI, Cisco Meeting Server, UCCX. If your study materials teach those for the lab, they're two revisions stale."
+    },
+    {
+      "step": 3,
+      "title": "Clear CLCOR — it banks CCNP Collaboration's core too",
+      "description": "One $400 pass qualifies you for the lab, earns Specialist – Collaboration Core, and covers the CCNP Collaboration core requirement. Most CCIE candidates arrive already holding the CCNP; if you don't, our CCNP Collaboration guide covers the campaign. Sit it early — the eligibility clock and your lab-booking window run from the pass."
+    },
+    {
+      "step": 4,
+      "title": "Budget for reality, not for optimism",
+      "description": "Paper minimum: $2,000 ($400 written + one $1,600 lab attempt). Reality, per the folklore every track shares: most passers report 2–3 lab attempts ($3,200–4,800), travel and lodging per attempt, plus training and lab infrastructure ($1,000–5,000). Realistic all-in: $5,000–12,000. This track then adds its own tax — see step 5 — so write the full number down before you start."
+    },
+    {
+      "step": 5,
+      "title": "Solve the lab-access problem — the hardest of any CCIE track",
+      "description": "The blueprint runs full application VMs — CUCM, IM&P, Unity, Expressway — plus Webex Control Hub cloud access, which means heavy compute AND licensing AND a Webex org you can administer. Nobody home-labs this legally on a budget. The working stack: Cisco dCloud's free guided collaboration labs for daily fluency (full CUCM/IM&P/Expressway environments with a Cisco.com login), a Webex sandbox/trial org for the Control Hub side, and rack rentals from collab-specialist vendors for full-scale integration rehearsal. Budget racks as a line item, not a maybe."
+    },
+    {
+      "step": 6,
+      "title": "Drill SIP and dial plan until traces read like prose",
+      "description": "Every veteran of this lab says the same thing: the exam is ultimately a SIP exam wearing product costumes. Ladder diagrams you can read cold, dial-plan logic you can design and defend, translation rules you can debug on an IOS XE gateway at hour six. This is also the most transferable skill on the blueprint — it survives every migration."
+    },
+    {
+      "step": 7,
+      "title": "Give the cloud half real hours — it's 35%+ of the lab now",
+      "description": "v3.1 made Webex Calling dial plans, Local Gateway (both trunk modes), Edge Audio, Video Mesh, Webex Contact Center basics, and Control Hub media troubleshooting graded material — and added a Python Webex-bot task from a provided skeleton. On-prem veterans consistently underprepare exactly here because it isn't their day job. If you can't script a basic bot or trace a media-quality issue in Control Hub, you're not ready, whatever your CUCM depth."
+    },
+    {
+      "step": 8,
+      "title": "Train the Design module as its own discipline",
+      "description": "Module 1 is 3 hours of scenario-based design with no device access and no going back — cloud-vs-premises PSTN trade-offs, migration sequencing, security architecture, justified rather than configured. Cisco Live on-demand collaboration architecture sessions are the best free training for it. Config mastery alone fails this module, and first-attempt stories regularly name it as the ambush."
+    },
+    {
+      "step": 9,
+      "title": "Book with logistics in the plan, then maintain the number",
+      "description": "Lab attempts run $1,600 at Cisco facilities — book far ahead, arrive rested, and know the 30-day retake wait. Treat a failed first attempt as the statistically normal outcome the folklore says it is. After the number: 120 CE credits per 3 years, fed by ordinary learning (Cisco U, Cisco Live, exam passes), with CE claims filed within 365 days. Never let it fully lapse — expired means restarting from the written."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "CCIE Collaboration v3.1 Exam Topics (Cisco Learning Network)",
+      "url": "https://learningnetwork.cisco.com/s/ccie-collaboration-exam-topics",
+      "type": "Official Documentation",
+      "note": "The lab contract: domain weights, equipment list, and where any future revision or AI-module date for this track will appear first."
+    },
+    {
+      "name": "CLCOR 350-801 v2.0 Exam Topics PDF",
+      "url": "https://learningcontent.cisco.com/documents/marketing/exam-topics/new-350-801-CLCOR-v2.0.pdf",
+      "type": "Official Documentation",
+      "note": "The written blueprint that went live February 3, 2026 — 30% on-prem call control, 25% cloud and hybrid. Your written prep starts and ends against this document."
+    },
+    {
+      "name": "CCIE Collaboration v3.1 Lab Revision Notes PDF",
+      "url": "https://learningcontent.cisco.com/documents/marketing/exam-topics/CCIE_Collaboration_rel_notes_minor_rev_012023.pdf",
+      "type": "Official Documentation",
+      "note": "Cisco's own v3.0→v3.1 diff: what got added (Webex Calling, Local Gateway, the Python bot task) and what died (ISDN, MGCP, CMS, UCCX). The fastest stale-material detector available."
+    },
+    {
+      "name": "Cisco dCloud Collaboration Labs",
+      "url": "https://dcloud.cisco.com",
+      "type": "Hands-on Labs",
+      "note": "Free guided CUCM/IM&P/Expressway environments with any Cisco.com account — the daily-fluency answer to this track's brutal home-lab problem."
+    },
+    {
+      "name": "Cisco Live On-Demand — Collaboration Architecture Sessions",
+      "url": "https://www.ciscolive.com/on-demand.html",
+      "type": "Video Sessions",
+      "note": "Free expert-level design and migration-architecture content — the best training that exists for the 3-hour Design module."
+    },
+    {
+      "name": "Official AI-Module Announcement",
+      "url": "https://learningnetwork.cisco.com/s/article/CCIE-Practical-Exam-Format-with-AI-Module",
+      "type": "Official Documentation",
+      "note": "The coming lab-format change (2h Design + 1h AI DOO + 5h DOO), rolling out per track from 2027 starting with Data Center. No Collaboration date announced — check here before believing any third-party claim of one."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Cisco Press – CLCOR 350-801 Official Cert Guide (2nd ed.)",
+      "type": "Book",
+      "price": "~$50–$70",
+      "best_for": "The written-exam spine — SIP, call control, and QoS chapters hold up; supplement with the free v2.0 topics PDF since the print edition predates the February 2026 refresh",
+      "affiliate_url": "https://www.amazon.com/s?k=CCNP+and+CCIE+Collaboration+Core+CLCOR+350-801+Official+Cert+Guide&tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_ccie_collab",
+      "affiliate": true,
+      "note": "Pair every chapter against the v2.0 blueprint — the cloud/hybrid 25% is where the book runs thinnest."
+    },
+    {
+      "provider": "Cisco U. – CCIE Collaboration Path",
+      "type": "Official Training",
+      "price": "Varies — commonly employer-funded via Learning Credits",
+      "best_for": "Blueprint-aligned official prep that also generates the CE credits you'll need to keep the number alive",
+      "affiliate_url": "https://u.cisco.com/certifications/ccie-collaboration",
+      "affiliate_label": "View Cisco U",
+      "affiliate_event": "ciscou_ccie_collab",
+      "affiliate": false,
+      "note": "Plain reference link. The healthcare/government/finance shops running big CUCM estates are exactly the ones sitting on unused Learning Credits — ask before self-funding."
+    },
+    {
+      "provider": "VoiceBootcamp – Cisco Collaboration Training",
+      "type": "Specialist Training + Racks",
+      "price": "Varies by program",
+      "best_for": "Collab-specialist structured training and rack access — one of the few vendors focused on this exact track's stack",
+      "affiliate_url": "https://www.voicebootcamp.com/training/cisco-collaboration-training/cisco-clcor-training",
+      "affiliate_label": "View VoiceBootcamp",
+      "affiliate_event": "voicebootcamp_ccie_collab",
+      "affiliate": false,
+      "note": "Plain reference link. Rack access matters more on this track than any other — full UC application stacks are what home labs can't provide."
+    },
+    {
+      "provider": "Kevin Wallace Training – CLCOR Video Series",
+      "type": "Video Course",
+      "price": "Varies — check current bundle",
+      "best_for": "Video-first CLCOR prep from one of the longest-standing collaboration instructors in the business",
+      "affiliate_url": "https://www.kwtrain.com/clcor-video-series",
+      "affiliate_label": "View Kevin Wallace Training",
+      "affiliate_event": "kwtrain_ccie_collab",
+      "affiliate": false,
+      "note": "Plain reference link. Confirm the series covers CLCOR v2.0 content before making it your primary — the refresh is recent and catalogs lag."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Written via Pearson VUE · Lab via Cisco's expert-exam booking",
+      "url": "https://ciscolearningservices.my.site.com/cln/s/article/book-your-expert-level-exams",
+      "note": "$400 written + $1,600 per lab attempt, taxes and travel on you — and this track adds rack-rental costs for the licensed UC stack. Realistic all-in with the typical 2–3 attempts: $5,000–12,000. Cisco Learning Credits redeem for all of it, so ask your employer before self-funding anything."
+    }
+  ],
+  "faq": [
+    {
+      "question": "CCNP Collaboration or CCIE — where should I honestly stop?",
+      "answer": "For most collaboration engineers: CCNP plus real migration project experience, and that's the better career move, not a consolation. The CCNP proves you can run the estate; migration delivery (on-prem to Webex Calling, hybrid PSTN design) is what actually raises the ceiling in this niche, and you can build that reputation without a $5,000–12,000 lab campaign. The CCIE is the right call in specific rooms: Cisco partners delivering collab (the number itself has business value), migration consulting where you bill on it, and the large compliance-bound estates that keep a resident expert. If you can't name which of those rooms you're in, you have your answer."
+    },
+    {
+      "question": "Is an expert-level collaboration cert wise in 2026 when everything's going UCaaS?",
+      "answer": "It's the same contrarian bet as the CCNP tier, with higher stakes. The honest numbers: UCaaS grew 6.1% in 2025 to $23B while on-prem PBX/UC fell 4.6% to $1.8B, with steeper decline forecast — the niche is genuinely shrinking. But Cisco holds 45.8% of the on-prem revenue that remains, so the surviving estates are mostly CUCM estates, they drain slowly, and the expert bench appears to be thinning faster than the install base — an anecdotal read, but a widely shared one. Crucially, the lab itself has already pivoted with the market — v3.1 dropped ISDN/MGCP/CMS/UCCX and added Webex Calling, cloud PSTN, and Control Hub — so you're certifying as a hybrid migration-era expert, not a legacy-PBX one. Good bet if you're already in the work; bad bet as an outsider's growth play."
+    },
+    {
+      "question": "What does it really cost?",
+      "answer": "Paper: $2,000 ($400 written + $1,600 lab). Reality, per the commonly cited folklore: 2–3 lab attempts for most passers, travel and lodging per attempt, 12–24 months of training — landing at $5,000–12,000 all-in. This track's specific surcharge is lab infrastructure: full UC application VMs plus Webex org access make self-hosting harder than any routing track, so rack rentals belong in the budget from day one. Learning Credits, if your employer holds them, blunt all of it."
+    },
+    {
+      "question": "What's the pass rate, and how long does prep take?",
+      "answer": "Cisco publishes neither — treat every specific figure as folklore. The commonly cited CCIE numbers: 12–18 months of prep, 1,000+ hours, and most passers needing more than one lab attempt. Engineers already living in CUCM/Expressway/Webex estates daily report needing meaningfully less, because large parts of the blueprint are their job. Whatever your starting point, plan financially and emotionally for a failed first attempt — the passers' stories almost all include one, and the 30-day retake wait is survivable when it's in the plan."
+    },
+    {
+      "question": "The written is v2.0 but the lab is v3.1 — is a lab refresh about to ambush me?",
+      "answer": "As of July 2026, no refresh has been announced: Cisco's cert page still names Practical Exam v3.1, and the February 2026 collaboration overhaul (CLCOR v2.0, concentration renames) said nothing about the lab. The qualifying requirement is by exam number, so you sit the cloud-heavier v2.0 written against the 2023-vintage v3.1 lab blueprint — study to both documents. Two honest caveats: Cisco updates delivered lab software without blueprint revisions (the published CUCM 14.0-era versions may run newer), and the AI-module format change is coming to all CCIE tracks in phases from 2027 with no Collaboration date named. Re-check the official exam-topics page before you book, not after."
+    },
+    {
+      "question": "How do I even lab this track? Nobody has a spare CUCM cluster.",
+      "answer": "Correct — this is the hardest home-lab of any CCIE, because the blueprint runs full application VMs (CUCM, IM&P, Unity, Expressway) plus Webex Control Hub, which means compute, licensing, AND cloud org access. The working answer is layered: dCloud's free guided labs for daily product fluency, a Webex sandbox/trial org for the Control Hub and API side (including practicing the Python bot task), and rented racks from collab-specialist vendors for full-scale integration rehearsal before burning a $1,600 attempt. Trying to brute-force a home build is where this track's candidates waste the most money and morale."
+    },
+    {
+      "question": "How does recertification work once I have the number?",
+      "answer": "The standard modern CCIE terms: 3-year cycle, 120 CE credits — or mixed paths like 40 CE plus a technology core exam — with exam passes, Cisco U courses, and Cisco Live sessions all feeding one ledger, and CE claims due within 365 days of the activity. An active collaboration engineer generates most of this through ordinary work-adjacent learning. The one hard rule: never let it fully lapse, because expired means restarting the entire process from the written."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CCNP Collaboration",
+      "slug": "ccnp-collaboration",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "Its CLCOR core is this lab's qualifying exam — and in a shrinking niche, stopping at the professional tier is often the wiser call."
+    },
+    {
+      "title": "CCIE Enterprise Infrastructure",
+      "slug": "ccie-enterprise-infrastructure",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The generalist expert alternative — same lab economics, a far bigger job market, and the QoS/routing half of call quality is its home turf."
+    },
+    {
+      "title": "CCIE Security",
+      "slug": "ccie-security",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The other specialist-track twin — same lab folklore and costs, and the certificate/identity work in collab edges overlaps its territory."
+    }
+  ],
+  "seo_title": "CCIE Collaboration Guide – Costs, Lab & ROI | CertBlueprint",
+  "seo_description": "The honest CCIE Collaboration briefing: real $5–12K costs, the v3.1 lab's Webex pivot, CLCOR v2.0 skew, and whether a shrinking on-prem niche still pays."
+}

@@ -1,9 +1,19 @@
+# Secrets. .env holds CLOUDFLARE_API_TOKEN; service-account.json is the
+# Google Search Console key. Neither has ever been committed — keep it that way.
 .env
 .env.*
-node_modules/
-.wrangler/
-dist/
-.astro/
-nppBackup/
+!.env.example
 service-account.json
 .gsc-progress.json
+
+# Dependencies and build output
+node_modules/
+dist/
+.astro/
+.wrangler/
+
+# Editor / OS noise
+nppBackup/
+.DS_Store
+Thumbs.db
+*.log

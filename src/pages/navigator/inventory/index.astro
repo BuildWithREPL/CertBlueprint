@@ -1,0 +1,514 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import '../../../styles/navigator.css';
+import FAQAccordion from '../../../components/FAQAccordion.astro';
+import { TECHNOLOGIES, TECHNOLOGY_BY_SLUG, TECHNOLOGY_CATEGORIES } from '../../../lib/navigator/data/technologies';
+import { CAPABILITIES, CAPABILITY_BY_SLUG } from '../../../lib/navigator/data/capabilities';
+import { DOMAIN_BY_ID } from '../../../lib/navigator/data/domains';
+
+// Worked example, built from the real graph so it cannot drift from the tool.
+const exampleTech =
+  TECHNOLOGY_BY_SLUG['fortigate'] ??
+  TECHNOLOGIES.find((t) => t.revelation && t.capabilities.length >= 4) ??
+  TECHNOLOGIES[0];
+const exampleCaps = exampleTech.capabilities.map((s) => CAPABILITY_BY_SLUG[s]).filter(Boolean);
+const exampleDomains = [...new Set(exampleCaps.flatMap((c) => c.domains))]
+  .map((id) => DOMAIN_BY_ID[id]?.name)
+  .filter(Boolean);
+
+const faq = [
+  {
+    question: 'What counts as having "worked with" a technology?',
+    answer: 'Tick it if you have configured, administered, troubleshot, or built something with it — at work, in a lab, or in a homelab. Leave it if you have only heard of it or watched someone else use it. Nothing here checks your answers, so over-ticking only makes the picture less useful to you.',
+  },
+  {
+    question: 'Is this a skills test?',
+    answer: 'No. It does not measure how good you are with anything. It shows what kinds of work your experience already involves, which is often broader than your job title suggests.',
+  },
+  {
+    question: 'Why capabilities instead of job titles?',
+    answer: 'The same title means very different work at different employers, and vendors change. A capability such as firewall policy or identity federation carries over when you switch products or companies, and it is closer to what a hiring manager is actually trying to find.',
+  },
+  {
+    question: 'What do the percentages mean?',
+    answer: 'On the fields, 100% is simply your strongest field in this selection; the others are relative to it. On roles, the percentage is a similarity score between your capability profile and the role’s profile — not a measure of readiness or a chance of being hired.',
+  },
+  {
+    question: 'A technology I use is missing. What should I do?',
+    answer: 'Tick the closest equivalents — the capability is what matters, not the brand. Then tell us through the contact page which technology is missing so it can be added.',
+  },
+  {
+    question: 'Does this change my assessment result?',
+    answer: 'Yes, if you take the assessment afterwards in the same browser. Your inventory is blended in at a deliberately lower weight than your scenario answers, and the results page tells you that it was included.',
+  },
+];
+
+const title = 'Technology Inventory — What Your Experience Actually Maps To | CertBlueprint';
+const description =
+  'Tick off the technologies you have worked with and see the capabilities they represent, the fields they span, and the roles they point at. Many people find they have far more security or cloud experience than their job title says.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Career Navigator', href: '/navigator/' },
+  { label: 'Technology inventory', href: '/navigator/inventory/' },
+];
+
+const byCategory = TECHNOLOGY_CATEGORIES.map((category) => ({
+  category,
+  items: TECHNOLOGIES.filter((t) => t.category === category),
+})).filter((g) => g.items.length > 0);
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs}>
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-8">
+    <p class="font-mono text-xs uppercase tracking-widest mb-3" style="color: var(--nav-emerald);">
+      Already working in IT
+    </p>
+    <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-balance" style="color: var(--cb-text);">
+      You may already have more experience in a field than your job title says.
+    </h1>
+    <div class="mt-4 space-y-3 text-base leading-relaxed" style="color: var(--cb-text-sub); max-width: 62ch;">
+      <p>
+        Job titles are terrible at describing what people can actually do. Someone who has run
+        FortiGate firewalls, Forescout and Cisco ISE for six years has been doing network access
+        control, segmentation, posture assessment and policy enforcement — which is cybersecurity
+        engineering, whatever the org chart calls it.
+      </p>
+      <p>
+        Tick what you have genuinely worked with. We map each one to <strong>capabilities</strong> rather
+        than to job titles, because capabilities survive a change of vendor and a change of employer.
+      </p>
+    </div>
+  </section>
+
+  {/* ── Picker ─────────────────────────────────────────────────── */}
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+    <div class="flex flex-wrap items-center gap-3 mb-5">
+      <label for="nav-tech-search" class="sr-only">Filter technologies</label>
+      <input
+        id="nav-tech-search"
+        type="search"
+        placeholder="Filter — try “fortigate”, “bgp”, “powershell”…"
+        autocomplete="off"
+        class="flex-1 min-w-[14rem] px-3 py-2 rounded-lg border text-sm"
+        style="background: var(--cb-bg-card); border-color: var(--cb-border); color: var(--cb-text);"
+      />
+      <span id="nav-tech-count" class="text-sm font-medium" style="color: var(--cb-text-muted);" role="status">
+        0 selected
+      </span>
+      <button
+        id="nav-tech-clear"
+        type="button"
+        class="text-sm font-medium px-3 py-2 rounded-lg border"
+        style="color: var(--cb-text-sub); border-color: var(--cb-border); background: var(--cb-bg-card);"
+      >
+        Clear
+      </button>
+    </div>
+
+    <form id="nav-tech-form" class="space-y-6">
+      {
+        byCategory.map((group) => (
+          <fieldset data-category={group.category}>
+            <legend
+              class="text-xs font-bold uppercase tracking-widest mb-2.5"
+              style="color: var(--cb-text-muted);"
+            >
+              {group.category}
+            </legend>
+            <div class="flex flex-wrap gap-2">
+              {group.items.map((tech) => (
+                <label
+                  class="nav-card cursor-pointer px-3 py-1.5 text-sm inline-flex items-center gap-2"
+                  data-tech={tech.slug}
+                  data-search={[tech.name, tech.slug, ...(tech.aka ?? [])].join(' ').toLowerCase()}
+                  title={tech.blurb}
+                >
+                  <input
+                    type="checkbox"
+                    name="tech"
+                    value={tech.slug}
+                    class="accent-current"
+                    style="accent-color: var(--cb-accent);"
+                  />
+                  <span style="color: var(--cb-text);">{tech.name}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+        ))
+      }
+    </form>
+
+    <p id="nav-tech-empty" class="text-sm mt-4" style="color: var(--cb-text-muted);" hidden>
+      Nothing matches that. Try a shorter word — the filter also searches alternative names.
+    </p>
+  </section>
+
+  {/* ── Insight ────────────────────────────────────────────────── */}
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <div id="nav-insight" hidden></div>
+
+    <div id="nav-insight-hint" class="nav-card p-5">
+      <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+        Select a few technologies above and the analysis appears here. Nothing is submitted anywhere —
+        the mapping runs in this page.
+      </p>
+    </div>
+
+    {/* Military equipment is largely absent from the technology list above, and
+        listing it would turn this into a defence catalogue. The capability
+        version of the same analysis is the right door for that experience. */}
+    <a href="/navigator/military/" class="nav-card nav-card--railed block p-5 pl-6 mt-4" style="--nav-accent: var(--nav-amber);">
+      <p class="font-bold text-base mb-1" style="color: var(--cb-text);">
+        Most of your experience in uniform?
+      </p>
+      <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+        The list above is civilian tooling, so it will miss a lot of what you actually did. The
+        military translator runs the same analysis starting from capabilities instead of product
+        names. <span class="font-semibold" style="color: var(--nav-amber);">Open it →</span>
+      </p>
+    </a>
+  </section>
+
+  {/* ── Explainer ──────────────────────────────────────────────── */}
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 space-y-12">
+    <div aria-labelledby="how-heading">
+      <h2 id="how-heading" class="text-xl font-bold tracking-tight mb-2" style="color: var(--cb-text);">
+        How the mapping works
+      </h2>
+      <p class="text-sm leading-relaxed mb-4" style="color: var(--cb-text-sub); max-width: 62ch;">
+        The list above holds {TECHNOLOGIES.length} technologies across {TECHNOLOGY_CATEGORIES.length} categories. None of
+        them maps straight to a job title. Each one maps to the <strong>capabilities</strong> it
+        demonstrates — {CAPABILITIES.length} in total — and the fields and roles fall out of which
+        capabilities pile up.
+      </p>
+      <div class="nav-card p-5" style="--nav-accent: var(--nav-emerald);">
+        <p class="text-xs font-semibold uppercase tracking-wider mb-2" style="color: var(--cb-text-muted);">Worked example</p>
+        <p class="text-sm leading-relaxed" style="color: var(--cb-text);">
+          Ticking <strong>{exampleTech.name}</strong> counts as evidence of {exampleCaps.length} capabilities:
+        </p>
+        <ul class="flex flex-wrap gap-2 mt-3">
+          {exampleCaps.map((c) => (
+            <li class="text-xs px-2.5 py-1 rounded-full border" style="border-color: var(--cb-border); color: var(--cb-text-sub);">{c.name}</li>
+          ))}
+        </ul>
+        {exampleDomains.length > 0 && (
+          <p class="text-sm leading-relaxed mt-3" style="color: var(--cb-text-sub);">
+            Between them, those touch {exampleDomains.join(', ')} — which is why one product on its own can
+            say more about your experience than the title on your badge.
+          </p>
+        )}
+        {exampleTech.revelation && (
+          <p class="text-sm leading-relaxed mt-3" style="color: var(--cb-text-sub);">{exampleTech.revelation}</p>
+        )}
+      </div>
+    </div>
+
+    <div aria-labelledby="read-heading">
+      <h2 id="read-heading" class="text-xl font-bold tracking-tight mb-3" style="color: var(--cb-text);">
+        Reading your results
+      </h2>
+      <dl class="grid sm:grid-cols-2 gap-3">
+        <div class="nav-card p-4" style="--nav-accent: var(--cb-border);">
+          <dt class="font-semibold text-sm mb-1" style="color: var(--cb-text);">What this actually means</dt>
+          <dd class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">Notes on specific tools whose real scope people most often underestimate. They appear only for technologies that have one.</dd>
+        </div>
+        <div class="nav-card p-4" style="--nav-accent: var(--cb-border);">
+          <dt class="font-semibold text-sm mb-1" style="color: var(--cb-text);">Capabilities</dt>
+          <dd class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">Ranked by how many of your ticked technologies back each one up, with the list of which ones. Several tools pointing at the same capability is stronger evidence than one.</dd>
+        </div>
+        <div class="nav-card p-4" style="--nav-accent: var(--cb-border);">
+          <dt class="font-semibold text-sm mb-1" style="color: var(--cb-text);">Fields</dt>
+          <dd class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">Relative, not absolute: your strongest field reads 100% and the rest are measured against it. Two or three strong fields usually means an intersection role is worth a look.</dd>
+        </div>
+        <div class="nav-card p-4" style="--nav-accent: var(--cb-border);">
+          <dt class="font-semibold text-sm mb-1" style="color: var(--cb-text);">Roles</dt>
+          <dd class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">The six roles whose profile is most similar to your capability profile. It says what your experience resembles — not whether you would enjoy it, or whether you are ready to apply.</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div aria-labelledby="privacy-heading" class="nav-card p-5" style="--nav-accent: var(--nav-emerald);">
+      <h2 id="privacy-heading" class="text-lg font-bold mb-2" style="color: var(--cb-text);">Where your selections go</h2>
+      <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub); max-width: 62ch;">
+        The analysis runs in this page. Your ticks are saved only in this browser so they survive a
+        refresh, and are never sent to us. <strong>Clear</strong> removes them. If you use a shared
+        computer, clear them when you are done.
+      </p>
+    </div>
+
+    <div aria-labelledby="next-heading">
+      <h2 id="next-heading" class="text-xl font-bold tracking-tight mb-3" style="color: var(--cb-text);">
+        What to do with it
+      </h2>
+      <ul class="grid sm:grid-cols-2 gap-3">
+        <li><a href="/navigator/assessment/" class="nav-card block p-4 h-full" style="--nav-accent: var(--cb-accent);"><span class="block font-semibold text-sm mb-1" style="color: var(--cb-text);">Find out what you would enjoy →</span><span class="block text-sm leading-relaxed" style="color: var(--cb-text-sub);">The scenario assessment, with this inventory factored in automatically.</span></a></li>
+        <li><a href="/navigator/compare/" class="nav-card block p-4 h-full" style="--nav-accent: var(--cb-accent);"><span class="block font-semibold text-sm mb-1" style="color: var(--cb-text);">Compare two roles →</span><span class="block text-sm leading-relaxed" style="color: var(--cb-text-sub);">Where the work of two close roles overlaps, and where it really differs.</span></a></li>
+        <li><a href="/navigator/technologies/" class="nav-card block p-4 h-full" style="--nav-accent: var(--cb-accent);"><span class="block font-semibold text-sm mb-1" style="color: var(--cb-text);">Browse the technology directory →</span><span class="block text-sm leading-relaxed" style="color: var(--cb-text-sub);">Every technology above, in plain English, with the roles that use it.</span></a></li>
+        <li><a href="/navigator/trials/" class="nav-card block p-4 h-full" style="--nav-accent: var(--cb-accent);"><span class="block font-semibold text-sm mb-1" style="color: var(--cb-text);">Try the work this weekend →</span><span class="block text-sm leading-relaxed" style="color: var(--cb-text-sub);">Free hands-on trials of the real work, before you pay for a course.</span></a></li>
+      </ul>
+    </div>
+
+    <div aria-labelledby="faq-heading">
+      <h2 id="faq-heading" class="text-xl font-bold tracking-tight mb-4" style="color: var(--cb-text);">
+        Common questions
+      </h2>
+      <FAQAccordion items={faq} />
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import { analyseInventory } from '../../../lib/navigator/engine/inventory';
+  import { loadInventory, saveInventory, clearInventory } from '../../../lib/navigator/engine/session';
+  import { DOMAIN_BY_ID, ACCENT_VAR } from '../../../lib/navigator/data/domains';
+
+  const form = document.getElementById('nav-tech-form') as HTMLFormElement;
+  const search = document.getElementById('nav-tech-search') as HTMLInputElement;
+  const count = document.getElementById('nav-tech-count')!;
+  const clearBtn = document.getElementById('nav-tech-clear')!;
+  const insight = document.getElementById('nav-insight')!;
+  const hint = document.getElementById('nav-insight-hint')!;
+  const emptyMsg = document.getElementById('nav-tech-empty')!;
+
+  const boxes = [...form.querySelectorAll<HTMLInputElement>('input[name="tech"]')];
+
+  function selected(): string[] {
+    return boxes.filter((b) => b.checked).map((b) => b.value);
+  }
+
+  function el<K extends keyof HTMLElementTagNameMap>(tag: K, text?: string): HTMLElementTagNameMap[K] {
+    const node = document.createElement(tag);
+    if (text !== undefined) node.textContent = text;
+    return node;
+  }
+
+  function heading(text: string, sub?: string): DocumentFragment {
+    const frag = document.createDocumentFragment();
+    const h = el('h2', text);
+    h.style.fontSize = '1.25rem';
+    h.style.fontWeight = '700';
+    h.style.color = 'var(--cb-text)';
+    h.style.margin = '2rem 0 0.3rem';
+    frag.appendChild(h);
+    if (sub) {
+      const p = el('p', sub);
+      p.style.fontSize = '0.875rem';
+      p.style.lineHeight = '1.6';
+      p.style.color = 'var(--cb-text-sub)';
+      p.style.maxWidth = '62ch';
+      p.style.marginBottom = '0.9rem';
+      frag.appendChild(p);
+    }
+    return frag;
+  }
+
+  function render() {
+    const slugs = selected();
+    count.textContent = `${slugs.length} selected`;
+    saveInventory(slugs);
+
+    if (slugs.length === 0) {
+      insight.hidden = true;
+      hint.hidden = false;
+      return;
+    }
+    hint.hidden = true;
+    insight.hidden = false;
+    insight.replaceChildren();
+
+    const analysis = analyseInventory(slugs);
+
+    /* ── The revelations, first. This is the point of the feature. ── */
+    if (analysis.revelations.length > 0) {
+      insight.appendChild(
+        heading(
+          'What this actually means',
+          'These are the things people most often do not realise about the tools they already use.',
+        ),
+      );
+      for (const { technology, text } of analysis.revelations.slice(0, 5)) {
+        const card = el('div');
+        card.className = 'nav-card nav-card--railed';
+        card.style.setProperty('--nav-accent', 'var(--nav-emerald)');
+        card.style.padding = '1rem 1rem 1rem 1.25rem';
+        card.style.marginBottom = '0.6rem';
+        const name = el('p', technology.name);
+        name.style.fontWeight = '700';
+        name.style.fontSize = '0.875rem';
+        name.style.color = 'var(--cb-text)';
+        const body = el('p', text);
+        body.style.fontSize = '0.875rem';
+        body.style.lineHeight = '1.6';
+        body.style.color = 'var(--cb-text-sub)';
+        body.style.marginTop = '0.25rem';
+        card.append(name, body);
+        insight.appendChild(card);
+      }
+    }
+
+    /* ── Capabilities ── */
+    insight.appendChild(
+      heading(
+        'Capabilities your tooling demonstrates',
+        'A capability is what you can do. It outlives the product, and it is what a hiring manager is actually buying.',
+      ),
+    );
+    const capList = el('div');
+    capList.style.display = 'grid';
+    capList.style.gap = '0.5rem';
+    for (const { capability, reinforcedBy } of analysis.capabilities.slice(0, 14)) {
+      const row = el('div');
+      row.className = 'nav-card';
+      row.style.padding = '0.7rem 0.9rem';
+      const name = el('p', capability.name);
+      name.style.fontWeight = '600';
+      name.style.fontSize = '0.875rem';
+      name.style.color = 'var(--cb-text)';
+      const blurb = el('p', capability.blurb);
+      blurb.style.fontSize = '0.8rem';
+      blurb.style.color = 'var(--cb-text-sub)';
+      blurb.style.marginTop = '0.1rem';
+      const from = el('p', `From: ${reinforcedBy.map((t) => t.name).join(', ')}`);
+      from.style.fontSize = '0.72rem';
+      from.style.color = 'var(--cb-text-muted)';
+      from.style.marginTop = '0.3rem';
+      row.append(name, blurb, from);
+      capList.appendChild(row);
+    }
+    insight.appendChild(capList);
+
+    /* ── Fields spanned ── */
+    insight.appendChild(
+      heading(
+        'The fields your experience already spans',
+        'Derived from capabilities, not from what anyone has called your job.',
+      ),
+    );
+    const domainList = el('div');
+    domainList.style.display = 'grid';
+    domainList.style.gap = '0.7rem';
+    for (const { id, strength } of analysis.domains) {
+      const domain = DOMAIN_BY_ID[id];
+      if (!domain) continue;
+      const wrap = el('div');
+      const head = el('div');
+      head.style.display = 'flex';
+      head.style.justifyContent = 'space-between';
+      head.style.fontSize = '0.875rem';
+      head.style.marginBottom = '0.25rem';
+      const label = el('a', domain.name);
+      label.href = `/navigator/explore/${domain.id}/`;
+      label.style.color = 'var(--cb-text)';
+      label.style.fontWeight = '500';
+      const pct = el('span', `${Math.round(strength * 100)}%`);
+      pct.style.fontFamily = 'ui-monospace, monospace';
+      pct.style.fontSize = '0.75rem';
+      pct.style.color = 'var(--cb-text-muted)';
+      head.append(label, pct);
+      const track = el('div');
+      track.className = 'nav-bar-track';
+      const fill = el('div');
+      fill.className = 'nav-bar-fill';
+      fill.style.setProperty('--nav-accent', `var(${ACCENT_VAR[domain.accent]})`);
+      fill.style.width = '0%';
+      track.appendChild(fill);
+      requestAnimationFrame(() =>
+        requestAnimationFrame(() => {
+          fill.style.width = `${Math.round(strength * 100)}%`;
+        }),
+      );
+      wrap.append(head, track);
+      domainList.appendChild(wrap);
+    }
+    insight.appendChild(domainList);
+
+    /* ── Roles implied ── */
+    insight.appendChild(
+      heading(
+        'Roles this experience points at',
+        'Based on the capability profile alone. Whether you would enjoy them is a separate question — that is what the scenarios are for.',
+      ),
+    );
+    const roleList = el('div');
+    roleList.style.display = 'grid';
+    roleList.style.gap = '0.5rem';
+    for (const role of analysis.impliedRoles) {
+      const link = el('a', undefined);
+      link.href = `/navigator/roles/${role.slug}/`;
+      link.className = 'nav-card';
+      link.style.display = 'flex';
+      link.style.justifyContent = 'space-between';
+      link.style.padding = '0.7rem 0.9rem';
+      link.style.textDecoration = 'none';
+      const name = el('span', role.name);
+      name.style.fontWeight = '600';
+      name.style.fontSize = '0.875rem';
+      name.style.color = 'var(--cb-text)';
+      const pct = el('span', `${role.percent}%`);
+      pct.style.fontFamily = 'ui-monospace, monospace';
+      pct.style.fontSize = '0.8rem';
+      pct.style.color = 'var(--cb-accent-text)';
+      link.append(name, pct);
+      roleList.appendChild(link);
+    }
+    insight.appendChild(roleList);
+
+    const cta = el('div');
+    cta.className = 'nav-card';
+    cta.style.setProperty('--nav-accent', 'var(--cb-accent)');
+    cta.style.padding = '1.1rem';
+    cta.style.marginTop = '1.5rem';
+    const ctaTitle = el('p', 'Now find out which of these you would actually enjoy');
+    ctaTitle.style.fontWeight = '700';
+    ctaTitle.style.color = 'var(--cb-text)';
+    const ctaBody = el(
+      'p',
+      'Having done something and wanting to keep doing it are different. Your inventory will be factored into the scenarios at a lower weight than your answers.',
+    );
+    ctaBody.style.fontSize = '0.875rem';
+    ctaBody.style.lineHeight = '1.55';
+    ctaBody.style.color = 'var(--cb-text-sub)';
+    ctaBody.style.margin = '0.25rem 0 0.6rem';
+    const ctaLink = el('a', 'Take the scenarios →');
+    ctaLink.href = '/navigator/assessment/';
+    ctaLink.style.fontWeight = '600';
+    ctaLink.style.fontSize = '0.875rem';
+    ctaLink.style.color = 'var(--cb-accent-text)';
+    cta.append(ctaTitle, ctaBody, ctaLink);
+    insight.appendChild(cta);
+  }
+
+  /* ── Filtering ── */
+  search.addEventListener('input', () => {
+    const q = search.value.trim().toLowerCase();
+    let visible = 0;
+    for (const label of form.querySelectorAll<HTMLElement>('label[data-tech]')) {
+      const match = !q || (label.dataset.search ?? '').includes(q);
+      label.hidden = !match;
+      if (match) visible++;
+    }
+    for (const set of form.querySelectorAll<HTMLElement>('fieldset')) {
+      const any = [...set.querySelectorAll<HTMLElement>('label[data-tech]')].some((l) => !l.hidden);
+      set.hidden = !any;
+    }
+    emptyMsg.hidden = visible > 0;
+  });
+
+  form.addEventListener('change', render);
+
+  clearBtn.addEventListener('click', () => {
+    boxes.forEach((b) => (b.checked = false));
+    clearInventory();
+    render();
+  });
+
+  // Restore a previously built inventory. It lives in localStorage because the
+  // user built it deliberately and would be annoyed to lose it on a refresh.
+  const stored = new Set(loadInventory());
+  if (stored.size > 0) {
+    boxes.forEach((b) => (b.checked = stored.has(b.value)));
+  }
+  render();
+</script>

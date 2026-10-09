@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
-import CertCard from '../../../components/CertCard.astro';
 import FAQAccordion from '../../../components/FAQAccordion.astro';
 import { getEntry } from 'astro:content';
 
@@ -18,11 +17,13 @@ const breadcrumbs = [
 // The certification ladder — every live CertBlueprint guide, grouped by tier.
 const guideLadder = [
   {
-    tier: 'Entry — $125 each, no prerequisites',
+    tier: 'Entry & practitioner — $125–$200, no prerequisites',
     guides: [
       { title: 'CCST Networking (100-150)', description: 'The $125 first step toward CCNA — free official NetAcad training, 50-minute exam.', href: '/vendors/cisco/ccst-networking/' },
       { title: 'CCST Cybersecurity (100-160)', description: 'The entry security checkpoint backed by 120 free NetAcad hours — honest framing included.', href: '/vendors/cisco/ccst-cybersecurity/' },
       { title: 'CCST IT Support (100-140)', description: "Cisco's $125 answer to CompTIA A+ — one exam, current content, smaller HR footprint.", href: '/vendors/cisco/ccst-it-support/' },
+      { title: 'Field Technician (800-150 FLDTEC)', description: 'The $200 hands-on hardware cert that replaced CCT in Feb 2025 — the field/depot on-ramp, written straight.', href: '/vendors/cisco/ccft/' },
+      { title: 'AI Technical Practitioner (810-110)', description: "Cisco's new $150 AI-fundamentals cert — honest guide to what a months-old credential is (and isn't) worth.", href: '/vendors/cisco/ai-technical-practitioner/' },
     ],
   },
   {
@@ -51,16 +52,20 @@ const guideLadder = [
     guides: [
       { title: 'CCIE Enterprise Infrastructure', description: 'The famous one — 8-hour lab, 2–3 attempts typical, $5–12K realistic all-in. Honest briefing inside.', href: '/vendors/cisco/ccie-enterprise-infrastructure/' },
       { title: 'CCIE Security', description: 'The widest lab blueprint of any track — FTD/FMC, ISE, VPNs, content security. Cisco-stack shops only.', href: '/vendors/cisco/ccie-security/' },
+      { title: 'CCIE Service Provider', description: 'The carrier lab — IOS XR, MPLS, segment routing, EVPN at scale. The summit of the SPRI ladder.', href: '/vendors/cisco/ccie-service-provider/' },
+      { title: 'CCIE Data Center', description: 'ACI, Nexus, UCS, storage — the v3.1 lab, first in line for Cisco\'s new AI module.', href: '/vendors/cisco/ccie-data-center/' },
+      { title: 'CCIE Collaboration', description: 'The UC expert lab — shrinking niche, rising scarcity. Same honest math as our CCNP Collab guide.', href: '/vendors/cisco/ccie-collaboration/' },
+      { title: 'CCIE Automation', description: 'The renamed DevNet Expert — an all-software lab of Python, APIs, and IaC. No rack rentals needed.', href: '/vendors/cisco/ccie-automation/' },
+      { title: 'CCIE Wireless', description: 'The renamed expert track — WLCOR qualifying, dual Catalyst + Meraki lab scope. RF can\'t be faked.', href: '/vendors/cisco/ccie-wireless/' },
       { title: 'CCDE (Design Expert)', description: 'The rarest active Cisco cert — no CLI, ~6 exam dates a year, under ~1,000 holders worldwide.', href: '/vendors/cisco/ccde/' },
     ],
   },
 ];
 
-// Active Cisco certifications not yet covered by a full guide.
+// The catalog is fully covered — what remains are credentials that aren't separate study targets.
 const upcomingCerts = [
-  { title: 'CCIE Data Center / Collaboration / SP / Automation / Wireless', level: 'Expert', description: 'The remaining expert labs — same $1,600-per-attempt economics as EI and Security. Data Center is first to receive the new AI lab module (2027).' },
-  { title: 'Cisco Certified Field Technician (800-150 FLDTEC)', level: 'Entry', description: 'The $200 hands-on field-hardware cert that replaced the old CCT program in Feb 2025.' },
-  { title: 'Cisco AI Technical Practitioner (810-110 AITECH)', level: 'Practitioner', description: 'New Dec 2025: a $150, 60-minute AI-fundamentals cert in the new practitioner tier below associate.' },
+  { title: 'Cisco Certified Specialist', level: 'Professional', description: "Not a separate exam to study for — every CCNP core or concentration exam you pass automatically awards a standalone Specialist credential. Every path to one is already covered by the CCNP guides above." },
+  { title: 'CCDE Practical variants & future AI lab modules', level: 'Expert', description: 'Cisco keeps evolving the expert tier — AI modules roll into CCIE labs starting with Data Center in 2027. Our CCIE and CCDE guides track those changes with last-verified stamps.' },
 ];
 ---
 
@@ -164,9 +169,9 @@ const upcomingCerts = [
 
     <!-- The certification ladder: every live guide, grouped by tier -->
     <section class="py-8 border-t" style="border-color: var(--cb-border);" aria-labelledby="featured-heading">
-      <h2 id="featured-heading" class="text-base font-bold mb-2" style="color: var(--cb-text);">The Cisco ladder — 17 full study guides, every active CCNP track</h2>
+      <h2 id="featured-heading" class="text-base font-bold mb-2" style="color: var(--cb-text);">The Cisco ladder — 24 full study guides, every active track</h2>
       <p class="text-sm mb-6 leading-relaxed max-w-3xl" style="color: var(--cb-text-sub);">
-        Entry to expert, in order — including all eight CCNP tracks. Every guide covers the honest costs, current exam versions (Cisco renamed and revised heavily in 2026 — our guides reflect it), study paths, and free-first resources.
+        Entry to expert, in order — all eight CCNP tracks, all seven CCIE labs, and CCDE. Every guide covers the honest costs, current exam versions (Cisco renamed and revised heavily in 2026 — our guides reflect it), study paths, and free-first resources.
       </p>
       <div class="space-y-8 max-w-4xl">
         {guideLadder.map((tier) => (

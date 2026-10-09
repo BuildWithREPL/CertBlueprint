@@ -4,14 +4,14 @@
   "vendor": "Cisco",
   "vendor_slug": "cisco",
   "level": "Associate",
-  "description": "CCNA Cybersecurity (formerly CyberOps Associate) is Cisco's associate-level credential for security operations. Exam 200-201 (CCNACBR) validates the skills needed to work in a security operations center (SOC): monitoring, detecting, analyzing, and responding to cybersecurity threats.",
-  "audience": "Aspiring SOC analysts, blue-team and security-operations beginners, help desk or networking technicians moving into cybersecurity, and career changers targeting entry-level threat monitoring and incident response roles.",
+  "description": "Understanding Cisco Cybersecurity Operations Fundamentals (200-201 CCNACBR) v1.2 earns the CCNA Cybersecurity certification — the credential formerly known as CyberOps Associate. It is a 120-minute exam covering security concepts, security monitoring, host-based analysis, network intrusion analysis, and security policies and procedures. It costs $300 USD, is offered in English only, and is aimed squarely at the work of a security operations centre rather than at security theory.",
+  "audience": "Aspiring and working SOC analysts, especially in organisations running Cisco security tooling, and network people moving toward defensive security. It assumes networking fluency — you need to read a packet capture and understand what normal traffic looks like before abnormal traffic means anything — so CCNA or Network+ level knowledge first makes it far more manageable.",
   "why_get_it": "CCNA Cybersecurity proves you can do the day-one work of a SOC tier-1 analyst: read logs, spot intrusions, analyze network and host data, and follow an incident-response process. It is one of the few associate-level certifications built specifically around security operations rather than general security theory, which maps directly to real SOC job tasks. Employers hiring for SOC and blue-team roles treat it as evidence that a candidate understands monitoring tooling, attacker techniques, and the analyst workflow—not just terminology. It also pairs naturally with CompTIA Security+ (a broad security baseline) and CCNA (a networking foundation), forming a strong entry-level cybersecurity resume.",
-  "when_to_get_it": "Get CCNA Cybersecurity if you want to work in a SOC, threat detection, or incident response. It is ideal after—or alongside—CompTIA Security+, which gives broader security fundamentals. A basic grasp of networking (TCP/IP, ports, protocols) makes the network intrusion analysis domain far easier, so some CCNA or Network+ exposure first is a real advantage. If your goal is offensive security (pen testing) or governance/risk rather than defensive operations, other certifications may fit better.",
+  "when_to_get_it": "Take it when you want a monitoring-and-analysis credential rather than a broad security one, and when you have enough networking behind you to reason about traffic. The honest comparison is with CompTIA CySA+: CySA+ is vendor-neutral, DoD 8140 approved and more widely recognised by name, while this exam maps more directly onto Cisco tooling and is the entry point to Cisco's cybersecurity track. If your employer is a Cisco shop, this one; if you are shopping your resume around, CySA+ travels further. Security+ first is the usual order either way.",
   "exam_code": "200-201",
   "exam_duration": "120 minutes",
-  "exam_format": "Multiple-choice and multiple-response questions. Approximately 95–105 questions.",
-  "exam_questions": "95–105 questions (approximate; Cisco does not publish the exact count)",
+  "exam_format": "Multiple-choice and multiple-response questions, 120 minutes, English only. Cisco does not publish the question count or the passing score, so any specific figure you see elsewhere is an estimate.",
+  "exam_questions": "Cisco does not publish the question count",
   "official_url": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/ccnacbr.html",
   "official_pricing_url": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/list.html",
   "recertification_note": "Valid for 3 years. Renew by passing another Cisco exam, earning Continuing Education credits through the Cisco CE program, or achieving a higher-level Cisco certification before expiration.",
@@ -193,7 +193,7 @@
     {
       "label": "Buy 200-201 CyberOps Exam Voucher – Cisco Official",
       "url": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/list.html",
-      "note": "The 200-201 exam is $300 USD at standard pricing and is scheduled through Pearson VUE. Always verify current pricing on the official Cisco site before purchasing."
+      "note": "The 200-201 exam is $300 USD at standard pricing, or payable with Cisco Learning Credits, and is scheduled through Pearson VUE. Verify current pricing on the official Cisco exam page before purchasing."
     }
   ],
   "faq": [
@@ -268,5 +268,6 @@
     }
   ],
   "seo_title": "CCNA Cybersecurity 200-201 (CyberOps Associate) Study Guide | CertBlueprint",
-  "seo_description": "Complete CCNA Cybersecurity (200-201 CBROPS, formerly CyberOps Associate) guide: who it's for, SOC analyst salary, exam domains, study path, free and paid resources, and FAQ."
+  "seo_description": "Complete CCNA Cybersecurity (200-201 CBROPS, formerly CyberOps Associate) guide: who it's for, SOC analyst salary, exam domains, study path, free and paid resources, and FAQ.",
+  "last_verified": "September 24, 2026"
 }

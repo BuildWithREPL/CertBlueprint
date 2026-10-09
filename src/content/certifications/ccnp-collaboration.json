@@ -117,7 +117,7 @@
     {
       "step": 6,
       "title": "Sit CLCOR, bank the Specialist and the CCIE door",
-      "description": "$400, 120 minutes. Passing earns Specialist – Collaboration Core and qualifies you for the CCIE Collaboration lab (whose AI module arrives around August 2027, per Cisco's TBC timeline) if the expert tier is in your future."
+      "description": "$400, 120 minutes. Passing earns Specialist – Collaboration Core and qualifies you for the CCIE Collaboration lab (Cisco has announced AI modules for the CCIE labs, but no Collaboration date yet) if the expert tier is in your future."
     },
     {
       "step": 7,
@@ -212,10 +212,17 @@
     },
     {
       "question": "Where does this track lead?",
-      "answer": "Three honest directions: migration architecture (the premium lane — moving estates to hybrid/cloud), the contact-center/CX edge (CLCCE's territory, where budgets still grow), or the CCIE Collaboration lab (CLCOR qualifies you; its AI module lands ~August 2027 per Cisco's TBC timeline). The direction to avoid planning a decade around: steady-state on-prem administration alone — hold that ground by choice, not by default."
+      "answer": "Three honest directions: migration architecture (the premium lane — moving estates to hybrid/cloud), the contact-center/CX edge (CLCCE's territory, where budgets still grow), or the CCIE Collaboration lab (CLCOR qualifies you; Cisco hasn't announced its AI-module date yet). The direction to avoid planning a decade around: steady-state on-prem administration alone — hold that ground by choice, not by default."
     }
   ],
   "related_certs": [
+    {
+      "title": "CCIE Collaboration",
+      "slug": "ccie-collaboration",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The expert tier of this exact niche — CLCOR qualifies you, and scarcity economics get stronger the higher you climb."
+    },
     {
       "title": "CCNP Enterprise",
       "slug": "ccnp-enterprise",

@@ -1,0 +1,235 @@
+{
+  "title": "Cisco AI Technical Practitioner (810-110 AITECH) Study Guide",
+  "slug": "ai-technical-practitioner",
+  "short_name": "AITECH",
+  "vendor": "Cisco",
+  "vendor_slug": "cisco",
+  "level": "Entry",
+  "description": "The Cisco AI Technical Practitioner (AITECH) is Cisco's exam-backed AI credential for working IT people — a $150, 60-minute exam covering how you actually use AI on the job: generative models and RAG, prompt engineering, prompt-injection defense, AI ethics, workflow automation, and agentic AI including the Model Context Protocol. Launched December 2025, so recognition is near zero today — go in with clear eyes.",
+  "audience": "Network engineers, sysadmins, help desk and NOC people, data analysts, and technical leads who are already using (or being told to use) AI tools at work and want structured proof they understand them. Not for ML engineers building models — there's no math, no training pipelines, no GPU cluster content. This is AI-usage literacy for practitioners, and Cisco says so explicitly.",
+  "why_get_it": "Three honest reasons and one big caveat. Price: $150 for a Cisco-branded credential is cheap by any standard. Content: the blueprint is genuinely current — RAG and vector databases, prompt-injection attack types, agentic AI, and the Model Context Protocol are all first-class exam topics in 2026, which is more than most entry AI certs can say. Positioning: it slots between AIBIZ (Cisco's no-exam AI awareness path) and the DCAI 300-640 specialist exam, so it's a real step on Cisco's AI track, not a standalone badge. The caveat, stated plainly: this cert is about seven months old and HR recognition is effectively zero. No job filter searches for AITECH, no salary survey lists it, and a hiring manager almost certainly hasn't heard of it. Its realistic value today is a structured on-ramp to AI-tooling literacy, a cheap resume signal inside Cisco shops, and CE credits — not interview callbacks. If you need a cert that moves a job application this quarter, this isn't it yet.",
+  "when_to_get_it": "When your org is Cisco-heavy and pushing AI adoption, when you're already using LLM tools daily and want the vocabulary and structure formalized cheaply, or when you're eyeing the Data Center AI specialist track and want the on-ramp first. Skip it (for now) if you need HR-filter recognition — CCNA still does infinitely more for a networking resume — or if you want to build models rather than use them; that's a different career and a different set of credentials entirely. There's also a fair case for waiting a year to see whether the market picks it up: at $150 the downside of going early is small, but it's real.",
+  "salary_note": "There is no salary data for AITECH — the cert launched in December 2025 and appears in no salary survey we could find. Anyone quoting you a number for this credential is making it up. Its pay impact today is indirect at best: the AI-workflow skills it covers are increasingly assumed in networking and ops roles, but the badge itself doesn't move offers yet.",
+  "exam_code": "810-110 AITECH v1.0",
+  "exam_duration": "60 minutes",
+  "exam_format": "60-minute exam delivered by Pearson VUE (test center or OnVUE online proctoring), English only, pass/fail with results in about 48 hours. $150 or Cisco Learning Credits, no prerequisites. Cisco does not publish the question count or passing score — third-party sites citing '40–60 questions' or a '750–850' cut score are guessing.",
+  "exam_structure": [
+    {
+      "code": "810-110 AITECH v1.0",
+      "name": "Cisco AI Technical Practitioner",
+      "role": "Single required exam for the certification",
+      "price": "$150 USD (or Cisco Learning Credits)",
+      "note": "60 minutes, Pearson VUE (online-proctored or test center), English, pass/fail. Launched December 18, 2025."
+    }
+  ],
+  "official_url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/ai/technical-practitioner/index.html",
+  "official_pricing_url": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/aitech.html",
+  "recertification_note": "Expected to follow Cisco's standard 3-year cycle with renewal by exam or Continuing Education credits, but Cisco's recertification pages hadn't clearly confirmed the AITECH terms as of our last check — verify the current policy on Cisco's site before you count on it. Don't assume the 5-year CCST rule applies; AITECH sits on a different track.",
+  "last_verified": "July 2026",
+  "skills_covered": [
+    {
+      "category": "Generative AI Models & Prompt Engineering (Domains 1–2, 35%)",
+      "items": [
+        "Model families — LLMs and diffusion models — and cloud vs local hosting trade-offs",
+        "Context windows, token limits, and picking models from hubs (reasoning, multimodality)",
+        "RAG, embeddings, and vector databases — how grounded answers actually work",
+        "Prompt patterns: roles, instructions, constraints, few-shot, chained prompting",
+        "Prompt-injection attack types, defensive prompting, and hallucination mitigation"
+      ]
+    },
+    {
+      "category": "Ethics, Security & AI-Assisted Analysis (Domains 3–4, 25%)",
+      "items": [
+        "Responsible-AI principles: fairness, transparency, accountability, bias mitigation",
+        "Corporate data privacy — what you can and can't paste into a model",
+        "AI-specific threats including misinformation, plus governance, risk, and compliance",
+        "AI in exploratory data analysis and automated data prep",
+        "Privacy and ethics controls when AI assists research and drafting"
+      ]
+    },
+    {
+      "category": "Development, Workflow Automation & Agentic AI (Domains 5–6, 40%)",
+      "items": [
+        "AI across the SDLC: code generation, rapid prototyping, debugging, docs",
+        "Designing and monitoring AI workflows; cost-latency-quality trade-offs",
+        "Agentic vs generative use cases — when an agent beats a chatbot",
+        "Agent design, autonomy, and orchestration, plus data transformation in agents",
+        "Model Context Protocol (MCP) primitives and human-in-the-loop strategies"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Read the official exam topics PDF first",
+      "description": "The 810-110 v1.0 blueprint is public, free, and specific — six domains with published weights (unusual for Cisco at this tier). Notice what it is: an AI-usage exam covering RAG, prompt injection, agents, and MCP. There is zero networking-hardware content — don't study switches for this one."
+    },
+    {
+      "step": 2,
+      "title": "Inventory what you already do with AI",
+      "description": "If you use LLM tools daily — writing scripts, drafting configs, debugging — you already cover chunks of domains 2, 4, and 5. Map your habits against the blueprint and study the gaps, which for most working IT people are RAG internals, formal responsible-AI vocabulary, and the agentic AI / MCP domain."
+    },
+    {
+      "step": 3,
+      "title": "Decide on the official Cisco U. path",
+      "description": "The Cisco U. AITECH learning path is the official prep — guided, with pre/post assessments and hands-on labs, and tracks that earn CE credits. It was free through March 2026; that promo has ended, so check current pricing and weigh it against what you can self-study. It's the most complete single resource, but it's no longer the free lunch it briefly was."
+    },
+    {
+      "step": 4,
+      "title": "Get hands-on with the concepts, not just flashcards",
+      "description": "The exam tests understanding of things you can practice for free: build a tiny RAG flow with any free embedding tool, deliberately prompt-inject your own chatbot to see the attack classes, wire up a simple MCP server. An afternoon of doing beats a week of reading for domains 1, 2, and 6."
+    },
+    {
+      "step": 5,
+      "title": "Drill the ethics and governance vocabulary",
+      "description": "Domain 3 (15%) is where hands-on people lose points — fairness, transparency, accountability, and governance frameworks have specific meanings the exam expects. It's memorization-adjacent, it's the least fun domain, and it's the easiest 15% to secure with a focused evening or two."
+    },
+    {
+      "step": 6,
+      "title": "Add practice questions with expectations managed",
+      "description": "Third-party prep is thin for an exam this new. Pearson's official video course exists; a few vendors sell practice exams of unvetted quality. Cisco doesn't publish question counts or passing scores, so treat any practice test as a topic-coverage check, not a score predictor."
+    },
+    {
+      "step": 7,
+      "title": "Book Pearson VUE and know what it buys you",
+      "description": "$150, 60 minutes, online or test center, results in about 48 hours. Then be realistic about the follow-through: put it on the resume, claim the CE credits, and if AI infrastructure is your lane, look at the DCAI 300-640 CCNP Data Center concentration as the serious next step."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "Official 810-110 AITECH v1.0 Exam Topics (PDF)",
+      "url": "https://learningcontent.cisco.com/documents/marketing/exam-topics/810-110-AITECH-v1.0.pdf",
+      "type": "Official Documentation",
+      "note": "The authoritative blueprint, with domain weights published. Read this before spending a dollar on anything."
+    },
+    {
+      "name": "Cisco Learning Network — AI Technical Practitioner hub",
+      "url": "https://learningnetwork.cisco.com/s/cisco-ai-technical-practitioner",
+      "type": "Community / Study Hub",
+      "note": "Official community hub for the cert — study group threads and announcements as the ecosystem fills in."
+    },
+    {
+      "name": "Cisco Learning Blog — AITECH positioning",
+      "url": "https://blogs.cisco.com/learning/orchestrate-ai-driven-solutions-with-cisco-ai-technical-practitioner-aitech-certification",
+      "type": "Official Article",
+      "note": "Cisco's own framing of where AITECH sits: AIBIZ (no exam) → AITECH (this exam) → DCAI specialist."
+    },
+    {
+      "name": "Cisco Learning Blog — AI learning paths overview",
+      "url": "https://blogs.cisco.com/learning/ai-learning-paths-for-business-and-tech-pros",
+      "type": "Official Article",
+      "note": "Covers the paired AIBIZ/AITECH launch and what the technical path includes: data prep, RAG, agentic AI, workflow automation."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Cisco U. – AITECH Learning Path",
+      "type": "Official Training",
+      "price": "Requires Cisco U. subscription (free promo ended March 2026)",
+      "best_for": "The official guided prep — pre/post assessments, hands-on labs, and CE credits per track",
+      "affiliate_url": "https://u.cisco.com/paths/cisco-ai-technical-practitioner-20806",
+      "affiliate_label": "View on Cisco U.",
+      "affiliate_event": "ciscou_aitech_path",
+      "affiliate": false,
+      "note": "Was free through March 26, 2026; check current access pricing. Cisco U. snippets cite 8 CE credits per track — treat exact CE totals as unconfirmed."
+    },
+    {
+      "provider": "Pearson IT Certification – AITECH 810-110 Video Course",
+      "type": "Video Course",
+      "price": "See Pearson listing",
+      "best_for": "Video-first learners who want official-channel coverage without a Cisco U. subscription",
+      "affiliate_url": "https://www.pearsonitcertification.com/store/cisco-ai-technical-practitioner-810-110-aitech-video-9780135941584",
+      "affiliate_label": "View on Pearson",
+      "affiliate_event": "pearson_aitech_video",
+      "affiliate": false,
+      "note": "Cisco Press / Pearson official channel — one of the few structured third-party options this early."
+    },
+    {
+      "provider": "Amazon – AITECH 810-110 books",
+      "type": "Book",
+      "price": "Varies",
+      "best_for": "Readers who want a print reference — but check publishers carefully at this stage",
+      "affiliate_url": "https://www.amazon.com/s?k=Cisco+AI+Technical+Practitioner+810-110+AITECH&tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_aitech",
+      "affiliate": true,
+      "note": "No official Cisco Press print cert guide was confirmed as of July 2026 — expect third-party and self-published titles only. Vet before buying."
+    },
+    {
+      "provider": "ExamsDigest – AITECH 810-110 Practice Exam",
+      "type": "Practice Test",
+      "price": "See ExamsDigest listing",
+      "best_for": "Topic-coverage self-checks — with the caveat that quality is unvetted and no vendor knows the real question pool",
+      "affiliate_url": "https://examsdigest.com/courses/cisco-ai-technical-practitioner-v1-0-aitech-810-110-practice-exam/",
+      "affiliate_label": "View on ExamsDigest",
+      "affiliate_event": "examsdigest_aitech",
+      "affiliate": false,
+      "note": "Third-party practice questions for a seven-month-old exam — use as a study prompt, not a readiness gauge."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Register – Pearson VUE",
+      "url": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/aitech.html",
+      "note": "$150 flat (or Cisco Learning Credits), test center or online proctoring, no prerequisites. No voucher hunt and no discounts we could find."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is AITECH worth it in 2026, honestly?",
+      "answer": "Depends entirely on what you want from it. As a $150 structured way to formalize AI-tooling skills you're already half-using — yes, it's decent value, and the blueprint (RAG, prompt injection, agents, MCP) is genuinely current. As a job-search lever — no, not today. The cert is about seven months old, appears in no job filters or salary surveys, and most hiring managers haven't heard of it. Industry commentary frames it as 'worth watching,' which is code for: strategic signal, not hiring filter. Buy it for the learning and the Cisco-shop signal, not the callbacks."
+    },
+    {
+      "question": "Is this an AI networking exam?",
+      "answer": "No, and this surprises people. The 810-110 blueprint has zero networking-hardware content — it's an AI-usage exam: generative models, prompt engineering, ethics and security, AI-assisted analysis, workflow automation, and agentic AI including the Model Context Protocol. If you want AI infrastructure — running AI workloads on data center gear — that's the DCAI 300-640 exam, a CCNP Data Center concentration that went live in February 2026."
+    },
+    {
+      "question": "AITECH vs AIBIZ — what's the difference?",
+      "answer": "AIBIZ (AI Business Practitioner) is a learning path and badge with no exam and no certification — about 9 hours of courses aimed at business-side people. AITECH is the exam-backed technical sibling. Cisco launched them as a pair ('AI as a team sport') with a deliberate tiering: AIBIZ for awareness, AITECH for practitioners, DCAI for infrastructure specialists. If someone lists 'AIBIZ certified' on a resume, know that no exam was involved."
+    },
+    {
+      "question": "How hard is it, and how long to study?",
+      "answer": "Cisco publishes no question count or passing score, and the exam is too new for reliable pass-rate folklore. What prep vendors imply — and we label this as folklore — is that someone already using LLM tools daily needs days to a few weeks, mostly to close gaps on RAG internals, responsible-AI vocabulary, and the agentic/MCP domain. Someone starting cold on AI concepts should budget considerably more. The 60-minute length suggests a focused scope, not a marathon."
+    },
+    {
+      "question": "Does AITECH expire?",
+      "answer": "Probably on Cisco's standard 3-year cycle with CE-credit or exam renewal — but we could not directly verify AITECH's validity terms on Cisco's recertification pages as of July 2026, so treat that as expected rather than confirmed. Don't assume the CCST rules (5-year validity, exam-only renewal) apply here; AITECH is a different track. Check Cisco's site before you plan around a date."
+    },
+    {
+      "question": "What comes after AITECH?",
+      "answer": "If AI infrastructure is your direction, the DCAI 300-640 Data Center AI Specialist exam — a CCNP Data Center concentration — is the designed next step on Cisco's AI track. If you're a network person using AITECH as AI literacy alongside your main lane, the honest answer is: get back to CCNA/CCNP progress, because that ladder still pays the bills. AITECH complements a networking track; it doesn't replace one."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CCNP Data Center",
+      "slug": "ccnp-data-center",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "Home of the DCAI 300-640 AI Infrastructure concentration — the designed next step if AITECH pulls you toward running AI workloads on real hardware."
+    },
+    {
+      "title": "Cisco CCNA",
+      "slug": "ccna",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The credential that actually moves networking job applications — AITECH is a complement to a CCNA track, never a substitute for it."
+    },
+    {
+      "title": "CCNA Automation",
+      "slug": "ccna-automation",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The natural pairing — AITECH covers using AI in workflows; the automation track covers the programmability skills those workflows plug into."
+    },
+    {
+      "title": "CCST Networking",
+      "slug": "ccst-networking",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "If you're brand new to IT, start with fundamentals here — AITECH assumes you already have a technical job to bring AI into."
+    }
+  ],
+  "seo_title": "AI Technical Practitioner (810-110) Guide | CertBlueprint",
+  "seo_description": "Honest AITECH 810-110 guide: the $150 Cisco AI exam, the blueprint (RAG, prompt injection, agents, MCP), why HR recognition is near zero, and who should wait."
+}

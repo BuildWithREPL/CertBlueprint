@@ -1,0 +1,143 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import '../../../styles/navigator.css';
+import { ROLE_CORE_BY_SLUG } from '../../../lib/navigator/data/roles/cores';
+
+const paths = (await getCollection('paths')).map((p) => p.data).sort((a, b) => a.role.localeCompare(b.role));
+
+// Paths that correspond to a Navigator role get a link across, so someone who
+// arrived from a result can read the honest downside before committing to a plan.
+const withRole = paths.map((p) => ({
+  path: p,
+  role: ROLE_CORE_BY_SLUG[p.slug] ?? null,
+}));
+
+const title = 'Track a Career Path — Your Plan | CertBlueprint';
+const description = `Pick one of ${paths.length} IT career paths and work through it at your own pace. Stages, skills and certifications tracked in your browser — no account, nothing uploaded, and no score pretending to measure how employable you are.`;
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Career Navigator', href: '/navigator/' },
+  { label: 'Plans', href: '/navigator/plan/' },
+];
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs}>
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-6">
+    <p class="font-mono text-xs uppercase tracking-widest mb-3" style="color: var(--cb-accent-text);">
+      Free · nothing leaves your browser
+    </p>
+
+    <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-balance" style="color: var(--cb-text);">
+      Pick a direction and keep track of where you are.
+    </h1>
+
+    <p class="mt-4 text-lg leading-relaxed" style="color: var(--cb-text-sub); max-width: 62ch;">
+      Each of these is an authored roadmap — stages, the skills underneath them, and the certifications
+      worth having in the order they stop being premature. Ticking things off is entirely for your own
+      benefit: it is saved to this browser, and nothing is sent anywhere.
+    </p>
+
+    <p class="mt-3 text-base leading-relaxed" style="color: var(--cb-text-muted); max-width: 62ch;">
+      Progress on each path is kept separately, so trying one and switching to another costs you
+      nothing. There is no single score, because "how far through a roadmap you are" and "how likely
+      you are to get hired" are not the same number and pretending otherwise would be dishonest.
+    </p>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+    <div id="plan-resume" class="nav-card nav-card--railed p-5 pl-6 mb-4" style="--nav-accent: var(--nav-emerald);" hidden>
+      <p class="font-bold text-base mb-1" style="color: var(--cb-text);">Pick up where you left off</p>
+      <p class="text-sm leading-relaxed mb-3" style="color: var(--cb-text-sub);" id="plan-resume-text"></p>
+      <a id="plan-resume-link" href="/navigator/plan/" class="text-sm font-semibold" style="color: var(--nav-emerald);">
+        Continue →
+      </a>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-3">
+      {
+        withRole.map(({ path, role }) => (
+          <a
+            href={`/navigator/plan/${path.slug}/`}
+            class="nav-card nav-card--railed block p-5 pl-6"
+            style="--nav-accent: var(--cb-accent);"
+            data-plan-card={path.slug}
+          >
+            <h2 class="font-bold text-base" style="color: var(--cb-text);">{path.role}</h2>
+            <p class="text-sm leading-relaxed mt-1" style="color: var(--cb-text-sub);">{path.tagline}</p>
+            <p class="font-mono text-[0.65rem] uppercase tracking-widest mt-2" style="color: var(--cb-text-muted);">
+              {path.roadmap.length} stages · {path.certs.length} certifications
+              {role ? ' · role profile' : ''}
+            </p>
+            <p
+              class="text-sm font-semibold mt-2"
+              style="color: var(--nav-emerald);"
+              data-plan-progress={path.slug}
+              hidden
+            />
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <div class="nav-card p-5" style="--nav-accent: var(--cb-border);">
+      <h2 class="font-bold text-base mb-2" style="color: var(--cb-text);">Not sure which one?</h2>
+      <p class="text-sm leading-relaxed mb-3" style="color: var(--cb-text-sub); max-width: 62ch;">
+        Choosing a path you have not tested is the expensive mistake this whole site exists to prevent.
+        The scenarios show you the work rather than describing it, and the weekend trials let you feel
+        an hour of it before you spend anything.
+      </p>
+      <div class="flex flex-wrap gap-x-5 gap-y-2">
+        <a href="/navigator/assessment/" class="text-sm font-semibold" style="color: var(--cb-accent-text);">
+          Try the scenarios →
+        </a>
+        <a href="/navigator/trials/" class="text-sm font-semibold" style="color: var(--cb-accent-text);">
+          Try the work for an hour →
+        </a>
+        <a href="/navigator/graph/" class="text-sm font-semibold" style="color: var(--cb-accent-text);">
+          See the whole map →
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import { loadPlan } from '../../../lib/navigator/engine/session';
+  import { hasProgress } from '../../../lib/navigator/engine/plan';
+
+  const store = loadPlan();
+
+  // Cards show what is already recorded, so the page is a record of what you
+  // have been doing rather than a menu that forgets you every visit.
+  for (const [slug, progress] of Object.entries(store.byPath)) {
+    if (!hasProgress(progress)) continue;
+    const label = document.querySelector<HTMLElement>(`[data-plan-progress="${CSS.escape(slug)}"]`);
+    if (!label) continue;
+    const stagesDone = Object.values(progress.stages).filter((s) => s === 'done').length;
+    const earned = Object.values(progress.certs).filter((c) => c === 'earned').length;
+    const bits: string[] = [];
+    if (stagesDone > 0) bits.push(`${stagesDone} stage${stagesDone === 1 ? '' : 's'} done`);
+    if (earned > 0) bits.push(`${earned} certification${earned === 1 ? '' : 's'} earned`);
+    if (Object.keys(progress.skills).length > 0) bits.push(`${Object.keys(progress.skills).length} skills ticked`);
+    label.hidden = false;
+    label.textContent = bits.length > 0 ? bits.join(' · ') : 'In progress';
+
+    const card = document.querySelector<HTMLElement>(`[data-plan-card="${CSS.escape(slug)}"]`);
+    card?.style.setProperty('--nav-accent', 'var(--nav-emerald)');
+  }
+
+  if (store.chosen && hasProgress(store.byPath[store.chosen])) {
+    const card = document.querySelector<HTMLElement>(`[data-plan-card="${CSS.escape(store.chosen)}"]`);
+    const name = card?.querySelector('h2')?.textContent ?? store.chosen;
+    const resume = document.getElementById('plan-resume')!;
+    resume.hidden = false;
+    document.getElementById('plan-resume-text')!.textContent =
+      `You were last working on the ${name} plan.`;
+    (document.getElementById('plan-resume-link') as HTMLAnchorElement).href =
+      `/navigator/plan/${store.chosen}/`;
+  }
+</script>

@@ -4,10 +4,10 @@
   "vendor": "Cisco",
   "vendor_slug": "cisco",
   "level": "Associate",
-  "description": "The Cisco Certified Network Associate (CCNA) is the foundational networking certification from Cisco. It validates the ability to install, configure, operate, and troubleshoot small to medium-sized networks.",
-  "audience": "IT beginners with some computer literacy, help desk technicians moving into networking, and career changers targeting infrastructure or network engineering roles.",
+  "description": "The Cisco Certified Network Associate (CCNA) is the foundational networking certification from Cisco, earned by passing a single exam: 200-301. It runs 120 minutes, costs $400 USD, is offered in English only, and is graded pass/fail with results online within 48 hours. The blueprint covers network fundamentals, network access, IP connectivity, IP services, security fundamentals, and automation and programmability — and the simulation questions put you at a command line, so configuration has to be muscle memory rather than recognition.",
+  "audience": "Help desk and support technicians moving toward infrastructure, career changers targeting networking or network security, and developers and cloud engineers who keep hitting routing and subnetting they do not understand. There are no prerequisites. Cisco suggests around a year of hands-on experience with its solutions, but a large share of candidates pass on lab time alone — Packet Tracer, GNS3 or a shelf of second-hand switches all count.",
   "why_get_it": "CCNA establishes credibility in networking. It demonstrates you understand how IP networks function—not just that you followed a tutorial. Employers use it as a baseline filter for network technician and junior engineer roles. The exam covers real-world skills: subnetting, routing protocols, switching, VLANs, security fundamentals, and network automation basics. It also satisfies a meaningful portion of the knowledge base needed for higher-level Cisco and non-Cisco certifications.",
-  "when_to_get_it": "Get CCNA if you want to work in networking, network security, or infrastructure. Get it early—it opens doors before you have work experience. If you already have 2+ years of hands-on networking experience and are targeting a senior role, you may consider going directly for CCNP. CompTIA Network+ is an alternative for those who want a more vendor-neutral foundation first.",
+  "when_to_get_it": "Take CCNA if you want to work in networking, network security or infrastructure, and take it early: it opens doors before you have the experience to open them yourself, and it is named in job postings more often than any other networking credential. Budget two to four months. If you want something cheaper, broader and vendor-neutral first, Network+ covers similar ground at a fraction of the price — but if networking is the destination rather than a stepping stone, most people are better off going straight to CCNA. With two or more years of hands-on networking behind you and a senior role in view, consider going directly to CCNP. Note the version timing: the current v1.1 exam has a last test date of 2 February 2027, and the refreshed v2.0 blueprint launches the next day under the same 200-301 code.",
   "salary_range": "$60,000 – $110,000",
   "salary_note": "Entry-level roles—network technician, junior network engineer, and help-desk-to-networking transitions—typically start around $55K–$70K. With 2–3 years of hands-on experience, network engineer roles commonly reach $85K–$110K. Specializing in network automation or advancing to CCNP pushes compensation past $120K. Figures vary widely by region, employer, and the full scope of your skills.",
   "exam_code": "200-301",
@@ -291,5 +291,6 @@
     }
   ],
   "seo_title": "Cisco CCNA 200-301 Study Guide – Resources, Study Path, Exam Details | CertBlueprint",
-  "seo_description": "Complete CCNA 200-301 guide: who it’s for, salary expectations, exam details, step-by-step study path, free and paid resources, skills covered, and FAQ."
+  "seo_description": "Complete CCNA 200-301 guide: who it’s for, salary expectations, exam details, step-by-step study path, free and paid resources, skills covered, and FAQ.",
+  "last_verified": "September 24, 2026"
 }

@@ -12,7 +12,7 @@
   "salary_range": "$95,000 – $135,000 (wireless/WLAN engineers)",
   "salary_note": "No track-specific salary data exists yet for a certification this new — anchor to the role: senior WLAN and wireless network engineers typically post $95–135K in U.S. markets, with large-venue, healthcare, and warehouse-automation wireless (the genuinely hard RF environments) at the top. Directional and third-party; specialist scarcity in wireless has historically paid a modest premium over generalist campus roles.",
   "exam_code": "350-101 WLCOR + 1 concentration",
-  "exam_duration": "WLCOR: 120 minutes · concentration: 90 minutes",
+  "exam_duration": "WLCOR: 120 minutes (reported) · concentration: 90 minutes",
   "exam_format": "Two proctored exams at Pearson VUE (test center or OnVUE): the WLCOR v1.0 core plus one concentration (WLSD design or WLSI implementation, both v1.2 — the renamed ENWLSD/ENWLSI). Counts and passing scores not published.",
   "exam_questions": "Not published by Cisco",
   "exam_structure": [
@@ -194,7 +194,7 @@
     },
     {
       "question": "What about CCIE Wireless?",
-      "answer": "It was renamed too — CCIE Enterprise Wireless became CCIE Wireless (March 19, 2026), its qualifying exam changed from ENCOR to WLCOR, and its practical went v1.1 with Wi-Fi 6/7 and Meraki content. Your WLCOR pass qualifies you. Same expert-tier economics as every CCIE: $1,600 per 8-hour lab attempt."
+      "answer": "It was renamed too — CCIE Enterprise Wireless became CCIE Wireless in March 2026 — its qualifying exam changed from ENCOR to WLCOR (first testable March 19, 2026), and its practical went v1.1 with Wi-Fi 6/7 and Meraki content. Your WLCOR pass qualifies you. Same expert-tier economics as every CCIE: $1,600 per 8-hour lab attempt."
     },
     {
       "question": "CCNP Wireless or CWNP's ladder?",
@@ -202,6 +202,13 @@
     }
   ],
   "related_certs": [
+    {
+      "title": "CCIE Wireless",
+      "slug": "ccie-wireless",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The expert tier of the new track — WLCOR is the qualifying exam, and the lab covers both Catalyst and Meraki stacks."
+    },
     {
       "title": "CCNP Enterprise",
       "slug": "ccnp-enterprise",

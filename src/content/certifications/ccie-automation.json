@@ -1,0 +1,284 @@
+{
+  "title": "Cisco CCIE Automation Guide (formerly DevNet Expert)",
+  "slug": "ccie-automation",
+  "short_name": "CCIE Automation",
+  "former_name": "Cisco Certified DevNet Expert",
+  "vendor": "Cisco",
+  "vendor_slug": "cisco",
+  "level": "Expert",
+  "description": "On February 3, 2026, Cisco handed its youngest expert credential the oldest brand in networking: the DevNet Expert became CCIE Automation, and its holders got real CCIE numbers. Underneath the rename sits the same beast — the AUTOCOR 350-901 written plus an 8-hour lab where you design, build, test, and deploy automation solutions in Python, Ansible, Terraform, and CI/CD pipelines instead of typing router configs. This briefing covers what actually changed, what it costs, the March 2027 v1.2 blueprint shift, and who genuinely needs the number versus who should bank CCNP Automation and ship code.",
+  "audience": "Senior engineers who already live in Python, Git, CI/CD, NETCONF/RESTCONF/YANG, Docker, and Cisco platform APIs daily — the people whose job title says network engineer but whose commit history says developer. Consultants and partner engineers who want the CCIE brand on automation skills, and NetDevOps leads who want the definitive validation. If you're still translating between 'network person' and 'code person' in your head, the honest starting point is CCNP Automation, covered in the FAQ.",
+  "why_get_it": "The rename was the entire argument: automation engineers finally carry the CCIE brand — the one recruiters, ATS filters, and Cisco partners actually recognize — instead of explaining what a DevNet Expert was. And this track has a scarcity story even the classic CCIEs can't match: the lab only launched in May 2022, certificate IDs were year-stamped in the double digits, and community folklore (unverified — Cisco publishes no counts) put the worldwide holder population under 100 as recently as 2024. The honest counterweight: no salary survey ties pay to this specific cert yet, the skills themselves — Python, Terraform, pipelines — are provable through a GitHub profile at zero cost, and most employers hiring automation engineers screen for shipped work before certifications. This number is for the rooms where the CCIE brand itself opens doors: partners, consulting, and Cisco-standardized enterprises building NetDevOps practices.",
+  "when_to_get_it": "When you're already doing the blueprint at work — writing Python against Cisco APIs, managing configs from a source of truth, running pipelines — and the CCIE brand has concrete value in your market. Timing matters more than usual in 2026: the current v1.1 lab blueprint runs through March 22, 2027, and v1.2 takes over on March 23, 2027 — adding AI agents, MCP servers, and OpenTofu while dropping Kubernetes and NSO entirely. If Kubernetes and NSO are your strengths, finish under v1.1; if your daily work is already drifting toward AI-assisted automation, v1.2 may suit you better. Either way the AUTOCOR written already tests AI content today — 20% of it.",
+  "salary_range": "$105,000 – $165,000+ (network automation engineering; expert-level roles skew higher)",
+  "salary_note": "Honest data situation: no salary source ties pay to CCIE Automation specifically — the cert is too new and too rare. Role averages for network automation engineers: Glassdoor ~$130K (typical range ~$105–163K), ZipRecruiter ~$109K, Salary.com ~$111K — all seniority levels blended. An expert-level holder would reasonably sit in the upper band and above, and consulting rates track the CCIE brand generally, but that's inference, not survey data. Cisco publishes nothing.",
+  "exam_code": "350-901 AUTOCOR + 8-hour lab",
+  "exam_duration": "Written: 120 minutes · Lab: 8 hours",
+  "exam_format": "Step 1: pass AUTOCOR 350-901 v2.0 — the same core exam as CCNP Automation, so one pass banks both, and it earns Cisco Certified Specialist – Automation Core on its own. Step 2: the 8-hour hands-on lab where you plan, design, develop, test, deploy, and maintain automation solutions — per community accounts, a scenario-based design module (~3 hours, no backward navigation) followed by a ~5-hour hands-on build, with per-module minimums plus an overall cut score. Fail the lab and you wait 30 days to rebook, like every CCIE.",
+  "exam_questions": "Written: not published · Lab: scenario-based, not question-counted",
+  "exam_structure": [
+    {
+      "code": "350-901 AUTOCOR v2.0",
+      "name": "Designing, Deploying and Managing Network Automation Systems",
+      "role": "Qualifying exam",
+      "price": "$400 (standard expert-level core pricing)",
+      "note": "Same exam as CCNP Automation's core — one pass serves both and earns Specialist – Automation Core. v2.0 domains: 30% Network Automation, 30% Infrastructure as Code, 20% Operations, 20% AI in Automation — yes, building MCP servers with Python FastMCP is on the written today."
+    },
+    {
+      "code": "CCIE Automation Lab v1.1",
+      "name": "8-hour practical: design, develop, test, deploy, and maintain automation solutions",
+      "role": "Lab exam",
+      "price": "$1,600 per attempt",
+      "note": "The former DevNet Expert lab (launched May 2022), carried forward unchanged at the rename. $1,900 at mobile-lab events with the Cisco kit; travel on you. v1.1 valid through March 22, 2027 — v1.2 (AI agents, MCP, OpenTofu in; Kubernetes and NSO out) takes over March 23, 2027."
+    }
+  ],
+  "official_url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/automation/ccie-automation/exams-and-training.html",
+  "official_pricing_url": "https://ciscolearningservices.my.site.com/cln/s/article/book-your-expert-level-exams",
+  "recertification_note": "Identical to every CCIE: 3-year cycle, 120 CE credits on the unified ledger, and exam passes auto-award CE. For this track especially, maintenance is nearly free — the Cisco U automation catalog and Cisco Live DevNet sessions are the work you'd be doing anyway. Existing DevNet Experts were migrated automatically at the rename: new badges, real CCIE numbers, no re-testing.",
+  "last_verified": "July 2026",
+  "skills_covered": [
+    {
+      "category": "Infrastructure as Code — the 30% heavyweight",
+      "items": [
+        "Build and operate a Python REST API from an OpenAPI spec — not consume one, build one",
+        "Ansible at depth: roles, loops, conditionals, templating, network_cli/httpapi/netconf plug-ins",
+        "Terraform stateful management: state files, resource graphs, provisioning workflows",
+        "NETCONF/RESTCONF payloads authored from YANG modules, XPath filters included",
+        "Cisco NSO service packages — YANG module authoring, cisco-ios-cli NED (v1.1 only; gone in v1.2)"
+      ]
+    },
+    {
+      "category": "Network Programmability & Automation (25%)",
+      "items": [
+        "Python SDK automation against nine platforms: ACI, Catalyst Center, Intersight, IOS XE, Meraki, NSO, Webex, and more",
+        "Automating IOS XE config end to end: interfaces, VLANs, ACLs, static routes, BGP peering",
+        "pyATS/Genie/AEtest automated testing — validating that your automation did what you claimed",
+        "Model-driven telemetry design: gNMI dial-in, gRPC dial-out, NETCONF dial-in",
+        "YANG telemetry subscriptions as an operational discipline, not a demo"
+      ]
+    },
+    {
+      "category": "Software Design, Development & Deployment (20%)",
+      "items": [
+        "Solution design across on-prem, hybrid, and cloud: maintainability, HA, scalability, observability",
+        "Git as a professional tool — cherry-pick, reset, revert, and Git inside CI/CD, not just commit and push",
+        "Troubleshooting broken CI/CD pipelines under exam pressure",
+        "Gap analysis against a source of truth — modifying someone else's automation, the real-world skill",
+        "Diagnosing application performance issues in your own code"
+      ]
+    },
+    {
+      "category": "Containers & Security (25% combined)",
+      "items": [
+        "Dockerfile authoring, Docker Compose, and Docker networking",
+        "Kubernetes: deployments, secrets, services, ingress, volumes, kubectl (v1.1 only — removed in v1.2)",
+        "OWASP secure coding practices applied to your own automation code",
+        "OpenSSL CSR and CA workflows, OAuth2 tokens, secret management systems",
+        "Securing the REST APIs you build — the lab grades your API's security, not just its function"
+      ]
+    },
+    {
+      "category": "The AI layer — written today, lab in 2027",
+      "items": [
+        "AUTOCOR v2.0 already dedicates 20% to AI in Automation: MCP servers with Python FastMCP, conversational LLM agents",
+        "Evaluating AI-generated code and recommendations — the risks, not just the speed",
+        "AI security considerations in automation systems",
+        "Lab v1.2 (March 2027) adds AI agents, agentic capabilities, and MCP servers for LLM integration",
+        "The direction is unambiguous: Cisco is betting the automation role becomes AI-assisted, and the blueprint follows"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Run the honest readiness test — this lab assumes you're already a developer",
+      "description": "Three questions: Do you write Python most weeks — real scripts against real APIs, not copy-paste? Are Git, Docker, and at least one of Ansible/Terraform daily tools? Does your market pay for the CCIE brand on automation skills — partner, consulting, NetDevOps practice? Two noes means the honest move is CCNP Automation first, or simply building a public portfolio — this lab punishes people who learned automation from videos instead of from breaking production."
+    },
+    {
+      "step": 2,
+      "title": "Pass AUTOCOR — and don't skip the AI domain",
+      "description": "The 350-901 v2.0 written is 120 minutes and doubles as your CCNP Automation core, so nothing is wasted if you stop early. The trap for veterans: 20% of the exam is AI in Automation — MCP servers with FastMCP, LLM agents, evaluating AI-generated code — which no pre-2025 study material covers. Read the official exam-topics PDF line by line; the older DEVCOR guides predate this entire domain."
+    },
+    {
+      "step": 3,
+      "title": "Pick your blueprint window: v1.1 through March 2027, or v1.2 after",
+      "description": "This is the strategic decision of 2026–27. v1.1 (valid through March 22, 2027) includes Kubernetes and NSO; v1.2 (from March 23, 2027) drops both and adds AI agents, MCP servers, OpenTofu, and Cisco Network as Code. Strong in K8s and NSO? Sprint to finish under v1.1. Coming from an AI-forward NetDevOps role? v1.2 may map better to what you already do. Straddling the boundary with a half-studied v1.1 blueprint is the one genuinely bad plan."
+    },
+    {
+      "step": 4,
+      "title": "Budget for reality — cheaper lab, same exam economics",
+      "description": "Paper minimum: $2,000 ($400 written + one $1,600 lab attempt). Reality: the CCIE-wide folklore of 2–3 lab attempts applies here with extra force — community accounts of this lab describe first-attempt passes as rare — so budget $3,200–4,800 in lab fees plus travel per attempt. The good news unique to this track: the entire lab environment is software. CML, Docker, GitLab CE, and free Cisco sandboxes replace the rack rentals other tracks require, trimming realistic all-in toward $4,000–9,000 rather than the $5,000–12,000 typical of hardware-heavy CCIEs."
+    },
+    {
+      "step": 5,
+      "title": "Build the whole lab environment on your own machine — this track's superpower",
+      "description": "Everything on the blueprint runs on a laptop or a modest server: CML for topology simulation ($199–349/yr, and the lab itself uses CML), Docker and GitLab CE free, Python and pyATS free, DevNet sandboxes free for the platform APIs (Catalyst Center, Meraki, Intersight). DevNet Academy publishes a free guide to building the full candidate environment. No other CCIE track lets you replicate the actual exam tooling this completely at near-zero cost — exploit that."
+    },
+    {
+      "step": 6,
+      "title": "Train the design module as its own discipline",
+      "description": "Per community accounts, the first ~3 hours are scenario-based design with no backward navigation — architecture judgment about automation systems: source-of-truth strategy, pipeline design, trade-offs between tools. Engineers who live in code often fail here, not in the hands-on half. Practice articulating why Terraform over Ansible for a scenario, when a webhook beats polling, what makes a solution maintainable. Writing design docs for your real work is free training."
+    },
+    {
+      "step": 7,
+      "title": "Drill the hands-on half under time pressure with pyATS as your verifier",
+      "description": "The ~5-hour build module rewards speed and self-verification: every task you complete needs proof it works, and pyATS/Genie is both a blueprint topic and your best verification tool. Rehearse full workflows end to end — YANG-driven config from a source of truth, through a GitLab pipeline, validated by automated tests — until the toolchain is muscle memory. The clock, not the difficulty, is what community write-ups consistently blame."
+    },
+    {
+      "step": 8,
+      "title": "Book the lab with logistics as strategy, and plan for attempt two",
+      "description": "$1,600 per attempt at Cisco facilities ($1,900 at mobile events with the Cisco kit), travel on you, booked through the expert-exam portal. The folklore around this specific lab is blunt — community write-ups describe failing the first attempt as normal, including from people who went on to pass. Treat attempt one as expensive reconnaissance if it goes wrong; the second-attempt stories are consistently sharper."
+    },
+    {
+      "step": 9,
+      "title": "After the number: recertify through the work itself",
+      "description": "120 CE credits per 3 years on the unified ledger, and automation engineers generate CE almost accidentally — Cisco U courses, Cisco Live sessions, exam passes all count. You now hold a real CCIE number from the rarest track in the portfolio; the career move is making the work visible: internal NetDevOps practice, conference talks, or the consulting bench."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "CCIE Automation v1.1 Lab Exam Topics (official blueprint PDF)",
+      "url": "https://learningcontent.cisco.com/documents/marketing/exam-topics/CCIE_Automation_V1.1_BP.pdf",
+      "type": "Official Documentation",
+      "note": "The contract for what the lab can ask: five domains with exact weights, verbatim. Read it before buying anything."
+    },
+    {
+      "name": "AUTOCOR 350-901 v2.0 Exam Topics (official PDF)",
+      "url": "https://learningcontent.cisco.com/documents/marketing/exam-topics/350-901-AUTOCOR-v2.0-7-9-2025.pdf",
+      "type": "Official Documentation",
+      "note": "The written's four domains — including the 20% AI in Automation section that older study materials don't cover."
+    },
+    {
+      "name": "CCIE Automation Practical Exam Topics — Cisco Learning Network",
+      "url": "https://learningnetwork.cisco.com/s/ccie-automation-exam-topics",
+      "type": "Official Documentation",
+      "note": "The living topics page — watch it for v1.1/v1.2 transition banners and equipment-list updates."
+    },
+    {
+      "name": "CCIE Automation v1.2 Exam Topics (effective March 23, 2027)",
+      "url": "https://learningnetwork.cisco.com/s/ccie-automation-v1-2-exam-topics",
+      "type": "Official Documentation",
+      "note": "The future blueprint — AI agents, MCP servers, OpenTofu in; Kubernetes and NSO out. Read before choosing your exam window."
+    },
+    {
+      "name": "DevNet Academy — build a free lab for this exam",
+      "url": "https://devnet-academy.com/blog/build-a-free-lab-for-the-devnet-expert-exam/",
+      "type": "Hands-on Labs",
+      "note": "A community walkthrough for replicating the candidate environment at home — this track's labs are all software, and this guide proves it."
+    },
+    {
+      "name": "DevNet Sandboxes (Catalyst Center, Meraki, IOS XE, and more)",
+      "url": "https://developer.cisco.com/site/sandbox/",
+      "type": "Hands-on Labs",
+      "note": "Free reservable instances of the exact platform APIs on the blueprint — the cheapest legitimate practice against real Cisco APIs."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Cisco U. – AUTOCOR Learning Path",
+      "type": "Official Training",
+      "price": "Varies — commonly employer-funded via Learning Credits",
+      "best_for": "Blueprint-aligned official prep for the 350-901 v2.0 written, including the AI in Automation domain third-party materials haven't caught up to",
+      "affiliate_url": "https://u.cisco.com/paths/design-deploy-manage-network-automation-systems-20876",
+      "affiliate_label": "View on Cisco U",
+      "affiliate_event": "ciscou_autocor",
+      "affiliate": false,
+      "note": "Plain reference link. If your employer holds Learning Credits, this is the obvious redemption."
+    },
+    {
+      "provider": "ccie-automation.com (Andreas Baekdahl)",
+      "type": "Lab Training + Blueprint Tracking",
+      "price": "Varies by offering",
+      "best_for": "Lab-focused training from a community-respected trainer whose site tracks the v1.1 vs v1.2 blueprint differences in detail",
+      "affiliate_url": "https://ccie-automation.com/blueprint/",
+      "affiliate_label": "View ccie-automation.com",
+      "affiliate_event": "ccieautomation_baekdahl",
+      "affiliate": false,
+      "note": "Plain reference link, no commission. The blueprint-diff page alone is worth a bookmark for anyone straddling the 2027 transition."
+    },
+    {
+      "provider": "Cisco Modeling Labs – Personal",
+      "type": "Lab Platform",
+      "price": "$199/year (20 nodes) · $349/year Personal Plus (40 nodes)",
+      "best_for": "The daily-driver topology simulator — CML is literally part of the exam environment, so labbing in it is rehearsal, not approximation",
+      "affiliate_url": "https://u.cisco.com/",
+      "affiliate_label": "View on Cisco U",
+      "affiliate_event": "cml_ccie_automation",
+      "affiliate": false,
+      "note": "Plain reference link. The 20-node Personal tier covers most automation topologies — this track needs fewer nodes than the routing tracks."
+    },
+    {
+      "provider": "Book: DEVCOR 350-901 Official Cert Guide",
+      "type": "Book",
+      "price": "~$50–70",
+      "best_for": "Foundation reading for the written's software-design and API material — with a big caveat about its age",
+      "affiliate_url": "https://www.amazon.com/s?k=DEVCOR+350-901+Official+Cert+Guide+Cisco&tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_ccie_automation",
+      "affiliate": true,
+      "note": "Honest warning: this book was written for the pre-AUTOCOR blueprint and predates the entire 20% AI in Automation domain. Useful for fundamentals; insufficient alone. No AUTOCOR v2.0 official guide existed as of July 2026."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Written via Pearson VUE · Lab via Cisco's expert-exam booking",
+      "url": "https://ciscolearningservices.my.site.com/cln/s/article/book-your-expert-level-exams",
+      "note": "$400 written + $1,600 per lab attempt ($1,900 at mobile-lab events with the Cisco kit); travel and lodging on you. Realistic all-in with the typical 2–3 attempts: $4,000–9,000 — cheaper than hardware-track CCIEs because the entire lab environment is software you can run at home. Cisco Learning Credits redeem for all of it."
+    }
+  ],
+  "faq": [
+    {
+      "question": "What actually changed when DevNet Expert became CCIE Automation?",
+      "answer": "The brand, the badge, and the number — not the exam. Effective February 3, 2026, Cisco renamed the entire DevNet portfolio to Automation, and the expert tier became CCIE Automation with the v1.1 lab blueprint carried forward unchanged. Existing DevNet Experts were migrated automatically: no re-testing, new badges, and real CCIE numbers assigned. The point of the exercise was recruiter visibility — 'CCIE' clears ATS filters and hiring-manager recognition in a way 'DevNet Expert' never did, which holders had complained about since 2022."
+    },
+    {
+      "question": "CCIE Automation or CCNP Automation — where should I actually stop?",
+      "answer": "For most automation engineers in 2026: CCNP Automation plus a public portfolio, and that's not a consolation prize. The CCNP proves the skills, your GitHub proves the practice, and together they cover the overwhelming majority of NetDevOps job requirements at roughly a tenth of the cost and a fraction of the time. The CCIE is the right call in specific rooms: Cisco partners, consulting where the number itself bills, and organizations building automation practices that want a branded expert at the top. Bonus: the AUTOCOR written is the same exam for both, so you can bank the CCNP core and decide about the lab later with nothing wasted."
+    },
+    {
+      "question": "How rare is this cert, really?",
+      "answer": "Genuinely the rarest expert track Cisco has — the lab only launched in May 2022, and certificate IDs were year-stamped in the low double digits (#20230004, #20230021). Community folklore circa 2024 put the worldwide population under 100, versus tens of thousands of classic CCIEs. Treat that number as folklore — Cisco publishes no holder counts or pass rates — but the year-stamped IDs and the freshly assigned CCIE numbers are consistent with a very small club. Whether rarity translates to money depends entirely on whether your market knows the club exists."
+    },
+    {
+      "question": "What does the lab actually test — is this a coding exam?",
+      "answer": "Substantially, yes. Eight hours to plan, design, develop, test, deploy, and maintain automation solutions: building a Python REST API from an OpenAPI spec, Ansible roles, Terraform state management, NETCONF/RESTCONF payloads from YANG modules, GitLab CI/CD pipelines, Docker, Kubernetes (until v1.2 drops it), pyATS test automation, and securing all of it. Community accounts describe a ~3-hour design module with no backward navigation followed by a ~5-hour hands-on build, with minimums required in both. If you can't comfortably write Python without an IDE holding your hand, you're not ready — and no amount of routing knowledge substitutes."
+    },
+    {
+      "question": "Should I test under the v1.1 blueprint or wait for v1.2?",
+      "answer": "Depends on which blueprint looks more like your job. v1.1 (valid through March 22, 2027) includes Kubernetes, NSO, and a wider platform-API spread. v1.2 (from March 23, 2027) removes Kubernetes, NSO, AppDynamics, and several APIs, and adds AI agents, MCP servers for LLM integration, OpenTofu, and Cisco Network as Code — a minor revision by Cisco's standards, maybe 10–20% of the blueprint. Strong K8s/NSO background: sprint for v1.1. AI-forward NetDevOps role: v1.2 will feel like home. The plan to avoid is being half-prepared for v1.1 when the window closes."
+    },
+    {
+      "question": "What's the real pass rate and cost?",
+      "answer": "Pass rate: Cisco publishes nothing, and the community folklore for this lab is unusually blunt — write-ups from candidates describe first-attempt passes as rare to nonexistent, and multiple attempts as normal. Plan financially and emotionally for at least two. Cost: $400 written plus $1,600 per lab attempt plus travel, landing realistically at $4,000–9,000 all-in over 2–3 attempts. That's cheaper than the hardware-track CCIEs' typical $5,000–12,000 because the entire lab environment — CML, Docker, GitLab, Python — runs on your own machine for near-zero cost."
+    },
+    {
+      "question": "Does the AI content mean this cert will age badly?",
+      "answer": "The opposite argument is stronger: this is the track Cisco is aging forward most aggressively. The AUTOCOR written already dedicates 20% to AI in Automation — building MCP servers with FastMCP, LLM agents, evaluating AI-generated code — and lab v1.2 brings agentic AI into the practical in March 2027. Cisco has also announced a broader one-hour CCIE AI module rolling out across tracks starting with Data Center in 2027; whether and when it reaches Automation is unannounced. The realistic read: the blueprint is chasing where the automation role is actually going, which is exactly what you want from a cert you'll hold for years."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CCNP Automation",
+      "slug": "ccnp-automation",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "Its AUTOCOR core doubles as this lab's qualifying exam — and for most automation engineers, the professional tier is the sensible summit."
+    },
+    {
+      "title": "CCIE Enterprise Infrastructure",
+      "slug": "ccie-enterprise-infrastructure",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The classic-networking twin — same lab economics, aimed at expert routing and SD-x instead of code. Some seniors hold both; most should pick the one matching their daily work."
+    },
+    {
+      "title": "CCNA Automation",
+      "slug": "ccna-automation",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The ground floor of the same ladder — where to send colleagues who ask how you got here."
+    }
+  ],
+  "seo_title": "CCIE Automation Guide – Lab, Costs & Rename | CertBlueprint",
+  "seo_description": "The honest CCIE Automation briefing: the DevNet Expert rename, AUTOCOR 350-901, the 8-hour lab, realistic $4–9K costs, and the March 2027 v1.2 change."
+}

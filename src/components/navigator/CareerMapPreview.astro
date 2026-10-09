@@ -1,0 +1,94 @@
+---
+import { GRAPH_EDGES, GRAPH_NODES } from '../../lib/navigator/data/graph';
+import { layoutGraph } from '../../lib/navigator/engine/layout';
+import { ACCENT_VAR, DOMAIN_BY_ID } from '../../lib/navigator/data/domains';
+
+/*
+  A window into the real map.
+
+  Not an illustration and not a stock graphic — these are the same 38 roles in
+  the same computed positions as /navigator/graph/, drawn small and stripped of
+  everything that needs reading: no labels, no controls, no interaction. Its
+  whole job is to show someone what they are about to open, because "career
+  map" as a line of text sells none of it.
+
+  Decorative by construction. The link it sits inside carries the real name and
+  description, so this is aria-hidden and contributes nothing to the accessible
+  name. Someone who cannot see it loses nothing.
+
+  The viewBox is tightened around the dots. The full layout reserves room for
+  labels that are not drawn here, and keeping that margin would shrink the
+  constellation to a smudge in the middle of the strip.
+*/
+
+interface Props {
+  /** Larger previews get slightly larger dots so they do not look sparse. */
+  scale?: number;
+}
+const { scale = 1 } = Astro.props;
+
+const { nodes } = layoutGraph(GRAPH_NODES, GRAPH_EDGES);
+const byId = new Map(nodes.map((n) => [n.slug, n]));
+
+const xs = nodes.map((n) => n.x);
+const ys = nodes.map((n) => n.y);
+const pad = 26;
+const minX = Math.min(...xs) - pad;
+const minY = Math.min(...ys) - pad;
+const width = Math.max(...xs) + pad - minX;
+const height = Math.max(...ys) + pad - minY;
+
+const accentOf = (slug: string) => `var(${ACCENT_VAR[DOMAIN_BY_ID[byId.get(slug)!.domains[0]].accent]})`;
+
+// The hubs carry the glow. Lighting all 38 evenly reads as noise; lighting the
+// half-dozen roles the most moves pass through reads as structure.
+const hubCutoff = [...nodes].sort((a, b) => b.degree - a.degree)[5]?.degree ?? 99;
+---
+
+<div class="nav-map-teaser__viz" aria-hidden="true">
+  <svg
+    class="nav-map-teaser__svg"
+    viewBox={`${minX} ${minY} ${width} ${height}`}
+    preserveAspectRatio="xMidYMid slice"
+    focusable="false"
+  >
+    <defs>
+      <pattern id="nav-teaser-grid" width="64" height="64" patternUnits="userSpaceOnUse">
+        <path d="M 64 0 L 0 0 0 64" fill="none" stroke="currentColor" stroke-width="1" />
+      </pattern>
+    </defs>
+
+    <rect
+      x={minX}
+      y={minY}
+      width={width}
+      height={height}
+      fill="url(#nav-teaser-grid)"
+      class="nav-map-teaser__grid"
+    />
+
+    <g class="nav-map-teaser__edges">
+      {
+        GRAPH_EDGES.map((e) => {
+          const a = byId.get(e.a)!;
+          const b = byId.get(e.b)!;
+          return <line x1={a.x} y1={a.y} x2={b.x} y2={b.y} class={e.mutual ? 'is-mutual' : undefined} />;
+        })
+      }
+    </g>
+
+    <g class="nav-map-teaser__nodes">
+      {
+        nodes.map((n) => (
+          <circle
+            cx={n.x}
+            cy={n.y}
+            r={Math.max(n.radius * 0.95 * scale, 3.2)}
+            class={`nav-map-teaser__dot is-${n.entry}${n.degree >= hubCutoff ? ' is-hub' : ''}`}
+            style={`--node: ${accentOf(n.slug)};`}
+          />
+        ))
+      }
+    </g>
+  </svg>
+</div>

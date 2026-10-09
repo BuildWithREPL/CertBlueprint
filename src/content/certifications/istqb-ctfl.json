@@ -5,19 +5,19 @@
   "vendor_slug": "istqb",
   "level": "Foundation",
   "short_name": "ISTQB CTFL",
-  "description": "ISTQB Certified Tester Foundation Level (CTFL) is the most widely recognized software testing certification in the world, held by over one million professionals. The current v4.0 syllabus covers testing fundamentals, testing across the software development lifecycle (including agile and DevOps), static testing, test analysis and design techniques, test management, and test tools. It is the entry point to the entire ISTQB certification scheme and never expires.",
-  "audience": "Manual QA testers who want to formalize their knowledge with a recognized credential, career changers moving into software testing, and developers, BAs, or product owners who want a shared testing vocabulary with their QA team.",
+  "description": "ISTQB Certified Tester Foundation Level (CTFL) v4.0 is the international baseline qualification for software testing, and the prerequisite for every ISTQB certification above it. The exam is 40 multiple-choice questions in 60 minutes, with 26 correct needed to pass. The syllabus covers testing fundamentals, testing across the development lifecycle, static testing, test analysis and design techniques, managing test activities, and test tools — vocabulary and method that apply whether the team works in waterfall, agile or continuous delivery.",
+  "audience": "Testers, test analysts and QA engineers who want the shared vocabulary of the field, developers who have inherited testing responsibility, and the people around them — business analysts, project and quality managers — who need to understand what a test strategy is claiming. There are no prerequisites, and the syllabus is written to be readable by someone new to the discipline.",
   "why_get_it": "CTFL is the credential that QA job filters actually recognize. When a job posting asks for a testing certification, this is almost always the one it means—especially in Europe, at consultancies, and in government or regulated-industry contracts where ISTQB certification is sometimes a hard staffing requirement. Be clear-eyed about what it is, though: CTFL proves you know the standard vocabulary and concepts of testing, not that you can test well. A portfolio of real test plans, bug reports, and exploratory testing notes will do more in an interview than the certificate alone. Where CTFL earns its fee is getting you past resume screens, giving self-taught testers a structured baseline (many discover real gaps in test design techniques), and serving as the prerequisite for every other ISTQB certification. It is also one of the cheapest recognized IT certifications, and it never expires.",
-  "when_to_get_it": "Get CTFL when you are actively applying for QA roles and seeing it listed in job postings, or when you have been testing for a year or two without formal training and want to close gaps and validate your knowledge. Career changers can take it with zero prior experience—there are no prerequisites—but pair it with hands-on practice (test a real app, write bug reports) so you have something concrete to show alongside it. If you are in a market where CTFL rarely appears in postings, such as many US product startups, spend the study time on a testing portfolio first and treat the cert as a cheap add-on rather than the main event.",
+  "when_to_get_it": "Take CTFL early: it is cheap, it is the gateway to every higher ISTQB level, and in much of Europe and Asia it is a routine expectation on QA job postings rather than a differentiator. In the US market it carries less weight on its own, so pair it with demonstrable automation skill — Selenium, Playwright, Cypress or an API testing toolchain — which is what most testing postings actually screen for. The syllabus is a free download, so you can read it end to end before spending anything and decide whether the exam is worth it to you.",
   "salary_range": "$50,000 – $80,000",
   "salary_note": "Entry-level QA analyst and software tester roles in the US typically pay $50K–$70K, with mid-level manual QA reaching $75K–$85K. Honest caveat: CTFL by itself rarely moves salary—it gets you past filters, not up pay bands. Test automation skills (Selenium, Playwright, Cypress, API testing) are what push QA compensation into the $90K+ range. Treat CTFL as a door-opener, not a raise.",
   "exam_code": "CTFL v4.0",
   "exam_duration": "60 minutes (75 minutes if taking the exam in a non-native language)",
-  "exam_format": "40 multiple-choice questions, closed book, drawn from the six chapters of the v4.0 syllabus. Delivered online with remote proctoring or at a testing center. Each question is worth 1 point with no negative marking.",
+  "exam_format": "40 multiple-choice questions worth one point each, no negative marking, closed book. 26 of 40 (65%) to pass. 60 minutes, extended by 25% to 75 minutes if you sit it in a language that is not your native one. Delivered online with remote proctoring or at a test centre, by your national member board's exam provider.",
   "exam_questions": "40 questions; pass with 26 of 40 correct (65%)",
   "official_url": "https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/",
   "official_pricing_url": "https://atsqa.org/purchase",
-  "recertification_note": "CTFL is valid for life. There is no renewal, no continuing education requirement, and no expiration—including for holders of older syllabus versions (v3.1 and earlier remain fully certified). Only ISTQB Expert Level certifications carry an expiry.",
+  "recertification_note": "CTFL is valid for life. There is no renewal, no continuing education requirement and no expiry, including for holders of older syllabus versions — v3.1 and earlier remain fully certified. Only ISTQB Expert Level certifications carry an expiry.",
   "skills_covered": [
     {
       "category": "Fundamentals of Testing",
@@ -154,7 +154,7 @@
     {
       "label": "Register for the CTFL Exam – AT*SQA (Official US Provider)",
       "url": "https://atsqa.org/purchase",
-      "note": "$229 in the US as of 2026—verify current pricing at checkout. Online proctored or testing center, voucher valid 365 days, and registration includes free extra sample exams. Outside the US, register through your national ISTQB member board instead."
+      "note": "ISTQB does not sell exams itself — pricing is set by national member boards and their exam providers, so it varies by country and changes. In the US, register through ASTQB; elsewhere, find your national board. Confirm the current price at checkout, and check whether the registration includes extra sample exams and how long the voucher stays valid."
     }
   ],
   "faq": [
@@ -211,5 +211,6 @@
     }
   ],
   "seo_title": "ISTQB CTFL v4.0 Study Guide – Exam Details, Study Plan, Resources | CertBlueprint",
-  "seo_description": "Complete ISTQB CTFL v4.0 study guide: who it's for, exam breakdown, honest salary notes, a step-by-step study plan, free official sample exams, and FAQ."
+  "seo_description": "Complete ISTQB CTFL v4.0 study guide: who it's for, exam breakdown, honest salary notes, a step-by-step study plan, free official sample exams, and FAQ.",
+  "last_verified": "September 24, 2026"
 }

@@ -1,0 +1,430 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import '../../../styles/navigator.css';
+
+export async function getStaticPaths() {
+  const paths = await getCollection('paths');
+
+  // A roadmap stage that names a certification the site does not have would
+  // render a dead link inside someone's plan. Cheap to check, invisible
+  // otherwise — the stage still looks complete.
+  const certs = await getCollection('certifications');
+  const known = new Set(certs.map((c) => c.data.slug));
+  const broken: string[] = [];
+  for (const p of paths) {
+    // Roadmap stages are only linked when the path lists the certification, so
+    // the check is on what actually becomes a link.
+    for (const stage of p.data.roadmap) {
+      const listed = p.data.certs.find((c) => c.slug === stage.cert_slug);
+      if (stage.cert_slug && listed && !known.has(stage.cert_slug)) {
+        broken.push(`${p.data.slug} stage ${stage.stage} → ${stage.cert_slug}`);
+      }
+    }
+    for (const cert of p.data.certs) {
+      if (!known.has(cert.slug)) broken.push(`${p.data.slug} certification → ${cert.slug}`);
+    }
+  }
+  // Stage numbers are the storage key for someone's progress AND the label on
+  // the page. Cloud Engineer shipped numbered from zero, which rendered as
+  // "Stage 0" on the live path guide for as long as that page has existed.
+  const misnumbered: string[] = [];
+  for (const p of paths) {
+    const stages = p.data.roadmap.map((r) => r.stage);
+    if (!stages.every((value, i) => value === String(i + 1))) {
+      misnumbered.push(`${p.data.slug}: ${stages.join(', ')}`);
+    }
+  }
+  if (misnumbered.length > 0) {
+    broken.push(`roadmap stages must run 1..n in order — ${misnumbered.join(' / ')}`);
+  }
+
+  if (broken.length > 0) {
+    throw new Error(`Navigator plan: path data is broken:\n  ${broken.join('\n  ')}`);
+  }
+
+  return paths.map((p) => ({ params: { path: p.data.slug }, props: { path: p.data } }));
+}
+
+const { path } = Astro.props;
+
+const certFor = (slug: string) => path.certs.find((c) => c.slug === slug);
+
+const title = `Your ${path.role} Plan — Track Your Progress | CertBlueprint`;
+const description = `Work through the ${path.role} roadmap at your own pace: ${path.roadmap.length} stages, ${path.skills.length} skills and ${path.certs.length} certifications, tracked in your browser. No account, nothing uploaded.`;
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Career Navigator', href: '/navigator/' },
+  { label: 'Plans', href: '/navigator/plan/' },
+  { label: path.role, href: `/navigator/plan/${path.slug}/` },
+];
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} noindex>
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-6">
+    <p class="font-mono text-xs uppercase tracking-widest mb-3" style="color: var(--cb-accent-text);">
+      Your plan · saved on this device only
+    </p>
+
+    <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-balance" style="color: var(--cb-text);">
+      {path.role}
+    </h1>
+
+    <p class="mt-4 text-lg leading-relaxed" style="color: var(--cb-text-sub); max-width: 60ch;">
+      {path.tagline}
+    </p>
+
+    {/* The framing has to come before the checkboxes, because a list of boxes
+        implies a gate, and this is not one. */}
+    <div class="nav-card p-5 mt-5" style="--nav-accent: var(--nav-warn);">
+      <h2 class="font-bold text-base mb-2" style="color: var(--cb-text);">Read this before you tick anything</h2>
+      <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub); max-width: 62ch;">
+        This is a plan, not a qualification. Nobody completes it in order, plenty of people get hired
+        halfway down it, and some finish the whole thing and still have a hard search. It tracks how
+        much of <em>this plan</em> you have worked through — nothing more, and specifically not how
+        employable you are. There is no score, no streak, and nothing here is a deadline.
+      </p>
+    </div>
+  </section>
+
+  {/* ── Progress ───────────────────────────────────────────────── */}
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+    <div id="plan-summary" class="grid sm:grid-cols-2 gap-3"></div>
+  </section>
+
+  {/* ── Roadmap ────────────────────────────────────────────────── */}
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+    <h2 class="text-xl font-bold tracking-tight mb-1" style="color: var(--cb-text);">The roadmap</h2>
+    <p class="text-sm leading-relaxed mb-4" style="color: var(--cb-text-sub); max-width: 62ch;">
+      Written as an order because the earlier stages genuinely make the later ones easier — not because
+      skipping one is forbidden.
+    </p>
+
+    <ol class="space-y-3">
+      {
+        path.roadmap.map((stage) => (
+          <li class="nav-card nav-card--railed p-4 pl-5" data-stage={stage.stage} style="--nav-accent: var(--cb-border);">
+            <div class="flex items-start justify-between gap-3 flex-wrap">
+              <div class="flex-1 min-w-0">
+                <p class="font-mono text-xs uppercase tracking-widest mb-1" style="color: var(--cb-text-muted);">
+                  Stage {stage.stage}
+                </p>
+                <h3 class="font-bold text-base" style="color: var(--cb-text);">{stage.title}</h3>
+              </div>
+              <div class="flex gap-1.5 shrink-0" role="group" aria-label={`Progress for stage ${stage.stage}`}>
+                <button type="button" class="plan-chip" data-kind="stage" data-id={stage.stage} data-value="doing">
+                  Working on it
+                </button>
+                <button type="button" class="plan-chip" data-kind="stage" data-id={stage.stage} data-value="done">
+                  Done
+                </button>
+              </div>
+            </div>
+
+            <p class="text-sm leading-relaxed mt-2" style="color: var(--cb-text-sub);">{stage.focus}</p>
+
+            {/* Vendor comes from the path's own certification list — there is no
+                /certifications/ route, and a stage naming a cert the path does
+                not list simply gets no link rather than a broken one. */}
+            {stage.cert_slug && certFor(stage.cert_slug) && (
+              <p class="text-sm mt-2">
+                <a
+                  href={`/vendors/${certFor(stage.cert_slug)!.vendor_slug}/${stage.cert_slug}/`}
+                  class="font-semibold"
+                  style="color: var(--cb-accent-text);"
+                >
+                  Study guide: {certFor(stage.cert_slug)!.title} →
+                </a>
+              </p>
+            )}
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  {/* ── Skills ─────────────────────────────────────────────────── */}
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+    <h2 class="text-xl font-bold tracking-tight mb-1" style="color: var(--cb-text);">Skills this path is built on</h2>
+    <p class="text-sm leading-relaxed mb-4" style="color: var(--cb-text-sub); max-width: 62ch;">
+      Tick what you can already do. Most people arrive with more of these than they expect — especially
+      the foundational ones, which are the part everyone skips and then has to come back for.
+    </p>
+
+    <div class="space-y-1.5">
+      {
+        path.skills.map((skill) => (
+          <label class="flex gap-2.5 items-start text-sm cursor-pointer py-1.5">
+            <input
+              type="checkbox"
+              class="plan-skill mt-1 shrink-0"
+              value={skill.name}
+              style="accent-color: var(--cb-accent);"
+            />
+            <span>
+              <span class="font-medium" style="color: var(--cb-text);">{skill.name}</span>
+              <span class="ml-2 font-mono text-[0.65rem] uppercase tracking-widest" style="color: var(--cb-text-muted);">
+                {skill.level}
+              </span>
+              {skill.note && (
+                <span class="block text-xs leading-relaxed mt-0.5" style="color: var(--cb-text-muted);">
+                  {skill.note}
+                </span>
+              )}
+            </span>
+          </label>
+        ))
+      }
+    </div>
+  </section>
+
+  {/* ── Certifications ─────────────────────────────────────────── */}
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+    <h2 class="text-xl font-bold tracking-tight mb-1" style="color: var(--cb-text);">Certifications</h2>
+    <p class="text-sm leading-relaxed mb-4" style="color: var(--cb-text-sub); max-width: 62ch;">
+      Evidence for a direction you have already chosen, in the order they stop being premature. You do
+      not need all of them, and buying the next one is rarely the answer to a stalled search.
+    </p>
+
+    <div class="space-y-2">
+      {
+        path.certs.map((cert) => (
+          <div class="nav-card p-4" data-cert={cert.slug}>
+            <div class="flex items-start justify-between gap-3 flex-wrap">
+              <div class="flex-1 min-w-0">
+                <p class="font-mono text-xs uppercase tracking-widest mb-1" style="color: var(--cb-text-muted);">
+                  {cert.stage}
+                </p>
+                <a
+                  href={`/vendors/${cert.vendor_slug}/${cert.slug}/`}
+                  class="font-semibold text-sm"
+                  style="color: var(--cb-accent-text);"
+                >
+                  {cert.title}
+                </a>
+              </div>
+              <div class="flex gap-1.5 shrink-0" role="group" aria-label={`Progress for ${cert.title}`}>
+                <button type="button" class="plan-chip" data-kind="cert" data-id={cert.slug} data-value="studying">
+                  Studying
+                </button>
+                <button type="button" class="plan-chip" data-kind="cert" data-id={cert.slug} data-value="earned">
+                  Earned
+                </button>
+              </div>
+            </div>
+            <p class="text-sm leading-relaxed mt-2" style="color: var(--cb-text-sub);">{cert.reason}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  {/* ── Trial ──────────────────────────────────────────────────── */}
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+    <h2 class="text-xl font-bold tracking-tight mb-1" style="color: var(--cb-text);">Try the work</h2>
+    <p class="text-sm leading-relaxed mb-4" style="color: var(--cb-text-sub); max-width: 62ch;">
+      Worth doing before the first certification rather than after it. Finding out you dislike this is
+      a genuinely useful result, and far cheaper here than after an exam voucher.
+    </p>
+
+    <div class="nav-card nav-card--railed p-4 pl-5" style="--nav-accent: var(--nav-emerald);">
+      <div class="flex items-start justify-between gap-3 flex-wrap">
+        <p class="font-mono text-xs uppercase tracking-widest" style="color: var(--nav-emerald);">
+          {path.trial.time} · {path.trial.cost}
+        </p>
+        <button type="button" class="plan-chip" data-kind="trial" data-id="trial" data-value="done">
+          Done it
+        </button>
+      </div>
+      <p class="text-sm leading-relaxed mt-2" style="color: var(--cb-text);">{path.trial.objective}</p>
+      <p class="text-xs leading-relaxed mt-2" style="color: var(--cb-text-muted);">{path.trial.disclosure}</p>
+      <p class="text-sm mt-3">
+        <a href="/navigator/trials/" class="font-semibold" style="color: var(--nav-emerald);">
+          More weekend trials →
+        </a>
+      </p>
+    </div>
+  </section>
+
+  {/* ── Controls ───────────────────────────────────────────────── */}
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <div class="nav-noprint pt-6 border-t" style="border-color: var(--cb-border);">
+      <h2 class="text-sm font-bold mb-3" style="color: var(--cb-text);">Your data</h2>
+      <p class="text-sm leading-relaxed mb-4" style="color: var(--cb-text-sub); max-width: 62ch;">
+        Every tick is saved to this browser the moment you make it. Nothing is uploaded, there is no
+        account, and progress on other paths is kept separately — switching plans never erases one.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        <a
+          href="/navigator/plan/"
+          class="px-4 py-2 rounded-lg text-sm font-semibold border"
+          style="color: var(--cb-text); border-color: var(--cb-border); background: var(--cb-bg-card);"
+        >
+          All plans
+        </a>
+        <a
+          href={`/paths/${path.slug}/`}
+          class="px-4 py-2 rounded-lg text-sm font-semibold border"
+          style="color: var(--cb-text); border-color: var(--cb-border); background: var(--cb-bg-card);"
+        >
+          The full {path.role} guide
+        </a>
+        <button
+          id="plan-print"
+          type="button"
+          class="px-4 py-2 rounded-lg text-sm font-semibold border"
+          style="color: var(--cb-text); border-color: var(--cb-border); background: var(--cb-bg-card);"
+        >
+          Print or save as PDF
+        </button>
+        <button
+          id="plan-clear"
+          type="button"
+          class="px-4 py-2 rounded-lg text-sm font-semibold border"
+          style="color: var(--nav-fail); border-color: var(--cb-border); background: var(--cb-bg-card);"
+        >
+          Clear this plan
+        </button>
+      </div>
+      <p id="plan-status" class="mt-3 text-sm" style="color: var(--nav-emerald);" role="status"></p>
+    </div>
+  </section>
+</BaseLayout>
+
+<script define:vars={{ pathSlug: path.slug, totals: { stages: path.roadmap.length, skills: path.skills.length, certs: path.certs.length, hasTrial: true } }}>
+  window.__planPath = pathSlug;
+  window.__planTotals = totals;
+</script>
+
+<script>
+  import { loadPlan, savePlan } from '../../../lib/navigator/engine/session';
+  import { emptyProgress, summarise, type CertStatus, type StageStatus } from '../../../lib/navigator/engine/plan';
+
+  const pathSlug = (window as unknown as { __planPath: string }).__planPath;
+  const totals = (window as unknown as { __planTotals: { stages: number; skills: number; certs: number; hasTrial: boolean } })
+    .__planTotals;
+
+  const store = loadPlan();
+  const progress = store.byPath[pathSlug] ?? emptyProgress();
+
+  const chips = Array.from(document.querySelectorAll<HTMLButtonElement>('.plan-chip'));
+  const skillBoxes = Array.from(document.querySelectorAll<HTMLInputElement>('.plan-skill'));
+  const summary = document.getElementById('plan-summary')!;
+  const status = document.getElementById('plan-status')!;
+
+  function persist() {
+    progress.updatedAt = Date.now();
+    store.byPath[pathSlug] = progress;
+    // Opening a plan is not choosing it; ticking something is.
+    store.chosen = pathSlug;
+    savePlan(store);
+  }
+
+  function paintChips() {
+    for (const chip of chips) {
+      const { kind, id, value } = chip.dataset as { kind: string; id: string; value: string };
+      let on = false;
+      if (kind === 'stage') on = progress.stages[id] === value;
+      else if (kind === 'cert') on = progress.certs[id] === value;
+      else if (kind === 'trial') on = progress.trialDone === true;
+      chip.classList.toggle('is-on', on);
+      chip.setAttribute('aria-pressed', String(on));
+    }
+
+    // A finished stage gets its rail coloured, so the shape of the page shows
+    // where you are without needing to read every chip.
+    for (const item of Array.from(document.querySelectorAll<HTMLElement>('[data-stage]'))) {
+      const state = progress.stages[item.dataset.stage!];
+      item.style.setProperty(
+        '--nav-accent',
+        state === 'done' ? 'var(--nav-emerald)' : state === 'doing' ? 'var(--cb-accent)' : 'var(--cb-border)',
+      );
+    }
+  }
+
+  function paintSummary() {
+    summary.replaceChildren();
+    for (const section of summarise(progress, totals)) {
+      const card = document.createElement('div');
+      card.className = 'nav-card p-4';
+
+      const label = document.createElement('p');
+      label.className = 'text-sm font-semibold';
+      label.style.color = 'var(--cb-text)';
+      label.textContent = section.label;
+
+      const value = document.createElement('p');
+      value.className = 'font-mono text-sm mt-0.5';
+      value.style.color = 'var(--cb-text-muted)';
+      value.textContent =
+        `${section.done} of ${section.total}` +
+        (section.inProgress ? ` · ${section.inProgress} in progress` : '');
+
+      const track = document.createElement('div');
+      track.className = 'nav-bar-track mt-2';
+      const fill = document.createElement('div');
+      fill.className = 'nav-bar-fill';
+      fill.style.width = `${section.total > 0 ? (section.done / section.total) * 100 : 0}%`;
+      fill.style.setProperty('--nav-accent', 'var(--nav-emerald)');
+      track.appendChild(fill);
+
+      card.append(label, value, track);
+      summary.appendChild(card);
+    }
+  }
+
+  function repaint() {
+    paintChips();
+    paintSummary();
+  }
+
+  for (const chip of chips) {
+    chip.addEventListener('click', () => {
+      const { kind, id, value } = chip.dataset as { kind: string; id: string; value: string };
+      if (kind === 'stage') {
+        // Clicking the active state again clears it — the only way to undo a
+        // mis-tick without a separate "not started" button nobody would read.
+        if (progress.stages[id] === value) delete progress.stages[id];
+        else progress.stages[id] = value as StageStatus;
+      } else if (kind === 'cert') {
+        if (progress.certs[id] === value) delete progress.certs[id];
+        else progress.certs[id] = value as CertStatus;
+      } else if (kind === 'trial') {
+        if (progress.trialDone) delete progress.trialDone;
+        else progress.trialDone = true;
+      }
+      persist();
+      repaint();
+    });
+  }
+
+  for (const box of skillBoxes) {
+    box.checked = progress.skills[box.value] === true;
+    box.addEventListener('change', () => {
+      if (box.checked) progress.skills[box.value] = true;
+      else delete progress.skills[box.value];
+      persist();
+      repaint();
+    });
+  }
+
+  document.getElementById('plan-print')!.addEventListener('click', () => window.print());
+
+  document.getElementById('plan-clear')!.addEventListener('click', () => {
+    delete store.byPath[pathSlug];
+    if (store.chosen === pathSlug) store.chosen = null;
+    savePlan(store);
+    for (const key of Object.keys(progress.stages)) delete progress.stages[key];
+    for (const key of Object.keys(progress.skills)) delete progress.skills[key];
+    for (const key of Object.keys(progress.certs)) delete progress.certs[key];
+    delete progress.trialDone;
+    skillBoxes.forEach((b) => {
+      b.checked = false;
+    });
+    repaint();
+    status.textContent = 'This plan has been cleared from this browser. Other plans are untouched.';
+  });
+
+  repaint();
+</script>

@@ -98,27 +98,32 @@ details summary .faq-chevron {
 }
 
 /* ─── Theme toggle button ─────────────────────────────────── */
-.theme-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.875rem;
-  height: 1.875rem;
-  border-radius: 0.375rem;
-  border: 1px solid var(--cb-border);
-  background: transparent;
-  color: var(--cb-text-muted);
-  cursor: pointer;
-  transition: all 0.15s ease;
-  padding: 0;
-}
-.theme-btn:hover {
-  background: var(--cb-bg-subtle);
-  color: var(--cb-text);
-  border-color: var(--cb-text-muted);
-}
-.theme-btn[aria-pressed="true"] {
-  background: var(--cb-accent);
-  border-color: var(--cb-accent);
-  color: #ffffff;
+/* In the components layer so Tailwind display utilities (sm:hidden, md:hidden)
+   on the same element win. Unlayered, this display rule beat them and the
+   mobile-only header buttons showed at every width. */
+@layer components {
+  .theme-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.875rem;
+    height: 1.875rem;
+    border-radius: 0.375rem;
+    border: 1px solid var(--cb-border);
+    background: transparent;
+    color: var(--cb-text-muted);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    padding: 0;
+  }
+  .theme-btn:hover {
+    background: var(--cb-bg-subtle);
+    color: var(--cb-text);
+    border-color: var(--cb-text-muted);
+  }
+  .theme-btn[aria-pressed="true"] {
+    background: var(--cb-accent);
+    border-color: var(--cb-accent);
+    color: #ffffff;
+  }
 }

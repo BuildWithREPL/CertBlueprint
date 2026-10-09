@@ -1,0 +1,57 @@
+---
+/**
+ * RolesForCert — "Roles where this certification shows up", built from the
+ * Career Navigator's own role data (RoleContent.certs). It is the reverse edge
+ * of role → certification, so every certification guide links back into the
+ * roles that recommend it, with that role's stated reason.
+ *
+ * Renders nothing when no role references the cert — never an empty heading.
+ */
+import { ROLES } from '../lib/navigator/data/roles';
+
+interface Props {
+  slug: string;
+  vendorSlug: string;
+  /** Short display name, e.g. "Security+". */
+  name: string;
+  max?: number;
+}
+const { slug, vendorSlug, name, max = 8 } = Astro.props;
+
+const ENTRY_LABEL = { 'first-job': 'Entry-level', 'second-job': 'Second step', senior: 'Senior' } as const;
+const ENTRY_ORDER = { 'first-job': 0, 'second-job': 1, senior: 2 } as const;
+
+const matches = ROLES.flatMap((role) => {
+  const cert = role.certs.find((c) => c.slug === slug && (!c.vendorSlug || c.vendorSlug === vendorSlug));
+  return cert ? [{ role, cert }] : [];
+}).sort((a, b) => ENTRY_ORDER[a.role.entry] - ENTRY_ORDER[b.role.entry] || a.role.name.localeCompare(b.role.name));
+
+const shown = matches.slice(0, max);
+---
+
+{shown.length > 0 && (
+  <section id="roles" aria-labelledby="roles-heading">
+    <h2 id="roles-heading" class="text-lg font-bold mb-2 pb-2 border-b" style="color: var(--cb-text); border-color: var(--cb-border);">
+      Jobs where {name} shows up
+    </h2>
+    <p class="text-sm mb-4 leading-relaxed" style="color: var(--cb-text-sub);">
+      {matches.length === 1 ? 'One role' : `${matches.length} roles`} in our Career Navigator list {name} as worth having. Each page covers what the job involves day to day, its honest downside, and the typical pay.
+    </p>
+    <ul class="grid sm:grid-cols-2 gap-3">
+      {shown.map(({ role, cert }) => (
+        <li>
+          <a href={`/navigator/roles/${role.slug}/`} class="block rounded-xl border p-4 h-full transition-all" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+            <span class="flex flex-wrap items-center gap-2 mb-1">
+              <span class="text-sm font-semibold" style="color: var(--cb-text);">{role.name}</span>
+              <span class="text-xs px-2 py-0.5 rounded-full" style="background: var(--cb-bg-subtle); color: var(--cb-text-muted);">{ENTRY_LABEL[role.entry]} · {cert.stage}</span>
+            </span>
+            <span class="block text-sm leading-relaxed" style="color: var(--cb-text-sub);">{cert.reason}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+    <p class="text-sm mt-4">
+      <a href="/navigator/assessment/" class="font-medium" style="color: var(--cb-accent-text);">Not sure which of these fits you? Take the free Navigator assessment →</a>
+    </p>
+  </section>
+)}

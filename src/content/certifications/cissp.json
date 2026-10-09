@@ -5,15 +5,15 @@
   "vendor": "ISC2",
   "vendor_slug": "isc2",
   "level": "Advanced",
-  "description": "The CISSP (Certified Information Systems Security Professional) is the senior credential in cybersecurity — the one security-manager, architect, and federal job postings ask for by name. It validates broad, experienced command of security across eight domains, from risk management and architecture to IAM and security operations, and it is experience-gated: five years of paid security work is part of the certification itself.",
-  "audience": "Experienced IT and security professionals with (or approaching) five years of hands-on work — sysadmins, network engineers, SOC analysts, and security engineers stepping up toward security leadership. Not a beginner cert: if you're new to IT, start with Security+ and build experience first. No experience yet but ready for the material? You can sit the same exam and become an Associate of ISC2 while you earn the years.",
+  "description": "CISSP is the senior, broad security credential — eight domains from risk management and asset security through architecture, networking, identity, testing, operations and software development security. The current exam outline took effect on 15 April 2024. It is adaptive: 100 to 150 items in three hours, 700 of 1000 to pass, in person at Pearson VUE only. The exam tests managerial judgement over technical recall, which is why experienced engineers regularly fail it on the first attempt.",
+  "audience": "Experienced practitioners, managers and architects — ISC2 requires five years of cumulative paid work across two or more of the eight domains, and audits applications. A relevant bachelor's or master's degree, or one credential from ISC2's approved list, waives up to one year; only one year can be waived. If you pass without the experience you become an Associate of ISC2 and have six years to earn it, which is a legitimate route rather than a consolation prize.",
   "why_get_it": "CISSP is HR-filter gold — the most-cited certification in U.S. security job postings and a DoD 8140-approved credential, which makes it a hard screen for many government and defense roles. It signals breadth and seniority in a way no single technical cert does: eight domains covering risk, architecture, networking, identity, testing, operations, and software security. The experience requirement is the point — employers trust it because you cannot study your way around the five years. For security-manager, architect, and CISO-track roles, it is the closest thing the industry has to a standard.",
-  "when_to_get_it": "When you have roughly five years of cumulative, paid experience touching two or more of the eight domains — and most sysadmin, networking, and SOC work counts toward more domains than people assume. A degree or a cert from ISC2's approved waiver list trims one year, so the real floor is four — but verify your cert survived ISC2's April 2026 waiver-list pruning before counting on it. If you're earlier than that but the material is within reach, take the exam as an Associate of ISC2: you get six years to finish the experience clock. Just don't chase CISSP as a first cert — it isn't built for that, and recruiters know the difference.",
+  "when_to_get_it": "Take CISSP when you have the experience, not before — it is the credential that opens security management and senior architecture roles, and it is approved under DoDM 8140. Most people study three to six months. Two practical notes. Book with the exam's shape in mind: adaptive, unreviewable, in person only, and long. And decide up front about Peace of Mind Protection, which bundles a second attempt within 180 days — it costs $998 against $749 for the single exam, so it is effectively a $249 retake instead of a $749 one. Passing is not the end: you have nine months to complete endorsement by a certified professional.",
   "salary_range": "$130,000 – $165,000",
   "salary_note": "Surveys consistently put CISSP holders among the best-paid cert holders in IT — the ISC2 workforce study reports a ~$150K U.S. median for cyber professionals, and BLS (May 2024) puts Information Security Analysts at $124,910 median with 29% projected growth through 2034. Honest caveat: the cert requires five years of experience, so those numbers reflect the seniority of the people allowed to hold it — CISSP won't triple an entry-level salary. What it demonstrably does is unlock the postings where it's a hard requirement.",
   "exam_code": "CISSP (2024 outline)",
   "exam_duration": "3 hours",
-  "exam_format": "Computerized Adaptive Testing (CAT) at Pearson VUE test centers — no online proctoring. The exam adapts to your performance and can end as early as question 100; you cannot go back to review answers. Passing standard: 700 out of 1000.",
+  "exam_format": "Computerized Adaptive Testing (CAT) for all languages, at Pearson VUE test centres in person — there is no online proctoring. 100 to 150 items in 3 hours, multiple choice plus advanced item types, 700 out of 1000 to pass. The exam adapts to your performance and can end as early as item 100, and you cannot go back to review an answer.",
   "exam_questions": "100–150 questions (adaptive)",
   "official_url": "https://www.isc2.org/certifications/cissp",
   "official_pricing_url": "https://www.isc2.org/register-for-exam/isc2-exam-pricing",
@@ -163,7 +163,7 @@
     {
       "label": "Register via ISC2 → Pearson VUE",
       "url": "https://www.isc2.org/register-for-exam",
-      "note": "The exam is $749, test centers only. There is no legitimate discount-voucher market — ISC2 doesn't sell through third parties, and gray-market vouchers can void results. If you want insurance, the official Peace of Mind bundle ($998) buys two attempts — effectively a $249 retake instead of $749."
+      "note": "The exam is $749, or $998 bundled with Peace of Mind Protection, which covers a second attempt within 180 days. Purchased from ISC2 directly and scheduled at a Pearson VUE test centre in person; you have 365 days to schedule and sit it. ISC2 does not sell through third parties, and gray-market vouchers can void your result."
     }
   ],
   "faq": [
@@ -220,5 +220,6 @@
     }
   ],
   "seo_title": "ISC2 CISSP Study Guide – Requirements, Cost, Study Plan | CertBlueprint",
-  "seo_description": "Complete CISSP guide: the 5-year experience requirement (and Associate path), $749 exam and CAT format, the 8 domains, honest salary reality, endorsement process, and the study stack that actually works."
+  "seo_description": "Complete CISSP guide: the 5-year experience requirement (and Associate path), $749 exam and CAT format, the 8 domains, honest salary reality, endorsement process, and the study stack that actually works.",
+  "last_verified": "September 24, 2026"
 }

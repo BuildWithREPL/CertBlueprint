@@ -3,6 +3,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import CertCard from '../components/CertCard.astro';
 import VendorCard from '../components/VendorCard.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import { getCollection } from 'astro:content';
+import { ROLES } from '../lib/navigator/data/roles';
+import { ROLE_PAIRS } from '../lib/navigator/data/role-pairs';
+import { GRAPH_EDGES } from '../lib/navigator/data/graph';
+import CareerMapPreview from '../components/navigator/CareerMapPreview.astro';
+import MapGlyph from '../components/MapGlyph.astro';
+import '../styles/navigator.css';
+
+// Counted from the collection — hand-typed counts went stale as guides were added.
+const certCountByVendor = (await getCollection('certifications')).reduce<Record<string, number>>((acc, c) => {
+  acc[c.data.vendor_slug] = (acc[c.data.vendor_slug] ?? 0) + 1;
+  return acc;
+}, {});
+
+const navigatorTools = [
+  { title: 'Compare two roles', href: '/navigator/compare/', body: `${ROLE_PAIRS.length} side-by-sides of jobs people confuse — where the work overlaps and where it doesn't.` },
+  { title: 'Weekend trials', href: '/navigator/trials/', body: 'Try a slice of the actual work for free before committing months to a cert.' },
+  { title: 'Already work in IT?', href: '/navigator/inventory/', body: 'Tick the technologies you have used and see the capabilities — and roles — they add up to.' },
+  { title: 'Coming out of the military?', href: '/navigator/military/', body: 'Start from what you operated, diagnosed and secured, and see which civilian IT roles are built from it.' },
+];
 
 const breadcrumbs = [{ label: 'Home', href: '/' }];
 
@@ -47,7 +67,7 @@ const paths = [
   },
   {
     title: 'Cybersecurity',
-    example: 'Security+ → CySA+ → CASP+',
+    example: 'Security+ → CySA+ → SecurityX',
     description: 'Security fundamentals, threat detection, and incident response. Security+ is DoD-approved and opens the most entry-level security doors fastest.',
     icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
     href: '/vendors/comptia/security-plus/',
@@ -148,6 +168,57 @@ const featuredCerts = [
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
+    <!-- ─── Career Navigator ──────────────────────────────── -->
+    <section class="py-10 border-b" style="border-color: var(--cb-border);" aria-labelledby="navigator-heading">
+      <div class="lg:grid lg:grid-cols-[1fr_1.4fr] gap-8 items-start">
+        <div class="mb-6 lg:mb-0">
+          <p class="text-xs font-semibold uppercase tracking-wider mb-2" style="color: var(--cb-accent-text);">Free · no signup · runs in your browser</p>
+          <h2 id="navigator-heading" class="text-xl font-bold mb-3" style="color: var(--cb-text);">Not sure which part of IT is for you?</h2>
+          <p class="text-sm leading-relaxed mb-4" style="color: var(--cb-text-sub);">
+            Picking a certification before you know the job is how people spend months and hundreds of dollars on the wrong exam. The Career Navigator shows you what {ROLES.length} IT roles actually involve day to day — including the downsides — and matches the kind of problems you enjoy to the roles built around them.
+          </p>
+          <a href="/navigator/assessment/" class="inline-block px-5 py-2.5 rounded-lg text-sm font-semibold text-white" style="background: var(--cb-accent);">Find my path →</a>
+        </div>
+        <ul class="grid sm:grid-cols-2 gap-3">
+          {navigatorTools.map((t) => (
+            <li>
+              <a href={t.href} class="block rounded-xl border p-4 h-full transition-all" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+                <span class="block font-semibold text-sm mb-1" style="color: var(--cb-text);">{t.title}</span>
+                <span class="block text-sm leading-relaxed" style="color: var(--cb-text-sub);">{t.body}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* The map is the most persuasive thing on the site and it was three
+          clicks deep. Showing the drawing is the pitch — a line of text asking
+          someone to open a "career map" is not. */}
+      <a
+        href="/navigator/graph/"
+        class="nav-card nav-card--railed nav-map-teaser nav-map-teaser--wide mt-6"
+        style="--nav-accent: var(--nav-violet);"
+      >
+        <CareerMapPreview scale={1.1} />
+
+        <div class="nav-map-teaser__body">
+          <div class="flex items-center gap-2 mb-2 flex-wrap">
+            <h3 class="font-bold text-lg" style="color: var(--cb-text);">The IT career map</h3>
+            <span class="nav-map-teaser__badge">
+              <MapGlyph size="1.15em" />
+              {ROLES.length} roles · {GRAPH_EDGES.length} moves
+            </span>
+          </div>
+          <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+            Every role joined by the moves people actually make. Open one for the work, the honest
+            downside and the pay — then ask it for a route from where you are now to where you want to
+            end up.
+          </p>
+          <span class="nav-door__cta text-sm font-semibold" style="color: var(--nav-violet);">Explore the map →</span>
+        </div>
+      </a>
+    </section>
+
     <!-- ─── Featured certifications ───────────────────────── -->
     <section class="py-10 border-b" style="border-color: var(--cb-border);" aria-labelledby="featured-cert-heading">
       <div class="flex items-center justify-between mb-5">
@@ -174,10 +245,10 @@ const featuredCerts = [
         <a href="/vendors/" class="text-sm font-medium" style="color: var(--cb-accent-text);">All vendors →</a>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-        <VendorCard title="Cisco" href="/vendors/cisco/" description="The full networking ladder: $125 CCST entry certs through CCNA, all eight CCNP tracks, and honest CCIE briefings." certCount={17} available={true} />
-        <VendorCard title="CompTIA" href="/vendors/comptia/" description="Vendor-neutral IT certifications: Security+, Network+, A+, and CySA+. DoD-approved and recognized across government and private sector." certCount={7} available={true} />
-        <VendorCard title="AWS" href="/vendors/aws/" description="Cloud platform certifications: Solutions Architect, Developer, SysOps, and specialty tracks. Among the highest-paying credentials in IT." certCount={3} available={true} />
-        <VendorCard title="Microsoft" href="/vendors/microsoft/" description="Azure administration, architecture, security, and DevOps certifications. Dominant in enterprise Microsoft environments." certCount={6} available={true} />
+        <VendorCard title="Cisco" href="/vendors/cisco/" description="The full networking ladder: $125 CCST entry certs through CCNA, all eight CCNP tracks, and honest CCIE briefings." certCount={certCountByVendor['cisco']} available={true} />
+        <VendorCard title="CompTIA" href="/vendors/comptia/" description="Vendor-neutral IT certifications: Security+, Network+, A+, and CySA+. DoD-approved and recognized across government and private sector." certCount={certCountByVendor['comptia']} available={true} />
+        <VendorCard title="AWS" href="/vendors/aws/" description="Cloud platform certifications: Solutions Architect, Developer, SysOps, and specialty tracks. Among the highest-paying credentials in IT." certCount={certCountByVendor['aws']} available={true} />
+        <VendorCard title="Microsoft" href="/vendors/microsoft/" description="Azure administration, architecture, security, and DevOps certifications. Dominant in enterprise Microsoft environments." certCount={certCountByVendor['microsoft']} available={true} />
       </div>
     </section>
 

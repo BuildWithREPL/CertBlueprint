@@ -11,7 +11,9 @@
     "preview": "astro preview",
     "astro": "astro",
     "deploy": "astro build && wrangler deploy && node scripts/submit-indexnow.mjs",
-    "indexnow": "node scripts/submit-indexnow.mjs"
+    "indexnow": "node scripts/submit-indexnow.mjs",
+    "audit:map": "node scripts/audit-map.mjs",
+    "check:links": "node scripts/check-external-links.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",
@@ -27,5 +29,5 @@
     "wrangler": "^4.82.2"
   },
   "private": true,
-  "description": "CertBlueprint.com — IT certification roadmaps, study plans, and the IT Career Navigator. Astro static site + Cloudflare Worker (Workers AI)."
+  "description": "CertBlueprint.com \u2014 IT certification roadmaps, study plans, and the IT Career Navigator. Astro static site + Cloudflare Worker (Workers AI)."
 }

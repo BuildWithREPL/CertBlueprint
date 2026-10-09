@@ -12,7 +12,7 @@
   "salary_range": "$60,000 – $80,000 (entry BI analyst)",
   "salary_note": "Google's '$98,000+ median' is a Lightcast blend of the whole field — treat it as the mid-career ceiling. Entry reality: ZipRecruiter puts entry BI analysts at ~$80K average (middle band $54–100K), PayScale ~$80K overall. A realistic first BI offer for a career-switcher with this cert plus a portfolio runs $60–80K in most U.S. metros, higher in tech hubs — noticeably above general data-analyst entry, which is the point of the step up.",
   "exam_code": "Coursera Certificate",
-  "exam_duration": "Self-paced — Google says under 2 months at 10 hrs/week (~70 hours of content); motivated learners with the assumed background finish in 3–6 weeks",
+  "exam_duration": "Self-paced — Coursera lists 4 courses at 2 months, 10 hours a week, and expects the Google Data Analytics certificate or equivalent experience first",
   "exam_format": "No proctored exam. Four self-paced Coursera courses with auto-graded quizzes, 50+ practice assessments, and hands-on case studies building pipelines in BigQuery/Dataflow and dashboards in Tableau. No human feedback on projects — a fair criticism in reviews.",
   "exam_questions": "No final exam — quizzes and portfolio case-study projects",
   "official_url": "https://grow.google/certificates/business-intelligence/",
@@ -168,7 +168,7 @@
     {
       "label": "Enroll – Google Business Intelligence on Coursera",
       "url": "https://www.coursera.org/professional-certificates/google-business-intelligence",
-      "note": "No exam voucher — Coursera subscription (~$49/month U.S. after a 7-day trial; financial aid available). Unlike the IT Support and Cybersecurity certs, no discounted follow-on exam is attached — budget PL-300's $165 separately if you take our recommended pairing."
+      "note": "No exam voucher exists — this is a Coursera subscription. Coursera charges $49 per month in the US and Canada after a 7-day free trial, and says most learners finish for under $300; the price is lower in some other countries. Financial aid can waive it entirely. Coursera puts the program at four courses over about two months at 10 hours a week, and expects the Google Data Analytics certificate or equivalent experience first."
     }
   ],
   "faq": [
@@ -221,5 +221,6 @@
     }
   ],
   "seo_title": "Google Business Intelligence Certificate Review – Cost, vs PL-300, Worth It | CertBlueprint",
-  "seo_description": "Honest Google BI Certificate guide: the ~2-month program, BigQuery/Dataflow pipelines, the Tableau-not-Looker quirk, PL-300 pairing strategy, and entry BI salary reality."
+  "seo_description": "Honest Google BI Certificate guide: the ~2-month program, BigQuery/Dataflow pipelines, the Tableau-not-Looker quirk, PL-300 pairing strategy, and entry BI salary reality.",
+  "last_verified": "September 24, 2026"
 }

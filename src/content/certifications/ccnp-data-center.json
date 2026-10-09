@@ -134,7 +134,7 @@
     {
       "step": 6,
       "title": "Sit DCCOR, bank the Specialist and the CCIE door",
-      "description": "120 minutes, English only, results in ~48 hours. Passing earns Specialist – Data Center Core and qualifies you for the CCIE Data Center lab. Note for planning: CCIE DC is first in line for the new AI lab module (practice labs Feb 2027, full release June 2027) if the expert tier is in your future."
+      "description": "120 minutes, English only, results in ~48 hours. Passing earns Specialist – Data Center Core and qualifies you for the CCIE Data Center lab. Note for planning: CCIE DC is first in line for the new AI lab module (practice labs Feb 2027, live at Cisco Live US 2027) if the expert tier is in your future."
     },
     {
       "step": 7,
@@ -255,10 +255,17 @@
     },
     {
       "question": "Does DCCOR count toward CCIE Data Center?",
-      "answer": "Yes — same pattern as every track: DCCOR is the CCIE DC qualifying exam. Planning note if the expert tier calls: CCIE Data Center is first in line for the new AI lab module (practice labs February 2027, full release June 2027), so the lab you'd face is evolving — check the current format before committing to a timeline."
+      "answer": "Yes — same pattern as every track: DCCOR is the CCIE DC qualifying exam. Planning note if the expert tier calls: CCIE Data Center is first in line for the new AI lab module (practice labs February 2027, live at Cisco Live US 2027), so the lab you'd face is evolving — check the current format before committing to a timeline."
     }
   ],
   "related_certs": [
+    {
+      "title": "CCIE Data Center",
+      "slug": "ccie-data-center",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The summit of this track — DCCOR is the qualifying exam, and the v3.1 lab is first in line for Cisco's new AI module."
+    },
     {
       "title": "CCNP Enterprise",
       "slug": "ccnp-enterprise",

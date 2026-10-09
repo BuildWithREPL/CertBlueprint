@@ -12,7 +12,7 @@
   "salary_range": "$55,000 – $75,000 (helpdesk-plus and junior sysadmin roles)",
   "salary_note": "Google's '$114,000+ median for IT automation jobs' averages in DevOps and SRE postings that require far more than this certificate — treat it as marketing. Honest numbers for the roles this actually feeds: junior sysadmin averages ~$63K (ZipRecruiter) to ~$70K (Indeed), against a BLS support-specialist median of ~$60K. The realistic play: $55–75K moving up from help desk, pointing toward the $96,800 BLS sysadmin median as a mid-career ceiling.",
   "exam_code": "Coursera Certificate",
-  "exam_duration": "Self-paced — marketed at ~6 months at 10 hrs/week; ~130 hours of real content, so IT-experienced learners finish in 4–8 weeks, true beginners 2–4 months",
+  "exam_duration": "Self-paced — Coursera lists 7 courses at 6 months, 10 hours a week. Programmers and experienced IT staff routinely finish in 4–8 weeks",
   "exam_format": "No proctored exam. Seven self-paced Coursera courses with auto-graded quizzes and hands-on Qwiklabs — real VMs where you write and run Python and Git in a Linux environment. The capstone builds working automation: image processing, web-service interaction, email/PDF generation, log analysis.",
   "exam_questions": "No final exam — graded quizzes, VM labs, and a project capstone",
   "official_url": "https://www.coursera.org/professional-certificates/google-it-automation",
@@ -168,7 +168,7 @@
     {
       "label": "Enroll – Google IT Automation on Coursera",
       "url": "https://www.coursera.org/professional-certificates/google-it-automation",
-      "note": "No exam voucher — Coursera subscription (~$49/month U.S. after a 7-day trial; financial aid available). Unlike IT Support (A+ discount) and Cybersecurity (Security+ discount), this program pairs with no industry exam — there is no 'IT automation exam.' Your GitHub is the second credential."
+      "note": "No exam voucher exists — this is a Coursera subscription. Coursera charges $49 per month in the US and Canada after a 7-day free trial, and says most learners finish for under $300; the price is lower in some other countries. Financial aid can waive it entirely. Coursera puts the program at seven courses over about six months at 10 hours a week, and it carries an ACE credit recommendation."
     }
   ],
   "faq": [
@@ -221,5 +221,6 @@
     }
   ],
   "seo_title": "Google IT Automation with Python Certificate Review – Cost, Worth It | CertBlueprint",
-  "seo_description": "Honest Google IT Automation with Python guide: real cost vs the free path, the 7 courses, the Puppet caveat, GitHub-first strategy, and who genuinely benefits."
+  "seo_description": "Honest Google IT Automation with Python guide: real cost vs the free path, the 7 courses, the Puppet caveat, GitHub-first strategy, and who genuinely benefits.",
+  "last_verified": "September 24, 2026"
 }

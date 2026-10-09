@@ -1,9 +1,26 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import DomainCard from '../../components/navigator/DomainCard.astro';
+import CareerMapPreview from '../../components/navigator/CareerMapPreview.astro';
+import MapGlyph from '../../components/MapGlyph.astro';
+import '../../styles/navigator.css';
+import { DOMAINS } from '../../lib/navigator/data/domains';
+import { ROLES, INTERSECTION_ROLES, assertRoleGraphIntegrity } from '../../lib/navigator/data/roles';
+import { GRAPH_EDGES } from '../../lib/navigator/data/graph';
+import { assertSalaryIntegrity } from '../../lib/navigator/data/salary';
+import { assertCapabilityGraphIntegrity } from '../../lib/navigator/data/capabilities';
+import { SCENARIOS } from '../../lib/navigator/data/scenarios';
+import { TECHNOLOGIES } from '../../lib/navigator/data/technologies';
 
-const title = 'IT Career Navigator — Find Your IT Path Before You Pick a Cert | CertBlueprint';
+// Fails the build rather than shipping a dead link if a role slug is mistyped
+// anywhere in the graph.
+assertRoleGraphIntegrity();
+assertSalaryIntegrity(ROLES.map((r) => r.slug));
+assertCapabilityGraphIntegrity(ROLES.map((r) => r.slug));
+
+const title = 'IT Career Navigator — Find the Work You Actually Enjoy | CertBlueprint';
 const description =
-  'Two free ways to find your IT path: talk it out with an AI reader that hears your own words, or take the transparent guided assessment — get your strongest IT fields, honest downsides, and a hands-on trial for this weekend.';
+  'Explore what people in different IT roles really do, then discover which kinds of technical problems you gravitate toward. Scenario-based, no jargon required, nothing leaves your browser.';
 
 const breadcrumbs = [
   { label: 'Home', href: '/' },
@@ -14,123 +31,200 @@ const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   name: 'IT Career Navigator',
-  applicationCategory: 'BusinessApplication',
+  applicationCategory: 'EducationalApplication',
   operatingSystem: 'Web browser',
   url: 'https://certblueprint.com/navigator/',
   description,
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   publisher: { '@type': 'Organization', name: 'CertBlueprint' },
 };
+
+const orderedDomains = [...DOMAINS].sort((a, b) => a.order - b.order);
 ---
 
-<BaseLayout
-  title={title}
-  description={description}
-  breadcrumbs={breadcrumbs}
-  structuredData={structuredData}
->
-  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-2">
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} structuredData={structuredData}>
+  {/* ── Onboarding ─────────────────────────────────────────────── */}
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-6">
     <p class="font-mono text-xs uppercase tracking-widest mb-3" style="color: var(--cb-accent-text);">
-      Free tool
+      Free · nothing leaves your browser
     </p>
+
     <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-balance" style="color: var(--cb-text);">
-      Not sure which IT path fits you? Start here — before you pick a certification.
+      You don’t need to know what you want to do in IT yet.
     </h1>
-    <p class="mt-4 text-lg leading-relaxed" style="color: var(--cb-text-sub); max-width: 60ch;">
-      A certification is step two. Step one is knowing which direction actually suits you. Answer a set of
-      honest questions on how you like to work — no trivia, nothing to cram — and get your three
-      strongest IT paths, what each job really feels like (downsides included), and a hands-on trial you
-      can do this weekend. Then come back to CertBlueprint for the roadmap.
-    </p>
-    <div class="mt-5 flex flex-wrap gap-2">
-      <span class="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium border"
-        style="color: var(--cb-text-muted); background: var(--cb-bg-subtle); border-color: var(--cb-border);">
-        No IT background needed
-      </span>
-      <span class="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium border"
-        style="color: var(--cb-text-muted); background: var(--cb-bg-subtle); border-color: var(--cb-border);">
-        ~10 minutes
-      </span>
-      <span class="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium border"
-        style="color: var(--cb-text-muted); background: var(--cb-bg-subtle); border-color: var(--cb-border);">
-        Transparent scoring, no black box
-      </span>
-    </div>
 
-    <!-- Two ways in: conversation (recommended) or guided assessment -->
-    <div class="mt-8 grid sm:grid-cols-2 gap-4">
-      <a href="/navigator-lab" class="rounded-2xl border-2 p-5 block transition-all" style="border-color: var(--cb-accent); background: var(--cb-bg-card);">
+    <p class="mt-4 text-lg leading-relaxed" style="color: var(--cb-text-sub); max-width: 62ch;">
+      Most people can’t answer “do you want to work in cybersecurity?” — because nobody has ever
+      shown them what that actually involves. So we won’t ask. Instead we’ll show you the kinds of
+      problems technology professionals really solve, you pick the work that sounds most interesting,
+      and we’ll find the patterns.
+    </p>
+
+    <p class="mt-3 text-base leading-relaxed" style="color: var(--cb-text-muted); max-width: 62ch;">
+      There are no right answers, and no trivia. If a term is unfamiliar, click it — every technical
+      word on this site has a plain-English explanation attached.
+    </p>
+  </section>
+
+  {/* ── The two doors ──────────────────────────────────────────── */}
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+    <div class="nav-doors grid sm:grid-cols-2 gap-4">
+      <a
+        href="/navigator/assessment/"
+        class="nav-card nav-card--railed block p-5 pl-6"
+        style="--nav-accent: var(--cb-accent);"
+      >
         <div class="flex items-center gap-2 mb-2">
-          <p class="font-bold text-base" style="color: var(--cb-text);">Talk it out</p>
-          <span class="text-xs font-semibold px-2 py-0.5 rounded-full" style="background: var(--cb-accent); color: #fff;">Recommended</span>
+          <h2 class="font-bold text-lg" style="color: var(--cb-text);">Find my path</h2>
+          <span class="text-xs font-semibold px-2 py-0.5 rounded-full" style="background: var(--cb-accent); color: #fff;">
+            Start here
+          </span>
         </div>
-        <p class="text-sm leading-relaxed mb-3" style="color: var(--cb-text-sub);">
-          Answer one open question the way you'd tell a friend. A real AI reader hears what you actually said — your specifics, your words — asks a follow-up if it needs one, and points you at the field that fits, with the honest road in.
+        <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+          Realistic situations from real jobs — an outage at 2 AM, an odd line in a firewall log, a
+          server that stopped responding. Choose which part you’d want to dig into. It adapts as it
+          goes, so it usually takes 11–15 questions rather than fifty.
         </p>
-        <span class="text-sm font-semibold" style="color: var(--cb-accent-text);">Start the conversation →</span>
+        <span class="nav-door__cta text-sm font-semibold" style="color: var(--cb-accent-text);">Begin →</span>
       </a>
-      <a href="#guided" class="rounded-2xl border p-5 block transition-all" style="border-color: var(--cb-border); background: var(--cb-bg-card);">
-        <p class="font-bold text-base mb-2" style="color: var(--cb-text);">Prefer buttons?</p>
-        <p class="text-sm leading-relaxed mb-3" style="color: var(--cb-text-sub);">
-          The guided assessment: ~27 quick questions, one at a time, scored transparently into your top three IT families — with weekend trials for each. Also home to the military-translation module.
-        </p>
-        <span class="text-sm font-semibold" style="color: var(--cb-accent-text);">Take the guided assessment ↓</span>
+
+      {/* The drawing leads. A line of text asking someone to open a "career
+          map" sells none of it; the actual constellation does. */}
+      <a
+        href="/navigator/graph/"
+        class="nav-card nav-card--railed nav-map-teaser"
+        style="--nav-accent: var(--nav-violet);"
+      >
+        <CareerMapPreview />
+
+        <div class="nav-map-teaser__body">
+          <div class="flex items-center gap-2 mb-2 flex-wrap">
+            <h2 class="font-bold text-lg" style="color: var(--cb-text);">Open the career map</h2>
+            {/* Counts, not adjectives. "Interactive" is a claim; 38 and 89 are
+                the drawing above, and they go up when the data does. */}
+            <span class="nav-map-teaser__badge">
+              <MapGlyph size="1.15em" />
+              {ROLES.length} roles · {GRAPH_EDGES.length} moves
+            </span>
+          </div>
+          <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+            That is the real map above — every role joined by the moves people actually make. Open any
+            role for the work, the honest downside and the pay, then ask it for a route from where you
+            are now to where you want to end up.
+          </p>
+          <span class="nav-door__cta text-sm font-semibold" style="color: var(--nav-violet);">Explore the map →</span>
+        </div>
       </a>
+    </div>
+
+    <p class="mt-3 text-sm" style="color: var(--cb-text-muted);">
+      Would rather read than click around?
+      <a href="/navigator/explore/" class="font-semibold" style="color: var(--nav-violet);">Browse field by field →</a>
+    </p>
+
+    {/* The conversational lab is preserved — it is a genuinely different way in
+        for people who would rather write than click. */}
+    <a
+      href="/navigator-lab"
+      class="nav-card block p-4 mt-3"
+      style="--nav-accent: var(--cb-border);"
+    >
+      <p class="font-semibold text-sm mb-1" style="color: var(--cb-text);">Would rather just talk it out?</p>
+      <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+        Answer one open question in your own words and an AI reader responds to what you actually
+        said. Good if you already have a sense of yourself and want it interpreted.
+        <span class="font-semibold" style="color: var(--cb-accent-text);">Open the conversation →</span>
+      </p>
+    </a>
+  </section>
+
+  {/* ── The map ────────────────────────────────────────────────── */}
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+    <h2 class="text-2xl font-bold tracking-tight mb-2" style="color: var(--cb-text);">
+      The worlds of IT
+    </h2>
+    <p class="text-base leading-relaxed mb-6" style="color: var(--cb-text-sub); max-width: 62ch;">
+      These overlap heavily, and that is the interesting part. Notice that Network Security Engineer
+      appears under both Networking and Cybersecurity — because in real life it is both.
+    </p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {orderedDomains.map((domain) => <DomainCard domain={domain} />)}
     </div>
   </section>
 
-  <section id="guided" class="max-w-5xl mx-auto px-2 sm:px-4 pb-16">
-    <div
-      class="rounded-xl overflow-hidden border"
-      style="border-color: var(--cb-border); background: var(--cb-bg-subtle);"
-    >
-      <iframe
-        id="nav-frame"
-        title="IT Career Navigator — interactive assessment"
-        loading="lazy"
-        style="width: 100%; border: 0; display: block; min-height: 640px;"
-        referrerpolicy="no-referrer"
-      ></iframe>
-    </div>
-    <noscript>
-      <p class="mt-4 text-sm" style="color: var(--cb-text-muted);">
-        This tool needs JavaScript. You can open it directly at
-        <a href="/navigator-app.html" style="color: var(--cb-accent-text);">/navigator-app.html</a>.
+  {/* ── Intersections ──────────────────────────────────────────── */}
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+    <div class="nav-card p-5 sm:p-6" style="--nav-accent: var(--nav-cyan);">
+      <h2 class="text-xl font-bold tracking-tight mb-2" style="color: var(--cb-text);">
+        The best jobs are usually in between
+      </h2>
+      <p class="text-sm leading-relaxed mb-4" style="color: var(--cb-text-sub); max-width: 65ch;">
+        {INTERSECTION_ROLES.length} of the {ROLES.length} roles here belong to more than one field. Networking
+        plus security gives you network security engineering. Systems plus security gives you identity.
+        Networking plus code gives you network automation. Most assessments force you to pick one
+        column — this one is built specifically to find the overlap.
       </p>
-    </noscript>
-    <p class="mt-4 text-xs leading-relaxed" style="color: var(--cb-text-muted); max-width: 70ch;">
-      This is an exploration tool, not a definitive answer — it maps how you like to work to fields worth
-      testing, and it never ranks a path higher because it earns anyone money. Salary and growth figures
-      are U.S. Bureau of Labor Statistics national medians (a median is the midpoint of everyone employed,
-      so entry pay runs lower); treat them as directional. Assessment content is an early prototype pending
-      expert review.
+      <div class="flex flex-wrap gap-x-5 gap-y-2">
+        <a href="/navigator/graph/" class="text-sm font-semibold" style="color: var(--nav-cyan);">
+          See the whole map at once →
+        </a>
+        <a href="/navigator/compare/" class="text-sm font-semibold" style="color: var(--nav-cyan);">
+          Compare two roles side by side →
+        </a>
+        <a href="/navigator/explore/" class="text-sm font-semibold" style="color: var(--nav-cyan);">
+          Browse field by field →
+        </a>
+        <a href="/navigator/plan/" class="text-sm font-semibold" style="color: var(--nav-cyan);">
+          Track a path you have chosen →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* ── Already in IT ──────────────────────────────────────────── */}
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+    <div class="grid sm:grid-cols-2 gap-4">
+      <a href="/navigator/inventory/" class="nav-card nav-card--railed block p-5 pl-6" style="--nav-accent: var(--nav-emerald);">
+        <h2 class="font-bold text-lg mb-2" style="color: var(--cb-text);">Already work in IT?</h2>
+        <p class="text-sm leading-relaxed mb-3" style="color: var(--cb-text-sub);">
+          Tick off the technologies you’ve actually touched — {TECHNOLOGIES.length} of them — and we’ll map
+          them to capabilities rather than job titles. A lot of people discover they have far more
+          security or cloud experience than their title has ever said.
+        </p>
+        <span class="text-sm font-semibold" style="color: var(--nav-emerald);">Build your inventory →</span>
+      </a>
+
+      <a href="/navigator/military/" class="nav-card nav-card--railed block p-5 pl-6" style="--nav-accent: var(--nav-amber);">
+        <h2 class="font-bold text-lg mb-2" style="color: var(--cb-text);">Coming out of the military?</h2>
+        <p class="text-sm leading-relaxed mb-3" style="color: var(--cb-text-sub);">
+          A hiring filter does not know what a 25B is. Start from the work instead — what you operated,
+          diagnosed and secured — and see which civilian roles are built from it. Works whether or not
+          your occupation code is on the list.
+        </p>
+        <span class="text-sm font-semibold" style="color: var(--nav-amber);">Translate your experience →</span>
+      </a>
+
+      <div class="nav-card p-5" style="--nav-accent: var(--cb-border);">
+        <h2 class="font-bold text-lg mb-2" style="color: var(--cb-text);">How this works</h2>
+        <ul class="space-y-1.5 text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+          <li>· {SCENARIOS.length} scenarios, scored across 41 separate interest dimensions</li>
+          <li>· Roles are matched by similarity, not by adding up buckets</li>
+          <li>· Everything runs in your browser — no account, no server, no tracking</li>
+          <li>· When two results are genuinely close, it says so instead of guessing</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  {/* ── Honest framing ─────────────────────────────────────────── */}
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <p class="text-xs leading-relaxed" style="color: var(--cb-text-muted); max-width: 70ch;">
+      This is an exploration tool, not a verdict. It maps how you like to work onto fields worth
+      testing, and it never ranks a path higher because it earns anyone money. It will never tell you
+      that you <em>are</em> something — only which kinds of problems your answers keep returning to.
+      Role and certification content is reviewed against public vendor sources; treat salary and
+      market commentary as directional and verify before making decisions.
     </p>
   </section>
-
-  <script is:inline>
-    (function () {
-      var f = document.getElementById('nav-frame');
-      if (!f) return;
-      function theme() { return document.documentElement.getAttribute('data-theme') || 'light'; }
-      // Set src with the current theme baked in to avoid a flash inside the frame.
-      f.src = '/navigator-app.html?embed=1&theme=' + encodeURIComponent(theme());
-      function sendTheme() { try { f.contentWindow.postMessage({ cbTheme: theme() }, '*'); } catch (e) {} }
-      window.addEventListener('message', function (e) {
-        var d = e.data || {};
-        if (d && d.cbNav && d.height) {
-          // Only resize on a real change — guards against sub-pixel reflow churn
-          // ever turning into a feedback loop.
-          var target = d.height + 8;
-          var cur = parseInt(f.style.height, 10) || 0;
-          if (Math.abs(target - cur) > 3) f.style.height = target + 'px';
-        }
-      });
-      f.addEventListener('load', sendTheme);
-      try {
-        new MutationObserver(sendTheme).observe(document.documentElement, {
-          attributes: true, attributeFilter: ['data-theme'],
-        });
-      } catch (e) {}
-    })();
-  </script>
 </BaseLayout>

@@ -1,0 +1,366 @@
+---
+import type { Role } from '../../lib/navigator/types';
+import { ACCENT_VAR, DOMAIN_BY_ID } from '../../lib/navigator/data/domains';
+import { ROLE_BY_SLUG } from '../../lib/navigator/data/roles';
+import { TECHNOLOGY_BY_SLUG } from '../../lib/navigator/data/technologies';
+import { GLOSSARY_BY_KEY } from '../../lib/navigator/data/glossary';
+import { trialsForRole } from '../../lib/navigator/data/trials';
+import { ROLE_SALARY } from '../../lib/navigator/data/salary';
+import { pairsForRole } from '../../lib/navigator/data/role-pairs';
+import { comparePath } from '../../lib/navigator/engine/compare';
+import TermTip from './TermTip.astro';
+import TrialCard from './TrialCard.astro';
+import SalaryPanel from './SalaryPanel.astro';
+
+interface Props {
+  role: Role;
+}
+
+const { role } = Astro.props;
+const primary = DOMAIN_BY_ID[role.domains[0]];
+const accent = `var(${ACCENT_VAR[primary.accent]})`;
+
+// Technologies are authored as slugs where a graph entry exists and as plain
+// strings otherwise, so the template resolves rather than assuming.
+const technologies = role.technologies.map((slug) => {
+  const tech = TECHNOLOGY_BY_SLUG[slug];
+  return tech ? { name: tech.name, blurb: tech.blurb, slug: tech.slug } : { name: slug, blurb: null, slug: null };
+});
+
+// Concepts get an explainer where the glossary happens to cover them. Matching
+// is by lowercase term so authors can write concepts naturally.
+const glossaryByTerm = new Map(Object.values(GLOSSARY_BY_KEY).map((g) => [g.term.toLowerCase(), g]));
+const concepts = role.concepts.map((concept) => ({
+  concept,
+  entry: glossaryByTerm.get(concept.toLowerCase()) ?? null,
+}));
+
+const ENTRY_NOTE: Record<Role['entry'], string> = {
+  'first-job': 'This is genuinely reachable as a first role in IT.',
+  'second-job': 'This is usually a second role — most people arrive from support, systems or networking.',
+  senior: 'This is a senior destination, reached after several years in hands-on roles.',
+};
+
+const trials = trialsForRole(role.slug);
+const salary = ROLE_SALARY[role.slug];
+
+const adjacent = role.adjacent
+  .map((a) => ({ ...a, role: ROLE_BY_SLUG[a.slug] }))
+  .filter((a) => Boolean(a.role));
+
+// Roles this one is genuinely confusable with, closest first. Named from the
+// reader's side of the page — they are on this role, so the other one is "the
+// other one". Every pair is listed: a cap here left some comparison pages
+// linked from neither of their two roles.
+const comparisons = pairsForRole(role.slug).map((p) => (p.a.slug === role.slug ? p.b : p.a));
+---
+
+<article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+  {/* ── 1. Name, purpose, domains ─────────────────────────────── */}
+  <header class="pt-8 pb-6">
+    <div class="flex flex-wrap gap-1.5 mb-3">
+      {
+        role.domains.map((id) => {
+          const d = DOMAIN_BY_ID[id];
+          return (
+            <a
+              href={`/navigator/explore/${d.id}/`}
+              class="nav-pill"
+              style={`--nav-accent: var(${ACCENT_VAR[d.accent]});`}
+            >
+              {d.name}
+            </a>
+          );
+        })
+      }
+    </div>
+
+    <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-balance" style="color: var(--cb-text);">
+      {role.name}
+    </h1>
+
+    <p class="mt-3 text-lg leading-relaxed" style={`color: ${accent}; max-width: 55ch;`}>
+      {role.purpose}
+    </p>
+
+    <p class="mt-4 text-sm leading-relaxed" style="color: var(--cb-text-muted); max-width: 65ch;">
+      {ENTRY_NOTE[role.entry]}
+    </p>
+
+    {/* The map answers the question this page cannot: what sits around this
+        role, and how you would actually get here from where you are. */}
+    <p class="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
+      <a href={`/navigator/graph/#role=${role.slug}`} style={`color: ${accent};`}>See this role on the career map →</a>
+      <a href={`/navigator/graph/#mode=path&to=${role.slug}`} style={`color: ${accent};`}>Find a path to it →</a>
+    </p>
+  </header>
+
+  {/* ── 2. What you actually do ───────────────────────────────── */}
+  <section class="mb-10">
+    <h2 class="text-xl font-bold tracking-tight mb-3" style="color: var(--cb-text);">
+      What you actually do
+    </h2>
+    <ul class="space-y-2">
+      {
+        role.activities.map((activity) => (
+          <li class="flex gap-2.5 text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+            <span class="shrink-0 mt-2 w-1.5 h-1.5 rounded-full" style={`background: ${accent};`} />
+            <span>{activity}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  {/* ── 3 + 4. Technologies and concepts, side by side ────────── */}
+  <div class="grid md:grid-cols-2 gap-6 mb-10">
+    <section>
+      <h2 class="text-xl font-bold tracking-tight mb-1" style="color: var(--cb-text);">
+        Technologies you may touch
+      </h2>
+      <p class="text-xs mb-3" style="color: var(--cb-text-muted);">
+        Nobody uses all of these. Which ones depends entirely on the employer.
+      </p>
+      <ul class="space-y-1.5">
+        {
+          technologies.map((tech) => (
+            <li class="text-sm" style="color: var(--cb-text-sub);">
+              {tech.blurb ? (
+                <details class="nav-term">
+                  <summary>{tech.name}</summary>
+                  <span class="nav-term__body">{tech.blurb}</span>
+                </details>
+              ) : (
+                <span>{tech.name}</span>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-bold tracking-tight mb-1" style="color: var(--cb-text);">
+        Concepts you will learn
+      </h2>
+      <p class="text-xs mb-3" style="color: var(--cb-text-muted);">
+        These transfer between employers and outlast any particular product.
+      </p>
+      <ul class="space-y-1.5">
+        {
+          concepts.map(({ concept, entry }) => (
+            <li class="text-sm" style="color: var(--cb-text-sub);">
+              {entry ? <TermTip termKey={entry.key} label={concept} /> : <span>{concept}</span>}
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </div>
+
+  {/* ── 5. Where the work happens ─────────────────────────────── */}
+  <section class="mb-10">
+    <h2 class="text-xl font-bold tracking-tight mb-3" style="color: var(--cb-text);">
+      Where this work happens
+    </h2>
+    <div class="flex flex-wrap gap-2">
+      {
+        role.environments.map((env) => (
+          <span
+            class="text-sm px-3 py-1.5 rounded-lg border"
+            style="color: var(--cb-text-sub); background: var(--cb-bg-subtle); border-color: var(--cb-border);"
+          >
+            {env}
+          </span>
+        ))
+      }
+    </div>
+  </section>
+
+  {/* ── 6 + 7. The honest pair: what draws people in, and the cost ── */}
+  <div class="grid md:grid-cols-2 gap-6 mb-10">
+    <section class="nav-card p-5" style={`--nav-accent: ${accent};`}>
+      <h2 class="text-lg font-bold tracking-tight mb-3" style="color: var(--cb-text);">
+        You may enjoy this if…
+      </h2>
+      <ul class="space-y-2">
+        {
+          role.enjoyIf.map((item) => (
+            <li class="flex gap-2.5 text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+              <span class="shrink-0 mt-2 w-1.5 h-1.5 rounded-full" style={`background: ${accent};`} />
+              <span>{item}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    {/* Every role page carries its downside in the same visual weight as its
+        appeal. A career tool that only lists upsides is an advertisement. */}
+    <section class="nav-card p-5" style="--nav-accent: var(--nav-warn);">
+      <h2 class="text-lg font-bold tracking-tight mb-3" style="color: var(--cb-text);">
+        The honest downside
+      </h2>
+      <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+        {role.reality}
+      </p>
+    </section>
+  </div>
+
+  {/* ── 7.5 Pay — placed with the other reality checks, not near the
+       certifications, so it reads as context rather than as a sales pitch. */}
+  {salary && <SalaryPanel salary={salary} roleName={role.name} />}
+
+  {/* ── 8. Where this role sits in the graph ──────────────────── */}
+  <section class="mb-10">
+    <h2 class="text-xl font-bold tracking-tight mb-1" style="color: var(--cb-text);">
+      Where this leads
+    </h2>
+    <p class="text-sm mb-2" style="color: var(--cb-text-sub); max-width: 65ch;">
+      IT careers are a graph, not a ladder. These are the moves people actually make from here —
+      each one reuses most of what you already know.
+    </p>
+    <p class="text-sm mb-4">
+      <a href="/navigator/graph/" class="font-semibold" style={`color: ${accent};`}>
+        See where {role.name} sits on the whole map →
+      </a>
+    </p>
+
+    <div class="grid sm:grid-cols-2 gap-3">
+      {
+        adjacent.map((item) => (
+          <a
+            href={`/navigator/roles/${item.slug}/`}
+            class="nav-card nav-card--railed block p-4 pl-5"
+            style={`--nav-accent: var(${ACCENT_VAR[DOMAIN_BY_ID[item.role!.domains[0]].accent]});`}
+          >
+            <p class="font-semibold text-sm" style="color: var(--cb-text);">
+              {item.role!.name}
+            </p>
+            <p class="text-sm mt-1 leading-relaxed" style="color: var(--cb-text-sub);">
+              {item.reason}
+            </p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  {/* ── 8.2 Side by side ───────────────────────────────────────
+       Adjacency answers "where could I go next". This answers the different
+       question people arrive with: "is this the same thing as that other job
+       I keep seeing?" */}
+  {
+    comparisons.length > 0 && (
+      <section class="mb-10">
+        <h2 class="text-xl font-bold tracking-tight mb-1" style="color: var(--cb-text);">
+          Often confused with
+        </h2>
+        <p class="text-sm mb-4" style="color: var(--cb-text-sub); max-width: 65ch;">
+          Titles overlap heavily in IT and tell you very little. Each of these puts {role.name} beside
+          another role on the same dimensions, with the practical differences underneath.
+        </p>
+
+        <div class="flex flex-wrap gap-2">
+          {comparisons.map((other) => (
+            <a
+              href={comparePath(role.slug, other.slug)}
+              class="nav-pill"
+              style={`--nav-accent: var(${ACCENT_VAR[DOMAIN_BY_ID[other.domains[0]].accent]});`}
+            >
+              vs {other.name}
+            </a>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  {/* ── 8.5 Try the work — deliberately BEFORE certifications ──
+       A match is a hypothesis. This is the cheap experiment that tests it,
+       and it belongs in front of the page that asks people to spend money. */}
+  {
+    trials.length > 0 && (
+      <section class="mb-10">
+        <h2 class="text-xl font-bold tracking-tight mb-1" style="color: var(--cb-text);">
+          Try it this weekend, before you spend anything
+        </h2>
+        <p class="text-sm mb-4" style="color: var(--cb-text-sub); max-width: 65ch;">
+          Reading about work and doing it are different. Each of these is free, runs on the machine
+          you already have, and takes under an hour and a half. Finding out you dislike it is a
+          genuinely useful result — and far cheaper here than after an exam voucher.
+        </p>
+
+        <div class="space-y-3">
+          {trials.map((trial) => (
+            <TrialCard trial={trial} />
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  {/* ── 9. Certifications — last, on purpose ──────────────────── */}
+  <section class="mb-10">
+    <h2 class="text-xl font-bold tracking-tight mb-1" style="color: var(--cb-text);">
+      Certifications that fit this path
+    </h2>
+    <p class="text-sm mb-4" style="color: var(--cb-text-sub); max-width: 65ch;">
+      These come last for a reason. A certification is evidence for a direction you have already
+      chosen — it is not the direction itself.
+    </p>
+
+    {
+      role.certNote && (
+        <p
+          class="text-sm leading-relaxed mb-4 p-3 rounded-lg border"
+          style="color: var(--cb-text-sub); background: var(--cb-bg-subtle); border-color: var(--cb-border);"
+        >
+          {role.certNote}
+        </p>
+      )
+    }
+
+    <div class="space-y-2">
+      {
+        role.certs.map((cert) => {
+          const href = cert.slug && cert.vendorSlug ? `/vendors/${cert.vendorSlug}/${cert.slug}/` : null;
+          const Tag = href ? 'a' : 'div';
+          return (
+            <Tag
+              href={href}
+              class="nav-card block p-4 flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4"
+            >
+              <span
+                class="font-mono text-xs uppercase tracking-widest shrink-0 sm:w-32"
+                style="color: var(--cb-text-muted);"
+              >
+                {cert.stage}
+              </span>
+              <span class="flex-1">
+                <span class="font-semibold text-sm" style={href ? `color: ${accent};` : 'color: var(--cb-text);'}>
+                  {cert.title}
+                </span>
+                <span class="block text-sm mt-0.5 leading-relaxed" style="color: var(--cb-text-sub);">
+                  {cert.reason}
+                </span>
+              </span>
+            </Tag>
+          );
+        })
+      }
+    </div>
+
+    {
+      role.pathSlug && (
+        <a
+          href={`/paths/${role.pathSlug}/`}
+          class="inline-block mt-4 text-sm font-semibold"
+          style={`color: ${accent};`}
+        >
+          See the full step-by-step roadmap for this path →
+        </a>
+      )
+    }
+  </section>
+</article>

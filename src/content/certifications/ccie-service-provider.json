@@ -1,0 +1,311 @@
+{
+  "title": "Cisco CCIE Service Provider Guide",
+  "slug": "ccie-service-provider",
+  "short_name": "CCIE Service Provider",
+  "vendor": "Cisco",
+  "vendor_slug": "cisco",
+  "level": "Expert",
+  "description": "CCIE Service Provider is the carrier-grade summit: the SPCOR written plus an 8-hour, $1,600-per-attempt lab built around IOS XR, segment routing end to end (through SRv6 micro-segments), EVPN services, 5G transport, and a full 20% automation domain with NSO and model-driven telemetry. It's the smallest of the classic CCIE tracks by candidate pool and the most specialized by market. Destination briefing, honestly told: what it costs, who it actually pays for, and why our CCNP Service Provider guide is deliberately step one of this page.",
+  "audience": "Engineers who live in provider networks daily — tier-1/2 carriers, ISPs, MSPs running national backbones, mobile operators building 5G transport, hyperscaler and CDN network teams — already operating at CCNP Service Provider depth on IOS XR. Explicitly not for enterprise-track careers: if your world is campus, SD-WAN, and branch offices, CCIE Enterprise Infrastructure is your track and the FAQ explains why.",
+  "why_get_it": "Because the population of people who can design and operate a multi-service carrier backbone — segment routing with TI-LFA, EVPN over SR-TE policy, inter-AS L3VPN, NSO-automated service provisioning — is genuinely tiny, and the networks that need them (carriers, mobile operators, hyperscalers, CDNs) are exactly the ones that pay for proof. Training-vendor FirstPassLab argues the track's pool is the smallest of any CCIE and pegs senior SP engineers at $145K–175K and SP architects at $175K–220K+ — commercial-source figures, treat as indicative — with the demand story anchored in 5G transport buildouts and routed optical networking, both of which the v5.1 blueprint added. The honest counterweight: this is the most market-dependent CCIE there is. Its value concentrates almost entirely at providers and provider-adjacent shops; in an enterprise-only market it buys very little, and CCNP Service Provider plus automation skills covers most SP job postings at a fraction of the cost and time.",
+  "when_to_get_it": "When you're already fluent on IOS XR daily, your employer or market is genuinely provider-shaped (carrier, ISP, MSP backbone, mobile transport, hyperscaler/CDN), and you can commit 12–24 months of evenings. The ladder logic matters here more than on any other track: SPCOR 350-501 is literally both the CCNP Service Provider core and this cert's qualifying exam, and the SPRI concentration — the one our CCNP SP guide calls the natural CCIE SP runway — maps almost one-to-one onto the lab's biggest domain (Core Routing, 25%). Timing note for 2026: the v5.1 lab blueprint has been in effect since 2023 with no refresh announced as of July 2026 — the spring 2026 refresh wave hit Enterprise and Data Center while skipping SP entirely. Stable rules are a gift for planning; just know that a three-year-old blueprint means a revision is plausible eventually, so verify the exam-topics page before committing to a slow multi-year plan.",
+  "salary_range": "$120,000 – $220,000+ (senior SP engineering through architect)",
+  "salary_note": "All figures from training-vendor FirstPassLab (March 2026) — a commercial source with an incentive to sell the track, so treat as indicative, not authoritative: mid-level SP engineers $120K–145K, senior $145K–175K, SP architect/principal $175K–220K+, dual-CCIEs $180K–250K+. Its ZipRecruiter cite ($186K CCIE average, San Diego) wasn't independently verified. Employers named in that analysis: tier-1/2 carriers (AT&T, Verizon, Lumen, Comcast, Charter), hyperscalers, MSPs like NTT and Tata, and CDNs like Akamai, Cloudflare, and Fastly. Cisco publishes no salary data.",
+  "exam_code": "350-501 SPCOR + 8-hour lab",
+  "exam_duration": "Written: 120 minutes · Lab: 8 hours",
+  "exam_format": "Step 1: pass SPCOR 350-501 (the same exam that anchors CCNP Service Provider — one pass serves both). Step 2: the 8-hour hands-on lab (v5.1): Module 1 Design (3 hours, scenario-based) + Module 2 Deploy, Operate and Optimize (5 hours, hands-on). Closed book, dual-stack IPv4/IPv6 throughout, IOS XR-first with IOS XE at the edges — and the blueprint states outright that candidates are expected to program and automate the network within the exam. Fail the lab and you wait 30 days to rebook.",
+  "exam_questions": "Written: not published · Lab: scenario-based, not question-counted",
+  "exam_structure": [
+    {
+      "code": "350-501 SPCOR v1.1",
+      "name": "Implementing and Operating Cisco Service Provider Network Core Technologies",
+      "role": "Qualifying exam",
+      "price": "$400",
+      "note": "The same exam as CCNP Service Provider's core — one pass qualifies you for the lab AND banks the CCNP. Still v1.1 as of July 2026; SP sat out the spring 2026 refresh wave that hit ENCOR and DCCOR."
+    },
+    {
+      "code": "CCIE SP Lab v5.1",
+      "name": "8-hour practical: 3h Design + 5h Deploy/Operate/Optimize",
+      "role": "Lab exam",
+      "price": "$1,600 per attempt",
+      "note": "At Cisco facilities, or mobile-lab events ($1,900 with Cisco-provided kit, $1,600 BYOD). Closed book, dual-stack, IOS XR-centric, automation expected inside the exam. Travel and lodging on you; most passers report needing more than one attempt."
+    }
+  ],
+  "official_url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/service-provider/ccie-service-provider/exams-and-training.html",
+  "official_pricing_url": "https://ciscolearningservices.my.site.com/cln/s/article/book-your-expert-level-exams",
+  "recertification_note": "Same as every CCIE: 3-year cycle, 120 CE credits on the unified ledger — exam passes, Cisco U courses, and Cisco Live sessions all count, so an active learner maintains the number through ordinary professional development. Passing any expert-level qualifying exam or a lab also recertifies. Let it fully lapse and you restart from the written.",
+  "last_verified": "July 2026",
+  "skills_covered": [
+    {
+      "category": "Core Routing — the 25% spine",
+      "items": [
+        "IS-IS and OSPFv2/v3 at carrier scale — the IGPs as providers actually run them",
+        "BGP at depth: MP-BGP, labeled unicast, BGP link-state, scale and performance tuning",
+        "MPLS forwarding and control plane, LDP at scale, RSVP-TE with fast reroute",
+        "Segment routing end to end: SR-TE, PCE/PCEP, Flexible Algorithm, LDP-SR interworking, and SRv6 down to micro-segments (uSID)",
+        "Multicast the SP way: PIM designs, MLDP, and Tree-SID"
+      ]
+    },
+    {
+      "category": "Architectures & Services (25%)",
+      "items": [
+        "5G transport: vRAN/ORAN, converged packet transport, clocking and sync, network slicing",
+        "Routed Optical Networking and telco hybrid/multi-cloud — the v5.1 additions that signal where carriers are heading",
+        "Carrier Ethernet and EVPN at service depth: EVPN-VPWS, EVPN-ELAN, EVPN-IRB, multi-homing, auto-steering into SR policy",
+        "L3VPN including inter-AS and extranet, plus internet service: CGNAT, NAT64, MAP-T, peering policy",
+        "Next-gen mVPN profiles and SP QoS models (pipe/short-pipe/uniform)"
+      ]
+    },
+    {
+      "category": "Access Connectivity (10%)",
+      "items": [
+        "Cloud-native BNG and control/user-plane separation (CUPS) — subscriber management, modernized",
+        "Q-in-Q tunneling for access aggregation",
+        "G.8032 ring protection in access topologies",
+        "MST-AG / PVST-AG gateway designs",
+        "MC-LAG for multi-chassis redundancy at the access edge"
+      ]
+    },
+    {
+      "category": "High Availability & Fast Convergence (10%)",
+      "items": [
+        "SSO/NSF, NSR, and graceful restart — keeping a backbone up through failures",
+        "BGP-PIC for prefix-independent convergence",
+        "BFD as the universal failure detector",
+        "LFA, remote LFA, and TI-LFA — where segment routing earns its keep",
+        "MPLS TE fast reroute under real constraints"
+      ]
+    },
+    {
+      "category": "Security (10%)",
+      "items": [
+        "LPTS and CoPP — control-plane protection, IOS XR style",
+        "BGP security: filtering, RPKI origin validation, Flowspec, RTBH",
+        "Protocol and LDP authentication, uRPF, ACL compression",
+        "TLS/mTLS certificates for gRPC and gNMI — securing the telemetry plane itself",
+        "MACsec design and management-plane hardening (MPP, SSH, SNMP, AAA)"
+      ]
+    },
+    {
+      "category": "Assurance & Automation — the 20% that fails people",
+      "items": [
+        "NSO service packages: YANG models, template- and Python-based packages, fastmap/reactive fastmap, CLI and NETCONF NEDs, RESTCONF northbound",
+        "Model-driven telemetry on IOS XR: YANG, gRPC, gNMI, GPB encoding",
+        "Ansible and Python against NSO, IOS XE, and IOS XR",
+        "IOS XR application hosting (native and container) and secure ZTP",
+        "Classic assurance still counts: NetFlow/IPFIX, TWAMP, Y.1731/Y.1564, SR performance monitoring"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Run the market test — it's stricter here than any other track",
+      "description": "Three questions: Do you work at (or credibly want to work at) a carrier, ISP, MSP backbone, mobile operator, hyperscaler, or CDN? Do you touch IOS XR and provider technologies daily? Can you sustain 15–25 hours/week for 12–24 months? This track's value concentrates at providers more than any other CCIE concentrates anywhere — in an enterprise-only market, CCNP SP plus automation is the honest answer, and it's a good one."
+    },
+    {
+      "step": 2,
+      "title": "Clear SPCOR — you may already be halfway there",
+      "description": "SPCOR 350-501 ($400, 120 minutes) is both the CCNP Service Provider core and this cert's qualifying exam — one pass banks both. If you followed our CCNP SP guide through SPRI, you've already covered advanced routing, segment routing with Flexible Algorithm, SRv6, and the CGNAT/NAT64/MAP-T translation stack — which maps almost one-to-one onto the lab's 25% Core Routing domain. That's why we call SPRI the natural CCIE SP runway: the CCNP isn't a detour, it's the first half of this campaign."
+    },
+    {
+      "step": 3,
+      "title": "Budget for reality, not for optimism",
+      "description": "Paper minimum: $2,000 ($400 written + one $1,600 lab). Reality: Cisco publishes no pass rates, but the persistent folklore across every CCIE track says most passers need 2–3 lab attempts ($3,200–4,800), each with travel and lodging ($300–2,000+ depending on your distance from a lab), plus 12–24 months of training and lab platform costs ($1,000–5,000). Realistic all-in: $5,000–12,000 — an estimate, unofficial, and worth writing down before you start rather than discovering mid-journey."
+    },
+    {
+      "step": 4,
+      "title": "Build an IOS XR-first lab engine",
+      "description": "The blueprint names IOS XR explicitly — telemetry on XR devices, XR application hosting, LPTS — with IOS XE at the edges. Cisco Modeling Labs is the legal daily driver: candidates lab the blueprint with XRd/IOS XR, CSR1000v, and IOSv images. Layer INE's CCIE SP advanced technologies content and workbooks on top for structured full-scale scenarios. If your day job is enterprise IOS XE, budget extra months purely for XR fluency — the lab assumes it."
+    },
+    {
+      "step": 5,
+      "title": "Treat segment routing as the exam's connective tissue",
+      "description": "SR isn't one topic on this blueprint — it threads through everything: SR-TE and PCE in Core Routing, auto-steering EVPN and L3VPN into SR policies in Services, TI-LFA in Fast Convergence, SR performance monitoring in Assurance, and SRv6 with micro-segments as v5.1's headline addition. The Filsfils Segment Routing books (Part I fundamentals, Part II traffic engineering) are the de-facto texts, written by SR's inventor. If SR is shaky, everything downstream of it is shaky."
+    },
+    {
+      "step": 6,
+      "title": "Give the automation domain the respect its 20% demands",
+      "description": "Assurance and Automation is the second-largest domain, and it's the one that punishes pure-CLI veterans: NSO service packages (YANG, templates, Python, fastmap), model-driven telemetry over gRPC/gNMI, Ansible and Python against XR — and the blueprint says plainly that you'll program and automate the network inside the exam. SPRI doesn't cover any of this, so even strong CCNP SP graduates start this domain near zero. Start it early, not as a final-month cram."
+    },
+    {
+      "step": 7,
+      "title": "Train the Design module as its own discipline",
+      "description": "Module 1 is 3 hours of scenario-based design before you ever touch a device: multi-domain SR migrations, EVPN service architecture, 5G transport trade-offs, judged as requirements analysis rather than configuration. Cisco Live's on-demand SP architecture sessions are the best free training for this module that exists. Config mastery alone fails it — a pattern reported across every CCIE track."
+    },
+    {
+      "step": 8,
+      "title": "Book the lab with logistics as part of the strategy",
+      "description": "$1,600 per attempt at Cisco's permanent facilities — which include Richardson (Dallas), Brussels, Bangalore, and other global sites (third-party lists; verify current locations when booking) — or at rotating mobile-lab events ($1,900 with Cisco's kit, $1,600 bring-your-own-device). Cisco says mobile labs support all expert tracks, but per-event lineups vary, so check the live schedule on the booking page before planning around one. Book far ahead, arrive rested, and know the rule: 30 days' wait after a fail."
+    },
+    {
+      "step": 9,
+      "title": "After the number: maintain it through the work itself",
+      "description": "120 CE credits per 3 years on the unified ledger — Cisco U courses, Cisco Live sessions, and exam passes all count, so an active SP engineer maintains the number through ordinary learning. Never let it fully lapse; expired means restarting from the written. And keep one eye on the exam-topics page: a blueprint dating to 2023 will get revised eventually, announced or not."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "CCIE Service Provider v5.1 Lab Exam Topics (PDF)",
+      "url": "https://learningcontent.cisco.com/documents/marketing/exam-topics/CCIE_Service_Provider_v5.1_Exam_Topics_v4_edited-kz.pdf",
+      "type": "Official Documentation",
+      "note": "The contract for what the lab can ask — all six domains with weights, straight from Cisco. Read it before buying anything."
+    },
+    {
+      "name": "CCIE Service Provider Hub (Cisco Learning Network)",
+      "url": "https://learningnetwork.cisco.com/s/ccie-service-provider",
+      "type": "Official Community",
+      "note": "The canonical prep hub: exam-topics links, study groups, and the small-but-serious community this track attracts."
+    },
+    {
+      "name": "segment-routing.net",
+      "url": "https://www.segment-routing.net/",
+      "type": "Documentation",
+      "note": "The free companion site to the Filsfils Segment Routing books — tutorials and demos for the SR-MPLS/SRv6 depth the lab expects."
+    },
+    {
+      "name": "Official AI-Module Announcement",
+      "url": "https://learningnetwork.cisco.com/s/article/CCIE-Practical-Exam-Format-with-AI-Module",
+      "type": "Official Documentation",
+      "note": "Cisco's per-track rollout of the coming 1-hour AI lab module. No Service Provider date announced as of July 2026 — check here before betting a multi-year timeline."
+    },
+    {
+      "name": "Cisco Live On-Demand Library",
+      "url": "https://www.ciscolive.com/on-demand.html",
+      "type": "Video Sessions",
+      "note": "Free expert-level SP architecture content — segment routing, EVPN, and 5G transport design sessions are the best free Design-module training anywhere."
+    },
+    {
+      "name": "CML Free Tier",
+      "url": "https://developer.cisco.com/modeling-labs/",
+      "type": "Hands-on Labs",
+      "note": "Free 5-node CML for protocol drills and first XR reps. Full-scale SP topologies need the paid tiers, but the free layer covers daily fundamentals."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Segment Routing Part I (Filsfils, Michielsen, Talaulikar)",
+      "type": "Book",
+      "price": "~$30–45",
+      "best_for": "The de-facto SR bible, written by segment routing's inventor — the foundation text for this track's connective tissue",
+      "affiliate_url": "https://www.amazon.com/s?k=Segment+Routing+Part+I+Filsfils&tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_ccie_sp_sr1",
+      "affiliate": true,
+      "note": "Start here before any video course — the mental model in this book is what the blueprint assumes."
+    },
+    {
+      "provider": "Segment Routing Part II – Traffic Engineering",
+      "type": "Book",
+      "price": "~$30–45",
+      "best_for": "SR-TE, policies, and PCE at the depth the lab's Core Routing and Services domains demand",
+      "affiliate_url": "https://www.amazon.com/s?k=Segment+Routing+Part+II+Traffic+Engineering&tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_ccie_sp_sr2",
+      "affiliate": true,
+      "note": "Part I first, then this — auto-steering services into SR policy is v5.1's recurring theme."
+    },
+    {
+      "provider": "INE – CCIE Service Provider Path",
+      "type": "Video + Workbooks",
+      "price": "~$749–$999/year",
+      "best_for": "The go-to structured lab-prep stack for this track — advanced technologies videos plus full-scale SP workbook scenarios",
+      "affiliate_url": "https://ine.com/",
+      "affiliate_label": "View INE",
+      "affiliate_event": "ine_ccie_sp",
+      "affiliate": false,
+      "note": "Plain reference link, no commission."
+    },
+    {
+      "provider": "Cisco Modeling Labs – Personal Plus",
+      "type": "Lab Platform",
+      "price": "$349/year (40 nodes)",
+      "best_for": "The legal daily-driver lab with real IOS XR images — the only sane way to self-host XR-scale topologies",
+      "affiliate_url": "https://u.cisco.com/",
+      "affiliate_label": "View on Cisco U",
+      "affiliate_event": "cml_plus_ccie_sp",
+      "affiliate": false,
+      "note": "Plain reference link. The 20-node Personal tier ($199) covers early study; multi-domain SP topologies want the 40."
+    },
+    {
+      "provider": "Cisco U – SPCOR Learning Path",
+      "type": "Official Training",
+      "price": "Varies — commonly employer-funded via Learning Credits",
+      "best_for": "Blueprint-aligned official prep for the written, plus CE credits for later recertification",
+      "affiliate_url": "https://u.cisco.com/",
+      "affiliate_label": "View Cisco U",
+      "affiliate_event": "ciscou_ccie_sp",
+      "affiliate": false,
+      "note": "Plain reference link. Carrier and MSP employers almost always hold Learning Credits — ask before self-funding."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Written via Pearson VUE · Lab via Cisco's expert-exam booking",
+      "url": "https://ciscolearningservices.my.site.com/cln/s/article/book-your-expert-level-exams",
+      "note": "$400 written + $1,600 per lab attempt ($1,900 at mobile labs with Cisco kit, $1,600 BYOD); travel and lodging on you. Realistic all-in with the commonly cited 2–3 attempts: $5,000–12,000 (estimated, unofficial). Cisco Learning Credits redeem for all of it — ask your employer before self-funding anything."
+    }
+  ],
+  "faq": [
+    {
+      "question": "CCIE Service Provider or CCIE Enterprise Infrastructure — which track?",
+      "answer": "Follow your network, not the prestige. EI is the famous default: campus, SD-WAN, SD-Access, the enterprise world most engineers live in, with the broadest job market. SP is the specialist play: IOS XR, segment routing to SRv6 depth, EVPN services, 5G transport — decisive at carriers, ISPs, MSPs, hyperscalers, and CDNs, and nearly invisible outside them. If you're not sure which world you're in, you're in the enterprise world, and EI (or stopping at CCNP) is the honest answer. Pick SP only when provider networks are already your job or your deliberate destination."
+    },
+    {
+      "question": "Is the Service Provider track dying?",
+      "answer": "The 'SP is dead' folklore comes from carrier consolidation and the track's small pool. The counter-argument — made most loudly by training vendors like FirstPassLab, so weigh the source — is that 5G transport buildouts, routed optical networking, and telco cloud are exactly what v5.1 added, and carriers plus hyperscalers and CDNs still need people who can run backbones. What's verifiably true: Cisco kept the track through the February 2026 portfolio shake-up without a rename, and the v5.1 blueprint reads like a network being modernized, not sunset. Small market, real demand within it — that's the honest read."
+    },
+    {
+      "question": "What does it really cost?",
+      "answer": "Paper: $2,000 ($400 SPCOR + one $1,600 lab attempt). Reality: Cisco publishes no pass rates, but community folklore across all CCIE tracks consistently says most passers need 2–3 lab attempts, each with travel to a Cisco facility or mobile event, plus 12–24 months of training, books, and CML/INE subscriptions. Realistic all-in: $5,000–12,000 — estimated and unofficial, but budgeting the paper number is how people end up with an expensive half-finished attempt."
+    },
+    {
+      "question": "What's the actual pass rate?",
+      "answer": "Cisco has never published one for any CCIE track — treat every specific number as folklore. The commonly cited range: 10–25% pass on the first attempt, roughly 20% per attempt overall, with 'budget for 2–3 attempts' as the standard community advice. Whatever the true figure, the only actionable version is: plan financially and emotionally for a failed first attempt, because most passers' stories include one."
+    },
+    {
+      "question": "How much automation do I really need? I'm a routing person.",
+      "answer": "More than any prior version of this track, and it's not optional: Assurance and Automation is 20% of the lab — second-largest domain — covering NSO service packages (YANG, templates, Python), model-driven telemetry over gRPC/gNMI, Ansible and Python against XR, and secure ZTP. The blueprint states candidates are expected to program and automate the network within the exam itself. If you're a pure-CLI engineer, this domain is your longest-lead-time item; start it in month one, not month ten."
+    },
+    {
+      "question": "I have CCNP Service Provider — how much of the CCIE is already done?",
+      "answer": "Genuinely a lot, which is why we call SPRI the CCIE SP runway. SPCOR is literally the qualifying exam — if you passed it for the CCNP, that box is checked (mind the eligibility window). And SPRI's territory — advanced routing, routing policy, MPLS, segment routing with Flexible Algorithm and SRv6, CGNAT/NAT64/MAP-T, SP multicast — maps almost one-to-one onto the lab's 25% Core Routing domain plus chunks of Services. What SPRI doesn't touch: NSO automation, model-driven telemetry, EVPN at service depth, and the 5G/RON architecture layer. Those gaps are your CCIE study plan."
+    },
+    {
+      "question": "Should I wait for a new lab version before starting?",
+      "answer": "No — the opposite. The v5.1 blueprint has been in effect since 2023 with no refresh announced as of July 2026, and SP conspicuously sat out the spring 2026 refresh wave that updated Enterprise and Data Center. Cisco's coming AI lab module has announced dates only for Data Center so far — none for SP. Stable, known rules are the best conditions a CCIE candidate ever gets. The caveat: a 2023-vintage blueprint will get revised eventually, so a 12–18 month plan is comfortable while a 3-year plan should re-check the exam-topics page along the way."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CCNP Service Provider",
+      "slug": "ccnp-service-provider",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The base camp — its SPCOR core is this cert's qualifying exam, and its SPRI concentration is the runway that covers the lab's biggest domain."
+    },
+    {
+      "title": "CCIE Enterprise Infrastructure",
+      "slug": "ccie-enterprise-infrastructure",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The enterprise-track twin — same lab economics and folklore, far broader job market; the honest pick if your world is campus and SD-WAN, not backbones."
+    },
+    {
+      "title": "CCDE",
+      "slug": "ccde",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The design-side expert alternative — no CLI at all, and a classic pairing for SP architects whose job is justifying the backbone, not just building it."
+    },
+    {
+      "title": "JNCIA-Junos",
+      "slug": "jncia-junos",
+      "vendor": "Juniper",
+      "vendor_slug": "juniper",
+      "reason": "Carrier backbones are chronically dual-vendor — Junos is the most common second language in SP shops, and this is the on-ramp to it."
+    }
+  ],
+  "seo_title": "CCIE Service Provider Guide – Costs & Lab | CertBlueprint",
+  "seo_description": "The honest CCIE Service Provider briefing: the 8-hour IOS XR lab, $5–12K realistic cost, SRv6 and the 20% automation domain, and when to stop at CCNP SP."
+}

@@ -2,6 +2,11 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import VendorCard from '../../components/VendorCard.astro';
+import { getCollection } from 'astro:content';
+
+// Counted from the collection so the cards cannot go stale as guides are added.
+const certs = await getCollection('certifications');
+const countFor = (vendorSlug: string) => certs.filter((c) => c.data.vendor_slug === vendorSlug).length;
 
 const breadcrumbs = [
   { label: 'Home', href: '/' },
@@ -12,85 +17,85 @@ const liveVendors = [
   {
     title: 'Cisco',
     href: '/vendors/cisco/',
-    description: 'The full ladder, entry to expert: $125 CCSTs, CCNA, all eight CCNP tracks, and honest CCIE/CCDE briefings — 17 guides.',
-    certCount: 17,
+    description: 'The full ladder, entry to expert: $125 CCSTs, CCNA, all eight CCNP tracks, all seven CCIE labs, and CCDE.',
+    certCount: countFor('cisco'),
     available: true,
   },
   {
     title: 'CompTIA',
     href: '/vendors/comptia/',
-    description: 'Vendor-neutral IT certifications: Security+, Network+, A+, CySA+, and CASP+. DoD 8570-approved and recognized across government and private sector.',
-    certCount: 7,
+    description: 'Vendor-neutral IT certifications: Security+, Network+, A+, CySA+, and SecurityX (formerly CASP+). DoD 8140-approved (formerly 8570) and recognized across government and private sector.',
+    certCount: countFor('comptia'),
     available: true,
   },
   {
     title: 'AWS',
     href: '/vendors/aws/',
     description: 'Cloud certifications covering architecture, development, operations, and specialty domains. Among the highest-paying IT credentials globally.',
-    certCount: 3,
+    certCount: countFor('aws'),
     available: true,
   },
   {
     title: 'Microsoft',
     href: '/vendors/microsoft/',
     description: 'Azure, Microsoft 365, endpoint, security, and data certifications. Dominant credential track in Microsoft-centric enterprise organizations.',
-    certCount: 6,
+    certCount: countFor('microsoft'),
     available: true,
   },
   {
     title: 'Google',
     href: '/vendors/google/',
     description: 'Google Career Certificates — six guided programs from IT Support to Cybersecurity and BI, with real exam discounts (A+, Security+, CAPM) for completers.',
-    certCount: 6,
+    certCount: countFor('google'),
     available: true,
   },
   {
     title: 'PMI',
     href: '/vendors/pmi/',
     description: 'Project Management Institute — CAPM for genuine entry-level project roles, with the experience-gated PMP as the career destination.',
-    certCount: 1,
+    certCount: countFor('pmi'),
     available: true,
   },
   {
     title: 'Scrum.org',
     href: '/vendors/scrum-org/',
     description: 'Professional Scrum certifications (PSM I–III) — no mandatory course, lifetime validity, and the strongest value in agile credentials.',
-    certCount: 1,
+    certCount: countFor('scrum-org'),
     available: true,
   },
   {
     title: 'ISTQB',
     href: '/vendors/istqb/',
     description: 'The international software testing qualification scheme — CTFL is the one QA credential hiring managers recognize worldwide.',
-    certCount: 1,
+    certCount: countFor('istqb'),
     available: true,
   },
   {
     title: 'PeopleCert',
     href: '/vendors/peoplecert/',
     description: 'The exam institute behind ITIL — service-management vocabulary certifications that enterprise and government IT run on.',
-    certCount: 1,
+    certCount: countFor('peoplecert'),
     available: true,
   },
   {
     title: 'ISC2',
     href: '/vendors/isc2/',
     description: 'The body behind the CISSP — the senior security credential that management and federal job postings ask for by name.',
-    certCount: 1,
+    certCount: countFor('isc2'),
     available: true,
   },
   {
     title: 'ISACA',
     href: '/vendors/isaca/',
     description: 'Governance-side security and audit credentials — CISM for security management, CISA for audit, CRISC for risk.',
-    certCount: 1,
+    certCount: countFor('isaca'),
     available: true,
   },
   {
     title: 'Juniper',
     href: '/vendors/juniper/',
     description: 'The other serious network OS — JNCIA-Junos is the budget-friendly routing & switching entry, big in ISP and service-provider shops.',
-    certCount: 1,
+    certCount: countFor('juniper'),
     available: true,
   },
 ];

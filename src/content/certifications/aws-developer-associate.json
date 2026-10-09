@@ -5,10 +5,10 @@
   "vendor": "AWS",
   "vendor_slug": "aws",
   "level": "Associate",
-  "description": "AWS Certified Developer – Associate validates the skills to build, deploy, and debug cloud-native applications on AWS. Exam DVA-C02 focuses on developing with AWS services, security, deployment, and troubleshooting—aimed at software engineers building on AWS.",
-  "audience": "Software developers building applications on AWS, engineers adding cloud to their skill set, and Solutions Architect or Cloud Practitioner holders who write code and want a development-focused AWS credential.",
+  "description": "AWS Certified Developer – Associate validates building, deploying and debugging cloud-native applications on AWS. Exam DVA-C02 is 65 questions in 130 minutes, scored out of 1000 with 720 to pass, and costs $150 USD. It concentrates on development with AWS services — Lambda, API Gateway, DynamoDB, S3 and the SDKs — plus security (IAM, Cognito, KMS), deployment through CI/CD, and troubleshooting with CloudWatch and X-Ray. Questions are scenario-based and often hinge on the specific limit, permission or retry behaviour of a service.",
+  "audience": "Software developers building on AWS, engineers adding cloud to an existing development skill set, and Solutions Architect or Cloud Practitioner holders who write code and want a development-focused credential. AWS recommends at least a year of hands-on experience with its services and comfort in at least one programming language. You do not need to be a strong programmer, but you do need to read code and understand APIs — the exam assumes both.",
   "why_get_it": "The Developer Associate proves you can actually build on AWS—not just architect it, but write code against the SDKs, work with serverless (Lambda, API Gateway, DynamoDB), handle authentication and encryption, and ship through CI/CD. It's one of the most valuable associate AWS certs for software engineers because it maps directly to the day-to-day work of building cloud-native applications. As more development moves serverless and cloud-first, validating these skills is a strong signal to employers, and AWS developers consistently rank among the better-paid engineering roles.",
-  "when_to_get_it": "Get the Developer Associate if you write code and build applications on AWS, or want to. It pairs naturally with the Solutions Architect Associate—architecture plus development is a powerful combination. A coding background (any language) and familiarity with APIs and the command line make it much easier. If you're brand new to AWS, consider Cloud Practitioner or SAA-C03 first to build the foundational service knowledge.",
+  "when_to_get_it": "Take the Developer Associate if you write code against AWS, or want to. It pairs well with Solutions Architect – Associate: architecture plus development covers most of what an employer means by \"cloud engineer\". If you are brand new to AWS, do SAA-C03 or Cloud Practitioner first to learn the service catalogue. One piece of timing to plan around: AWS is replacing DVA-C02 with DVA-C03. Registration for the new version opens on 27 October 2026, and the last day to sit DVA-C02 is 1 December 2026 — so if you are starting now, check which version your booking and your study material target. Both award the same certification.",
   "exam_code": "DVA-C02",
   "exam_duration": "130 minutes",
   "exam_format": "65 questions: multiple choice and multiple response. Passing score: 720 (on a scale of 100–1000).",
@@ -184,6 +184,10 @@
   ],
   "faq": [
     {
+      "question": "Should I take DVA-C02 or DVA-C03?",
+      "answer": "DVA-C02 is the current exam. AWS opens registration for DVA-C03 on 27 October 2026, and the last day to sit DVA-C02 is 1 December 2026. If you plan to test before December, stay on DVA-C02 and use the material you already have. If you are starting from scratch now, check the DVA-C03 exam guide before buying a course — content written for C02 will go stale. Either version awards the same certification for three years."
+    },
+    {
       "question": "Is the AWS Developer Associate worth it?",
       "answer": "For software engineers building on AWS, yes. It validates real development skills—SDKs, serverless, security, and CI/CD—that map to day-to-day cloud engineering work. It's most valuable paired with a portfolio of shipped applications."
     },
@@ -236,5 +240,6 @@
     }
   ],
   "seo_title": "AWS Certified Developer Associate DVA-C02 Study Guide | CertBlueprint",
-  "seo_description": "Complete AWS Developer Associate (DVA-C02) guide: who it's for, developer salary, exam domains, study path, free and paid resources, and FAQ."
+  "seo_description": "Complete AWS Developer Associate (DVA-C02) guide: who it's for, developer salary, exam domains, study path, free and paid resources, and FAQ.",
+  "last_verified": "September 24, 2026"
 }

@@ -1,0 +1,85 @@
+---
+/**
+ * The career map, as an application.
+ *
+ * The drawing inside (CareerGraph) is server-rendered and complete on its own:
+ * every role is a real link, the fields filter without JavaScript, and the
+ * written-out map below the app carries the same information as text. This
+ * component adds the chrome the interactive layer needs — mode bar, search,
+ * detail panel, viewport controls — and stays out of the way until the map
+ * application has loaded.
+ */
+import CareerGraph from './CareerGraph.astro';
+
+const MODES = [
+  { id: 'explore', label: 'Explore', title: 'Open any role and see what it connects to' },
+  { id: 'path', label: 'Build a path', title: 'Route from where you are to where you want to be' },
+  { id: 'entry', label: 'Ways in', title: 'Roles reachable with no experience, and where they lead' },
+  { id: 'compare', label: 'Compare', title: 'Put two similar roles side by side' },
+  { id: 'skills', label: 'Skills', title: 'Find the roles that use a technology' },
+  { id: 'certs', label: 'Certifications', title: 'See which roles ask for a certification' },
+];
+---
+
+<div class="nav-map">
+  {/* Hidden until the application is ready: controls that do nothing are worse
+      than controls that are not there. */}
+  <div class="nav-map__bar" hidden>
+    <div class="nav-map__modes" role="group" aria-label="Map mode">
+      {
+        MODES.map((m) => (
+          <button type="button" class="nav-map__mode" data-mode={m.id} aria-pressed={m.id === 'explore'} title={m.title}>
+            {m.label}
+          </button>
+        ))
+      }
+    </div>
+
+    <div class="nav-map__search">
+      <label class="sr-only" for="nav-map-search">Search roles, technologies and certifications</label>
+      <input
+        id="nav-map-search"
+        type="search"
+        autocomplete="off"
+        placeholder="Search roles, skills, certifications…"
+        aria-describedby="nav-map-hint"
+      />
+      <ul id="nav-map-results" class="nav-map__results" hidden></ul>
+    </div>
+  </div>
+
+  <p class="nav-map__hint" id="nav-map-hint">
+    Hover or tab to a role to see what it connects to. Click to open it.
+  </p>
+  <p class="sr-only" id="nav-map-status" role="status" aria-live="polite"></p>
+
+  <div class="nav-map__stage">
+    <CareerGraph />
+
+    <aside
+      id="nav-map-panel"
+      class="nav-map__panel"
+      aria-label="Role detail"
+      hidden
+    >
+      <button type="button" class="nav-map__close" data-action="close" aria-label="Close detail">✕</button>
+      <div id="nav-map-panel-body" class="nav-map__panel-body"></div>
+    </aside>
+  </div>
+
+  <div class="nav-map__tools">
+    <div class="nav-map__zoom" role="group" aria-label="Map viewport">
+      <button type="button" class="nav-map__tool" data-action="zoom-out" aria-label="Zoom out">−</button>
+      <button type="button" class="nav-map__tool" data-action="zoom-in" aria-label="Zoom in">+</button>
+      <button type="button" class="nav-map__tool" data-action="fit">Fit</button>
+      <button type="button" class="nav-map__tool" data-action="reset">Reset</button>
+      <button type="button" class="nav-map__tool" data-action="fullscreen">Full screen</button>
+    </div>
+    <p class="nav-map__tip">Drag to pan · Ctrl + scroll to zoom · <kbd>/</kbd> to search</p>
+  </div>
+</div>
+
+<script>
+  import { initCareerMap } from '../../lib/navigator/ui/graph-app';
+  initCareerMap();
+</script>

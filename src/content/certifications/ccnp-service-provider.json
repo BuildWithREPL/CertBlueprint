@@ -127,7 +127,7 @@
     {
       "step": 6,
       "title": "Sit SPCOR, bank the Specialist and the CCIE door",
-      "description": "$400, 120 minutes, results in ~48 hours. Passing earns Specialist – Service Provider Core immediately and qualifies you for the CCIE Service Provider lab (a lab whose current format holds until the AI module reaches SP around September 2027, per Cisco's TBC timeline) if the expert tier ever calls."
+      "description": "$400, 120 minutes, results in ~48 hours. Passing earns Specialist – Service Provider Core immediately and qualifies you for the CCIE Service Provider lab (a lab whose current format holds for now — Cisco has announced AI-module dates only for Data Center, none for SP) if the expert tier ever calls."
     },
     {
       "step": 7,
@@ -244,7 +244,7 @@
     },
     {
       "question": "Does SPCOR count toward CCIE Service Provider?",
-      "answer": "Yes — the standard pattern: SPCOR is simultaneously this track's core and the CCIE SP qualifying exam. One pass opens both doors. If the expert lab tempts you, note its current format holds until the AI module reaches the SP track around September 2027 (Cisco marks the date to-be-confirmed) — a clean window for a determined climb."
+      "answer": "Yes — the standard pattern: SPCOR is simultaneously this track's core and the CCIE SP qualifying exam. One pass opens both doors. If the expert lab tempts you, note Cisco has announced no AI-module date for the SP track as of July 2026 — only Data Center has dates — so the current, stable format is a clean window for a determined climb."
     },
     {
       "question": "How does labbing work for SP study?",
@@ -252,6 +252,13 @@
     }
   ],
   "related_certs": [
+    {
+      "title": "CCIE Service Provider",
+      "slug": "ccie-service-provider",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The summit of this exact ladder — SPRI's IOS XR depth is direct prep for the 8-hour lab, and the full guide covers it honestly."
+    },
     {
       "title": "Juniper JNCIA-Junos",
       "slug": "jncia-junos",

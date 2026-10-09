@@ -140,7 +140,13 @@ const structuredData = {
     <!-- roadmap -->
     <section class="py-4">
       <h2 class="text-xl font-bold tracking-tight mb-1" style="color: var(--cb-text);">Your roadmap</h2>
-      <p class="text-sm mb-4" style="color: var(--cb-text-muted);">An ordered path from beginner to employable. Certifications are optional checkpoints, not the point &mdash; skills and a portfolio are.</p>
+      <p class="text-sm mb-2" style="color: var(--cb-text-muted);">An ordered path from beginner to employable. Certifications are optional checkpoints, not the point &mdash; skills and a portfolio are.</p>
+      <p class="text-sm mb-4">
+        <a href={`/navigator/plan/${path.slug}/`} class="font-semibold" style="color: var(--cb-accent-text);">
+          Track your progress through this roadmap &rarr;
+        </a>
+        <span style="color: var(--cb-text-muted);"> &middot; saved in your browser, no account</span>
+      </p>
       <ol class="space-y-3">
         {path.roadmap.map((r) => (
           <li class="flex gap-4">

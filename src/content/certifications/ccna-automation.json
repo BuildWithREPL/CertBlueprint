@@ -4,14 +4,14 @@
   "vendor": "Cisco",
   "vendor_slug": "cisco",
   "level": "Associate",
-  "description": "CCNA Automation (formerly DevNet Associate) is Cisco's associate-level credential for network automation and programmability. Exam 200-901 (CCNAAUTO) validates skills in software development, REST APIs, Python, Cisco platforms, application security, and infrastructure automation.",
-  "audience": "Network engineers adding automation and programmability skills, developers working with network infrastructure, and IT professionals moving toward NetDevOps, network automation, and infrastructure-as-code roles.",
+  "description": "Automating Networks Using Cisco Platforms (200-901 CCNAAUTO) v1.0 earns the CCNA Automation certification. It is a 120-minute exam covering software development and design, APIs, application deployment and security, and infrastructure automation on Cisco platforms — the network-engineering side of DevOps rather than general programming. It costs $300 USD and is offered in English and Japanese.",
+  "audience": "Network engineers whose work is drifting into scripting, developers building against network APIs, and automation or platform engineers in Cisco environments. It expects you to read and reason about Python, REST APIs, JSON and YAML, and version control — not to write production software, but enough that someone who has never scripted will find it hard going.",
   "why_get_it": "CCNA Automation proves you can bridge traditional networking and modern software automation—reading and writing Python, calling REST APIs, and automating infrastructure on Cisco platforms like DNA Center, Meraki, and ACI. That overlap is exactly what employers pay a premium for: network automation engineers consistently earn more than traditional network engineers at the same experience level. It is also the entry point to Cisco's Automation track (formerly DevNet), leading to CCNP Automation. For anyone in networking who wants to stay relevant as infrastructure becomes code-driven, this is the credential that signals you've made the jump.",
-  "when_to_get_it": "Get CCNA Automation if you want to move into network automation, NetDevOps, or infrastructure-as-code, or to add programmability to an existing networking role. It pairs naturally with CCNA: a solid networking foundation makes the Network Fundamentals and Infrastructure and Automation domains far easier. Some comfort with Python and the command line helps a great deal—if you've never written code, budget extra time for the software development and API domains. If your goal is pure networking or security operations rather than automation, CCNA or CCNA Cybersecurity may fit better first.",
+  "when_to_get_it": "Take it once you already understand networking and have started automating pieces of your own job — it assumes the network knowledge rather than teaching it, so CCNA first is the usual and sensible order. It suits people whose employer runs Cisco gear and is moving toward infrastructure-as-code, and it is the entry point into Cisco's automation track. If you want general automation skills rather than Cisco-specific ones, a Python and Git foundation plus a portfolio of real scripts will take you further for less money.",
   "exam_code": "200-901",
   "exam_duration": "120 minutes",
-  "exam_format": "Multiple-choice and multiple-response questions. Approximately 100 questions.",
-  "exam_questions": "~100 questions (approximate; Cisco does not publish the exact count). Passing score is scaled, typically 800–850 of 1000.",
+  "exam_format": "Multiple-choice and multiple-response questions, 120 minutes, offered in English and Japanese. Cisco does not publish the question count or the passing score — third-party sites quoting \"about 100 questions\" or an \"800–850 cut score\" are guessing.",
+  "exam_questions": "Cisco does not publish the question count",
   "official_url": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/ccnaauto.html",
   "official_pricing_url": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/list.html",
   "recertification_note": "Valid for 3 years. Renew by passing another Cisco exam, earning Continuing Education credits through the Cisco CE program, or achieving a higher-level Cisco certification before expiration.",
@@ -192,7 +192,7 @@
     {
       "label": "Buy 200-901 Exam Voucher – Cisco Official",
       "url": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/list.html",
-      "note": "The 200-901 exam is $300 USD at standard pricing and is scheduled through Pearson VUE. Always verify current pricing on the official Cisco site before purchasing."
+      "note": "The 200-901 exam is $300 USD at standard pricing, or payable with Cisco Learning Credits, and is scheduled through Pearson VUE. Verify current pricing on the official Cisco exam page before purchasing."
     }
   ],
   "faq": [
@@ -253,5 +253,6 @@
     }
   ],
   "seo_title": "CCNA Automation 200-901 (DevNet Associate) Study Guide | CertBlueprint",
-  "seo_description": "Complete CCNA Automation (200-901, formerly DevNet Associate) guide: who it's for, network automation salary, exam domains, APIs and Python, study path, free and paid resources, and FAQ."
+  "seo_description": "Complete CCNA Automation (200-901, formerly DevNet Associate) guide: who it's for, network automation salary, exam domains, APIs and Python, study path, free and paid resources, and FAQ.",
+  "last_verified": "September 24, 2026"
 }

@@ -1,0 +1,550 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CompareBars from '../../../components/navigator/CompareBars.astro';
+import '../../../styles/navigator.css';
+import type { Role } from '../../../lib/navigator/types';
+import { ROLE_PAIRS, pairsForRole, assertRolePairIntegrity } from '../../../lib/navigator/data/role-pairs';
+import { compareRoles, comparePath, leanHighlights } from '../../../lib/navigator/engine/compare';
+import { DIMENSION_BY_ID } from '../../../lib/navigator/data/dimensions';
+import { DOMAIN_BY_ID } from '../../../lib/navigator/data/domains';
+import { ROLE_SALARY } from '../../../lib/navigator/data/salary';
+import { TECHNOLOGY_BY_SLUG } from '../../../lib/navigator/data/technologies';
+import { trialsForRole } from '../../../lib/navigator/data/trials';
+
+export function getStaticPaths() {
+  assertRolePairIntegrity();
+  return ROLE_PAIRS.map((pair) => ({
+    params: { pair: `${pair.a.slug}-vs-${pair.b.slug}` },
+    props: { pair },
+  }));
+}
+
+const { pair } = Astro.props;
+const a: Role = pair.a;
+const b: Role = pair.b;
+const cmp = compareRoles(a, b);
+
+const A = 'var(--nav-cyan)';
+const B = 'var(--nav-violet)';
+
+const SHOWN = 7;
+const divergent = cmp.divergent.slice(0, SHOWN);
+const shared = cmp.shared.slice(0, 5);
+const leanA = leanHighlights(cmp.favoursA);
+const leanB = leanHighlights(cmp.favoursB);
+
+const ENTRY_LABEL: Record<Role['entry'], string> = {
+  'first-job': 'Reachable as a first job',
+  'second-job': 'Usually a second job',
+  senior: 'A senior destination',
+};
+
+// Technologies are the most concrete thing a person can compare, so the split
+// is done on resolved names rather than slugs — a technology present in the
+// graph and one written as plain text should still match.
+const nameOf = (slug: string) => TECHNOLOGY_BY_SLUG[slug]?.name ?? slug;
+const techA = new Map(a.technologies.map((t) => [nameOf(t).toLowerCase(), nameOf(t)]));
+const techB = new Map(b.technologies.map((t) => [nameOf(t).toLowerCase(), nameOf(t)]));
+const techShared = [...techA.entries()].filter(([k]) => techB.has(k)).map(([, v]) => v);
+const techOnlyA = [...techA.entries()].filter(([k]) => !techB.has(k)).map(([, v]) => v);
+const techOnlyB = [...techB.entries()].filter(([k]) => !techA.has(k)).map(([, v]) => v);
+
+const certTitles = (role: Role) => new Set(role.certs.map((c) => c.title));
+const certsA = certTitles(a);
+const certsB = certTitles(b);
+const certsShared = [...certsA].filter((t) => certsB.has(t));
+const certsOnlyA = [...certsA].filter((t) => !certsB.has(t));
+const certsOnlyB = [...certsB].filter((t) => !certsA.has(t));
+
+const salaryA = ROLE_SALARY[a.slug];
+const salaryB = ROLE_SALARY[b.slug];
+// Trials attach to capabilities, so two similar roles frequently resolve to the
+// same first trial. Showing it twice under "feel the difference" is the exact
+// opposite of the point, so prefer one that is unique to each side — and where
+// none exists, say plainly that the same experiment covers both rather than
+// printing it in two columns and hoping nobody notices.
+const trialsA = trialsForRole(a.slug);
+const trialsB = trialsForRole(b.slug);
+const slugsB = new Set(trialsB.map((t) => t.slug));
+const slugsA = new Set(trialsA.map((t) => t.slug));
+
+const trialA = trialsA.find((t) => !slugsB.has(t.slug));
+const trialB = trialsB.find((t) => !slugsA.has(t.slug));
+const trialBoth = !trialA || !trialB ? trialsA.find((t) => slugsB.has(t.slug)) : undefined;
+const distinctTrials = Boolean(trialA && trialB);
+
+// Other comparisons involving either role, so a page that turns out to be the
+// wrong pair is still a step forward rather than a dead end.
+const alsoCompare = [...pairsForRole(a.slug), ...pairsForRole(b.slug)]
+  .filter((p) => !(p.a.slug === a.slug && p.b.slug === b.slug))
+  .filter((p, i, arr) => arr.findIndex((q) => q.a.slug === p.a.slug && q.b.slug === p.b.slug) === i)
+  .sort((x, y) => y.overlap - x.overlap)
+  .slice(0, 6);
+
+const isAdjacent = pair.reasons.includes('adjacent');
+const title = `${a.name} vs ${b.name}: How They Actually Differ | CertBlueprint`;
+const description = `${a.name} and ${b.name} share ${cmp.overlap}% of the same working profile. Compare what you do all day, the technologies, entry point, pay and the honest downside of each — side by side.`;
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Career Navigator', href: '/navigator/' },
+  { label: 'Compare', href: '/navigator/compare/' },
+  { label: `${a.name} vs ${b.name}`, href: comparePath(a.slug, b.slug) },
+];
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: `${a.name} vs ${b.name}`,
+  description,
+  about: [
+    { '@type': 'Occupation', name: a.name, description: a.purpose },
+    { '@type': 'Occupation', name: b.name, description: b.purpose },
+  ],
+  publisher: { '@type': 'Organization', name: 'CertBlueprint' },
+};
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} structuredData={structuredData}>
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    {/* ── Header ─────────────────────────────────────────────────── */}
+    <header class="pt-8 pb-6">
+      <p class="font-mono text-xs uppercase tracking-widest mb-3" style="color: var(--cb-text-muted);">
+        Side by side
+      </p>
+
+      <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-balance" style="color: var(--cb-text);">
+        <span style={`color: ${A};`}>{a.name}</span>
+        <span style="color: var(--cb-text-muted);"> vs </span>
+        <span style={`color: ${B};`}>{b.name}</span>
+      </h1>
+
+      <p class="mt-4 text-lg leading-relaxed" style="color: var(--cb-text-sub); max-width: 60ch;">
+        These two share <strong style="color: var(--cb-text);">{cmp.overlap}%</strong> of the same working
+        profile.
+        {
+          cmp.overlap >= 85
+            ? ' That is why people get stuck between them — and why the differences below are worth reading slowly.'
+            : cmp.overlap >= 60
+              ? ' Enough in common to be worth comparing, and enough apart that the choice matters.'
+              : ' Less alike than the career path between them suggests — expect the day to day to feel genuinely different.'
+        }
+      </p>
+
+      {/* Why this pair exists at all. A comparison page that cannot say why it
+          is a comparison is a page generated for its own sake. */}
+      <p class="mt-3 text-sm leading-relaxed" style="color: var(--cb-text-muted); max-width: 62ch;">
+        {
+          isAdjacent && pair.adjacencyNote
+            ? `This pairing exists because the move is a real one: ${pair.adjacencyNote.charAt(0).toLowerCase()}${pair.adjacencyNote.slice(1)}`
+            : isAdjacent
+              ? 'This pairing exists because people genuinely move between these two roles.'
+              : 'This pairing exists because the two profiles are close enough to be confused on a results page.'
+        }
+      </p>
+    </header>
+
+    {/* ── The short answer ───────────────────────────────────────── */}
+    <section class="mb-10">
+      <h2 class="text-xl font-bold tracking-tight mb-1" style="color: var(--cb-text);">
+        The short answer
+      </h2>
+      <p class="text-sm mb-4" style="color: var(--cb-text-sub); max-width: 62ch;">
+        Not which is better — they pay similarly often enough that the question is meaningless. This is
+        what each one asks of you more than the other does.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        {
+          [
+            { role: a, lean: leanA, accent: A, side: 'a' as const },
+            { role: b, lean: leanB, accent: B, side: 'b' as const },
+          ].map(({ role, lean, accent }) => (
+            <div class="nav-card nav-card--railed p-5 pl-6" style={`--nav-accent: ${accent};`}>
+              <h3 class="font-bold text-base mb-3" style="color: var(--cb-text);">
+                Lean toward {role.name} if…
+              </h3>
+              {lean.length > 0 ? (
+                <ul class="space-y-2.5">
+                  {lean.map((d) => (
+                    <li>
+                      <p class="text-sm font-semibold" style={`color: ${accent};`}>
+                        {DIMENSION_BY_ID[d.id].label}
+                      </p>
+                      <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+                        {DIMENSION_BY_ID[d.id].blurb}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+                  Nothing in this role's profile pulls meaningfully harder than the other's. On the
+                  dimensions this tool measures, the two are the same job with different titles — so
+                  decide on the practical differences further down instead.
+                </p>
+              )}
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    {/* ── The dimensions ─────────────────────────────────────────── */}
+    <section class="mb-10">
+      <h2 class="text-xl font-bold tracking-tight mb-1" style="color: var(--cb-text);">
+        Where they actually differ
+      </h2>
+      <p class="text-sm mb-2" style="color: var(--cb-text-sub); max-width: 62ch;">
+        The same {41} dimensions the assessment scores you on, applied to the roles themselves. Bars show
+        each role's emphasis relative to its own strongest trait — so this is about shape, not size.
+      </p>
+      {/* Sparse vectors mean an omitted dimension renders as zero. Without this
+          line a short bar reads as "never does this", which is a different and
+          wrong claim. */}
+      <p class="text-sm mb-5" style="color: var(--cb-text-muted); max-width: 62ch;">
+        A short bar means the trait is not part of what defines that role — not that it never comes up.
+        Every job in IT involves some troubleshooting; only some are built around it.
+      </p>
+
+      {
+        divergent.length > 0 ? (
+          <CompareBars deltas={divergent} aName={a.name} bName={b.name} />
+        ) : (
+          <p class="nav-card p-5 text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+            No dimension separates these two by enough to be worth showing. That is a real finding
+            rather than a gap in the data: on how the work feels, these are the same job. Choose on the
+            practical differences below — entry point, technologies and pay.
+          </p>
+        )
+      }
+    </section>
+
+    {/* ── Where they overlap ─────────────────────────────────────── */}
+    {
+      shared.length > 0 && (
+        <section class="mb-10">
+          <h2 class="text-xl font-bold tracking-tight mb-1" style="color: var(--cb-text);">
+            What they have in common
+          </h2>
+          <p class="text-sm mb-5" style="color: var(--cb-text-sub); max-width: 62ch;">
+            Worth knowing for two reasons: it explains why you are torn, and it is the part that
+            transfers if you start with one and move to the other later.
+          </p>
+          <CompareBars deltas={shared} aName={a.name} bName={b.name} showLean={false} />
+        </section>
+      )
+    }
+
+    {/* ── Day to day ─────────────────────────────────────────────── */}
+    <section class="mb-10">
+      <h2 class="text-xl font-bold tracking-tight mb-4" style="color: var(--cb-text);">
+        What you actually do all day
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        {
+          [
+            { role: a, accent: A },
+            { role: b, accent: B },
+          ].map(({ role, accent }) => (
+            <div>
+              <h3 class="font-bold text-base mb-1" style={`color: ${accent};`}>{role.name}</h3>
+              <p class="text-sm leading-relaxed mb-3" style="color: var(--cb-text-muted);">{role.purpose}</p>
+              <ul class="space-y-2">
+                {role.activities.slice(0, 5).map((activity) => (
+                  <li class="flex gap-2.5 text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+                    <span class="shrink-0 mt-2 w-1.5 h-1.5 rounded-full" style={`background: ${accent};`} />
+                    <span>{activity}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    {/* ── The practical differences ──────────────────────────────── */}
+    <section class="mb-10">
+      <h2 class="text-xl font-bold tracking-tight mb-4" style="color: var(--cb-text);">
+        Getting in, and what it pays
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        {
+          [
+            { role: a, accent: A, salary: salaryA },
+            { role: b, accent: B, salary: salaryB },
+          ].map(({ role, accent, salary }) => (
+            <div class="nav-card nav-card--railed p-5 pl-6" style={`--nav-accent: ${accent};`}>
+              <h3 class="font-bold text-base mb-3" style={`color: ${accent};`}>{role.name}</h3>
+
+              <p class="font-mono text-[0.65rem] uppercase tracking-widest mb-1" style="color: var(--cb-text-muted);">
+                Entry point
+              </p>
+              <p class="text-sm font-semibold mb-4" style="color: var(--cb-text);">{ENTRY_LABEL[role.entry]}</p>
+
+              {salary && (
+                <>
+                  <p class="font-mono text-[0.65rem] uppercase tracking-widest mb-1" style="color: var(--cb-text-muted);">
+                    What you start on
+                  </p>
+                  <p class="text-sm font-semibold mb-3" style="color: var(--cb-text);">{salary.entry}</p>
+
+                  {/* Deliberately no median here. Two medians side by side turn a
+                      career decision into a bigger-number contest, and one of
+                      them is frequently a directional guess for a job title no
+                      statistics body recognises. The role page gives the full
+                      picture with its caveats attached. */}
+                  <p class="text-xs leading-relaxed" style="color: var(--cb-text-muted);">
+                    {salary.basis === 'no-official-category'
+                      ? 'No official occupation exists for this title — see the role page for the directional range and why it is only that.'
+                      : 'See the role page for the published median, its source and what it leaves out.'}
+                  </p>
+                </>
+              )}
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    {/* ── The honest downsides ───────────────────────────────────── */}
+    <section class="mb-10">
+      <h2 class="text-xl font-bold tracking-tight mb-1" style="color: var(--cb-text);">
+        The honest downside of each
+      </h2>
+      <p class="text-sm mb-4" style="color: var(--cb-text-sub); max-width: 62ch;">
+        Often the deciding factor. Both of these are good jobs for the right person; the question is
+        which cost you would rather live with.
+      </p>
+      <div class="grid md:grid-cols-2 gap-4">
+        {
+          [
+            { role: a, accent: A },
+            { role: b, accent: B },
+          ].map(({ role, accent }) => (
+            <div class="nav-card p-5" style="--nav-accent: var(--nav-warn);">
+              <h3 class="font-bold text-base mb-2" style={`color: ${accent};`}>{role.name}</h3>
+              <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{role.reality}</p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    {/* ── Technologies ───────────────────────────────────────────── */}
+    <section class="mb-10">
+      <h2 class="text-xl font-bold tracking-tight mb-1" style="color: var(--cb-text);">
+        Technologies
+      </h2>
+      <p class="text-sm mb-4" style="color: var(--cb-text-sub); max-width: 62ch;">
+        The shared column is the practical reason these two are one career move apart rather than a
+        restart — that part you would take with you.
+      </p>
+
+      <div class="grid sm:grid-cols-3 gap-4">
+        <div class="nav-card p-4" style="--nav-accent: var(--nav-emerald);">
+          <p class="font-mono text-[0.65rem] uppercase tracking-widest mb-2" style="color: var(--nav-emerald);">
+            Both ({techShared.length})
+          </p>
+          {techShared.length > 0 ? (
+            <ul class="space-y-1">
+              {techShared.map((t) => (
+                <li class="text-sm" style="color: var(--cb-text-sub);">{t}</li>
+              ))}
+            </ul>
+          ) : (
+            <p class="text-sm leading-relaxed" style="color: var(--cb-text-muted);">
+              Nothing in common — these are genuinely different toolsets.
+            </p>
+          )}
+        </div>
+
+        <div class="nav-card p-4" style={`--nav-accent: ${A};`}>
+          <p class="font-mono text-[0.65rem] uppercase tracking-widest mb-2" style={`color: ${A};`}>
+            {a.name} only ({techOnlyA.length})
+          </p>
+          <ul class="space-y-1">
+            {techOnlyA.map((t) => (
+              <li class="text-sm" style="color: var(--cb-text-sub);">{t}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="nav-card p-4" style={`--nav-accent: ${B};`}>
+          <p class="font-mono text-[0.65rem] uppercase tracking-widest mb-2" style={`color: ${B};`}>
+            {b.name} only ({techOnlyB.length})
+          </p>
+          <ul class="space-y-1">
+            {techOnlyB.map((t) => (
+              <li class="text-sm" style="color: var(--cb-text-sub);">{t}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    {/* ── Try the difference ─────────────────────────────────────── */}
+    {
+      (distinctTrials || trialBoth) && (
+        <section class="mb-10">
+          <h2 class="text-xl font-bold tracking-tight mb-1" style="color: var(--cb-text);">
+            Feel the difference before you commit to it
+          </h2>
+          <p class="text-sm mb-4" style="color: var(--cb-text-sub); max-width: 62ch;">
+            {distinctTrials
+              ? 'Reading two columns will not settle this. Doing an hour of each probably will — both are free and run on the machine you already have.'
+              : 'These two are close enough that the same hands-on trial tests both of them, which is itself worth knowing. It will not separate the roles for you, but it will tell you whether this kind of work suits you at all.'}
+          </p>
+
+          {distinctTrials ? (
+            <div class="grid sm:grid-cols-2 gap-3">
+              {[
+                { role: a, accent: A, trial: trialA! },
+                { role: b, accent: B, trial: trialB! },
+              ].map(({ role, accent, trial }) => (
+                <a
+                  href={`/navigator/trials/#${trial.slug}`}
+                  class="nav-card nav-card--railed block p-4 pl-5"
+                  style={`--nav-accent: ${accent};`}
+                >
+                  <p class="font-mono text-[0.65rem] uppercase tracking-widest mb-1" style={`color: ${accent};`}>
+                    Closer to {role.name} · {trial.time}
+                  </p>
+                  <p class="font-semibold text-sm mb-1" style="color: var(--cb-text);">{trial.name} →</p>
+                  <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{trial.objective}</p>
+                </a>
+              ))}
+            </div>
+          ) : (
+            <a
+              href={`/navigator/trials/#${trialBoth!.slug}`}
+              class="nav-card nav-card--railed block p-4 pl-5"
+              style="--nav-accent: var(--nav-emerald);"
+            >
+              <p class="font-mono text-[0.65rem] uppercase tracking-widest mb-1" style="color: var(--nav-emerald);">
+                Covers both · {trialBoth!.time}
+              </p>
+              <p class="font-semibold text-sm mb-1" style="color: var(--cb-text);">{trialBoth!.name} →</p>
+              <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{trialBoth!.objective}</p>
+            </a>
+          )}
+        </section>
+      )
+    }
+
+    {/* ── Certifications ─────────────────────────────────────────── */}
+    <section class="mb-10">
+      <h2 class="text-xl font-bold tracking-tight mb-1" style="color: var(--cb-text);">
+        Certifications
+      </h2>
+      <p class="text-sm mb-4" style="color: var(--cb-text-sub); max-width: 62ch;">
+        Last, as everywhere on this site. If both paths share an early certification, that is the one
+        to start with — it keeps the decision open while you find out which you prefer.
+      </p>
+
+      {
+        certsShared.length > 0 && (
+          <div class="nav-card p-4 mb-3" style="--nav-accent: var(--nav-emerald);">
+            <p class="font-mono text-[0.65rem] uppercase tracking-widest mb-2" style="color: var(--nav-emerald);">
+              Counts for both
+            </p>
+            <ul class="space-y-1">
+              {certsShared.map((t) => (
+                <li class="text-sm" style="color: var(--cb-text-sub);">{t}</li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
+
+      <div class="grid sm:grid-cols-2 gap-3">
+        <div class="nav-card p-4" style={`--nav-accent: ${A};`}>
+          <p class="font-mono text-[0.65rem] uppercase tracking-widest mb-2" style={`color: ${A};`}>
+            {a.name} only
+          </p>
+          <ul class="space-y-1">
+            {certsOnlyA.map((t) => (
+              <li class="text-sm" style="color: var(--cb-text-sub);">{t}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="nav-card p-4" style={`--nav-accent: ${B};`}>
+          <p class="font-mono text-[0.65rem] uppercase tracking-widest mb-2" style={`color: ${B};`}>
+            {b.name} only
+          </p>
+          <ul class="space-y-1">
+            {certsOnlyB.map((t) => (
+              <li class="text-sm" style="color: var(--cb-text-sub);">{t}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    {/* ── Full profiles ──────────────────────────────────────────── */}
+    <section class="mb-10">
+      <div class="grid sm:grid-cols-2 gap-3">
+        <a href={`/navigator/roles/${a.slug}/`} class="nav-card nav-card--railed block p-4 pl-5" style={`--nav-accent: ${A};`}>
+          <p class="font-semibold text-sm" style={`color: ${A};`}>Full {a.name} profile →</p>
+          <p class="text-sm mt-1 leading-relaxed" style="color: var(--cb-text-sub);">
+            Concepts, where the work happens, pay in full, and every certification that fits.
+          </p>
+        </a>
+        <a href={`/navigator/roles/${b.slug}/`} class="nav-card nav-card--railed block p-4 pl-5" style={`--nav-accent: ${B};`}>
+          <p class="font-semibold text-sm" style={`color: ${B};`}>Full {b.name} profile →</p>
+          <p class="text-sm mt-1 leading-relaxed" style="color: var(--cb-text-sub);">
+            Concepts, where the work happens, pay in full, and every certification that fits.
+          </p>
+        </a>
+      </div>
+    </section>
+
+    {/* ── Neither? ───────────────────────────────────────────────── */}
+    {
+      alsoCompare.length > 0 && (
+        <section class="mb-10">
+          <h2 class="text-xl font-bold tracking-tight mb-1" style="color: var(--cb-text);">
+            Not the right pair?
+          </h2>
+          <p class="text-sm mb-4" style="color: var(--cb-text-sub); max-width: 62ch;">
+            Other comparisons involving one of these two.
+          </p>
+          <div class="grid sm:grid-cols-2 gap-2">
+            {alsoCompare.map((p) => (
+              <a href={comparePath(p.a.slug, p.b.slug)} class="nav-card block p-3">
+                <p class="text-sm font-medium" style="color: var(--cb-accent-text);">
+                  {p.a.name} vs {p.b.name}
+                </p>
+                <p class="text-xs mt-0.5" style="color: var(--cb-text-muted);">{p.overlap}% shared profile</p>
+              </a>
+            ))}
+          </div>
+        </section>
+      )
+    }
+
+    <section class="pb-16">
+      <div class="nav-card p-5" style="--nav-accent: var(--cb-accent);">
+        <h2 class="font-bold text-base mb-2" style="color: var(--cb-text);">
+          Still genuinely torn?
+        </h2>
+        <p class="text-sm leading-relaxed mb-3" style="color: var(--cb-text-sub); max-width: 62ch;">
+          That usually means the difference between these two is not one you can decide by reading. The
+          assessment shows you the problems instead of describing them, and tells you which kind you
+          keep reaching for — including when the answer is a third role neither of you considered.
+        </p>
+        <a href="/navigator/assessment/" class="text-sm font-semibold" style="color: var(--cb-accent-text);">
+          Try the scenarios →
+        </a>
+      </div>
+
+      <p class="text-xs leading-relaxed mt-4" style="color: var(--cb-text-muted); max-width: 70ch;">
+        Overlap and dimension figures are computed from the same role profiles the assessment matches
+        against — they describe how this site models the two jobs, not a survey of people doing them.
+        Titles vary enormously between employers: read the day-to-day lists, not the names.
+      </p>
+    </section>
+  </article>
+</BaseLayout>

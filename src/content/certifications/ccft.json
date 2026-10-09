@@ -1,0 +1,229 @@
+{
+  "title": "Cisco Certified Field Technician (800-150 FLDTEC) Study Guide",
+  "slug": "ccft",
+  "short_name": "CCT Field Technician",
+  "former_name": "Cisco Certified Technician (CCT) — Routing & Switching, Data Center, and Collaboration tracks",
+  "vendor": "Cisco",
+  "vendor_slug": "cisco",
+  "level": "Entry",
+  "description": "The Cisco Certified Field Technician is what became of the old three-track CCT: one 120-minute exam (800-150 FLDTEC) covering on-site support of Cisco routers, switches, firewalls, Nexus, UCS, and collaboration gear. Hardware replacement is the biggest domain by far — this is the cert for people who rack, cable, swap, and RMA equipment for a living, usually working hand-in-hand with Cisco TAC.",
+  "audience": "Field service technicians, depot and smart-hands techs, data-center floor staff, and anyone whose job is physically touching Cisco hardware — replacing failed parts, consoling in, recovering devices, and closing RMAs with TAC on the phone. No prerequisites, no experience required on paper — but this exam assumes you'll be the person on site, so it tests like it.",
+  "why_get_it": "Because it maps to an actual job, not a study fantasy. Field and smart-hands work is one of the legitimate ways into IT that doesn't start at a help desk: you learn hardware, cabling, console access, and IOS basics by doing them, and this cert is Cisco's stamp that you can do exactly that. Cisco positions certified field techs as the on-site partner to TAC — the person who identifies the failed part, swaps the FRU, and brings the device back up. The honest caveats: it's a technician cert, not an engineering cert — it won't compete with CCNA in job filters, and almost no posting requires it by name. Its value is strongest when a Cisco partner, MSP, or field-services contractor is the employer, because those shops know exactly what it means. And know the job before you chase the cert: field work means travel, windshield time, night maintenance windows, loading docks, and lifting equipment. If that sounds like freedom rather than misery, this is your lane.",
+  "when_to_get_it": "Early, and specifically when field or data-center hands-on work is the target. If you're already doing break/fix or smart-hands work uncredentialed, this formalizes it fast — the official course is only about 10 hours. If you're starting from zero and want field work, pair it with the free CCST Networking material for fundamentals, then take this. If your actual goal is network engineering — designing and configuring rather than replacing and recovering — skip it and go at CCNA directly; this cert deliberately stops at supporting devices, not running networks. One timing note: the three old CCT exams retired February 9, 2025. If you hold an old CCT, it stays valid until expiry, but renewal now runs through FLDTEC.",
+  "salary_range": "$42,000 – $66,000 (U.S. field technician roles)",
+  "salary_note": "Titles vary wildly, so treat these as directional: ZipRecruiter puts the average 'Field Network Technician' around $52K (25th–75th percentile roughly $42K–$61K, May 2026), Salary.com's 'Network Field Technician' average is about $66K, and broader 'Field Service Technician' surveys run from ~$26/hr (Payscale) up to ~$70K averages (Glassdoor). The cert alone doesn't set pay — willingness to travel, a clean driving record, and data-center experience move field offers more than any badge.",
+  "exam_code": "800-150 FLDTEC",
+  "exam_duration": "120 minutes",
+  "exam_format": "One proctored exam at Pearson VUE, no prerequisites. Cisco's launch materials describe roughly 100 items in 120 minutes — a mix of multiple choice and scenario-based field decisions (some third parties report fewer questions; Cisco doesn't officially publish a count). Passing score not published — ignore any site claiming one.",
+  "exam_questions": "~100 items per Cisco's launch blog (unofficial counts vary; not published)",
+  "exam_structure": [
+    {
+      "code": "800-150 FLDTEC v1.0",
+      "name": "Supporting Cisco Devices for Field Technicians",
+      "role": "Single required exam",
+      "price": "$200 USD (verify at registration — some third parties list $250–$300)",
+      "note": "Live since February 10, 2025, replacing the three retired CCT exams (Routing & Switching 100-490, Data Center, Collaboration). One 120-minute exam now covers what used to take three."
+    }
+  ],
+  "last_verified": "July 2026",
+  "official_url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/technician/index.html",
+  "official_pricing_url": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/fldtec.html",
+  "recertification_note": "Three years, per Cisco's standard recertification policy — renew by retaking FLDTEC, passing a higher-level Cisco exam, or Continuing Education credits. (Cisco hasn't published a FLDTEC-specific recert page, so confirm the CE option before counting on it. The lifetime/5-year rules you may have read about apply to CCST, not this cert.)",
+  "skills_covered": [
+    {
+      "category": "Hardware Replacement — the heart of the exam (largest domain, roughly 35–38% by third-party blueprint mirrors)",
+      "items": [
+        "Safety and ESD discipline — the part that keeps you and the hardware alive",
+        "Identifying and swapping field-replaceable units: power supplies, fans, supervisors, modules, optics",
+        "Replacement procedures across Catalyst switches, routers, firewalls, Nexus, UCS, and collaboration endpoints",
+        "Locating serial numbers and walking the RMA/device-replacement workflow with TAC",
+        "Verifying a device is actually healthy after the swap — not just powered on"
+      ]
+    },
+    {
+      "category": "Networking Foundations & Cabling",
+      "items": [
+        "Network devices and where they sit: switches, routers, firewalls, APs",
+        "OSI and TCP/IP models at working depth — enough to describe what's broken to TAC",
+        "Layer 1 cabling: copper, fiber, connectors, and the faults each one produces",
+        "IPv4 addressing and subnetting basics, plus routing and switching fundamentals",
+        "Reading link lights and port states like the diagnostic tools they are"
+      ]
+    },
+    {
+      "category": "Service Tasks, Console Access & Cisco Software",
+      "items": [
+        "Console and remote access — getting into a device that's on the floor, not in a lab",
+        "The boot process, basic IOS commands, and file management",
+        "Password recovery and config backup/restore via TFTP, FTP, and USB",
+        "IOS images: bundle vs install mode, licensing basics, and image transfers",
+        "The unglamorous essentials: documentation, escalation, knowing when to stop touching it"
+      ]
+    },
+    {
+      "category": "Data Center & Collaboration Architectures",
+      "items": [
+        "UCS placement and connectivity, plus hypervisor and cloud-model basics",
+        "Nexus platform awareness from a hands-on-support angle",
+        "CUCM, video endpoints, and Webex cloud — what collaboration gear a field tech actually services",
+        "Enough architecture context to know what you're standing in front of and what it talks to"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Download the official exam topics PDF",
+      "description": "The 800-150 v1.0 blueprint from Cisco is the authoritative topic list. Domain weights floating around third-party sites disagree with each other (35% vs 38% on hardware, etc.), so treat any percentages as approximate — but every mirror agrees hardware replacement dominates. Study accordingly."
+    },
+    {
+      "step": 2,
+      "title": "Shore up fundamentals if you're new",
+      "description": "The exam assumes working knowledge of networking basics — devices, cabling, IP addressing, subnetting. If those are shaky, Cisco NetAcad's free CCST Networking material covers the same ground at no cost. Don't pay for fundamentals; save the money for the exam."
+    },
+    {
+      "step": 3,
+      "title": "Take the official Cisco U. learning path",
+      "description": "'Supporting Cisco Devices for Field Technicians' on Cisco U. is the official prep — about 10 hours, condensed from the 25–29 hours of the three old CCT courses, with pre- and post-assessments. It requires Cisco U. access (check current free-tier coverage before paying). Resellers like Global Knowledge sell the same official e-learning if that route suits you better."
+    },
+    {
+      "step": 4,
+      "title": "Get physical reps however you can",
+      "description": "The biggest domain is hardware replacement, and no video teaches your hands. Used Catalyst switches and ISR routers go cheap on eBay — practice consoling in, password recovery, backing up configs over TFTP, and pulling/reseating power supplies and modules. If you're already in a smart-hands or depot job, you're studying at work."
+    },
+    {
+      "step": 5,
+      "title": "Drill the service workflows, not just the parts",
+      "description": "The exam tests field decisions: locating serial numbers, the RMA workflow, boot sequence, bundle vs install mode, transferring images over TFTP/FTP/USB. These are procedural — write out each workflow step-by-step until you can recite it, because that's precisely what you'll do on a loading dock with TAC on the phone."
+    },
+    {
+      "step": 6,
+      "title": "Book at Pearson VUE and verify the price",
+      "description": "Register through Pearson VUE. Budget $200, but confirm at checkout — third-party sites disagree on the current fee and Cisco's pricing page is the only source that counts. 120 minutes, no prerequisites, instant result."
+    },
+    {
+      "step": 7,
+      "title": "Decide your next rung while it's fresh",
+      "description": "Field tech work forks: if configuring and designing networks starts pulling you, CCNA is the step up and your hands-on time is a genuine advantage over book-only candidates. If the data-center floor is home, UCS and Nexus experience plus this cert builds toward the CCNP Data Center lane over time."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "Official FLDTEC 800-150 Exam Topics PDF",
+      "url": "https://learningcontent.cisco.com/documents/marketing/exam-topics/800-150_FLDTEC_v1.0.pdf",
+      "type": "Official Documentation",
+      "note": "The authoritative v1.0 blueprint. Third-party domain weights conflict — trust this document, not the mirrors."
+    },
+    {
+      "name": "Cisco's launch announcement blog",
+      "url": "https://blogs.cisco.com/learning/ciscos-new-cct-field-technician-certification-preparing-for-the-future-of-it",
+      "type": "Official Documentation",
+      "note": "Explains the CCT-to-Field-Technician consolidation, the exam format, and transition rules for old CCT holders — straight from Cisco."
+    },
+    {
+      "name": "Cisco Learning Network — CCT/Field Technician community",
+      "url": "https://learningnetwork.cisco.com/s/cct",
+      "type": "Community",
+      "note": "Cisco's official community hub for the technician track — study groups and answers from people who've sat the exam."
+    },
+    {
+      "name": "CCT exams & training page (Cisco)",
+      "url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/technician/exams-training.html",
+      "type": "Official Documentation",
+      "note": "Cisco's official exam and training listing for the technician certification."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Cisco U. – Supporting Cisco Devices for Field Technicians (FLDTEC)",
+      "type": "Official E-Learning",
+      "price": "Requires Cisco U. access (pricing varies by tier)",
+      "best_for": "The official prep — about 10 hours with pre/post assessments, purpose-built for this exam",
+      "affiliate_url": "https://u.cisco.com/paths/supporting-cisco-devices-field-technicians-290",
+      "affiliate_label": "View on Cisco U.",
+      "affiliate_event": "ciscou_fldtec",
+      "affiliate": false,
+      "note": "Check whether your Cisco U. free tier includes it before buying a subscription."
+    },
+    {
+      "provider": "Global Knowledge – FLDTEC e-learning (official Cisco content)",
+      "type": "Official E-Learning (reseller)",
+      "price": "~£240 ex VAT (180-day access)",
+      "best_for": "The same official Cisco course, bought outright instead of via a Cisco U. subscription",
+      "affiliate_url": "https://www.globalknowledge.com/en-gb/products/cisco/fldtec-cpll",
+      "affiliate_label": "View on Global Knowledge",
+      "affiliate_event": "gk_fldtec",
+      "affiliate": false,
+      "note": "Useful if your employer buys training through resellers."
+    },
+    {
+      "provider": "Amazon – FLDTEC study books",
+      "type": "Book",
+      "price": "Varies",
+      "best_for": "Readers who want a print reference — but vet carefully",
+      "affiliate_url": "https://www.amazon.com/s?k=FLDTEC+800-150+Cisco+Certified+Field+Technician&tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_ccft",
+      "affiliate": true,
+      "note": "Heads-up: as of July 2026 there's no official Cisco Press cert guide for FLDTEC. Anything you find is third-party — check reviews and publication dates before buying."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Register – Pearson VUE",
+      "url": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/fldtec.html",
+      "note": "$200 is the widely reported fee, but third-party sources disagree ($250–$300 appears on some) — verify the current price at registration. One exam, no prerequisites, delivered at Pearson VUE."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is it called CCFT, CCT, or Field Technician? The naming is confusing.",
+      "answer": "Blame the transition. Cisco launched it in 2025 as the 'Cisco Certified Technician (CCT) Field Technician' — one cert replacing the three old CCT tracks — and Cisco's own pages now title it 'Cisco Certified Field Technician' while still using the CCT abbreviation. 'CCFT' is not an official Cisco abbreviation, even though people (and this page's URL) use it as shorthand. On a resume, write it the way Cisco does: Cisco Certified Field Technician, exam 800-150 FLDTEC."
+    },
+    {
+      "question": "I hold an old CCT (Routing & Switching / Data Center / Collaboration). What now?",
+      "answer": "Your cert stays valid until its normal expiry — nothing was revoked. But the three old exams retired February 9, 2025, so when renewal time comes, the path runs through the single FLDTEC exam (or a higher-level Cisco exam). The good news: the new exam covers ground you largely already know, just spread across all three former tracks instead of one."
+    },
+    {
+      "question": "Field Technician or CCNA — which should I take?",
+      "answer": "Different jobs. This cert is for supporting and replacing Cisco hardware on site — racking, cabling, console recovery, RMAs with TAC. CCNA is for configuring and running networks. If you want field, depot, or data-center hands-on work, take this; the 10-hour official course versus CCNA's months of study reflects the honest scope difference. If you want to be a network engineer, go straight at CCNA — this won't substitute for it in job filters. Plenty of field techs do both, in that order, and the hands-on time makes CCNA's hardware topics trivially easy."
+    },
+    {
+      "question": "What's the job actually like?",
+      "answer": "Physical and mobile — be sure that's what you want before spending the $200. Expect travel between sites, maintenance windows at night and on weekends, loading docks, ladders, lifting chassis and UPS units, and a fair amount of driving. The trade-off is real: no cubicle, tangible finished-by-lunch work, and hardware skills learned by hand that book-only candidates never get. Typical employers are Cisco partners, MSPs, break/fix contractors, and data-center smart-hands teams — that employer profile is industry common knowledge rather than anything Cisco publishes, but it matches where these postings actually appear."
+    },
+    {
+      "question": "How long does it take to prepare?",
+      "answer": "The official Cisco U. course is about 10 hours, so people already doing hands-on work commonly cite a few weeks of prep (that timeline is folklore, not a Cisco figure). From zero, budget longer — the networking-foundations and IOS material is real study if you've never subnetted or consoled into a device. It's still among the fastest Cisco certs to prepare for, because it tests a job's procedures rather than a curriculum's theory."
+    },
+    {
+      "question": "How long is it valid?",
+      "answer": "Three years under Cisco's standard recertification policy — renew by retaking FLDTEC, passing a higher-level exam, or Continuing Education credits. One honesty note: Cisco hasn't published a FLDTEC-specific recertification page, so this is the general policy applied to the technician tier; confirm the CE-credit option on Cisco's recertification page before you rely on it."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CCST Networking",
+      "slug": "ccst-networking",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The cheapest way to build the networking fundamentals this exam assumes — its free NetAcad training covers the foundations domain almost exactly."
+    },
+    {
+      "title": "Cisco CCNA",
+      "slug": "ccna",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The step up if configuring networks starts pulling you — field techs bring hands-on hardware experience most CCNA candidates lack."
+    },
+    {
+      "title": "CCNP Data Center",
+      "slug": "ccnp-data-center",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The long-game lane if UCS and Nexus floors become home — the professional tier for the data-center side of this cert's blueprint."
+    }
+  ],
+  "seo_title": "Cisco Field Technician (FLDTEC) Study Guide | CertBlueprint",
+  "seo_description": "Honest FLDTEC 800-150 guide: the one exam that replaced the three CCTs, hardware-heavy blueprint, real costs, and the travel-and-toolbag job it leads to."
+}

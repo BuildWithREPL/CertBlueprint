@@ -12,7 +12,7 @@
   "salary_range": "$50,000 – $75,000",
   "salary_note": "Honest range for genuinely entry-level data analyst roles in most U.S. markets. Google advertises a $97K median salary, but that figure covers roles with 0–5 years of experience and skews toward high-cost metros. The certificate by itself does not command a salary premium — demonstrated SQL skill, a portfolio, and interview performance drive offers. Related roles (operations analyst, business systems analyst, reporting analyst) often start in the $45K–$60K range.",
   "exam_code": "Coursera Certificate",
-  "exam_duration": "Self-paced — typically 3–6 months at ~10 hours/week (~180 hours of coursework)",
+  "exam_duration": "Self-paced — Coursera lists 9 courses at 6 months, 10 hours a week. Prior spreadsheet or SQL work cuts that substantially",
   "exam_format": "No proctored exam. Course-based certificate: nine self-paced online courses on Coursera with graded quizzes, hands-on activities, and a capstone case study. Complete all courses to earn the certificate.",
   "exam_questions": "No final exam — graded quizzes and practical assessments throughout each course",
   "official_url": "https://grow.google/certificates/data-analytics/",
@@ -156,7 +156,7 @@
     {
       "label": "Enroll – Google Data Analytics on Coursera",
       "url": "https://www.coursera.org/professional-certificates/google-data-analytics",
-      "note": "No exam voucher exists — this is a Coursera subscription (~$49/month in the U.S. after a 7-day free trial; rates vary by country). Financial aid can be requested on this page and waives the fee for approved applicants."
+      "note": "No exam voucher exists — this is a Coursera subscription. Coursera charges $49 per month in the US and Canada after a 7-day free trial, and says most learners finish for under $300; the price is lower in some other countries. Financial aid can waive it entirely. Coursera puts the program at nine courses over about six months at 10 hours a week."
     },
     {
       "label": "Grow with Google – Program and Scholarship Info",
@@ -225,5 +225,6 @@
     }
   ],
   "seo_title": "Google Data Analytics Certificate Guide – Cost, Courses, Study Plan | CertBlueprint",
-  "seo_description": "Complete Google Data Analytics Certificate guide: what it costs, the 9-course breakdown, honest career value, step-by-step study plan, resources, and FAQ."
+  "seo_description": "Complete Google Data Analytics Certificate guide: what it costs, the 9-course breakdown, honest career value, step-by-step study plan, resources, and FAQ.",
+  "last_verified": "September 24, 2026"
 }

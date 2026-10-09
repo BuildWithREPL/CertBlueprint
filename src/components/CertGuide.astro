@@ -17,6 +17,8 @@ import ResourceCard from './ResourceCard.astro';
 import ResourceTable from './ResourceTable.astro';
 import FAQAccordion from './FAQAccordion.astro';
 import RelatedCerts from './RelatedCerts.astro';
+import RolesForCert from './RolesForCert.astro';
+import CertMoreLinks from './CertMoreLinks.astro';
 import AffiliateCTA from './AffiliateCTA.astro';
 import CalloutBox from './CalloutBox.astro';
 
@@ -50,6 +52,7 @@ const sections = [
   { id: 'vouchers', label: 'Vouchers & cost' },
   { id: 'faq', label: 'FAQ' },
   { id: 'related', label: 'Related certs' },
+  { id: 'roles', label: 'Jobs that use it' },
 ];
 ---
 
@@ -273,6 +276,11 @@ const sections = [
           </p>
           <RelatedCerts certs={data.related_certs} />
         </section>
+
+        <RolesForCert slug={data.slug} vendorSlug={data.vendor_slug} name={short} />
+
+
+        <CertMoreLinks slug={data.slug} vendorSlug={data.vendor_slug} vendorName={data.vendor} />
 
         <!-- Bottom CTA -->
         <section class="border-t pt-10" style="border-color: var(--cb-border);">

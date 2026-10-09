@@ -1,0 +1,480 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import '../../../styles/navigator.css';
+import {
+  OCCUPATIONS,
+  SERVICES,
+  MILITARY_LAST_REVIEWED,
+  assertMilitaryIntegrity,
+  occupationKey,
+} from '../../../lib/navigator/data/military';
+import { CAPABILITIES } from '../../../lib/navigator/data/capabilities';
+import { DOMAINS, DOMAIN_BY_ID, ACCENT_VAR } from '../../../lib/navigator/data/domains';
+
+assertMilitaryIntegrity();
+
+// Capabilities are grouped by their primary field so the picker reads as a set
+// of decisions about kinds of work rather than a wall of 55 checkboxes.
+const grouped = [...DOMAINS]
+  .sort((a, b) => a.order - b.order)
+  .map((domain) => ({
+    domain,
+    capabilities: CAPABILITIES.filter((c) => c.domains[0] === domain.id),
+  }))
+  .filter((g) => g.capabilities.length > 0);
+
+const ungrouped = CAPABILITIES.filter(
+  (c) => !grouped.some((g) => g.capabilities.some((x) => x.slug === c.slug)),
+);
+
+const occupationData = OCCUPATIONS.map((o) => ({
+  key: occupationKey(o),
+  code: o.code,
+  title: o.title,
+  service: o.service,
+  capabilities: o.capabilities,
+  undersold: o.undersold,
+  legacy: o.legacy ?? null,
+}));
+
+const title = 'Military IT Skills Translator — MOS, Rating and AFSC to Civilian Roles | CertBlueprint';
+const description = `Translate what you actually did in uniform into the capabilities civilian IT roles are built from. Covers ${OCCUPATIONS.length} occupations across ${SERVICES.length} services, and works just as well if your code is not listed.`;
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Career Navigator', href: '/navigator/' },
+  { label: 'Military', href: '/navigator/military/' },
+];
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Military IT skills translator',
+  applicationCategory: 'EducationalApplication',
+  operatingSystem: 'Web browser',
+  description,
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  publisher: { '@type': 'Organization', name: 'CertBlueprint' },
+};
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} structuredData={structuredData}>
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-6">
+    <p class="font-mono text-xs uppercase tracking-widest mb-3" style="color: var(--cb-accent-text);">
+      Free · nothing leaves your browser
+    </p>
+
+    <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-balance" style="color: var(--cb-text);">
+      Your MOS is not the problem. The translation is.
+    </h1>
+
+    <p class="mt-4 text-lg leading-relaxed" style="color: var(--cb-text-sub); max-width: 62ch;">
+      Most career tools ask what you have done and then fail to understand the answer. A hiring filter
+      does not know what a 25B is. This starts from the work itself — what you actually operated,
+      diagnosed, secured and rebuilt — and maps it onto the capabilities civilian roles are built from.
+    </p>
+
+    <p class="mt-3 text-base leading-relaxed" style="color: var(--cb-text-muted); max-width: 62ch;">
+      Pick your occupation to pre-fill the list, then correct it. Two people with the same code did
+      different jobs, and what you actually did outranks what any table thinks your code means.
+    </p>
+  </section>
+
+  {/* ── Step 1: the shortcut ───────────────────────────────────── */}
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
+    <h2 class="text-xl font-bold tracking-tight mb-1" style="color: var(--cb-text);">
+      1. Start from your occupation <span style="color: var(--cb-text-muted); font-weight: 500;">(optional)</span>
+    </h2>
+    <p class="text-sm leading-relaxed mb-4" style="color: var(--cb-text-sub); max-width: 62ch;">
+      A shortcut, not an answer. It ticks a starting set of capabilities that you then edit below.
+    </p>
+
+    <div class="flex flex-wrap gap-2 mb-4" role="group" aria-label="Choose your service">
+      {
+        SERVICES.map((s) => (
+          <button type="button" class="nav-graph__chip" data-service={s.id}>
+            {s.name}
+          </button>
+        ))
+      }
+    </div>
+
+    <div id="mil-occupations" class="grid sm:grid-cols-2 gap-2" hidden></div>
+
+    <p id="mil-service-source" class="text-xs mt-3" style="color: var(--cb-text-muted);" hidden></p>
+
+    <div id="mil-picked" class="nav-card nav-card--railed p-4 pl-5 mt-4" style="--nav-accent: var(--nav-emerald);" hidden>
+      <p class="font-bold text-sm mb-1" style="color: var(--cb-text);" id="mil-picked-title"></p>
+      <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);" id="mil-picked-note"></p>
+      <p class="text-sm leading-relaxed mt-2" style="color: var(--nav-warn);" id="mil-picked-legacy" hidden></p>
+    </div>
+  </section>
+
+  {/* ── Step 2: what you actually did ──────────────────────────── */}
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
+    <h2 class="text-xl font-bold tracking-tight mb-1" style="color: var(--cb-text);">
+      2. Correct it — this is the part that matters
+    </h2>
+    <p class="text-sm leading-relaxed mb-4" style="color: var(--cb-text-sub); max-width: 62ch;">
+      Tick what you genuinely did, whatever your code says, and untick what you did not. Nothing here
+      asks what unit you were in, where you were, or what you worked on — only what you can do.
+    </p>
+
+    <div class="space-y-5">
+      {
+        [...grouped, ...(ungrouped.length > 0 ? [{ domain: null, capabilities: ungrouped }] : [])].map(
+          (group) => (
+            <div>
+              <h3
+                class="font-mono text-xs uppercase tracking-widest mb-2"
+                style={
+                  group.domain
+                    ? `color: var(${ACCENT_VAR[group.domain.accent]});`
+                    : 'color: var(--cb-text-muted);'
+                }
+              >
+                {group.domain ? group.domain.name : 'Everything else'}
+              </h3>
+              <div class="grid sm:grid-cols-2 gap-x-4 gap-y-1.5">
+                {group.capabilities.map((c) => (
+                  <label class="flex gap-2.5 items-start text-sm cursor-pointer py-1">
+                    <input
+                      type="checkbox"
+                      class="mil-cap mt-1 shrink-0"
+                      value={c.slug}
+                      style="accent-color: var(--cb-accent);"
+                    />
+                    <span>
+                      <span class="font-medium" style="color: var(--cb-text);">{c.name}</span>
+                      <span class="block text-xs leading-relaxed" style="color: var(--cb-text-muted);">
+                        {c.blurb}
+                      </span>
+                    </span>
+                  </label>
+                ))}
+              </div>
+            </div>
+          ),
+        )
+      }
+    </div>
+
+    <div class="flex flex-wrap gap-2 mt-5">
+      <button
+        id="mil-analyse"
+        type="button"
+        class="px-4 py-2 rounded-lg text-sm font-semibold"
+        style="background: var(--cb-accent); color: #fff;"
+      >
+        Show me what this maps to
+      </button>
+      <button
+        id="mil-reset"
+        type="button"
+        class="px-4 py-2 rounded-lg text-sm font-semibold border"
+        style="color: var(--cb-text); border-color: var(--cb-border); background: var(--cb-bg-card);"
+      >
+        Clear all
+      </button>
+      <span id="mil-count" class="self-center text-sm" style="color: var(--cb-text-muted);"></span>
+    </div>
+  </section>
+
+  {/* ── Step 3: results ────────────────────────────────────────── */}
+  <section id="mil-results" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-8" hidden>
+    <h2 class="text-2xl font-bold tracking-tight mb-2" style="color: var(--cb-text);">
+      What that is, in civilian terms
+    </h2>
+    <p class="text-sm leading-relaxed mb-5" style="color: var(--cb-text-sub); max-width: 62ch;">
+      These are roles built from the capabilities you ticked. This is not a statement that you are
+      qualified for them or that anyone owes you an interview — it is where your existing work already
+      overlaps, and where the shortest route probably runs.
+    </p>
+
+    <div id="mil-domains" class="mb-6"></div>
+    <div id="mil-roles" class="grid sm:grid-cols-2 gap-3 mb-6"></div>
+
+    <div class="flex flex-wrap gap-2">
+      <a
+        href="/navigator/assessment/"
+        id="mil-to-assessment"
+        class="px-4 py-2 rounded-lg text-sm font-semibold"
+        style="background: var(--cb-accent); color: #fff;"
+      >
+        Now find out which of them you would enjoy
+      </a>
+      <button
+        id="mil-save"
+        type="button"
+        class="px-4 py-2 rounded-lg text-sm font-semibold border"
+        style="color: var(--cb-text); border-color: var(--cb-border); background: var(--cb-bg-card);"
+      >
+        Keep this on this device
+      </button>
+    </div>
+    <p id="mil-status" class="mt-3 text-sm" style="color: var(--nav-emerald);" role="status"></p>
+  </section>
+
+  {/* ── Things nobody tells you ────────────────────────────────── */}
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+    <h2 class="text-xl font-bold tracking-tight mb-4" style="color: var(--cb-text);">
+      Three things worth knowing before you apply anywhere
+    </h2>
+
+    <div class="grid sm:grid-cols-3 gap-4">
+      <div class="nav-card nav-card--railed p-5 pl-6" style="--nav-accent: var(--nav-emerald);">
+        <h3 class="font-bold text-base mb-2" style="color: var(--cb-text);">
+          You may already hold the certification
+        </h3>
+        <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+          DoD 8140 (formerly 8570) requires a baseline certification for most cyber roles, so a great
+          many people separate already holding Security+, CCNA or similar without thinking of it as a
+          civilian credential. It is the same certification an employer is asking for. Check whether
+          yours is still in date before paying to sit anything.
+        </p>
+      </div>
+
+      <div class="nav-card nav-card--railed p-5 pl-6" style="--nav-accent: var(--nav-cyan);">
+        <h3 class="font-bold text-base mb-2" style="color: var(--cb-text);">A clearance is worth money</h3>
+        <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+          An active clearance is one of the few things a civilian cannot simply go and acquire, and
+          defence contractors pay for it. It does not stay active forever after you separate, and
+          reinstatement rules are strict and time-bound — so if you have one, treat the window as
+          short and check the current rules rather than assuming.
+        </p>
+      </div>
+
+      <div class="nav-card nav-card--railed p-5 pl-6" style="--nav-accent: var(--nav-warn);">
+        <h3 class="font-bold text-base mb-2" style="color: var(--cb-text);">The filter cannot read your code</h3>
+        <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+          Most applications are screened for civilian keywords before a person sees them. "25B" and
+          "S6 shop" match nothing. The capability names on this page are deliberately the words the
+          industry uses — they are worth borrowing when you rewrite your CV.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {/* ── Honesty ────────────────────────────────────────────────── */}
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <div class="nav-card p-5" style="--nav-accent: var(--cb-border);">
+      <h2 class="font-bold text-base mb-2" style="color: var(--cb-text);">Where this list comes from, and its limits</h2>
+      <p class="text-sm leading-relaxed mb-3" style="color: var(--cb-text-sub); max-width: 68ch;">
+        {OCCUPATIONS.length} occupations across {SERVICES.length} services, chosen for genuine technical
+        overlap rather than completeness — this is not a full order of battle, and plenty of technical
+        occupations are missing. {MILITARY_LAST_REVIEWED}.
+      </p>
+      <p class="text-sm leading-relaxed mb-3" style="color: var(--cb-text-sub); max-width: 68ch;">
+        Occupation codes get reorganised — the Air Force consolidated its cyberspace support codes in
+        2021, and the Army has restructured the 25-series more than once. Retired codes are kept here
+        and labelled, because a DD-214 carries the code from the year it was issued. If a code is
+        missing or has been renamed, use the capability list directly: it produces exactly the same
+        quality of answer, because that list is what the matching actually runs on.
+      </p>
+      <p class="text-sm leading-relaxed mb-3" style="color: var(--cb-text-sub); max-width: 68ch;">
+        Nothing here is an official equivalency, a credentialing decision, or advice about benefits.
+        For the authoritative version of what your occupation covers and which credentials it maps to,
+        each service publishes its own:
+      </p>
+      <div class="flex flex-wrap gap-x-4 gap-y-1.5">
+        {
+          /* Air Force COOL covers Space Force too, so the same link would
+             otherwise appear twice. */
+          [...new Map(SERVICES.map((s) => [s.sourceUrl, s])).values()].map((s) => (
+            <a
+              href={s.sourceUrl}
+              rel="nofollow noopener"
+              target="_blank"
+              class="text-sm font-medium"
+              style="color: var(--cb-accent-text);"
+            >
+              {s.sourceName} →
+            </a>
+          ))
+        }
+      </div>
+      <p class="text-xs leading-relaxed mt-2" style="color: var(--cb-text-muted); max-width: 68ch;">
+        There is no separate Space Force site — Air Force COOL covers enlisted Department of the Air
+        Force members, Guardians included.
+      </p>
+      <p class="text-xs leading-relaxed mt-4" style="color: var(--cb-text-muted); max-width: 68ch;">
+        CertBlueprint is not affiliated with, endorsed by, or connected to the Department of Defense or
+        any branch of the United States Armed Forces. Everything on this page is computed in your
+        browser. Your selections are stored as capabilities only — never as an occupation code, and
+        never anywhere but this device.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<script define:vars={{ occupationData }}>
+  window.__milOccupations = occupationData;
+</script>
+
+<script>
+  import { analyseCapabilities } from '../../../lib/navigator/engine/inventory';
+  import { loadMilitary, saveMilitary } from '../../../lib/navigator/engine/session';
+  import { DOMAIN_BY_ID, ACCENT_VAR } from '../../../lib/navigator/data/domains';
+
+  interface Occ {
+    key: string;
+    code: string;
+    title: string;
+    service: string;
+    capabilities: string[];
+    undersold: string;
+    legacy: string | null;
+  }
+
+  const occupations: Occ[] = (window as unknown as { __milOccupations: Occ[] }).__milOccupations ?? [];
+
+  const serviceButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-service]'));
+  const occupationList = document.getElementById('mil-occupations')!;
+  const picked = document.getElementById('mil-picked')!;
+  const pickedTitle = document.getElementById('mil-picked-title')!;
+  const pickedNote = document.getElementById('mil-picked-note')!;
+  const pickedLegacy = document.getElementById('mil-picked-legacy')!;
+  const boxes = Array.from(document.querySelectorAll<HTMLInputElement>('.mil-cap'));
+  const countLabel = document.getElementById('mil-count')!;
+  const results = document.getElementById('mil-results')!;
+  const status = document.getElementById('mil-status')!;
+
+  function selected(): string[] {
+    return boxes.filter((b) => b.checked).map((b) => b.value);
+  }
+
+  function updateCount() {
+    const n = selected().length;
+    countLabel.textContent = n === 0 ? '' : `${n} selected`;
+  }
+
+  // Anything kept from a previous visit is restored, so the page is not a blank
+  // form every time someone comes back to it.
+  const remembered = loadMilitary();
+  if (remembered.length > 0) {
+    boxes.forEach((b) => {
+      b.checked = remembered.includes(b.value);
+    });
+    updateCount();
+  }
+
+  boxes.forEach((b) => b.addEventListener('change', updateCount));
+
+  serviceButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      serviceButtons.forEach((b) => b.classList.toggle('is-on', b === button));
+      const list = occupations.filter((o) => o.service === button.dataset.service);
+      occupationList.replaceChildren();
+      occupationList.hidden = false;
+
+      for (const occ of list) {
+        const item = document.createElement('button');
+        item.type = 'button';
+        item.className = 'nav-card block p-3 text-left';
+        item.style.cursor = 'pointer';
+
+        const code = document.createElement('span');
+        code.className = 'font-mono text-xs uppercase tracking-widest';
+        code.style.color = 'var(--cb-accent-text)';
+        code.textContent = occ.legacy ? `${occ.code} · retired code` : occ.code;
+
+        const name = document.createElement('span');
+        name.className = 'block text-sm font-semibold';
+        name.style.color = 'var(--cb-text)';
+        name.textContent = occ.title;
+
+        item.append(code, name);
+        item.addEventListener('click', () => applyOccupation(occ));
+        occupationList.appendChild(item);
+      }
+    });
+  });
+
+  function applyOccupation(occ: Occ) {
+    // Adds to the selection rather than replacing it — people hold more than one
+    // occupation over a career, and wiping the previous picks would lose that.
+    boxes.forEach((b) => {
+      if (occ.capabilities.includes(b.value)) b.checked = true;
+    });
+    updateCount();
+
+    picked.hidden = false;
+    pickedTitle.textContent = `${occ.code} — ${occ.title}`;
+    pickedNote.textContent = occ.undersold;
+    pickedLegacy.hidden = !occ.legacy;
+    if (occ.legacy) pickedLegacy.textContent = occ.legacy;
+    picked.scrollIntoView({ block: 'nearest', behavior: 'instant' });
+  }
+
+  document.getElementById('mil-reset')!.addEventListener('click', () => {
+    boxes.forEach((b) => {
+      b.checked = false;
+    });
+    updateCount();
+    results.hidden = true;
+    picked.hidden = true;
+  });
+
+  document.getElementById('mil-analyse')!.addEventListener('click', () => {
+    const caps = selected();
+    if (caps.length === 0) {
+      countLabel.textContent = 'Tick at least one thing you did.';
+      return;
+    }
+
+    const insight = analyseCapabilities(caps);
+
+    const domainWrap = document.getElementById('mil-domains')!;
+    domainWrap.replaceChildren();
+    const domainTitle = document.createElement('h3');
+    domainTitle.className = 'font-bold text-base mb-2';
+    domainTitle.style.color = 'var(--cb-text)';
+    domainTitle.textContent = 'The fields your experience already spans';
+    domainWrap.appendChild(domainTitle);
+
+    const chips = document.createElement('div');
+    chips.className = 'flex flex-wrap gap-2';
+    for (const d of insight.domains.slice(0, 5)) {
+      const domain = DOMAIN_BY_ID[d.id];
+      if (!domain) continue;
+      const chip = document.createElement('a');
+      chip.href = `/navigator/explore/${domain.id}/`;
+      chip.className = 'nav-pill';
+      chip.style.setProperty('--nav-accent', `var(${ACCENT_VAR[domain.accent]})`);
+      chip.textContent = `${domain.name} · ${Math.round(d.strength * 100)}%`;
+      chips.appendChild(chip);
+    }
+    domainWrap.appendChild(chips);
+
+    const roleWrap = document.getElementById('mil-roles')!;
+    roleWrap.replaceChildren();
+    for (const role of insight.impliedRoles) {
+      const card = document.createElement('a');
+      card.href = `/navigator/roles/${role.slug}/`;
+      card.className = 'nav-card nav-card--railed block p-4 pl-5';
+      card.style.setProperty('--nav-accent', 'var(--cb-accent)');
+
+      const name = document.createElement('p');
+      name.className = 'font-semibold text-sm';
+      name.style.color = 'var(--cb-text)';
+      name.textContent = role.name;
+
+      const pct = document.createElement('p');
+      pct.className = 'text-xs mt-0.5';
+      pct.style.color = 'var(--cb-text-muted)';
+      pct.textContent = `${role.percent}% overlap with what you ticked`;
+
+      card.append(name, pct);
+      roleWrap.appendChild(card);
+    }
+
+    results.hidden = false;
+    results.scrollIntoView({ block: 'start', behavior: 'instant' });
+  });
+
+  document.getElementById('mil-save')!.addEventListener('click', () => {
+    saveMilitary(selected());
+    status.textContent =
+      'Kept on this device as a list of capabilities. No occupation code was stored, and nothing was uploaded.';
+  });
+</script>

@@ -1,0 +1,81 @@
+---
+/**
+ * CertMoreLinks — the sideways links every certification guide should have:
+ * head-to-head comparisons that feature this cert, and the rest of the same
+ * vendor's certifications, ordered by level.
+ *
+ * Built from the content collections, so a new comparison or a new guide is
+ * linked from every relevant page automatically. Renders nothing when there is
+ * nothing to link to.
+ */
+import { getCollection } from 'astro:content';
+
+interface Props {
+  slug: string;
+  vendorSlug: string;
+  vendorName: string;
+}
+const { slug, vendorSlug, vendorName } = Astro.props;
+
+const base = `/vendors/${vendorSlug}/${slug}/`;
+
+const LEVEL_ORDER: Record<string, number> = {
+  Entry: 0,
+  Foundation: 0,
+  Associate: 1,
+  Intermediate: 1,
+  Professional: 2,
+  Advanced: 2,
+  Expert: 3,
+};
+
+const comparisons = (await getCollection('comparisons')).filter(
+  (c) => c.data.a.href === base || c.data.b.href === base,
+);
+
+const siblings = (await getCollection('certifications'))
+  .filter((c) => c.data.vendor_slug === vendorSlug && c.data.slug !== slug)
+  .map((c) => ({
+    href: `/vendors/${c.data.vendor_slug}/${c.data.slug}/`,
+    name: c.data.short_name ?? c.data.title.replace(/ (Study )?Guide\b/, ''),
+    level: c.data.level,
+  }))
+  .sort((a, b) => (LEVEL_ORDER[a.level] ?? 9) - (LEVEL_ORDER[b.level] ?? 9) || a.name.localeCompare(b.name));
+---
+
+{comparisons.length > 0 && (
+  <section id="comparisons" aria-labelledby="comparisons-heading">
+    <h2 id="comparisons-heading" class="text-lg font-bold mb-2 pb-2 border-b" style="color: var(--cb-text); border-color: var(--cb-border);">
+      Deciding between this and another cert?
+    </h2>
+    <ul class="grid sm:grid-cols-2 gap-3">
+      {comparisons.map((c) => (
+        <li>
+          <a href={`/compare/${c.data.slug}/`} class="block rounded-xl border p-4 h-full" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+            <span class="block text-sm font-semibold mb-1" style="color: var(--cb-accent-text);">{c.data.title} →</span>
+            <span class="block text-sm leading-relaxed line-clamp-3" style="color: var(--cb-text-sub);">{c.data.verdict}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+)}
+
+{siblings.length > 0 && (
+  <section id="more-certs" aria-labelledby="more-certs-heading">
+    <h2 id="more-certs-heading" class="text-lg font-bold mb-2 pb-2 border-b" style="color: var(--cb-text); border-color: var(--cb-border);">
+      More {vendorName} certifications
+    </h2>
+    <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-1.5">
+      {siblings.map((s) => (
+        <li class="flex items-baseline justify-between gap-3 text-sm py-1 border-b" style="border-color: var(--cb-border-sub);">
+          <a href={s.href} class="font-medium" style="color: var(--cb-accent-text);">{s.name}</a>
+          <span class="text-xs shrink-0" style="color: var(--cb-text-muted);">{s.level}</span>
+        </li>
+      ))}
+    </ul>
+    <p class="text-sm mt-3">
+      <a href={`/vendors/${vendorSlug}/`} class="font-medium" style="color: var(--cb-accent-text);">The full {vendorName} roadmap →</a>
+    </p>
+  </section>
+)}

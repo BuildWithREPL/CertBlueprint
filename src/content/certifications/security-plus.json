@@ -4,19 +4,19 @@
   "vendor": "CompTIA",
   "vendor_slug": "comptia",
   "level": "Associate",
-  "description": "CompTIA Security+ (SY0-701) is the industry-standard entry-level cybersecurity certification. It validates core security skills including threat analysis, vulnerability management, identity management, cryptography, and incident response. Widely required by government and defense contractors, and recognized across private sector IT security roles.",
-  "audience": "IT professionals transitioning into security, help desk and sysadmin staff adding security skills, and entry-level cybersecurity candidates targeting analyst and SOC roles.",
+  "description": "CompTIA Security+ is the baseline security certification and the one named most often in job postings and government role requirements. The current version is V7 (SY0-701), which launched on 7 November 2023: a maximum of 90 questions in 90 minutes, mixing multiple choice with performance-based tasks, and 750 on a 100–900 scale to pass. It covers general security concepts, threats and vulnerabilities, security architecture, operations, and governance, risk and compliance — breadth across the whole field rather than depth in any one part of it.",
+  "audience": "Help desk and systems people moving toward security, career changers who already have an IT rung behind them, and anyone whose employer or contract asks for a DoD 8140 baseline credential. CompTIA recommends Network+ plus roughly two years in a security or systems administrator role. Neither is required to sit the exam, but the networking assumption is real — questions take subnets, ports and protocols for granted.",
   "why_get_it": "Security+ is the most recognized entry-level security certification in the industry. It is DoD 8570/8140 approved, meaning it satisfies baseline requirements for U.S. government and military IT security roles. In the private sector, it appears in job listings for security analysts, SOC analysts, IT security specialists, and junior penetration testers. It covers a genuine cross-section of modern security knowledge: threats and vulnerabilities, architecture and design, implementation, operations, incident response, and governance. The exam has been updated regularly to reflect real-world threats—the current version (SY0-701) covers cloud, zero trust, and current attack patterns. For anyone targeting a security role without prior hands-on experience, Security+ is the recognized baseline that gets you past resume filters.",
-  "when_to_get_it": "Get Security+ when you are ready to move into a security-focused role. It pairs well after CompTIA A+ or Network+ if you are starting from scratch, or it can be your first cert if you already have some IT experience. If you are targeting DoD or federal contractor roles, it is often a hard requirement. Most candidates benefit from 1–2 years of general IT experience before starting Security+ study, though it is achievable without it. Do not delay it if cybersecurity is your clear target—the cert pays off quickly in role eligibility.",
+  "when_to_get_it": "Take Security+ once you can explain how traffic moves across a network, because the exam assumes it. Most people study six to twelve weeks. The timing question this year is the version: V7 (SY0-701) is bookable now and its English exam retires on 11 June 2027, with Japanese, Portuguese, Spanish and Thai following on 13 August 2027. V8 (SY0-801) launches on or around 17 November 2026, same 90-minute, 90-question, 750-to-pass format, with added coverage of AI-related risks, security operations and modern environments. If you are testing in the next few months, stay on V7 — your material is current and the credential is identical. If you are starting from scratch now, check which version your course targets before you pay for it.",
   "salary_range": "$65,000 – $95,000",
   "salary_note": "Entry-level cybersecurity and SOC analyst roles with Security+ typically start in the $65K–$75K range. With 2–3 years of experience and additional certs (CySA+, CISSP), compensation frequently reaches $90K–$120K+. Government and federal contractor roles often come with strong benefits on top of base salary.",
   "exam_code": "SY0-701",
   "exam_duration": "90 minutes",
-  "exam_format": "Multiple choice and performance-based questions. Maximum 90 questions.",
-  "exam_questions": "Up to 90 questions (CompTIA does not publish exact count)",
+  "exam_format": "Maximum of 90 questions: multiple choice and performance-based. 90 minutes. Passing score: 750 (on a scale of 100–900). Offered in English, Japanese, Portuguese, Spanish and Thai.",
+  "exam_questions": "Maximum of 90 questions",
   "official_url": "https://www.comptia.org/certifications/security",
   "official_pricing_url": "https://www.comptia.org/certifications/security#buy",
-  "recertification_note": "Security+ is valid for 3 years. Renew by earning 50 CEUs (Continuing Education Units) through the CompTIA CE program, or by passing a higher-level CompTIA exam before expiration.",
+  "recertification_note": "Security+ is valid for three years. Renew through CompTIA's Continuing Education program by logging CEUs, or by passing a higher-level CompTIA exam, which also renews everything beneath it — no need to re-sit Security+. CE fees can be paid with CompTIA CE Tokens, sold in $25 and $50 denominations.",
   "skills_covered": [
     {
       "category": "Threats, Attacks, and Vulnerabilities",
@@ -182,10 +182,14 @@
     {
       "label": "Buy Security+ Exam Voucher – CompTIA Store",
       "url": "https://store.comptia.org/",
-      "note": "Always verify current pricing on CompTIA's official store. Exam prices change. Check for bundle discounts that include retake insurance."
+      "note": "CompTIA publishes voucher pricing only inside its own store checkout, so confirm the current price there before buying. Vouchers are commonly bundled with retake assurance and CertMaster Practice, which is usually cheaper than buying a second attempt later."
     }
   ],
   "faq": [
+    {
+      "question": "Should I take SY0-701 (V7) or wait for SY0-801 (V8)?",
+      "answer": "Take V7 if you are ready to test soon. SY0-701 is bookable now and its English exam does not retire until 11 June 2027, so there is no rush. V8 (SY0-801) launches on or around 17 November 2026 with the same format — 90 minutes, maximum 90 questions, 750 to pass — and adds AI-related risk, security operations and modern environment coverage. Both award the same Security+ certification. The practical rule: if your study material is already V7 and you can test within a few months, finish on V7; if you are buying a course today for an exam next year, buy V8-aligned material."
+    },
     {
       "question": "Is Security+ worth it?",
       "answer": "Yes, especially for U.S.-based candidates targeting government, defense, or federal contractor roles where DoD 8570/8140 compliance is required. In the private sector, it satisfies the baseline security credential filter for analyst and SOC roles. It is one of the fastest certs to turn into a job offer for candidates transitioning into security."
@@ -212,7 +216,7 @@
     },
     {
       "question": "What comes after Security+?",
-      "answer": "CompTIA CySA+ (Cybersecurity Analyst) is the natural next step for defensive security roles. CompTIA PenTest+ for offensive/red team paths. CASP+ for advanced practitioners. Many candidates also pursue vendor-specific certs: AWS Security Specialty, Microsoft SC-900 series, or Certified Ethical Hacker (CEH)."
+      "answer": "CompTIA CySA+ (Cybersecurity Analyst) is the natural next step for defensive security roles. CompTIA PenTest+ for offensive/red team paths. CompTIA SecurityX (formerly CASP+) for advanced practitioners. Many candidates also pursue vendor-specific certs: AWS Security Specialty, Microsoft SC-900 series, or Certified Ethical Hacker (CEH)."
     }
   ],
   "related_certs": [
@@ -246,5 +250,6 @@
     }
   ],
   "seo_title": "CompTIA Security+ (SY0-701) Study Guide – Exam Details, Study Plan, Resources | CertBlueprint",
-  "seo_description": "Complete CompTIA Security+ SY0-701 guide: who it's for, salary expectations, exam breakdown, step-by-step study plan, free and paid resources, and FAQ."
+  "seo_description": "Complete CompTIA Security+ SY0-701 guide: who it's for, salary expectations, exam breakdown, step-by-step study plan, free and paid resources, and FAQ.",
+  "last_verified": "September 24, 2026"
 }

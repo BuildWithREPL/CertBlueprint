@@ -8,6 +8,8 @@ import ResourceCard from '../../../../components/ResourceCard.astro';
 import ResourceTable from '../../../../components/ResourceTable.astro';
 import FAQAccordion from '../../../../components/FAQAccordion.astro';
 import RelatedCerts from '../../../../components/RelatedCerts.astro';
+import RolesForCert from '../../../../components/RolesForCert.astro';
+import CertMoreLinks from '../../../../components/CertMoreLinks.astro';
 import AffiliateCTA from '../../../../components/AffiliateCTA.astro';
 import CalloutBox from '../../../../components/CalloutBox.astro';
 import { getEntry } from 'astro:content';
@@ -121,6 +123,9 @@ const sections = [
           <CalloutBox type="warning" title="Verify before you book">
             <p class="text-sm">Exam pricing and format can change. Always confirm on the official Microsoft certification page before purchasing. Check for free voucher promotions on Microsoft Learn before buying.</p>
           </CalloutBox>
+          {data.last_verified && (
+            <p class="text-xs mt-3" style="color: var(--cb-text-muted);">Facts on this page last verified {data.last_verified} against official {data.vendor} sources.</p>
+          )}
         </section>
 
         <!-- Skills covered -->
@@ -223,6 +228,11 @@ const sections = [
           </p>
           <RelatedCerts certs={data.related_certs} />
         </section>
+
+        <RolesForCert slug={data.slug} vendorSlug={data.vendor_slug} name="AZ-104" />
+
+
+        <CertMoreLinks slug={data.slug} vendorSlug={data.vendor_slug} vendorName={data.vendor} />
 
         <!-- Bottom CTA -->
         <section class="border-t pt-10" style="border-color: var(--cb-border);">

@@ -1,0 +1,178 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import '../../../styles/navigator.css';
+import type { DomainId } from '../../../lib/navigator/types';
+import { ROLE_PAIRS, assertRolePairIntegrity } from '../../../lib/navigator/data/role-pairs';
+import { comparePath } from '../../../lib/navigator/engine/compare';
+import { ACCENT_VAR, DOMAINS, DOMAIN_BY_ID } from '../../../lib/navigator/data/domains';
+import { ROLES } from '../../../lib/navigator/data/roles';
+
+assertRolePairIntegrity();
+
+const CONFUSABLE_HEADLINE = 88;
+const headline = ROLE_PAIRS.filter((p) => p.overlap >= CONFUSABLE_HEADLINE);
+
+// Grouped by the field the two roles share, because that is how someone stuck
+// between two jobs thinks about them — "I am somewhere in networking".
+const byDomain = DOMAINS.slice()
+  .sort((x, y) => x.order - y.order)
+  .map((domain) => ({
+    domain,
+    pairs: ROLE_PAIRS.filter(
+      (p) => p.a.domains.includes(domain.id as DomainId) && p.b.domains.includes(domain.id as DomainId),
+    ),
+  }))
+  .filter((g) => g.pairs.length > 0);
+
+// A pair spanning two fields belongs to neither list above; those are often the
+// most interesting comparisons on the site, so they get their own section
+// rather than being quietly dropped.
+const inGroups = new Set(byDomain.flatMap((g) => g.pairs.map((p) => `${p.a.slug}--${p.b.slug}`)));
+const crossField = ROLE_PAIRS.filter((p) => !inGroups.has(`${p.a.slug}--${p.b.slug}`));
+
+const title = 'Compare Two IT Roles Side by Side | CertBlueprint';
+const description = `${ROLE_PAIRS.length} role comparisons across ${ROLES.length} IT jobs — what you do all day, the technologies, the entry point, the pay and the honest downside of each, scored on the same dimensions.`;
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Career Navigator', href: '/navigator/' },
+  { label: 'Compare', href: '/navigator/compare/' },
+];
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'IT role comparisons',
+  description,
+  publisher: { '@type': 'Organization', name: 'CertBlueprint' },
+};
+
+const accentFor = (id: DomainId) => `var(${ACCENT_VAR[DOMAIN_BY_ID[id].accent]})`;
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} structuredData={structuredData}>
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-6">
+    <p class="font-mono text-xs uppercase tracking-widest mb-3" style="color: var(--cb-accent-text);">
+      Side by side
+    </p>
+
+    <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-balance" style="color: var(--cb-text);">
+      Two jobs that sound the same, compared properly.
+    </h1>
+
+    <p class="mt-4 text-lg leading-relaxed" style="color: var(--cb-text-sub); max-width: 62ch;">
+      Most IT job titles are close enough to each other that the names tell you almost nothing. Each
+      comparison here puts two roles on the same {41} dimensions the assessment uses, then shows the
+      practical differences underneath — what you do all day, what you would start on, and the honest
+      downside of each.
+    </p>
+
+    <p class="mt-3 text-base leading-relaxed" style="color: var(--cb-text-muted); max-width: 62ch;">
+      There are {ROLE_PAIRS.length} comparisons rather than every possible pairing, and that is
+      deliberate. A pair appears here if people genuinely move between the two roles, or if the two
+      profiles are close enough to be confused. Nobody is torn between wireless engineering and
+      compliance — a page pretending otherwise would waste your time.
+    </p>
+  </section>
+
+  {/* ── The ones people actually confuse ───────────────────────── */}
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+    <h2 class="text-2xl font-bold tracking-tight mb-2" style="color: var(--cb-text);">
+      The hardest to tell apart
+    </h2>
+    <p class="text-sm leading-relaxed mb-4" style="color: var(--cb-text-sub); max-width: 62ch;">
+      These pairs share {CONFUSABLE_HEADLINE}% or more of the same working profile. If your results put
+      two of them within a few points of each other, that is the tool being accurate rather than vague.
+    </p>
+
+    <div class="grid sm:grid-cols-2 gap-3">
+      {
+        headline.map((p) => (
+          <a
+            href={comparePath(p.a.slug, p.b.slug)}
+            class="nav-card nav-card--railed block p-4 pl-5"
+            style={`--nav-accent: ${accentFor(p.a.domains[0])};`}
+          >
+            <p class="font-semibold text-sm" style="color: var(--cb-text);">
+              {p.a.name} <span style="color: var(--cb-text-muted);">vs</span> {p.b.name}
+            </p>
+            <p class="text-xs mt-1" style="color: var(--cb-text-muted);">
+              {p.overlap}% shared profile
+              {p.reasons.includes('adjacent') && ' · a common move'}
+            </p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  {/* ── By field ───────────────────────────────────────────────── */}
+  {
+    byDomain.map((group) => (
+      <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+        <h2 class="text-xl font-bold tracking-tight mb-1" style={`color: ${accentFor(group.domain.id as DomainId)};`}>
+          Within {group.domain.name}
+        </h2>
+        <p class="text-sm mb-3" style="color: var(--cb-text-muted);">
+          {group.pairs.length} comparison{group.pairs.length === 1 ? '' : 's'}
+        </p>
+        <div class="grid sm:grid-cols-2 gap-2">
+          {group.pairs.map((p) => (
+            <a href={comparePath(p.a.slug, p.b.slug)} class="nav-card block p-3">
+              <p class="text-sm font-medium" style="color: var(--cb-accent-text);">
+                {p.a.name} <span style="color: var(--cb-text-muted);">vs</span> {p.b.name}
+              </p>
+              <p class="text-xs mt-0.5" style="color: var(--cb-text-muted);">{p.overlap}% shared profile</p>
+            </a>
+          ))}
+        </div>
+      </section>
+    ))
+  }
+
+  {/* ── Across fields ──────────────────────────────────────────── */}
+  {
+    crossField.length > 0 && (
+      <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+        <h2 class="text-xl font-bold tracking-tight mb-1" style="color: var(--nav-cyan);">
+          Across two fields
+        </h2>
+        <p class="text-sm leading-relaxed mb-3" style="color: var(--cb-text-sub); max-width: 62ch;">
+          These pairs sit in different parts of the map, which is exactly why they are worth reading —
+          they are the moves that change what your day looks like, not just your job title.
+        </p>
+        <div class="grid sm:grid-cols-2 gap-2">
+          {crossField.map((p) => (
+            <a href={comparePath(p.a.slug, p.b.slug)} class="nav-card block p-3">
+              <p class="text-sm font-medium" style="color: var(--cb-accent-text);">
+                {p.a.name} <span style="color: var(--cb-text-muted);">vs</span> {p.b.name}
+              </p>
+              <p class="text-xs mt-0.5" style="color: var(--cb-text-muted);">{p.overlap}% shared profile</p>
+            </a>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <div class="nav-card p-5" style="--nav-accent: var(--cb-accent);">
+      <h2 class="font-bold text-base mb-2" style="color: var(--cb-text);">
+        Comparing the wrong two?
+      </h2>
+      <p class="text-sm leading-relaxed mb-3" style="color: var(--cb-text-sub); max-width: 62ch;">
+        If you are choosing between two roles you already picked out, you are working from job titles —
+        and job titles are the least reliable thing about IT. The assessment starts from the work
+        instead, and regularly lands people on a role they had never heard of.
+      </p>
+      <a href="/navigator/assessment/" class="text-sm font-semibold" style="color: var(--cb-accent-text);">
+        Start from the work instead →
+      </a>
+      <p class="text-sm leading-relaxed mt-4" style="color: var(--cb-text-sub); max-width: 62ch;">
+        Already know the role and choosing between two <em>certifications</em>? The
+        <a href="/compare/" class="font-semibold" style="color: var(--cb-accent-text);">certification head-to-heads</a>
+        cover CCNA vs Network+, CCNP vs CCIE and more.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

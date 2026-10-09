@@ -5,17 +5,17 @@
   "vendor": "Microsoft",
   "vendor_slug": "microsoft",
   "level": "Foundation",
-  "description": "SC-900 (Security, Compliance, and Identity Fundamentals) is Microsoft's foundational security certification. The exam validates a broad understanding of security, compliance, and identity concepts and the Microsoft solutions—Entra, Defender, Purview, and Sentinel—that deliver them.",
-  "audience": "Beginners entering cybersecurity, IT and business professionals working with Microsoft 365 and Azure security, and anyone who wants a foundational security credential before role-based security certs like SC-200 or AZ-500.",
+  "description": "SC-900 (Security, Compliance and Identity Fundamentals) is Microsoft's foundational security certification. The exam is roughly 40 to 60 questions in 45 minutes, scored out of 1000 with 700 to pass, and costs $99 USD. It covers security, compliance and identity concepts — Zero Trust, the shared responsibility model, defence in depth, encryption — and then maps them onto the Microsoft products that implement them: Entra ID for identity, Defender for threat protection, Purview for compliance and Sentinel for security operations.",
+  "audience": "People entering cybersecurity, IT and business staff working in Microsoft 365 and Azure tenants, and anyone in a compliance, audit or governance role who needs to talk about Microsoft security tooling accurately. No prerequisites and no hands-on experience assumed — the exam tests whether you know which product solves which problem, not how to configure it.",
   "why_get_it": "SC-900 is an approachable on-ramp to Microsoft's security ecosystem—the identity, security, and compliance tooling that protects most enterprises running Microsoft 365 and Azure. It proves you understand the concepts (Zero Trust, identity, encryption, compliance) and can map them to Microsoft solutions like Entra ID, Microsoft Defender, and Purview. For anyone targeting a security career in a Microsoft shop, or any IT role that touches identity and compliance, it's a low-cost, recognized way to demonstrate baseline security literacy and a foundation for the role-based security certifications.",
-  "when_to_get_it": "Get SC-900 if you're new to security or work with Microsoft 365/Azure and want to prove foundational security, compliance, and identity knowledge. It pairs well with AZ-900 (broad Azure literacy) and with CompTIA Security+ (vendor-neutral security fundamentals). If you already have security experience and a technical goal, you may go straight to role-based certs like SC-200 (Security Operations) or AZ-500—but SC-900 is a quick, useful foundation first.",
+  "when_to_get_it": "Take SC-900 if you are new to security, or work in a Microsoft shop and want to prove baseline identity, security and compliance literacy. It sits naturally next to AZ-900 and is worth pairing with CompTIA Security+, which is vendor-neutral and carries more weight with security hiring managers — SC-900 shows you know the Microsoft stack, Security+ shows you know security. Most people study one to three weeks on the free Microsoft Learn path. If you already work in security and want a role-based credential, go to SC-200 (security operations) or AZ-500 (Azure security engineering) instead; SC-900 is not a prerequisite for either.",
   "exam_code": "SC-900",
   "exam_duration": "45 minutes",
   "exam_format": "Roughly 40–60 questions: multiple choice, multiple response, and other interactive formats. Passing score: 700 (on a scale of 100–1000).",
   "exam_questions": "~40–60 questions",
   "official_url": "https://learn.microsoft.com/en-us/credentials/certifications/security-compliance-and-identity-fundamentals/",
   "official_pricing_url": "https://learn.microsoft.com/en-us/credentials/certifications/security-compliance-and-identity-fundamentals/",
-  "recertification_note": "Microsoft Fundamentals certifications like SC-900 do not expire—they have no renewal requirement. (Role-based certs such as SC-200 renew annually for free via a Microsoft Learn assessment.)",
+  "recertification_note": "SC-900 does not expire — Microsoft Fundamentals certifications have no renewal requirement. Role-based security certifications such as SC-200 last one year and renew free through a short Microsoft Learn assessment.",
   "salary_range": "$55,000 – $95,000",
   "salary_note": "SC-900 is a foundational security credential rather than a salary driver on its own. It helps open entry security and identity-focused IT roles ($55K–$75K) and signals security literacy in Microsoft environments. Its value compounds as a stepping stone toward role-based security certs (SC-200, AZ-500) and hands-on experience, which move you into the $90K+ security-analyst and engineer ranges.",
   "skills_covered": [
@@ -225,5 +225,6 @@
     }
   ],
   "seo_title": "Microsoft SC-900 Security, Compliance & Identity Fundamentals Study Guide | CertBlueprint",
-  "seo_description": "Complete Microsoft SC-900 guide: who it's for, salary, exam domains (Entra, Defender, Purview), study path, free Microsoft Learn resources, paid courses, and FAQ."
+  "seo_description": "Complete Microsoft SC-900 guide: who it's for, salary, exam domains (Entra, Defender, Purview), study path, free Microsoft Learn resources, paid courses, and FAQ.",
+  "last_verified": "September 24, 2026"
 }

@@ -1,0 +1,116 @@
+---
+import type { RoleSalary } from '../../lib/navigator/types';
+import { BLS_ANCHORS, MEDIAN_CAVEAT, SALARY_LAST_VERIFIED } from '../../lib/navigator/data/salary';
+
+interface Props {
+  salary: RoleSalary;
+  roleName: string;
+}
+
+const { salary, roleName } = Astro.props;
+const anchor = salary.anchor ? BLS_ANCHORS[salary.anchor] : undefined;
+
+// A directional band overrides the anchor median. When neither exists we show
+// no headline number at all rather than borrowing one that does not fit.
+const headline = salary.median ?? anchor?.median;
+const growth = anchor?.growth;
+
+const BASIS: Record<RoleSalary['basis'], { label: string; accent: string; blurb: string }> = {
+  'bls-direct': {
+    label: 'Official occupation',
+    accent: 'var(--nav-emerald)',
+    blurb: 'This role maps cleanly onto a published government occupation, so the median below is a real statistic you can go and check.',
+  },
+  'bls-adjacent': {
+    label: 'Nearest official occupation',
+    accent: 'var(--nav-amber)',
+    blurb: 'There is no exact official occupation for this role. The figure comes from the closest one, which covers a somewhat different set of jobs.',
+  },
+  'no-official-category': {
+    label: 'No official category — directional only',
+    accent: 'var(--nav-warn)',
+    blurb: 'No government statistics body publishes an occupation for this role. The range shown is inferred from related occupations and industry reporting. Treat it as a rough direction, not a figure to plan around.',
+  },
+};
+
+const basis = BASIS[salary.basis];
+---
+
+<section class="mb-10">
+  <h2 class="text-xl font-bold tracking-tight mb-1" style="color: var(--cb-text);">What it pays</h2>
+  <p class="text-sm mb-4" style="color: var(--cb-text-sub); max-width: 65ch;">
+    Pay is the thing people most often get misled about, so here is where every number comes from —
+    including the ones that are not really numbers.
+  </p>
+
+  <div class="nav-card nav-card--railed p-5 pl-6" style={`--nav-accent: ${basis.accent};`}>
+    <p class="font-mono text-xs uppercase tracking-widest mb-3" style={`color: ${basis.accent};`}>
+      {basis.label}
+    </p>
+
+    <div class="grid sm:grid-cols-2 gap-x-6 gap-y-4">
+      {
+        headline && (
+          <div>
+            <p class="text-xs font-semibold mb-0.5" style="color: var(--cb-text-muted);">
+              {salary.basis === 'no-official-category' ? 'Directional range' : 'Median for the occupation'}
+            </p>
+            <p class="text-lg font-bold" style="color: var(--cb-text);">{headline}</p>
+            {anchor && salary.basis !== 'no-official-category' && (
+              <p class="text-xs mt-0.5" style="color: var(--cb-text-muted);">
+                {anchor.title} ({anchor.soc})
+              </p>
+            )}
+          </div>
+        )
+      }
+
+      {/* Entry pay is never omitted and never subordinate to the median — quoting
+          a midpoint at a career-changer without it is the standard way these
+          pages mislead, and always in the flattering direction. */}
+      <div>
+        <p class="text-xs font-semibold mb-0.5" style="color: var(--cb-text-muted);">What you actually start on</p>
+        <p class="text-sm font-semibold leading-snug" style="color: var(--cb-text);">{salary.entry}</p>
+      </div>
+
+      {
+        salary.senior && (
+          <div>
+            <p class="text-xs font-semibold mb-0.5" style="color: var(--cb-text-muted);">Where it leads</p>
+            <p class="text-sm leading-snug" style="color: var(--cb-text-sub);">{salary.senior}</p>
+          </div>
+        )
+      }
+
+      {
+        growth && (
+          <div>
+            <p class="text-xs font-semibold mb-0.5" style="color: var(--cb-text-muted);">Outlook</p>
+            <p class="text-sm leading-snug" style="color: var(--cb-text-sub);">{growth}</p>
+          </div>
+        )
+      }
+    </div>
+
+    <div class="mt-4 pt-4 border-t space-y-2" style="border-color: var(--cb-border);">
+      <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{basis.blurb}</p>
+      <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{salary.note}</p>
+      {
+        headline && salary.basis !== 'no-official-category' && (
+          <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{MEDIAN_CAVEAT}</p>
+        )
+      }
+      <p class="text-xs" style="color: var(--cb-text-muted);">
+        Source: U.S. Bureau of Labor Statistics · {SALARY_LAST_VERIFIED} · figures are national and
+        United States–specific; pay varies substantially by region and employer. Nothing here is
+        adjusted for cost of living.
+      </p>
+    </div>
+  </div>
+
+  <p class="text-xs leading-relaxed mt-3" style="color: var(--cb-text-muted); max-width: 65ch;">
+    CertBlueprint earns affiliate commission on some study resources. It earns nothing from
+    {' '}{roleName} salaries, and no role is ranked, recommended or presented more favourably because
+    of what it pays.
+  </p>
+</section>

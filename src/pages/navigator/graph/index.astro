@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CareerGraphApp from '../../../components/navigator/CareerGraphApp.astro';
+import '../../../styles/navigator.css';
+import { GRAPH_EDGES, GRAPH_NODES, assertGraphIntegrity } from '../../../lib/navigator/data/graph';
+import { ACCENT_VAR, DOMAINS, DOMAIN_BY_ID } from '../../../lib/navigator/data/domains';
+import { ROLES, ROLE_BY_SLUG } from '../../../lib/navigator/data/roles';
+
+assertGraphIntegrity();
+
+const hubs = [...GRAPH_NODES].sort((a, b) => b.degree - a.degree).slice(0, 3);
+const entryRoles = GRAPH_NODES.filter((n) => n.entry === 'first-job');
+
+// The text equivalent. The drawing is unreadable to a screen reader and to
+// anyone whose connection dropped the stylesheet, and "look at the picture" is
+// not an acceptable answer for a page whose whole subject is where you can go
+// next. Grouped by field, in the same order as the rest of the site.
+const listing = [...DOMAINS]
+  .sort((a, b) => a.order - b.order)
+  .map((domain) => ({
+    domain,
+    roles: ROLES.filter((r) => r.domains[0] === domain.id).map((role) => ({
+      role,
+      moves: role.adjacent.map((a) => ROLE_BY_SLUG[a.slug]).filter(Boolean),
+    })),
+  }))
+  .filter((g) => g.roles.length > 0);
+
+const title = 'The IT Career Map — Every Role and How They Connect | CertBlueprint';
+const description = `All ${GRAPH_NODES.length} IT roles on one map, joined by the ${GRAPH_EDGES.length} moves people actually make between them. See which jobs you can start from with no experience, and what each one leads to.`;
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Career Navigator', href: '/navigator/' },
+  { label: 'The map', href: '/navigator/graph/' },
+];
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'The IT career map',
+  description,
+  publisher: { '@type': 'Organization', name: 'CertBlueprint' },
+};
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} structuredData={structuredData}>
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-5">
+    <p class="font-mono text-xs uppercase tracking-widest mb-3" style="color: var(--cb-accent-text);">
+      The map
+    </p>
+
+    <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-balance" style="color: var(--cb-text);">
+      IT careers are a graph, not a ladder.
+    </h1>
+
+    <p class="mt-4 text-lg leading-relaxed" style="color: var(--cb-text-sub); max-width: 64ch;">
+      Every role on this site, joined by the moves people genuinely make between them. There is no top
+      and no bottom — just a lot of doors, most of which lead to more doors. The circles with a second
+      ring are the {entryRoles.length} you can reach with no experience at all.
+    </p>
+
+    <p class="mt-3 text-base leading-relaxed" style="color: var(--cb-text-muted); max-width: 64ch;">
+      Open a role to see what it pays to start, what it leads to and why, then ask the map for a route:
+      pick where you are now and where you want to end up, and it shows the moves between them in the
+      direction people actually make them. The layout is computed from the connections themselves, so
+      roles that share a lot of ground end up near each other — which is why the fields form clumps
+      without anyone drawing boundaries around them.
+    </p>
+  </section>
+
+  {/* Deliberately not max-w-6xl like everything else on this page. The
+      drawing takes the window; the words keep the reading column. */}
+  <section class="nav-map-shell px-4 sm:px-6 lg:px-8 pb-8">
+    <CareerGraphApp />
+  </section>
+
+  {/* ── What the shape is telling you ─────────────────────────── */}
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+    <div class="grid sm:grid-cols-3 gap-4">
+      <div class="nav-card nav-card--railed p-5 pl-6" style="--nav-accent: var(--nav-emerald);">
+        <h2 class="font-bold text-base mb-2" style="color: var(--cb-text);">The doors in</h2>
+        <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+          {entryRoles.length} of the {GRAPH_NODES.length} roles are reachable as a first job. Every other
+          role on this map can be reached from one of them — that is checked when the site is built, not
+          asserted here as encouragement.
+        </p>
+      </div>
+
+      <div class="nav-card nav-card--railed p-5 pl-6" style="--nav-accent: var(--nav-cyan);">
+        <h2 class="font-bold text-base mb-2" style="color: var(--cb-text);">The junctions</h2>
+        <p class="text-sm leading-relaxed mb-2" style="color: var(--cb-text-sub);">
+          The largest circles connect to the most other roles, so they keep the most options open:
+        </p>
+        <ul class="space-y-1">
+          {
+            hubs.map((h) => (
+              <li class="text-sm">
+                <a
+                  href={`/navigator/roles/${h.slug}/`}
+                  class="font-medium"
+                  style={`color: var(${ACCENT_VAR[DOMAIN_BY_ID[h.domains[0]].accent]});`}
+                >
+                  {h.name}
+                </a>
+                <span style="color: var(--cb-text-muted);"> · {h.degree} moves</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="nav-card nav-card--railed p-5 pl-6" style="--nav-accent: var(--nav-violet);">
+        <h2 class="font-bold text-base mb-2" style="color: var(--cb-text);">The gaps between fields</h2>
+        <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+          Roles sitting between two clumps belong to both. Nothing positions them there deliberately —
+          they are pulled into the gap by having connections on both sides, which is exactly what those
+          jobs are.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {/* ── The text version ──────────────────────────────────────── */}
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+    <details class="nav-card p-5">
+      <summary class="cursor-pointer font-bold text-base" style="color: var(--cb-text);">
+        The same map, written out
+      </summary>
+      <p class="text-sm leading-relaxed mt-2 mb-4" style="color: var(--cb-text-sub); max-width: 62ch;">
+        Every role and what it connects to. A drawing is useless to a screen reader, and this is a page
+        about where you can go next — so the information exists in both forms rather than only the
+        pretty one.
+      </p>
+
+      {
+        listing.map((group) => (
+          <div class="mb-5">
+            <h2
+              class="font-bold text-sm mb-2"
+              style={`color: var(${ACCENT_VAR[group.domain.accent]});`}
+            >
+              {group.domain.name}
+            </h2>
+            <ul class="space-y-2">
+              {group.roles.map(({ role, moves }) => (
+                <li class="text-sm leading-relaxed">
+                  <a href={`/navigator/roles/${role.slug}/`} class="font-semibold" style="color: var(--cb-text);">
+                    {role.name}
+                  </a>
+                  <span style="color: var(--cb-text-muted);"> leads to </span>
+                  {/* Kept on one line on purpose: a newline between the separator
+                      and the link becomes a text node, and the list renders as
+                      "Network Engineer , Cloud Engineer". */}
+                  {moves.map((m, i) => (<>{i > 0 ? <span style="color: var(--cb-text-muted);">, </span> : null}<a href={`/navigator/roles/${m!.slug}/`} style="color: var(--cb-accent-text);">{m!.name}</a></>))}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </details>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <div class="grid sm:grid-cols-2 gap-4">
+      <a href="/navigator/assessment/" class="nav-card nav-card--railed block p-5 pl-6" style="--nav-accent: var(--cb-accent);">
+        <h2 class="font-bold text-base mb-2" style="color: var(--cb-text);">Don't know where you'd start?</h2>
+        <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+          A map is only useful once you know roughly where you are. The scenarios show you the problems
+          rather than describing them, and tell you which ones you keep reaching for.
+        </p>
+      </a>
+
+      <a href="/navigator/compare/" class="nav-card nav-card--railed block p-5 pl-6" style="--nav-accent: var(--nav-cyan);">
+        <h2 class="font-bold text-base mb-2" style="color: var(--cb-text);">Two of these look the same?</h2>
+        <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+          Neighbouring circles are often near-identical jobs with different titles. The comparisons put
+          any two of them side by side on the same dimensions.
+        </p>
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

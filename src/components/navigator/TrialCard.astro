@@ -1,0 +1,137 @@
+---
+import type { Trial } from '../../lib/navigator/types';
+
+interface Props {
+  trial: Trial;
+  /** Collapsed on role pages (where it is one section of many), open on the trials index. */
+  open?: boolean;
+}
+
+const { trial, open = false } = Astro.props;
+
+const BARRIER: Record<Trial['barrier'], { label: string; accent: string }> = {
+  local: { label: 'Nothing to install · no account', accent: 'var(--nav-emerald)' },
+  account: { label: 'Free account required', accent: 'var(--nav-amber)' },
+  purchase: { label: 'Has a real cost', accent: 'var(--nav-warn)' },
+};
+
+const barrier = BARRIER[trial.barrier];
+---
+
+{/* Addressable by slug so anything that recommends a trial — a role page, the
+    conversational lab — can link straight to it rather than to a list. */}
+<details
+  id={trial.slug}
+  class="nav-card nav-card--railed"
+  style={`--nav-accent: ${barrier.accent}; scroll-margin-top: 5rem;`}
+  open={open}
+>
+  <summary class="cursor-pointer list-none p-5 pl-6">
+    <div class="flex items-start justify-between gap-3">
+      <div>
+        <p class="font-mono text-xs uppercase tracking-widest mb-1.5" style={`color: ${barrier.accent};`}>
+          Try the work · {trial.time}
+        </p>
+        <h3 class="font-bold text-lg" style="color: var(--cb-text);">{trial.name}</h3>
+      </div>
+      <span class="text-xs shrink-0 mt-1" style="color: var(--cb-text-muted);">{trial.cost}</span>
+    </div>
+
+    <p class="text-sm leading-relaxed mt-2" style="color: var(--cb-text-sub); max-width: 62ch;">
+      {trial.objective}
+    </p>
+
+    <p class="text-xs mt-2.5" style="color: var(--cb-text-muted);">
+      {barrier.label} · <span style="text-decoration: underline;">open the steps</span>
+    </p>
+  </summary>
+
+  <div class="px-5 pl-6 pb-5 -mt-1">
+    {/* Safety scope sits ABOVE the steps, never below them. Anyone who is going
+        to skim and start needs to have read it before the first command. */}
+    {
+      trial.safety && (
+        <div
+          class="p-3 rounded-lg border mb-5"
+          style="border-color: var(--nav-warn); background: var(--cb-bg-subtle);"
+        >
+          <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color: var(--nav-warn);">
+            Before you start
+          </p>
+          <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{trial.safety}</p>
+        </div>
+      )
+    }
+
+    <p class="text-xs leading-relaxed mb-4" style="color: var(--cb-text-muted);">
+      {trial.barrierNote}
+    </p>
+
+    <ol class="space-y-4">
+      {
+        trial.steps.map((step, i) => (
+          <li>
+            <div class="flex gap-3">
+              <span
+                class="shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold"
+                style={`background: ${barrier.accent}; color: var(--cb-bg-card);`}
+                aria-hidden="true"
+              >
+                {i + 1}
+              </span>
+              <div class="flex-1 min-w-0">
+                <p class="font-semibold text-sm" style="color: var(--cb-text);">{step.title}</p>
+                <p class="text-sm leading-relaxed mt-1" style="color: var(--cb-text-sub);">
+                  {step.detail}
+                </p>
+
+                {step.commands && (
+                  <div class="mt-2 space-y-1">
+                    {step.commands.map((c) => (
+                      <div class="nav-sim">
+                        <div class="nav-sim__caption">{c.platform}</div>
+                        {/* Scrolls inside itself — a long command must never widen the page. */}
+                        <div class="nav-sim__scroll">
+                          <pre
+                            class="px-3 py-2 m-0"
+                            style="color: var(--cb-text-sub); white-space: pre;"
+                          >{c.run}</pre>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+
+    {/* The reflection. Without this the trial is just an activity — this is the
+        part that turns it back into career information. */}
+    <div class="grid sm:grid-cols-2 gap-4 mt-6 pt-5 border-t" style="border-color: var(--cb-border);">
+      <div>
+        <h4 class="font-bold text-sm mb-2" style="color: var(--cb-text);">This suits you if…</h4>
+        <ul class="space-y-1.5">
+          {
+            trial.enjoyedIf.map((item) => (
+              <li class="flex gap-2 text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+                <span
+                  class="shrink-0 mt-2 w-1.5 h-1.5 rounded-full"
+                  style={`background: ${barrier.accent};`}
+                />
+                <span>{item}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-sm mb-2" style="color: var(--cb-text);">If you disliked it</h4>
+        <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{trial.dislikedMeans}</p>
+      </div>
+    </div>
+  </div>
+</details>

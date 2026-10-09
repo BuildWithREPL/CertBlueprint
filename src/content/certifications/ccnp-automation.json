@@ -204,6 +204,13 @@
   ],
   "related_certs": [
     {
+      "title": "CCIE Automation",
+      "slug": "ccie-automation",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The summit — the renamed DevNet Expert lab, where AUTOCOR is your qualifying exam and the whole environment is software."
+    },
+    {
       "title": "CCNA Automation",
       "slug": "ccna-automation",
       "vendor": "Cisco",

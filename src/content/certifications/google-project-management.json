@@ -5,15 +5,15 @@
   "vendor": "Google",
   "vendor_slug": "google",
   "level": "Foundation",
-  "description": "The Google Project Management Professional Certificate is a six-course Coursera program — the final course a substantial hands-on capstone — covering the full project lifecycle: initiation, planning, execution, and agile, with real portfolio artifacts at the end. Its killer feature is the PMI bridge: it counts as 100+ education hours (covering CAPM's and PMP's requirements) and earns completers $175 off the CAPM exam.",
+  "description": "The Google Project Management Professional Certificate is a seven-course Coursera program — the final course a substantial hands-on capstone — covering the full project lifecycle: initiation, planning, execution, and agile, with real portfolio artifacts at the end. Its killer feature is the PMI bridge: Coursera states the program qualifies you for over 100 hours of project management education, which covers CAPM's 23-hour requirement and the PMP's 35-hour requirement outright.",
   "audience": "Career changers with zero project management exposure, coordinators doing informal PM work who need to make it official, and anyone eyeing the IT project coordinator lane who wants structure and a portfolio before an exam-backed credential.",
-  "why_get_it": "The PMI math alone can justify it: this certificate counts as 100+ hours of project management education (Google is a PMI Authorized Training Partner), which covers CAPM's 23-hour requirement and the PMP's 35-hour requirement — education that typically costs $300–700 from prep providers. Add the Grow-with-Google PMI deal — $175 off the CAPM exam plus a 90-day PMI membership trial — and the full Google-cert-then-CAPM sequence lands under $450 total. Beyond the math, the capstone produces actual artifacts (project charter, plans, stakeholder docs) you can put in front of an interviewer, and the agile course speaks the vocabulary modern IT teams actually use.",
-  "when_to_get_it": "At the start of a project-career switch, before CAPM — the sequence is the strategy: Google cert → claim the education hours and $175 discount → CAPM → apply for coordinator roles with both. If you already have documented project experience, weigh going straight at CAPM (or PMP if you qualify); the certificate can't waive PMP's 36–60 months of experience, and nothing does.",
+  "why_get_it": "The PMI math alone can justify it: the program qualifies you for over 100 hours of project management education, which covers CAPM's 23-hour requirement and the PMP's 35-hour requirement — education that typically costs $300–700 from prep providers, and the single most tedious box to tick on a PMI application. Beyond the math, the capstone produces actual artifacts — project charter, plans, stakeholder documentation — you can put in front of an interviewer, and the agile course speaks the vocabulary modern IT teams actually use. It also opens the Google employer consortium: over 150 US employers accept it, and graduates get CareerCircle coaching, mock interviews and its job board.",
+  "when_to_get_it": "At the start of a project-career switch, before CAPM — the sequence is the strategy: Google certificate → claim the education hours → CAPM → apply for coordinator roles with both. If you already have documented project experience, weigh going straight at CAPM, or PMP if you qualify; the certificate cannot waive PMP's 36 months of experience, and nothing does. One note on older advice you may find: Google has run PMI exam-discount promotions in the past, but neither Google nor Coursera advertises one today — budget for CAPM at PMI's own price.",
   "salary_range": "$45,000 – $65,000 (first coordinator role)",
   "salary_note": "Google cites '$93,000+ median for project management jobs, 0–5 years' — that's the field's blended ceiling, not a first offer. Entry reality for the actual landing roles (project coordinator, junior PM): Glassdoor ~$62K average, ZipRecruiter ~$49K, with honest first-job expectations around $45–65K depending on metro and industry. The $90K+ tier arrives after a few years and usually a CAPM or PMP.",
   "exam_code": "Coursera Certificate",
-  "exam_duration": "Self-paced — Google claims 6 months at 10 hrs/week; actual content is ~142 hours, so motivated learners commonly finish in 2–3 months",
-  "exam_format": "No proctored exam. Six self-paced courses — the last a substantial capstone (a realistic restaurant-rollout scenario) — with quizzes, peer-reviewed assignments, and portfolio artifacts: charter, project plans, and stakeholder documentation.",
+  "exam_duration": "Self-paced — Coursera lists 7 courses at 6 months, 10 hours a week. Motivated learners commonly finish in 2–3 months",
+  "exam_format": "No proctored exam. Seven self-paced courses — the last a substantial capstone (a realistic restaurant-rollout scenario) — with quizzes, peer-reviewed assignments, and portfolio artifacts: charter, project plans, and stakeholder documentation.",
   "exam_questions": "No final exam — quizzes, peer-reviewed work, and a capstone project",
   "official_url": "https://grow.google/certificates/project-management/",
   "official_pricing_url": "https://www.coursera.org/professional-certificates/google-project-management",
@@ -83,18 +83,18 @@
     },
     {
       "step": 5,
-      "title": "Claim the PMI perks immediately on completion",
-      "description": "Activate the Grow-with-Google PMI offer: $175 off the CAPM exam plus a 90-day PMI membership trial. Because Google is a PMI Authorized Training Partner, the program counts as 100+ education hours — log them on your CAPM or PMP application (PMI's CAPM page explains how); they cover the 23-hour and 35-hour requirements."
+      "title": "Log the PMI education hours on completion",
+      "description": "Coursera states the program qualifies you for over 100 hours of project management education — log them on your CAPM or PMP application (PMI's CAPM page explains how); they cover the 23-hour and 35-hour requirements."
     },
     {
       "step": 6,
       "title": "Bridge the vocabulary gap to CAPM",
-      "description": "Google teaches practical PM; CAPM tests PMI's exam vocabulary across predictive, agile, and business-analysis domains. A $20 Udemy CAPM prep course (Ramdayal or Phillips) closes that gap in a few weeks. With the discount, the exam runs about $125."
+      "description": "Google teaches practical PM; CAPM tests PMI's exam vocabulary across predictive, agile, and business-analysis domains. A $20 Udemy CAPM prep course (Ramdayal or Phillips) closes that gap in a few weeks. Budget for the exam at PMI's own member or non-member rate, shown during the application."
     },
     {
       "step": 7,
       "title": "Apply with both credentials and the artifact folder",
-      "description": "Google cert + CAPM + portfolio, all for under $450 total, is the strongest entry-level project stack there is. Target coordinator and junior PM postings — and lean on your capstone artifacts in every interview."
+      "description": "Google cert + CAPM + portfolio is the strongest entry-level project stack there is, and the education hours come free with the coursework. Target coordinator and junior PM postings — and lean on your capstone artifacts in every interview."
     }
   ],
   "free_resources": [
@@ -108,7 +108,7 @@
       "name": "Grow with Google Meets PMI",
       "url": "https://grow.google/certificates/project-management/",
       "type": "Completion Perk",
-      "note": "The $175 CAPM discount and 90-day PMI membership trial for completers — activate before booking the exam."
+      "note": "PMI's official CAPM page — where the education-hours requirement, eligibility rules and current exam fee are set out. Log your Google hours here when you apply."
     },
     {
       "name": "PMI CAPM Certification Page",
@@ -142,9 +142,9 @@
       "note": "Plain reference link, no commission. The education hours alone can out-value the subscription cost."
     },
     {
-      "provider": "PMI – CAPM exam (with completer discount)",
+      "provider": "PMI – CAPM exam",
       "type": "Certification Exam",
-      "price": "~$125 with the $175 Grow-with-Google discount (list $300 non-member)",
+      "price": "PMI shows member and non-member rates during the application",
       "best_for": "The exam-backed PMI credential HR filters in government, construction, healthcare, and finance actually search",
       "affiliate_url": "https://www.pmi.org/certifications/certified-associate-capm",
       "affiliate_label": "View CAPM",
@@ -172,24 +172,24 @@
       "affiliate_label": "View PMI Membership",
       "affiliate_event": "pmi_membership_via_google",
       "affiliate": false,
-      "note": "The 90-day trial from the Google completer perk lets you test the value before paying dues."
+      "note": "Worth pricing against the member discount on the exam before you apply — where the discount exceeds the dues, joining first is simply cheaper."
     }
   ],
   "voucher_links": [
     {
       "label": "Enroll – Google Project Management on Coursera",
       "url": "https://www.coursera.org/professional-certificates/google-project-management",
-      "note": "No exam voucher — it's a Coursera subscription (~$49/month U.S. after a 7-day trial; financial aid available). The valuable voucher comes at completion: $175 off the CAPM exam via Grow with Google Meets PMI, plus 100+ banked education hours."
+      "note": "No exam voucher exists — this is a Coursera subscription. Coursera charges $49 per month in the US and Canada after a 7-day free trial, and says most learners finish for under $300; the price is lower in some other countries. Financial aid can waive it entirely. What you bank instead of a voucher: over 100 hours of project management education, which covers CAPM's 23-hour and the PMP's 35-hour requirement."
     }
   ],
   "faq": [
     {
       "question": "Google Project Management Certificate or CAPM — which should I get?",
-      "answer": "Both, in sequence — they're complements. Google is the training: practical, no exam to fail, produces portfolio artifacts, and banks the education hours CAPM requires. CAPM is PMI's exam-backed credential that HR filters in traditional industries actually search. The sequence — Google cert → $175 discount → CAPM — gets you both for under $450 total."
+      "answer": "Both, in sequence — they're complements. Google is the training: practical, no exam to fail, produces portfolio artifacts, and banks the education hours CAPM requires. CAPM is PMI's exam-backed credential that HR filters in traditional industries actually search. The sequence — Google cert → education hours banked → CAPM — discount → CAPM — gets you both for under $450 total."
     },
     {
       "question": "Does this certificate count toward PMP eligibility?",
-      "answer": "Partially, and the distinction matters. It fully covers the PMP's 35-contact-hour education requirement (Google is a PMI Authorized Training Partner). It does NOT — and nothing can — waive the PMP's 36–60 months of documented project leadership experience. The certificate starts the road; the experience years are the road."
+      "answer": "Partially, and the distinction matters. Coursera states the program qualifies you for over 100 hours of project management education, which covers the PMP's 35-contact-hour requirement several times over. It does NOT — and nothing can — waive the PMP's 36–60 months of documented project leadership experience. The certificate starts the road; the experience years are the road."
     },
     {
       "question": "Do hiring managers respect this certificate?",
@@ -197,7 +197,7 @@
     },
     {
       "question": "What does it actually cost?",
-      "answer": "$49/month after the 7-day trial; ~142 hours of content means most finishers pay $100–200. Financial aid can make it free. Factor in the value coming back: 100+ PMI education hours (worth $300–700 from prep providers) and $175 off CAPM — for many people the perks exceed the subscription cost."
+      "answer": "$49/month after the 7-day trial; ~142 hours of content means most finishers pay $100–200. Financial aid can make it free. Factor in the value coming back: over 100 PMI education hours, worth $300–700 from prep providers — for many people that alone exceeds the subscription cost."
     },
     {
       "question": "Is the capstone worth the time?",
@@ -214,7 +214,7 @@
       "slug": "capm",
       "vendor": "PMI",
       "vendor_slug": "pmi",
-      "reason": "The intended next step — this certificate banks the education hours CAPM requires and earns completers $175 off the exam."
+      "reason": "The intended next step — this certificate banks well over the 23 education hours CAPM requires, which is the most tedious part of the application."
     },
     {
       "title": "Professional Scrum Master I (PSM I)",
@@ -232,5 +232,6 @@
     }
   ],
   "seo_title": "Google Project Management Certificate Review – Cost, CAPM Path, Worth It | CertBlueprint",
-  "seo_description": "Honest Google Project Management Certificate guide: real cost, the capstone, the $175 CAPM discount and 100+ PMI education hours, entry salary reality, and the Google-then-CAPM sequence."
+  "seo_description": "Honest Google Project Management Certificate guide: real cost, the capstone, 100+ PMI education hours that cover CAPM and PMP requirements, entry salary reality, and the Google-then-CAPM sequence.",
+  "last_verified": "September 24, 2026"
 }

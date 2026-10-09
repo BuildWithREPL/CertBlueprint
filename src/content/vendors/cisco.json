@@ -7,7 +7,12 @@
     {
       "name": "Entry (CCST)",
       "level": "Entry",
-      "description": "Three $125 Cisco Certified Support Technician exams — Networking, Cybersecurity, and IT Support — with free official NetAcad training and no prerequisites. The genuine pre-CCNA on-ramp; note CCSTs earned after July 15, 2025 are valid 5 years."
+      "description": "Three $125 Cisco Certified Support Technician exams — Networking, Cybersecurity, and IT Support — with free official NetAcad training and no prerequisites. The genuine pre-CCNA on-ramp; note CCSTs earned after July 15, 2025 are valid 5 years. The $200 Field Technician cert (800-150 FLDTEC) that replaced CCT in Feb 2025 sits here too."
+    },
+    {
+      "name": "Practitioner (AI)",
+      "level": "Practitioner",
+      "description": "A new tier below associate, launched Dec 2025: the $150 AI Technical Practitioner (810-110 AITECH) covers practical AI-usage skills — generative AI, RAG, prompts, agents — for infrastructure people. Months old, so hiring-manager recognition is still near zero — our guide is honest about that."
     },
     {
       "name": "Associate",

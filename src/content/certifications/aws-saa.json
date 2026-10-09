@@ -4,15 +4,15 @@
   "vendor": "AWS",
   "vendor_slug": "aws",
   "level": "Associate",
-  "description": "The AWS Certified Solutions Architect – Associate (SAA-C03) validates the ability to design and deploy scalable, highly available, and fault-tolerant systems on Amazon Web Services. It is the most widely held AWS certification and among the highest-value cloud credentials in the job market today.",
-  "audience": "IT professionals, developers, and sysadmins moving into cloud architecture roles, and anyone targeting AWS infrastructure, DevOps, or cloud consulting positions.",
+  "description": "AWS Certified Solutions Architect – Associate (SAA-C03) is the most widely recognised associate-level cloud certification. The exam is 65 questions in 130 minutes for $150 USD, and it is about designing cost- and performance-optimised solutions on AWS: secure architectures, resilient and high-performing designs, and cost-optimised ones. It does not require coding, but the questions are scenario-based and usually turn on picking the cheapest option that still meets a stated requirement.",
+  "audience": "People with AWS exposure or strong on-premises infrastructure experience who want the credential employers ask for by name. It is the default first associate exam for systems administrators, network engineers, support staff and developers moving to cloud. Familiarity with basic programming concepts helps but is not required, and there is no formal prerequisite — Cloud Practitioner is optional, not a gate.",
   "why_get_it": "The AWS Solutions Architect Associate is the most in-demand cloud certification globally. Cloud architect and cloud engineer roles routinely list it as a requirement or strong preference, and it consistently ranks among the top-paying IT certifications. The exam tests real architectural decision-making: choosing the right storage service for a use case, designing for fault tolerance, understanding cost optimization trade-offs, and knowing when to use which AWS compute option. It is not a test of memorizing service names—it requires understanding how AWS services interact and why certain designs are better than others. For anyone in IT who wants to move toward cloud infrastructure, this is the single highest-leverage certification available today.",
-  "when_to_get_it": "Get AWS SAA when you are ready to move into cloud infrastructure, solutions design, or DevOps roles. A foundational understanding of networking (IP addressing, DNS, load balancing concepts) and basic Linux/Windows administration makes the study process substantially faster. AWS Cloud Practitioner is a valid first step if you are completely new to AWS, but many candidates skip it and go directly to SAA. If cloud architecture is your target role, this should be near the top of your study queue.",
+  "when_to_get_it": "Take SAA when you want the single AWS line on your resume that does the most work, which for most people is this one. Build in a free-tier account first: the exam rewards people who have actually launched a VPC, broken it, and fixed it. Plan two to three months alongside a job. It pairs naturally with the Developer Associate if you write code, and it is the prerequisite in spirit — though not in rule — for the professional-level architect exam. One benefit worth knowing: holding an active AWS certification gets you a 50% discount voucher toward your next AWS exam, which changes the arithmetic on going further.",
   "salary_range": "$95,000 – $140,000",
   "salary_note": "Cloud architect and cloud engineer roles requiring AWS SAA typically start at $95K–$110K for candidates with limited experience, and reach $130K–$160K+ with 3–5 years of hands-on cloud work. The certification is one of the highest-correlation certs to salary growth in the IT industry.",
   "exam_code": "SAA-C03",
   "exam_duration": "130 minutes",
-  "exam_format": "Multiple choice and multiple response (select two or more). 65 questions.",
+  "exam_format": "65 questions: multiple choice and multiple response. 130 minutes, $150 USD, at a Pearson VUE test centre or online proctored. Offered in English, French, Italian, Japanese, Korean, Portuguese (Brazil), Spanish (Latin America and Spain), and Simplified and Traditional Chinese — the Italian version retires after 31 December 2026.",
   "exam_questions": "65 questions",
   "official_url": "https://aws.amazon.com/certification/certified-solutions-architect-associate/",
   "official_pricing_url": "https://aws.amazon.com/certification/certified-solutions-architect-associate/",
@@ -172,7 +172,7 @@
     {
       "label": "Schedule AWS SAA Exam – AWS Certification Portal",
       "url": "https://aws.amazon.com/certification/certified-solutions-architect-associate/",
-      "note": "AWS exams are scheduled through Pearson VUE or PSI. Verify current pricing on the AWS certification page. The exam is $150 USD at standard pricing."
+      "note": "The exam is $150 USD and is scheduled through Pearson VUE (test centre or online proctored) from your AWS Certification account. Verify current pricing on the AWS certification page before booking — and if you already hold an active AWS certification, claim the 50% discount voucher from your account first."
     }
   ],
   "faq": [
@@ -250,5 +250,6 @@
     }
   ],
   "seo_title": "AWS Solutions Architect Associate (SAA-C03) Study Guide – Exam Details, Study Plan | CertBlueprint",
-  "seo_description": "Complete AWS Solutions Architect Associate SAA-C03 guide: who it's for, salary expectations, exam breakdown, step-by-step study plan, free and paid resources, and FAQ."
+  "seo_description": "Complete AWS Solutions Architect Associate SAA-C03 guide: who it's for, salary expectations, exam breakdown, step-by-step study plan, free and paid resources, and FAQ.",
+  "last_verified": "September 24, 2026"
 }

@@ -5,19 +5,19 @@
   "vendor": "Google",
   "vendor_slug": "google",
   "level": "Foundation",
-  "description": "The Google IT Support Professional Certificate is the original Google Career Certificate — a six-course, zero-prerequisite program on Coursera covering troubleshooting, networking, operating systems, system administration, and security basics, with browser-based VM labs. Completers get 30% off CompTIA A+ exam vouchers and a dual Google+CompTIA badge for passing both.",
+  "description": "The Google IT Support Professional Certificate is the original Google Career Certificate — a six-course, zero-prerequisite program on Coursera covering troubleshooting and customer support, networking, operating systems, system administration and security basics, with browser-based VM labs and, since the 2025 refresh, using AI in support work. It is ACE-approved for up to 15 college credits, and completing it plus passing both CompTIA A+ exams earns a dual Google and CompTIA badge.",
   "audience": "Absolute beginners deciding whether IT is for them, and career changers from retail, service, or any non-technical field who need a structured curriculum more than they need another YouTube playlist. No degree, no experience, just consistent weekly hours.",
-  "why_get_it": "It's the cheapest legitimate answer to 'is IT actually for me?' — $49 a month against the ~$550 you'd spend on A+ vouchers to find out the hard way. The curriculum is genuinely broader than A+ prep: real Linux and sysadmin coverage that A+ barely touches, hands-on VM labs, and a Google brand that gets resume attention. And the exit perk matters: completers get 30% off CompTIA A+ vouchers (~$192 each instead of $274 at mid-2026 pricing), which converts your coursework into the credential HR filters actually search for. Over 2.1 million people have enrolled; the honest way to be one of the ~14% who finish is to treat it like a scheduled class, not a someday hobby.",
-  "when_to_get_it": "At the very start — before A+, not instead of it. The community consensus in 2026 is settled: do the Google cert first for the learning experience, then use the discount to sit A+ for the resume line, and list both. Skip the Google cert if you already have hands-on IT exposure; go straight to A+ and put your money into vouchers.",
+  "why_get_it": "It is the cheapest legitimate answer to \"is IT actually for me?\" — $49 a month, against the cost of two A+ vouchers to find out the hard way. The curriculum is genuinely broader than A+ prep: real Linux and sysadmin coverage that A+ barely touches, hands-on VM labs, and a Google brand that gets resume attention. Two concrete extras beyond the learning: it is ACE-approved for up to 15 college credits — the equivalent of five bachelor's-level courses, which matters if a degree is anywhere in your plan — and completers who go on to pass both A+ exams get a dual Google and CompTIA credential badge. Over 2.1 million people have enrolled; the honest way to be one of the minority who finish is to treat it like a scheduled class, not a someday hobby.",
+  "when_to_get_it": "At the very start — before A+, not instead of it. The sequence most people settle on is the Google certificate first for the learning experience, then A+ for the resume line, listing both. Skip the Google certificate if you already have hands-on IT exposure: go straight to A+ and put the money into vouchers. Google has at times emailed completers a CompTIA exam discount, but neither Google nor Coursera advertises one today — budget for A+ at full price and treat any offer that arrives as a bonus rather than part of the plan.",
   "salary_range": "$38,000 – $55,000 (first help desk role)",
   "salary_note": "Google's '$70,000 median for IT support jobs' covers zero-to-five years of experience — don't expect it on offer one. Honest first-job numbers: BLS median for computer support specialists is $59,660 across all experience levels; ZipRecruiter averages ~$48K for help desk technicians; PayScale puts sub-1-year IT support at ~$46K. Realistic first role: $38–55K in most U.S. markets, $55–65K in high-cost metros — with real jumps in years 1–3 as you move toward desktop support and sysadmin work.",
   "exam_code": "Coursera Certificate",
-  "exam_duration": "Self-paced — Google claims 3 months at 10 hrs/week; ~80–115 hours of content, so realistic finishes run 2–4 months (weeks, with any IT background)",
+  "exam_duration": "Self-paced — Coursera lists 6 courses at 3 months, 10 hours a week; Google says three-to-six months. Anyone with IT exposure finishes far faster",
   "exam_format": "No proctored exam. Six self-paced Coursera courses with auto-graded quizzes and hands-on Qwiklabs — browser-based VMs for real Linux, Windows, and networking exercises.",
   "exam_questions": "No final exam — graded quizzes and hands-on labs throughout",
   "official_url": "https://grow.google/certificates/it-support/",
   "official_pricing_url": "https://www.coursera.org/professional-certificates/google-it-support",
-  "recertification_note": "Never expires — course-completion certificate with a permanent Credly badge, no renewal cycle or fees. Employers accordingly read it as training evidence; the A+ pairing is what adds exam-tested weight.",
+  "recertification_note": "Never expires — course-completion certificate with a permanent Credly badge, no renewal cycle or fees. Employers accordingly read it as training evidence; the A+ pairing, and its dual badge, is what adds exam-tested weight.",
   "skills_covered": [
     {
       "category": "Technical Support & Networking (Courses 1–2)",
@@ -83,8 +83,8 @@
     },
     {
       "step": 5,
-      "title": "Watch for the A+ discount email on completion",
-      "description": "Completers get an emailed offer: 30% off CompTIA A+ vouchers (~$192 vs $274 list as of mid-2026, for each of the two exams). Coursera support threads note the email can be delayed or missed — check spam, and chase support if it doesn't arrive. Passing both A+ exams adds a dual Google+CompTIA Credly badge."
+      "title": "Claim the dual badge, then book A+",
+      "description": "Completion also unlocks up to 15 ACE-recommended college credits, worth claiming if a degree is on your horizon. Then book A+: passing both exams earns a dual Google and CompTIA Credly badge."
     },
     {
       "step": 6,
@@ -142,15 +142,15 @@
       "note": "Plain reference link, no commission. Pace is money — plan for 3 months."
     },
     {
-      "provider": "CompTIA A+ vouchers (with completer discount)",
+      "provider": "CompTIA A+ vouchers (two exams)",
       "type": "Certification Exams",
-      "price": "~$192 each with 30% off (list $274 each as of mid-2026, two exams)",
+      "price": "Two vouchers required — CompTIA lists prices only in its store checkout",
       "best_for": "Converting the coursework into the credential HR filters search — A+ appears in roughly 65% of support listings",
       "affiliate_url": "https://www.comptia.org/en-us/certifications/a/",
       "affiliate_label": "View CompTIA A+",
       "affiliate_event": "comptia_aplus_via_google",
       "affiliate": false,
-      "note": "The discount email arrives after completion and is easy to miss — check spam. See our full A+ guide for the study plan."
+      "note": "Passing both after the Google certificate earns a dual Google and CompTIA badge. See our full A+ guide for the study plan."
     },
     {
       "provider": "Udemy – A+ practice exams (Jason Dion)",
@@ -168,13 +168,13 @@
     {
       "label": "Enroll – Google IT Support on Coursera",
       "url": "https://www.coursera.org/professional-certificates/google-it-support",
-      "note": "No exam voucher exists — it's a Coursera subscription (~$49/month U.S. after a 7-day trial); financial aid can waive it entirely. The voucher that matters comes at the end: 30% off both CompTIA A+ exams for completers."
+      "note": "No exam voucher exists — this is a Coursera subscription. Coursera charges $49 per month in the US and Canada after a 7-day free trial, and says most learners finish for under $300; the price is lower in some other countries. Financial aid can waive it entirely. The credential that costs money comes later: two CompTIA A+ exams, bought separately."
     }
   ],
   "faq": [
     {
       "question": "Google IT Support Certificate or CompTIA A+ — which one first?",
-      "answer": "Both, in that order — that's the settled 2026 consensus. The Google cert is the better learning experience (broader, cheaper, hands-on VMs, actual Linux); A+ is the better resume line (it appears in ~65% of support listings, while almost none require the Google cert by name). Do the Google cert, claim the 30% A+ discount, pass both, list both."
+      "answer": "Both, in that order — that's the settled 2026 consensus. The Google cert is the better learning experience (broader, cheaper, hands-on VMs, actual Linux); A+ is the better resume line (it appears in ~65% of support listings, while almost none require the Google cert by name). Do the Google cert, then pass both A+ exams — that combination earns a dual Google and CompTIA badge, and it is the pairing support employers recognise."
     },
     {
       "question": "Can this certificate alone get me hired?",
@@ -182,7 +182,7 @@
     },
     {
       "question": "How much does it really cost?",
-      "answer": "$49/month after the 7-day trial. Content is ~80–115 hours: finish in Google's 3-month estimate and it's ~$147; drift to the more realistic 6 months and it's ~$294. Financial aid can make it free. The 30% A+ discount (~$164 total across both vouchers at mid-2026 pricing) claws back most of the cost if you continue — which is the point."
+      "answer": "$49/month after the 7-day trial. Content is ~80–115 hours: finish in Google's 3-month estimate and it's ~$147; drift to the more realistic 6 months and it's ~$294. Financial aid can make it free. Budget for two A+ vouchers on top at CompTIA's current store price; Google does not currently advertise a discount on them, so plan without one."
     },
     {
       "question": "What's the employer consortium worth?",
@@ -203,7 +203,7 @@
       "slug": "a-plus",
       "vendor": "CompTIA",
       "vendor_slug": "comptia",
-      "reason": "The intended pairing — completers get 30% off both A+ vouchers, and A+ is the keyword support-job filters actually search."
+      "reason": "The intended pairing — passing both A+ exams after this certificate earns a dual Google and CompTIA badge, and A+ is the keyword support-job filters actually search."
     },
     {
       "title": "Google IT Automation with Python",
@@ -221,5 +221,6 @@
     }
   ],
   "seo_title": "Google IT Support Certificate Review – Cost, vs CompTIA A+, Worth It | CertBlueprint",
-  "seo_description": "Honest Google IT Support Certificate guide: real cost, the six courses, the 30% CompTIA A+ discount, first-job salary reality, and the Google-then-A+ sequence that actually works."
+  "seo_description": "Honest Google IT Support Certificate guide: real cost, the six courses, the CompTIA A+ dual badge and ACE college credits, first-job salary reality, and the Google-then-A+ sequence that actually works.",
+  "last_verified": "September 24, 2026"
 }

@@ -30,6 +30,8 @@ certblueprint/
 │                         #   navigator-lab.html (AI conversation UI)
 ├── worker/index.js       # Cloudflare Worker: /api/navigator/read + asset fallback
 ├── scripts/submit-indexnow.mjs  # IndexNow ping, last step of `npm run deploy`
+├── scripts/check-external-links.mjs # sweeps outbound links on the built site
+├── scripts/audit-map.mjs # career-map shape: field reachability and fragility
 ├── gsc-index.mjs         # optional Google Indexing API nudger (needs service-account.json
 │                         #   + `npm i google-auth-library`; both intentionally not committed)
 └── audit-content.cjs     # crawls the live site and flags thin pages
@@ -45,8 +47,25 @@ certblueprint/
 | `npm run build`   | Build the static site to `./dist/`                       |
 | `npm run astro -- check` | Typecheck (`.astro` + TS) — keep this at 0 errors |
 | `npm run deploy`  | Build, `wrangler deploy`, then IndexNow submit           |
+| `npm run check:links` | Sweep every outbound link on the built site (run monthly) |
+| `npm run audit:map`   | Career-map shape after editing roles — see below     |
 
 ## Operational notes
+
+- **After editing roles or their `adjacent` moves, run `npm run build && npm run
+  audit:map`.** The build already fails on a move to a role that does not exist,
+  a page nothing links to, and a field no role can reach. The audit asks the
+  question those cannot: is the map's *shape* still honest? It reports how far
+  each field is from every role, whether any field is held up by a single move,
+  and the in/out balance of each field.
+
+  Read its output rather than flattening it. Several asymmetries are the honest
+  answer: Support & Operations has 17 moves out and 3 in because people leave the
+  help desk and do not go back, and Cloud has no entry-level role because the
+  industry does not have one. A map that showed those as balanced would be the
+  one that was lying. The thing to act on is a *stranded* role or a field
+  resting on one move — that is how the Data gap happened (see
+  `docs/NAVIGATOR-REDESIGN.md` §22p).
 
 - **Secrets:** `.env` holds `CLOUDFLARE_API_TOKEN` for wrangler and is
   gitignored. Never commit it. `service-account.json` (Google Indexing API)

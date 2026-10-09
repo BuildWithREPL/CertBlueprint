@@ -5,13 +5,13 @@
   "vendor": "CompTIA",
   "vendor_slug": "comptia",
   "level": "Intermediate",
-  "description": "CompTIA Cloud+ is the vendor-neutral cloud operations certification. Exam CV0-004 validates the skills to deploy, secure, operate, and troubleshoot cloud infrastructure across multiple providers—not tied to AWS, Azure, or any single platform.",
-  "audience": "Systems administrators, cloud and infrastructure engineers, and IT pros moving into multi-cloud operations. Best with networking and systems-administration fundamentals already in place.",
+  "description": "CompTIA Cloud+ is the vendor-neutral cloud operations certification. The CV0-004 exam is up to 90 questions in 90 minutes, mixing multiple choice with performance-based tasks, and needs 750 on a 100–900 scale to pass. It covers architecture, deployment, operations, security and troubleshooting across cloud environments generally rather than one provider's console — the material assumes you are running workloads in production, not evaluating a platform.",
+  "audience": "Systems administrators and infrastructure engineers moving into cloud operations, and anyone supporting workloads across more than one provider. CompTIA recommends two to three years of hands-on experience as a systems administrator or cloud engineer. It assumes you already understand networking and systems administration — it does not teach either, and the exam is noticeably harder without them.",
   "why_get_it": "Cloud+ is the cloud cert that isn't locked to one provider. Where AWS and Azure certifications prove you know a specific platform, Cloud+ proves you understand cloud operations as a discipline—architecture, deployment, security, automation, and troubleshooting that transfer across providers. That's valuable for hybrid and multi-cloud environments, which most enterprises now run. CV0-004 was rebuilt to include DevOps and automation fundamentals, reflecting how cloud is actually operated today. For sysadmins and infrastructure engineers moving into cloud roles, it validates the operational breadth employers need.",
-  "when_to_get_it": "Get Cloud+ once you have networking and systems-administration fundamentals (Network+ level or equivalent experience) and you're moving toward cloud operations. It pairs well with a provider cert: many people hold Cloud+ for vendor-neutral breadth plus an AWS or Azure associate cert for platform depth. If you only ever plan to work in one cloud, a provider-specific cert may be a more direct fit.",
+  "when_to_get_it": "Cloud+ makes sense once you have Network+ level networking and real systems-administration experience, and your work is drifting toward cloud operations. It is most useful alongside a provider certification rather than instead of one: AWS or Azure proves you know a platform, Cloud+ proves you understand the operational patterns that survive a move between them. If you only ever touch one cloud, take that vendor's associate certification first. If you support a mixed estate, or your employer wants something vendor-neutral, this is the one that fits.",
   "exam_code": "CV0-004",
   "exam_duration": "90 minutes",
-  "exam_format": "Up to 90 questions: multiple choice and performance-based. Pass/fail (CompTIA does not publish a numeric passing score for CV0-004).",
+  "exam_format": "Up to 90 questions: multiple choice and performance-based. Passing score: 750 (on a scale of 100–900).",
   "exam_questions": "Up to 90 questions",
   "official_url": "https://www.comptia.org/en-us/certifications/cloud/",
   "official_pricing_url": "https://www.comptia.org/en-us/certifications/cloud/",
@@ -200,6 +200,10 @@
       "answer": "No formal prerequisite, but CompTIA recommends networking and systems-administration knowledge (Network+ level) plus some cloud or data-center experience. Hands-on time in any cloud makes the exam much easier."
     },
     {
+      "question": "What is the passing score for Cloud+?",
+      "answer": "750 on a scale of 100 to 900. CompTIA uses scaled scoring, so there is no fixed number of questions you have to get right — harder questions carry more weight, and the raw-to-scaled conversion is not published."
+    },
+    {
       "question": "How hard is the CV0-004 exam?",
       "answer": "It's an intermediate exam covering broad ground—architecture, deployment, security, operations, and DevOps. The breadth is the challenge. Performance-based questions test troubleshooting and operational reasoning, so hands-on practice is important."
     },
@@ -240,5 +244,6 @@
     }
   ],
   "seo_title": "CompTIA Cloud+ CV0-004 Study Guide – Multi-Cloud Operations | CertBlueprint",
-  "seo_description": "Complete CompTIA Cloud+ (CV0-004) guide: who it's for, cloud engineer salary, exam domains, study path, free and paid resources, and FAQ."
+  "seo_description": "Complete CompTIA Cloud+ (CV0-004) guide: who it's for, cloud engineer salary, exam domains, study path, free and paid resources, and FAQ.",
+  "last_verified": "September 24, 2026"
 }

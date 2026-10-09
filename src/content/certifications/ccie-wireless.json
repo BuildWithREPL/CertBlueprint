@@ -1,0 +1,288 @@
+{
+  "title": "Cisco CCIE Wireless Guide",
+  "slug": "ccie-wireless",
+  "short_name": "CCIE Wireless",
+  "former_name": "CCIE Enterprise Wireless",
+  "vendor": "Cisco",
+  "vendor_slug": "cisco",
+  "level": "Expert",
+  "description": "CCIE Wireless is the expert summit of Cisco's brand-new dedicated Wireless track — reborn in March 2026 with its own qualifying exam (WLCOR 350-101, not ENCOR anymore) and a revised 8-hour lab that now covers the Catalyst AND Meraki portfolios side by side. Destination briefing, honestly told: the 2026 track split explained, the real costs, the wireless-specific labbing problem, and why first-wave v1.1 candidates are pioneering with incomplete training materials.",
+  "audience": "Wireless specialists who live in RF daily — stadium and large-venue Wi-Fi, hospital networks, warehouse and logistics coverage, higher-ed campuses — plus engineers at Cisco partners where wireless practice expertise bills. You should already be operating at CCNP-Wireless depth on Catalyst 9800 controllers, and in 2026 you'd better be comfortable in the Meraki dashboard too, because the lab now assumes both. If your wireless work is one hat among five, the FAQ has the honest CCNP-vs-CCIE answer.",
+  "why_get_it": "Wireless expertise is genuinely scarce at the top end, and the venues that need it — stadiums, hospitals, warehouses, universities — keep multiplying. The Wireless Infrastructure Association has reported the U.S. smart-stadium market growing from roughly $1.9B (2023) toward a projected $6.6B by 2030, and healthcare indoor-wireless deployment keeps climbing (third-party figures; treat the precision loosely). Cisco just voted with its roadmap: after folding wireless into the Enterprise track in 2020, it reversed course in 2026 and gave wireless its own dedicated certification track — CCNP Wireless and CCIE Wireless — which is the vendor saying this specialty is deep enough to deserve its own summit. The honest counterweight: the wireless training ecosystem is the thinnest of any CCIE track. Third-party v1.1 workbooks won't even be complete until late 2026, the market for pure wireless-expert roles is narrower than for routing generalists, and for most engineers CCNP Wireless plus real ISE and automation fluency covers the actual job postings.",
+  "when_to_get_it": "When you're a genuine wireless specialist — not a generalist adding a merit badge — in a market that pays for the depth: large venues, healthcare, logistics, partners with a wireless practice. Timing matters more than usual in 2026 because the track just changed under everyone's feet: WLCOR 350-101 became testable March 19, 2026, and the lab moved to v1.1 (Cisco's release notes say effective for tests on or after March 9, 2026 — some trainers cite March 19; trust the PDF, but re-check before booking). First-wave candidates get a stable blueprint and less competition for early numbers, at the price of prepping while third-party materials are still being written — Network Dojo's v1.1 workbook set doesn't finish until December 2026. If you'd rather study from a mature library, a 2027 start is the calmer play.",
+  "salary_range": "$92,000 – $168,000 (wireless network engineering, senior roles)",
+  "salary_note": "Honest sourcing: these are generic 'wireless network engineer' figures, not CCIE-holder data — ZipRecruiter averages ~$110K (25th–75th percentile roughly $92K–$129K), Glassdoor ~$132K, Robert Half ranges ~$118K–$168K. The '~$166K CCIE average' that circulates online comes from low-quality blogs — treat it as folklore. The realistic claim: the CCIE attaches to the senior end of those bands and to consulting engagements above them, concentrated where high-density wireless is mission-critical. Cisco publishes no salary data.",
+  "exam_code": "350-101 WLCOR + 8-hour lab",
+  "exam_duration": "Written: 120 minutes (reported, unofficial) · Lab: 8 hours",
+  "exam_format": "Step 1: pass WLCOR 350-101 — the new wireless core exam that replaced ENCOR as this track's qualifier on March 19, 2026, and doubles as the CCNP Wireless core. Step 2: the 8-hour, closed-book CCIE Wireless v1.1 lab — Design module (3h, scenario-based) plus Deploy/Operate/Optimize (5h, hands-on) — spanning both the Catalyst wireless portfolio (9800 WLCs, on-prem) and the Meraki cloud-managed portfolio. Cisco Spaces, OpenRoaming, and Hotspot 2.0 appear in the Design module only. Standard CCIE rules: lab attempt within 3 years of your core pass, 30-day wait after a fail.",
+  "exam_questions": "Written: not published · Lab: scenario-based, not question-counted",
+  "exam_structure": [
+    {
+      "code": "350-101 WLCOR v1.0",
+      "name": "Implementing and Operating Cisco Wireless Core Technologies",
+      "role": "Qualifying exam",
+      "price": "$400",
+      "note": "Replaced ENCOR 350-401 as this track's core on March 19, 2026 — one pass qualifies you for the lab AND banks the CCNP Wireless core. Reported at 120 minutes (third-party; the official topics PDF is the authority)."
+    },
+    {
+      "code": "CCIE Wireless Lab v1.1",
+      "name": "8-hour practical: 3h Design + 5h Deploy/Operate/Optimize",
+      "role": "Lab exam",
+      "price": "$1,600 per attempt",
+      "note": "Effective for tests on or after March 9, 2026 per Cisco's release notes. Covers Catalyst AND Meraki portfolios; Catalyst Center replaced Prime Infrastructure and CMX outright. $1,900 mobile-lab option with Cisco-provided kit; travel and lodging on you."
+    }
+  ],
+  "official_url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/wireless/ccie-wireless/index.html",
+  "official_pricing_url": "https://ciscolearningservices.my.site.com/cln/s/article/book-your-expert-level-exams",
+  "recertification_note": "Standard expert-level policy: 3-year cycle, 120 CE credits on the unified ledger — exam passes, Cisco U courses, and Cisco Live sessions all count, so an active learner maintains the number through ordinary professional development. Let it fully lapse and you restart from the written.",
+  "last_verified": "July 2026",
+  "skills_covered": [
+    {
+      "category": "Radio Frequency and Standards — the 15% foundation",
+      "items": [
+        "802.11 standards through the current generations, at physics depth",
+        "Indoor AND outdoor RF design — site surveys, high-density venues",
+        "CleanAir / CleanAir Pro spectrum intelligence and interference hunting",
+        "AI-Enhanced RRM and RX-SOP — tuning the radio layer the modern way",
+        "The layer no emulator can fake: this domain lives in real air"
+      ]
+    },
+    {
+      "category": "Enterprise Wired Campus (10%)",
+      "items": [
+        "PoE budgets, mGig, and dual-uplink AP connectivity done right",
+        "The SD-Access underlay wireless rides on: VRF, VXLAN, LISP",
+        "Multicast in the campus — where wireless designs quietly break",
+        "MQC-based QoS end to end (the old MLS QoS is gone from v1.1)",
+        "Enough switching to make the wireless actually work"
+      ]
+    },
+    {
+      "category": "Enterprise Wireless Network — the 25% heavyweight",
+      "items": [
+        "Catalyst 9800 WLC at expert depth: L2/L3 operation, routing, NAT",
+        "AP join, profiles, and tags — the 9800 configuration model mastered",
+        "FlexConnect, HA/SSO/ISSU, and mobility including Meraki DL3R and Campus Gateway",
+        "URWB and mesh for outdoor and industrial coverage",
+        "Meraki data plane modes: bridge, mesh, repeater, tunnel — the dual-portfolio reality"
+      ]
+    },
+    {
+      "category": "Wireless Security and Identity (20%)",
+      "items": [
+        "802.1X/MAB with ISE: guest portals, CWA/LWA, sponsor policy, CoA, profiling",
+        "PKI, iPSK, and the modern segmentation layer: UDN/WPN",
+        "TrustSec plus its cloud twin, Meraki Adaptive Policy",
+        "OpenRoaming and Hotspot 2.0 (Design module territory)",
+        "Rogue/IDS, Umbrella integration, and Meraki MR firewall policy"
+      ]
+    },
+    {
+      "category": "Wireless Services (20%)",
+      "items": [
+        "802.11k/v/r roaming plus Adaptive FT — the roaming trinity under pressure",
+        "AVC and NetFlow visibility on the wireless edge",
+        "mDNS gateway design — Bonjour across a segmented enterprise",
+        "QoS for wireless including FastLane and FastLane+",
+        "Wireless multicast, the perennial hour-six lab trap"
+      ]
+    },
+    {
+      "category": "Automation, Analytics & Assurance (10%)",
+      "items": [
+        "Programmability against wireless: APIs, data models, EEM, telemetry",
+        "Catalyst Center driven by Python API calls — not just the GUI",
+        "AI Analytics, AI-Enhanced RRM, Assurance, iCAP, and sensors",
+        "Cisco Spaces (Design module) and SD-Access wireless",
+        "Meraki assurance and intelligent capture — cloud-side operations"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Run the specialist test honestly",
+      "description": "Three questions: Is wireless your actual specialty — the thing colleagues call you for — or one hat among several? Does your market pay for expert wireless depth (venues, healthcare, logistics, partner wireless practices)? Can you sustain serious weekly hours for 12–24 months (the commonly cited CCIE folklore — no official figure exists)? Two noes means CCNP Wireless plus ISE and automation fluency is the better move, and that's a conclusion, not a consolation."
+    },
+    {
+      "step": 2,
+      "title": "Understand the 2026 track split before you book anything",
+      "description": "In March 2026 Cisco carved wireless out of the Enterprise track: ENCOR v1.2 dropped wireless entirely, and the new WLCOR 350-101 became this track's qualifying exam (first testable March 19, 2026). If you hold recent ENWLSD/ENWLSI passes, they carry concentration credit toward CCNP Wireless. If you hold a pre-2026 ENCOR pass, whether it still admits you to the CCIE Wireless lab hasn't been stated anywhere we could verify — confirm with Cisco Learning support before assuming either way."
+    },
+    {
+      "step": 3,
+      "title": "Clear WLCOR — it banks the CCNP Wireless core too",
+      "description": "One $400 WLCOR pass qualifies you for the lab AND serves as the CCNP Wireless core, so nothing is wasted if you stop short of the lab. The exam is reported at 120 minutes covering RF fundamentals through automation and AI (third-party detail — pull the official 350-101 topics list from the Cisco Learning Network before scheduling). Your lab clock starts at the pass: three years to attempt."
+    },
+    {
+      "step": 4,
+      "title": "Budget for reality, including this track's hardware surcharge",
+      "description": "Base CCIE economics: $400 written + $1,600 per lab attempt ($1,900 mobile-lab with Cisco kit), most passers reportedly needing 2–3 attempts, travel and lodging each time — realistic all-in commonly lands at $5,000–12,000 (folklore, but persistent folklore). Wireless adds its own line item: RF cannot be emulated, so budget for physical APs and controller access or rack rentals. Write the whole number down before hour one."
+    },
+    {
+      "step": 5,
+      "title": "Solve the wireless labbing problem deliberately",
+      "description": "This is the track where 'just spin it up in an emulator' fails: RF behavior, real client roaming, CleanAir spectrum data, and Meraki cloud hardware all need real gear or rented racks. A used Catalyst AP or two on your desk covers daily reps; specialist trainers like Network Dojo run racks and bootcamps for full-scale scenarios. Verify any lab platform against the v1.1 blueprint before paying — don't assume tooling that worked for the EI track covers this one."
+    },
+    {
+      "step": 6,
+      "title": "Train the Meraki half like it's half — because it now is",
+      "description": "The v1.1 blueprint states that unless a topic says otherwise, it applies to BOTH the Catalyst and Meraki portfolios: dashboard security, MR firewall, data plane modes, Adaptive Policy, assurance, intelligent capture. Career-long 9800 engineers consistently underestimate this. Get real dashboard time — Meraki's own documentation and trial routes are the starting point — and practice moving between the two management models without mental gear-grinding."
+    },
+    {
+      "step": 7,
+      "title": "Drill the Design module and the Design-only topics",
+      "description": "Three hours, scenario-based, no device access: wireless architecture judged as judgment — requirements, trade-offs, high-density and outdoor design. Note the blueprint's Design-module-only topics: Cisco Spaces, OpenRoaming, Hotspot 2.0. Cisco Live's free on-demand library carries expert wireless design sessions that are the best free training for this module anywhere."
+    },
+    {
+      "step": 8,
+      "title": "Automate like the blueprint means it",
+      "description": "Domain 6 expects Python API calls against Catalyst Center, model-driven telemetry, EEM, and AI-analytics workflows — and the exam description itself says candidates are 'expected to program and automate the network.' Prime Infrastructure and CMX are gone from v1.1; Catalyst Center and Spaces replaced them. If your automation muscle is weak, build it early — it also saves you clock time in the 5-hour module."
+    },
+    {
+      "step": 9,
+      "title": "Book with logistics as strategy, then maintain the number",
+      "description": "Book far ahead at a Cisco facility or mobile-lab event, arrive rested, and plan financially for the failed first attempt the folklore calls normal (30-day wait, sharper second run). After the number: 120 CE credits per 3-year cycle through ordinary learning — Cisco U, Cisco Live, exam passes — keeps it alive. A full lapse means restarting from the written."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "CCIE Wireless v1.1 Exam Topics (Official Blueprint PDF)",
+      "url": "https://learningcontent.cisco.com/documents/marketing/exam-topics/CCIEW_v1.1_BP_Final_Aug25.pdf",
+      "type": "Official Documentation",
+      "note": "The contract: all six domains with weights, the dual Catalyst/Meraki scope statement, and the Design-module-only markers. Read it before anything else."
+    },
+    {
+      "name": "CCIE Wireless v1.1 Release Notes",
+      "url": "https://learningcontent.cisco.com/documents/marketing/exam-topics/CCIEW-v1.1-release-notes.pdf",
+      "type": "Official Documentation",
+      "note": "Cisco's own v1.0-to-v1.1 change list — everything added (Meraki, Catalyst Center, AI analytics) and removed (Prime, CMX, Office Extend) — plus the March 9, 2026 effective date."
+    },
+    {
+      "name": "Cisco Learning Network — CCIE Wireless Exam Topics Hub",
+      "url": "https://learningnetwork.cisco.com/s/ccie-wireless-exam-topics",
+      "type": "Official Documentation",
+      "note": "The living exam-topics page — the place to re-check for revision banners before booking."
+    },
+    {
+      "name": "Cisco Learning Blog — The Dedicated Wireless Track Announcement",
+      "url": "https://blogs.cisco.com/learning/a-dedicated-wireless-certification-track-is-on-the-horizon",
+      "type": "Official Documentation",
+      "note": "Cisco's own explanation of the 2026 track split: WLCOR, the new CCNP Wireless, transition credit for ENWLSD/ENWLSI holders, and the March dates."
+    },
+    {
+      "name": "Cisco Live On-Demand Library",
+      "url": "https://www.ciscolive.com/on-demand.html",
+      "type": "Video Sessions",
+      "note": "Free expert-level wireless design and high-density-venue sessions — the closest thing to Design-module coaching you can get without paying."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "Network Dojo — CCIE Wireless v1.1 Workbooks & Bootcamps",
+      "type": "Workbooks + Racks + Bootcamps",
+      "price": "Varies by workbook/bootcamp",
+      "best_for": "The wireless-specialist trainer — v1.1-specific workbooks and rack scenarios, the closest thing this thin ecosystem has to an INE-style default",
+      "affiliate_url": "https://networkdojo.com/ccie-ccnp-wireless-and-encor-updates/",
+      "affiliate_label": "View Network Dojo",
+      "affiliate_event": "networkdojo_ccie_wireless",
+      "affiliate": false,
+      "note": "Plain reference link, no commission. Honesty note: their v1.1 workbook set releases in waves through December 2026 — first-wave candidates study with an incomplete library."
+    },
+    {
+      "provider": "CBT Nuggets — Cisco Wireless Training",
+      "type": "Video Training",
+      "price": "~$59/month subscription",
+      "best_for": "Approachable video coverage of the wireless track transition and core wireless technologies while dedicated v1.1 courses mature",
+      "affiliate_url": "https://www.cbtnuggets.com/blog/certifications/cisco/cisco-announces-a-dedicated-wireless-certification-track",
+      "affiliate_label": "View CBT Nuggets",
+      "affiliate_event": "cbtnuggets_ccie_wireless",
+      "affiliate": false,
+      "note": "Plain reference link, no commission. Their track-change explainer is worth reading even if you never subscribe."
+    },
+    {
+      "provider": "Cisco U — Official Wireless Learning Paths",
+      "type": "Official Training",
+      "price": "Varies — commonly employer-funded via Learning Credits",
+      "best_for": "Blueprint-aligned official prep — Cisco released new wireless-track training on Cisco U starting March 2026, including the WLFNDU foundations course",
+      "affiliate_url": "https://u.cisco.com/",
+      "affiliate_label": "View on Cisco U",
+      "affiliate_event": "ciscou_ccie_wireless",
+      "affiliate": false,
+      "note": "Plain reference link. If your employer holds Cisco Learning Credits, official training and lab rehearsal are the highest-value redemptions."
+    },
+    {
+      "provider": "Cisco Press — Wireless Design Deep-Dive (ENWLSD Official Cert Guide)",
+      "type": "Book",
+      "price": "~$50–70",
+      "best_for": "The deepest existing Cisco Press wireless design text — still the best book-format RF and survey foundation while the ecosystem catches up",
+      "affiliate_url": "https://www.amazon.com/s?k=CCNP+Enterprise+Wireless+Design+ENWLSD+300-425+Official+Cert+Guide&tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_ccie_wireless",
+      "affiliate": true,
+      "note": "Honesty note: as of July 2026 no WLCOR or CCIE Wireless v1.1 book exists yet — this ENWLSD guide is the closest published deep-dive. Expect new titles as the track matures."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Written via Pearson VUE · Lab via Cisco's expert-exam booking",
+      "url": "https://ciscolearningservices.my.site.com/cln/s/article/book-your-expert-level-exams",
+      "note": "$400 written + $1,600 per lab attempt ($1,900 mobile-lab with Cisco-provided kit); travel and lodging on you, and this track adds real-hardware or rack-rental costs that emulator-friendly tracks don't. Realistic all-in with the commonly cited 2–3 attempts: $5,000–12,000. Cisco Learning Credits redeem for all of it — ask your employer before self-funding."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Should I do CCIE Wireless or stop at CCNP Wireless? The honest answer.",
+      "answer": "For most wireless engineers: CCNP Wireless plus real ISE and automation fluency covers the overwhelming majority of wireless job postings, and the new track means CCNP Wireless finally exists again as a clean destination. CCIE Wireless is the right call in specific rooms: partners with a wireless practice (the number bills), large-venue and healthcare specialists where high-density RF expertise is the whole job, and consultants who want the scarcest credential in a scarce specialty. It's also the priciest way to prove wireless depth — real hardware, thin training ecosystem, travel-heavy lab. Know your room before spending the year."
+    },
+    {
+      "question": "What happened to CCIE Enterprise Wireless?",
+      "answer": "It became CCIE Wireless. Cisco folded standalone CCIE Wireless into the Enterprise track back in 2020 as 'CCIE Enterprise Wireless,' then reversed course in 2026: a dedicated Wireless certification track launched in March 2026 with its own core exam (WLCOR 350-101), a reborn CCNP Wireless, and the lab rebadged as CCIE Wireless v1.1. Whether existing CCIE Enterprise Wireless holders get automatically retitled hasn't been explicitly stated by Cisco as far as we can verify — the signs point to a rename-in-place, but confirm with Cisco Learning support if the wording on your credential matters to you."
+    },
+    {
+      "question": "I already passed ENCOR. Does it still qualify me for this lab?",
+      "answer": "Genuinely unclear, and we won't pretend otherwise. The standard rule — a core-exam pass buys three years of lab eligibility — is well documented, and Cisco's transition style would suggest a pre-March-2026 ENCOR pass carries into the renamed track. But no Cisco source we could find states it explicitly for CCIE Wireless. What IS confirmed: recent ENWLSD/ENWLSI passes carry concentration credit toward the new CCNP Wireless. Before building a plan on an existing ENCOR pass, confirm your lab eligibility with Cisco Learning support in writing."
+    },
+    {
+      "question": "What does it really cost?",
+      "answer": "Paper minimum: $2,000 ($400 WLCOR + one $1,600 lab attempt). Reality, per the persistent folklore that matches most passers' stories: 2–3 lab attempts ($3,200–4,800), travel and lodging each time, 12–24 months of training — realistic all-in of $5,000–12,000. This track then adds its own surcharge: RF can't be emulated, so physical APs, controller access, or rack rentals are a real line item, and the thin v1.1 training market means bootcamps carry more of the load than on mainstream tracks. Budget the honest number before you start."
+    },
+    {
+      "question": "How do you even lab for a wireless CCIE? RF isn't software.",
+      "answer": "Correct — and that's this track's defining prep problem. Radio behavior, client roaming, spectrum analysis, and site-survey judgment need real access points and real air; the Meraki half needs dashboard access to cloud-managed gear. The working pattern: a small pile of physical APs for daily fluency, rented racks (Network Dojo and similar wireless-specialist trainers) for full-scale integration scenarios, and free official resources — Cisco Live design sessions, the blueprint PDFs — for the Design module. Verify any emulation platform against the v1.1 blueprint before paying for it; assumptions imported from the routing tracks don't hold here."
+    },
+    {
+      "question": "How different is the v1.1 lab from the old Enterprise Wireless lab?",
+      "answer": "Substantially — this is a minor version number hiding a major scope shift. Added: the entire Meraki portfolio woven throughout (dashboard security, MR firewall, data plane modes, Adaptive Policy), Catalyst Center replacing Prime Infrastructure and CMX outright, AI-Enhanced RRM and AI analytics, Python API programmability, Umbrella integration, OpenRoaming/Hotspot 2.0, and UDN/WPN segmentation. Removed: Office Extend, Air Time Fairness, MLS QoS, MFP, Wide Area Bonjour, and more. The format itself didn't change — still 3h Design + 5h Deploy/Operate/Optimize, closed book — but a candidate who prepped for v1.0 in 2024 would find a third of the terrain unfamiliar."
+    },
+    {
+      "question": "How does recertification work at this tier?",
+      "answer": "Standard expert-level policy: 3-year cycle, 120 CE credits, one unified ledger fed by exam passes, Cisco U courses, and Cisco Live sessions — so an active wireless engineer maintains the number through ordinary professional learning without re-facing an exam. The one rule that bites: let it fully lapse and you restart the entire process from the written. Don't."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CCNP Wireless",
+      "slug": "ccnp-wireless",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "Its WLCOR core doubles as this cert's qualifying exam — and for most wireless engineers, the CCNP is where the climb sensibly ends."
+    },
+    {
+      "title": "CCIE Enterprise Infrastructure",
+      "slug": "ccie-enterprise-infrastructure",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The generalist expert twin — same lab economics and folklore, aimed at routing and SD-x instead of RF. The track wireless just seceded from."
+    },
+    {
+      "title": "CCNP Enterprise",
+      "slug": "ccnp-enterprise",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "Where wireless lived until 2026 — the right path if you want broad enterprise networking with wireless as one skill among several rather than the specialty."
+    }
+  ],
+  "seo_title": "CCIE Wireless Guide – Costs, New Track & Lab | CertBlueprint",
+  "seo_description": "The honest CCIE Wireless briefing: the new 2026 track, WLCOR 350-101, the 8-hour Catalyst + Meraki lab, real costs, and when CCNP Wireless is enough."
+}

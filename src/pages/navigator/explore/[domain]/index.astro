@@ -1,0 +1,151 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import RoleCardCompact from '../../../../components/navigator/RoleCardCompact.astro';
+import '../../../../styles/navigator.css';
+import { ACCENT_VAR, DOMAINS, DOMAIN_BY_ID } from '../../../../lib/navigator/data/domains';
+import { ROLE_BY_SLUG, rolesForDomain } from '../../../../lib/navigator/data/roles';
+import { TECHNOLOGIES } from '../../../../lib/navigator/data/technologies';
+
+export function getStaticPaths() {
+  return DOMAINS.map((domain) => ({ params: { domain: domain.id } }));
+}
+
+const { domain: domainId } = Astro.params;
+const domain = DOMAIN_BY_ID[domainId as keyof typeof DOMAIN_BY_ID];
+const accent = `var(${ACCENT_VAR[domain.accent]})`;
+const roles = rolesForDomain(domain.id);
+
+// Roles that belong here but whose primary home is elsewhere. Calling these out
+// explicitly is what teaches the overlap rather than just implying it.
+const borrowed = roles.filter((r) => r.domains[0] !== domain.id);
+
+const domainTech = TECHNOLOGIES.filter((t) => t.domains.includes(domain.id)).slice(0, 14);
+
+const title = `${domain.name} Careers — What the Work Really Involves | CertBlueprint`;
+const description = `${domain.purpose} Explore ${roles.length} ${domain.name.toLowerCase()} roles: what people do day to day, the technologies, and the certifications that follow.`;
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Career Navigator', href: '/navigator/' },
+  { label: 'Explore', href: '/navigator/explore/' },
+  { label: domain.name, href: `/navigator/explore/${domain.id}/` },
+];
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs}>
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-6">
+    <p class="font-mono text-xs uppercase tracking-widest mb-3" style={`color: ${accent};`}>
+      Field
+    </p>
+    <h1 class="text-3xl sm:text-4xl font-bold tracking-tight" style="color: var(--cb-text);">
+      {domain.name}
+    </h1>
+    <p class="mt-3 text-lg leading-relaxed" style={`color: ${accent}; max-width: 58ch;`}>
+      {domain.purpose}
+    </p>
+    <p class="mt-4 text-base leading-relaxed" style="color: var(--cb-text-sub); max-width: 64ch;">
+      {domain.intro}
+    </p>
+  </section>
+
+  {/* ── Subdomains ─────────────────────────────────────────────── */}
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+    <h2 class="text-2xl font-bold tracking-tight mb-4" style="color: var(--cb-text);">
+      Inside {domain.name.toLowerCase()}
+    </h2>
+    <div class="grid sm:grid-cols-2 gap-3">
+      {
+        domain.subdomains.map((sub) => (
+          <div class="nav-card nav-card--railed p-4 pl-5" style={`--nav-accent: ${accent};`}>
+            <h3 class="font-semibold text-base" style="color: var(--cb-text);">
+              {sub.name}
+            </h3>
+            <p class="text-sm mt-1 leading-relaxed" style="color: var(--cb-text-sub);">
+              {sub.blurb}
+            </p>
+            <div class="flex flex-wrap gap-x-3 gap-y-1 mt-2.5">
+              {sub.roles
+                .map((slug) => ROLE_BY_SLUG[slug])
+                .filter(Boolean)
+                .map((role) => (
+                  <a
+                    href={`/navigator/roles/${role.slug}/`}
+                    class="text-xs font-medium"
+                    style={`color: ${accent};`}
+                  >
+                    {role.name}
+                  </a>
+                ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  {/* ── All roles ──────────────────────────────────────────────── */}
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+    <h2 class="text-2xl font-bold tracking-tight mb-1" style="color: var(--cb-text);">
+      All {roles.length} roles in this field
+    </h2>
+    <p class="text-sm mb-5" style="color: var(--cb-text-sub);">
+      Each page covers what you actually do, the technologies, where the work happens, the honest
+      downside, and only then the certifications.
+    </p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      {roles.map((role) => <RoleCardCompact role={role} />)}
+    </div>
+  </section>
+
+  {/* ── The overlap, named explicitly ─────────────────────────── */}
+  {
+    borrowed.length > 0 && (
+      <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+        <div class="nav-card p-5" style="--nav-accent: var(--nav-cyan);">
+          <h2 class="text-lg font-bold tracking-tight mb-2" style="color: var(--cb-text);">
+            Roles that live here <em>and</em> somewhere else
+          </h2>
+          <p class="text-sm leading-relaxed mb-3" style="color: var(--cb-text-sub); max-width: 64ch;">
+            These are listed under {domain.name.toLowerCase()} because a real part of the job is{' '}
+            {domain.name.toLowerCase()} work — but their centre of gravity is in another field. If one of
+            them keeps catching your eye, that tells you something.
+          </p>
+          <ul class="space-y-1.5">
+            {borrowed.map((role) => (
+              <li class="text-sm" style="color: var(--cb-text-sub);">
+                <a href={`/navigator/roles/${role.slug}/`} class="font-semibold" style="color: var(--nav-cyan);">
+                  {role.name}
+                </a>
+                {' — '}
+                {role.domains.map((d) => DOMAIN_BY_ID[d].name).join(' + ')}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    )
+  }
+
+  {/* ── Technologies ───────────────────────────────────────────── */}
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <h2 class="text-2xl font-bold tracking-tight mb-1" style="color: var(--cb-text);">
+      Technologies you’ll meet here
+    </h2>
+    <p class="text-sm mb-4" style="color: var(--cb-text-sub);">
+      Click any of them for a plain-English explanation.
+    </p>
+    <div class="grid sm:grid-cols-2 gap-x-6 gap-y-1.5">
+      {
+        domainTech.map((tech) => (
+          <details class="nav-term text-sm" style="color: var(--cb-text-sub);">
+            <summary>{tech.name}</summary>
+            <span class="nav-term__body">{tech.blurb}</span>
+          </details>
+        ))
+      }
+    </div>
+    <a href="/navigator/technologies/" class="inline-block mt-5 text-sm font-semibold" style={`color: ${accent};`}>
+      See the full technology map →
+    </a>
+  </section>
+</BaseLayout>

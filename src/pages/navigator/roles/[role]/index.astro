@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import RoleProfile from '../../../../components/navigator/RoleProfile.astro';
+import '../../../../styles/navigator.css';
+import { ROLES, ROLE_BY_SLUG } from '../../../../lib/navigator/data/roles';
+import { DOMAIN_BY_ID } from '../../../../lib/navigator/data/domains';
+
+export function getStaticPaths() {
+  return ROLES.map((role) => ({ params: { role: role.slug } }));
+}
+
+const { role: roleSlug } = Astro.params;
+const role = ROLE_BY_SLUG[roleSlug as string];
+const primary = DOMAIN_BY_ID[role.domains[0]];
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Career Navigator', href: '/navigator/' },
+  { label: 'Explore', href: '/navigator/explore/' },
+  { label: primary.name, href: `/navigator/explore/${primary.id}/` },
+  { label: role.name, href: `/navigator/roles/${role.slug}/` },
+];
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: `${role.name}: what the job actually involves`,
+  description: role.seoDescription,
+  about: { '@type': 'Occupation', name: role.name, description: role.purpose },
+  publisher: { '@type': 'Organization', name: 'CertBlueprint' },
+};
+---
+
+<BaseLayout
+  title={role.seoTitle}
+  description={role.seoDescription}
+  breadcrumbs={breadcrumbs}
+  structuredData={structuredData}
+>
+  <RoleProfile role={role} />
+
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <div class="nav-card p-5" style="--nav-accent: var(--cb-accent);">
+      <h2 class="font-bold text-base mb-2" style="color: var(--cb-text);">
+        Not sure whether this is actually you?
+      </h2>
+      <p class="text-sm leading-relaxed mb-3" style="color: var(--cb-text-sub); max-width: 62ch;">
+        Reading about a role and enjoying the work are different things. The scenarios show you the
+        problems instead of describing them, and tell you which ones you keep reaching for.
+      </p>
+      <a href="/navigator/assessment/" class="text-sm font-semibold" style="color: var(--cb-accent-text);">
+        Try the scenarios →
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Records locally that this role page was opened, so the results page can
+  // offer to take it into account. Never sent anywhere, capped at 20 entries,
+  // and clearable with one button on the results page.
+  import { recordExplored } from '../../../../lib/navigator/engine/session';
+
+  const slug = window.location.pathname.split('/').filter(Boolean).pop();
+  if (slug) recordExplored(slug);
+</script>

@@ -9,6 +9,10 @@ binding = "ASSETS"
 # Serve the built dist/404.html (with 404 status) for unknown URLs.
 # Without this, Workers assets defaults to "none" and returns an empty 404 body.
 not_found_handling = "404-page"
+# Pages go through the Worker first so it can 301 www.certblueprint.com and
+# retired URLs to their canonical home. Hashed build assets skip it — they are
+# the bulk of requests and never need a redirect.
+run_worker_first = ["/*", "!/_astro/*"]
 
 [ai]
 binding = "AI"

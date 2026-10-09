@@ -1,0 +1,180 @@
+---
+import { GRAPH_EDGES, GRAPH_NODES } from '../../lib/navigator/data/graph';
+import { layoutGraph, assertLayoutLegible } from '../../lib/navigator/engine/layout';
+import { ACCENT_VAR, DOMAIN_BY_ID, DOMAINS } from '../../lib/navigator/data/domains';
+
+const layout = layoutGraph(GRAPH_NODES, GRAPH_EDGES);
+assertLayoutLegible(layout);
+const { nodes, viewBox } = layout;
+const byId = new Map(nodes.map((n) => [n.slug, n]));
+
+// Neighbours are attached to each node so the highlight interaction is pure
+// DOM lookup — no graph structure needs to be shipped as data.
+const neighbours = new Map<string, string[]>();
+for (const e of GRAPH_EDGES) {
+  if (!neighbours.has(e.a)) neighbours.set(e.a, []);
+  if (!neighbours.has(e.b)) neighbours.set(e.b, []);
+  neighbours.get(e.a)!.push(e.b);
+  neighbours.get(e.b)!.push(e.a);
+}
+
+const accentOf = (slug: string) => {
+  const node = byId.get(slug)!;
+  return `var(${ACCENT_VAR[DOMAIN_BY_ID[node.domains[0]].accent]})`;
+};
+
+// Tab order follows the fields as they are listed everywhere else on the site,
+// so keyboard users move through the map in an order that means something.
+const ordered = [...nodes].sort((a, b) => {
+  const da = DOMAIN_BY_ID[a.domains[0]].order;
+  const db = DOMAIN_BY_ID[b.domains[0]].order;
+  return da === db ? a.name.localeCompare(b.name) : da - db;
+});
+
+const ENTRY_PHRASE = {
+  'first-job': 'reachable as a first job',
+  'second-job': 'usually a second job',
+  senior: 'a senior destination',
+} as const;
+
+// Built here rather than inline: assembled across JSX lines, the punctuation
+// picked up the source's line breaks and the screen reader announced
+// "usually a second job , 3 connected moves".
+function describe(n: (typeof nodes)[number]): string {
+  const fields = n.domains.map((d) => DOMAIN_BY_ID[d].name).join(' and ');
+  const moves = `${n.degree} connected ${n.degree === 1 ? 'move' : 'moves'}`;
+  return `${n.name} — ${fields}, ${ENTRY_PHRASE[n.entry]}, ${moves}`;
+}
+
+const orderedDomains = [...DOMAINS].sort((a, b) => a.order - b.order);
+---
+
+<div class="nav-graph">
+  <div class="nav-graph__controls" role="group" aria-label="Filter the map by field">
+    <button type="button" class="nav-graph__chip is-on" data-filter="all">All fields</button>
+    {
+      orderedDomains.map((d) => (
+        <button
+          type="button"
+          class="nav-graph__chip"
+          data-filter={d.id}
+          style={`--chip: var(${ACCENT_VAR[d.accent]});`}
+        >
+          {d.name}
+        </button>
+      ))
+    }
+    <button type="button" class="nav-graph__chip nav-graph__chip--entry" data-filter="first-job">
+      Ways in
+    </button>
+  </div>
+
+  {/* Scrolls inside itself. The map is legible at its natural size or not at
+      all — shrinking it to fit a phone would make every label unreadable,
+      which is worse than asking someone to pan. */}
+  <div class="nav-graph__scroll">
+    <svg
+      id="nav-graph-svg"
+      viewBox={`${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`}
+      width={viewBox.width}
+      height={viewBox.height}
+      role="img"
+      aria-label={`Career map: ${nodes.length} IT roles connected by ${GRAPH_EDGES.length} common moves between them. The same information is listed as text below.`}
+    >
+      {/* Arrowhead for routes drawn by the map application. Unused until then:
+          the base drawing is undirected because a line has no direction, while
+          a route does. */}
+      {/* Two arrowheads, not one: outward moves and inward moves are drawn in
+          different colours, and `context-stroke` is not safe to rely on yet. */}
+      <defs>
+        <marker id="nav-map-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--cb-accent-text)" />
+        </marker>
+        <marker id="nav-map-arrow-in" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--nav-emerald)" />
+        </marker>
+      </defs>
+
+      <g class="nav-graph__edges">
+        {
+          GRAPH_EDGES.map((e) => {
+            const a = byId.get(e.a)!;
+            const b = byId.get(e.b)!;
+            return (
+              <line
+                x1={a.x}
+                y1={a.y}
+                x2={b.x}
+                y2={b.y}
+                class={`nav-graph__edge${e.mutual ? ' is-mutual' : ''}`}
+                data-a={e.a}
+                data-b={e.b}
+              />
+            );
+          })
+        }
+      </g>
+
+      <g id="nav-map-route" class="nav-map__route" aria-hidden="true"></g>
+
+      <g class="nav-graph__nodes">
+        {
+          ordered.map((n) => {
+            const r = n.radius;
+            const dx = n.side === 'start' ? r + 7 : -(r + 7);
+            return (
+              <a
+                href={`/navigator/roles/${n.slug}/`}
+                class="nav-graph__node"
+                data-slug={n.slug}
+                data-domains={n.domains.join(' ')}
+                data-entry={n.entry}
+                data-neighbours={(neighbours.get(n.slug) ?? []).join(' ')}
+                style={`--node: ${accentOf(n.slug)};`}
+              >
+                <title>{describe(n)}</title>
+
+                {/* The ways in get a second ring. Someone with no experience is
+                    the reader most likely to be lost on a map like this. */}
+                {n.entry === 'first-job' && <circle cx={n.x} cy={n.y} r={r + 4.5} class="nav-graph__ring" />}
+
+                {/* Invisible hit area. The dots are 5–11px across, which is a
+                    fine visual weight and a poor touch target. */}
+                <circle cx={n.x} cy={n.y} r={Math.max(r + 11, 16)} fill="transparent" stroke="none" />
+
+                <circle
+                  cx={n.x}
+                  cy={n.y}
+                  r={r}
+                  class={`nav-graph__dot is-${n.entry}`}
+                />
+
+                <text
+                  x={n.x + dx}
+                  y={n.y + n.labelDy + 4}
+                  text-anchor={n.side}
+                  class="nav-graph__label"
+                >
+                  {n.name}
+                </text>
+              </a>
+            );
+          })
+        }
+      </g>
+    </svg>
+  </div>
+
+  {/* The legend teaches the shape language, so it has to use the same shapes:
+      a ringed dot, a plain dot and a hollow one, in the colours the map
+      actually draws. Three greys taught nothing. The last two keys only mean
+      anything once a role is open, which is when they appear on the map. */}
+  <div class="nav-graph__legend">
+    <span class="nav-graph__key"><span class="nav-graph__swatch is-entry"></span> Reachable as a first job</span>
+    <span class="nav-graph__key"><span class="nav-graph__swatch is-second"></span> Usually a second job</span>
+    <span class="nav-graph__key"><span class="nav-graph__swatch is-senior"></span> Senior destination</span>
+    <span class="nav-graph__key nav-graph__key--flow"><span class="nav-graph__swatch"></span> Where it leads</span>
+    <span class="nav-graph__key nav-graph__key--flow"><span class="nav-graph__swatch is-inbound"></span> How people get here</span>
+    <span class="nav-graph__key nav-graph__key--note">Bigger circle = more moves connect there · dot colour = field</span>
+  </div>
+</div>

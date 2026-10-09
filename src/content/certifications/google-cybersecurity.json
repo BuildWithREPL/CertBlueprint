@@ -5,14 +5,14 @@
   "vendor": "Google",
   "vendor_slug": "google",
   "level": "Foundation",
-  "description": "The Google Cybersecurity Professional Certificate is a nine-course, beginner-from-zero program on Coursera covering security foundations, networks, Linux, SQL, Python, and detection & response — with hands-on portfolio activities instead of a proctored exam. Its most valuable perk is concrete: completers get 30% off the CompTIA Security+ exam.",
+  "description": "The Google Cybersecurity Professional Certificate is a nine-course, beginner-from-zero program on Coursera covering security foundations, networks, Linux, SQL, Python, and detection and response — about 170 hours of instruction, with hands-on portfolio activities instead of a proctored exam. Its most valuable perk is concrete: graduates can access the CompTIA Security+ exam and training at a discounted price.",
   "audience": "Complete beginners testing whether security work actually suits them, and career changers who want a structured, brand-name curriculum before committing to a proctored cert. No degree, no prior IT experience required — genuinely zero-to-basics.",
-  "why_get_it": "Three honest reasons. First, it's the cheapest structured way to find out if you like security work — about $49–150 total if you keep pace, versus committing $439 to a Security+ voucher on day one. Second, the curriculum is legitimately good for the price: real Linux command line, real SQL, Python scripting, NIST frameworks, and SIEM concepts, not just vocabulary videos. Third, the Security+ bridge: completers get 30% off the Security+ exam (about $130 saved), which effectively makes this program near-free if you were headed to Security+ anyway — and you should be, because that's the credential HR filters actually search for.",
-  "when_to_get_it": "At the very start of a security-curious career switch, before spending real money on proctored exams. Take it, build the portfolio pieces, then use the discount to sit Security+. Skip it if you already work in IT with security exposure — you'd be paying for material you know, and your money goes further at Security+ directly. And know what it is: preparation and proof of initiative, not a job ticket — security hiring in 2026 still expects Security+, hands-on labs, and often a help-desk or IT rung first.",
+  "why_get_it": "Three honest reasons. First, it's the cheapest structured way to find out if you like security work — about $49–300 total if you keep pace, versus committing to a Security+ voucher on day one. Second, the curriculum is legitimately good for the price: real Linux command line, real SQL, Python scripting, NIST frameworks, and SIEM concepts, not just vocabulary videos. Third, the Security+ bridge: graduates get a discount on the Security+ exam and training, which takes a bite out of the program cost if you were headed to Security+ anyway — and you should be, because that's the credential HR filters actually search for.",
+  "when_to_get_it": "At the very start of a security-curious career switch, before spending real money on proctored exams. Take it, build the portfolio pieces, then use the graduate discount to sit Security+. Skip it if you already work in IT with security exposure — you'd be paying for material you know, and your money goes further at Security+ directly. And know what it is: preparation and proof of initiative, not a job ticket — security hiring in 2026 still expects Security+, hands-on labs, and often a help-desk or IT rung first.",
   "salary_range": "$45,000 – $70,000 (entry SOC roles)",
   "salary_note": "Google advertises a $120K+ median for the field — that's marketing covering 0–5 years of experience. Entry reality: ZipRecruiter (2026) puts entry-level SOC analysts at ~$58K average, with the bulk between $40K and $62.5K. BLS's $124,910 median for Information Security Analysts (May 2024) reflects experienced analysts, not first seats. Expect $45–70K for a first SOC role in most U.S. metros, and treat anything above that as market- and background-dependent.",
   "exam_code": "Coursera Certificate",
-  "exam_duration": "Self-paced — Google says 3–6 months at 5–10 hrs/week; ~133 hours of content, so steady learners finish in 2–3 months (IT-experienced people in weeks)",
+  "exam_duration": "Self-paced — Coursera lists 9 courses at 6 months, 7 hours a week, and about 170 hours of instruction; IT-experienced learners finish in weeks",
   "exam_format": "No proctored exam. Nine self-paced Coursera courses with auto-graded quizzes and hands-on portfolio activities: Linux command line, SQL queries, Python scripts, an incident report, and a NIST CSF-based audit.",
   "exam_questions": "No final exam — graded quizzes and practical activities throughout",
   "official_url": "https://grow.google/certificates/cybersecurity/",
@@ -69,7 +69,7 @@
     {
       "step": 2,
       "title": "Start the 7-day trial with a schedule already set",
-      "description": "It's $49/month after the trial, so pace is literally money. Block 10 hours a week before you subscribe — at that pace the ~133 hours of content lands in about 3 months (~$150). Drifting to 6 months doubles the cost for the same certificate."
+      "description": "It's $49/month after the trial, so pace is literally money. Block 10 hours a week before you subscribe — Coursera puts the program at about 170 hours of instruction, so that pace lands it inside 6 months and under $300. Drifting past that costs more for the same certificate."
     },
     {
       "step": 3,
@@ -88,8 +88,8 @@
     },
     {
       "step": 6,
-      "title": "Claim the Security+ discount immediately on finishing",
-      "description": "Completion unlocks 30% off the Security+ exam — about $307 instead of $439. That discount is the program's single most valuable perk; watch for the offer email and don't let it lapse. Passing both also earns a dual-credential Credly badge."
+      "title": "Claim the Security+ graduate discount on finishing",
+      "description": "Completion unlocks a discounted price on the Security+ exam and training. Coursera confirms the discount but no longer publishes the rate, so check the offer you receive rather than budgeting against a figure from an old blog post — and don't let it lapse. Passing both also earns a dual-credential Credly badge."
     },
     {
       "step": 7,
@@ -106,7 +106,7 @@
     },
     {
       "name": "Professor Messer – Security+ SY0-701 Course",
-      "url": "https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/",
+      "url": "https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/sy0-701-comptia-security-plus-course/",
       "type": "Video Course",
       "note": "The standard free prep for the Security+ exam this certificate discounts — your next step after completing."
     },
@@ -126,7 +126,7 @@
       "name": "CISA Learning",
       "url": "https://learning.cisa.gov/",
       "type": "Free Training",
-      "note": "Free U.S. government cybersecurity training, including SOC-relevant material — free for everyone."
+      "note": "Free U.S. government cybersecurity training, including SOC-relevant material. Open to everyone, but you have to create a free CISA Learning account to get in."
     }
   ],
   "paid_resources": [
@@ -142,10 +142,10 @@
       "note": "Plain reference link, no commission. Finish fast — the meter runs monthly."
     },
     {
-      "provider": "CompTIA Security+ voucher (with completer discount)",
+      "provider": "CompTIA Security+ voucher (with graduate discount)",
       "type": "Certification Exam",
-      "price": "~$307 with the 30% discount ($439 retail as of 2026)",
-      "best_for": "The credential HR filters and DoD 8140 roles actually require — this discount is the program's best perk",
+      "price": "Discounted for graduates — CompTIA lists prices only in its store checkout",
+      "best_for": "The credential HR filters and DoD 8140 roles actually require — the graduate discount is the program's best perk",
       "affiliate_url": "https://www.comptia.org/en-us/certifications/security/",
       "affiliate_label": "View Security+",
       "affiliate_event": "comptia_secplus_via_google",
@@ -179,21 +179,21 @@
     {
       "label": "Enroll – Google Cybersecurity on Coursera",
       "url": "https://www.coursera.org/professional-certificates/google-cybersecurity",
-      "note": "No exam voucher exists — this is a Coursera subscription (~$49/month U.S. after a 7-day free trial). Financial aid can waive the cost entirely. The voucher that matters comes at the END: 30% off CompTIA Security+ for completers."
+      "note": "No exam voucher exists — this is a Coursera subscription. Coursera charges $49 per month in the US and Canada after a 7-day free trial, and says most learners finish for under $300; the price is lower in some other countries. Financial aid can waive it entirely. The saving that matters comes at the end: a graduate discount on the CompTIA Security+ exam and training."
     }
   ],
   "faq": [
     {
       "question": "Will the Google Cybersecurity Certificate get me a SOC job by itself?",
-      "answer": "Rarely, and we'd rather tell you that now. Hiring managers read it as initiative and baseline vocabulary, not a qualifying credential — the assessments are mostly easy multiple-choice, so it certifies exposure rather than tested skill. The transitions that work pair it with Security+ (discounted 30% for completers), hands-on labs like TryHackMe, and often a help-desk or IT rung first. Security isn't a true entry-level field, and no certificate changes that."
+      "answer": "Rarely, and we'd rather tell you that now. Hiring managers read it as initiative and baseline vocabulary, not a qualifying credential — the assessments are mostly easy multiple-choice, so it certifies exposure rather than tested skill. The transitions that work pair it with Security+ (discounted for graduates), hands-on labs like TryHackMe, and often a help-desk or IT rung first. Security isn't a true entry-level field, and no certificate changes that."
     },
     {
       "question": "How much does it actually cost?",
-      "answer": "$49/month on Coursera after a 7-day trial. The content runs about 133 hours, so a steady 10 hours a week finishes in ~3 months (~$150); IT-experienced learners often finish in weeks. Coursera financial aid can make it free if approved. The 30% Security+ discount (~$130 value) effectively refunds most of the cost if you continue to the exam — which is the right move."
+      "answer": "$49/month in the US and Canada after a 7-day trial, and lower in some other countries. Coursera puts the program at about 170 hours of instruction and under 6 months at under 10 hours a week, so most learners finish for under $300; IT-experienced learners often finish in weeks. Coursera financial aid can make it free if approved. The graduate discount on Security+ takes a further bite out of the total if you continue to the exam — which is the right move."
     },
     {
       "question": "Google Cybersecurity Certificate or CompTIA Security+ — which should I get?",
-      "answer": "They're complements, not rivals. The Google cert is the learning program: structured, cheap, zero-prerequisite, with real Linux/SQL/Python content. Security+ is the credential: proctored, DoD 8140-approved, and the keyword HR filters search. If you can only put one line on a resume, Security+ wins every time. The smart sequence is Google cert → 30% discount → Security+."
+      "answer": "They're complements, not rivals. The Google cert is the learning program: structured, cheap, zero-prerequisite, with real Linux/SQL/Python content. Security+ is the credential: proctored, DoD 8140-approved, and the keyword HR filters search. If you can only put one line on a resume, Security+ wins every time. The smart sequence is Google cert → graduate discount → Security+."
     },
     {
       "question": "What's the employer consortium really worth?",
@@ -214,7 +214,7 @@
       "slug": "security-plus",
       "vendor": "CompTIA",
       "vendor_slug": "comptia",
-      "reason": "The intended next step — completers get 30% off the exam, and Security+ is the credential security job filters actually require."
+      "reason": "The intended next step — graduates get a discount on the exam and training, and Security+ is the credential security job filters actually require."
     },
     {
       "title": "Google IT Support Certificate",
@@ -232,5 +232,6 @@
     }
   ],
   "seo_title": "Google Cybersecurity Certificate Review – Cost, Worth It, Security+ Path | CertBlueprint",
-  "seo_description": "Honest Google Cybersecurity Certificate guide: real cost (~$49/mo), the 9 courses, the 30% Security+ discount, entry SOC salary reality, and whether it alone gets you hired."
+  "seo_description": "Honest Google Cybersecurity Certificate guide: real cost (~$49/mo), the 9 courses, the Security+ graduate discount, entry SOC salary reality, and whether it alone gets you hired.",
+  "last_verified": "September 24, 2026"
 }

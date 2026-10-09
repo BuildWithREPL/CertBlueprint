@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import TrialCard from '../../../components/navigator/TrialCard.astro';
+import '../../../styles/navigator.css';
+import { TRIALS, rolesWithTrials, assertTrialIntegrity } from '../../../lib/navigator/data/trials';
+import { ROLE_BY_SLUG } from '../../../lib/navigator/data/roles';
+import { ACCENT_VAR, DOMAIN_BY_ID } from '../../../lib/navigator/data/domains';
+
+const title = 'Try the Work — Free Weekend Trials | CertBlueprint';
+const description =
+  'Before you pay for a certification, spend ninety minutes finding out whether you actually enjoy the work. Free, runs on the machine you already have, no account required.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Career Navigator', href: '/navigator/' },
+  { label: 'Try the work', href: '/navigator/trials/' },
+];
+
+// Fails the build if a trial loses its safety scope, its reflection, or points
+// at a capability that no longer exists.
+assertTrialIntegrity();
+
+const covered = rolesWithTrials()
+  .map((slug) => ROLE_BY_SLUG[slug])
+  .filter(Boolean);
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs}>
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-8">
+    <p class="font-mono text-xs uppercase tracking-widest mb-3" style="color: var(--nav-emerald);">
+      Try the work
+    </p>
+    <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-balance" style="color: var(--cb-text);">
+      Find out whether you like it before you pay for it.
+    </h1>
+
+    <div class="mt-4 space-y-3 text-base leading-relaxed" style="color: var(--cb-text-sub); max-width: 62ch;">
+      <p>
+        A match percentage is a hypothesis. These are the cheap experiments that test it. Each one is
+        free, uses tools already on your computer, and takes under ninety minutes.
+      </p>
+      <p>
+        They are not tutorials and there is nothing to pass. The point is to find out what the work
+        <em>feels</em> like — and <strong>disliking one is just as useful as enjoying it</strong>. Every
+        trial below says plainly what it means if you hated it.
+      </p>
+    </div>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+    <div class="space-y-4">
+      {TRIALS.map((trial, i) => <TrialCard trial={trial} open={i === 0} />)}
+    </div>
+  </section>
+
+  {/* Arriving from a link to a specific trial should show that trial, not a
+      collapsed row somewhere down the page. Progressive enhancement only —
+      without JS the anchor still scrolls to the right card. */}
+  <script is:inline>
+    (function () {
+      function target() {
+        var slug = location.hash.slice(1);
+        if (!slug) return null;
+        var el = document.getElementById(slug);
+        return el && el.tagName === 'DETAILS' ? el : null;
+      }
+      // Expand immediately so the card is already open while the page loads.
+      var el = target();
+      if (el) el.open = true;
+
+      // Scroll only once layout has settled. Doing it during parse loses the
+      // position the moment the rest of the document lands — the card opens
+      // and the reader is left at the top of the page wondering why.
+      // `behavior: 'instant'` overrides the site's global smooth scrolling on
+      // purpose. Expanding a card mid-flight shifts the layout under an
+      // animated scroll and it gives up partway — which looks exactly like the
+      // link being broken. Someone who asked for a specific trial should also
+      // simply be at it, not watch five thousand pixels go by.
+      function reveal() {
+        var t = target();
+        if (!t) return;
+        t.open = true;
+        t.scrollIntoView({ block: 'start', behavior: 'instant' });
+      }
+      if (document.readyState === 'complete') reveal();
+      else window.addEventListener('load', reveal);
+      window.addEventListener('hashchange', reveal);
+    })();
+  </script>
+
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <div class="nav-card p-5" style="--nav-accent: var(--cb-accent);">
+      <h2 class="font-bold text-base mb-2" style="color: var(--cb-text);">
+        Roles these currently cover
+      </h2>
+      <p class="text-sm leading-relaxed mb-3" style="color: var(--cb-text-sub); max-width: 62ch;">
+        Trials attach to capabilities rather than job titles, so one appears on every role that
+        genuinely exercises it. More are being written — these {TRIALS.length} are the first.
+      </p>
+      <div class="flex flex-wrap gap-x-3 gap-y-1.5">
+        {
+          covered.map((role) => (
+            <a
+              href={`/navigator/roles/${role.slug}/`}
+              class="text-sm font-medium"
+              style={`color: var(${ACCENT_VAR[DOMAIN_BY_ID[role.domains[0]].accent]});`}
+            >
+              {role.name}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

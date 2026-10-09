@@ -1,0 +1,95 @@
+---
+import type { DimensionDelta } from '../../lib/navigator/engine/compare';
+import { DIMENSION_BY_ID, GROUP_LABEL } from '../../lib/navigator/data/dimensions';
+import { groupOf } from '../../lib/navigator/engine/vector';
+
+interface Props {
+  deltas: DimensionDelta[];
+  aName: string;
+  bName: string;
+  /** Shows which side each row favours. Off for the overlap section, where neither does. */
+  showLean?: boolean;
+}
+
+const { deltas, aName, bName, showLean = true } = Astro.props;
+
+const A = 'var(--nav-cyan)';
+const B = 'var(--nav-violet)';
+
+const pct = (n: number) => Math.round(Math.max(0, Math.min(1, n)) * 100);
+---
+
+<div class="space-y-5">
+  {
+    deltas.map((d) => {
+      const dim = DIMENSION_BY_ID[d.id];
+      const lean = d.leans === 'a' ? aName : bName;
+      const leanColor = d.leans === 'a' ? A : B;
+      return (
+        <div>
+          <div class="flex items-baseline justify-between gap-3 mb-0.5 flex-wrap">
+            <span class="text-sm font-semibold" style="color: var(--cb-text);">{dim.label}</span>
+            <span class="font-mono text-[0.65rem] uppercase tracking-widest" style="color: var(--cb-text-muted);">
+              {showLean ? (
+                <span style={`color: ${leanColor};`}>{lean}</span>
+              ) : (
+                GROUP_LABEL[groupOf(d.id)]
+              )}
+            </span>
+          </div>
+
+          <p class="text-xs leading-relaxed mb-2" style="color: var(--cb-text-sub); max-width: 60ch;">
+            {dim.blurb}
+          </p>
+
+          {/* Two plain bars rather than one diverging pair: a centre-out chart
+              reads well on a wide screen and becomes unreadable at 360px, and
+              this comparison is exactly the thing people open on a phone. */}
+          <div class="space-y-1">
+            {/* Wraps on narrow screens so the role name gets its own line
+                instead of being truncated to "Service Provider Netw…", which is
+                the failure mode of a fixed-width label beside a flexible bar. */}
+            <div class="flex items-center gap-x-2.5 flex-wrap sm:flex-nowrap">
+              <span
+                class="text-xs font-medium truncate w-full sm:w-[8.5rem] sm:shrink-0"
+                style="color: var(--cb-text-sub);"
+                title={aName}
+              >
+                {aName}
+              </span>
+              {/* Width is rendered server-side rather than animated in from
+                  zero. The animated version depends on a script that ships with
+                  ScoreBar, and this component is used on pages that do not
+                  include it — which silently left every bar empty. */}
+              <div class="nav-bar-track flex-1 min-w-0" role="img" aria-label={`${aName}, ${dim.label}: ${pct(d.a)} out of 100`}>
+                <div class="nav-bar-fill" style={`width: ${pct(d.a)}%; --nav-accent: ${A};`} />
+              </div>
+              <span class="font-mono text-[0.7rem] tabular-nums shrink-0 w-8 text-right" style="color: var(--cb-text-muted);">
+                {pct(d.a)}
+              </span>
+            </div>
+
+            {/* Wraps on narrow screens so the role name gets its own line
+                instead of being truncated to "Service Provider Netw…", which is
+                the failure mode of a fixed-width label beside a flexible bar. */}
+            <div class="flex items-center gap-x-2.5 flex-wrap sm:flex-nowrap">
+              <span
+                class="text-xs font-medium truncate w-full sm:w-[8.5rem] sm:shrink-0"
+                style="color: var(--cb-text-sub);"
+                title={bName}
+              >
+                {bName}
+              </span>
+              <div class="nav-bar-track flex-1 min-w-0" role="img" aria-label={`${bName}, ${dim.label}: ${pct(d.b)} out of 100`}>
+                <div class="nav-bar-fill" style={`width: ${pct(d.b)}%; --nav-accent: ${B};`} />
+              </div>
+              <span class="font-mono text-[0.7rem] tabular-nums shrink-0 w-8 text-right" style="color: var(--cb-text-muted);">
+                {pct(d.b)}
+              </span>
+            </div>
+          </div>
+        </div>
+      );
+    })
+  }
+</div>

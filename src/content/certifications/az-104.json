@@ -4,10 +4,10 @@
   "vendor": "Microsoft",
   "vendor_slug": "microsoft",
   "level": "Associate",
-  "description": "The Microsoft Certified: Azure Administrator Associate (AZ-104) validates skills in managing Azure subscriptions, implementing storage, configuring virtual networks, managing identities, and monitoring Azure resources. It is the foundational Azure operations credential and a prerequisite for most advanced Azure certifications.",
-  "audience": "Systems administrators, IT operations professionals, and infrastructure engineers who manage or plan to manage Azure environments. Also a strong fit for Windows administrators transitioning to cloud roles.",
+  "description": "The Microsoft Certified: Azure Administrator Associate (AZ-104) is the operations credential for Azure. The exam runs 100 minutes, costs $165 USD, and mixes multiple choice with drag-and-drop, case studies and other interactive question types. Microsoft will not confirm which exams include live labs — they can be pulled at any time — so plan for them and take the 120-minute variant in your stride if it appears. It covers managing identities and governance, storage, compute, virtual networking, and monitoring and backup — the work of keeping an Azure estate running rather than designing one, which is what separates it from the architect exam AZ-305.",
+  "audience": "Systems administrators, IT operations staff and infrastructure engineers who already manage Azure or are about to. Windows administrators moving to cloud are the classic fit: Active Directory, Windows Server and Microsoft 365 experience maps directly onto Entra ID, virtual machines and tenant administration. Microsoft expects at least six months of hands-on Azure administration, and the performance-based questions make that obvious — this is not an exam you can read your way through.",
   "why_get_it": "Azure is the second-largest cloud platform globally and the dominant cloud in enterprise Microsoft-heavy environments. Organizations running Windows Server, Active Directory, Microsoft 365, and SQL Server are increasingly extending those workloads to Azure—creating strong demand for administrators who understand both on-premises Microsoft infrastructure and Azure. AZ-104 validates exactly that operational skill set: managing Azure identities, networking, storage, virtual machines, and monitoring. Unlike AWS SAA (which focuses on architecture design), AZ-104 is an operations-focused credential—it validates what you can configure and maintain, not just design. For IT professionals in Microsoft-centric environments, this is one of the highest-return certifications available.",
-  "when_to_get_it": "Get AZ-104 if your organization uses Azure or is migrating to it, or if you want to move into cloud operations roles in Microsoft-centric enterprises. Experience with Windows Server, Active Directory, or Microsoft 365 administration significantly reduces the learning curve. The AZ-900 (Azure Fundamentals) exam is optional prep—most experienced IT administrators can skip it and go directly to AZ-104.",
+  "when_to_get_it": "Take AZ-104 when your organisation runs on Azure or is migrating to it, or when you want to move into cloud operations in a Microsoft-centric enterprise. AZ-900 is optional prep, not a prerequisite — experienced administrators usually skip it. Build the experience in a free Azure account or the $150-a-month Visual Studio credit before booking; most people need two to three months alongside a job. It is also the natural stepping stone to AZ-305 (solutions architect) and AZ-500 (security engineer), both of which assume you can already administer what they ask you to design or secure.",
   "salary_range": "$85,000 – $125,000",
   "salary_note": "Azure Administrator roles typically start at $85K–$100K for candidates with 1–2 years of cloud experience, and reach $115K–$140K+ with 3–5 years. In organizations with heavy Microsoft infrastructure investment, Azure skills command a premium over on-premises-only experience.",
   "exam_code": "AZ-104",
@@ -16,7 +16,7 @@
   "exam_questions": "40–60 questions (Microsoft does not publish an exact count)",
   "official_url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-administrator/",
   "official_pricing_url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-administrator/#certification-exam-disclaimer",
-  "recertification_note": "AZ-104 does not expire. Microsoft Associate and Expert certifications earned after June 2021 are renewed annually through Microsoft Learn for free—a short online assessment keeps your certification active without re-taking the exam.",
+  "recertification_note": "Microsoft role-based certifications are valid for one year, and renewal is free: you take a short, unproctored, open-book assessment on Microsoft Learn during the six-month window before your expiry date, as many times as you need, and passing extends the certification another year. Miss the window and you sit the full exam again. Microsoft Fundamentals certifications do not expire at all.",
   "skills_covered": [
     {
       "category": "Manage Azure Identities and Governance",
@@ -238,5 +238,6 @@
     }
   ],
   "seo_title": "Microsoft AZ-104 Study Guide – Azure Administrator Associate Exam Details and Study Plan | CertBlueprint",
-  "seo_description": "Complete AZ-104 Azure Administrator Associate guide: who it's for, salary expectations, exam breakdown, step-by-step study plan, free and paid resources, and FAQ."
+  "seo_description": "Complete AZ-104 Azure Administrator Associate guide: who it's for, salary expectations, exam breakdown, step-by-step study plan, free and paid resources, and FAQ.",
+  "last_verified": "September 24, 2026"
 }

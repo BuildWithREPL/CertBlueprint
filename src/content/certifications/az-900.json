@@ -5,17 +5,17 @@
   "vendor": "Microsoft",
   "vendor_slug": "microsoft",
   "level": "Foundation",
-  "description": "AZ-900 (Azure Fundamentals) is Microsoft's foundational cloud certification. The exam validates a broad understanding of cloud concepts and core Azure services, pricing, and governance—the most accessible entry point into the Microsoft Azure ecosystem.",
-  "audience": "Beginners and career changers entering cloud, non-technical professionals (sales, finance, project management) who work with Azure, and IT pros who want an entry credential before tackling AZ-104 or other role-based Azure exams.",
+  "description": "AZ-900 (Azure Fundamentals) is Microsoft's foundational cloud certification. The exam is roughly 40 to 60 questions in 45 minutes, scored out of 1000 with 700 to pass, and costs $99 USD. It covers cloud concepts, Azure architecture and core services, and — unusually for a fundamentals exam — a full section on management and governance: cost tools, service-level agreements, policy, role-based access control and resource locks. It asks what a service is for and when you would reach for it, not how to configure one.",
+  "audience": "Beginners and career changers entering cloud, and non-technical people — sales, finance, procurement, project management — who sit in meetings where Azure services and billing get discussed. It also suits IT professionals who want a cheap, fast first credential before the role-based exams. There are no prerequisites and no assumed experience; general technology familiarity is enough.",
   "why_get_it": "AZ-900 is the easiest way to get 'Azure certified' and prove cloud literacy in Microsoft environments. Azure is the dominant cloud in enterprise and government, so demonstrating you understand its services, pricing, and governance carries real weight—even in non-technical roles. For beginners it's a confidence-building first win and the foundation for the higher-value role-based certs (AZ-104, AZ-305, security and data tracks). Microsoft's free annual renewal model also means it costs little to maintain over time.",
-  "when_to_get_it": "Get AZ-900 if you're new to cloud and want an approachable first Azure certification, or if your role touches Azure without being deeply technical. If you already have IT experience and a technical goal, you can often go straight to AZ-104—but AZ-900 is a low-cost, low-risk way to build a foundation and confidence first, and it's a common requirement in some training programs.",
+  "when_to_get_it": "Take AZ-900 if you are new to cloud and want an approachable first Azure certification, or if your job touches Azure without being deeply technical. Most people study one to three weeks using the free Microsoft Learn path. If you already have IT experience and a technical target, you can go straight to AZ-104 — AZ-900 is not a prerequisite for anything, and on its own it rarely moves a hiring decision. It earns its place as a low-cost way to build vocabulary and confidence, as proof of cloud literacy in a non-technical role, or because a training programme or employer asks for it. Watch for Microsoft Learn challenges and virtual training days, which regularly hand out free or discounted exam vouchers.",
   "exam_code": "AZ-900",
   "exam_duration": "45 minutes",
   "exam_format": "Roughly 40–60 questions: multiple choice, multiple response, and other interactive formats. Passing score: 700 (on a scale of 100–1000).",
   "exam_questions": "~40–60 questions",
   "official_url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/",
   "official_pricing_url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/",
-  "recertification_note": "Microsoft Fundamentals certifications like AZ-900 do not expire—they have no renewal requirement. (Role-based certs such as AZ-104 renew annually for free via a Microsoft Learn assessment.)",
+  "recertification_note": "AZ-900 does not expire — Microsoft Fundamentals certifications have no renewal requirement. Role-based certifications such as AZ-104 are different: they last one year and renew free through a short Microsoft Learn assessment.",
   "salary_range": "$50,000 – $85,000",
   "salary_note": "AZ-900 is a foundational credential, not a salary driver on its own—it typically adds a few thousand dollars to an existing IT salary and helps open the door to entry cloud roles ($50K–$70K). Its real value is as a stepping stone: pairing it with AZ-104 and hands-on Azure experience moves you toward the $75K–$110K administrator range and beyond.",
   "skills_covered": [
@@ -215,5 +215,6 @@
     }
   ],
   "seo_title": "Microsoft AZ-900 Azure Fundamentals Study Guide | CertBlueprint",
-  "seo_description": "Complete Microsoft AZ-900 (Azure Fundamentals) guide: who it's for, salary, exam domains, study path, free Microsoft Learn resources, paid courses, and FAQ."
+  "seo_description": "Complete Microsoft AZ-900 (Azure Fundamentals) guide: who it's for, salary, exam domains, study path, free Microsoft Learn resources, paid courses, and FAQ.",
+  "last_verified": "September 24, 2026"
 }

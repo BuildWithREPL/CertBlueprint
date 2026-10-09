@@ -1,0 +1,63 @@
+---
+import type { Role } from '../../lib/navigator/types';
+import { ACCENT_VAR, DOMAIN_BY_ID } from '../../lib/navigator/data/domains';
+
+interface Props {
+  role: Role;
+  /** Optional match percentage, shown on the results page only. */
+  percent?: number;
+}
+
+const { role, percent } = Astro.props;
+const primary = DOMAIN_BY_ID[role.domains[0]];
+const accent = `var(${ACCENT_VAR[primary.accent]})`;
+
+const ENTRY_LABEL: Record<Role['entry'], string> = {
+  'first-job': 'Reachable as a first job',
+  'second-job': 'Usually a second role',
+  senior: 'A senior destination',
+};
+---
+
+<a
+  href={`/navigator/roles/${role.slug}/`}
+  class="nav-card nav-card--railed block p-4 pl-5 h-full"
+  style={`--nav-accent: ${accent};`}
+>
+  <div class="flex items-start justify-between gap-3">
+    <h3 class="font-semibold text-base leading-snug" style="color: var(--cb-text);">
+      {role.name}
+    </h3>
+    {
+      percent !== undefined && (
+        <span class="font-mono text-sm font-bold shrink-0" style={`color: ${accent};`}>
+          {percent}%
+        </span>
+      )
+    }
+  </div>
+
+  <p class="text-sm leading-relaxed mt-1.5" style="color: var(--cb-text-sub);">
+    {role.purpose}
+  </p>
+
+  {/* Domain pills are the whole point on an intersection role — seeing
+      "Cybersecurity + Networking" on one card does more explaining than a
+      paragraph would. */}
+  <div class="flex flex-wrap items-center gap-1.5 mt-3">
+    {
+      role.domains.map((id) => {
+        const d = DOMAIN_BY_ID[id];
+        return (
+          <span class="nav-pill" style={`--nav-accent: var(${ACCENT_VAR[d.accent]});`}>
+            {d.name}
+          </span>
+        );
+      })
+    }
+  </div>
+
+  <p class="text-xs mt-2.5" style="color: var(--cb-text-muted);">
+    {ENTRY_LABEL[role.entry]}
+  </p>
+</a>

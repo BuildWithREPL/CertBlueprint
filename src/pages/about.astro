@@ -6,11 +6,13 @@ const breadcrumbs = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about/' },
 ];
+
+const link = 'underline hover:opacity-80 transition-opacity';
 ---
 
 <BaseLayout
   title="About CertBlueprint – IT Certification Directory"
-  description="CertBlueprint is an independent IT certification directory operated by SureWhyNot. Learn who we are, what we build, and how we evaluate resources."
+  description="CertBlueprint is an independent IT certification directory and career navigator operated by SureWhyNot. Who we are, how content is written and checked, and how we earn money."
   breadcrumbs={breadcrumbs}
 >
   <div class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
@@ -19,7 +21,7 @@ const breadcrumbs = [
     <header class="mt-4 mb-10 pb-6" style="border-bottom: 1px solid var(--cb-border);">
       <h1 class="text-2xl sm:text-3xl font-bold mb-3" style="color: var(--cb-text);">About CertBlueprint</h1>
       <p class="text-base leading-relaxed" style="color: var(--cb-text-sub);">
-        An independent IT certification directory built to cut through marketing noise.
+        An independent IT certification directory and career navigator, built to cut through marketing noise.
       </p>
     </header>
 
@@ -31,14 +33,30 @@ const breadcrumbs = [
           CertBlueprint is a structured IT certification reference. For each certification, we cover what it actually tests, who it is and is not for, when it makes sense in a career sequence, and where to study—both free and paid resources, with honest assessments of each.
         </p>
         <p class="mt-3">
-          We do not produce AI-generated summaries. Every guide is written and reviewed by practitioners who have studied the material, passed the exams, or worked in the relevant field. If we cannot write something accurate and useful, we do not publish it.
+          Alongside the guides, the free <a href="/navigator/" class={link} style="color: var(--cb-accent-text);">IT Career Navigator</a> helps people who do not yet know which part of IT suits them. It describes what each role involves day to day—including the downsides—and matches your answers to the kinds of work you gravitate toward. The assessment runs entirely in your browser: no account, and your answers are not sent to us.
+        </p>
+      </section>
+
+      <section id="how-we-work" style="scroll-margin-top: 5rem;">
+        <h2 class="text-base font-bold mb-3" style="color: var(--cb-text);">How content is written and checked</h2>
+        <p>
+          CertBlueprint is a small operation, and we use AI writing tools to help research and draft content. We do not publish that output unchecked. Hard facts—exam codes, prices, question counts, durations, passing scores, retirement dates—are checked against the certification vendor's official pages before they go live, and every certification guide shows the date its facts were last verified.
+        </p>
+        <p class="mt-3">
+          Judgement calls—which certification to take first, whether a role is realistic as a first job, which study resources are worth the money—are editorial opinion informed by vendor documentation, published job requirements, and widely shared candidate experience. We label salary figures as directional, and we say so when the honest answer is "it depends".
+        </p>
+        <p class="mt-3">
+          The site also has one feature where a live AI model responds to you directly: the <a href="/navigator-lab" class={link} style="color: var(--cb-accent-text);">Navigator Lab</a> conversation. It is labelled as AI on the page, and the roles and trials it links to come from our own checked data rather than from the model.
+        </p>
+        <p class="mt-3">
+          If you find something wrong, <a href="/contact/" class={link} style="color: var(--cb-accent-text);">tell us</a>. Corrections are made on the page itself and the verification date is updated.
         </p>
       </section>
 
       <section>
         <h2 class="text-base font-bold mb-3" style="color: var(--cb-text);">Who operates this site</h2>
         <p>
-          CertBlueprint is a project by <a href="https://surewhynot.app" target="_blank" rel="noopener noreferrer" class="underline hover:opacity-80 transition-opacity" style="color: var(--cb-accent-text);">SureWhyNot</a>, a small independent software and content operation. We build focused tools and reference sites for specific audiences who need accurate, structured information without the noise.
+          CertBlueprint is a project by <a href="https://surewhynot.app" target="_blank" rel="noopener noreferrer" class={link} style="color: var(--cb-accent-text);">SureWhyNot</a>, a small independent software and content operation. We build focused tools and reference sites for specific audiences who need accurate, structured information without the noise.
         </p>
         <p class="mt-3">
           SureWhyNot is not a certification training company, an exam prep provider, or affiliated with any certification vendor. We are a reference publisher. Our job is to help you understand what a cert covers and whether it makes sense for you—before you spend time and money on it.
@@ -46,12 +64,12 @@ const breadcrumbs = [
       </section>
 
       <section>
-        <h2 class="text-base font-bold mb-3" style="color: var(--cb-text);">How we evaluate resources</h2>
+        <h2 class="text-base font-bold mb-3" style="color: var(--cb-text);">How the site is funded</h2>
         <p>
-          Resources listed on CertBlueprint—courses, books, practice exams, lab tools—are selected based on community track record, content alignment with the official exam topics, and candidate outcomes. We include resources regardless of whether they have an affiliate program. Several of the resources we recommend most often are entirely free.
+          CertBlueprint is free to use and is supported in two ways: display advertising served by Google AdSense, and affiliate links. Advertising is placed by Google, and we do not accept payment to feature, rank, or review a certification, course, or vendor.
         </p>
         <p class="mt-3">
-          Some outbound links are affiliate links. Purchasing through them earns CertBlueprint a small commission at no extra cost to you. Affiliate relationships do not change which resources we recommend or how we describe them. See our <a href="/legal/affiliate-disclosure/" class="underline hover:opacity-80 transition-opacity" style="color: var(--cb-accent-text);">affiliate disclosure</a> for full details.
+          Some outbound links to courses and practice exams are affiliate links. Purchasing through them earns CertBlueprint a small commission at no extra cost to you. Resources are selected on content alignment with the official exam objectives and community track record, and we include them whether or not they have an affiliate program—several of the resources we recommend most often are entirely free. The Career Navigator never ranks a role or path higher because it earns anyone money. See our <a href="/legal/affiliate-disclosure/" class={link} style="color: var(--cb-accent-text);">affiliate disclosure</a> and <a href="/legal/privacy-policy/" class={link} style="color: var(--cb-accent-text);">privacy policy</a> for details.
         </p>
       </section>
 
@@ -68,7 +86,7 @@ const breadcrumbs = [
       <section>
         <h2 class="text-base font-bold mb-3" style="color: var(--cb-text);">Contact</h2>
         <p>
-          For questions, corrections, or feedback, reach us at <a href="mailto:contact@surewhynot.app" class="underline hover:opacity-80 transition-opacity" style="color: var(--cb-accent-text);">contact@surewhynot.app</a>. We read every message.
+          For questions, corrections, or feedback, reach us at <a href="mailto:contact@surewhynot.app" class={link} style="color: var(--cb-accent-text);">contact@surewhynot.app</a>. We read every message.
         </p>
         <div class="mt-4">
           <a href="/contact/" class="inline-flex items-center gap-1.5 text-sm font-medium" style="color: var(--cb-accent-text);">

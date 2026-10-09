@@ -1,0 +1,1374 @@
+/* ─────────────────────────────────────────────────────────────
+   CERTBLUEPRINT NAVIGATOR — feature styles
+
+   Builds on the sitewide --cb-* tokens in global.css rather than
+   introducing a second theme system. Every colour below resolves
+   through those tokens so light / dark / high-contrast all work
+   without a single extra media query.
+
+   Deliberately absent: neon, matrix rain, and anything that animates
+   without communicating something. Glow appears exactly once, on the
+   career-map teaser, and only on the roles the most moves pass
+   through — so the brightest thing on the picture is also the most
+   important. Anywhere else it would be decoration.
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  --nav-blue: #2563eb;
+  --nav-red: #dc2626;
+  --nav-violet: #7c3aed;
+  --nav-cyan: #0891b2;
+  --nav-amber: #d97706;
+  --nav-emerald: #059669;
+  --nav-slate: #475569;
+
+  --nav-ok: #059669;
+  --nav-warn: #d97706;
+  --nav-fail: #dc2626;
+  --nav-unknown: #94a3b8;
+}
+
+[data-theme='dark'] {
+  --nav-blue: #60a5fa;
+  --nav-red: #f87171;
+  --nav-violet: #a78bfa;
+  --nav-cyan: #22d3ee;
+  --nav-amber: #fbbf24;
+  --nav-emerald: #34d399;
+  --nav-slate: #94a3b8;
+
+  --nav-ok: #34d399;
+  --nav-warn: #fbbf24;
+  --nav-fail: #f87171;
+  --nav-unknown: #64748b;
+}
+
+[data-theme='hc'] {
+  --nav-blue: #80b3ff;
+  --nav-red: #ff9a9a;
+  --nav-violet: #c4b5fd;
+  --nav-cyan: #67e8f9;
+  --nav-amber: #fcd34d;
+  --nav-emerald: #6ee7b7;
+  --nav-slate: #e5e7eb;
+
+  --nav-ok: #6ee7b7;
+  --nav-warn: #fcd34d;
+  --nav-fail: #ff9a9a;
+  --nav-unknown: #e5e7eb;
+}
+
+/* ─── Cards ──────────────────────────────────────────────────── */
+
+.nav-card {
+  background: var(--cb-bg-card);
+  border: 1px solid var(--cb-border);
+  border-radius: 0.875rem;
+  transition:
+    border-color 0.15s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+a.nav-card:hover,
+button.nav-card:hover {
+  border-color: var(--nav-accent, var(--cb-accent));
+  box-shadow: 0 4px 16px -6px rgb(0 0 0 / 0.18);
+}
+
+/* The accent rail is how a card announces which world it belongs to,
+   without needing a coloured background that fights the theme. */
+.nav-card--railed {
+  position: relative;
+  overflow: hidden;
+}
+.nav-card--railed::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: var(--nav-accent, var(--cb-accent));
+  /* Above any full-bleed content inside the card — the teaser's artwork
+     runs to the card edge and would otherwise paint over the rail. */
+  z-index: 2;
+}
+
+/* ─── Domain pills ───────────────────────────────────────────── */
+
+.nav-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border: 1px solid var(--nav-accent, var(--cb-border));
+  color: var(--nav-accent, var(--cb-text-sub));
+  background: transparent;
+  white-space: nowrap;
+}
+
+/* ─── Score + signal bars ────────────────────────────────────── */
+
+.nav-bar-track {
+  height: 0.5rem;
+  border-radius: 9999px;
+  background: var(--cb-bg-subtle);
+  overflow: hidden;
+}
+[data-theme='hc'] .nav-bar-track {
+  border: 1px solid var(--cb-border);
+}
+
+.nav-bar-fill {
+  height: 100%;
+  border-radius: 9999px;
+  background: var(--nav-accent, var(--cb-accent));
+  /* Width is animated on mount so the results page reads as a measurement
+     settling, rather than as decoration. */
+  transition: width 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-bar-fill {
+    transition: none;
+  }
+}
+
+/* ─── Micro-simulation blocks ────────────────────────────────── */
+
+.nav-sim {
+  border: 1px solid var(--cb-border);
+  border-radius: 0.625rem;
+  background: var(--cb-bg-subtle);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.78rem;
+  overflow: hidden;
+}
+
+.nav-sim__caption {
+  padding: 0.4rem 0.7rem;
+  border-bottom: 1px solid var(--cb-border);
+  color: var(--cb-text-muted);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Topology: a vertical chain on narrow screens, horizontal when there is room.
+   The arrow direction flips with it, which is the only reason for the two rules. */
+.nav-topo {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0.75rem;
+}
+.nav-topo__node {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--cb-border);
+  border-radius: 0.4rem;
+  background: var(--cb-bg-card);
+}
+.nav-topo__link {
+  width: 1px;
+  height: 0.9rem;
+  margin-left: 1.15rem;
+  background: var(--cb-border);
+}
+.nav-topo__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  flex-shrink: 0;
+  background: var(--nav-unknown);
+}
+.nav-topo__dot[data-state='ok'] {
+  background: var(--nav-ok);
+}
+.nav-topo__dot[data-state='warn'] {
+  background: var(--nav-warn);
+}
+.nav-topo__dot[data-state='fail'] {
+  background: var(--nav-fail);
+}
+
+@media (min-width: 640px) {
+  .nav-topo {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .nav-topo__link {
+    width: 1.1rem;
+    height: 1px;
+    margin-left: 0;
+  }
+}
+
+/* Log table: scrolls inside itself so the page body never scrolls sideways. */
+.nav-sim__scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.nav-logtable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 30rem;
+}
+.nav-logtable th,
+.nav-logtable td {
+  padding: 0.35rem 0.7rem;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--cb-border-sub);
+}
+.nav-logtable th {
+  color: var(--cb-text-muted);
+  font-weight: 600;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.nav-logtable tr[data-flag='1'] {
+  background: color-mix(in srgb, var(--nav-warn) 12%, transparent);
+}
+.nav-logtable tr[data-flag='1'] td {
+  font-weight: 600;
+}
+
+/* ─── Option buttons ─────────────────────────────────────────── */
+
+.nav-option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--cb-border);
+  border-radius: 0.625rem;
+  background: var(--cb-bg-card);
+  color: var(--cb-text);
+  cursor: pointer;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  transition:
+    border-color 0.12s ease,
+    background 0.12s ease;
+}
+.nav-option:hover {
+  border-color: var(--cb-accent);
+  background: var(--cb-accent-sub);
+}
+.nav-option[aria-pressed='true'] {
+  border-color: var(--cb-accent);
+  background: var(--cb-accent-sub);
+  box-shadow: inset 0 0 0 1px var(--cb-accent);
+}
+
+/* ─── Inline glossary term ───────────────────────────────────── */
+
+.nav-term {
+  border-bottom: 1px dotted currentColor;
+  cursor: help;
+  font-style: normal;
+}
+.nav-term > summary {
+  display: inline;
+  list-style: none;
+  cursor: help;
+}
+.nav-term > summary::-webkit-details-marker {
+  display: none;
+}
+.nav-term__body {
+  display: block;
+  margin-top: 0.4rem;
+  padding: 0.5rem 0.7rem;
+  border-left: 2px solid var(--cb-accent);
+  background: var(--cb-bg-subtle);
+  border-radius: 0 0.35rem 0.35rem 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--cb-text-sub);
+}
+
+/* ─── Ambient progress ───────────────────────────────────────── */
+
+.nav-progress {
+  display: flex;
+  gap: 0.25rem;
+}
+.nav-progress__dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 9999px;
+  background: var(--cb-border);
+}
+.nav-progress__dot[data-on='1'] {
+  background: var(--cb-accent);
+}
+
+/* ─── Career graph ───────────────────────────────────────────── */
+
+.nav-graph__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.9rem;
+}
+.nav-graph__chip {
+  font: 600 0.78rem/1 inherit;
+  padding: 0.45rem 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid var(--cb-border);
+  background: var(--cb-bg-subtle);
+  color: var(--cb-text-sub);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.nav-graph__chip:hover {
+  border-color: var(--chip, var(--cb-accent));
+  color: var(--cb-text);
+}
+.nav-graph__chip.is-on {
+  border-color: var(--chip, var(--cb-accent));
+  color: var(--chip, var(--cb-accent-text));
+  background: var(--cb-bg-card);
+}
+.nav-graph__chip--entry {
+  --chip: var(--nav-emerald);
+}
+
+.nav-graph__scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--cb-border);
+  border-radius: 0.85rem;
+  background: var(--cb-bg-subtle);
+}
+.nav-graph__scroll svg {
+  display: block;
+  max-width: none;
+}
+
+.nav-graph__edge {
+  stroke: var(--cb-border);
+  stroke-width: 1.1;
+  opacity: 0.75;
+}
+.nav-graph__edge.is-mutual {
+  stroke-width: 1.9;
+  opacity: 0.95;
+}
+
+.nav-graph__node {
+  cursor: pointer;
+}
+.nav-graph__dot {
+  fill: var(--node);
+  stroke: var(--cb-bg-subtle);
+  stroke-width: 2;
+}
+.nav-graph__dot.is-senior {
+  fill: var(--cb-bg-subtle);
+  stroke: var(--node);
+  stroke-width: 2.5;
+}
+.nav-graph__ring {
+  fill: none;
+  stroke: var(--node);
+  stroke-width: 1.4;
+  opacity: 0.55;
+}
+/* Sized in the drawing's user units, not screen pixels: whatever is set here
+   is multiplied by however much the viewBox is being scaled to fit its box.
+   At 12.5 the names landed around 6px on screen at the map's default zoom,
+   which is a diagram of a drawing rather than a drawing. CHAR_WIDTH and
+   LABEL_HEIGHT in engine/layout.ts reserve the space for this and must be
+   kept in step with it. */
+.nav-graph__label {
+  fill: var(--cb-text-sub);
+  font-size: 14px;
+  font-weight: 500;
+  paint-order: stroke;
+  stroke: var(--cb-bg-subtle);
+  stroke-width: 3.8px;
+  stroke-linejoin: round;
+}
+.nav-graph__node:hover .nav-graph__label,
+.nav-graph__node:focus-visible .nav-graph__label {
+  fill: var(--cb-text);
+  font-weight: 700;
+}
+.nav-graph__node:focus-visible {
+  outline: none;
+}
+.nav-graph__node:focus-visible .nav-graph__dot {
+  stroke: var(--cb-accent);
+  stroke-width: 3.5;
+}
+
+/* Dimming is applied by the enhancement script only. Without it every node
+   stays at full strength, which is the correct no-JS state. */
+.nav-graph.is-filtered .nav-graph__node[data-dim='1'] {
+  opacity: 0.16;
+}
+.nav-graph.is-filtered .nav-graph__edge[data-dim='1'] {
+  opacity: 0.07;
+}
+.nav-graph__node,
+.nav-graph__edge {
+  transition: opacity 0.18s;
+}
+
+.nav-graph__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.1rem;
+  margin-top: 0.8rem;
+  font-size: 0.78rem;
+  color: var(--cb-text-muted);
+}
+.nav-graph__key {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.nav-graph__swatch {
+  width: 0.72rem;
+  height: 0.72rem;
+  border-radius: 9999px;
+  background: var(--cb-text-muted);
+}
+.nav-graph__swatch.is-entry {
+  background: var(--nav-emerald);
+  box-shadow: 0 0 0 2.5px var(--cb-bg), 0 0 0 3.5px var(--nav-emerald);
+}
+.nav-graph__swatch.is-second {
+  background: var(--nav-slate);
+}
+.nav-graph__swatch.is-senior {
+  background: transparent;
+  border: 2px solid var(--nav-slate);
+}
+.nav-graph__key--note {
+  font-style: italic;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-graph__node,
+  .nav-graph__edge {
+    transition: none;
+  }
+}
+
+/* ─── Plan progress chips ────────────────────────────────────── */
+
+.plan-chip {
+  font: 600 0.72rem/1 inherit;
+  padding: 0.4rem 0.65rem;
+  border-radius: 9999px;
+  border: 1px solid var(--cb-border);
+  background: var(--cb-bg-subtle);
+  color: var(--cb-text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.plan-chip:hover {
+  border-color: var(--cb-accent);
+  color: var(--cb-text);
+}
+.plan-chip.is-on {
+  border-color: var(--nav-emerald);
+  color: var(--nav-emerald);
+  background: var(--cb-bg-card);
+}
+.plan-chip[data-value='doing'].is-on,
+.plan-chip[data-value='studying'].is-on {
+  border-color: var(--cb-accent);
+  color: var(--cb-accent-text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plan-chip {
+    transition: none;
+  }
+}
+
+/* ─── Print: the results page is something people take away ──── */
+
+@media print {
+  .nav-noprint {
+    display: none !important;
+  }
+  .nav-card {
+    break-inside: avoid;
+    border-color: #999;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   THE CAREER MAP APPLICATION
+
+   Layered on top of .nav-graph, which stays a complete server-rendered
+   drawing on its own. Everything here activates only once the map
+   application has loaded (.nav-map[data-ready]).
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* The map is not a paragraph and does not have to line up under one.
+   The prose on that page sits in the site's 72rem reading column, which
+   is the right width for sentences and far too narrow for 38 labelled
+   roles: the drawing was being squeezed into about a third of the window
+   for the sake of lining its left edge up with a heading. Nothing is
+   gained by that symmetry and legibility is lost to it, so the shell
+   takes the width instead and the text keeps its column. */
+.nav-map-shell {
+  width: min(100%, 108rem);
+  margin-inline: auto;
+}
+
+.nav-map {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.nav-map__bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-map__modes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.nav-map__mode {
+  font: 600 0.82rem/1 inherit;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--cb-border);
+  background: var(--cb-bg-card);
+  color: var(--cb-text-sub);
+  cursor: pointer;
+}
+
+.nav-map__mode:hover {
+  border-color: var(--cb-accent);
+  color: var(--cb-text);
+}
+
+.nav-map__mode[aria-pressed="true"] {
+  background: var(--cb-accent);
+  border-color: var(--cb-accent);
+  color: #fff;
+}
+
+.nav-map__search {
+  position: relative;
+  flex: 1 1 16rem;
+  max-width: 24rem;
+}
+
+.nav-map__search input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.6rem;
+  border: 1px solid var(--cb-border);
+  background: var(--cb-bg-card);
+  color: var(--cb-text);
+  font-size: 0.875rem;
+}
+
+.nav-map__results {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 0.3rem);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0.25rem;
+  list-style: none;
+  background: var(--cb-bg-card);
+  border: 1px solid var(--cb-border);
+  border-radius: 0.6rem;
+  box-shadow: 0 12px 32px rgb(0 0 0 / 0.16);
+  max-height: 18rem;
+  overflow-y: auto;
+}
+
+.nav-map__result {
+  display: flex;
+  width: 100%;
+  gap: 0.75rem;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.45rem 0.6rem;
+  border: 0;
+  border-radius: 0.4rem;
+  background: none;
+  color: var(--cb-text);
+  font-size: 0.875rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.nav-map__result:hover,
+.nav-map__result:focus-visible {
+  background: var(--cb-accent-sub);
+}
+
+.nav-map__result-kind {
+  font-size: 0.72rem;
+  color: var(--cb-text-muted);
+  white-space: nowrap;
+}
+
+.nav-map__hint {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--cb-text-muted);
+  margin: 0;
+  max-width: 68ch;
+}
+
+.nav-map__stage {
+  position: relative;
+}
+
+.nav-map[data-ready] .nav-graph__scroll {
+  overflow: hidden;
+  height: min(76vh, 50rem);
+  touch-action: none;
+  cursor: grab;
+}
+
+.nav-map[data-ready] .nav-graph__scroll svg {
+  width: 100%;
+  height: 100%;
+}
+
+.nav-map[data-ready] .nav-graph.is-dragging .nav-graph__scroll {
+  cursor: grabbing;
+}
+
+/* ── Node emphasis states ─────────────────────────────────────────── */
+.nav-graph__node[data-mark="primary"] .nav-graph__dot {
+  stroke: var(--cb-text);
+  stroke-width: 2.5;
+}
+
+.nav-graph__node[data-mark="primary"] .nav-graph__label {
+  font-weight: 700;
+  fill: var(--cb-text);
+}
+
+.nav-graph__node[data-mark="from"] .nav-graph__dot,
+.nav-graph__node[data-mark="to"] .nav-graph__dot {
+  stroke: var(--cb-accent-text);
+  stroke-width: 3;
+}
+
+.nav-graph__node[data-mark="hop1"] .nav-graph__dot { opacity: 0.95; }
+.nav-graph__node[data-mark="hop2"] .nav-graph__dot { opacity: 0.75; }
+.nav-graph__node[data-mark="hop3"] .nav-graph__dot { opacity: 0.6; }
+
+.nav-map__route-line {
+  stroke: var(--cb-accent-text);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+/* ── Detail panel ─────────────────────────────────────────────────── */
+.nav-map__panel {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: min(22rem, 42%);
+  max-height: calc(100% - 1.5rem);
+  overflow-y: auto;
+  padding: 1rem 1.1rem 1.2rem;
+  background: var(--cb-bg-card);
+  border: 1px solid var(--cb-border);
+  border-radius: 0.9rem;
+  box-shadow: 0 16px 40px rgb(0 0 0 / 0.18);
+  z-index: 10;
+}
+
+.nav-map__close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 0.4rem;
+  border: 1px solid var(--cb-border);
+  background: var(--cb-bg-subtle);
+  color: var(--cb-text-sub);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.nav-map__eyebrow {
+  font: 600 0.68rem/1.4 ui-monospace, monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cb-text-muted);
+  margin: 0 0 0.3rem;
+}
+
+.nav-map__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--cb-text);
+  margin: 0 1.6rem 0.25rem 0;
+  line-height: 1.25;
+}
+
+.nav-map__title:focus-visible {
+  outline: 2px solid var(--cb-accent);
+  outline-offset: 3px;
+}
+
+.nav-map__stage-label {
+  font-size: 0.78rem;
+  color: var(--cb-text-muted);
+  margin: 0 0 0.6rem;
+}
+
+.nav-map__purpose,
+.nav-map__reality,
+.nav-map__note,
+.nav-map__tech {
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--cb-text-sub);
+  margin: 0 0 0.7rem;
+}
+
+.nav-map__reality strong { color: var(--cb-text); }
+
+.nav-map__h3 {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cb-text-muted);
+  margin: 1rem 0 0.4rem;
+}
+
+.nav-map__moves,
+.nav-map__certs,
+.nav-map__chips,
+.nav-map__route-list {
+  list-style: none;
+  margin: 0 0 0.4rem;
+  padding: 0;
+}
+
+.nav-map__moves li { margin-bottom: 0.35rem; }
+
+.nav-map__move {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--cb-border-sub);
+  border-left: 3px solid var(--cb-accent);
+  border-radius: 0.5rem;
+  background: var(--cb-bg-subtle);
+  cursor: pointer;
+}
+
+.nav-map__move:hover { border-color: var(--cb-accent); }
+
+.nav-map__move-name {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 650;
+  color: var(--cb-accent-text);
+}
+
+.nav-map__move-why {
+  display: block;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--cb-text-sub);
+  margin-top: 0.15rem;
+}
+
+.nav-map__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.nav-map__chip {
+  display: inline-block;
+  font-size: 0.78rem;
+  padding: 0.28rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--cb-border);
+  background: var(--cb-bg-subtle);
+  color: var(--cb-text-sub);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav-map__chip:hover {
+  border-color: var(--cb-accent);
+  color: var(--cb-text);
+}
+
+.nav-map__certs li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+  align-items: baseline;
+  font-size: 0.82rem;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid var(--cb-border-sub);
+  color: var(--cb-text-sub);
+}
+
+.nav-map__cert-stage {
+  font: 600 0.66rem/1.6 ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--cb-text-muted);
+  background: var(--cb-bg-subtle);
+  border-radius: 0.3rem;
+  padding: 0 0.3rem;
+}
+
+.nav-map__cert-why {
+  flex: 1 1 100%;
+  font-size: 0.78rem;
+  color: var(--cb-text-muted);
+}
+
+.nav-map__route-list li { margin-bottom: 0.7rem; }
+
+.nav-map__route-step {
+  font-size: 0.86rem;
+  font-weight: 650;
+  color: var(--cb-text);
+  margin: 0;
+}
+
+.nav-map__link {
+  border: 0;
+  background: none;
+  padding: 0;
+  font: inherit;
+  color: var(--cb-accent-text);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.nav-map__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+
+.nav-map__btn {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.45rem 0.7rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--cb-border);
+  background: var(--cb-bg-subtle);
+  color: var(--cb-text-sub);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav-map__btn:hover { border-color: var(--cb-accent); color: var(--cb-text); }
+.nav-map__btn.is-on { background: var(--cb-accent-sub); color: var(--cb-accent-text); }
+
+.nav-map__btn--primary {
+  background: var(--cb-accent);
+  border-color: var(--cb-accent);
+  color: #fff;
+}
+
+.nav-map__btn--primary:hover { color: #fff; opacity: 0.9; }
+
+/* ── Viewport tools ───────────────────────────────────────────────── */
+.nav-map__tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-map__zoom {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.nav-map__tool {
+  min-width: 2.25rem;
+  min-height: 2.25rem;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  border: 1px solid var(--cb-border);
+  background: var(--cb-bg-card);
+  color: var(--cb-text-sub);
+  cursor: pointer;
+}
+
+.nav-map__tool:hover { border-color: var(--cb-accent); color: var(--cb-text); }
+
+.nav-map__tip {
+  font-size: 0.75rem;
+  color: var(--cb-text-muted);
+  margin: 0;
+}
+
+.nav-map__tip kbd {
+  font-family: ui-monospace, monospace;
+  border: 1px solid var(--cb-border);
+  border-radius: 0.25rem;
+  padding: 0 0.25rem;
+}
+
+/* ── Full screen / focus mode ─────────────────────────────────────── */
+.nav-map:fullscreen,
+.nav-map.is-focus-mode {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: var(--cb-bg);
+  padding: 0.75rem;
+  overflow: auto;
+}
+
+.nav-map:fullscreen .nav-graph__scroll,
+.nav-map.is-focus-mode .nav-graph__scroll {
+  height: calc(100vh - 11rem);
+}
+
+/* ── Mobile: the panel becomes a bottom sheet ─────────────────────── */
+@media (max-width: 48rem) {
+  .nav-map[data-ready] .nav-graph__scroll {
+    height: 58vh;
+  }
+
+  .nav-map__panel {
+    position: fixed;
+    inset: auto 0 0 0;
+    width: auto;
+    max-height: 62vh;
+    border-radius: 1rem 1rem 0 0;
+    border-bottom: 0;
+    padding-top: 1.4rem;
+    z-index: 50;
+  }
+
+  .nav-map__panel::before {
+    content: "";
+    position: absolute;
+    top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2.5rem;
+    height: 0.25rem;
+    border-radius: 999px;
+    background: var(--cb-border);
+  }
+
+  .nav-map__modes {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.2rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-map__mode { white-space: nowrap; }
+  .nav-map__search { max-width: none; }
+  .nav-map__tip { display: none; }
+}
+
+/* ─── Career map teaser ──────────────────────────────────────────
+   "Open the career map" was a sentence asking people to trust it.
+   Showing the real drawing does the selling instead: the same nodes
+   in the same computed positions as /navigator/graph/, small and
+   unreadable on purpose, so the shape is the pitch.
+
+   This is the one place the file allows glow. It is not decoration
+   for its own sake — the lit dots are the six roles the most moves
+   pass through, so the brightest points on the picture are the ones
+   that matter most. Everything else stays flat.
+   ───────────────────────────────────────────────────────────── */
+
+.nav-map-teaser {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+}
+
+.nav-map-teaser__viz {
+  position: relative;
+  height: 9.5rem;
+  background:
+    radial-gradient(120% 140% at 50% 0%, color-mix(in srgb, var(--nav-violet) 16%, transparent), transparent 70%),
+    var(--cb-bg-subtle);
+  border-bottom: 1px solid var(--cb-border);
+  overflow: hidden;
+}
+
+/* Fades into the card instead of stopping at a hard line, so it reads
+   as a view onto something larger rather than a cropped thumbnail. */
+.nav-map-teaser__viz::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent 45%, color-mix(in srgb, var(--cb-bg-card) 92%, transparent));
+}
+
+.nav-map-teaser__svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-map-teaser__grid {
+  color: var(--cb-border);
+  opacity: 0.4;
+}
+
+.nav-map-teaser__edges line {
+  stroke: var(--nav-violet);
+  stroke-width: 1.2;
+  opacity: 0.28;
+}
+.nav-map-teaser__edges line.is-mutual {
+  stroke-width: 2;
+  opacity: 0.42;
+}
+
+.nav-map-teaser__dot {
+  fill: var(--node);
+  stroke: var(--cb-bg-subtle);
+  stroke-width: 1.5;
+}
+.nav-map-teaser__dot.is-senior {
+  fill: var(--cb-bg-subtle);
+  stroke: var(--node);
+  stroke-width: 2;
+}
+.nav-map-teaser__dot.is-hub {
+  filter: drop-shadow(0 0 6px var(--node));
+}
+
+.nav-map-teaser__body {
+  padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* The picture leans in slightly on hover. The map itself pans and zooms,
+   so this is a preview of the behaviour, not an unprompted flourish. */
+a.nav-map-teaser:hover .nav-map-teaser__svg,
+a.nav-map-teaser:focus-visible .nav-map-teaser__svg {
+  transform: scale(1.06);
+}
+
+/* Matches the "Start here" badge opposite it, in the map's own accent. */
+.nav-map-teaser__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.1rem 0.55rem;
+  border-radius: 9999px;
+  color: var(--nav-violet);
+  background: color-mix(in srgb, var(--nav-violet) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--nav-violet) 38%, transparent);
+  white-space: nowrap;
+}
+
+/* The two doors are not the same size and should not pretend to be.
+   Stretching the shorter card to match leaves a hole under its text;
+   letting each end where its content ends makes the map card sit lower
+   than the one beside it, which is the point — it is the thing with
+   something to show. */
+.nav-doors {
+  align-items: start;
+}
+.nav-doors > a {
+  display: flex;
+  flex-direction: column;
+}
+.nav-doors .nav-door__cta {
+  margin-top: auto;
+  padding-top: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .nav-map-teaser__viz { height: 10.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-map-teaser__svg { transition: none; }
+  a.nav-map-teaser:hover .nav-map-teaser__svg,
+  a.nav-map-teaser:focus-visible .nav-map-teaser__svg { transform: none; }
+}
+
+/* ─── Map: brightness, direction and a panel that sits beside the
+       drawing instead of on top of it ──────────────────────────────
+
+   Three complaints, one cause. The map was drawn at the brightness of a
+   diagram in a document: grey hairlines between grey dots, a legend in
+   three shades of the same grey, and a detail panel floating over the
+   thing it was describing. None of it was wrong, and all of it was hard
+   to read.
+   ───────────────────────────────────────────────────────────── */
+
+/* ── Edges: visible in their own right ──────────────────────────── */
+.nav-graph__edge {
+  stroke: color-mix(in srgb, var(--cb-accent-text) 42%, var(--cb-border));
+  stroke-width: 1.3;
+  opacity: 0.55;
+}
+.nav-graph__edge.is-mutual {
+  stroke-width: 2.1;
+  opacity: 0.8;
+}
+
+/* Dimming has to survive the brighter base, so it goes further down. */
+.nav-graph.is-filtered .nav-graph__node[data-dim='1'] {
+  opacity: 0.13;
+}
+.nav-graph.is-filtered .nav-graph__edge[data-dim='1'] {
+  opacity: 0.05;
+}
+
+/* ── Dots: lit, not tinted ──────────────────────────────────────── */
+.nav-graph__dot {
+  filter: drop-shadow(0 0 3px color-mix(in srgb, var(--node) 55%, transparent));
+}
+.nav-graph__node[data-mark='primary'] .nav-graph__dot {
+  filter: drop-shadow(0 0 9px var(--node));
+}
+.nav-graph__ring {
+  opacity: 0.85;
+  stroke-width: 1.7;
+}
+
+/* Outside the chosen field: still drawn, clearly not the answer.
+   Removing these would break routes and neighbourhoods; fading them
+   is what lets a field chip mean something while a role is open. */
+.nav-graph__node[data-field='out'] .nav-graph__dot {
+  filter: none;
+  opacity: 0.3;
+}
+.nav-graph__node[data-field='out'] .nav-graph__ring { opacity: 0.2; }
+.nav-graph__node[data-field='out'] .nav-graph__label { opacity: 0.38; }
+
+/* ── The moves in and out of the open role ──────────────────────── */
+/* A grey line says two roles are related. It does not say which way
+   people move, which is the one question the map exists to answer. */
+.nav-map__flow {
+  fill: none;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-dasharray: 7 9;
+  animation: nav-map-flow 1.5s linear infinite;
+}
+.nav-map__flow.is-out {
+  stroke: var(--cb-accent-text);
+  filter: drop-shadow(0 0 4px color-mix(in srgb, var(--cb-accent-text) 70%, transparent));
+}
+.nav-map__flow.is-in {
+  stroke: var(--nav-emerald);
+  stroke-width: 2.2;
+  opacity: 0.85;
+  animation-duration: 2.1s;
+  filter: drop-shadow(0 0 4px color-mix(in srgb, var(--nav-emerald) 60%, transparent));
+}
+
+@keyframes nav-map-flow {
+  to { stroke-dashoffset: -16; }
+}
+
+.nav-map__route-line {
+  filter: drop-shadow(0 0 5px color-mix(in srgb, var(--cb-accent-text) 70%, transparent));
+}
+
+/* ── Legend: the shape language, not three greys ────────────────── */
+.nav-graph__legend {
+  align-items: center;
+  gap: 0.4rem 1.2rem;
+  color: var(--cb-text-sub);
+}
+.nav-graph__swatch {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+.nav-graph__swatch.is-entry {
+  background: var(--nav-emerald);
+  box-shadow:
+    0 0 0 2px var(--cb-bg),
+    0 0 0 3.5px var(--nav-emerald),
+    0 0 8px color-mix(in srgb, var(--nav-emerald) 80%, transparent);
+}
+.nav-graph__swatch.is-second {
+  background: var(--nav-blue);
+  box-shadow: 0 0 7px color-mix(in srgb, var(--nav-blue) 75%, transparent);
+}
+.nav-graph__swatch.is-senior {
+  background: transparent;
+  border: 2.5px solid var(--nav-violet);
+  box-shadow: 0 0 7px color-mix(in srgb, var(--nav-violet) 60%, transparent);
+}
+.nav-graph__key--flow .nav-graph__swatch {
+  width: 1.5rem;
+  height: 0;
+  border-radius: 0;
+  background: none;
+  border-top: 2.5px dashed var(--cb-accent-text);
+  box-shadow: none;
+}
+.nav-graph__key--flow .nav-graph__swatch.is-inbound {
+  border-top-color: var(--nav-emerald);
+}
+.nav-graph__key--note {
+  color: var(--cb-text-muted);
+  font-style: italic;
+}
+
+/* ── The panel sits beside the map, not over it ─────────────────── */
+/* Below this width there is not enough room for two columns, so the
+   panel stays a bottom sheet — covering a map you cannot read anyway
+   is better than squeezing both into 40rem.
+
+   Tried at 72rem, on the theory that a docked panel costs more canvas
+   than it is worth around 1100px, and put back: the overlay it fell back
+   to is taller than the canvas and covers the legend, and a panel over
+   the map is the thing the dock exists to stop. Between 64 and 72rem the
+   map is simply cramped — the honest limit of a two-column instrument on
+   a narrow window, not something a breakpoint can argue away. */
+@media (min-width: 64rem) {
+  .nav-map__stage {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      'controls'
+      'scroll'
+      'legend';
+    gap: 0 1rem;
+  }
+
+  /* The drawing's wrapper has no box of its own — it exists to scope
+     selectors — so its children can become grid items directly and the
+     panel can sit in a column beside the canvas. */
+  .nav-map__stage > .nav-graph { display: contents; }
+  .nav-graph__controls { grid-area: controls; }
+  .nav-graph__scroll { grid-area: scroll; }
+  .nav-graph__legend { grid-area: legend; }
+
+  .nav-map[data-panel='open'] .nav-map__stage {
+    /* Deliberately lean. Every pixel the card does not need is a pixel of
+       map, and on a 1440 laptop the panel was taking close to a third of
+       the canvas for a column of text that reads fine at 19rem. */
+    grid-template-columns: minmax(0, 1fr) clamp(19rem, 24vw, 23rem);
+    /* The field chips keep the full width in both states. Letting them
+       reflow every time the panel opens made the whole page jump.
+       The panel occupies the canvas row only: sharing the legend row too
+       let a long card stretch the row and leave the map stranded at the
+       top of a column of nothing. */
+    grid-template-areas:
+      'controls controls'
+      'scroll   panel'
+      'legend   .';
+  }
+
+  .nav-map__panel {
+    position: relative;
+    grid-area: panel;
+    top: auto;
+    right: auto;
+    width: auto;
+    /* Same height as the canvas beside it, so the two read as one
+       instrument and the card scrolls inside itself rather than growing. */
+    height: min(76vh, 50rem);
+    max-height: min(76vh, 50rem);
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: none;
+  }
+
+  .nav-map:fullscreen .nav-map__panel,
+  .nav-map.is-focus-mode .nav-map__panel {
+    height: calc(100vh - 11rem);
+    max-height: calc(100vh - 11rem);
+  }
+
+  /* Only the body scrolls, so the close button stays where it was put. */
+  .nav-map__panel-body {
+    overflow-y: auto;
+    padding: 1rem 1.1rem 1.4rem;
+    scrollbar-gutter: stable;
+  }
+
+  .nav-map__close {
+    top: 0.45rem;
+    right: 0.45rem;
+    z-index: 2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* The arrowheads still carry the direction, so stopping the travel
+     costs nothing but the movement. */
+  .nav-map__flow { animation: none; stroke-dasharray: none; }
+}
+
+/* The home page runs it wide: artwork left, the pitch right, so the
+   drawing gets the space it needs without a tall banner pushing the
+   rest of the page down. */
+@media (min-width: 48rem) {
+  .nav-map-teaser--wide {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .nav-map-teaser--wide .nav-map-teaser__viz {
+    flex: 1 1 58%;
+    height: auto;
+    min-height: 12rem;
+    border-bottom: 0;
+    border-right: 1px solid var(--cb-border);
+  }
+  /* Fades sideways into the card here, not downward. */
+  .nav-map-teaser--wide .nav-map-teaser__viz::after {
+    background: linear-gradient(to right, transparent 55%, color-mix(in srgb, var(--cb-bg-card) 88%, transparent));
+  }
+  .nav-map-teaser--wide .nav-map-teaser__body {
+    flex: 1 1 42%;
+    justify-content: center;
+  }
+}

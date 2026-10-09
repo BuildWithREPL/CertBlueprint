@@ -5,10 +5,10 @@
   "vendor": "CompTIA",
   "vendor_slug": "comptia",
   "level": "Associate",
-  "description": "CompTIA Network+ (N10-009) is the leading vendor-neutral networking certification. It validates the ability to design, configure, manage, and troubleshoot wired and wireless networks across any platform. Widely recognized for help desk and junior network roles, and a common prerequisite for security certifications.",
-  "audience": "IT support staff moving into networking, help desk technicians seeking a formal networking credential, and career changers who want a vendor-neutral foundation before specializing in Cisco, security, or cloud.",
+  "description": "CompTIA Network+ (N10-009, launched 20 June 2024) is the vendor-neutral networking certification. It is up to 90 questions in 90 minutes, mixing multiple choice, drag-and-drop and performance-based questions, with 720 on a 100–900 scale to pass. It covers networking concepts, implementation, operations, security and troubleshooting — addressing, routing and switching basics, wireless, cloud connectivity, and the systematic troubleshooting method the exam keeps returning to.",
+  "audience": "Help desk and support technicians moving toward infrastructure work, career changers who want networking fundamentals that are not tied to one manufacturer, and anyone whose employer or contract asks for a vendor-neutral credential. CompTIA suggests around nine to twelve months of networking experience; in practice plenty of people pass it as a second certification after A+, with lab time standing in for the job.",
   "why_get_it": "Network+ is the most recognized vendor-neutral networking certification available. Unlike CCNA, which is Cisco-specific, Network+ knowledge applies across vendors—Cisco, Juniper, HP, Palo Alto, and cloud networking alike. It covers a broad foundation: network topologies, TCP/IP, routing and switching concepts, wireless, security, and troubleshooting methodology. For IT support professionals, it demonstrates competence beyond basic helpdesk skills. For career changers, it provides structured knowledge that accelerates understanding of any IT environment. It is also a natural prerequisite for CompTIA Security+ and other security certifications, as many of the concepts tested in security exams assume solid networking knowledge.",
-  "when_to_get_it": "Get Network+ if you want a vendor-neutral networking credential that applies broadly across IT roles. It is often the right move before Security+ or before committing to a vendor-specific track like Cisco. If you already know you want Cisco networking specifically, CCNA may be the better direct path. Network+ and CCNA are not the same certification—Network+ is broader and shallower; CCNA is narrower and deeper. Many professionals hold both.",
+  "when_to_get_it": "Network+ is worth taking when you want the vocabulary and the troubleshooting discipline before specialising, or when a job posting names it. It sits naturally between A+ and Security+, and it is the cheaper, broader option. The honest comparison is with CCNA: Network+ is easier and applies anywhere, while CCNA goes considerably deeper and appears in far more networking job postings — if networking is the destination rather than a stepping stone, many people skip straight to CCNA. N10-009 is expected to retire around 2027.",
   "salary_range": "$55,000 – $80,000",
   "salary_note": "Network+ holders in junior network technician and IT support roles typically earn $55K–$70K. With experience and additional certs (CCNA, Security+), salaries commonly reach $75K–$95K. The cert is frequently a stepping stone rather than a destination—the salary jump comes when it is paired with experience or higher certs.",
   "exam_code": "N10-009",
@@ -238,5 +238,6 @@
     }
   ],
   "seo_title": "CompTIA Network+ (N10-009) Study Guide – Exam Details, Study Plan, Resources | CertBlueprint",
-  "seo_description": "Complete CompTIA Network+ N10-009 guide: who it's for, salary expectations, exam breakdown, step-by-step study plan, free and paid resources, and FAQ."
+  "seo_description": "Complete CompTIA Network+ N10-009 guide: who it's for, salary expectations, exam breakdown, step-by-step study plan, free and paid resources, and FAQ.",
+  "last_verified": "September 24, 2026"
 }

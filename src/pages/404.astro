@@ -1,24 +1,37 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const destinations = [
+  { label: 'IT Career Navigator', href: '/navigator/', note: 'Not sure which field fits? Start here.' },
+  { label: 'All certification vendors', href: '/vendors/', note: 'Cisco, CompTIA, AWS, Microsoft and more.' },
+  { label: 'Career paths', href: '/paths/', note: 'Role-by-role roadmaps from first job onward.' },
+  { label: 'Certification comparisons', href: '/compare/', note: 'Head-to-heads like CCNA vs Network+.' },
+];
 ---
 
 <BaseLayout
   title="Page Not Found | CertBlueprint"
-  description="The page you are looking for does not exist."
+  description="The page you are looking for does not exist or has moved. Browse certification guides, career paths, or the IT Career Navigator instead."
+  canonicalUrl={false}
+  noindex
 >
-  <div class="max-w-2xl mx-auto px-4 py-24 text-center">
+  <div class="max-w-2xl mx-auto px-4 py-20 text-center">
     <p class="text-5xl font-bold mb-4" style="color: var(--cb-border);">404</p>
     <h1 class="text-2xl font-bold mb-3" style="color: var(--cb-text);">Page not found</h1>
     <p class="text-sm mb-8 leading-relaxed" style="color: var(--cb-text-sub);">
-      The page you are looking for does not exist or has been moved.
+      The page you are looking for does not exist or has been moved. Try search
+      (<kbd class="font-mono text-xs">Ctrl</kbd>+<kbd class="font-mono text-xs">K</kbd>) or one of these:
     </p>
-    <div class="flex flex-wrap gap-3 justify-center">
-      <a href="/" class="px-4 py-2 text-white text-sm font-medium rounded-lg transition-opacity hover:opacity-85" style="background: var(--cb-accent);">
-        Go to homepage
-      </a>
-      <a href="/vendors/cisco/ccna/" class="px-4 py-2 text-sm font-medium rounded-lg transition-opacity hover:opacity-80" style="border: 1px solid var(--cb-border); background: var(--cb-bg-card); color: var(--cb-text-sub);">
-        CCNA guide
-      </a>
-    </div>
+    <ul class="grid sm:grid-cols-2 gap-3 text-left">
+      {destinations.map((d) => (
+        <li>
+          <a href={d.href} class="block rounded-xl border p-4 h-full" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+            <span class="block text-sm font-semibold" style="color: var(--cb-accent-text);">{d.label} →</span>
+            <span class="block text-xs mt-1" style="color: var(--cb-text-sub);">{d.note}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+    <p class="mt-8"><a href="/" class="text-sm font-medium" style="color: var(--cb-accent-text);">← Back to the homepage</a></p>
   </div>
 </BaseLayout>

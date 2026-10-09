@@ -5,19 +5,19 @@
   "vendor_slug": "scrum-org",
   "level": "Foundation",
   "short_name": "PSM I",
-  "description": "Professional Scrum Master I (PSM I) from Scrum.org validates a fundamental understanding of the Scrum framework and the Scrum Master role as defined in the Scrum Guide. It is a rigorous, knowledge-based assessment—80 questions in 60 minutes with an 85% passing bar—and the certification never expires. No mandatory course is required, making it one of the most affordable credible agile credentials available.",
-  "audience": "Project coordinators, business analysts, developers, and QA professionals working on (or moving toward) agile teams; aspiring Scrum Masters; and current Scrum Masters who want a credential that proves they actually understand the framework.",
+  "description": "Professional Scrum Master I (PSM I) is Scrum.org's evidence that you understand Scrum as the Scrum Guide defines it and can apply it on a real team. The assessment is 80 questions in 60 minutes with an unusually high 85% pass mark, taken online whenever you are ready, and costs $200 per attempt. It draws on three competency areas: understanding and applying the Scrum framework, developing people and teams, and managing products with agility.",
+  "audience": "Scrum Masters and aspiring ones, delivery leads, developers and product people who want the framework straight from its source, and anyone on a team that says it does Scrum and would like to know what that should mean. No prerequisites and no course attendance required — which is the point: unlike the CSM, this credential is awarded for passing an assessment, not for sitting in a classroom.",
   "why_get_it": "PSM I is widely regarded as the more rigorous of the two mainstream Scrum Master certifications. Unlike the Scrum Alliance CSM, which requires a mandatory paid course (typically $400–$1,000+) and renewal fees every two years, PSM I has no course requirement and is valid for life—you pay $200 for the assessment and that is the entire cost, forever. The exam itself has teeth: an 85% passing score across 80 questions in 60 minutes means you cannot pass on vibes and buzzwords. That rigor is exactly why hiring managers who know the agile certification landscape respect it. It demonstrates you understand empiricism, the Scrum events and artifacts, self-managing teams, and what the Scrum Master accountability actually is (hint: not a project manager with a new title). For BAs, coordinators, and developers on agile teams, it is a low-cost way to formalize working knowledge; for aspiring Scrum Masters, it is the standard entry credential.",
-  "when_to_get_it": "Get PSM I when you are working on or adjacent to a Scrum team and want to formalize your knowledge, or when you are targeting Scrum Master, agile project coordinator, or delivery roles. There are no prerequisites and no required course, so the barrier to entry is study time plus $200. If you are choosing between PSM I and CSM, PSM I is the better value for self-studiers: harder exam, lower cost, lifetime validity. Be realistic about what it does: PSM I proves knowledge of Scrum, not experience running teams. It works best paired with real agile team experience on your resume, even if that experience is as a team member rather than a Scrum Master.",
+  "when_to_get_it": "Take PSM I when you need the credential quickly and cheaply, or when you want to prove you know the framework rather than that you attended a class. Read the Scrum Guide properly — it is short and the assessment is drawn from it — then use the free Scrum Open practice assessment until you are scoring comfortably above 85%, because the real thing gives you 45 seconds a question. The comparison people ask about is the CSM: it requires a paid two-day course and renewal every two years, while PSM I costs $200, needs no course and never expires. The trade-off is that CSM's course-plus-network suits people who want the teaching; PSM I suits people who want the certificate.",
   "salary_range": "$70,000 – $110,000",
   "salary_note": "This range reflects U.S. Scrum Master and agile delivery roles broadly, not a PSM I premium—the certification alone does not move salary the way experience does. Entry-level and career-changer candidates with PSM I but no Scrum Master experience typically land coordinator or team-level roles first. Experienced Scrum Masters and agile coaches in major markets frequently exceed $110K, but that is driven by track record, with the cert acting as a filter-passer.",
   "exam_code": "PSM I",
   "exam_duration": "60 minutes",
-  "exam_format": "Online, unproctored assessment taken on your own computer. Multiple choice, multiple answer, and true/false questions. Passing score: 85%.",
+  "exam_format": "80 questions in 60 minutes, 85% to pass: multiple choice, multiple answer and true/false. Taken online on your own computer, unproctored, with no test centre and no appointment. Available in English, Japanese and Simplified Chinese. Your assessment password never expires but is valid for one attempt only.",
   "exam_questions": "80 questions",
   "official_url": "https://www.scrum.org/assessments/professional-scrum-master-i-certification",
   "official_pricing_url": "https://www.scrum.org/assessments/professional-scrum-master-i-certification",
-  "recertification_note": "PSM I never expires. There are no renewal fees, no continuing education requirements, and no recertification exams—the credential is yours for life. This is a genuine differentiator versus the CSM, which requires paid renewal every two years.",
+  "recertification_note": "PSM I is a lifetime certification: no renewal fees, no continuing education, no re-assessment, and a free Credly digital credential. That is a genuine differentiator against the CSM, which requires paid renewal every two years.",
   "skills_covered": [
     {
       "category": "Scrum Theory and Empiricism",
@@ -156,7 +156,7 @@
     {
       "label": "Buy PSM I Assessment – Scrum.org",
       "url": "https://www.scrum.org/assessments/professional-scrum-master-i-certification",
-      "note": "Purchased directly from Scrum.org: $200 USD per attempt. You receive an assessment password (no expiration) and take the exam online whenever you're ready—no test center, no scheduling. Verify current pricing on the official page."
+      "note": "Purchased directly from Scrum.org at $200 USD per attempt; additional taxes may apply at checkout. You receive an assessment password that never expires but is valid for a single attempt — take it when you are ready, with no test centre and no scheduling. Verify current pricing on the official page."
     }
   ],
   "faq": [
@@ -213,5 +213,6 @@
     }
   ],
   "seo_title": "Professional Scrum Master I (PSM I) Study Guide – Exam Details, Study Plan, Resources | CertBlueprint",
-  "seo_description": "Complete Scrum.org PSM I guide: $200 exam, 80 questions in 60 minutes, 85% to pass, lifetime validity, PSM I vs CSM, study plan, free and paid resources, and FAQ."
+  "seo_description": "Complete Scrum.org PSM I guide: $200 exam, 80 questions in 60 minutes, 85% to pass, lifetime validity, PSM I vs CSM, study plan, free and paid resources, and FAQ.",
+  "last_verified": "September 24, 2026"
 }

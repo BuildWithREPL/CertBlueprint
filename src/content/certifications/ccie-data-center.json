@@ -1,0 +1,273 @@
+{
+  "title": "Cisco CCIE Data Center Guide",
+  "slug": "ccie-data-center",
+  "short_name": "CCIE Data Center",
+  "vendor": "Cisco",
+  "vendor_slug": "cisco",
+  "level": "Expert",
+  "description": "CCIE Data Center is the expert summit of the Cisco data center stack: the DCCOR written plus an 8-hour, $1,600-per-attempt lab spanning ACI, VXLAN EVPN, UCS compute, SAN storage, and automation. It's also the track Cisco chose to receive the new AI lab module first — live in 2027 — which makes this the CCIE where the vendor is most loudly saying 'this is where AI infrastructure lives.' Destination briefing, honestly told: real costs, the hardware problem no other track has this badly, and who should stop at CCNP Data Center instead.",
+  "audience": "Senior engineers already living in large Cisco data center estates daily — ACI fabrics, VXLAN EVPN, UCS domains, MDS SAN — at Cisco partners, large enterprises, cloud/colo providers, and increasingly AI-infrastructure buildouts. If your day job is campus routing, virtualization admin, or a non-Cisco data center (Arista, Juniper, white-box), this specific number buys you less than the effort costs; the FAQ covers the honest alternatives.",
+  "why_get_it": "Because data center is where the money is moving: Cisco's own v3.1 blueprint expanded RoCEv2 and congestion-control content explicitly 'to address the growing popularity of AI/ML clusters,' and Cisco made this the first track to get the AI lab module — that's the vendor telling you which CCIE it considers the AI-infrastructure credential. One 2026 analysis puts CCIE DC averages at $142K–168K with senior data center architects at $225K+ (blog-grade, hedge accordingly), and the partner-status economics that keep all CCIEs employed apply here too: ACI and VXLAN EVPN migration work is among the most billable Cisco skill work going. The clear-eyed counterweight: this is the most hardware-dependent, most expensive-to-lab track in the current lineup, and CCNP Data Center plus automation covers most job postings at a fraction of the cost. The number is decisive in specific rooms — Cisco-standardized data centers, partners, providers — and nearly invisible outside them.",
+  "when_to_get_it": "When you're already fluent across the blueprint's four worlds daily — fabric (ACI and VXLAN EVPN), compute (UCS/Intersight), storage (FC/FCoE), and automation — and your market actually pays for the number. The 2026 timing reality is unique to this track: CCIE Data Center gets the AI lab module FIRST. Cisco's published rollout: exam topics at Cisco Live Melbourne (November 2026), practice labs at Cisco Live London (February 2027), live deployment at Cisco Live US 2027. A fast, focused plan starting mid-2026 might finish under the current 3h Design + 5h Deploy format; a typical 12–18 month plan should assume the AI module is part of YOUR exam. Plan and practice accordingly — AI-assisted config and troubleshooting is testable material here before any other track.",
+  "salary_range": "$120,000 – $180,000+ (senior data center engineering/architecture)",
+  "salary_note": "ZipRecruiter's CCIE Data Center page reported roughly $120K+ average (June 2026, title-driven data with the usual skew). One 2026 analysis puts averages at $142K–168K and senior data center architects at $225K–280K+, arguing AI buildouts have DC holders out-earning generalist CCIEs — plausible, blog-grade, hedge it. The premium concentrates where the Cisco DC stack is standard: partners, providers, large enterprises, and now AI-infrastructure projects. Nothing official; Cisco publishes no salary data.",
+  "exam_code": "350-601 DCCOR + 8-hour lab",
+  "exam_duration": "Written: 120 minutes · Lab: 8 hours",
+  "exam_format": "Step 1: pass DCCOR (the same exam that anchors CCNP Data Center — one pass serves both). Step 2: the 8-hour hands-on lab (v3.1): Module 1 Design (3h, scenario-based, no device access, no backward navigation) + Module 2 Deploy/Operate/Optimize (5h, hands-on) — per-module minimums plus aggregate pass score. From 2027 this track becomes 1h AI DOO + 2h Design + 5h Deploy/Operate/Optimize — first track to make the change. Fail the lab and you wait 30 days to rebook.",
+  "exam_questions": "Written: not published · Lab: scenario-based, not question-counted",
+  "exam_structure": [
+    {
+      "code": "350-601 DCCOR",
+      "name": "Implementing and Operating Cisco Data Center Core Technologies",
+      "role": "Qualifying exam",
+      "price": "$400",
+      "note": "The same exam as CCNP Data Center's core — one pass qualifies you for the lab AND banks the CCNP core, plus Specialist – Data Center Core along the way."
+    },
+    {
+      "code": "CCIE DC Lab v3.1",
+      "name": "8-hour practical: 3h Design + 5h Deploy/Operate/Optimize",
+      "role": "Lab exam",
+      "price": "$1,600 per attempt",
+      "note": "At Cisco facilities or mobile-lab events ($1,900 with Cisco-provided kit). Travel and lodging on you. Most passers report needing 2–3 attempts (folklore — Cisco publishes no pass rates). FIRST track to get the AI module: topics Nov 2026, practice labs Feb 2027, live at Cisco Live US 2027 — format becomes 1h AI DOO + 2h Design + 5h DOO."
+    }
+  ],
+  "official_url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/datacenter/ccie-data-center/index.html",
+  "official_pricing_url": "https://ciscolearningservices.my.site.com/cln/s/article/book-your-expert-level-exams",
+  "recertification_note": "Identical to all CCIEs: 3-year cycle, 120 CE credits on the unified ledger — or mix-and-match (40 CE + a core exam, 40 CE + two concentrations, 80 CE + one concentration). Exam passes auto-award CE, and manual CE claims must be filed within 365 days of the activity. Data center engineers rarely struggle to stay current; a fully lapsed number means restarting everything.",
+  "last_verified": "July 2026",
+  "skills_covered": [
+    {
+      "category": "L2/L3 Connectivity — the 20% foundation",
+      "items": [
+        "Data center switching and routing at expert depth on NX-OS 10.x",
+        "OSPF/BGP in the underlay: the protocols you know, at fabric scale",
+        "vPC, port-channels, and first-hop redundancy under failure",
+        "Multicast in the data center — where overlays quietly depend on it",
+        "The depth difference: CCNP asks how; the lab asks what breaks at hour six"
+      ]
+    },
+    {
+      "category": "Fabric Infrastructure & Connectivity — the 30% heavyweight",
+      "items": [
+        "ACI end to end: access/fabric policies, tenants, EPGs and ESGs, bridge domains, contracts, vzAny, multi-tier",
+        "VXLAN EVPN as the co-equal overlay — v3.1 restructured this domain around BOTH fabrics",
+        "External connectivity: VRF-lite, OSPF, BGP, transit routing out of the fabric",
+        "Inter-fabric architecture: ACI Multi-Pod, Multi-Site (via Nexus Dashboard Orchestrator), remote leaf",
+        "Design-module territory: justify the fabric choice, don't just build it"
+      ]
+    },
+    {
+      "category": "Compute & Storage (25%)",
+      "items": [
+        "UCS at expert depth: policies, profiles, templates — through UCS Manager AND Intersight",
+        "Nutanix as the blueprint's hyperconverged platform (HyperFlex is out as of v3.1)",
+        "FC/FCoE storage networking: zoning, NPV/NPIV, trunking, port-channels",
+        "RoCEv2 expanded for AI/ML clusters: DCQCN congestion control with PFC and ECN — Cisco's own stated reason",
+        "iSCSI is gone from the blueprint; lossless Ethernet for GPU fabrics is the new storage story"
+      ]
+    },
+    {
+      "category": "Security, Services & Automation (25%)",
+      "items": [
+        "Data center security and network services at expert depth (10%)",
+        "Python, Ansible, and — new in v3.1 — Terraform against fabric APIs (15%)",
+        "Nexus Dashboard as the management plane: Orchestrator, Fabric Controller (NDFC), Insights",
+        "REST APIs as a lab time-saver — scripting what others click",
+        "The AI-module future arrives here first: AI-assisted config, troubleshooting, and code, live in 2027"
+      ]
+    }
+  ],
+  "study_steps": [
+    {
+      "step": 1,
+      "title": "Run the go/no-go test honestly",
+      "description": "Three questions before a single lab hour: Do you operate Cisco data center gear at senior-CCNP level daily — fabric, compute, AND storage, not just one of the three? Does your market pay for this specific number — Cisco-standardized DCs, partners, providers, AI-infrastructure projects? Can you sustain 15–25 hours/week for 12–18 months? Two noes means CCNP Data Center plus automation is the better move, and that's not a consolation prize — it's most of the market value at a tenth of the pain."
+    },
+    {
+      "step": 2,
+      "title": "Clear DCCOR if you haven't — it's the same exam as CCNP",
+      "description": "One $400 DCCOR pass banks the CCNP Data Center core AND lab eligibility, plus the Specialist – Data Center Core badge along the way. Most CCIE DC candidates arrive holding CCNP Data Center already; if you don't, our CCNP DC guide covers that campaign. From your pass date, plan the lab within the eligibility window and verify current rules on the booking page."
+    },
+    {
+      "step": 3,
+      "title": "Decide your relationship with the AI module NOW",
+      "description": "This is the decision no other track forces in 2026. The AI DOO module goes live for Data Center at Cisco Live US 2027 — exam topics publish November 2026, practice labs arrive February 2027. A sprint plan (lab attempt by early 2027) might finish under the current 3h Design + 5h DOO format; a normal 12–18 month plan should assume 1h AI DOO + 2h Design + 5h DOO is YOUR exam. If that's you: work AI-assisted config and troubleshooting into your lab practice from day one, and grab the practice labs the moment they publish. Ignore dump-site 'confirmed date' chatter; Cisco's blog and the official CLN article are the only sources worth reading."
+    },
+    {
+      "step": 4,
+      "title": "Budget for reality — including this track's hardware surcharge",
+      "description": "Paper minimum: $2,000 ($400 written + one lab). Reality: most passers report 2–3 lab attempts ($3,200–4,800), travel and lodging per attempt, plus training and lab time — the commonly cited all-in lands between $5,000 and $12,000. Then add the DC-specific line item: this blueprint's ACI, UCS, and SAN portions effectively require physical gear (a minimal ACI build alone means 2 APICs, 2 spines, 4 leafs), so rack rentals are a budget line, not a maybe. Write the number down before you start."
+    },
+    {
+      "step": 5,
+      "title": "Split your lab into 'virtual daily driver' and 'rented iron'",
+      "description": "The honest split, per INE's v3.1 lab guide: Nexus 9000v and Nexus Dashboard virtualize fine — that's your daily NX-OS, VXLAN EVPN, and automation reps at commodity cost (CML carries N9Kv legally). ACI fabrics, UCS Fabric Interconnects with servers, and SAN switching do not meaningfully virtualize — that's rack-rental territory (INE and others sell time on full physical pods). Structure your plan so cheap virtual hours build fluency and expensive physical hours are pure integration rehearsal."
+    },
+    {
+      "step": 6,
+      "title": "Study the v3.1 deltas like they're exam questions — they are",
+      "description": "Minor revisions telegraph what Cisco wants to test: Terraform joined Python and Ansible; Nexus Dashboard (Orchestrator, NDFC, Insights) replaced DCNM and the old Multi-Site tooling; Nutanix replaced HyperFlex; iSCSI left and RoCEv2 grew — DCQCN with PFC and ECN, explicitly for AI/ML clusters; ESGs and vzAny got named in the ACI domain. If your production estate is a version behind on any of these, that gap is exactly where the lab will find you."
+    },
+    {
+      "step": 7,
+      "title": "Train the Design module separately — it's not a CLI event",
+      "description": "Module 1 is 3 hours (2 hours once the AI module lands) of scenario-based design with no device access and no going back. It punishes config-first thinking: ACI vs VXLAN EVPN trade-offs, Multi-Pod vs Multi-Site, storage protocol selection — you're graded on requirements analysis and justification. Cisco Live's data center architecture sessions are free and are the best Design-module training that exists."
+    },
+    {
+      "step": 8,
+      "title": "Book the lab with logistics as part of the strategy",
+      "description": "Cisco facilities or traveling mobile-lab events ($1,600; $1,900 mobile with Cisco-provided kit). Book far ahead, plan travel to arrive rested, and know the retake rule: 30 days after a fail. Treat a failed first attempt as the normal outcome the folklore says it is — most passers' stories include one, followed by a much sharper second run."
+    },
+    {
+      "step": 9,
+      "title": "After the number: maintain it the modern way",
+      "description": "120 CE credits per 3 years on the unified ledger — exam passes, Cisco U courses, and Cisco Live sessions all count, and mixed CE-plus-exam paths exist (40 CE + a core, 80 CE + a concentration). File manual CE claims within 365 days of the activity. An active data center engineer maintains this through ordinary learning; a fully lapsed number restarts the whole journey."
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "CCIE Data Center v3.1 Exam Topics & Study Guide",
+      "url": "https://learningnetwork.cisco.com/s/ccie-data-center-exam-topics",
+      "type": "Official Documentation",
+      "note": "The contract for what the lab can ask — domain weights plus the downloadable v3.1 blueprint."
+    },
+    {
+      "name": "CCIE DC v3.1 Lab Blueprint (Official PDF)",
+      "url": "https://learningcontent.cisco.com/documents/marketing/exam-topics/New_CCIE-DataCenter-v3.1-BluePrint_v2_reviewed.pdf",
+      "type": "Official Documentation",
+      "note": "The full unified blueprint document — print it, and inventory yourself against every line."
+    },
+    {
+      "name": "CCIE DC v3.1 Release Notes (Official PDF)",
+      "url": "https://learningcontent.cisco.com/documents/marketing/exam-topics/CCIE-DC-v3.1-Release-Notes.pdf",
+      "type": "Official Documentation",
+      "note": "The authoritative change list: Terraform in, Nexus Dashboard in, Nutanix in, HyperFlex and iSCSI out, RoCEv2 expanded for AI/ML. Reads like a preview of what Cisco wants to test."
+    },
+    {
+      "name": "Cisco Learning Blog — AI Module Announcement",
+      "url": "https://blogs.cisco.com/learning/ai-updates-ccna-ccie-automation",
+      "type": "Official Documentation",
+      "note": "The official AI DOO module announcement with the DC-first rollout: topics Nov 2026 (Melbourne), practice labs Feb 2027 (London), live at Cisco Live US 2027."
+    },
+    {
+      "name": "Official AI-Module Format Article (CLN)",
+      "url": "https://learningnetwork.cisco.com/s/article/CCIE-Practical-Exam-Format-with-AI-Module",
+      "type": "Official Documentation",
+      "note": "The per-track format and dates from Cisco itself — re-check before committing to a lab timeline, and ignore dump-site 'news' claiming other dates."
+    },
+    {
+      "name": "Cisco Live On-Demand Library",
+      "url": "https://www.ciscolive.com/on-demand.html",
+      "type": "Video Sessions",
+      "note": "Free expert-level ACI, VXLAN EVPN, and DC architecture sessions — nothing paid trains the Design module better."
+    }
+  ],
+  "paid_resources": [
+    {
+      "provider": "INE – Data Center Expert Path",
+      "type": "Video + Workbooks + Racks",
+      "price": "~$749–$999/year",
+      "best_for": "The default self-study stack — v3.1-aligned workbooks plus rack access to the physical ACI/UCS/SAN gear this blueprint demands",
+      "affiliate_url": "https://ine.com/",
+      "affiliate_label": "View INE",
+      "affiliate_event": "ine_ccie_dc",
+      "affiliate": false,
+      "note": "Plain reference link, no commission. INE's own lab-build guide is the honest map of what virtualizes and what doesn't."
+    },
+    {
+      "provider": "CCNP and CCIE Data Center Core DCCOR 350-601 Official Cert Guide",
+      "type": "Book (Cisco Press)",
+      "price": "~$50–70",
+      "best_for": "The written-exam foundation — the official deep-dive for the $400 qualifying exam",
+      "affiliate_url": "https://www.amazon.com/s?k=CCNP+and+CCIE+Data+Center+Core+DCCOR+350-601+Official+Cert+Guide&tag=certblueprint-20",
+      "affiliate_label": "View on Amazon",
+      "affiliate_event": "amazon_ccie_dc",
+      "affiliate": true,
+      "note": "Buy the newest edition — DCCOR content shifts between printings."
+    },
+    {
+      "provider": "Cisco Modeling Labs – Personal / Personal Plus",
+      "type": "Lab Platform",
+      "price": "$199–$349/year",
+      "best_for": "The virtual daily driver — legal Nexus 9000v images for NX-OS, VXLAN EVPN, and automation reps at commodity cost",
+      "affiliate_url": "https://u.cisco.com/",
+      "affiliate_label": "View on Cisco U",
+      "affiliate_event": "cml_ccie_dc",
+      "affiliate": false,
+      "note": "Plain reference link. Covers the virtualizable half of the blueprint; ACI, UCS, and SAN still need rented iron."
+    },
+    {
+      "provider": "Cisco U. – Data Center Learning Paths",
+      "type": "Official Training",
+      "price": "Varies — commonly employer-funded via Learning Credits",
+      "best_for": "Blueprint-aligned official prep, including the Nexus Dashboard and automation content that entered at v3.1",
+      "affiliate_url": "https://u.cisco.com/",
+      "affiliate_label": "View Cisco U",
+      "affiliate_event": "ciscou_ccie_dc",
+      "affiliate": false,
+      "note": "Plain reference link. Data center teams at Cisco shops almost always hold Learning Credits — ask before self-funding anything."
+    }
+  ],
+  "voucher_links": [
+    {
+      "label": "Written via Pearson VUE · Lab via Cisco's expert-exam booking",
+      "url": "https://ciscolearningservices.my.site.com/cln/s/article/book-your-expert-level-exams",
+      "note": "$400 written + $1,600 per lab attempt ($1,900 mobile-lab with Cisco kit); travel and lodging on you, and this track adds rack-rental costs for ACI/UCS/SAN that most others don't. Realistic all-in with 2–3 attempts: $5,000–12,000+ (commonly cited, unofficial). Cisco Learning Credits redeem for all of it — ask your employer first."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Should I do CCIE Data Center or stop at CCNP Data Center? The honest answer.",
+      "answer": "For most data center engineers: stop at CCNP DC plus serious automation, and that's not settling. DCCOR plus a concentration — including the new DCAI 300-640 AI-infrastructure concentration — covers most job postings, and Python/Ansible/Terraform fluency moves salaries more reliably than a number does. The CCIE is the right call in specific rooms: Cisco partners (the number maintains their status), providers and large Cisco-standardized data centers (seniority shortcut), consulting on ACI and VXLAN EVPN migrations (you bill on it), and the growing AI-infrastructure buildout market where Cisco has planted this track's flag. Know which room you're in before spending a year of evenings."
+    },
+    {
+      "question": "What does it really cost?",
+      "answer": "Paper: $2,000 ($400 written + $1,600 lab). Reality: most passers report 2–3 lab attempts, each with travel and lodging, plus 12–18 months of training — the commonly cited all-in runs $5,000–12,000, and this track adds a surcharge the others don't: the ACI, UCS, and SAN portions of the blueprint effectively require physical hardware (minimum ACI build: 2 APICs, 2 spines, 4 leafs), so rack rentals are a standing line item. Budget the realistic number up front; the mid-journey surprise is how people end up with an expensive half-finished attempt."
+    },
+    {
+      "question": "What's the deal with the AI module — and why does it hit this track first?",
+      "answer": "Cisco announced a 1-hour 'AI Deploy, Operate and Optimize' module joining every CCIE lab — the 8-hour total holds, but Design shrinks from 3 hours to 2 and the AI module tests your use of AI assistants for configuration, troubleshooting, and code. Data Center goes first: exam topics at Cisco Live Melbourne (November 2026), practice labs at Cisco Live London (February 2027), live at Cisco Live US 2027. Why DC first? The same v3.1 release notes that expanded RoCEv2 said it plainly: AI/ML clusters. Cisco considers this the AI-infrastructure track. Practical upshot: 2026 starters on a normal timeline should assume the AI module is part of their exam and practice AI-assisted workflows from day one."
+    },
+    {
+      "question": "Can I home-lab this track?",
+      "answer": "Only half of it, honestly. Nexus 9000v and Nexus Dashboard virtualize well — CML gives you legal daily reps for NX-OS, VXLAN EVPN, and the automation domain. But ACI needs real APICs, spines, and leafs; UCS needs Fabric Interconnects and servers; SAN switching needs real MDS gear — and buying that stack secondhand runs into serious money plus power, noise, and space. The standard answer is the split: virtual for daily fluency, rack rentals (INE and others) for full-scale integration rehearsal. This is the most hardware-dependent track in the current lineup; budget like it."
+    },
+    {
+      "question": "What changed in v3.1, and does it matter?",
+      "answer": "It matters because minor revisions telegraph the grader's interests. The headline deltas: Terraform joined Python and Ansible in automation; Nexus Dashboard (Orchestrator, Fabric Controller, Insights) replaced DCNM and the old Multi-Site tooling; Nutanix replaced HyperFlex as the hyperconverged platform; iSCSI left the storage domain while RoCEv2 grew — DCQCN congestion control with PFC and ECN, which Cisco explicitly tied to AI/ML clusters; and the fabric domains were restructured around two co-equal overlays, ACI and VXLAN EVPN. Domain weights didn't move and the lab format didn't change. If your production estate lags on any of these, that's your study priority list."
+    },
+    {
+      "question": "What's the actual pass rate?",
+      "answer": "Cisco has never published pass rates for any CCIE, so every specific figure you'll see — including the '~26% first attempt' number that circulates — is unverifiable folklore. What the community folklore does agree on: most passers need 2–3 lab attempts, and prep commonly runs 12–18 months and 1,000+ hours past CCNP level for candidates without daily expert exposure (also folklore, also honest). Plan financially and emotionally for a failed first attempt; the passers' stories almost all include one."
+    },
+    {
+      "question": "How does recertification work at this tier?",
+      "answer": "3-year cycle on the unified CE ledger: 120 CE credits, or blends like 40 CE plus a technology core exam, 40 CE plus two professional concentrations, or 80 CE plus one concentration — and exam passes auto-award CE. Cisco U courses and Cisco Live sessions feed the same ledger, so an active data center engineer maintains the number through ordinary professional learning. One administrative trap: manual CE claims must be submitted within 365 days of the activity. Let the number fully lapse and you restart from the written. Don't."
+    }
+  ],
+  "related_certs": [
+    {
+      "title": "CCNP Data Center",
+      "slug": "ccnp-data-center",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The base camp — its DCCOR core is this cert's qualifying exam, and for most data center engineers it's also the honest summit."
+    },
+    {
+      "title": "CCIE Enterprise Infrastructure",
+      "slug": "ccie-enterprise-infrastructure",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The enterprise-track twin — same lab economics and folklore, aimed at campus routing and SD-x instead of fabrics, compute, and storage."
+    },
+    {
+      "title": "CCNP Automation",
+      "slug": "ccnp-automation",
+      "vendor": "Cisco",
+      "vendor_slug": "cisco",
+      "reason": "The blueprint's 15% automation domain — Python, Ansible, Terraform — as its own credential; strong pairing whether or not you summit the lab."
+    }
+  ],
+  "seo_title": "CCIE Data Center Guide – Costs & AI Module | CertBlueprint",
+  "seo_description": "The honest CCIE Data Center briefing: DCCOR + the 8-hour v3.1 lab, real $5–12K costs, the ACI hardware problem, and why this track gets the AI module first."
+}

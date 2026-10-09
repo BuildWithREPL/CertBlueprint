@@ -13,6 +13,41 @@ const MAX_TURNS = 3;          // user answers before we force a conclusion
 const MAX_MSG_CHARS = 1500;   // per message
 const MAX_TOTAL_CHARS = 6000; // whole conversation
 
+/**
+ * The closed vocabulary the model must land on, so the page can resolve the
+ * reading against real role pages and a real trial instead of trusting the
+ * model's own idea of what exists.
+ *
+ * This list is duplicated from src/lib/navigator/data/lab-fields.ts because the
+ * model reads it here. The site build asserts the two are identical and fails
+ * if they drift — see pages/navigator/lab-graph.json.ts. Do not edit one
+ * without the other.
+ */
+const FIELD_KEYS = [
+  "it-support",
+  "systems-infrastructure",
+  "network-engineering",
+  "field-infrastructure",
+  "cloud-engineering",
+  "devops-platform-sre",
+  "software-engineering",
+  "qa-testing",
+  "data-analytics",
+  "database-administration",
+  "cybersecurity-soc",
+  "cybersecurity-dfir",
+  "cybersecurity-grc",
+  "cybersecurity-iam",
+  "cybersecurity-offensive",
+  "network-security",
+  "ot-security",
+  "architecture",
+  "ai-ml",
+  "it-project-management",
+  "business-analysis",
+  "technical-writing",
+];
+
 const SYSTEM_PROMPT = `You are the reader behind CertBlueprint's IT Career Navigator — a mentor who has spent 20 years helping people find their place in IT. You read what a person actually wrote and point them at the IT discipline that genuinely fits how they think. You are direct, warm, and honest. Never corporate.
 
 VOICE
@@ -38,9 +73,14 @@ FOLLOW-UPS
 - Do NOT conclude from the person's FIRST answer unless it is unmistakably specific about technology itself (names tools, protocols, code, systems). If the answer is general-life ("I fix things", "I research stuff") or points several directions, a good mentor checks before placing someone: ask the one question that would split the directions apart (e.g. "fix what, exactly — what do you reach for first?").
 - When the system message says "CONCLUDE NOW", you must give a reading with what you have, honestly hedged.
 
+FIELD KEY
+Every reading must carry a "field_key" chosen from this list, and ONLY this list — it is how the page links you to real role pages and a real hands-on trial. Pick the single closest one even if your prose describes it in different words:
+${FIELD_KEYS.join(" · ")}
+Guidance: security operations work (alerts, triage, SIEM) is cybersecurity-soc; breaking into things on purpose is cybersecurity-offensive; policy, audit and frameworks are cybersecurity-grc; firewalls, segmentation and secure network design are network-security. Logical routing and switching is network-engineering; cabling, RF and physical plant is field-infrastructure. Breaking software to document defects so they get fixed is qa-testing; breaking systems to prove they can be compromised is cybersecurity-offensive — do not send someone describing careful bug reproduction into offensive security, which is a gated late-career field. If the person belongs somewhere this site does not map (project management, business analysis, technical writing, AI/ML), still use the matching key — the page will say so honestly rather than pretending.
+
 OUTPUT — respond with ONLY a JSON object, no markdown fences, no extra text:
 Follow-up: {"type":"followup","say":"<one short sentence reflecting what you heard>","ask":"<the one question>"}
-Reading:   {"type":"reading","heard":"<2-3 sentences reflecting their specific words back>","field":"<primary field name>","body":"<2-4 sentences: what this field is and why it matches them>","road":"<3-5 sentences: the honest way in — first rung, the cert worth getting, what year one looks like>","road_flag":<"gated — but never hidden"|"track still being built"|null>,"weekend":"<one concrete free-or-cheap thing to try this weekend to feel the work>","also":"<one sentence naming a genuine second direction, or null>"}`;
+Reading:   {"type":"reading","heard":"<2-3 sentences reflecting their specific words back>","field":"<primary field name — 1-4 words, never a sentence>","field_key":"<exactly one key from the FIELD KEY list>","body":"<2-4 sentences: what this field is and why it matches them>","road":"<3-5 sentences: the honest way in — first rung, the cert worth getting, what year one looks like>","road_flag":<"gated — but never hidden"|"track still being built"|null>,"weekend":"<one concrete free-or-cheap thing to try this weekend to feel the work>","also":"<one sentence naming a genuine second direction, or null>"}`;
 
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), {
@@ -120,17 +160,58 @@ async function handleRead(request, env) {
   if (parsed.type === "followup" && userTurns >= MAX_TURNS) {
     return json({ error: "unreadable" }, 502);
   }
+  // A key the model invented is worse than no key: the page would resolve it to
+  // nothing and could not tell the difference between "unmapped" and "wrong".
+  // Drop it here so the client only ever sees a key it can trust.
+  if (parsed.type === "reading" && !FIELD_KEYS.includes(parsed.field_key)) {
+    delete parsed.field_key;
+  }
   return json(parsed);
+}
+
+const CANONICAL_HOST = "certblueprint.com";
+
+// Retired URLs → their replacement. Permanent, so search engines move the
+// signal instead of indexing two copies.
+const RETIRED = {
+  "/navigator-app": "/navigator/",
+  "/navigator-app.html": "/navigator/",
+  "/navigator-app/": "/navigator/",
+};
+
+// _headers is NOT applied to responses that pass through the Worker, so the
+// same baseline is attached here. Keep in step with public/_headers.
+function withSiteHeaders(response, pathname) {
+  const res = new Response(response.body, response);
+  res.headers.set("X-Content-Type-Options", "nosniff");
+  res.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
+  if (pathname === "/sitemap-index.xml" || pathname === "/sitemap-0.xml") {
+    res.headers.set("Cache-Control", "no-store");
+  }
+  return res;
 }
 
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+
+    // One canonical host. www (or any other alias) gets a permanent redirect
+    // with the path and query intact. Local dev hosts are left alone.
+    if (url.hostname === "www." + CANONICAL_HOST) {
+      url.hostname = CANONICAL_HOST;
+      url.protocol = "https:";
+      return Response.redirect(url.toString(), 301);
+    }
+
+    if (RETIRED[url.pathname]) {
+      return Response.redirect(new URL(RETIRED[url.pathname], url).toString(), 301);
+    }
+
     if (url.pathname === "/api/navigator/read") {
       if (request.method !== "POST") return json({ error: "method_not_allowed" }, 405);
       return handleRead(request, env);
     }
     // Everything else: the static site.
-    return env.ASSETS.fetch(request);
+    return withSiteHeaders(await env.ASSETS.fetch(request), url.pathname);
   },
 };

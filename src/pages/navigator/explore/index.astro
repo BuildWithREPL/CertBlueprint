@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import DomainCard from '../../../components/navigator/DomainCard.astro';
+import RoleCardCompact from '../../../components/navigator/RoleCardCompact.astro';
+import '../../../styles/navigator.css';
+import { DOMAINS, DOMAIN_BY_ID } from '../../../lib/navigator/data/domains';
+import { INTERSECTION_ROLES, ROLES } from '../../../lib/navigator/data/roles';
+
+const title = 'Explore IT Careers — The Full Map | CertBlueprint';
+const description =
+  'Browse every IT field and role: what the work involves, the technologies, where it happens, and how the fields overlap. No quiz required.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Career Navigator', href: '/navigator/' },
+  { label: 'Explore', href: '/navigator/explore/' },
+];
+
+const orderedDomains = [...DOMAINS].sort((a, b) => a.order - b.order);
+
+// Intersection roles sorted by how many fields they span — the two-domain roles
+// are the interesting middle ground, the three-domain ones are the deep end.
+const intersections = [...INTERSECTION_ROLES].sort((a, b) => b.domains.length - a.domains.length);
+
+const firstJobRoles = ROLES.filter((r) => r.entry === 'first-job');
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs}>
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-6">
+    <h1 class="text-3xl sm:text-4xl font-bold tracking-tight" style="color: var(--cb-text);">
+      The map
+    </h1>
+    <p class="mt-3 text-lg leading-relaxed" style="color: var(--cb-text-sub); max-width: 62ch;">
+      {ROLES.length} roles across {orderedDomains.length} fields. Every role page tells you what the work
+      genuinely involves — including the part nobody advertises.
+    </p>
+    <a href="/navigator/assessment/" class="inline-block mt-4 text-sm font-semibold" style="color: var(--cb-accent-text);">
+      Or let the scenarios narrow it down for you →
+    </a>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {orderedDomains.map((domain) => <DomainCard domain={domain} />)}
+    </div>
+  </section>
+
+  {/* ── Where to start, for people with no IT experience ──────── */}
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+    <h2 class="text-2xl font-bold tracking-tight mb-2" style="color: var(--cb-text);">
+      Roles you can actually start in
+    </h2>
+    <p class="text-base leading-relaxed mb-5" style="color: var(--cb-text-sub); max-width: 62ch;">
+      Most IT roles are second or third jobs, and pretending otherwise wastes people’s time. These
+      are the ones that are genuinely reachable without prior professional experience.
+    </p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      {firstJobRoles.map((role) => <RoleCardCompact role={role} />)}
+    </div>
+  </section>
+
+  {/* ── The intersections ─────────────────────────────────────── */}
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <h2 class="text-2xl font-bold tracking-tight mb-2" style="color: var(--cb-text);">
+      Where the fields overlap
+    </h2>
+    <p class="text-base leading-relaxed mb-5" style="color: var(--cb-text-sub); max-width: 62ch;">
+      These roles belong to more than one world at once. They are usually where the interesting work
+      and the better pay are, and they are invisible to any tool that makes you choose one column.
+    </p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      {intersections.map((role) => <RoleCardCompact role={role} />)}
+    </div>
+
+    <div class="nav-card p-5 mt-6" style="--nav-accent: var(--nav-cyan);">
+      <h3 class="font-bold text-base mb-2" style="color: var(--cb-text);">Reading the overlaps</h3>
+      <ul class="space-y-1.5 text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+        <li>
+          <strong>{DOMAIN_BY_ID.networking.name} + {DOMAIN_BY_ID.cybersecurity.name}</strong> → network
+          security engineering, Zero Trust, OT security
+        </li>
+        <li>
+          <strong>{DOMAIN_BY_ID.cloud.name} + {DOMAIN_BY_ID.cybersecurity.name}</strong> → cloud security
+          engineering, DevSecOps
+        </li>
+        <li>
+          <strong>{DOMAIN_BY_ID.systems.name} + {DOMAIN_BY_ID.cybersecurity.name}</strong> → identity
+          engineering, endpoint security
+        </li>
+        <li>
+          <strong>{DOMAIN_BY_ID.networking.name} + {DOMAIN_BY_ID.software.name}</strong> → network
+          automation engineering
+        </li>
+        <li>
+          <strong>{DOMAIN_BY_ID.data.name} + {DOMAIN_BY_ID.cybersecurity.name}</strong> → detection
+          engineering, threat hunting
+        </li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

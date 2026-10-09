@@ -6,11 +6,32 @@ const breadcrumbs = [
   { label: 'Home', href: '/' },
   { label: 'Contact', href: '/contact/' },
 ];
+
+const link = 'underline hover:opacity-80 transition-opacity';
+
+const topics = [
+  {
+    title: 'Content corrections',
+    body: 'If an exam code, price, question count, retirement date, link, or anything else on the site is out of date or wrong, tell us. Include the page URL, what it says now, and—if you have one—a link to the official vendor page that shows the correct detail. Confirmed corrections are made on the page itself, and the "last verified" date on certification guides is updated when facts are rechecked.',
+  },
+  {
+    title: 'Career Navigator feedback',
+    body: 'A role description that does not match your real experience of the job, a result that seems off, or a technology missing from the inventory—this is the most useful feedback we get. You do not need to send your answers or a share link; only include them if you are comfortable with us seeing them; a description of what you expected and what you got is usually enough.',
+  },
+  {
+    title: 'Suggestions',
+    body: 'Missing a certification guide or comparison you would find useful? Have a study resource recommendation? Reader requests directly shape what gets written next.',
+  },
+  {
+    title: 'Advertising and partnerships',
+    body: 'We do not accept payment to feature, rank, or review a certification, course, or vendor. Recommendations are editorial. For other partnership questions, email us and explain what you have in mind.',
+  },
+];
 ---
 
 <BaseLayout
   title="Contact CertBlueprint"
-  description="Get in touch with CertBlueprint. Questions, corrections, feedback, and partnership inquiries."
+  description="Contact CertBlueprint for content corrections, Career Navigator feedback, guide suggestions, and privacy questions. What to include and what to expect."
   breadcrumbs={breadcrumbs}
 >
   <div class="max-w-2xl mx-auto px-4 sm:px-6 py-10">
@@ -19,40 +40,47 @@ const breadcrumbs = [
     <header class="mt-4 mb-8 pb-6" style="border-bottom: 1px solid var(--cb-border);">
       <h1 class="text-2xl sm:text-3xl font-bold mb-3" style="color: var(--cb-text);">Contact</h1>
       <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">
-        CertBlueprint is operated by SureWhyNot. We read every message and aim to respond within a few business days.
+        CertBlueprint is operated by <a href="https://surewhynot.app" target="_blank" rel="noopener noreferrer" class={link} style="color: var(--cb-accent-text);">SureWhyNot</a>. We read every message and aim to respond within a few business days.
       </p>
     </header>
 
     <div class="space-y-8">
 
-      <div class="rounded-xl border p-6" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
-        <h2 class="text-base font-bold mb-4" style="color: var(--cb-text);">Email us</h2>
-        <a
-          href="mailto:contact@surewhynot.app"
-          class="inline-flex items-center gap-2.5 text-sm font-medium transition-opacity hover:opacity-80"
-          style="color: var(--cb-accent-text);"
-        >
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-          </svg>
-          contact@surewhynot.app
-        </a>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="rounded-xl border p-5" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+          <h2 class="text-sm font-bold mb-1" style="color: var(--cb-text);">General &amp; corrections</h2>
+          <p class="text-xs mb-3" style="color: var(--cb-text-muted);">Questions, corrections, feedback</p>
+          <a href="mailto:contact@surewhynot.app" class="text-sm font-medium break-all" style="color: var(--cb-accent-text);">contact@surewhynot.app</a>
+        </div>
+        <div class="rounded-xl border p-5" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+          <h2 class="text-sm font-bold mb-1" style="color: var(--cb-text);">Privacy</h2>
+          <p class="text-xs mb-3" style="color: var(--cb-text-muted);">Data, cookies, consent</p>
+          <a href="mailto:privacy@surewhynot.app" class="text-sm font-medium break-all" style="color: var(--cb-accent-text);">privacy@surewhynot.app</a>
+        </div>
       </div>
 
-      <div class="space-y-4 text-sm" style="color: var(--cb-text-sub);">
-        <div>
-          <p class="font-semibold mb-1" style="color: var(--cb-text);">Content corrections</p>
-          <p>If exam details, pricing, URLs, or any other content on the site is out of date or incorrect, let us know. Include the page URL and what needs to be fixed.</p>
+      <section>
+        <h2 class="text-base font-bold mb-4" style="color: var(--cb-text);">What to write to us about</h2>
+        <div class="space-y-5 text-sm leading-relaxed" style="color: var(--cb-text-sub);">
+          {topics.map((t) => (
+            <div>
+              <h3 class="font-semibold mb-1" style="color: var(--cb-text);">{t.title}</h3>
+              <p>{t.body}</p>
+            </div>
+          ))}
+          <div>
+            <h3 class="font-semibold mb-1" style="color: var(--cb-text);">Privacy inquiries</h3>
+            <p>For data, cookie, or consent questions, email <a href="mailto:privacy@surewhynot.app" class={link} style="color: var(--cb-accent-text);">privacy@surewhynot.app</a>. You can change your cookie choices at any time from the cookie banner's settings. See our <a href="/legal/privacy-policy/" class={link} style="color: var(--cb-accent-text);">Privacy Policy</a> for how analytics, advertising, and affiliate links handle data.</p>
+          </div>
         </div>
-        <div>
-          <p class="font-semibold mb-1" style="color: var(--cb-text);">Feedback and suggestions</p>
-          <p>Missing a cert guide you'd find useful? Have a resource recommendation? We're building this out incrementally and reader feedback informs what gets prioritized.</p>
-        </div>
-        <div>
-          <p class="font-semibold mb-1" style="color: var(--cb-text);">Privacy inquiries</p>
-          <p>For data, cookie, or privacy-related questions, email <a href="mailto:privacy@surewhynot.app" class="underline hover:opacity-80 transition-opacity" style="color: var(--cb-accent-text);">privacy@surewhynot.app</a>. See our <a href="/legal/privacy-policy/" class="underline hover:opacity-80 transition-opacity" style="color: var(--cb-accent-text);">Privacy Policy</a> for details on how we handle data.</p>
-        </div>
-      </div>
+      </section>
+
+      <section class="rounded-xl border p-5 text-sm leading-relaxed" style="background: var(--cb-bg-subtle); border-color: var(--cb-border-sub); color: var(--cb-text-sub);">
+        <h2 class="text-base font-bold mb-2" style="color: var(--cb-text);">What we can't help with</h2>
+        <p>
+          We are an independent reference site, not a certification vendor or training provider. We cannot access exam scores, reschedule or refund exams, issue vouchers, or resolve account problems with Cisco, CompTIA, AWS, Microsoft, Pearson VUE, or any course platform. For those, contact the vendor or provider directly—each certification guide links to the official exam page.
+        </p>
+      </section>
 
     </div>
   </div>

@@ -1,0 +1,59 @@
+---
+import type { Domain } from '../../lib/navigator/types';
+import { ACCENT_VAR } from '../../lib/navigator/data/domains';
+import { rolesForDomain } from '../../lib/navigator/data/roles';
+
+interface Props {
+  domain: Domain;
+}
+
+const { domain } = Astro.props;
+const roles = rolesForDomain(domain.id);
+const accent = `var(${ACCENT_VAR[domain.accent]})`;
+
+// Show a handful of real role names on the card. Seeing "Network Security
+// Engineer" on the Networking card is what tells a newcomer that these worlds
+// overlap — before they have read a single word of explanation.
+const preview = roles.slice(0, 4);
+const remaining = roles.length - preview.length;
+---
+
+<a
+  href={`/navigator/explore/${domain.id}/`}
+  class="nav-card nav-card--railed block p-5 pl-6 h-full"
+  style={`--nav-accent: ${accent};`}
+>
+  <div class="flex items-start justify-between gap-3 mb-2">
+    <h3 class="font-bold text-lg tracking-tight" style="color: var(--cb-text);">
+      {domain.name}
+    </h3>
+    <span class="text-xs font-mono shrink-0 mt-1" style="color: var(--cb-text-muted);">
+      {roles.length} roles
+    </span>
+  </div>
+
+  <p class="text-sm leading-relaxed mb-4" style="color: var(--cb-text-sub);">
+    {domain.purpose}
+  </p>
+
+  <div class="flex flex-wrap gap-1.5 mb-3">
+    {
+      preview.map((role) => (
+        <span class="nav-pill" style={`--nav-accent: ${accent};`}>
+          {role.name}
+        </span>
+      ))
+    }
+    {
+      remaining > 0 && (
+        <span class="text-xs self-center" style="color: var(--cb-text-muted);">
+          +{remaining} more
+        </span>
+      )
+    }
+  </div>
+
+  <span class="text-sm font-semibold" style={`color: ${accent};`}>
+    Explore {domain.name.toLowerCase()} →
+  </span>
+</a>
