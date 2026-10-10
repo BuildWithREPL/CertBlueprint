@@ -232,6 +232,14 @@ export default {
       if (request.method !== "POST") return json({ error: "method_not_allowed" }, 405);
       return handleRead(request, env);
     }
+    // dist/404.html is a file like any other, so asking for it by name gets it
+    // with a 200: an error page that says everything is fine. Serve it as what
+    // it is.
+    if (/^\/404(\/|\.html)?$/.test(url.pathname)) {
+      const page = await env.ASSETS.fetch(new Request(new URL("/404", url), request));
+      return withSiteHeaders(new Response(page.body, { status: 404, headers: page.headers }), url.pathname);
+    }
+
     // Everything else: the static site.
     const response = await env.ASSETS.fetch(request);
     // The asset layer adds or drops a trailing slash with a 307. That is the

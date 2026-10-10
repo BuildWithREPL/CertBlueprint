@@ -140,9 +140,8 @@ files supplied. **Export *Content → Soft 404 Pages* from the crawl** to name
 them.
 
 A real soft 404 that the crawl did not reach: `https://certblueprint.com/404`
-serves the error page with **status 200**. It is `noindex` and nothing links
-to it, so it is harmless today. It is still worth making the Worker answer
-`/404` with a 404 status.
+served the error page with **status 200**. **Fixed:** the Worker now answers
+`/404`, `/404/` and `/404.html` with a 404 status.
 
 ### `noindex` directives (11) — intended; keep them
 
