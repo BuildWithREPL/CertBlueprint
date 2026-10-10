@@ -117,7 +117,10 @@ a real page. The Apache file uses anchored `RedirectMatch` rather than
 `/navigator/plan/cloud/anything`. If the site leaves Cloudflare, the new host
 also needs www → apex and slash canonicalisation, which the Worker does today.
 
-**Not deployed.** It goes live with `npm run deploy`.
+**Deployed 2026-10-10** through Cloudflare Workers Builds (pushes to `main`
+now deploy on their own). All 37 checks against the live site passed:
+every redirect, the 301 slash fix, the untouched pages, and the
+`/navigator-lab` structure.
 
 ## 4. Screaming Frog issues
 
