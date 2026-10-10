@@ -1,0 +1,30 @@
+# CertBlueprint 301 redirect map, 2026-10-10. Same map as docs/seo/redirects-2026-10.csv.
+#
+# Production does NOT read this file: the site is a Cloudflare Worker, and the
+# live copy of this map is RETIRED in worker/index.js. This is the same map for
+# an Apache host, should the site ever move.
+#
+# RedirectMatch with anchors rather than "Redirect 301": Redirect is a prefix
+# match, so "Redirect 301 /navigator/plan/cloud/ ..." would also catch
+# /navigator/plan/cloud/anything. The optional trailing slash (/?$) covers the
+# slashless variant in the same rule, as the Worker does.
+#
+# On a non-Cloudflare host you would also need the two canonicalisation rules
+# the Worker applies to every request: www -> apex, and slashless -> trailing
+# slash. They are host-specific and not included here.
+
+# Field-level plan URLs -> the field's explore page (indexable).
+RedirectMatch 301 ^/navigator/plan/networking/?$ https://certblueprint.com/navigator/explore/networking/
+RedirectMatch 301 ^/navigator/plan/cybersecurity/?$ https://certblueprint.com/navigator/explore/cybersecurity/
+RedirectMatch 301 ^/navigator/plan/systems/?$ https://certblueprint.com/navigator/explore/systems/
+RedirectMatch 301 ^/navigator/plan/cloud/?$ https://certblueprint.com/navigator/explore/cloud/
+RedirectMatch 301 ^/navigator/plan/software/?$ https://certblueprint.com/navigator/explore/software/
+RedirectMatch 301 ^/navigator/plan/data/?$ https://certblueprint.com/navigator/explore/data/
+RedirectMatch 301 ^/navigator/plan/operations/?$ https://certblueprint.com/navigator/explore/operations/
+
+# Never-published URLs that Search Console reports impressions for.
+RedirectMatch 301 ^/vendors/google/google-cybersecurity-certificate-review-cost-worth-it-security/?$ https://certblueprint.com/vendors/google/google-cybersecurity/
+RedirectMatch 301 ^/navigator/compare/application-software-engineer-vs-software-developer/?$ https://certblueprint.com/navigator/compare/application-security-engineer-vs-software-developer/
+
+# Retired standalone navigator app.
+RedirectMatch 301 ^/navigator-app(/|\.html)?$ https://certblueprint.com/navigator/
