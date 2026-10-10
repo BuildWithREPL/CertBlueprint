@@ -52,6 +52,12 @@ certblueprint/
 
 ## Operational notes
 
+- **Deploys happen on push to `main`.** The Worker is connected to this
+  repository through Cloudflare Workers Builds: build command `npm run build`,
+  deploy command `npx wrangler deploy && node scripts/submit-indexnow.mjs`.
+  `npm run deploy` does the same by hand from a machine with
+  `CLOUDFLARE_API_TOKEN` set.
+
 - **After editing roles or their `adjacent` moves, run `npm run build && npm run
   audit:map`.** The build already fails on a move to a role that does not exist,
   a page nothing links to, and a field no role can reach. The audit asks the
