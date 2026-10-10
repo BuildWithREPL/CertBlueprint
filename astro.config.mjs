@@ -51,6 +51,27 @@ function internalLinkCheck() {
         if (broken.length > 0) {
           throw new Error(`Internal link check: ${broken.length} broken link(s):\n  ${[...new Set(broken)].slice(0, 50).join('\n  ')}`);
         }
+
+        /* The Worker answers retired URLs with a 301 before the site sees
+           them. A target that stops being built turns the redirect into a 404
+           one hop later; a source that starts being built is a real page the
+           Worker hides. Neither shows up anywhere else. */
+        const worker = readFileSync(join(process.cwd(), 'worker', 'index.js'), 'utf8');
+        const retiredBlock = worker.match(/const RETIRED = \{([\s\S]*?)\n\};/);
+        if (!retiredBlock) {
+          throw new Error('Retired URL check: cannot find RETIRED in worker/index.js — update internalLinkCheck.');
+        }
+        /** @type {string[]} */
+        const badRedirects = [];
+        const retired = [...retiredBlock[1].matchAll(/"([^"]+)":\s*"([^"]+)"/g)];
+        for (const [, from, to] of retired) {
+          if (!resolves(to)) badRedirects.push(`${from} → ${to}: target is not built`);
+          if (resolves(from)) badRedirects.push(`${from}: a built page sits behind this redirect`);
+        }
+        if (badRedirects.length > 0) {
+          throw new Error(`Retired URL check: ${badRedirects.length} problem(s):\n  ${badRedirects.join('\n  ')}`);
+        }
+
         /* A page nobody links to is invisible however good it is. Adding a
            certification generates its page automatically, but vendor hubs list
            their guides editorially — so a new guide can end up reachable only
@@ -111,7 +132,7 @@ function internalLinkCheck() {
           );
         }
 
-        logger.info(`internal links OK across ${pages.length} pages; every guide and path is linked from its hub, every verified guide shows its stamp, and the map teaser draws all ${mapDots} roles`);
+        logger.info(`internal links OK across ${pages.length} pages; all ${retired.length} retired URLs redirect to built pages; every guide and path is linked from its hub, every verified guide shows its stamp, and the map teaser draws all ${mapDots} roles`);
       },
     },
   };

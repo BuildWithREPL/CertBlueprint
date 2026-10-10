@@ -172,11 +172,29 @@ async function handleRead(request, env) {
 const CANONICAL_HOST = "certblueprint.com";
 
 // Retired URLs → their replacement. Permanent, so search engines move the
-// signal instead of indexing two copies.
+// signal instead of indexing two copies. A key matches with or without its
+// trailing slash. The build fails if a target stops resolving or a key starts
+// shadowing a real page — see internalLinkCheck in astro.config.mjs.
 const RETIRED = {
   "/navigator-app": "/navigator/",
   "/navigator-app.html": "/navigator/",
   "/navigator-app/": "/navigator/",
+
+  // Plans are per career path, never per field, but a field-level plan URL
+  // gets typed and linked. The field's explore page is the indexable match;
+  // the per-path trackers are noindex, so sending these there would throw
+  // away whatever signal arrives.
+  "/navigator/plan/networking/": "/navigator/explore/networking/",
+  "/navigator/plan/cybersecurity/": "/navigator/explore/cybersecurity/",
+  "/navigator/plan/systems/": "/navigator/explore/systems/",
+  "/navigator/plan/cloud/": "/navigator/explore/cloud/",
+  "/navigator/plan/software/": "/navigator/explore/software/",
+  "/navigator/plan/data/": "/navigator/explore/data/",
+  "/navigator/plan/operations/": "/navigator/explore/operations/",
+
+  // Never published, but Search Console shows impressions for them.
+  "/vendors/google/google-cybersecurity-certificate-review-cost-worth-it-security/": "/vendors/google/google-cybersecurity/",
+  "/navigator/compare/application-software-engineer-vs-software-developer/": "/navigator/compare/application-security-engineer-vs-software-developer/",
 };
 
 // _headers is NOT applied to responses that pass through the Worker, so the
@@ -203,8 +221,11 @@ export default {
       return Response.redirect(url.toString(), 301);
     }
 
-    if (RETIRED[url.pathname]) {
-      return Response.redirect(new URL(RETIRED[url.pathname], url).toString(), 301);
+    const retired = RETIRED[url.pathname] ?? RETIRED[url.pathname + "/"];
+    if (retired) {
+      const target = new URL(retired, url);
+      target.search = url.search;
+      return Response.redirect(target.toString(), 301);
     }
 
     if (url.pathname === "/api/navigator/read") {
@@ -212,6 +233,12 @@ export default {
       return handleRead(request, env);
     }
     // Everything else: the static site.
-    return withSiteHeaders(await env.ASSETS.fetch(request), url.pathname);
+    const response = await env.ASSETS.fetch(request);
+    // The asset layer adds or drops a trailing slash with a 307. That is the
+    // canonical URL, not a temporary move, so say so: a 301 lets search
+    // engines fold the slashless variant into the real page.
+    const location = response.status === 307 && response.headers.get("location");
+    if (location) return Response.redirect(new URL(location, url).toString(), 301);
+    return withSiteHeaders(response, url.pathname);
   },
 };
