@@ -441,6 +441,7 @@ function render() {
   // Headline numbers
   const returning = d.returning ?? [];
   const known = sum(returning, (r) => r.visitors);
+  const ndBack = d.ndReturning?.[0] ?? { sessions: 0, returning_sessions: 0 };
   const back = sum(returning, (r) => r.came_back);
   sections.push(
     h('section', { class: 'cc-headline' },
@@ -459,8 +460,9 @@ function render() {
         tile('Session length', fmt.duration(ratio(t.span, t.sessions)), delta(ratio(t.span, t.sessions), ratio(prev.span, prev.sessions), { period: prevPeriod }), 'First to last activity, idle included'),
         tile('Click rate', fmt.pct(ratio(t.clicked, t.sessions)), delta(ratio(t.clicked, t.sessions), ratio(prev.clicked, prev.sessions), { period: prevPeriod, points: true }), 'Sessions with at least one click'),
         tile('Reloads', fmt.int(t.reloads), delta(t.reloads, prev.reloads, { period: prevPeriod, upIsGood: false }), `${fmt.pct(ratio(t.reloads, t.views))} of views were a refresh`),
-        tile('Returning visitors', known ? fmt.pct(back / known) : '–', null, known ? `${fmt.int(back)} of ${fmt.int(known)} visitors with consent` : 'Needs visitors who accepted analytics cookies'),
+        sites.includes('cb') ? tile('Returning visitors', known ? fmt.pct(back / known) : '–', null, known ? `${fmt.int(back)} of ${fmt.int(known)} visitors with consent` : 'Needs visitors who accepted analytics cookies') : null,
         sites.includes('nd') ? tile('NetDrill labs opened', fmt.int(t.opens), delta(t.opens, prev.opens, { period: prevPeriod })) : null,
+        sites.includes('nd') && ndBack.sessions ? tile('NetDrill returning sessions', fmt.pct(ndBack.returning_sessions / ndBack.sessions), null, 'From a browser that had used NetDrill before') : null,
       ),
     ),
   );
@@ -528,11 +530,13 @@ function render() {
   // Coming back
   const FREQ = ['1', '2', '3–5', '6–10', '11+'];
   const GAPS = ['under a day', '1–3 days', '3–7 days', '1–4 weeks', '30+ days'];
-  const freqSeries: Series[] = sites.map((s) => {
+  // Visitor ids exist only on certblueprint.com (NetDrill has no consent banner), so these charts are its alone.
+  const backSites = sites.filter((s) => s === 'cb');
+  const freqSeries: Series[] = backSites.map((s) => {
     const r = returning.find((x) => x.site === s) ?? {};
     return { key: s, label: SITES[s].label, color: SITES[s].color, values: ['f1', 'f2', 'f3', 'f6', 'f11'].map((k) => Number(r[k]) || 0) };
   });
-  const gapSeries: Series[] = sites.map((s) => {
+  const gapSeries: Series[] = backSites.map((s) => {
     const r = returning.find((x) => x.site === s) ?? {};
     return { key: s, label: SITES[s].label, color: SITES[s].color, values: ['g0', 'g1', 'g3', 'g7', 'g30'].map((k) => Number(r[k]) || 0) };
   });
@@ -540,18 +544,21 @@ function render() {
   const gapHost = h('div', { class: 'cc-chart' });
   sections.push(
     card('Coming back', `Only visitors who accepted analytics cookies can be recognised on a later visit: ${fmt.int(known)} in this range, ${fmt.int(back)} of them returning.`,
+      sites.includes('nd') && ndBack.sessions
+        ? h('p', { class: 'cc-hint' }, `NetDrill has no visitor id. ${fmt.pct(ndBack.returning_sessions / ndBack.sessions)} of its ${fmt.int(ndBack.sessions)} sessions came from a browser that had used NetDrill before, read from the progress NetDrill saves for the learner. Its labs table shows the same per lab.`)
+        : null,
       known === 0
         ? h('p', { class: 'cc-empty' }, 'No visitors with analytics consent in this range yet.')
         : h('div', { class: 'cc-stack' },
-            legend(sites, 'rect'),
+            legend(backSites, 'rect'),
             h('div', { class: 'cc-multiples' },
               h('div', null, h('h3', null, `Sessions per visitor, ${period}`), freqHost),
               h('div', null, h('h3', null, 'Average time between their visits'), gapHost),
             ),
-            tableView(['', ...sites.map((s) => SITES[s].label)], [
+            tableView(['', ...backSites.map((s) => SITES[s].label)], [
               ...FREQ.map((f, k) => [`${f} session${f === '1' ? '' : 's'}`, ...freqSeries.map((s) => s.values[k])]),
               ...GAPS.map((g, k) => [`Back after ${g}`, ...gapSeries.map((s) => s.values[k])]),
-              ['Seen before this range', ...sites.map((s) => Number(returning.find((x) => x.site === s)?.seen_before) || 0)],
+              ['Seen before this range', ...backSites.map((s) => Number(returning.find((x) => x.site === s)?.seen_before) || 0)],
             ]),
           ),
     ),
@@ -585,7 +592,7 @@ function render() {
       { label: 'Per open', num: true, value: (r) => fmt.duration(ratio(r.ms, r.opens)) },
       { label: 'Commands', num: true, value: (r) => fmt.int(r.commands), title: 'Commands typed, counted (never their text)' },
       { label: 'Reopened in session', num: true, value: (r) => fmt.pct(ratio(r.repeat_sessions, r.sessions)) },
-      { label: 'Came back to it', num: true, value: (r) => (r.visitors ? `${fmt.int(r.repeaters)} of ${fmt.int(r.visitors)}` : '–'), title: 'Visitors with consent who opened it again in another session' },
+      { label: 'Came back to it', num: true, value: (r) => fmt.pct(ratio(r.resumed, r.opens)), title: 'Opens by a browser that had opened it on an earlier visit (from NetDrill’s saved progress)' },
     ];
     const kinds = (d.labKinds ?? []).map((r): BarRow => ({ label: r.kind ?? 'Other', parts: [{ label: 'Opens', color: SITES.nd.color, value: r.opens }], value: `${fmt.int(r.opens)} opens · ${fmt.int(r.sessions)} sessions` }));
     const kindHost = h('div');

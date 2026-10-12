@@ -195,9 +195,19 @@ function origin(request, env) {
 }
 
 export async function handlePulse(request, env, ctx) {
-  const done = (status, note) => new Response(null, { status, headers: { "x-pulse": note, "cache-control": "no-store" } });
-  if (request.method !== "POST") return done(405, "method");
   const site = origin(request, env);
+  // NetDrill posts from another origin with fetch() in cors mode: sendBeacon would
+  // go out as no-cors, and under NetDrill's no-referrer policy that sends
+  // "Origin: null". cors mode keeps the real Origin, so it needs these headers back.
+  const cors = site ? { "access-control-allow-origin": request.headers.get("origin"), vary: "Origin" } : {};
+  const done = (status, note) => new Response(null, { status, headers: { "x-pulse": note, "cache-control": "no-store", ...cors } });
+  if (request.method === "OPTIONS" && site) {
+    return new Response(null, {
+      status: 204,
+      headers: { ...cors, "access-control-allow-methods": "POST", "access-control-allow-headers": "content-type", "access-control-max-age": "86400" },
+    });
+  }
+  if (request.method !== "POST") return done(405, "method");
   if (!site) return done(403, "origin");
   const ua = request.headers.get("user-agent") || "";
   if (!ua || BOTS.test(ua)) return done(204, "bot");
@@ -525,7 +535,8 @@ function queries(db, { start, end, prevStart, bucket, tz, site, now }) {
   }
   if (nd) {
     const opened = (col) => `WITH o AS (
-        SELECT ${col} AS k, MAX(kind) AS kind, MAX(topic) AS topic, COUNT(*) AS opens, COUNT(DISTINCT sid) AS sessions
+        SELECT ${col} AS k, MAX(kind) AS kind, MAX(topic) AS topic, COUNT(*) AS opens, COUNT(DISTINCT sid) AS sessions,
+          SUM(CASE WHEN n = 1 THEN 1 ELSE 0 END) AS resumed
         FROM events WHERE type = 'open' AND site = 'nd' AND ts >= ? AND ts < ? AND ${col} IS NOT NULL GROUP BY ${col}),
       r AS (
         SELECT k, SUM(CASE WHEN c > 1 THEN 1 ELSE 0 END) AS repeat_sessions FROM (
@@ -537,13 +548,20 @@ function queries(db, { start, end, prevStart, bucket, tz, site, now }) {
         GROUP BY k),
       t AS (
         SELECT ${col} AS k, SUM(ms) AS ms, SUM(n) AS commands FROM events WHERE type = 'time' AND site = 'nd' AND ts >= ? AND ts < ? AND ${col} IS NOT NULL GROUP BY ${col})
-      SELECT o.k AS k, o.kind, o.topic, o.opens, o.sessions, COALESCE(r.repeat_sessions, 0) AS repeat_sessions,
+      SELECT o.k AS k, o.kind, o.topic, o.opens, o.sessions, o.resumed, COALESCE(r.repeat_sessions, 0) AS repeat_sessions,
         COALESCE(u.visitors, 0) AS visitors, COALESCE(u.repeaters, 0) AS repeaters,
         COALESCE(t.ms, 0) AS ms, COALESCE(t.commands, 0) AS commands
       FROM o LEFT JOIN r ON r.k = o.k LEFT JOIN u ON u.k = o.k LEFT JOIN t ON t.k = o.k
       ORDER BY o.opens DESC LIMIT 50`;
     list.labs = q(opened("item"), start, end, start, end, start, end, start, end);
     list.labTopics = q(opened("topic"), start, end, start, end, start, end, start, end);
+    // NetDrill has no visitor id. Whether a browser had used it before comes from
+    // NetDrill's own saved progress, sent as a yes or no on each session's view.
+    list.ndReturning = q(
+      `SELECT COUNT(DISTINCT sid) AS sessions, COUNT(DISTINCT CASE WHEN kind = 'returning' THEN sid END) AS returning_sessions
+       FROM events WHERE type = 'view' AND site = 'nd' AND ts >= ? AND ts < ?`,
+      start, end,
+    );
     list.labKinds = q(
       `SELECT kind, COUNT(*) AS opens, COUNT(DISTINCT sid) AS sessions FROM events
        WHERE type = 'open' AND site = 'nd' AND ts >= ? AND ts < ? GROUP BY kind ORDER BY opens DESC`,
