@@ -27,11 +27,5 @@ const { item, from, class: className, style } = Astro.props;
   data-netdrill-from={from}
   class={className}
   style={style}><slot /></a><script>
-  // One listener for every NetDrill link on the page (Astro includes this once).
-  document.addEventListener('click', (event) => {
-    const link = (event.target as Element | null)?.closest?.('a[data-netdrill]');
-    if (!(link instanceof HTMLAnchorElement)) return;
-    const gtag = (window as { gtag?: (...args: unknown[]) => void }).gtag;
-    gtag?.('event', 'netdrill_open', { lab_id: link.dataset.netdrill, from: link.dataset.netdrillFrom });
-  });
+  import '../../scripts/netdrill-track';
 </script>
