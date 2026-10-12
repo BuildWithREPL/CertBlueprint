@@ -331,6 +331,13 @@ const labels = JSON.stringify({ pages, topics, nd }).replace(/</g, '\\u003c');
       .cc-timeline li { display: grid; grid-template-columns: 56px 1fr; gap: 8px; font-size: 13px; }
       .cc-when { color: var(--muted); font-variant-numeric: tabular-nums; }
       .cc-timeline .cc-end { color: var(--ink-2); }
+      a.cc-pill { text-decoration: none; }
+      .cc-netstatus { display: grid; gap: 10px; padding: 12px 14px; border-radius: 10px; border: 1px solid var(--ring); background: var(--page); }
+      .cc-netstatus.is-good strong { color: var(--good); }
+      .cc-netstatus.is-warn strong { color: var(--warn); }
+      .cc-input-small { font: inherit; font-size: 13px; line-height: 1.45; color: var(--ink); background: var(--surface); border: 1px solid var(--base); border-radius: 8px; padding: 7px 10px; width: 9rem; flex: none !important; }
+      .cc-netstatus .cc-row { align-items: center; flex-wrap: wrap; }
+      #cc-devices { scroll-margin-top: 72px; }
       .cc-notes { margin: 0; padding-left: 18px; display: grid; gap: 4px; color: var(--ink-2); font-size: 13px; }
     </style>
   </head>
@@ -344,6 +351,7 @@ const labels = JSON.stringify({ pages, topics, nd }).replace(/</g, '\\u003c');
           <p>certblueprint.com and NetDrill · private</p>
         </div>
         <div class="cc-top-actions">
+          <a id="cc-net-pill" href="#cc-devices" class="cc-pill" hidden></a>
           <span id="cc-live-pill" class="cc-live-pill"></span>
           <button id="cc-theme" type="button" class="cc-btn cc-btn-quiet">Auto</button>
           <button id="cc-lock" type="button" class="cc-btn cc-btn-quiet">Lock</button>

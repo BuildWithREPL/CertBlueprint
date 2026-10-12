@@ -94,8 +94,15 @@ certblueprint/
   The dashboard needs a key. `/command/` makes one in the browser and shows its
   SHA-256 fingerprint; only the fingerprint goes in `wrangler.toml` as
   `COMMAND_KEY_HASH`. A lost key: make a new one there, replace the
-  fingerprint, push. The old key stops working when that deploys. The
-  dashboard's notes panel can exclude the owner's own browser from the numbers.
+  fingerprint, push. The old key stops working when that deploys.
+
+  The owner's own traffic is left out by network: "Leave out this network" on
+  the dashboard stores the connection's IPv4 address and IPv6 /64 (it asks
+  ipify for whichever family the request did not use) in the
+  `excluded_networks` table, and `/api/pulse` drops every beacon from them, for
+  any device or browser, on both sites. Visitors' addresses are compared in
+  memory and never stored. A per-browser switch remains for a phone on mobile
+  data.
 - **Secrets:** `.env` holds `CLOUDFLARE_API_TOKEN` for wrangler and is
   gitignored. Never commit it. `service-account.json` (Google Indexing API)
   is likewise gitignored.

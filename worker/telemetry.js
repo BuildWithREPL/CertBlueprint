@@ -18,6 +18,11 @@
  * which is then dropped), the referring site and campaign tags. No IP address,
  * no user agent string, and nothing anyone types except search terms.
  *
+ * The owner's own visits: /command/ can exclude networks (an IPv4 address or an
+ * IPv6 /64, the block a home router gives all its devices). Every beacon from an
+ * excluded network is dropped, from any device or browser, on both sites. Each
+ * visitor's address is compared with that short list in memory and never stored.
+ *
  * The key: /command/ makes one in the browser and shows its SHA-256 fingerprint.
  * Only the fingerprint is configured here (COMMAND_KEY_HASH in wrangler.toml);
  * the key itself is never stored anywhere. Replacing the fingerprint retires the
@@ -96,6 +101,14 @@ const SCHEMA = [
   `CREATE INDEX IF NOT EXISTS sessions_start ON sessions (start_ts)`,
   `CREATE INDEX IF NOT EXISTS sessions_last ON sessions (last_ts)`,
   `CREATE INDEX IF NOT EXISTS sessions_vid ON sessions (vid, start_ts) WHERE vid IS NOT NULL`,
+  `CREATE TABLE IF NOT EXISTS excluded_networks (
+    key TEXT PRIMARY KEY,
+    display TEXT NOT NULL,
+    label TEXT,
+    org TEXT,
+    added_ts INTEGER NOT NULL,
+    last_seen_ts INTEGER
+  )`,
 ];
 
 let schemaReady;
@@ -197,6 +210,64 @@ function origin(request, env) {
   return null;
 }
 
+// ─── The owner's networks ────────────────────────────────────────────────────
+
+/**
+ * The network an address belongs to, as the owner would exclude it: an IPv4
+ * address as it is, an IPv6 address by its /64 (every device behind a home
+ * router shares one, while each device's own address keeps changing).
+ */
+export function networkOf(raw) {
+  if (typeof raw !== "string") return null;
+  let ip = raw.trim();
+  const mapped = ip.match(/^::ffff:(\d+\.\d+\.\d+\.\d+)$/i);
+  if (mapped) ip = mapped[1];
+  const v4 = ip.match(/^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/);
+  if (v4) {
+    const parts = v4.slice(1).map(Number);
+    if (parts.some((p) => p > 255)) return null;
+    const display = parts.join(".");
+    return { key: `v4:${display}`, display, family: 4 };
+  }
+  if (!/^[0-9a-f:]+$/i.test(ip) || ip.split("::").length > 2) return null;
+  const [head, tail] = ip.split("::");
+  const front = head ? head.split(":") : [];
+  const back = tail === undefined ? [] : tail ? tail.split(":") : [];
+  const fill = tail === undefined ? 0 : 8 - front.length - back.length;
+  if (fill < 0 || (tail !== undefined && fill === 0)) return null;
+  const groups = [...front, ...Array(fill).fill("0"), ...back];
+  if (groups.length !== 8 || groups.some((g) => !/^[0-9a-f]{1,4}$/i.test(g))) return null;
+  const prefix = groups.slice(0, 4).map((g) => g.toLowerCase());
+  return {
+    key: `v6:${prefix.map((g) => g.padStart(4, "0")).join(":")}::/64`,
+    display: `${prefix.map((g) => g.replace(/^0+(?=.)/, "")).join(":")}::/64`,
+    family: 6,
+  };
+}
+
+const EXCLUSIONS_TTL = 60_000; // how stale this instance's copy of the list may get
+let exclusions = { keys: new Set(), loaded: 0 };
+const lastSeenWrite = new Map();
+
+async function excludedKeys(db) {
+  if (Date.now() - exclusions.loaded < EXCLUSIONS_TTL) return exclusions.keys;
+  await ensureSchema(db);
+  const { results } = await db.prepare("SELECT key FROM excluded_networks").all();
+  exclusions = { keys: new Set(results.map((r) => r.key)), loaded: Date.now() };
+  return exclusions.keys;
+}
+
+/** The network a request came from, and whether the owner has excluded it. */
+async function requestNetwork(request, env) {
+  const net = networkOf(request.headers.get("cf-connecting-ip"));
+  if (!net || !env.DB) return net && { ...net, excluded: false };
+  try {
+    return { ...net, excluded: (await excludedKeys(env.DB)).has(net.key) };
+  } catch {
+    return { ...net, excluded: false };
+  }
+}
+
 export async function handlePulse(request, env, ctx) {
   const site = origin(request, env);
   // NetDrill posts from another origin with fetch() in cors mode: sendBeacon would
@@ -215,6 +286,16 @@ export async function handlePulse(request, env, ctx) {
   const ua = request.headers.get("user-agent") || "";
   if (!ua || BOTS.test(ua)) return done(204, "bot");
   if (Number(request.headers.get("content-length") || 0) > MAX_BODY) return done(413, "size");
+  const net = await requestNetwork(request, env);
+  if (net?.excluded) {
+    // Note when the exclusion last caught something, so /command/ can show it works; at most every 10 minutes.
+    const now = Date.now();
+    if (now - (lastSeenWrite.get(net.key) ?? 0) > 10 * 60_000) {
+      lastSeenWrite.set(net.key, now);
+      ctx.waitUntil(env.DB.prepare("UPDATE excluded_networks SET last_seen_ts = ? WHERE key = ?").bind(now, net.key).run().catch(() => {}));
+    }
+    return done(204, "excluded");
+  }
 
   let body;
   try {
@@ -601,6 +682,7 @@ async function handleQuery(request, env) {
     site,
   };
   await ensureSchema(env.DB);
+  const here = await requestNetwork(request, env);
   const list = queries(env.DB, params);
   const names = Object.keys(list);
   const results = await env.DB.batch(names.map((n) => list[n]));
@@ -619,6 +701,7 @@ async function handleQuery(request, env) {
     tz: params.tz,
     retentionDays: RETENTION_DAYS,
     rowsRead,
+    here: here && { display: here.display, excluded: here.excluded, org: orgOf(request) },
     data,
   });
 }
@@ -644,6 +727,57 @@ async function handleSession(request, env) {
   return json({ session: row, events: events.results });
 }
 
+function orgOf(request) {
+  const org = request.cf?.asOrganization;
+  return typeof org === "string" ? org.slice(0, 120) : null;
+}
+
+/**
+ * List, add or remove excluded networks. "add" always takes the network this
+ * request came from, plus up to four addresses the page found for the same
+ * connection (its IPv4 and IPv6 can differ from the one that reached us).
+ */
+async function handleNetworks(request, env) {
+  if (!(await authorized(request, env))) return refuse();
+  if (!env.DB) return json({ error: "no_database" }, 503);
+  let body = {};
+  try {
+    body = await request.json();
+  } catch {
+    /* list */
+  }
+  await ensureSchema(env.DB);
+  const db = env.DB;
+  let added = [];
+  if (body.action === "add") {
+    const here = networkOf(request.headers.get("cf-connecting-ip"));
+    const found = (Array.isArray(body.ips) ? body.ips.slice(0, 4) : []).map(networkOf);
+    const nets = [...new Map([here, ...found].filter(Boolean).map((n) => [n.key, n])).values()];
+    const label = str(body.label, 60) ?? "Home";
+    const org = orgOf(request);
+    if (nets.length) {
+      await db.batch(
+        nets.map((n) =>
+          db
+            .prepare(
+              `INSERT INTO excluded_networks (key, display, label, org, added_ts) VALUES (?, ?, ?, ?, ?)
+               ON CONFLICT (key) DO UPDATE SET label = excluded.label, org = COALESCE(excluded.org, excluded_networks.org)`,
+            )
+            .bind(n.key, n.display, label, org, Date.now()),
+        ),
+      );
+    }
+    added = nets.map((n) => n.display);
+    exclusions.loaded = 0;
+  } else if (body.action === "remove" && typeof body.key === "string") {
+    await db.prepare("DELETE FROM excluded_networks WHERE key = ?").bind(body.key.slice(0, 80)).run();
+    exclusions.loaded = 0;
+  }
+  const { results } = await db.prepare("SELECT key, display, label, org, added_ts, last_seen_ts FROM excluded_networks ORDER BY added_ts").all();
+  const here = await requestNetwork(request, env);
+  return json({ here: here && { display: here.display, excluded: here.excluded, org: orgOf(request) }, networks: results, added });
+}
+
 export async function handleCommand(request, env, pathname) {
   if (pathname === "/api/command/status") {
     return json({ database: Boolean(env.DB), key: Boolean(keyHash(env)) });
@@ -651,6 +785,7 @@ export async function handleCommand(request, env, pathname) {
   if (request.method !== "POST") return json({ error: "method_not_allowed" }, 405);
   if (pathname === "/api/command/query") return handleQuery(request, env);
   if (pathname === "/api/command/session") return handleSession(request, env);
+  if (pathname === "/api/command/networks") return handleNetworks(request, env);
   return json({ error: "not_found" }, 404);
 }
 

@@ -22,7 +22,20 @@ interface Payload {
   tz: number;
   retentionDays: number;
   rowsRead: number;
+  here?: Here | null;
   data: Record<string, Row[]>;
+}
+/** The network this dashboard is being viewed from, as the Worker sees it. */
+interface Here {
+  display: string;
+  excluded: boolean;
+  org: string | null;
+}
+interface Networks {
+  here: Here | null;
+  networks: { key: string; display: string; label: string | null; org: string | null; added_ts: number; last_seen_ts: number | null }[];
+  /** What the last "add" saved. */
+  added?: string[];
 }
 
 const SITES: Record<Site, { label: string; color: string }> = {
@@ -41,6 +54,7 @@ const state = {
   site: 'all' as 'all' | Site,
   key: '',
   payload: null as Payload | null,
+  networks: null as Networks | null,
   loading: false,
   timer: 0,
 };
@@ -200,7 +214,9 @@ async function showGate(message?: string) {
 function openBoard() {
   $('cc-gate').hidden = true;
   $('cc-board').hidden = false;
+  renderDevices();
   render();
+  loadNetworks().catch((err) => renderDevices(`Could not load your networks: ${(err as Error).message}`));
 }
 
 // ─── Loading ───
@@ -422,6 +438,7 @@ function render() {
   $('cc-updated').textContent = `Updated ${fmt.time(p.generated)}`;
   const live = d.live ?? [];
   $('cc-live-pill').textContent = `${live.length} on now`;
+  netPill(p.here ?? state.networks?.here ?? null);
 
   const sections: Node[] = [];
 
@@ -804,23 +821,9 @@ function render() {
     ),
   );
 
-  // Notes
+  // Your own visits, then notes
+  sections.push(devicesCard);
   const stored = d.stored?.[0] ?? {};
-  let excluded = false;
-  try {
-    excluded = localStorage.getItem(OFF_KEY) === '1';
-  } catch {
-    /* storage blocked */
-  }
-  const exclude = h('input', { type: 'checkbox', id: 'cc-exclude', checked: excluded });
-  exclude.addEventListener('change', () => {
-    try {
-      if (exclude.checked) localStorage.setItem(OFF_KEY, '1');
-      else localStorage.removeItem(OFF_KEY);
-    } catch {
-      /* storage blocked */
-    }
-  });
   const exportBtn = h('button', { type: 'button', class: 'cc-btn cc-btn-quiet' }, 'Download this view as JSON');
   exportBtn.addEventListener('click', () => {
     const blob = new Blob([JSON.stringify(state.payload, null, 2)], { type: 'application/json' });
@@ -836,8 +839,6 @@ function render() {
         h('li', null, 'Visitors and returning visitors rely on a random id kept only for people who accepted analytics cookies, so they cover part of the traffic. Sessions, views, time, clicks and labs cover everyone except bots and people who block the script.'),
         h('li', null, `Stored: about ${fmt.int(stored.events ?? 0)} events${stored.since ? ` since ${new Date(stored.since).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}` : ''}. Kept for ${p.retentionDays} days, then deleted. This view read ${fmt.int(p.rowsRead)} rows.`),
       ),
-      h('label', { class: 'cc-check' }, exclude, ' Do not count my own visits to certblueprint.com from this browser'),
-      h('p', { class: 'cc-hint' }, 'For NetDrill, open ', h('a', { href: 'https://netdrill.certblueprint.com/?notrack=1', target: '_blank', rel: 'noopener' }, 'netdrill.certblueprint.com/?notrack=1'), ' once in each browser you use (?notrack=0 undoes it).'),
       exportBtn,
     ),
   );
@@ -854,6 +855,135 @@ function render() {
     columnChart(freqHost, { categories: FREQ, series: freqSeries, format: fmt.compact, height: 180, label: 'Visitors by number of sessions' });
     columnChart(gapHost, { categories: GAPS.map((g) => g.replace('under a day', '<1 day')), series: gapSeries, format: fmt.compact, height: 180, label: 'Returning visitors by average gap between visits' });
   }
+}
+
+// ─── Your own visits: excluded networks ───
+
+const devicesCard = h('section', { class: 'cc-card', id: 'cc-devices' });
+
+function netPill(here: Here | null) {
+  const pill = $('cc-net-pill');
+  pill.hidden = !here;
+  if (!here) return;
+  pill.className = `cc-pill ${here.excluded ? 'is-good' : 'is-warn'}`;
+  pill.textContent = here.excluded ? '✓ Your network is left out' : '! This network is counted';
+  pill.title = `${here.org ? `${here.org} · ` : ''}${here.display}`;
+}
+
+async function loadNetworks(body: Record<string, unknown> = {}) {
+  state.networks = (await api('/api/command/networks', body)) as Networks;
+  netPill(state.networks.here);
+  renderDevices();
+}
+
+/** This connection's IPv4 or IPv6 address from an address-echo service: the Worker only sees the one the request used. */
+async function addressFrom(url: string): Promise<string | null> {
+  try {
+    const res = await fetch(url, { cache: 'no-store', credentials: 'omit', signal: AbortSignal.timeout(4000) });
+    const text = (await res.text()).trim();
+    return res.ok && text.length <= 45 && /^[0-9a-f.:]+$/i.test(text) ? text : null;
+  } catch {
+    return null;
+  }
+}
+
+function renderDevices(message?: string) {
+  const n = state.networks;
+  if (!n) {
+    devicesCard.replaceChildren(h('header', null, h('h2', null, 'Leave out your own visits')), h('p', { class: 'cc-hint' }, 'Loading…'));
+    return;
+  }
+  const here = n.here;
+  const label = h('input', { type: 'text', value: 'Home', maxlength: 60, 'aria-label': 'Name for this network', class: 'cc-input-small' });
+  const add = h('button', { type: 'button', class: 'cc-btn cc-btn-primary' }, 'Leave out this network');
+  add.addEventListener('click', async () => {
+    add.disabled = true;
+    add.textContent = 'Finding this connection’s addresses…';
+    const ips = (await Promise.all([addressFrom('https://api.ipify.org'), addressFrom('https://api6.ipify.org')])).filter((ip): ip is string => !!ip);
+    try {
+      await loadNetworks({ action: 'add', label: label.value.trim() || 'Home', ips });
+      const added = state.networks?.added ?? [];
+      renderDevices(added.length ? `Left out: ${added.join(' and ')}. Every device on this network stops counting within a minute.` : undefined);
+    } catch (err) {
+      renderDevices(`Could not save: ${(err as Error).message}`);
+    }
+  });
+
+  const status = here
+    ? h('div', { class: `cc-netstatus ${here.excluded ? 'is-good' : 'is-warn'}` },
+        h('p', null, h('strong', null, here.excluded ? '✓ This network is left out.' : 'This network is counted.'), ` You’re connected through ${here.org ?? 'an unknown provider'} at ${here.display}.`),
+        here.excluded
+          ? null
+          : h('div', { class: 'cc-row' }, label, add),
+        here.excluded
+          ? null
+          : h('p', { class: 'cc-hint' }, 'Only do this on your own home or office network. On mobile data or public Wi-Fi the address is shared with strangers, and their visits would disappear too.'),
+      )
+    : h('p', { class: 'cc-hint' }, 'The server could not read this connection’s address.');
+
+  const rows = n.networks;
+  const parts: (Node | null)[] = [
+    h('header', null,
+      h('h2', null, 'Leave out your own visits'),
+      h('p', null, 'Every device on a left-out network is ignored on both sites: your phone, tablet and computer, in any browser, with nothing to set on each one. The server checks each visit’s address against this list and never stores visitors’ addresses.'),
+    ),
+    status,
+    message ? h('p', { class: 'cc-hint', role: 'status' }, message) : null,
+    rows.length
+      ? table<Row>([
+          { label: 'Name', value: (r) => r.label ?? '' },
+          { label: 'Network', value: (r) => h('code', null, r.display) },
+          { label: 'Provider', value: (r) => r.org ?? '–' },
+          { label: 'Added', value: (r) => fmt.ago(r.added_ts) },
+          { label: 'Last caught a visit', value: (r) => (r.last_seen_ts ? fmt.ago(r.last_seen_ts) : 'not yet') },
+          {
+            label: '',
+            value: (r) => {
+              const remove = h('button', { type: 'button', class: 'cc-btn cc-btn-quiet' }, 'Remove');
+              remove.addEventListener('click', async () => {
+                remove.disabled = true;
+                try {
+                  await loadNetworks({ action: 'remove', key: r.key });
+                } catch (err) {
+                  renderDevices(`Could not remove: ${(err as Error).message}`);
+                }
+              });
+              return remove;
+            },
+          },
+        ], rows as unknown as Row[])
+      : null,
+    h('p', { class: 'cc-hint' }, 'Home addresses can change now and then. If the badge at the top says this network is counted while you’re at home, leave it out again here and remove the old one.'),
+    awayFromHome(),
+  ];
+  devicesCard.replaceChildren(...parts.filter((x): x is Node => x !== null));
+}
+
+/** For a device away from home (a phone on mobile data): a per-browser switch. */
+function awayFromHome() {
+  let off = false;
+  try {
+    off = localStorage.getItem(OFF_KEY) === '1';
+  } catch {
+    /* storage blocked */
+  }
+  const box = h('input', { type: 'checkbox', checked: off });
+  box.addEventListener('change', () => {
+    try {
+      if (box.checked) localStorage.setItem(OFF_KEY, '1');
+      else localStorage.removeItem(OFF_KEY);
+    } catch {
+      /* storage blocked */
+    }
+  });
+  return h('details', { class: 'cc-lost' },
+    h('summary', null, 'Away from home?'),
+    h('div', { class: 'cc-stack' },
+      h('p', { class: 'cc-hint' }, 'A phone on mobile data is not on your home network. To leave out one browser wherever it is:'),
+      h('label', { class: 'cc-check' }, box, ' Ignore certblueprint.com visits from this browser'),
+      h('p', { class: 'cc-hint' }, 'For NetDrill, open ', h('a', { href: 'https://netdrill.certblueprint.com/?notrack=1', target: '_blank', rel: 'noopener' }, 'netdrill.certblueprint.com/?notrack=1'), ' once in that browser (?notrack=0 undoes it).'),
+    ),
+  );
 }
 
 // ─── One session, in order ───

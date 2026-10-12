@@ -208,7 +208,8 @@ function withSiteHeaders(response, pathname) {
   res.headers.set("X-Content-Type-Options", "nosniff");
   res.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
   // The command center: never indexed, never cached, never framed, and it talks
-  // to nothing but this Worker.
+  // only to this Worker, plus ipify, which tells the "exclude my network" button
+  // the connection's IPv4 and IPv6 addresses.
   if (pathname === "/command" || pathname.startsWith("/command/")) {
     res.headers.set("X-Robots-Tag", "noindex, nofollow");
     res.headers.set("Cache-Control", "no-store");
@@ -216,7 +217,7 @@ function withSiteHeaders(response, pathname) {
     res.headers.set("X-Frame-Options", "DENY");
     res.headers.set(
       "Content-Security-Policy",
-      "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'",
+      "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://api.ipify.org https://api6.ipify.org; frame-ancestors 'none'; base-uri 'none'; form-action 'none'",
     );
   }
   if (pathname === "/sitemap-index.xml" || pathname === "/sitemap-0.xml") {
