@@ -73,6 +73,14 @@ certblueprint/
   resting on one move — that is how the Data gap happened (see
   `docs/NAVIGATOR-REDESIGN.md` §22p).
 
+- **NetDrill links.** Practice links to netdrill.certblueprint.com (cert guides,
+  roles, paths, trials, the technology map) come from a committed snapshot of
+  NetDrill's catalog, `src/data/labs/netdrill-catalog.json`. After a NetDrill
+  release, refresh it from a netdrill checkout with
+  `npm run catalog:snapshot -- ../CertBlueprint/src/data/labs/netdrill-catalog.json`
+  and build. Which labs each page shows is picked by hand in `src/lib/netdrill.ts`,
+  by topic and stage; the build fails on a pick NetDrill no longer has.
+
 - **Secrets:** `.env` holds `CLOUDFLARE_API_TOKEN` for wrangler and is
   gitignored. Never commit it. `service-account.json` (Google Indexing API)
   is likewise gitignored.

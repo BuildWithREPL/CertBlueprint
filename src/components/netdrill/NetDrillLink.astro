@@ -1,0 +1,37 @@
+---
+/**
+ * A link that opens one NetDrill lab in a new tab (`#open=<id>`), and reports
+ * the click to GA4 as `netdrill_open` with the lab and the kind of page it came
+ * from. NetDrill is first-party, so this is an ordinary outbound link: no
+ * sponsored rel, no affiliate tracking.
+ */
+import { netdrillUrl, type NetDrillItem } from '../../lib/netdrill';
+
+interface Props {
+  item: NetDrillItem;
+  /** The kind of page the link sits on: cert-guide, role, path, trial, technology. */
+  from: string;
+  class?: string;
+  style?: string;
+}
+
+const { item, from, class: className, style } = Astro.props;
+---
+
+<a
+  href={netdrillUrl(item.id)}
+  target="_blank"
+  rel="noopener"
+  title={`${item.title} · opens NetDrill in a new tab`}
+  data-netdrill={item.id}
+  data-netdrill-from={from}
+  class={className}
+  style={style}><slot /></a><script>
+  // One listener for every NetDrill link on the page (Astro includes this once).
+  document.addEventListener('click', (event) => {
+    const link = (event.target as Element | null)?.closest?.('a[data-netdrill]');
+    if (!(link instanceof HTMLAnchorElement)) return;
+    const gtag = (window as { gtag?: (...args: unknown[]) => void }).gtag;
+    gtag?.('event', 'netdrill_open', { lab_id: link.dataset.netdrill, from: link.dataset.netdrillFrom });
+  });
+</script>

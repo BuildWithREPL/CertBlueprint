@@ -108,6 +108,12 @@
       "note": "Free network simulator, fully sufficient for CCST (and most of CCNA after it)."
     },
     {
+      "name": "NetDrill — network labs in your browser",
+      "url": "https://netdrill.certblueprint.com/",
+      "type": "Hands-on Labs",
+      "note": "A free network simulator that runs in your browser, made by the team behind CertBlueprint (in beta, no account). Practice the hands-on side: interfaces and cables, IP addressing, DHCP and DNS, and troubleshooting from a PC, with every lab graded on whether the network works."
+    },
+    {
       "name": "Certiport CCST Test Drive",
       "url": "https://certiport.pearsonvue.com/Certifications/Cisco/Certified-Support-Technician/Overview",
       "type": "Practice Exam",

@@ -1,0 +1,48 @@
+---
+/**
+ * "Practice it" for a role or a career path: the hand-picked NetDrill labs from
+ * src/lib/netdrill.ts, after the weekend trial and before anything that costs
+ * money. `section` matches the role page's sections; `box` matches the trial
+ * box on path pages.
+ */
+import type { ResolvedPractice } from '../../lib/netdrill';
+import PracticeList from './PracticeList.astro';
+
+interface Props {
+  practice: ResolvedPractice;
+  from: string;
+  variant: 'section' | 'box';
+}
+
+const { practice, from, variant } = Astro.props;
+const disclosure =
+  'NetDrill is a network simulator that runs in your browser, made by the team behind CertBlueprint. Free during the beta, no account. Links open in a new tab.';
+---
+
+{
+  variant === 'section' ? (
+    <section class="mb-10">
+      <h2 class="text-xl font-bold tracking-tight mb-1" style="color: var(--cb-text);">
+        Then practice the work itself
+      </h2>
+      <p class="text-sm mb-4" style="color: var(--cb-text-sub); max-width: 65ch;">
+        {practice.intro} Each lab is graded on what the network does, not on the commands you typed.
+      </p>
+      <div class="rounded-xl border px-3 py-1" style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+        <PracticeList items={practice.items} from={from} />
+      </div>
+      <p class="text-xs mt-2 leading-relaxed" style="color: var(--cb-text-muted); max-width: 65ch;">{disclosure}</p>
+    </section>
+  ) : (
+    <section class="py-4">
+      <div class="rounded-xl border p-5" style="border-color: var(--cb-border); background: var(--cb-bg-subtle);">
+        <p class="font-mono text-xs uppercase tracking-widest mb-1" style="color: var(--cb-accent-text);">Then practice it hands-on</p>
+        <p class="text-sm leading-relaxed mb-2" style="color: var(--cb-text-sub);">
+          {practice.intro} Each lab is graded on what the network does, not on the commands you typed.
+        </p>
+        <PracticeList items={practice.items} from={from} />
+        <p class="text-xs mt-2 leading-relaxed" style="color: var(--cb-text-muted);">{disclosure}</p>
+      </div>
+    </section>
+  )
+}

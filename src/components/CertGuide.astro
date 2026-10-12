@@ -21,6 +21,8 @@ import RolesForCert from './RolesForCert.astro';
 import CertMoreLinks from './CertMoreLinks.astro';
 import AffiliateCTA from './AffiliateCTA.astro';
 import CalloutBox from './CalloutBox.astro';
+import ExamPractice from './netdrill/ExamPractice.astro';
+import { practiceForCert } from '../lib/netdrill';
 
 import type { CollectionEntry } from 'astro:content';
 
@@ -30,6 +32,7 @@ interface Props {
 const { data } = Astro.props;
 
 const short = data.short_name ?? data.title;
+const practice = practiceForCert(data.slug);
 const base = `/vendors/${data.vendor_slug}/${data.slug}/`;
 
 const breadcrumbs = [
@@ -47,6 +50,7 @@ const sections = [
   { id: 'exam-details', label: 'Exam details' },
   { id: 'skills', label: 'Skills covered' },
   { id: 'study-path', label: 'Study path' },
+  ...(practice ? [{ id: 'practice', label: 'Practice labs' }] : []),
   { id: 'free-resources', label: 'Free resources' },
   { id: 'paid-resources', label: 'Paid resources' },
   { id: 'vouchers', label: 'Vouchers & cost' },
@@ -202,6 +206,8 @@ const sections = [
             </div>
           )}
         </section>
+
+        {practice && <ExamPractice practice={practice} />}
 
         <!-- Free resources -->
         <section id="free-resources" aria-labelledby="free-heading">

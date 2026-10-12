@@ -5,6 +5,8 @@ import { TECHNOLOGIES, TECHNOLOGY_CATEGORIES } from '../../../lib/navigator/data
 import { CAPABILITY_BY_SLUG } from '../../../lib/navigator/data/capabilities';
 import { ROLE_BY_SLUG } from '../../../lib/navigator/data/roles';
 import { ACCENT_VAR, DOMAIN_BY_ID } from '../../../lib/navigator/data/domains';
+import { displayTitle, practiceForTech } from '../../../lib/netdrill';
+import NetDrillLink from '../../../components/netdrill/NetDrillLink.astro';
 
 const title = 'IT Technology Map — What Each Tool Actually Proves | CertBlueprint';
 const description =
@@ -104,6 +106,21 @@ const byCategory = TECHNOLOGY_CATEGORIES.map((category) => ({
                     </a>
                   ))}
               </div>
+
+              {(() => {
+                const lab = practiceForTech(tech.slug);
+                return (
+                  lab && (
+                    <p class="text-xs mt-3" style="color: var(--cb-text-muted);">
+                      Practice it:{' '}
+                      <NetDrillLink item={lab} from="technology" class="font-medium" style="color: var(--cb-accent-text);">
+                        {displayTitle(lab)} ↗
+                      </NetDrillLink>{' '}
+                      in NetDrill, our free browser simulator
+                    </p>
+                  )
+                );
+              })()}
             </div>
           ))}
         </div>

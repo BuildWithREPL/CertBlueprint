@@ -184,6 +184,12 @@
       "note": "Free reservable Catalyst Center, SD-WAN Manager, and IOS-XE environments — the only free way to touch the controller side v1.2 emphasizes."
     },
     {
+      "name": "NetDrill — network labs in your browser",
+      "url": "https://netdrill.certblueprint.com/",
+      "type": "Hands-on Labs",
+      "note": "A free network simulator that runs in your browser, made by the team behind CertBlueprint (in beta, no account). Graded labs mapped objective by objective to ENCOR and ENARSI, from OSPF and BGP to VRFs, DMVPN and VXLAN with BGP EVPN (see Practice labs above)."
+    },
+    {
       "name": "Cisco Live On-Demand Library",
       "url": "https://www.ciscolive.com/on-demand.html",
       "type": "Video Sessions",

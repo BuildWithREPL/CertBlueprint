@@ -1,0 +1,179 @@
+---
+/**
+ * "Practice labs" on a certification guide whose exams NetDrill maps objective
+ * by objective (CCNA, CCNP Enterprise, CCNP Service Provider). For each exam
+ * domain: how many objectives NetDrill grades hands-on, and the NetDrill topics
+ * that practice it, each opening at its first hands-on lab. Then the capstones
+ * and reps for the same track. Everything comes from the snapshot through
+ * src/lib/netdrill.ts; nothing here is written by hand per exam.
+ */
+import { displayTitle, NETDRILL_URL, type CertPractice } from '../../lib/netdrill';
+import NetDrillLink from './NetDrillLink.astro';
+
+interface Props {
+  practice: CertPractice;
+  /** A sentence for this guide only, e.g. which exam version NetDrill follows. */
+  note?: string;
+}
+
+const { practice, note } = Astro.props;
+const examNames = practice.exams.map((e) => e.name.replace(/ v[\d.]+$/, '')).join(' and ');
+---
+
+<section id="practice" aria-labelledby="practice-heading">
+  <h2 id="practice-heading" class="text-lg font-bold mb-2 pb-2 border-b" style="color: var(--cb-text); border-color: var(--cb-border);">Practice labs</h2>
+  <p class="text-sm mb-2 leading-relaxed" style="color: var(--cb-text-sub);">
+    NetDrill, a network simulator that runs in your browser, maps its labs to the {examNames} objectives. You configure
+    routers, switches and PCs from the command line, and each lab is graded on what the network does, not on the
+    commands you typed. Each topic below opens at its first hands-on lab, in a new tab.
+  </p>
+  {note && <p class="text-sm mb-2 leading-relaxed" style="color: var(--cb-text-sub);">{note}</p>}
+
+  <div class="space-y-4 mt-4">
+    {
+      practice.exams.map((exam, n) => (
+        <details class="nd-exam rounded-xl border overflow-hidden" open={n === 0} style="background: var(--cb-bg-card); border-color: var(--cb-border);">
+          <summary class="px-4 py-2.5" style="background: var(--cb-bg-subtle);">
+            <svg class="nd-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+            </svg>
+            <span class="font-semibold text-sm" style="color: var(--cb-text);">
+              {exam.name} <span class="font-normal" style="color: var(--cb-text-muted);">· {exam.code}</span>
+            </span>
+            <span class="nd-count text-xs" style="color: var(--cb-text-muted);">
+              {exam.graded} of {exam.objectives} objectives graded hands-on
+            </span>
+          </summary>
+          <ul class="nd-domains">
+            {exam.domains.map((d) => (
+              <li class="px-4 py-3">
+                <div class="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-0.5 mb-2">
+                  <span class="text-sm font-medium" style="color: var(--cb-text);">
+                    {d.id}.0 {d.name}
+                  </span>
+                  <span class="text-xs" style="color: var(--cb-text-muted);">
+                    {d.weight}% · {d.graded} of {d.objectives} graded
+                  </span>
+                </div>
+                {d.topics.length > 0 ? (
+                  <div class="flex flex-wrap gap-1.5">
+                    {d.topics.map((topic) => (
+                      <NetDrillLink item={topic.entry} from="cert-guide" class="nd-chip">
+                        {topic.label}
+                      </NetDrillLink>
+                    ))}
+                  </div>
+                ) : (
+                  <p class="text-xs" style="color: var(--cb-text-muted);">
+                    {d.practiced ? 'Practiced by the topics listed under the other domains.' : 'No NetDrill labs for this domain yet.'}
+                  </p>
+                )}
+              </li>
+            ))}
+          </ul>
+        </details>
+      ))
+    }
+  </div>
+
+  <div class="grid sm:grid-cols-2 gap-x-6 gap-y-4 mt-5">
+    {
+      practice.capstones.length > 0 && (
+        <div>
+          <p class="font-mono text-xs uppercase tracking-widest mb-1" style="color: var(--cb-accent-text);">Capstones</p>
+          <p class="text-xs mb-2 leading-relaxed" style="color: var(--cb-text-muted);">
+            A whole network built from blank in milestones, then run in Operate mode, where tickets arrive with one fault each.
+          </p>
+          <div class="flex flex-wrap gap-1.5">
+            {practice.capstones.map((c) => (
+              <NetDrillLink item={c} from="cert-guide" class="nd-chip">
+                {displayTitle(c)}
+              </NetDrillLink>
+            ))}
+          </div>
+        </div>
+      )
+    }
+    {
+      practice.reps.length > 0 && (
+        <div>
+          <p class="font-mono text-xs uppercase tracking-widest mb-1" style="color: var(--cb-accent-text);">Reps</p>
+          <p class="text-xs mb-2 leading-relaxed" style="color: var(--cb-text-muted);">
+            Once a topic is built, do it again on a newly generated network each time, graded like the labs.
+          </p>
+          <div class="flex flex-wrap gap-1.5">
+            {practice.reps.map((r) => (
+              <NetDrillLink item={r} from="cert-guide" class="nd-chip">
+                {displayTitle(r)}
+              </NetDrillLink>
+            ))}
+          </div>
+        </div>
+      )
+    }
+  </div>
+
+  <p class="text-xs mt-5 leading-relaxed" style="color: var(--cb-text-muted);">
+    NetDrill is made by the team behind CertBlueprint and is free during its beta, with no account. Objective numbers are
+    Cisco's; which labs practice each one is NetDrill's own mapping.
+    <a href={NETDRILL_URL} target="_blank" rel="noopener" class="font-medium" style="color: var(--cb-accent-text);">Open NetDrill →</a>
+  </p>
+</section>
+
+<style>
+  .nd-exam > summary {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 0.75rem;
+    row-gap: 0.125rem;
+    cursor: pointer;
+    list-style: none;
+  }
+  .nd-exam > summary::-webkit-details-marker {
+    display: none;
+  }
+  .nd-exam[open] > summary {
+    border-bottom: 1px solid var(--cb-border-sub, var(--cb-border));
+  }
+  .nd-chevron {
+    width: 0.75rem;
+    height: 0.75rem;
+    align-self: center;
+    color: var(--cb-text-muted);
+    transition: transform 0.15s ease;
+  }
+  .nd-exam[open] .nd-chevron {
+    transform: rotate(90deg);
+  }
+  .nd-count {
+    margin-left: auto;
+  }
+  .nd-domains > li + li {
+    border-top: 1px solid var(--cb-border-sub, var(--cb-border));
+  }
+  :global(.nd-chip) {
+    display: inline-block;
+    padding: 0.2rem 0.55rem;
+    border: 1px solid var(--cb-border);
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    text-decoration: none;
+    color: var(--cb-accent-text);
+    background: var(--cb-bg-card);
+    transition: border-color 0.15s ease;
+  }
+  :global(.nd-chip:hover) {
+    border-color: var(--cb-accent);
+  }
+  :global(.nd-chip:focus-visible) {
+    outline: 2px solid var(--cb-accent);
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .nd-chevron {
+      transition: none;
+    }
+  }
+</style>

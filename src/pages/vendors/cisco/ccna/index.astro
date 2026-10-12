@@ -12,11 +12,14 @@ import RolesForCert from '../../../../components/RolesForCert.astro';
 import CertMoreLinks from '../../../../components/CertMoreLinks.astro';
 import AffiliateCTA from '../../../../components/AffiliateCTA.astro';
 import CalloutBox from '../../../../components/CalloutBox.astro';
+import ExamPractice from '../../../../components/netdrill/ExamPractice.astro';
+import { practiceForCert } from '../../../../lib/netdrill';
 import { getEntry } from 'astro:content';
 
 const ccna = await getEntry('certifications', 'ccna');
 if (!ccna) throw new Error('Missing certifications entry: ccna');
 const { data } = ccna;
+const practice = practiceForCert('ccna')!;
 
 const breadcrumbs = [
   { label: 'Home', href: '/' },
@@ -33,6 +36,7 @@ const sections = [
   { id: 'exam-details', label: 'Exam details' },
   { id: 'skills', label: 'Skills covered' },
   { id: 'study-path', label: 'Study path' },
+  { id: 'practice', label: 'Practice labs' },
   { id: 'free-resources', label: 'Free resources' },
   { id: 'paid-resources', label: 'Paid resources' },
   { id: 'vouchers', label: 'Vouchers & cost' },
@@ -165,6 +169,11 @@ const sections = [
             <a href="#paid-resources" class="text-sm font-medium" style="color: var(--cb-accent-text);">View course options →</a>
           </div>
         </section>
+
+        <ExamPractice
+          practice={practice}
+          note="NetDrill follows the v2.0 exam topics, the version testing from February 3, 2027, so the domains below are v2.0's rather than the v1.1 list above."
+        />
 
         <!-- Free resources -->
         <section id="free-resources" aria-labelledby="free-heading">

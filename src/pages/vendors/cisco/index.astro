@@ -3,10 +3,13 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import FAQAccordion from '../../../components/FAQAccordion.astro';
 import { getEntry } from 'astro:content';
+import NetDrillLink from '../../../components/netdrill/NetDrillLink.astro';
+import { item as netdrillItem } from '../../../lib/netdrill';
 
 const cisco = await getEntry('vendors', 'cisco');
 if (!cisco) throw new Error('Missing vendors entry: cisco');
 const { data } = cisco;
+const ccnaStart = netdrillItem('f1-cli');
 
 const breadcrumbs = [
   { label: 'Home', href: '/' },
@@ -132,7 +135,7 @@ const upcomingCerts = [
         <div class="space-y-3">
           {[
             { cert: 'CCST (any of the three)', difficulty: 'Beginner', time: '1–3 months part-time', detail: 'The gentlest Cisco exams: 50 minutes, 40–50 questions, unlimited retakes, free official NetAcad prep. Note the 2025 change: CCSTs earned after July 15, 2025 are valid 5 years, not lifetime.' },
-            { cert: 'CCNA 200-301', difficulty: 'Moderate', time: '3–6 months part-time', detail: 'Requires genuine understanding of IP networking, not just memorization. Most candidates study 8–12 hours per week. Hands-on lab time in Cisco Packet Tracer is essential — the exam includes simulation questions.' },
+            { cert: 'CCNA 200-301', difficulty: 'Moderate', time: '3–6 months part-time', detail: 'Requires genuine understanding of IP networking, not just memorization. Most candidates study 8–12 hours per week. Hands-on lab time in Cisco Packet Tracer is essential — the exam includes simulation questions.', practice: true },
             { cert: 'CCNP (any track)', difficulty: 'Hard', time: '6–12 months', detail: 'CCNP exams assume solid CCNA-level knowledge plus hands-on networking experience. The core exam tests broad depth; the concentration exam tests specialized knowledge. Most candidates with 1–2 years of experience find this achievable.' },
             { cert: 'CCIE Lab', difficulty: 'Expert', time: 'Years of preparation', detail: 'The CCIE lab exam is one of the most challenging in IT: 8 hours of design and hands-on scenarios at $1,600 per attempt. Cisco publishes no pass rates, but community folklore consistently says most passers need 2–3 attempts; most successful candidates have 5+ years of deep networking experience.' },
           ].map((item) => (
@@ -145,6 +148,13 @@ const upcomingCerts = [
                 </div>
               </div>
               <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{item.detail}</p>
+              {item.practice && (
+                <p class="text-xs mt-2 leading-relaxed" style="color: var(--cb-text-muted);">
+                  Nothing to install:{' '}
+                  <NetDrillLink item={ccnaStart} from="vendor-hub" class="font-medium" style="color: var(--cb-accent-text);">practice in the browser with NetDrill ↗</NetDrillLink>,
+                  our free simulator, with labs mapped to the CCNA v2.0 objectives.
+                </p>
+              )}
             </div>
           ))}
         </div>

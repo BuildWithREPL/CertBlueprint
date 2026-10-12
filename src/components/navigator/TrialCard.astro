@@ -1,5 +1,7 @@
 ---
 import type { Trial } from '../../lib/navigator/types';
+import { displayTitle, practiceForTrial } from '../../lib/netdrill';
+import NetDrillLink from '../netdrill/NetDrillLink.astro';
 
 interface Props {
   trial: Trial;
@@ -16,6 +18,7 @@ const BARRIER: Record<Trial['barrier'], { label: string; accent: string }> = {
 };
 
 const barrier = BARRIER[trial.barrier];
+const practice = practiceForTrial(trial.slug);
 ---
 
 {/* Addressable by slug so anything that recommends a trial — a role page, the
@@ -133,5 +136,20 @@ const barrier = BARRIER[trial.barrier];
         <p class="text-sm leading-relaxed" style="color: var(--cb-text-sub);">{trial.dislikedMeans}</p>
       </div>
     </div>
+
+    {/* If it suited you, the next step: the same idea on a simulated network, graded. */}
+    {
+      practice && (
+        <p class="mt-5 pt-4 border-t text-sm leading-relaxed" style="border-color: var(--cb-border); color: var(--cb-text-sub);">
+          <span class="font-semibold" style="color: var(--cb-text);">If it clicked, take it further:</span>{' '}
+          <NetDrillLink item={practice} from="trial" class="font-medium underline underline-offset-2" style="color: var(--cb-accent-text);">
+            {displayTitle(practice)}
+          </NetDrillLink>
+          <span style="color: var(--cb-text-muted);">
+            {' '}in NetDrill, a network simulator in your browser from the team behind CertBlueprint. Free, no account.
+          </span>
+        </p>
+      )
+    }
   </div>
 </details>

@@ -114,7 +114,7 @@ These follow the pattern of the guards in `astro.config.mjs` (`internalLinkCheck
 
 ## 6. Measurement
 
-- **On this site:** a GA4 event on every "Open in NetDrill" click, `gtag('event', 'lab_open_click', { lab_id, from })`.
+- **On this site:** a GA4 event on every "Open in NetDrill" click, `gtag('event', 'netdrill_open', { lab_id, from })`.
   It follows the affiliate click events in `AffiliateCTA.astro:63,79`. This site already declares GA4 in its privacy
   policy, so nothing new is collected.
 - **On NetDrill:** its anonymous `open` event records `src`. Together, the two give page view → click → lab opened →
@@ -156,5 +156,35 @@ and costs redirects.
 3. `/labs/`, `/labs/networking/` and the 56 topic pages, then capstones and designs, with guard 4 and the search
    entries.
 4. Links from roles, paths, cert guides and trials (§4).
-5. The `lab_open_click` event.
+5. The `netdrill_open` event.
 6. Run `npm run build && npm run audit:map`, then `npm run check:links`. Ship.
+
+## 10. What shipped first (2026-10-12)
+
+The links came before the `/labs/` pages, because readers are already on the guides and role pages.
+
+- **Data:** NetDrill's own `npm run catalog:snapshot` writes `src/data/labs/netdrill-catalog.json`, so this site
+  never parses NetDrill's source. `src/lib/netdrill.ts` checks the format and version. NetDrill side:
+  [BuildWithREPL/netdrill#2](https://github.com/BuildWithREPL/netdrill/pull/2), which adds `#open=<id>` and keeps every
+  published id opening.
+- **Cert guides (CCNA, CCNP Enterprise, CCNP Service Provider):** a "Practice labs" section after the study path.
+  - It is per exam and per domain, with the number of objectives NetDrill grades hands-on.
+  - The topics practicing each domain open at their first hands-on lab. Each topic is listed once, under the domain
+    most of its mapped labs practice; otherwise VLAN labs would appear under every domain.
+  - Then that track's capstones and reps.
+- **Roles and paths:**
+  - The eight network-heavy roles get a "Then practice the work itself" section after the weekend trials.
+  - The network-administrator and help-desk paths get the same picks as a box after their trial.
+  - The picks are chosen by hand by topic and stage, not joined through capabilities. Five deliberate links read
+    better than everything a capability touches, and §4's capability join would have put Ansible on the data-analyst
+    role.
+- **Smaller links:**
+  - One line inside four weekend trials.
+  - A "Practice it" line on nine technologies.
+  - A line under the CCNA card on the Cisco hub.
+  - A footer link.
+  - A disclosed free-resource card on seven guides: the three above, plus Network+, CCST Networking, CCFT and CCNA
+    Automation.
+- **Disclosure:** every placement says NetDrill is made by the team behind CertBlueprint. The About page and the
+  affiliate disclosure say it too.
+- **Not yet:** the `/labs/` pages in §3, guards 4 and 5 in §5, and search entries.

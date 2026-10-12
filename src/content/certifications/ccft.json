@@ -127,6 +127,12 @@
       "note": "Cisco's official community hub for the technician track — study groups and answers from people who've sat the exam."
     },
     {
+      "name": "NetDrill — network labs in your browser",
+      "url": "https://netdrill.certblueprint.com/#open=iface-learn",
+      "type": "Hands-on Labs",
+      "note": "A free network simulator that runs in your browser, made by the team behind CertBlueprint (in beta, no account). For the device side of the job: getting around the CLI, reading interface and cable state, and copying files with SCP and SFTP. It simulates the network, not the physical work."
+    },
+    {
       "name": "CCT exams & training page (Cisco)",
       "url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/technician/exams-training.html",
       "type": "Official Documentation",

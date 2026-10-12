@@ -1,13 +1,19 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PracticeBlock from '../../../components/netdrill/PracticeBlock.astro';
+import { PICKED_PATHS, practiceForPath } from '../../../lib/netdrill';
 
 export async function getStaticPaths() {
   const paths = await getCollection('paths');
+  // NetDrill picks for a path that no longer exists would never show: fail instead.
+  const missing = PICKED_PATHS.filter((slug) => !paths.some((p) => p.data.slug === slug));
+  if (missing.length) throw new Error(`NetDrill picks name paths this site doesn't have: ${missing.join(', ')} (src/lib/netdrill.ts)`);
   return paths.map((p) => ({ params: { slug: p.data.slug }, props: { path: p.data } }));
 }
 
 const { path } = Astro.props;
+const practice = practiceForPath(path.slug);
 const domains = await getCollection('domains');
 const domain = domains.find((d) => d.data.slug === path.domain)?.data;
 
@@ -202,6 +208,8 @@ const structuredData = {
         </div>
       </div>
     </section>
+
+    {practice && <PracticeBlock practice={practice} from="path" variant="box" />}
 
     <!-- adjacent paths -->
     <section class="py-4">

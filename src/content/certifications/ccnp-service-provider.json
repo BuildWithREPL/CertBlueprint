@@ -160,6 +160,12 @@
       "note": "Five nodes of real images free — enough for IS-IS and small BGP drills before upgrading to build full MPLS cores."
     },
     {
+      "name": "NetDrill — network labs in your browser",
+      "url": "https://netdrill.certblueprint.com/",
+      "type": "Hands-on Labs",
+      "note": "A free network simulator that runs in your browser, made by the team behind CertBlueprint (in beta, no account). Graded labs mapped to SPCOR and SPRI: IS-IS, BGP at scale, MPLS and L3VPNs, segment routing and RSVP-TE (see Practice labs above)."
+    },
+    {
       "name": "Segment Routing (segment-routing.net)",
       "url": "https://www.segment-routing.net/",
       "type": "Reference",

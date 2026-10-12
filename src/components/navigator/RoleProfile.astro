@@ -11,12 +11,15 @@ import { comparePath } from '../../lib/navigator/engine/compare';
 import TermTip from './TermTip.astro';
 import TrialCard from './TrialCard.astro';
 import SalaryPanel from './SalaryPanel.astro';
+import PracticeBlock from '../netdrill/PracticeBlock.astro';
+import { practiceForRole } from '../../lib/netdrill';
 
 interface Props {
   role: Role;
 }
 
 const { role } = Astro.props;
+const practice = practiceForRole(role.slug);
 const primary = DOMAIN_BY_ID[role.domains[0]];
 const accent = `var(${ACCENT_VAR[primary.accent]})`;
 
@@ -299,6 +302,9 @@ const comparisons = pairsForRole(role.slug).map((p) => (p.a.slug === role.slug ?
       </section>
     )
   }
+
+  {/* ── 8.6 Practice — still free, a step closer to the job than a trial ── */}
+  {practice && <PracticeBlock practice={practice} from="role" variant="section" />}
 
   {/* ── 9. Certifications — last, on purpose ──────────────────── */}
   <section class="mb-10">

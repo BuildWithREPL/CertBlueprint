@@ -141,6 +141,12 @@
       "note": "Free, practical lessons on REST APIs, authentication, and requests. APIs are 20% of the exam—Postman is the standard tool for learning them hands-on."
     },
     {
+      "name": "NetDrill — network labs in your browser",
+      "url": "https://netdrill.certblueprint.com/#open=ansible-learn",
+      "type": "Hands-on Labs",
+      "note": "A free network simulator that runs in your browser, made by the team behind CertBlueprint (in beta, no account). Graded labs for the network side of automation: Ansible playbooks, NETCONF and RESTCONF, and EEM, plus lessons on Python, JSON and YANG. Opens at the Ansible labs."
+    },
+    {
       "name": "Kirk Byers – Python for Network Engineers",
       "url": "https://pynet.twb-tech.com/",
       "type": "Video Course",

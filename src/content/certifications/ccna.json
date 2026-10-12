@@ -139,6 +139,12 @@
       "note": "Free interactive labs covering automation and programmability topics on the CCNA exam."
     },
     {
+      "name": "NetDrill — network labs in your browser",
+      "url": "https://netdrill.certblueprint.com/",
+      "type": "Hands-on Labs",
+      "note": "A free network simulator that runs in your browser, made by the team behind CertBlueprint (in beta, no account). Configure routers, switches and PCs from the CLI; each lab is graded on what the network does, and the labs are mapped to the CCNA v2.0 objectives (see Practice labs above)."
+    },
+    {
       "name": "r/ccna on Reddit",
       "url": "https://www.reddit.com/r/ccna/",
       "type": "Community",

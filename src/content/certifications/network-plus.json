@@ -122,6 +122,12 @@
       "note": "Free network simulation tool from Cisco. Requires a free Networking Academy account. Excellent for practicing subnetting, VLANs, and routing concepts."
     },
     {
+      "name": "NetDrill — network labs in your browser",
+      "url": "https://netdrill.certblueprint.com/",
+      "type": "Hands-on Labs",
+      "note": "A free network simulator that runs in your browser, made by the team behind CertBlueprint (in beta, no account). Not Network+-specific, and the device CLI is Cisco-style, but it drills the configure-and-troubleshoot side of the exam: VLANs, routing, DHCP, DNS, NAT and ACLs, plus Windows, macOS and Linux client tools."
+    },
+    {
       "name": "r/CompTIA on Reddit",
       "url": "https://www.reddit.com/r/CompTIA/",
       "type": "Community",
