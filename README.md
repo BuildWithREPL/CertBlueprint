@@ -86,7 +86,8 @@ certblueprint/
   `/api/pulse`; `worker/telemetry.js` writes them to the D1 database
   `certblueprint-telemetry` (binding `DB`, created by wrangler on the first
   deploy; tables are created on first use) and deletes rows older than 13 months
-  on a daily cron. The client side is `src/scripts/telemetry.js` (every page,
+  itself, every few hours. (No cron trigger: a deploy that cannot add one fails
+  after the new version is already live.) The client side is `src/scripts/telemetry.js` (every page,
   and inlined into the Navigator Lab) and NetDrill's own tracker. A random
   visitor id exists only with CookieYes analytics consent.
 

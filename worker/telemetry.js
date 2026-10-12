@@ -6,7 +6,10 @@
  *   GET  /api/command/status   whether the database and the key are set up (no secrets)
  *   POST /api/command/query    every number on /command/; needs the key
  *   POST /api/command/session  one session's timeline; needs the key
- *   scheduled                  deletes anything older than RETENTION_DAYS
+ *
+ * Anything older than RETENTION_DAYS is deleted by the collector itself, at most
+ * every few hours per Worker instance (pruneTelemetry): a cron trigger would do
+ * the same, but a deploy that cannot add one fails after going live.
  *
  * What is kept, per event: the page path or NetDrill lab id, time spent, scroll
  * depth, which link was clicked, a random session id, and a random visitor id
@@ -306,7 +309,11 @@ export async function handlePulse(request, env, ctx) {
       ),
     ]);
   };
-  ctx.waitUntil(write().catch((error) => console.error("pulse write failed", error)));
+  ctx.waitUntil(
+    write()
+      .then(() => maybePrune(env))
+      .catch((error) => console.error("pulse write failed", error)),
+  );
   return done(204, "ok");
 }
 
@@ -648,6 +655,15 @@ export async function handleCommand(request, env, pathname) {
 }
 
 // ─── Retention ───────────────────────────────────────────────────────────────
+
+const PRUNE_EVERY = 6 * 3_600_000;
+let lastPrune = 0;
+
+function maybePrune(env) {
+  if (Date.now() - lastPrune < PRUNE_EVERY) return;
+  lastPrune = Date.now();
+  return pruneTelemetry(env);
+}
 
 export async function pruneTelemetry(env) {
   if (!env.DB) return;

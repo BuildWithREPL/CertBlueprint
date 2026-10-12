@@ -9,7 +9,7 @@
  * client and is passed whole on each call. Nothing of it is stored.
  */
 
-import { handleCommand, handlePulse, pruneTelemetry } from "./telemetry.js";
+import { handleCommand, handlePulse } from "./telemetry.js";
 
 const MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
 
@@ -226,10 +226,6 @@ function withSiteHeaders(response, pathname) {
 }
 
 export default {
-  async scheduled(_controller, env, ctx) {
-    ctx.waitUntil(pruneTelemetry(env));
-  },
-
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 

@@ -25,10 +25,6 @@ binding = "AI"
 binding = "DB"
 database_name = "certblueprint-telemetry"
 
-# Daily: delete telemetry older than RETENTION_DAYS (worker/telemetry.js).
-[triggers]
-crons = ["23 4 * * *"]
-
 [vars]
 # SHA-256 fingerprint of the command-center key, from the setup screen at
 # /command/. Only the fingerprint lives here; the key itself is never stored.
