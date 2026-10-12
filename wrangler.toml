@@ -29,4 +29,4 @@ database_name = "certblueprint-telemetry"
 # SHA-256 fingerprint of the command-center key, from the setup screen at
 # /command/. Only the fingerprint lives here; the key itself is never stored.
 # To retire a lost key: make a new one there and replace this value.
-COMMAND_KEY_HASH = ""
+COMMAND_KEY_HASH = "16ae19a7481c951a549443f6753bc2df42edb53c74fcd515d71cf00c24ceb190"
