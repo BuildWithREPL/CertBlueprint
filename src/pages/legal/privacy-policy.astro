@@ -4,9 +4,9 @@ import LegalLayout from '../../layouts/LegalLayout.astro';
 
 <LegalLayout
   title="Privacy Policy"
-  description="CertBlueprint privacy policy. How we handle analytics, cookies, affiliate links, the career navigator, AI conversation, and third-party services."
+  description="CertBlueprint privacy policy. How we handle analytics, our own usage statistics, cookies, affiliate links, the career navigator, AI conversation, and third-party services."
   effectiveDate="April 14, 2026"
-  lastUpdated="September 12, 2026"
+  lastUpdated="October 12, 2026"
 >
 
   <section>
@@ -24,6 +24,24 @@ import LegalLayout from '../../layouts/LegalLayout.astro';
     <h3>Analytics data</h3>
     <p>
       We use Google Analytics 4 (GA4) and Google Tag Manager (GTM) to collect anonymized data about how visitors use the Site. This includes pages visited, time on page, general geographic region, device type, and referring sources. We do not use this data to identify individual users.
+    </p>
+    <h3>Our own usage statistics</h3>
+    <p>
+      Alongside Google Analytics, the Site sends a small amount of usage data to our own server so we can see which pages and tools help people and which do not. NetDrill, our network lab site at netdrill.certblueprint.com, sends the same kind of data to the same place. For each page view we record:
+    </p>
+    <ul>
+      <li>the page address, whether it was a fresh visit, a refresh or a return with the back button, and the referring website and campaign tags (such as <code>utm_source</code>) when you arrive;</li>
+      <li>how long the page was visible and in use, how far down you scrolled, and how many times you clicked;</li>
+      <li>whether certain sections, such as NetDrill practice links or affiliate buttons, came into view, and which link you clicked when it was a link in one of those sections or a link to NetDrill, an affiliate partner or another website;</li>
+      <li>the words you type into the Site's search box, how many results they found, and which result you opened;</li>
+      <li>technical error messages from the page;</li>
+      <li>on NetDrill: which labs and lessons you open, how long you spend in each, and how many commands you type. Not the commands themselves, and not whether your answers were right.</li>
+    </ul>
+    <p>
+      With each visit our server also records your country (from Cloudflare) and your device type, browser and operating system (worked out from your browser's user agent, which we then discard). We do not store your IP address.
+    </p>
+    <p>
+      To group page views into a visit, your browser keeps a random visit id in its session storage, which is cleared when you close the tab. If you accept analytics cookies in the consent banner, your browser also keeps a random visitor id in its local storage so we can tell when someone comes back. It is created only after you accept and deleted if you withdraw consent. NetDrill has no consent banner, so it never creates a visitor id. Neither id is linked to your name, email address or any other site. If your browser sends a Global Privacy Control signal, we do not create the visitor id. This data is used only by CertBlueprint to improve the Site and NetDrill. It is not sold, not shared, and not used for advertising.
     </p>
     <h3>Cookies</h3>
     <p>
@@ -63,7 +81,7 @@ import LegalLayout from '../../layouts/LegalLayout.astro';
       <li><strong>Google Tag Manager</strong> — tag and event management. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></li>
       <li><strong>Google AdSense</strong> — advertising. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></li>
       <li><strong>CookieYes</strong> — cookie consent management. <a href="https://www.cookieyes.com/privacy-policy/" target="_blank" rel="noopener noreferrer">CookieYes Privacy Policy</a></li>
-      <li><strong>Cloudflare</strong> — hosting, security, site performance measurement, and AI processing for the Navigator Lab (Workers AI). <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare Privacy Policy</a></li>
+      <li><strong>Cloudflare</strong> — hosting, security, site performance measurement, storage of our own usage statistics (D1), and AI processing for the Navigator Lab (Workers AI). <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare Privacy Policy</a></li>
     </ul>
     <p>
       Affiliate links on the Site may direct you to third-party websites including Udemy, Boson, Amazon, and Cisco. Once you leave certblueprint.com, this Privacy Policy no longer applies. We encourage you to review the privacy policy of any third-party site you visit.
@@ -97,14 +115,14 @@ import LegalLayout from '../../layouts/LegalLayout.astro';
   <section>
     <h2>6. Data retention</h2>
     <p>
-      Analytics data retained by Google is subject to Google's own data retention policies. CookieYes consent data is stored as a cookie in your browser and expires according to the CookieYes platform settings. Career Navigator data stays in your browser until you clear it or your browser removes it. We do not independently store personal data on our servers, including text submitted to the Navigator Lab.
+      Analytics data retained by Google is subject to Google's own data retention policies. CookieYes consent data is stored as a cookie in your browser and expires according to the CookieYes platform settings. Career Navigator data stays in your browser until you clear it or your browser removes it. Our own usage statistics are deleted automatically after 13 months. We do not store text submitted to the Navigator Lab.
     </p>
   </section>
 
   <section>
     <h2>7. Your rights</h2>
     <p>
-      Depending on your location, you may have rights under GDPR, CCPA, or other applicable laws to access, correct, or delete data related to you. Because we do not directly collect personally identifying information, most rights can be exercised directly with the third-party services listed in Section 3.
+      Depending on your location, you may have rights under GDPR, CCPA, or other applicable laws to access, correct, or delete data related to you. Because we do not directly collect personally identifying information, most rights can be exercised directly with the third-party services listed in Section 3. Our own usage statistics are tied only to random ids: withdrawing analytics consent, or clearing this site's data in your browser, removes the visitor id so later visits cannot be linked to earlier ones. To have past statistics deleted, contact us with the visitor id shown in your browser's local storage under <code>cb:t:v</code>.
     </p>
     <p>
       To exercise your cookie consent rights, use the consent banner on the Site or contact us at <a href="mailto:privacy@surewhynot.app">privacy@surewhynot.app</a>.

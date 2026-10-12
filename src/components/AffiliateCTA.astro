@@ -60,6 +60,7 @@ const arrowPath =
         : 'background: var(--cb-accent); color: #ffffff;'}
       data-affiliate-event={event}
       data-affiliate-provider={provider}
+      data-impression={`affiliate:${event}`}
       onclick={`if(typeof gtag==='function'){gtag('event','click',{event_category:'affiliate',event_label:'${event}'});}`}
     >
       {provider && <span class="text-xs opacity-75">{provider}</span>}

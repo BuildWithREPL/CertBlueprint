@@ -154,8 +154,10 @@ export default defineConfig({
       // so there is nothing for a crawler to index — it is noindex'd too.
       // /navigator/plan/<path>/ trackers are personal checklists stored in the
       // browser — noindex'd, so they must not be advertised here either.
+      // /command/ is the owner's private dashboard: noindex, never listed.
       filter: (page) =>
         !page.endsWith('/404/') &&
+        !page.endsWith('/command/') &&
         !page.endsWith('/navigator/results/') &&
         !/\/navigator\/plan\/[^/]+\/$/.test(page),
       // navigator-lab is a hand-written file in public/, which Astro does not

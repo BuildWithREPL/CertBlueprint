@@ -20,7 +20,7 @@ const { practice, note } = Astro.props;
 const examNames = practice.exams.map((e) => e.name.replace(/ v[\d.]+$/, '')).join(' and ');
 ---
 
-<section id="practice" aria-labelledby="practice-heading">
+<section id="practice" aria-labelledby="practice-heading" data-impression="netdrill:cert-guide">
   <h2 id="practice-heading" class="text-lg font-bold mb-2 pb-2 border-b" style="color: var(--cb-text); border-color: var(--cb-border);">Practice labs</h2>
   <p class="text-sm mb-2 leading-relaxed" style="color: var(--cb-text-sub);">
     NetDrill, a network simulator that runs in your browser, maps its labs to the {examNames} objectives. You configure

@@ -16,3 +16,21 @@ run_worker_first = ["/*", "!/_astro/*"]
 
 [ai]
 binding = "AI"
+
+# First-party telemetry for certblueprint.com and NetDrill (worker/telemetry.js).
+# No database_id on purpose: wrangler creates "certblueprint-telemetry" on the
+# first deploy (or connects to it if it already exists) and keeps the binding on
+# later deploys. Tables are created by the Worker on first use.
+[[d1_databases]]
+binding = "DB"
+database_name = "certblueprint-telemetry"
+
+# Daily: delete telemetry older than RETENTION_DAYS (worker/telemetry.js).
+[triggers]
+crons = ["23 4 * * *"]
+
+[vars]
+# SHA-256 fingerprint of the command-center key, from the setup screen at
+# /command/. Only the fingerprint lives here; the key itself is never stored.
+# To retire a lost key: make a new one there and replace this value.
+COMMAND_KEY_HASH = ""

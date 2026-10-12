@@ -1,0 +1,377 @@
+---
+/**
+ * /command/ — the private command center. Usage numbers for certblueprint.com
+ * and NetDrill, read from the Worker's telemetry store (worker/telemetry.js)
+ * with the owner's key.
+ *
+ * Standalone on purpose: no BaseLayout, so no ads, no Google tags, no consent
+ * banner and no site telemetry on this page. Not in the sitemap, noindex, and
+ * the Worker serves it with no-store and a strict CSP.
+ *
+ * The page carries labels only (page titles, NetDrill lab names), built from
+ * the same data as the site, so the dashboard can name what it counts. Every
+ * number comes from the API after sign-in.
+ */
+import catalog from '../../data/labs/netdrill-catalog.json';
+import { GET as searchIndex } from '../search-index.json.ts';
+import { topicOf } from '../../../worker/telemetry.js';
+
+const { docs } = (await (await searchIndex()).json()) as { docs: { url: string; title: string }[] };
+const pages: Record<string, string> = {};
+const topics: Record<string, string> = {
+  home: 'Home page',
+  vendors: 'All vendors',
+  paths: 'All career paths',
+  compare: 'All comparisons',
+  navigator: 'Career Navigator home',
+  'navigator:lab': 'Navigator Lab (AI conversation)',
+  legal: 'Legal pages',
+};
+for (const doc of docs) {
+  if (doc.url.includes('#')) continue;
+  pages[doc.url] = doc.title;
+  const topic = topicOf(doc.url);
+  topics[topic] ??= doc.title;
+}
+const nd: Record<string, [string, string]> = {};
+for (const item of catalog.items as { id: string; title: string; kind: string }[]) {
+  nd[item.id] = [item.title, item.kind];
+}
+const labels = JSON.stringify({ pages, topics, nd }).replace(/</g, '\\u003c');
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="no-referrer" />
+    <title>Command center</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script is:inline>
+      try {
+        var t = localStorage.getItem('cc:theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    </script>
+    <style is:global>
+      /* Chart roles from the reference palette, light then dark. Sites keep their
+         colour everywhere: CertBlueprint is slot 1 (blue), NetDrill slot 2 (orange). */
+      :root {
+        color-scheme: light;
+        --page: #f9f9f7;
+        --surface: #fcfcfb;
+        --ink: #0b0b0b;
+        --ink-2: #52514e;
+        --muted: #898781;
+        --grid: #e1e0d9;
+        --base: #c3c2b7;
+        --ring: rgba(11, 11, 11, 0.1);
+        --wash: rgba(11, 11, 11, 0.04);
+        --s-cb: #2a78d6;
+        --s-nd: #eb6834;
+        --good: #006300;
+        --bad: #d03b3b;
+        --warn: #8a5a00;
+        --accent: #2a78d6;
+        --q0: #f0efec;
+        --q1: #cde2fb;
+        --q2: #b7d3f6;
+        --q3: #9ec5f4;
+        --q4: #6da7ec;
+        --q5: #3987e5;
+        --q6: #256abf;
+        --q7: #184f95;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:where(:not([data-theme='light'])) {
+          color-scheme: dark;
+          --page: #0d0d0d;
+          --surface: #1a1a19;
+          --ink: #f0efec;
+          --ink-2: #c3c2b7;
+          --muted: #898781;
+          --grid: #2c2c2a;
+          --base: #383835;
+          --ring: rgba(255, 255, 255, 0.1);
+          --wash: rgba(255, 255, 255, 0.05);
+          --s-cb: #3987e5;
+          --s-nd: #d95926;
+          --good: #0ca30c;
+          --bad: #e66767;
+          --warn: #fab219;
+          --accent: #6da7ec;
+          --q0: #242423;
+          --q1: #0d366b;
+          --q2: #104281;
+          --q3: #184f95;
+          --q4: #1c5cab;
+          --q5: #256abf;
+          --q6: #3987e5;
+          --q7: #6da7ec;
+        }
+      }
+      :root[data-theme='dark'] {
+        color-scheme: dark;
+        --page: #0d0d0d;
+        --surface: #1a1a19;
+        --ink: #f0efec;
+        --ink-2: #c3c2b7;
+        --muted: #898781;
+        --grid: #2c2c2a;
+        --base: #383835;
+        --ring: rgba(255, 255, 255, 0.1);
+        --wash: rgba(255, 255, 255, 0.05);
+        --s-cb: #3987e5;
+        --s-nd: #d95926;
+        --good: #0ca30c;
+        --bad: #e66767;
+        --warn: #fab219;
+        --accent: #6da7ec;
+        --q0: #242423;
+        --q1: #0d366b;
+        --q2: #104281;
+        --q3: #184f95;
+        --q4: #1c5cab;
+        --q5: #256abf;
+        --q6: #3987e5;
+        --q7: #6da7ec;
+      }
+
+      * { box-sizing: border-box; }
+      html, body { margin: 0; }
+      body {
+        background: var(--page);
+        color: var(--ink);
+        font: 14px/1.45 system-ui, -apple-system, 'Segoe UI', sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      [hidden] { display: none !important; }
+      a { color: var(--accent); }
+      code { font: 12px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; word-break: break-all; }
+      h1, h2, h3, p { margin: 0; }
+      .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+      .cc-wrap { max-width: 1240px; margin: 0 auto; padding: 0 16px 48px; }
+
+      /* Gate */
+      #cc-gate { min-height: 100vh; display: grid; place-items: center; padding: 24px 16px; }
+      .cc-gate-card { width: 100%; max-width: 520px; background: var(--surface); border: 1px solid var(--ring); border-radius: 14px; padding: 28px; display: grid; gap: 16px; }
+      .cc-gate-card h1 { font-size: 22px; font-weight: 650; }
+      .cc-gate-card h2 { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+      .cc-sub { color: var(--ink-2); }
+      .cc-signin { display: grid; gap: 8px; }
+      .cc-row { display: flex; gap: 8px; }
+      .cc-row input { flex: 1; min-width: 0; }
+      input[type='password'], input[type='text'] {
+        font: inherit; color: var(--ink); background: var(--page); border: 1px solid var(--base); border-radius: 8px; padding: 9px 11px;
+      }
+      input:focus-visible, button:focus-visible, summary:focus-visible, [tabindex]:focus-visible, a:focus-visible {
+        outline: 2px solid var(--accent); outline-offset: 2px;
+      }
+      .cc-label { font-size: 12px; font-weight: 600; color: var(--ink-2); }
+      .cc-hint { font-size: 13px; color: var(--ink-2); }
+      .cc-error { color: var(--bad); font-size: 13px; min-height: 1em; }
+      .cc-check { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--ink-2); }
+      .cc-keymaker { display: grid; gap: 12px; justify-items: start; }
+      .cc-secret { display: grid; gap: 6px; width: 100%; padding: 12px; border: 1px solid var(--ring); border-radius: 10px; background: var(--page); }
+      .cc-copyline { display: flex; gap: 8px; align-items: center; }
+      .cc-copyline code { flex: 1; padding: 6px 8px; background: var(--surface); border: 1px solid var(--ring); border-radius: 6px; }
+      .cc-lost summary { cursor: pointer; color: var(--ink-2); font-size: 13px; }
+      .cc-lost[open] summary { margin-bottom: 10px; }
+      .cc-status { display: flex; flex-wrap: wrap; gap: 8px; }
+      .cc-pill { font-size: 12px; padding: 3px 9px; border-radius: 99px; border: 1px solid var(--ring); color: var(--ink-2); }
+      .cc-pill.is-good { color: var(--good); }
+      .cc-pill.is-warn { color: var(--warn); }
+
+      .cc-btn {
+        font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; border-radius: 8px; padding: 8px 14px;
+        border: 1px solid var(--base); background: var(--surface); color: var(--ink);
+      }
+      .cc-btn:hover { background: var(--wash); }
+      .cc-btn-primary { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+      .cc-btn-primary:hover { background: var(--ink-2); }
+      .cc-btn-quiet { font-weight: 500; padding: 5px 10px; justify-self: start; }
+
+      /* Board chrome */
+      .cc-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 0 12px; flex-wrap: wrap; }
+      .cc-top h1 { font-size: 18px; font-weight: 650; }
+      .cc-top p { color: var(--muted); font-size: 12px; }
+      .cc-top-actions { display: flex; align-items: center; gap: 8px; }
+      .cc-live-pill { font-size: 12px; font-weight: 600; color: var(--good); display: inline-flex; align-items: center; gap: 6px; }
+      .cc-live-pill::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--good); }
+
+      .cc-filters {
+        position: sticky; top: 0; z-index: 5; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px;
+        padding: 10px 0; background: var(--page); border-bottom: 1px solid var(--grid); margin-bottom: 16px;
+      }
+      .cc-seg-group { display: inline-flex; border: 1px solid var(--base); border-radius: 8px; overflow: hidden; }
+      .cc-seg-group button {
+        font: inherit; font-size: 13px; padding: 6px 11px; border: 0; background: var(--surface); color: var(--ink-2); cursor: pointer;
+      }
+      .cc-seg-group button + button { border-left: 1px solid var(--base); }
+      .cc-seg-group button[aria-pressed='true'] { background: var(--ink); color: var(--surface); font-weight: 600; }
+      .cc-seg-group button:hover:not([aria-pressed='true']) { background: var(--wash); }
+      #cc-updated { font-size: 12px; color: var(--muted); }
+
+      #cc-board.is-loading #cc-sections { opacity: 0.55; transition: opacity 0.15s; }
+      #cc-sections { display: grid; gap: 16px; }
+
+      /* Cards */
+      .cc-card { background: var(--surface); border: 1px solid var(--ring); border-radius: 12px; padding: 18px 18px 14px; min-width: 0; display: grid; gap: 12px; align-content: start; }
+      .cc-card > header h2 { font-size: 15px; font-weight: 650; }
+      .cc-card > header p { font-size: 13px; color: var(--ink-2); margin-top: 2px; max-width: 75ch; }
+      .cc-card h3 { font-size: 13px; font-weight: 600; color: var(--ink-2); margin-bottom: 6px; }
+      .cc-grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); }
+      .cc-multiples { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); }
+      .cc-quad { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
+      .cc-card > *, .cc-grid > *, .cc-multiples > *, .cc-quad > *, .cc-stack > * { min-width: 0; }
+      .cc-empty { color: var(--muted); font-size: 13px; padding: 8px 0; }
+
+      /* Headline */
+      .cc-headline { display: grid; gap: 16px; grid-template-columns: minmax(240px, 1fr) 3fr; }
+      @media (max-width: 860px) { .cc-headline { grid-template-columns: 1fr; } }
+      .cc-hero { background: var(--surface); border: 1px solid var(--ring); border-radius: 12px; padding: 18px; display: grid; gap: 6px; align-content: start; }
+      .cc-hero-value { font-size: 56px; line-height: 1.05; font-weight: 650; letter-spacing: -0.02em; }
+      .cc-tiles { display: grid; gap: 1px; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); background: var(--ring); border: 1px solid var(--ring); border-radius: 12px; overflow: hidden; }
+      .cc-tile { background: var(--surface); padding: 14px 16px; display: grid; gap: 3px; align-content: start; }
+      .cc-tile-label { font-size: 12px; color: var(--ink-2); }
+      .cc-tile-value { font-size: 24px; font-weight: 650; line-height: 1.2; }
+      .cc-tile-note { font-size: 12px; color: var(--muted); }
+      .cc-delta { font-size: 12px; color: var(--ink-2); }
+      .cc-delta.is-good { color: var(--good); }
+      .cc-delta.is-bad { color: var(--bad); }
+      .cc-delta-vs { color: var(--muted); }
+
+      /* Live */
+      .cc-live { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+      .cc-live li { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+      .cc-live-where { font-weight: 600; }
+      .cc-live-meta { font-size: 12px; color: var(--muted); }
+
+      /* Charts */
+      .cc-chart { width: 100%; min-width: 0; }
+      .cc-svg { display: block; overflow: visible; font-family: inherit; }
+      .cc-svg:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+      line.cc-gridline { stroke: var(--grid); stroke-width: 1; }
+      line.cc-base { stroke: var(--base); stroke-width: 1; }
+      .cc-tick { fill: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+      .cc-line { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+      .cc-dot { stroke: var(--surface); stroke-width: 2; }
+      .cc-cross { stroke: var(--ink-2); stroke-width: 1; }
+      .cc-hit { fill: transparent; cursor: crosshair; }
+      rect.cc-hit[tabindex] { cursor: default; }
+      rect.cc-hit:focus { outline: none; }
+      .cc-bar.is-hot { opacity: 0.78; }
+      .cc-cell.is-hot { stroke: var(--ink); stroke-width: 1.5; }
+      .cc-end-value { fill: var(--ink); font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; }
+      .cc-end-label { fill: var(--ink-2); font-size: 11px; }
+      .cc-legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: var(--ink-2); }
+      .cc-legend > span { display: inline-flex; align-items: center; gap: 6px; }
+      .cc-key { display: inline-block; flex-shrink: 0; margin-right: 6px; vertical-align: middle; }
+      .cc-legend .cc-key { margin-right: 0; }
+      .cc-key-line { width: 14px; height: 2px; border-radius: 1px; }
+      .cc-key-rect { width: 10px; height: 10px; border-radius: 2px; }
+      .cc-scale { display: flex; align-items: center; gap: 2px; margin-top: 8px; font-size: 12px; color: var(--muted); flex-wrap: wrap; }
+      .cc-scale > span:first-child { margin-right: 6px; }
+      .cc-scale > span:last-child { margin-left: 6px; }
+      .cc-swatch { width: 18px; height: 10px; border-radius: 2px; }
+
+      .cc-tip {
+        position: fixed; left: 0; top: 0; z-index: 50; display: none; pointer-events: none; max-width: 300px;
+        background: var(--surface); color: var(--ink); border: 1px solid var(--ring); border-radius: 8px; padding: 8px 10px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12); font-size: 12px;
+      }
+      .cc-tip-title { color: var(--ink-2); margin-bottom: 4px; }
+      .cc-tip-row { display: flex; align-items: center; gap: 6px; }
+      .cc-tip-row strong { font-size: 13px; font-variant-numeric: tabular-nums; }
+      .cc-tip-row span:last-child { color: var(--ink-2); }
+      .cc-tip .cc-key { margin-right: 0; }
+
+      /* Bar lists */
+      .cc-bars { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+      .cc-bars li { display: grid; grid-template-columns: minmax(90px, 38%) 1fr auto; align-items: center; gap: 10px; padding: 4px 4px; border-radius: 6px; }
+      .cc-bars li:hover, .cc-bars li:focus-visible { background: var(--wash); }
+      .cc-bar-label { font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+      .cc-bar-label small { color: var(--muted); margin-left: 6px; }
+      .cc-bar-value { font-size: 12px; color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+      .cc-track, .cc-cellbar { display: flex; gap: 2px; height: 10px; align-items: stretch; min-width: 0; }
+      .cc-seg { display: block; min-width: 0; }
+      .cc-seg-end { border-radius: 0 4px 4px 0; }
+
+      /* Tables */
+      .cc-scroll { overflow-x: auto; }
+      .cc-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+      .cc-table th { text-align: left; font-size: 12px; font-weight: 600; color: var(--ink-2); padding: 6px 10px; border-bottom: 1px solid var(--base); white-space: nowrap; }
+      .cc-table td { padding: 7px 10px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+      .cc-table td:first-child { min-width: 9rem; }
+      .cc-table .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+      .cc-table td small { display: block; color: var(--muted); font-size: 11px; }
+      .cc-table td small.cc-chip { display: inline-block; margin-left: 6px; padding: 0 6px; border: 1px solid var(--ring); border-radius: 4px; }
+      .cc-barcell { display: grid; grid-template-columns: minmax(48px, 120px) minmax(3ch, auto); gap: 8px; align-items: center; justify-content: end; }
+      .cc-barcell .cc-cellbar { width: 100%; }
+      .cc-limited:not(.is-open) tr.cc-extra { display: none; }
+      .cc-more { margin-top: 8px; }
+      .cc-nowrap { white-space: nowrap; }
+      .cc-did { display: block; min-width: 9rem; }
+      .cc-path { display: block; min-width: 14rem; }
+      .cc-stack { display: grid; gap: 12px; }
+      .cc-narrow { max-width: 560px; }
+      .cc-clickable { cursor: pointer; }
+      .cc-clickable:hover, .cc-clickable:focus-visible { background: var(--wash); }
+      .cc-detail td { background: var(--page); }
+      .cc-status-cell { white-space: nowrap; color: var(--ink-2); }
+      .cc-status-cell.is-good { color: var(--good); }
+      .cc-status-cell.is-warn { color: var(--warn); }
+      .cc-tableview summary { cursor: pointer; font-size: 12px; color: var(--ink-2); }
+      .cc-tableview[open] summary { margin-bottom: 8px; }
+      .cc-timeline { margin: 0; padding: 4px 0; list-style: none; display: grid; gap: 4px; }
+      .cc-timeline li { display: grid; grid-template-columns: 56px 1fr; gap: 8px; font-size: 13px; }
+      .cc-when { color: var(--muted); font-variant-numeric: tabular-nums; }
+      .cc-timeline .cc-end { color: var(--ink-2); }
+      .cc-notes { margin: 0; padding-left: 18px; display: grid; gap: 4px; color: var(--ink-2); font-size: 13px; }
+    </style>
+  </head>
+  <body>
+    <div id="cc-gate" hidden></div>
+
+    <div id="cc-board" class="cc-wrap" hidden>
+      <div class="cc-top">
+        <div>
+          <h1>Command center</h1>
+          <p>certblueprint.com and NetDrill · private</p>
+        </div>
+        <div class="cc-top-actions">
+          <span id="cc-live-pill" class="cc-live-pill"></span>
+          <button id="cc-theme" type="button" class="cc-btn cc-btn-quiet">Auto</button>
+          <button id="cc-lock" type="button" class="cc-btn cc-btn-quiet">Lock</button>
+        </div>
+      </div>
+
+      <div class="cc-filters" role="toolbar" aria-label="Filters">
+        <div class="cc-seg-group" role="group" aria-label="Date range">
+          <button type="button" data-range="24h">24 hours</button>
+          <button type="button" data-range="7d">7 days</button>
+          <button type="button" data-range="30d">30 days</button>
+          <button type="button" data-range="90d">90 days</button>
+          <button type="button" data-range="365d">12 months</button>
+        </div>
+        <div class="cc-seg-group" role="group" aria-label="Site">
+          <button type="button" data-site="all">Both sites</button>
+          <button type="button" data-site="cb">CertBlueprint</button>
+          <button type="button" data-site="nd">NetDrill</button>
+        </div>
+        <button id="cc-refresh" type="button" class="cc-btn cc-btn-quiet">Refresh</button>
+        <span id="cc-updated" aria-live="polite"></span>
+      </div>
+
+      <div id="cc-sections"></div>
+    </div>
+
+    <script type="application/json" id="cc-labels" set:html={labels} />
+    <script>
+      import '../../scripts/command/app';
+    </script>
+  </body>
+</html>

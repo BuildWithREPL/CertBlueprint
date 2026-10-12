@@ -1,11 +1,15 @@
 /**
  * CertBlueprint Worker
  * - /api/navigator/read : Workers AI endpoint for the conversational Navigator lab.
+ * - /api/pulse, /api/command/* : first-party telemetry and the private command
+ *   center that reads it (worker/telemetry.js).
  * - everything else     : falls through to the static site (dist/ assets).
  *
- * Stateless by design: the conversation lives in the client and is passed whole
- * on each call. Nothing is stored.
+ * The Navigator Lab is stateless by design: the conversation lives in the
+ * client and is passed whole on each call. Nothing of it is stored.
  */
+
+import { handleCommand, handlePulse, pruneTelemetry } from "./telemetry.js";
 
 const MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
 
@@ -203,6 +207,18 @@ function withSiteHeaders(response, pathname) {
   const res = new Response(response.body, response);
   res.headers.set("X-Content-Type-Options", "nosniff");
   res.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
+  // The command center: never indexed, never cached, never framed, and it talks
+  // to nothing but this Worker.
+  if (pathname === "/command" || pathname.startsWith("/command/")) {
+    res.headers.set("X-Robots-Tag", "noindex, nofollow");
+    res.headers.set("Cache-Control", "no-store");
+    res.headers.set("Referrer-Policy", "no-referrer");
+    res.headers.set("X-Frame-Options", "DENY");
+    res.headers.set(
+      "Content-Security-Policy",
+      "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'",
+    );
+  }
   if (pathname === "/sitemap-index.xml" || pathname === "/sitemap-0.xml") {
     res.headers.set("Cache-Control", "no-store");
   }
@@ -210,7 +226,11 @@ function withSiteHeaders(response, pathname) {
 }
 
 export default {
-  async fetch(request, env) {
+  async scheduled(_controller, env, ctx) {
+    ctx.waitUntil(pruneTelemetry(env));
+  },
+
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
     // One canonical host. www (or any other alias) gets a permanent redirect
@@ -227,6 +247,9 @@ export default {
       target.search = url.search;
       return Response.redirect(target.toString(), 301);
     }
+
+    if (url.pathname === "/api/pulse") return handlePulse(request, env, ctx);
+    if (url.pathname.startsWith("/api/command/")) return handleCommand(request, env, url.pathname);
 
     if (url.pathname === "/api/navigator/read") {
       if (request.method !== "POST") return json({ error: "method_not_allowed" }, 405);

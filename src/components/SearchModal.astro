@@ -60,6 +60,8 @@
 </div>
 
 <script>
+  import { trackSearch } from '../scripts/telemetry.js';
+
   interface Doc {
     title: string;
     description: string;
@@ -158,6 +160,7 @@
   }
 
   let searchInited = false;
+  let lastResults = 0;
 
   function initSearch() {
     const input = document.getElementById('search-input') as HTMLInputElement;
@@ -172,7 +175,16 @@
         noRes.classList.add('hidden');
         return;
       }
-      renderResults(simpleSearch(input.value));
+      const results = simpleSearch(input.value);
+      lastResults = results.length;
+      renderResults(results);
+    });
+
+    // What people look for, and whether they found it: the query and the result
+    // count when they open a result, or when they close search without one.
+    list.addEventListener('click', (e) => {
+      const link = (e.target as Element | null)?.closest?.('a');
+      if (link) trackSearch(input.value, lastResults, link.getAttribute('href'));
     });
 
     input.addEventListener('keydown', (e) => {
@@ -186,12 +198,22 @@
 
   const observer = new MutationObserver(() => {
     const modal = document.getElementById('search-modal');
+    const query = (document.getElementById('search-input') as HTMLInputElement | null)?.value ?? '';
+    if (modal && modal.classList.contains('hidden') && searchInited && query.trim()) {
+      // After the click that closed it has been handled: opening a result already
+      // reported this query as picked, and trackSearch drops the repeat.
+      setTimeout(() => trackSearch(query, lastResults, null), 0);
+    }
     if (modal && !modal.classList.contains('hidden') && !searchInited) {
       searchInited = true;
       initSearch();
       const input = document.getElementById('search-input') as HTMLInputElement | null;
       void ensureIndex().then(() => {
-        if (input && input.value.trim()) renderResults(simpleSearch(input.value));
+        if (input && input.value.trim()) {
+          const results = simpleSearch(input.value);
+          lastResults = results.length;
+          renderResults(results);
+        }
       });
     }
   });

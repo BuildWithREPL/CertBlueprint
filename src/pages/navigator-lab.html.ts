@@ -1,5 +1,6 @@
 import template from '../lab/navigator-lab.html?raw';
 import workerSource from '../../worker/index.js?raw';
+import telemetrySource from '../scripts/telemetry.js?raw';
 import { LAB_FIELDS, assertLabFieldIntegrity } from '../lib/navigator/data/lab-fields';
 import { ROLE_CORE_BY_SLUG } from '../lib/navigator/data/roles/cores';
 
@@ -130,7 +131,7 @@ export function GET() {
   <h2>What happens to what you write</h2>
   <ul>
     <li>Each answer is sent to CertBlueprint’s server and passed to Cloudflare Workers AI, which generates the reply. Cloudflare processes it under <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener noreferrer" target="_blank">its own privacy policy</a>.</li>
-    <li>CertBlueprint does not save or log what you write. There is no account and no database behind this page.</li>
+    <li>CertBlueprint does not save or log what you write, and there is no account. Like every page here, this one counts visits and time on the page (see the privacy policy), but never the conversation.</li>
     <li>The conversation exists only in this page. Reload or leave, and it is gone — it is not kept in your browser either.</li>
     <li>What you type is not sent to analytics.</li>
     <li>Leave out your name, employer, contact details, and anything you would not want an AI service to process. The reader needs how you like to work, not who you are.</li>
@@ -200,7 +201,12 @@ export function GET() {
   };
   const head = `<script type="application/ld+json">${JSON.stringify(structuredData).replace(/</g, '\\u003c')}</script>`;
 
-  const html = fill(fill(template, 'HEAD', head), 'EXPLAINER', explainer);
+  // The same first-party telemetry as every other page, inlined: this page is
+  // standalone, so nothing bundles it in. The file has no imports for this reason.
+  if (/<\/script/i.test(telemetrySource)) throw new Error('Navigator lab page: telemetry.js cannot be inlined: it contains a closing script tag.');
+  const telemetry = `<script type="module">${telemetrySource}</script>`;
+
+  const html = fill(fill(fill(template, 'HEAD', head), 'EXPLAINER', explainer), 'TELEMETRY', telemetry);
 
   return new Response(html, {
     headers: { 'content-type': 'text/html; charset=utf-8' },

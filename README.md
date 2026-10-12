@@ -81,6 +81,20 @@ certblueprint/
   and build. Which labs each page shows is picked by hand in `src/lib/netdrill.ts`,
   by topic and stage; the build fails on a pick NetDrill no longer has.
 
+- **Command center (`/command/`).** A private dashboard over first-party
+  telemetry from certblueprint.com and NetDrill. Browsers send beacons to
+  `/api/pulse`; `worker/telemetry.js` writes them to the D1 database
+  `certblueprint-telemetry` (binding `DB`, created by wrangler on the first
+  deploy; tables are created on first use) and deletes rows older than 13 months
+  on a daily cron. The client side is `src/scripts/telemetry.js` (every page,
+  and inlined into the Navigator Lab) and NetDrill's own tracker. A random
+  visitor id exists only with CookieYes analytics consent.
+
+  The dashboard needs a key. `/command/` makes one in the browser and shows its
+  SHA-256 fingerprint; only the fingerprint goes in `wrangler.toml` as
+  `COMMAND_KEY_HASH`. A lost key: make a new one there, replace the
+  fingerprint, push. The old key stops working when that deploys. The
+  dashboard's notes panel can exclude the owner's own browser from the numbers.
 - **Secrets:** `.env` holds `CLOUDFLARE_API_TOKEN` for wrangler and is
   gitignored. Never commit it. `service-account.json` (Google Indexing API)
   is likewise gitignored.
@@ -91,4 +105,5 @@ certblueprint/
 - **Search:** `SearchModal.astro` uses a hand-maintained `SEARCH_INDEX` array —
   add an entry when adding a page.
 - **Navigator lab:** conversation state lives entirely in the client; the
-  Worker is stateless and enforces turn/length caps before calling Workers AI.
+  Worker stores none of it and enforces turn/length caps before calling Workers
+  AI.
