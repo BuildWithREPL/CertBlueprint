@@ -81,12 +81,12 @@ export function sum<T>(rows: T[], pick: (row: T) => number) {
   return rows.reduce((total, row) => total + (Number(pick(row)) || 0), 0);
 }
 
-/** 0, 1, 2, 2.5, 5 × 10ⁿ steps; about `count` ticks from 0 to just past max. */
+/** 0, 1, 2, 2.5, 5 × 10ⁿ steps; about `count` ticks from 0 to just past max. Every chart counts things, so no step is under 1. */
 export function niceTicks(max: number, count = 4): number[] {
   if (!(max > 0)) return [0, 1];
   const raw = max / count;
   const mag = 10 ** Math.floor(Math.log10(raw));
-  const step = [1, 2, 2.5, 5, 10].map((m) => m * mag).find((s) => s >= raw) ?? 10 * mag;
+  const step = Math.max(1, [1, 2, 2.5, 5, 10].map((m) => m * mag).find((s) => s >= raw) ?? 10 * mag);
   const ticks: number[] = [];
   for (let v = 0; v < max + step * 0.999; v += step) ticks.push(Math.round(v * 1e6) / 1e6);
   if (ticks.length < 2) ticks.push(step);

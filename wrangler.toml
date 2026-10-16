@@ -30,3 +30,7 @@ database_name = "certblueprint-telemetry"
 # /command/. Only the fingerprint lives here; the key itself is never stored.
 # To retire a lost key: make a new one there and replace this value.
 COMMAND_KEY_HASH = "16ae19a7481c951a549443f6753bc2df42edb53c74fcd515d71cf00c24ceb190"
+# Who is measured without an accept (worker/telemetry.js, measureRule).
+# "regional": opt-in in the EEA, the UK and Switzerland (and when the country is
+# unknown), opt-out elsewhere. Any other value: opt-in everywhere.
+REGION_POLICY = "regional"

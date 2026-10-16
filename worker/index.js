@@ -2,14 +2,16 @@
  * CertBlueprint Worker
  * - /api/navigator/read : Workers AI endpoint for the conversational Navigator lab.
  * - /api/pulse, /api/command/* : first-party telemetry and the private command
- *   center that reads it (worker/telemetry.js).
+ *   center that reads it (worker/telemetry.js). Pages are stamped with the
+ *   visitor's measurement rule and counted as they are served (stampRule,
+ *   countPage).
  * - everything else     : falls through to the static site (dist/ assets).
  *
  * The Navigator Lab is stateless by design: the conversation lives in the
  * client and is passed whole on each call. Nothing of it is stored.
  */
 
-import { handleCommand, handlePulse } from "./telemetry.js";
+import { countPage, handleCommand, handlePolicy, handlePulse, ruleFor } from "./telemetry.js";
 
 const MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
 
@@ -226,6 +228,51 @@ function withSiteHeaders(response, pathname) {
   return res;
 }
 
+// ─── The measurement rule on every page ─────────────────────────────────────
+//
+// Each page says whether this visitor may be measured without an accept
+// (<meta name="cb-measure" content="opt-in|opt-out">, from worker/telemetry.js),
+// so the tracker knows before it stores or sends anything. One URL therefore
+// comes in two versions, and the rule rides on the validator: a browser's
+// cached copy is confirmed (304) only for the rule it was served with.
+
+const tagged = (etag, rule) => etag.replace(/"$/, `-${rule}"`);
+
+/** The request as the asset layer should see it: If-None-Match only for copies served under this rule. */
+function forRule(request, rule) {
+  const sent = request.headers.get("if-none-match");
+  if (!sent) return request;
+  const suffix = `-${rule}"`;
+  const mine = sent
+    .split(",")
+    .map((t) => t.trim())
+    .filter((t) => t.endsWith(suffix))
+    .map((t) => t.slice(0, -suffix.length) + '"');
+  const headers = new Headers(request.headers);
+  if (mine.length) headers.set("if-none-match", mine.join(", "));
+  else headers.delete("if-none-match");
+  headers.delete("if-modified-since");
+  return new Request(request, { headers });
+}
+
+function stampRule(response, rule) {
+  const etag = response.headers.get("etag");
+  const html = response.body && /text\/html/i.test(response.headers.get("content-type") || "");
+  if (!etag && !html) return response;
+  const page = html
+    ? new HTMLRewriter()
+        .on("head", {
+          element(head) {
+            head.prepend(`<meta name="cb-measure" content="${rule}">`, { html: true });
+          },
+        })
+        .transform(response)
+    : response;
+  const res = new Response(page.body, page);
+  if (etag) res.headers.set("etag", tagged(etag, rule));
+  return res;
+}
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
@@ -246,6 +293,7 @@ export default {
     }
 
     if (url.pathname === "/api/pulse") return handlePulse(request, env, ctx);
+    if (url.pathname === "/api/pulse/policy") return handlePolicy(request, env);
     if (url.pathname.startsWith("/api/command/")) return handleCommand(request, env, url.pathname);
 
     if (url.pathname === "/api/navigator/read") {
@@ -255,18 +303,20 @@ export default {
     // dist/404.html is a file like any other, so asking for it by name gets it
     // with a 200: an error page that says everything is fine. Serve it as what
     // it is.
+    const rule = ruleFor(request, env);
     if (/^\/404(\/|\.html)?$/.test(url.pathname)) {
       const page = await env.ASSETS.fetch(new Request(new URL("/404", url), request));
-      return withSiteHeaders(new Response(page.body, { status: 404, headers: page.headers }), url.pathname);
+      return withSiteHeaders(stampRule(new Response(page.body, { status: 404, headers: page.headers }), rule), url.pathname);
     }
 
     // Everything else: the static site.
-    const response = await env.ASSETS.fetch(request);
+    const response = await env.ASSETS.fetch(forRule(request, rule));
     // The asset layer adds or drops a trailing slash with a 307. That is the
     // canonical URL, not a temporary move, so say so: a 301 lets search
     // engines fold the slashless variant into the real page.
     const location = response.status === 307 && response.headers.get("location");
     if (location) return Response.redirect(new URL(location, url).toString(), 301);
-    return withSiteHeaders(response, url.pathname);
+    countPage(request, env, ctx, response, url.pathname);
+    return withSiteHeaders(stampRule(response, rule), url.pathname);
   },
 };

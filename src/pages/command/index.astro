@@ -234,6 +234,8 @@ const labels = JSON.stringify({ pages, topics, nd }).replace(/</g, '\\u003c');
       @media (max-width: 860px) { .cc-headline { grid-template-columns: 1fr; } }
       .cc-hero { background: var(--surface); border: 1px solid var(--ring); border-radius: 12px; padding: 18px; display: grid; gap: 6px; align-content: start; }
       .cc-hero-value { font-size: 56px; line-height: 1.05; font-weight: 650; letter-spacing: -0.02em; }
+      .cc-hero-side { display: grid; gap: 3px; margin-top: 10px; padding-top: 12px; border-top: 1px solid var(--grid); }
+      .cc-muted { color: var(--muted); }
       .cc-tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); background: var(--surface); border: 1px solid var(--ring); border-radius: 12px; overflow: hidden; }
       /* Hairlines on every tile's right and bottom edge, pulled 1px under the container's own border. */
       .cc-tile { padding: 14px 16px; display: grid; gap: 3px; align-content: start; box-shadow: 1px 1px 0 var(--grid); }
@@ -370,6 +372,10 @@ const labels = JSON.stringify({ pages, topics, nd }).replace(/</g, '\\u003c');
           <button type="button" data-site="all">Both sites</button>
           <button type="button" data-site="cb">CertBlueprint</button>
           <button type="button" data-site="nd">NetDrill</button>
+        </div>
+        <div class="cc-seg-group" role="group" aria-label="Data-centre networks">
+          <button type="button" data-dc="0" title="Leave out sessions from cloud and hosting networks: mostly scripts">Without data centres</button>
+          <button type="button" data-dc="1">With data centres</button>
         </div>
         <button id="cc-refresh" type="button" class="cc-btn cc-btn-quiet">Refresh</button>
         <span id="cc-updated" aria-live="polite"></span>

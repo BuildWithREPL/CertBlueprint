@@ -91,6 +91,19 @@ certblueprint/
   and inlined into the Navigator Lab) and NetDrill's own tracker. A random
   visitor id exists only with CookieYes analytics consent.
 
+  Who is measured follows `REGION_POLICY` in `wrangler.toml`. `"regional"`:
+  in the EEA, the UK and Switzerland (and when the country is unknown) only
+  after an accept, elsewhere unless declined; any other value means opt-in
+  everywhere, the rollback. A decline or Global Privacy Control stops the beacon
+  everywhere. The Worker writes the rule into every page
+  (`<meta name="cb-measure">`, with the ETag tagged per rule so a cached copy
+  never carries the wrong one), NetDrill asks `GET /api/pulse/policy`, and
+  `/api/pulse` refuses beacons that break it. Events carry a per-view sequence
+  number, so a resent beacon is ignored. Separately, the Worker counts every page
+  it serves per day, path and class (person, bot, data centre) into `page_hits`,
+  with no identifiers, so the dashboard can show how much traffic the beacon
+  sees. `npm test` runs the Worker's unit tests.
+
   The dashboard needs a key. `/command/` makes one in the browser and shows its
   SHA-256 fingerprint; only the fingerprint goes in `wrangler.toml` as
   `COMMAND_KEY_HASH`. A lost key: make a new one there, replace the

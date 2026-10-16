@@ -3,6 +3,7 @@
  * and the private command center that reads it.
  *
  *   POST /api/pulse            beacons from both sites, written to D1
+ *   GET  /api/pulse/policy     whether this visitor may be measured (NetDrill asks first)
  *   GET  /api/command/status   whether the database and the key are set up (no secrets)
  *   POST /api/command/query    every number on /command/; needs the key
  *   POST /api/command/session  one session's timeline; needs the key
@@ -11,12 +12,21 @@
  * every few hours per Worker instance (pruneTelemetry): a cron trigger would do
  * the same, but a deploy that cannot add one fails after going live.
  *
+ * Who is measured (measureRule): in the EEA, the UK and Switzerland, or when the
+ * country is unknown, only visitors who accepted analytics cookies. Elsewhere,
+ * everyone who has not declined them. A decline or Global Privacy Control stops
+ * the beacon everywhere. Pages carry the rule in <meta name="cb-measure">, so the
+ * tracker knows before it stores or sends anything; this collector refuses
+ * beacons that break it anyway. Every certblueprint.com page request is also
+ * counted per path and day (countPage), with no identifiers at all.
+ *
  * What is kept, per event: the page path or NetDrill lab id, time spent, scroll
  * depth, which link was clicked, a random session id, and a random visitor id
  * only when the visitor accepted analytics cookies. Per session: country (from
  * Cloudflare), device type, browser and OS (parsed here from the user agent,
- * which is then dropped), the referring site and campaign tags. No IP address,
- * no user agent string, and nothing anyone types except search terms.
+ * which is then dropped), whether the network is a data centre (from its ASN),
+ * the referring site and campaign tags. No IP address, no user agent string, and
+ * nothing anyone types except search terms.
  *
  * The owner's own visits: /command/ can exclude networks (an IPv4 address or an
  * IPv6 /64, the block a home router gives all its devices). Every beacon from an
@@ -50,12 +60,106 @@ const TYPES = new Set([
   "error", // an uncaught script error
   "open", // netdrill: a lab, lesson or rep was opened
   "time", // netdrill: active ms (and commands typed) on one lab
+  "engaged", // the view reached 10 s in use, or was clicked: the session is not a bounce
 ]);
 
 const ID = /^[A-Za-z0-9_-]{8,40}$/;
 
 const BOTS =
   /bot\b|bot\/|crawl|spider|slurp|archiver|facebookexternalhit|embedly|preview|headless|phantom|lighthouse|pagespeed|gtmetrix|pingdom|uptime|curl\/|wget|python-|go-http|java\/|okhttp|axios|node-fetch|httpclient/i;
+
+// ─── Who may be measured ─────────────────────────────────────────────────────
+
+/**
+ * Where analytics needs consent first: the EEA (the EU, its outermost regions
+ * that have their own country codes, Iceland, Liechtenstein, Norway), the UK
+ * with the Crown dependencies and Gibraltar, and Switzerland.
+ */
+export const OPT_IN_REGIONS = new Set([
+  "AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU",
+  "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE",
+  "AX", "GF", "GP", "MQ", "RE", "YT", "MF",
+  "IS", "LI", "NO",
+  "GB", "GG", "JE", "IM", "GI",
+  "CH",
+]);
+
+/**
+ * "opt-in": measure only after an accept. "opt-out": measure unless declined.
+ * REGION_POLICY "regional" applies the list above; anything else, or no value,
+ * keeps opt-in everywhere. An unknown country (none, XX, or T1 for Tor) is opt-in.
+ */
+export function measureRule(country, policy) {
+  if (policy !== "regional") return "opt-in";
+  if (typeof country !== "string" || !/^[A-Z]{2}$/.test(country) || country === "XX") return "opt-in";
+  return OPT_IN_REGIONS.has(country) ? "opt-in" : "opt-out";
+}
+
+/** The banner state a beacon reports: an explicit choice, or none yet. */
+export function bannerState(value) {
+  return value === "granted" || value === "denied" || value === "unset" ? value : null;
+}
+
+/**
+ * Whether a beacon may be stored, and why not. A decline or GPC wins
+ * everywhere; an opt-in region also needs an accept. Beacons from trackers
+ * older than the banner state (c missing) are allowed only where the rule is
+ * opt-out.
+ */
+export function beaconVerdict(rule, c, gpc) {
+  if (gpc) return "gpc";
+  if (c === "denied") return "declined";
+  if (rule === "opt-in" && c !== "granted") return "consent";
+  return "ok";
+}
+
+/**
+ * Networks of hosting and cloud providers. Requests from them are mostly
+ * scripts and crawlers that say they are browsers; VPN users show up here too,
+ * which is why it is a flag the dashboard can show, not a filter at intake.
+ */
+const DATA_CENTRES = new Set([
+  16509, 14618, 8987, // Amazon AWS
+  15169, 396982, 19527, // Google, Google Cloud
+  8075, // Microsoft Azure
+  31898, // Oracle Cloud
+  14061, // DigitalOcean
+  63949, // Linode / Akamai Connected Cloud
+  20473, // Vultr (Choopa)
+  16276, // OVHcloud
+  24940, 213230, // Hetzner
+  12876, // Scaleway
+  51167, // Contabo
+  60781, 28753, // Leaseweb
+  36351, // IBM Cloud (SoftLayer)
+  45102, 37963, // Alibaba Cloud
+  132203, 45090, // Tencent Cloud
+  136907, // Huawei Cloud
+  47583, // Hostinger
+  62567, // DigitalOcean (legacy)
+  46606, // Unified Layer
+  26496, // GoDaddy
+  398101, // GoDaddy
+  40021, // Contabo US
+  202425, // IP Volume
+]);
+
+export function dcOf(asn) {
+  return typeof asn === "number" && DATA_CENTRES.has(asn) ? 1 : 0;
+}
+
+function countryOf(request, env) {
+  // Local testing only: wrangler dev --var PULSE_DEV_COUNTRY:DE.
+  const dev = String(env.PULSE_DEV_COUNTRY || "");
+  if (/^[A-Z]{2}$/.test(dev)) return dev;
+  const country = request.cf?.country;
+  return typeof country === "string" ? country : null;
+}
+
+/** The rule for this request, for the page meta tag and the collector alike. */
+export function ruleFor(request, env) {
+  return measureRule(countryOf(request, env), env.REGION_POLICY);
+}
 
 const SCHEMA = [
   `CREATE TABLE IF NOT EXISTS events (
@@ -109,11 +213,45 @@ const SCHEMA = [
     added_ts INTEGER NOT NULL,
     last_seen_ts INTEGER
   )`,
+  // Page requests counted by the Worker as it serves them: no ids, no addresses.
+  // day is days since 1970-01-01 (UTC); class is human, bot or dc (data centre).
+  `CREATE TABLE IF NOT EXISTS page_hits (
+    day INTEGER NOT NULL,
+    site TEXT NOT NULL,
+    path TEXT NOT NULL,
+    class TEXT NOT NULL,
+    n INTEGER NOT NULL DEFAULT 0,
+    PRIMARY KEY (day, site, path, class)
+  )`,
 ];
+
+/** Columns added after the first release. Adding one that exists fails harmlessly. */
+const COLUMNS = [
+  "ALTER TABLE events ADD COLUMN q INTEGER", // sequence within a page view: a resent event is ignored
+  "ALTER TABLE sessions ADD COLUMN engaged INTEGER NOT NULL DEFAULT 0",
+  "ALTER TABLE sessions ADD COLUMN dc INTEGER NOT NULL DEFAULT 0",
+];
+
+const INDEXES = [
+  `CREATE UNIQUE INDEX IF NOT EXISTS events_pv_q ON events (pv, q) WHERE q IS NOT NULL`,
+  `CREATE INDEX IF NOT EXISTS sessions_dc ON sessions (sid) WHERE dc = 1`,
+];
+
+async function migrate(db) {
+  await db.batch(SCHEMA.map((sql) => db.prepare(sql)));
+  for (const sql of COLUMNS) {
+    try {
+      await db.prepare(sql).run();
+    } catch (error) {
+      if (!/duplicate column/i.test(String(error?.message ?? error))) throw error;
+    }
+  }
+  await db.batch(INDEXES.map((sql) => db.prepare(sql)));
+}
 
 let schemaReady;
 function ensureSchema(db) {
-  schemaReady ??= db.batch(SCHEMA.map((sql) => db.prepare(sql))).catch((error) => {
+  schemaReady ??= migrate(db).catch((error) => {
     schemaReady = undefined;
     throw error;
   });
@@ -268,6 +406,54 @@ async function requestNetwork(request, env) {
   }
 }
 
+const gpcOf = (request) => request.headers.get("sec-gpc") === "1";
+
+/**
+ * GET /api/pulse/policy: NetDrill has no Worker in front of its pages, so it
+ * asks here before it stores or sends anything. Nothing about the request is
+ * kept. NetDrill has no consent banner, so where the rule is opt-in it is
+ * never measured.
+ */
+export function handlePolicy(request, env) {
+  const site = origin(request, env);
+  const rule = ruleFor(request, env);
+  const gpc = gpcOf(request);
+  return new Response(JSON.stringify({ rule, gpc, measure: rule === "opt-out" && !gpc }), {
+    headers: {
+      "content-type": "application/json; charset=utf-8",
+      "cache-control": "private, no-store",
+      ...(site ? { "access-control-allow-origin": request.headers.get("origin"), vary: "Origin" } : {}),
+    },
+  });
+}
+
+/** What one beacon's stored events add to their session. */
+export function sessionDelta(site, rows) {
+  if (!rows.length) return null;
+  const views = rows.filter((r) => r.type === "view");
+  const first = views[0];
+  // Where the session was last: the last page on certblueprint; on NetDrill, the
+  // last lab opened (its "pages" are labs inside one app).
+  const opened = rows.filter((r) => r.type === "open" && r.item);
+  const clicks = rows.reduce((n, r) => n + (r.type === "leave" ? r.c ?? 0 : 0), 0);
+  const active = rows.reduce((n, r) => n + (r.type === "leave" ? r.ms ?? 0 : 0), 0);
+  return {
+    start: Math.min(...rows.map((r) => r.ts)),
+    last: Math.max(...rows.map((r) => r.ts)),
+    views: views.length,
+    reloads: views.filter((r) => r.nav === "reload").length,
+    clicks,
+    active,
+    opens: rows.filter((r) => r.type === "open").length,
+    entry: first?.path ?? null,
+    exit: site === "nd" && opened.length ? opened[opened.length - 1].item : views[views.length - 1]?.path ?? null,
+    ref: first?.ref ?? null,
+    src: first?.src ?? null,
+    channel: first ? channelOf(first.ref, first.src) : null,
+    engaged: rows.some((r) => r.type === "engaged") || views.length >= 2 || clicks > 0 || active >= 10_000 ? 1 : 0,
+  };
+}
+
 export async function handlePulse(request, env, ctx) {
   const site = origin(request, env);
   // NetDrill posts from another origin with fetch() in cors mode: sendBeacon would
@@ -286,6 +472,7 @@ export async function handlePulse(request, env, ctx) {
   const ua = request.headers.get("user-agent") || "";
   if (!ua || BOTS.test(ua)) return done(204, "bot");
   if (Number(request.headers.get("content-length") || 0) > MAX_BODY) return done(413, "size");
+  if (gpcOf(request)) return done(204, "gpc");
   const net = await requestNetwork(request, env);
   if (net?.excluded) {
     // Note when the exclusion last caught something, so /command/ can show it works; at most every 10 minutes.
@@ -306,18 +493,26 @@ export async function handlePulse(request, env, ctx) {
     return done(400, "json");
   }
   if (!body || body.v !== 1 || !ID.test(body.sid) || !Array.isArray(body.e)) return done(400, "shape");
+  // The page already held back if it knew the rule; this catches the rest
+  // (a cached page, a tab that crossed a border, a tracker from before the rule).
+  const c = bannerState(body.c);
+  const verdict = beaconVerdict(ruleFor(request, env), c, false);
+  if (verdict !== "ok") return done(204, verdict);
   const sid = body.sid;
-  const vid = typeof body.vid === "string" && ID.test(body.vid) ? body.vid : null;
+  // A visitor id only travels with an accept; a tracker too old to send c gated it on consent itself.
+  const vid = typeof body.vid === "string" && ID.test(body.vid) && (c === null || c === "granted") ? body.vid : null;
   const now = Date.now();
 
   const rows = [];
   for (const raw of body.e.slice(0, MAX_EVENTS)) {
     if (!raw || !TYPES.has(raw.t)) continue;
     const path = str(raw.p, 200);
+    const pv = typeof raw.pv === "string" && ID.test(raw.pv) ? raw.pv : null;
     rows.push({
       ts: now - (int(raw.dt, 3_600_000) ?? 0),
       type: raw.t,
-      pv: typeof raw.pv === "string" && ID.test(raw.pv) ? raw.pv : null,
+      pv,
+      q: pv ? int(raw.q, 100_000) : null,
       path,
       item: str(raw.i, 200),
       topic: site === "cb" && (raw.t === "view" || raw.t === "leave") && path ? topicOf(path) : str(raw.tp, 120),
@@ -333,62 +528,54 @@ export async function handlePulse(request, env, ctx) {
   if (rows.length === 0) return done(204, "empty");
   if (!env.DB) return done(204, "no-db");
 
-  const views = rows.filter((r) => r.type === "view");
-  const first = views[0];
-  // Where the session was last: the last page on certblueprint; on NetDrill, the
-  // last lab opened (its "pages" are labs inside one app).
-  const opened = rows.filter((r) => r.type === "open" && r.item);
-  const lastPlace = site === "nd" && opened.length ? opened[opened.length - 1].item : views[views.length - 1]?.path ?? null;
-  const ref = first?.ref ?? null;
-  const src = first?.src ?? null;
   const cf = request.cf || {};
-  const session = {
-    start: Math.min(...rows.map((r) => r.ts)),
-    last: Math.max(...rows.map((r) => r.ts)),
-    views: views.length,
-    reloads: views.filter((r) => r.nav === "reload").length,
-    clicks: rows.reduce((n, r) => n + (r.type === "leave" ? r.c ?? 0 : 0), 0),
-    active: rows.reduce((n, r) => n + (r.type === "leave" ? r.ms ?? 0 : 0), 0),
-    opens: rows.filter((r) => r.type === "open").length,
-  };
-
   const write = async () => {
     const db = env.DB;
     await ensureSchema(db);
+    // A resent event (same page view, same sequence number) is ignored, and only
+    // the events actually stored count toward the session.
     const insert = db.prepare(
-      "INSERT INTO events (ts, site, sid, vid, pv, type, path, item, topic, kind, nav, ms, n, c) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+      "INSERT OR IGNORE INTO events (ts, site, sid, vid, pv, q, type, path, item, topic, kind, nav, ms, n, c) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
     );
+    const results = await db.batch(
+      rows.map((r) => insert.bind(r.ts, site, sid, vid, r.pv, r.q, r.type, r.path, r.item, r.topic, r.kind, r.nav, r.ms, r.n, r.c)),
+    );
+    const kept = rows.filter((_, i) => (results[i]?.meta?.changes ?? 1) > 0);
+    const session = sessionDelta(site, kept);
+    if (!session) return;
     // A session's acquisition (entry page, referrer, channel) comes from its first
     // view, whichever beacon carries it: a leave can arrive before the view does.
-    const upsert = db.prepare(
-      `INSERT INTO sessions (sid, site, vid, start_ts, last_ts, views, reloads, clicks, active_ms, opens, entry, exit, ref, channel, src, country, device, browser, os)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-       ON CONFLICT (sid) DO UPDATE SET
-         vid = COALESCE(excluded.vid, sessions.vid),
-         start_ts = MIN(sessions.start_ts, excluded.start_ts),
-         last_ts = MAX(sessions.last_ts, excluded.last_ts),
-         entry = CASE WHEN sessions.views = 0 AND excluded.views > 0 THEN excluded.entry ELSE sessions.entry END,
-         ref = CASE WHEN sessions.views = 0 AND excluded.views > 0 THEN excluded.ref ELSE sessions.ref END,
-         channel = CASE WHEN sessions.views = 0 AND excluded.views > 0 THEN excluded.channel ELSE sessions.channel END,
-         src = CASE WHEN sessions.views = 0 AND excluded.views > 0 THEN excluded.src ELSE sessions.src END,
-         exit = COALESCE(excluded.exit, sessions.exit),
-         views = sessions.views + excluded.views,
-         reloads = sessions.reloads + excluded.reloads,
-         clicks = sessions.clicks + excluded.clicks,
-         active_ms = sessions.active_ms + excluded.active_ms,
-         opens = sessions.opens + excluded.opens`,
-    );
-    await db.batch([
-      ...rows.map((r) =>
-        insert.bind(r.ts, site, sid, vid, r.pv, r.type, r.path, r.item, r.topic, r.kind, r.nav, r.ms, r.n, r.c),
-      ),
-      upsert.bind(
+    // engaged: an engaged event, or anything else that means it was no bounce.
+    await db
+      .prepare(
+        `INSERT INTO sessions (sid, site, vid, start_ts, last_ts, views, reloads, clicks, active_ms, opens, entry, exit, ref, channel, src, country, device, browser, os, engaged, dc)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+         ON CONFLICT (sid) DO UPDATE SET
+           vid = COALESCE(excluded.vid, sessions.vid),
+           start_ts = MIN(sessions.start_ts, excluded.start_ts),
+           last_ts = MAX(sessions.last_ts, excluded.last_ts),
+           entry = CASE WHEN sessions.views = 0 AND excluded.views > 0 THEN excluded.entry ELSE sessions.entry END,
+           ref = CASE WHEN sessions.views = 0 AND excluded.views > 0 THEN excluded.ref ELSE sessions.ref END,
+           channel = CASE WHEN sessions.views = 0 AND excluded.views > 0 THEN excluded.channel ELSE sessions.channel END,
+           src = CASE WHEN sessions.views = 0 AND excluded.views > 0 THEN excluded.src ELSE sessions.src END,
+           exit = COALESCE(excluded.exit, sessions.exit),
+           views = sessions.views + excluded.views,
+           reloads = sessions.reloads + excluded.reloads,
+           clicks = sessions.clicks + excluded.clicks,
+           active_ms = sessions.active_ms + excluded.active_ms,
+           opens = sessions.opens + excluded.opens,
+           engaged = MAX(sessions.engaged, excluded.engaged,
+             sessions.views + excluded.views >= 2, sessions.clicks + excluded.clicks > 0, sessions.active_ms + excluded.active_ms >= 10000),
+           dc = MAX(sessions.dc, excluded.dc)`,
+      )
+      .bind(
         sid, site, vid, session.start, session.last,
         session.views, session.reloads, session.clicks, session.active, session.opens,
-        first?.path ?? null, lastPlace, ref, views.length ? channelOf(ref, src) : null, src,
-        typeof cf.country === "string" ? cf.country : null, deviceOf(ua), browserOf(ua), osOf(ua),
-      ),
-    ]);
+        session.entry, session.exit, session.ref, session.channel, session.src,
+        countryOf(request, env), deviceOf(ua), browserOf(ua), osOf(ua),
+        session.engaged, dcOf(cf.asn),
+      )
+      .run();
   };
   ctx.waitUntil(
     write()
@@ -396,6 +583,73 @@ export async function handlePulse(request, env, ctx) {
       .catch((error) => console.error("pulse write failed", error)),
   );
   return done(204, "ok");
+}
+
+// ─── Page requests, counted as they are served ───────────────────────────────
+
+/**
+ * Every certblueprint.com page the Worker serves, counted per day, path and
+ * class: no id, no address, no cookie, nothing in the browser. It counts the
+ * visits the beacon must not or cannot measure (no consent, ad blockers, no
+ * JavaScript), so /command/ can show how much of the traffic the beacon sees.
+ *
+ * Counts gather in memory and are written together a few seconds later, inside
+ * the same requests' waitUntil, so nothing is left behind when the instance is
+ * retired.
+ */
+const HITS_WINDOW = 15_000;
+let hits = new Map();
+let hitsFlush = null;
+
+export function pageClass(ua, asn) {
+  if (!ua || BOTS.test(ua)) return "bot";
+  return dcOf(asn) ? "dc" : "human";
+}
+
+/** Whether a response is a page someone (or something) loaded. */
+export function isPageLoad(method, status, contentType, accept, purpose) {
+  if (method !== "GET") return false;
+  if (/prefetch/i.test(purpose || "")) return false; // speculative: not a view unless it is opened
+  if (status === 200) return /text\/html/i.test(contentType || "");
+  if (status === 304) return /text\/html/i.test(accept || ""); // the browser's copy was still good
+  return false;
+}
+
+export function countPage(request, env, ctx, response, pathname) {
+  if (!env.DB || pathname === "/command" || pathname.startsWith("/command/")) return;
+  const purpose = request.headers.get("sec-purpose") || request.headers.get("purpose");
+  if (!isPageLoad(request.method, response.status, response.headers.get("content-type"), request.headers.get("accept"), purpose)) return;
+  const cls = pageClass(request.headers.get("user-agent") || "", request.cf?.asn);
+  const day = Math.floor(Date.now() / DAY);
+  const path = pathname.slice(0, 200);
+  ctx.waitUntil(
+    (async () => {
+      if ((await requestNetwork(request, env))?.excluded) return; // the owner's own visits
+      const key = `${day}\t${path}\t${cls}`;
+      hits.set(key, (hits.get(key) ?? 0) + 1);
+      // The request that opens a window waits for it and writes it; the others only add to it.
+      if (hitsFlush) return;
+      hitsFlush = new Promise((resolve) => setTimeout(resolve, HITS_WINDOW)).then(() => flushHits(env));
+      await hitsFlush;
+    })().catch((error) => console.error("page count failed", error)),
+  );
+}
+
+async function flushHits(env) {
+  const batch = hits;
+  hits = new Map();
+  hitsFlush = null;
+  if (!batch.size) return;
+  await ensureSchema(env.DB);
+  const upsert = env.DB.prepare(
+    "INSERT INTO page_hits (day, site, path, class, n) VALUES (?, 'cb', ?, ?, ?) ON CONFLICT (day, site, path, class) DO UPDATE SET n = n + excluded.n",
+  );
+  await env.DB.batch(
+    [...batch].map(([key, n]) => {
+      const [day, path, cls] = key.split("\t");
+      return upsert.bind(Number(day), path, cls, n);
+    }),
+  );
 }
 
 // ─── Command center API ──────────────────────────────────────────────────────
@@ -438,21 +692,39 @@ async function refuse() {
 
 const RANGES = { "24h": DAY, "7d": 7 * DAY, "30d": 30 * DAY, "90d": 90 * DAY, "365d": 365 * DAY };
 
-const BOUNCE = "(views <= 1 AND clicks = 0 AND active_ms < 10000)";
+// A bounce: one view, no click, under 10 s in use, and no engaged event. Sessions
+// from before the engaged column have engaged = 0, so the rest still decides them.
+const BOUNCE = "(engaged = 0 AND views <= 1 AND clicks = 0 AND active_ms < 10000)";
+
+// A recognised visitor's session that starts more than this after their last
+// activity is a new visit. Sessions are per tab, so this keeps a second tab
+// opened during the same visit from counting as a return.
+const VISIT_GAP = 30 * 60_000;
+const WEEK = 7 * DAY;
+const COHORT_WEEKS = 26;
 
 /**
  * Every query the dashboard runs. Fixed SQL, parameters only: nothing from the
- * request is ever spliced into a statement except the site filter, which is
- * chosen from two literals.
+ * request is ever spliced into a statement except the site and data-centre
+ * filters, which are chosen from literals.
  */
-function queries(db, { start, end, prevStart, bucket, tz, site, now }) {
-  const S = site ? " AND site = ?" : "";
+function queries(db, { start, end, prevStart, bucket, tz, site, now, withDc }) {
   const sp = site ? [site] : [];
+  // The filters: on sessions (with an optional table alias), and on events.
+  const SF = (a = "") => (site ? ` AND ${a}site = ?` : "") + (withDc ? "" : ` AND ${a}dc = 0`);
+  const S = SF();
+  const DCE = withDc ? "" : " AND sid NOT IN (SELECT sid FROM sessions WHERE dc = 1)";
+  const E = (site ? " AND site = ?" : "") + DCE;
   const range = [start, end, ...sp];
   const q = (sql, ...params) => db.prepare(sql).bind(...params);
   const cb = site === "nd" ? null : "cb";
   const nd = site === "cb" ? null : "nd";
-  const sessionTotals = `SELECT site, COUNT(*) AS sessions, COUNT(DISTINCT COALESCE(vid, sid)) AS visitors,
+  const day0 = Math.floor(start / DAY);
+
+  // Visitors are recognised visitors only: a visitor id, which exists only with
+  // consent. Sessions without one are counted beside them, never added to them.
+  const sessionTotals = `SELECT site, COUNT(*) AS sessions, COUNT(DISTINCT vid) AS visitors,
+      SUM(CASE WHEN vid IS NULL THEN 1 ELSE 0 END) AS anon,
       SUM(views) AS views, SUM(reloads) AS reloads, SUM(opens) AS opens, SUM(clicks) AS clicks,
       SUM(CASE WHEN ${BOUNCE} THEN 1 ELSE 0 END) AS bounces,
       SUM(CASE WHEN clicks > 0 THEN 1 ELSE 0 END) AS clicked,
@@ -467,15 +739,36 @@ function queries(db, { start, end, prevStart, bucket, tz, site, now }) {
         SUM(CASE WHEN type = 'leave' THEN ms ELSE 0 END) AS ms,
         MAX(CASE WHEN type = 'leave' THEN n END) AS scroll,
         SUM(CASE WHEN type = 'leave' THEN c ELSE 0 END) AS clicks
-      FROM events WHERE type IN ('view', 'leave') AND ts >= ? AND ts < ? AND site = 'cb' AND pv IS NOT NULL
+      FROM events WHERE type IN ('view', 'leave') AND ts >= ? AND ts < ? AND site = 'cb' AND pv IS NOT NULL${DCE}
       GROUP BY pv)`;
+  // Recognised visitors' sessions in order, each marked with the visit it belongs
+  // to (visit_no) and, when it starts a new visit, the gap since the last one.
+  // Parameters: end, then the site if filtered.
+  const visits = `WITH s AS (
+      SELECT sid, site, vid, start_ts, last_ts, views, clicks, active_ms, engaged,
+        MAX(last_ts) OVER w AS prev_end,
+        MIN(start_ts) OVER (PARTITION BY site, vid) AS first_ts
+      FROM sessions WHERE vid IS NOT NULL AND start_ts < ?${S}
+      WINDOW w AS (PARTITION BY site, vid ORDER BY start_ts, sid ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING)),
+    v AS (
+      SELECT *,
+        CASE WHEN prev_end IS NULL OR start_ts - prev_end > ${VISIT_GAP} THEN 1 ELSE 0 END AS new_visit,
+        CASE WHEN prev_end IS NOT NULL AND start_ts - prev_end > ${VISIT_GAP} THEN start_ts - prev_end END AS gap
+      FROM s),
+    n AS (
+      SELECT *, SUM(new_visit) OVER (PARTITION BY site, vid ORDER BY start_ts, sid ROWS UNBOUNDED PRECEDING) AS visit_no FROM v)`;
+  const vp = [end, ...sp];
 
   const list = {
     totals: q(sessionTotals, ...range),
     previous: q(sessionTotals, prevStart, start, ...sp),
+    hidden: q(
+      `SELECT site, COUNT(*) AS n FROM sessions WHERE dc = 1 AND start_ts >= ? AND start_ts < ?${site ? " AND site = ?" : ""} GROUP BY site`,
+      ...range,
+    ),
     series: q(
       `SELECT site, CAST((start_ts + ?) / ? AS INTEGER) AS b, COUNT(*) AS sessions,
-         COUNT(DISTINCT COALESCE(vid, sid)) AS visitors, SUM(views) AS views
+         COUNT(DISTINCT vid) AS visitors, SUM(views) AS views
        FROM sessions WHERE start_ts >= ? AND start_ts < ?${S} GROUP BY site, b ORDER BY b`,
       tz, bucket, ...range,
     ),
@@ -492,28 +785,60 @@ function queries(db, { start, end, prevStart, bucket, tz, site, now }) {
        FROM sessions WHERE start_ts >= ? AND start_ts < ?${S} GROUP BY site, k`,
       ...range,
     ),
+    // Recognised visitors in the range: how many came back (a visit that was not
+    // their first, in or before the range), how many were known before it, and
+    // how many visits each made in it.
     returning: q(
-      `WITH v AS (
-         SELECT site, vid, COUNT(*) AS c, MIN(start_ts) AS f, MAX(start_ts) AS l
-         FROM sessions WHERE vid IS NOT NULL AND start_ts >= ? AND start_ts < ?${S} GROUP BY site, vid),
-       e AS (
-         SELECT s.site, s.vid, MIN(s.start_ts) AS ever FROM sessions s JOIN v ON v.vid = s.vid AND v.site = s.site
-         GROUP BY s.site, s.vid)
-       SELECT v.site AS site, COUNT(*) AS visitors,
-         SUM(CASE WHEN e.ever < ? OR v.c > 1 THEN 1 ELSE 0 END) AS came_back,
-         SUM(CASE WHEN e.ever < ? THEN 1 ELSE 0 END) AS seen_before,
-         SUM(CASE WHEN v.c = 1 THEN 1 ELSE 0 END) AS f1,
-         SUM(CASE WHEN v.c = 2 THEN 1 ELSE 0 END) AS f2,
-         SUM(CASE WHEN v.c BETWEEN 3 AND 5 THEN 1 ELSE 0 END) AS f3,
-         SUM(CASE WHEN v.c BETWEEN 6 AND 10 THEN 1 ELSE 0 END) AS f6,
-         SUM(CASE WHEN v.c > 10 THEN 1 ELSE 0 END) AS f11,
-         SUM(CASE WHEN v.c > 1 AND (v.l - v.f) / (v.c - 1) < 86400000 THEN 1 ELSE 0 END) AS g0,
-         SUM(CASE WHEN v.c > 1 AND (v.l - v.f) / (v.c - 1) >= 86400000 AND (v.l - v.f) / (v.c - 1) < 259200000 THEN 1 ELSE 0 END) AS g1,
-         SUM(CASE WHEN v.c > 1 AND (v.l - v.f) / (v.c - 1) >= 259200000 AND (v.l - v.f) / (v.c - 1) < 604800000 THEN 1 ELSE 0 END) AS g3,
-         SUM(CASE WHEN v.c > 1 AND (v.l - v.f) / (v.c - 1) >= 604800000 AND (v.l - v.f) / (v.c - 1) < 2592000000 THEN 1 ELSE 0 END) AS g7,
-         SUM(CASE WHEN v.c > 1 AND (v.l - v.f) / (v.c - 1) >= 2592000000 THEN 1 ELSE 0 END) AS g30
-       FROM v JOIN e ON e.vid = v.vid AND e.site = v.site GROUP BY v.site`,
-      ...range, start, start,
+      `${visits},
+       per AS (
+         SELECT site, vid, MAX(CASE WHEN visit_no > 1 THEN 1 ELSE 0 END) AS back,
+           MAX(CASE WHEN first_ts < ? THEN 1 ELSE 0 END) AS before, MAX(SUM(new_visit), 1) AS visits
+         FROM n WHERE start_ts >= ? GROUP BY site, vid)
+       SELECT site, COUNT(*) AS visitors, SUM(back) AS came_back, SUM(before) AS seen_before,
+         SUM(CASE WHEN visits = 1 THEN 1 ELSE 0 END) AS f1,
+         SUM(CASE WHEN visits = 2 THEN 1 ELSE 0 END) AS f2,
+         SUM(CASE WHEN visits BETWEEN 3 AND 5 THEN 1 ELSE 0 END) AS f3,
+         SUM(CASE WHEN visits BETWEEN 6 AND 10 THEN 1 ELSE 0 END) AS f6,
+         SUM(CASE WHEN visits > 10 THEN 1 ELSE 0 END) AS f11
+       FROM per GROUP BY site`,
+      ...vp, start, start,
+    ),
+    // Every return visit in the range, by how long after the visitor's last activity it came.
+    gaps: q(
+      `${visits}
+       SELECT site, COUNT(*) AS gaps,
+         SUM(CASE WHEN gap < 86400000 THEN 1 ELSE 0 END) AS g0,
+         SUM(CASE WHEN gap >= 86400000 AND gap < 259200000 THEN 1 ELSE 0 END) AS g1,
+         SUM(CASE WHEN gap >= 259200000 AND gap < 604800000 THEN 1 ELSE 0 END) AS g3,
+         SUM(CASE WHEN gap >= 604800000 AND gap < 2592000000 THEN 1 ELSE 0 END) AS g7,
+         SUM(CASE WHEN gap >= 2592000000 THEN 1 ELSE 0 END) AS g30
+       FROM n WHERE start_ts >= ? AND gap IS NOT NULL GROUP BY site`,
+      ...vp, start,
+    ),
+    // Sessions of new and returning recognised visitors, and of sessions without an id.
+    engagement: q(
+      `${visits}
+       SELECT site, CASE WHEN visit_no > 1 THEN 'returning' ELSE 'new' END AS who, COUNT(*) AS sessions, SUM(views) AS views,
+         SUM(active_ms) AS active_ms, SUM(CASE WHEN ${BOUNCE} THEN 1 ELSE 0 END) AS bounces
+       FROM n WHERE start_ts >= ? GROUP BY site, who
+       UNION ALL
+       SELECT site, 'none', COUNT(*), SUM(views), SUM(active_ms), SUM(CASE WHEN ${BOUNCE} THEN 1 ELSE 0 END)
+       FROM sessions WHERE vid IS NULL AND start_ts >= ? AND start_ts < ?${S} GROUP BY site`,
+      ...vp, start, ...range,
+    ),
+    // Weekly groups of first visits over the last 26 weeks, whatever the range:
+    // how many came back within 7, 30 and 90 days. Weeks start on Monday, local time.
+    windows: q(
+      `${visits},
+       c AS (
+         SELECT site, vid, MIN(first_ts) AS first, MIN(CASE WHEN visit_no = 2 THEN start_ts END) AS back
+         FROM n GROUP BY site, vid HAVING MIN(first_ts) >= ?)
+       SELECT site, CAST((first + ? + 259200000) / ${WEEK} AS INTEGER) AS week, COUNT(*) AS cohort,
+         SUM(CASE WHEN back - first <= ${7 * DAY} THEN 1 ELSE 0 END) AS r7,
+         SUM(CASE WHEN back - first <= ${30 * DAY} THEN 1 ELSE 0 END) AS r30,
+         SUM(CASE WHEN back - first <= ${90 * DAY} THEN 1 ELSE 0 END) AS r90
+       FROM c GROUP BY site, week ORDER BY week`,
+      ...vp, now - COHORT_WEEKS * WEEK, tz,
     ),
     channels: q(
       `SELECT site, COALESCE(channel, 'direct') AS channel, COUNT(*) AS sessions,
@@ -560,26 +885,26 @@ function queries(db, { start, end, prevStart, bucket, tz, site, now }) {
          COUNT(DISTINCT CASE WHEN type = 'impr' THEN pv END) AS seen,
          COUNT(DISTINCT CASE WHEN type = 'click' THEN pv END) AS clicked,
          SUM(CASE WHEN type = 'click' THEN 1 ELSE 0 END) AS clicks
-       FROM events WHERE type IN ('impr', 'click') AND topic IS NOT NULL AND ts >= ? AND ts < ?${S}
+       FROM events WHERE type IN ('impr', 'click') AND topic IS NOT NULL AND ts >= ? AND ts < ?${E}
        GROUP BY site, topic ORDER BY seen DESC, clicks DESC LIMIT 30`,
       ...range,
     ),
     clicks: q(
       `SELECT site, kind, item, COUNT(*) AS clicks, COUNT(DISTINCT sid) AS sessions
-       FROM events WHERE type = 'click' AND ts >= ? AND ts < ?${S}
+       FROM events WHERE type = 'click' AND ts >= ? AND ts < ?${E}
        GROUP BY site, kind, item ORDER BY clicks DESC LIMIT 40`,
       ...range,
     ),
     search: q(
       `SELECT item AS q, COUNT(*) AS searches, MIN(n) AS results,
          SUM(CASE WHEN kind = 'picked' THEN 1 ELSE 0 END) AS picked, COUNT(DISTINCT sid) AS sessions
-       FROM events WHERE type = 'search' AND item IS NOT NULL AND ts >= ? AND ts < ?${S}
+       FROM events WHERE type = 'search' AND item IS NOT NULL AND ts >= ? AND ts < ?${E}
        GROUP BY item ORDER BY searches DESC LIMIT 40`,
       ...range,
     ),
     errors: q(
       `SELECT site, item AS message, COUNT(*) AS n, COUNT(DISTINCT sid) AS sessions, MAX(path) AS path, MAX(ts) AS last_ts
-       FROM events WHERE type = 'error' AND ts >= ? AND ts < ?${S}
+       FROM events WHERE type = 'error' AND ts >= ? AND ts < ?${E}
        GROUP BY site, item ORDER BY n DESC LIMIT 15`,
       ...range,
     ),
@@ -590,9 +915,10 @@ function queries(db, { start, end, prevStart, bucket, tz, site, now }) {
     ),
     recent: q(
       `SELECT s.sid, s.site, s.vid IS NOT NULL AS known, s.start_ts, s.last_ts, s.views, s.reloads, s.clicks,
-         s.active_ms, s.opens, s.entry, s.exit, s.channel, s.ref, s.src, s.country, s.device, s.browser, s.os,
-         (s.vid IS NOT NULL AND EXISTS (SELECT 1 FROM sessions p WHERE p.vid = s.vid AND p.site = s.site AND p.start_ts < s.start_ts)) AS is_returning
-       FROM sessions s WHERE s.start_ts >= ? AND s.start_ts < ?${S.replace("site", "s.site")}
+         s.active_ms, s.opens, s.entry, s.exit, s.channel, s.ref, s.src, s.country, s.device, s.browser, s.os, s.dc,
+         (s.vid IS NOT NULL AND EXISTS (SELECT 1 FROM sessions p WHERE p.vid = s.vid AND p.site = s.site
+           AND p.start_ts < s.start_ts AND p.last_ts < s.start_ts - ${VISIT_GAP})) AS is_returning
+       FROM sessions s WHERE s.start_ts >= ? AND s.start_ts < ?${SF("s.")}
        ORDER BY s.last_ts DESC LIMIT 60`,
       ...range,
     ),
@@ -616,26 +942,52 @@ function queries(db, { start, end, prevStart, bucket, tz, site, now }) {
     );
     list.topicVisitors = q(
       `WITH u AS (SELECT topic, vid, COUNT(DISTINCT sid) AS s FROM events
-         WHERE type = 'view' AND site = 'cb' AND vid IS NOT NULL AND ts >= ? AND ts < ? GROUP BY topic, vid)
+         WHERE type = 'view' AND site = 'cb' AND vid IS NOT NULL AND ts >= ? AND ts < ?${DCE} GROUP BY topic, vid)
        SELECT topic, COUNT(*) AS visitors, SUM(CASE WHEN s > 1 THEN 1 ELSE 0 END) AS repeaters FROM u GROUP BY topic`,
       start, end,
+    );
+    // Page requests the Worker served, per UTC day, beside the views the beacon
+    // reported on the same days (data centres follow the filter on both sides).
+    list.hits = q(
+      `WITH h AS (
+         SELECT day, SUM(CASE WHEN class = 'human' THEN n ELSE 0 END) AS human,
+           SUM(CASE WHEN class = 'bot' THEN n ELSE 0 END) AS bot, SUM(CASE WHEN class = 'dc' THEN n ELSE 0 END) AS dc
+         FROM page_hits WHERE site = 'cb' AND day >= ? GROUP BY day),
+       b AS (
+         SELECT CAST(ts / 86400000 AS INTEGER) AS day, COUNT(*) AS views FROM events
+         WHERE type = 'view' AND site = 'cb' AND ts >= ?${DCE} GROUP BY day)
+       SELECT h.day, h.human, h.bot, h.dc, COALESCE(b.views, 0) AS beacon FROM h LEFT JOIN b ON b.day = h.day ORDER BY h.day`,
+      day0, day0 * DAY,
+    );
+    list.hitPaths = q(
+      `WITH h AS (
+         SELECT path, SUM(CASE WHEN class = 'human' THEN n ELSE 0 END) AS human,
+           SUM(CASE WHEN class = 'bot' THEN n ELSE 0 END) AS bot, SUM(CASE WHEN class = 'dc' THEN n ELSE 0 END) AS dc
+         FROM page_hits WHERE site = 'cb' AND day >= ? GROUP BY path),
+       b AS (
+         SELECT path, COUNT(*) AS views FROM events
+         WHERE type = 'view' AND site = 'cb' AND ts >= MAX(?, COALESCE((SELECT MIN(day) FROM page_hits WHERE site = 'cb'), 0) * 86400000)${DCE}
+         GROUP BY path)
+       SELECT h.path, h.human, h.bot, h.dc, COALESCE(b.views, 0) AS beacon FROM h LEFT JOIN b ON b.path = h.path
+       ORDER BY h.human DESC, h.bot DESC LIMIT 40`,
+      day0, day0 * DAY,
     );
   }
   if (nd) {
     const opened = (col) => `WITH o AS (
         SELECT ${col} AS k, MAX(kind) AS kind, MAX(topic) AS topic, COUNT(*) AS opens, COUNT(DISTINCT sid) AS sessions,
           SUM(CASE WHEN n = 1 THEN 1 ELSE 0 END) AS resumed
-        FROM events WHERE type = 'open' AND site = 'nd' AND ts >= ? AND ts < ? AND ${col} IS NOT NULL GROUP BY ${col}),
+        FROM events WHERE type = 'open' AND site = 'nd' AND ts >= ? AND ts < ? AND ${col} IS NOT NULL${DCE} GROUP BY ${col}),
       r AS (
         SELECT k, SUM(CASE WHEN c > 1 THEN 1 ELSE 0 END) AS repeat_sessions FROM (
-          SELECT ${col} AS k, sid, COUNT(*) AS c FROM events WHERE type = 'open' AND site = 'nd' AND ts >= ? AND ts < ? AND ${col} IS NOT NULL GROUP BY ${col}, sid)
+          SELECT ${col} AS k, sid, COUNT(*) AS c FROM events WHERE type = 'open' AND site = 'nd' AND ts >= ? AND ts < ? AND ${col} IS NOT NULL${DCE} GROUP BY ${col}, sid)
         GROUP BY k),
       u AS (
         SELECT k, COUNT(*) AS visitors, SUM(CASE WHEN s > 1 THEN 1 ELSE 0 END) AS repeaters FROM (
-          SELECT ${col} AS k, vid, COUNT(DISTINCT sid) AS s FROM events WHERE type = 'open' AND site = 'nd' AND vid IS NOT NULL AND ts >= ? AND ts < ? AND ${col} IS NOT NULL GROUP BY ${col}, vid)
+          SELECT ${col} AS k, vid, COUNT(DISTINCT sid) AS s FROM events WHERE type = 'open' AND site = 'nd' AND vid IS NOT NULL AND ts >= ? AND ts < ? AND ${col} IS NOT NULL${DCE} GROUP BY ${col}, vid)
         GROUP BY k),
       t AS (
-        SELECT ${col} AS k, SUM(ms) AS ms, SUM(n) AS commands FROM events WHERE type = 'time' AND site = 'nd' AND ts >= ? AND ts < ? AND ${col} IS NOT NULL GROUP BY ${col})
+        SELECT ${col} AS k, SUM(ms) AS ms, SUM(n) AS commands FROM events WHERE type = 'time' AND site = 'nd' AND ts >= ? AND ts < ? AND ${col} IS NOT NULL${DCE} GROUP BY ${col})
       SELECT o.k AS k, o.kind, o.topic, o.opens, o.sessions, o.resumed, COALESCE(r.repeat_sessions, 0) AS repeat_sessions,
         COALESCE(u.visitors, 0) AS visitors, COALESCE(u.repeaters, 0) AS repeaters,
         COALESCE(t.ms, 0) AS ms, COALESCE(t.commands, 0) AS commands
@@ -647,12 +999,12 @@ function queries(db, { start, end, prevStart, bucket, tz, site, now }) {
     // NetDrill's own saved progress, sent as a yes or no on each session's view.
     list.ndReturning = q(
       `SELECT COUNT(DISTINCT sid) AS sessions, COUNT(DISTINCT CASE WHEN kind = 'returning' THEN sid END) AS returning_sessions
-       FROM events WHERE type = 'view' AND site = 'nd' AND ts >= ? AND ts < ?`,
+       FROM events WHERE type = 'view' AND site = 'nd' AND ts >= ? AND ts < ?${DCE}`,
       start, end,
     );
     list.labKinds = q(
       `SELECT kind, COUNT(*) AS opens, COUNT(DISTINCT sid) AS sessions FROM events
-       WHERE type = 'open' AND site = 'nd' AND ts >= ? AND ts < ? GROUP BY kind ORDER BY opens DESC`,
+       WHERE type = 'open' AND site = 'nd' AND ts >= ? AND ts < ?${DCE} GROUP BY kind ORDER BY opens DESC`,
       start, end,
     );
   }
@@ -680,6 +1032,8 @@ async function handleQuery(request, env) {
     bucket: len <= DAY ? 3_600_000 : DAY,
     tz: -tzMinutes * 60_000,
     site,
+    // Sessions from data-centre networks are left out unless asked for.
+    withDc: body.dc === true,
   };
   await ensureSchema(env.DB);
   const here = await requestNetwork(request, env);
@@ -696,6 +1050,7 @@ async function handleQuery(request, env) {
     generated: now,
     range: Object.keys(RANGES).find((k) => RANGES[k] === len),
     site: site ?? "all",
+    dc: params.withDc,
     start: params.start,
     bucket: params.bucket,
     tz: params.tz,
@@ -814,4 +1169,5 @@ export async function pruneTelemetry(env) {
     await env.DB.prepare("DELETE FROM events WHERE ts < ?").bind(cutoff).run();
   }
   await env.DB.prepare("DELETE FROM sessions WHERE start_ts < ?").bind(cutoff).run();
+  await env.DB.prepare("DELETE FROM page_hits WHERE day < ?").bind(Math.floor(cutoff / DAY)).run();
 }

@@ -17,6 +17,8 @@ interface Payload {
   generated: number;
   range: string;
   site: 'all' | Site;
+  /** Whether data-centre sessions are included. */
+  dc: boolean;
   start: number;
   bucket: number;
   tz: number;
@@ -44,6 +46,7 @@ const SITES: Record<Site, { label: string; color: string }> = {
 };
 const RANGES: Record<string, string> = { '24h': 'last 24 hours', '7d': 'last 7 days', '30d': 'last 30 days', '90d': 'last 90 days', '365d': 'last 12 months' };
 const KEY_STORE = 'cc:key';
+const DAY_MS = 86_400_000;
 const OFF_KEY = 'cb:t:off';
 
 const labels: Labels = JSON.parse(document.getElementById('cc-labels')?.textContent || '{"pages":{},"topics":{},"nd":{}}');
@@ -52,6 +55,8 @@ const $ = <T extends HTMLElement = HTMLElement>(id: string) => document.getEleme
 const state = {
   range: '7d',
   site: 'all' as 'all' | Site,
+  /** Include sessions from data-centre networks (off: most of them are scripts). */
+  dc: false,
   key: '',
   payload: null as Payload | null,
   networks: null as Networks | null,
@@ -225,7 +230,7 @@ async function load() {
   state.loading = true;
   $('cc-board').classList.add('is-loading');
   try {
-    state.payload = (await api('/api/command/query', { range: state.range, site: state.site === 'all' ? undefined : state.site, tz: new Date().getTimezoneOffset() })) as Payload;
+    state.payload = (await api('/api/command/query', { range: state.range, site: state.site === 'all' ? undefined : state.site, dc: state.dc, tz: new Date().getTimezoneOffset() })) as Payload;
   } finally {
     state.loading = false;
     $('cc-board').classList.remove('is-loading');
@@ -395,7 +400,10 @@ function tile(label: string, value: string, deltaEl: Node | null, note?: string)
 
 interface Totals {
   sessions: number;
+  /** Recognised visitors (a visitor id), summed over sites only where a site is shown alone. */
   visitors: number;
+  /** Sessions without a visitor id. */
+  anon: number;
   views: number;
   reloads: number;
   opens: number;
@@ -409,6 +417,7 @@ function totals(rows: Row[] = []): Totals {
   return {
     sessions: sum(rows, (r) => r.sessions),
     visitors: sum(rows, (r) => r.visitors),
+    anon: sum(rows, (r) => r.anon),
     views: sum(rows, (r) => r.views),
     reloads: sum(rows, (r) => r.reloads),
     opens: sum(rows, (r) => r.opens),
@@ -435,6 +444,7 @@ function render() {
 
   document.querySelectorAll<HTMLButtonElement>('[data-range]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.range === state.range)));
   document.querySelectorAll<HTMLButtonElement>('[data-site]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.site === state.site)));
+  document.querySelectorAll<HTMLButtonElement>('[data-dc]').forEach((b) => b.setAttribute('aria-pressed', String((b.dataset.dc === '1') === state.dc)));
   $('cc-updated').textContent = `Updated ${fmt.time(p.generated)}`;
   const live = d.live ?? [];
   $('cc-live-pill').textContent = `${live.length} on now`;
@@ -455,29 +465,43 @@ function render() {
     ),
   );
 
-  // Headline numbers
+  // Headline numbers. Recognised visitors are people with a visitor id, which
+  // exists only with consent. They are never added across the two sites (one
+  // person on both would count twice), and sessions without an id are counted
+  // beside them, never as people.
   const returning = d.returning ?? [];
-  const known = sum(returning, (r) => r.visitors);
+  const visitorsOf = (rows: Row[] | undefined, s: Site) => Number((rows ?? []).find((r) => r.site === s)?.visitors) || 0;
+  const cbShown = sites.includes('cb');
+  const cbBack = returning.find((r) => r.site === 'cb') ?? {};
+  const known = Number(cbBack.visitors) || 0;
+  const back = Number(cbBack.came_back) || 0;
   const ndBack = d.ndReturning?.[0] ?? { sessions: 0, returning_sessions: 0 };
-  const back = sum(returning, (r) => r.came_back);
+  const hiddenDc = sum(d.hidden ?? [], (r) => r.n);
   sections.push(
     h('section', { class: 'cc-headline' },
       h('div', { class: 'cc-hero' },
-        h('p', { class: 'cc-tile-label' }, `Visitors, ${period}`),
-        h('p', { class: 'cc-hero-value' }, fmt.int(t.visitors)),
-        delta(t.visitors, prev.visitors, { period: prevPeriod }),
-        h('p', { class: 'cc-tile-note' }, `Estimated: people who accepted analytics cookies count once; everyone else once per session. ${fmt.pct(ratio(t.consented, t.sessions))} of sessions had consent.`),
+        h('p', { class: 'cc-tile-label' }, `Recognised visitors${sites.length > 1 ? ' on certblueprint.com' : ''}, ${period}`),
+        h('p', { class: 'cc-hero-value' }, cbShown ? fmt.int(visitorsOf(d.totals, 'cb')) : '–'),
+        cbShown ? delta(visitorsOf(d.totals, 'cb'), visitorsOf(d.previous, 'cb'), { period: prevPeriod }) : null,
+        h('p', { class: 'cc-tile-note' }, cbShown
+          ? 'People who accepted analytics cookies, each counted once. NetDrill has no visitor id, so it has no figure here.'
+          : 'NetDrill has no visitor id: it counts sessions, never people.'),
+        h('div', { class: 'cc-hero-side' },
+          h('p', { class: 'cc-tile-label' }, 'Sessions without an id'),
+          h('p', { class: 'cc-tile-value' }, fmt.int(t.anon)),
+          h('p', { class: 'cc-tile-note' }, `${fmt.pct(ratio(t.anon, t.sessions))} of sessions${sites.length > 1 ? ' on the two sites' : ''}. Counted beside the visitors above, not added to them.`),
+        ),
       ),
       h('div', { class: 'cc-tiles' },
-        tile('Sessions', fmt.int(t.sessions), delta(t.sessions, prev.sessions, { period: prevPeriod })),
+        tile('Sessions', fmt.int(t.sessions), delta(t.sessions, prev.sessions, { period: prevPeriod }), !state.dc && hiddenDc ? `${fmt.int(hiddenDc)} from data centres left out` : undefined),
         tile(sites.includes('nd') && !sites.includes('cb') ? 'App loads' : 'Views', fmt.int(t.views), delta(t.views, prev.views, { period: prevPeriod }), sites.length > 1 ? 'Page views plus NetDrill app loads' : undefined),
         tile('Views per session', fmt.dec(ratio(t.views, t.sessions)), delta(ratio(t.views, t.sessions), ratio(prev.views, prev.sessions), { period: prevPeriod })),
-        tile('Bounce rate', fmt.pct(ratio(t.bounces, t.sessions)), delta(ratio(t.bounces, t.sessions), ratio(prev.bounces, prev.sessions), { period: prevPeriod, points: true, upIsGood: false }), 'One view, no click, under 10 s engaged'),
+        tile('Bounce rate', fmt.pct(ratio(t.bounces, t.sessions)), delta(ratio(t.bounces, t.sessions), ratio(prev.bounces, prev.sessions), { period: prevPeriod, points: true, upIsGood: false }), 'One view, no click, under 10 s in use'),
         tile('Engaged time per session', fmt.duration(ratio(t.active, t.sessions)), delta(ratio(t.active, t.sessions), ratio(prev.active, prev.sessions), { period: prevPeriod }), 'Page visible and in use'),
         tile('Session length', fmt.duration(ratio(t.span, t.sessions)), delta(ratio(t.span, t.sessions), ratio(prev.span, prev.sessions), { period: prevPeriod }), 'First to last activity, idle included'),
         tile('Click rate', fmt.pct(ratio(t.clicked, t.sessions)), delta(ratio(t.clicked, t.sessions), ratio(prev.clicked, prev.sessions), { period: prevPeriod, points: true }), 'Sessions with at least one click'),
         tile('Reloads', fmt.int(t.reloads), delta(t.reloads, prev.reloads, { period: prevPeriod, upIsGood: false }), `${fmt.pct(ratio(t.reloads, t.views))} of views were a refresh`),
-        sites.includes('cb') ? tile('Returning visitors', known ? fmt.pct(back / known) : '–', null, known ? `${fmt.int(back)} of ${fmt.int(known)} visitors with consent` : 'Needs visitors who accepted analytics cookies') : null,
+        cbShown ? tile('Returning visitors', known ? fmt.pct(back / known) : '–', null, known ? `${fmt.int(back)} of ${fmt.int(known)} recognised visitors made a return visit` : 'Needs visitors who accepted analytics cookies') : null,
         sites.includes('nd') ? tile('NetDrill labs opened', fmt.int(t.opens), delta(t.opens, prev.opens, { period: prevPeriod })) : null,
         sites.includes('nd') && ndBack.sessions ? tile('NetDrill returning sessions', fmt.pct(ndBack.returning_sessions / ndBack.sessions), null, 'From a browser that had used NetDrill before') : null,
       ),
@@ -501,23 +525,23 @@ function render() {
       const byB = new Map((d.series ?? []).filter((r) => r.site === s).map((r) => [r.b, Number(r[metric]) || 0]));
       return { key: s, label: SITES[s].label, color: SITES[s].color, values: buckets.map((b) => byB.get(b) ?? 0) };
     });
-  const visitorsChart = h('div', { class: 'cc-chart' });
   const sessionsChart = h('div', { class: 'cc-chart' });
+  const visitorsChart = h('div', { class: 'cc-chart' });
   const viewsChart = h('div', { class: 'cc-chart' });
   const vis = seriesFor('visitors');
   const ses = seriesFor('sessions');
   const vws = seriesFor('views');
   sections.push(
-    card(hourly ? 'Visitors by hour' : 'Visitors by day', `Your local time. ${sites.length > 1 ? 'One line per site.' : ''}`,
+    card(hourly ? 'Sessions by hour' : 'Sessions by day', `Your local time. ${sites.length > 1 ? 'One line per site.' : ''}`,
       legend(sites, 'line'),
-      visitorsChart,
+      sessionsChart,
       h('div', { class: 'cc-multiples' },
-        h('div', null, h('h3', null, 'Sessions'), sessionsChart),
+        h('div', null, h('h3', null, 'Recognised visitors'), visitorsChart),
         h('div', null, h('h3', null, sites.length === 1 && sites[0] === 'nd' ? 'App loads' : 'Views'), viewsChart),
       ),
       tableView(
-        ['When', ...sites.flatMap((s) => [`${SITES[s].label} visitors`, `${SITES[s].label} sessions`, `${SITES[s].label} views`])],
-        xs.map((x, i) => [xTitle(x), ...sites.flatMap((_, k) => [vis[k].values[i], ses[k].values[i], vws[k].values[i]])]),
+        ['When', ...sites.flatMap((s) => [`${SITES[s].label} sessions`, `${SITES[s].label} recognised visitors`, `${SITES[s].label} views`])],
+        xs.map((x, i) => [xTitle(x), ...sites.flatMap((_, k) => [ses[k].values[i], vis[k].values[i], vws[k].values[i]])]),
       ),
     ),
   );
@@ -544,7 +568,8 @@ function render() {
     ),
   );
 
-  // Coming back
+  // Coming back: recognised visitors only. A return visit is a session that
+  // starts more than 30 minutes after the visitor's last activity.
   const FREQ = ['1', '2', '3–5', '6–10', '11+'];
   const GAPS = ['under a day', '1–3 days', '3–7 days', '1–4 weeks', '30+ days'];
   // Visitor ids exist only on certblueprint.com (NetDrill has no consent banner), so these charts are its alone.
@@ -554,32 +579,137 @@ function render() {
     return { key: s, label: SITES[s].label, color: SITES[s].color, values: ['f1', 'f2', 'f3', 'f6', 'f11'].map((k) => Number(r[k]) || 0) };
   });
   const gapSeries: Series[] = backSites.map((s) => {
-    const r = returning.find((x) => x.site === s) ?? {};
+    const r = (d.gaps ?? []).find((x) => x.site === s) ?? {};
     return { key: s, label: SITES[s].label, color: SITES[s].color, values: ['g0', 'g1', 'g3', 'g7', 'g30'].map((k) => Number(r[k]) || 0) };
   });
   const freqHost = h('div', { class: 'cc-chart' });
   const gapHost = h('div', { class: 'cc-chart' });
   sections.push(
-    card('Coming back', `Only visitors who accepted analytics cookies can be recognised on a later visit: ${fmt.int(known)} in this range, ${fmt.int(back)} of them returning.`,
+    card('Coming back', `Recognised visitors only: ${fmt.int(known)} in this range, ${fmt.int(back)} of them made a return visit. A return visit starts more than 30 minutes after their last activity, so a second tab is not one.`,
       sites.includes('nd') && ndBack.sessions
         ? h('p', { class: 'cc-hint' }, `NetDrill has no visitor id. ${fmt.pct(ndBack.returning_sessions / ndBack.sessions)} of its ${fmt.int(ndBack.sessions)} sessions came from a browser that had used NetDrill before, read from the progress NetDrill saves for the learner. Its labs table shows the same per lab.`)
         : null,
       known === 0
-        ? h('p', { class: 'cc-empty' }, 'No visitors with analytics consent in this range yet.')
+        ? h('p', { class: 'cc-empty' }, 'No recognised visitors in this range yet.')
         : h('div', { class: 'cc-stack' },
             legend(backSites, 'rect'),
             h('div', { class: 'cc-multiples' },
-              h('div', null, h('h3', null, `Sessions per visitor, ${period}`), freqHost),
-              h('div', null, h('h3', null, 'Average time between their visits'), gapHost),
+              h('div', null, h('h3', null, `Visits per recognised visitor, ${period}`), freqHost),
+              h('div', null, h('h3', null, 'Time between visits'), gapHost),
             ),
             tableView(['', ...backSites.map((s) => SITES[s].label)], [
-              ...FREQ.map((f, k) => [`${f} session${f === '1' ? '' : 's'}`, ...freqSeries.map((s) => s.values[k])]),
-              ...GAPS.map((g, k) => [`Back after ${g}`, ...gapSeries.map((s) => s.values[k])]),
-              ['Seen before this range', ...backSites.map((s) => Number(returning.find((x) => x.site === s)?.seen_before) || 0)],
+              ...FREQ.map((f, k) => [`${f} visit${f === '1' ? '' : 's'}`, ...freqSeries.map((s) => s.values[k])]),
+              ...GAPS.map((g, k) => [`Return visits after ${g}`, ...gapSeries.map((s) => s.values[k])]),
+              ['Known before this range', ...backSites.map((s) => Number(returning.find((x) => x.site === s)?.seen_before) || 0)],
             ]),
           ),
     ),
   );
+
+  // Return windows: weekly groups of first visits, each window shown once it has passed.
+  if (cbShown) {
+    const WINDOWS = [
+      { key: 'r7', days: 7, label: 'Back within 7 days' },
+      { key: 'r30', days: 30, label: 'Back within 30 days' },
+      { key: 'r90', days: 90, label: 'Back within 90 days' },
+    ];
+    const weekStart = (w: number) => w * 7 * DAY_MS - 3 * DAY_MS - p.tz;
+    const passed = (w: number, days: number) => weekStart(w) + (7 + days) * DAY_MS <= p.generated;
+    const cohorts = (d.windows ?? []).filter((r) => r.site === 'cb').sort((x, y) => y.week - x.week);
+    const summary = WINDOWS.map((w) => {
+      const done = cohorts.filter((r) => passed(r.week, w.days));
+      return { ...w, n: sum(done, (r) => r.cohort), k: sum(done, (r) => r[w.key]) };
+    });
+    sections.push(
+      card('Return windows', 'Recognised visitors grouped by the week of their first visit, over the last 26 weeks whatever the range above: how many made a return visit within 7, 30 and 90 days. A week shows a figure once its whole window has passed.',
+        h('div', { class: 'cc-tiles' }, summary.map((w) => tile(w.label, w.n ? fmt.pct(w.k / w.n) : '–', null, w.n ? `${fmt.int(w.k)} of ${fmt.int(w.n)} first-time visitors` : 'No week has finished this window yet'))),
+        table<Row>([
+          { label: 'Week of first visit', value: (r) => new Date(weekStart(r.week)).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) },
+          { label: 'First-time visitors', num: true, value: (r) => fmt.int(r.cohort), bar: (r) => [{ value: r.cohort, color: SITES.cb.color }] },
+          ...WINDOWS.map((w): Col<Row> => ({
+            label: w.label.replace('Back within ', ''),
+            num: true,
+            value: (r) => (passed(r.week, w.days) ? `${fmt.pct(ratio(r[w.key], r.cohort))} · ${fmt.int(r[w.key])}` : h('span', { class: 'cc-muted' }, 'not yet')),
+          })),
+        ], cohorts, 'No recognised first visits in the last 26 weeks.'),
+      ),
+    );
+  }
+
+  // New and returning: the same session figures for each kind of visitor.
+  const WHO: Record<string, string> = { new: 'New recognised visitors', returning: 'Returning recognised visitors', none: 'Sessions without an id' };
+  const engRows = ['new', 'returning', 'none']
+    .map((who) => {
+      const rows = (d.engagement ?? []).filter((r) => r.who === who);
+      return { who, sessions: sum(rows, (r) => r.sessions), views: sum(rows, (r) => r.views), active_ms: sum(rows, (r) => r.active_ms), bounces: sum(rows, (r) => r.bounces) };
+    })
+    .filter((r) => r.sessions > 0);
+  sections.push(
+    card('New and returning', 'Sessions of first-time and returning recognised visitors side by side, with sessions that have no id for reference.',
+      table<Row>([
+        { label: 'Who', value: (r) => WHO[r.who] },
+        { label: 'Sessions', num: true, value: (r) => fmt.int(r.sessions), bar: (r) => [{ value: r.sessions, color: r.who === 'none' ? 'var(--muted)' : SITES.cb.color }] },
+        { label: 'Views per session', num: true, value: (r) => fmt.dec(ratio(r.views, r.sessions)) },
+        { label: 'Engaged per session', num: true, value: (r) => fmt.duration(ratio(r.active_ms, r.sessions)) },
+        { label: 'Bounce rate', num: true, value: (r) => fmt.pct(ratio(r.bounces, r.sessions)) },
+      ], engRows, 'No sessions in this range.'),
+    ),
+  );
+
+  // Page requests the server counted, against the views the beacon reported.
+  let hitsDraw: (() => void) | null = null;
+  if (cbShown) {
+    const hits = d.hits ?? [];
+    const people = (r: Row) => (Number(r.human) || 0) + (p.dc ? Number(r.dc) || 0 : 0);
+    const requests = sum(hits, people);
+    const beacon = sum(hits, (r) => r.beacon);
+    const hitsHost = h('div', { class: 'cc-chart' });
+    const utc = (day: number, opts: Intl.DateTimeFormatOptions) => new Date(day * DAY_MS).toLocaleDateString('en-US', { ...opts, timeZone: 'UTC' });
+    const hitSeries: Series[] = [
+      { key: 'requests', label: 'Page requests', color: SITES.cb.color, values: hits.map(people) },
+      { key: 'beacon', label: 'Views the beacon reported', color: 'var(--muted)', values: hits.map((r) => Number(r.beacon) || 0) },
+    ];
+    const paths = d.hitPaths ?? [];
+    sections.push(
+      card('Page requests the server counted', `Every certblueprint.com page the Worker served, counted with no id, no cookie and no address. It includes the visits the beacon must not measure (no consent in Europe, a decline, Global Privacy Control) or cannot (ad blockers, no JavaScript). Days are UTC.${p.dc ? '' : ' People excludes data-centre networks.'}`,
+        hits.length === 0
+          ? h('p', { class: 'cc-empty' }, 'No page requests counted in this range yet. Counting started with the release that added this panel.')
+          : h('div', { class: 'cc-stack' },
+              h('div', { class: 'cc-tiles' },
+                tile('Page requests', fmt.int(requests), null, p.dc ? 'People and data centres' : 'People: not bots, not data centres'),
+                tile('Measured by the beacon', fmt.pct(ratio(beacon, requests)), null, `${fmt.int(beacon)} views reported on the same days`),
+                tile('Bots', fmt.int(sum(hits, (r) => r.bot)), null, 'Said so in their user agent'),
+                tile('Data centres', fmt.int(sum(hits, (r) => r.dc)), null, 'Cloud and hosting networks'),
+              ),
+              hits.length > 1 ? h('div', { class: 'cc-legend' }, hitSeries.map((x) => h('span', null, h('span', { class: 'cc-key cc-key-line', style: `background:${x.color}` }), x.label))) : null,
+              hits.length > 1 ? hitsHost : null,
+              h('p', { class: 'cc-hint' }, `Counting began ${utc(hits[0].day, { month: 'short', day: 'numeric' })}${hits[0].day * DAY_MS > p.start ? ', partway through that day, so its share reads high' : ''}. The beacon can report more views than requests: a page restored with the Back button, or a tab coming back after 30 idle minutes, is a new view without a new request.`),
+              tableView(['Day (UTC)', 'Page requests', 'Beacon views', 'Bots', 'Data centres'], hits.map((r) => [utc(r.day, { weekday: 'short', month: 'short', day: 'numeric' }), people(r), Number(r.beacon) || 0, Number(r.bot) || 0, Number(r.dc) || 0])),
+              h('h3', null, 'By page'),
+              table<Row>([
+                { label: 'Page', value: (r) => h('span', null, pageLabel(r.path), h('small', null, r.path)) },
+                { label: 'Requests', num: true, value: (r) => fmt.int(people(r)), bar: (r) => [{ value: people(r), color: SITES.cb.color }] },
+                { label: 'Beacon views', num: true, value: (r) => fmt.int(r.beacon) },
+                { label: 'Measured', num: true, value: (r) => fmt.pct(ratio(r.beacon, people(r))), title: 'Beacon views as a share of page requests' },
+                { label: 'Bots', num: true, value: (r) => fmt.int(r.bot) },
+                { label: 'Data centres', num: true, value: (r) => fmt.int(r.dc) },
+              ], paths, 'No page requests counted in this range yet.'),
+            ),
+      ),
+    );
+    if (hits.length > 1) {
+      hitsDraw = () =>
+        lineChart(hitsHost, {
+          xs: hits.map((r) => r.day * DAY_MS),
+          series: hitSeries,
+          xTick: (x) => utc(x / DAY_MS, { month: 'short', day: 'numeric' }),
+          xTitle: (x) => utc(x / DAY_MS, { weekday: 'short', month: 'short', day: 'numeric' }),
+          format: fmt.compact,
+          height: 200,
+          label: 'Page requests and beacon views per day',
+        });
+    }
+  }
 
   // certblueprint topics and pages
   if (sites.includes('cb')) {
@@ -805,7 +935,7 @@ function render() {
           ].filter(Boolean).join(' · ')) },
         { label: 'Started on → ended on', value: (r) => h('span', { class: 'cc-path' }, placeLabel(r.site, r.entry), h('small', null, `→ ${placeLabel(r.site, r.exit)}`)) },
         { label: 'From', value: (r) => r.src || r.ref || (CHANNELS[r.channel] ?? 'Direct') },
-        { label: 'Who', value: (r) => h('span', null, country(r.country), h('small', null, `${r.device ?? ''} · ${r.browser ?? ''} · ${r.is_returning ? 'returning' : r.known ? 'new' : 'no consent'}`)) },
+        { label: 'Who', value: (r) => h('span', null, country(r.country), h('small', null, `${r.device ?? ''} · ${r.browser ?? ''} · ${r.is_returning ? 'returning' : r.known ? 'new' : 'no id'}${r.dc ? ' · data centre' : ''}`)) },
       ], d.recent ?? [], 'No sessions in this range.', (r, tr) => {
         tr.classList.add('cc-clickable');
         tr.tabIndex = 0;
@@ -835,8 +965,10 @@ function render() {
     card('About these numbers', undefined,
       h('ul', { class: 'cc-notes' },
         h('li', null, 'A session ends after 30 minutes without activity. Engaged time counts only while the page is visible and someone has used it in the last minute.'),
-        h('li', null, 'Bounce: a session with one view, no clicks and under 10 seconds engaged.'),
-        h('li', null, 'Visitors and returning visitors rely on a random id kept only for people who accepted analytics cookies, so they cover part of the traffic. Sessions, views, time, clicks and labs cover everyone except bots and people who block the script.'),
+        h('li', null, 'Bounce: a session with one view, no click, under 10 seconds in use, and no engaged signal. The page sends that signal as soon as a view reaches 10 seconds in use or is clicked, so a bounce does not depend on the last beacon arriving.'),
+        h('li', null, 'Who is measured: in the EEA, the UK and Switzerland, only visitors who accepted analytics cookies; elsewhere, everyone who has not declined them. A decline or Global Privacy Control stops the beacon everywhere. The server’s page-request count covers every visit, measured or not.'),
+        h('li', null, 'Recognised visitors have a random id, kept only for people who accepted analytics cookies, so they are part of the traffic, not all of it. Everyone else is counted in sessions, never as people. A return visit starts more than 30 minutes after the visitor’s last activity.'),
+        h('li', null, `Sessions from cloud and hosting networks are ${p.dc ? 'included in this view' : 'left out unless you pick “With data centres”'}: most are scripts posing as browsers, though some are people on a VPN.`),
         h('li', null, `Stored: about ${fmt.int(stored.events ?? 0)} events${stored.since ? ` since ${new Date(stored.since).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}` : ''}. Kept for ${p.retentionDays} days, then deleted. This view read ${fmt.int(p.rowsRead)} rows.`),
       ),
       exportBtn,
@@ -846,15 +978,16 @@ function render() {
   $('cc-sections').replaceChildren(...sections);
 
   // Charts draw once their hosts are in the page and have a width.
-  lineChart(visitorsChart, { xs, series: vis, xTick, xTitle, format: fmt.compact, height: 260, label: `Visitors per ${hourly ? 'hour' : 'day'}` });
-  lineChart(sessionsChart, { xs, series: ses, xTick, xTitle, format: fmt.compact, height: 170, label: 'Sessions' });
+  lineChart(sessionsChart, { xs, series: ses, xTick, xTitle, format: fmt.compact, height: 260, label: `Sessions per ${hourly ? 'hour' : 'day'}` });
+  lineChart(visitorsChart, { xs, series: vis, xTick, xTitle, format: fmt.compact, height: 170, label: 'Recognised visitors' });
   lineChart(viewsChart, { xs, series: vws, xTick, xTitle, format: fmt.compact, height: 170, label: 'Views' });
   heatmap(heatHost, { grid, format: fmt.int, label: 'Sessions started by weekday and hour' });
   columnChart(lengthHost, { categories: LENGTHS, series: lengthSeries, format: fmt.compact, label: 'Sessions by engaged time' });
   if (known) {
-    columnChart(freqHost, { categories: FREQ, series: freqSeries, format: fmt.compact, height: 180, label: 'Visitors by number of sessions' });
-    columnChart(gapHost, { categories: GAPS.map((g) => g.replace('under a day', '<1 day')), series: gapSeries, format: fmt.compact, height: 180, label: 'Returning visitors by average gap between visits' });
+    columnChart(freqHost, { categories: FREQ, series: freqSeries, format: fmt.compact, height: 180, label: 'Recognised visitors by number of visits' });
+    columnChart(gapHost, { categories: GAPS.map((g) => g.replace('under a day', '<1 day')), series: gapSeries, format: fmt.compact, height: 180, label: 'Return visits by time since the last visit' });
   }
+  hitsDraw?.();
 }
 
 // ─── Your own visits: excluded networks ───
@@ -1047,9 +1180,10 @@ function readHash() {
   const site = params.get('site');
   if (range && range in RANGES) state.range = range;
   if (site === 'cb' || site === 'nd' || site === 'all') state.site = site;
+  state.dc = params.get('dc') === '1';
 }
 function writeHash() {
-  history.replaceState(null, '', `#range=${state.range}&site=${state.site}`);
+  history.replaceState(null, '', `#range=${state.range}&site=${state.site}${state.dc ? '&dc=1' : ''}`);
 }
 
 function setTheme(theme: string) {
@@ -1075,6 +1209,13 @@ function wire() {
   document.querySelectorAll<HTMLButtonElement>('[data-site]').forEach((b) =>
     b.addEventListener('click', () => {
       state.site = b.dataset.site as 'all' | Site;
+      writeHash();
+      void refresh();
+    }),
+  );
+  document.querySelectorAll<HTMLButtonElement>('[data-dc]').forEach((b) =>
+    b.addEventListener('click', () => {
+      state.dc = b.dataset.dc === '1';
       writeHash();
       void refresh();
     }),

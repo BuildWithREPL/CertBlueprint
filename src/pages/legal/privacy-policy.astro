@@ -6,7 +6,7 @@ import LegalLayout from '../../layouts/LegalLayout.astro';
   title="Privacy Policy"
   description="CertBlueprint privacy policy. How we handle analytics, our own usage statistics, cookies, affiliate links, the career navigator, AI conversation, and third-party services."
   effectiveDate="April 14, 2026"
-  lastUpdated="October 12, 2026"
+  lastUpdated="October 16, 2026"
 >
 
   <section>
@@ -38,10 +38,20 @@ import LegalLayout from '../../layouts/LegalLayout.astro';
       <li>on NetDrill: which labs and lessons you open, how long you spend in each, how many commands you type (not the commands themselves, and not whether your answers were right), and whether your browser had used NetDrill, or opened that lab, before. NetDrill reads that from the progress it already saves in your browser and sends only a yes or no.</li>
     </ul>
     <p>
-      With each visit our server also records your country (from Cloudflare) and your device type, browser and operating system (worked out from your browser's user agent, which we then discard). We do not store your IP address. Visits from the few networks the Site's owner has marked as their own (such as their home network) are not recorded at all: as each visit arrives, our server compares its network address with that list and then discards it.
+      With each visit our server also records your country (from Cloudflare), your device type, browser and operating system (worked out from your browser's user agent, which we then discard), and whether your network belongs to a cloud or hosting provider (from the network's public number), because most visits from those networks are automated. We do not store your IP address. Visits from the few networks the Site's owner has marked as their own (such as their home network) are not recorded at all: as each visit arrives, our server compares its network address with that list and then discards it.
     </p>
     <p>
-      To group page views into a visit, your browser keeps a random visit id in its session storage, which is cleared when you close the tab. If you accept analytics cookies in the consent banner, your browser also keeps a random visitor id in its local storage so we can tell when someone comes back. It is created only after you accept and deleted if you withdraw consent. NetDrill has no consent banner, so it never creates a visitor id. Neither id is linked to your name, email address or any other site. If your browser sends a Global Privacy Control signal, we do not create the visitor id. This data is used only by CertBlueprint to improve the Site and NetDrill. It is not sold, not shared, and not used for advertising.
+      To group page views into a visit, your browser keeps a random visit id in its session storage, which is cleared when you close the tab. If you accept analytics cookies in the consent banner, your browser also keeps a random visitor id in its local storage so we can tell when someone comes back. It is created only after you accept and deleted if you withdraw consent. NetDrill has no consent banner, so it never creates a visitor id. Neither id is linked to your name, email address or any other site. This data is used only by CertBlueprint to improve the Site and NetDrill. It is not sold, not shared, and not used for advertising.
+    </p>
+    <p>
+      Where you are decides when any of this starts. If you visit from the European Economic Area, the United Kingdom or Switzerland, or from a place our server cannot tell, nothing is stored in your browser and nothing is sent until you accept analytics cookies in the consent banner. Everywhere else these statistics are collected unless you decline analytics cookies in the banner. Declining, or a Global Privacy Control signal from your browser, stops them wherever you are, and the page deletes the ids described above. Every page carries the rule for your region, and our server also refuses statistics that do not follow it. NetDrill has no consent banner, so it sends nothing from the EEA, the UK or Switzerland. Before it sends anything it asks our server which rule applies to you, and that question is not recorded.
+    </p>
+    <p>
+      Separately, our server counts how many times each page of the Site is requested each day, split into requests from people, from programs that say they are bots, and from cloud or hosting networks. That count has no id, no cookie and no address, nothing is stored in your browser for it, and it cannot tell one visitor from another. It covers visits from every region, because it is how we know how much of the Site's traffic the statistics above can see.
+    </p>
+    <h3>Do Not Track and Global Privacy Control</h3>
+    <p>
+      Browsers' Do Not Track setting has no agreed meaning, and the Site does not change what it does when it receives that signal. Our own usage statistics do honour Global Privacy Control: when your browser sends it, nothing is collected for them. Google Analytics and Google AdSense run only as your choices in the consent banner allow. As described in Section 4, Google and its partners may collect information about your visits to this and other websites over time to show ads.
     </p>
     <h3>Cookies</h3>
     <p>
@@ -115,7 +125,7 @@ import LegalLayout from '../../layouts/LegalLayout.astro';
   <section>
     <h2>6. Data retention</h2>
     <p>
-      Analytics data retained by Google is subject to Google's own data retention policies. CookieYes consent data is stored as a cookie in your browser and expires according to the CookieYes platform settings. Career Navigator data stays in your browser until you clear it or your browser removes it. Our own usage statistics are deleted automatically after 13 months. We do not store text submitted to the Navigator Lab.
+      Analytics data retained by Google is subject to Google's own data retention policies. CookieYes consent data is stored as a cookie in your browser and expires according to the CookieYes platform settings. Career Navigator data stays in your browser until you clear it or your browser removes it. Our own usage statistics, including the daily page counts, are deleted automatically after 13 months. We do not store text submitted to the Navigator Lab.
     </p>
   </section>
 
