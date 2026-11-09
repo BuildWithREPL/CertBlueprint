@@ -1003,7 +1003,7 @@ function queries(db, { start, end, prevStart, bucket, tz, site, now, withDc }) {
     list.labTopics = q(opened("topic"), start, end, start, end, start, end, start, end, start, end);
     // Solves in the range: how many, how many were a browser's first of that lab, in how many sessions.
     list.ndSolves = q(
-      `SELECT COUNT(*) AS solves, SUM(CASE WHEN n = 1 THEN 1 ELSE 0 END) AS first_solves, COUNT(DISTINCT sid) AS sessions
+      `SELECT COUNT(*) AS solves, COALESCE(SUM(CASE WHEN n = 1 THEN 1 ELSE 0 END), 0) AS first_solves, COUNT(DISTINCT sid) AS sessions
        FROM events WHERE type = 'solved' AND site = 'nd' AND ts >= ? AND ts < ?${DCE}`,
       start, end,
     );
