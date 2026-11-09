@@ -51,7 +51,7 @@ const ORIGINS = {
   "https://netdrill.certblueprint.com": "nd",
 };
 
-const TYPES = new Set([
+export const TYPES = new Set([
   "view", // a page (certblueprint) or the app (netdrill) loaded
   "leave", // the page was hidden: active ms since the last leave, max scroll %, clicks
   "click", // a tracked link: netdrill, affiliate, outbound, or inside a placement
@@ -60,6 +60,7 @@ const TYPES = new Set([
   "error", // an uncaught script error
   "open", // netdrill: a lab, lesson or rep was opened
   "time", // netdrill: active ms (and commands typed) on one lab
+  "solved", // netdrill: every check of a lab passed; n = 1 for that browser's first solve of it, ms and c the active time and commands since it was opened
   "engaged", // the view reached 10 s in use, or was clicked: the session is not a bounce
 ]);
 
@@ -987,14 +988,25 @@ function queries(db, { start, end, prevStart, bucket, tz, site, now, withDc }) {
           SELECT ${col} AS k, vid, COUNT(DISTINCT sid) AS s FROM events WHERE type = 'open' AND site = 'nd' AND vid IS NOT NULL AND ts >= ? AND ts < ? AND ${col} IS NOT NULL${DCE} GROUP BY ${col}, vid)
         GROUP BY k),
       t AS (
-        SELECT ${col} AS k, SUM(ms) AS ms, SUM(n) AS commands FROM events WHERE type = 'time' AND site = 'nd' AND ts >= ? AND ts < ? AND ${col} IS NOT NULL${DCE} GROUP BY ${col})
+        SELECT ${col} AS k, SUM(ms) AS ms, SUM(n) AS commands FROM events WHERE type = 'time' AND site = 'nd' AND ts >= ? AND ts < ? AND ${col} IS NOT NULL${DCE} GROUP BY ${col}),
+      v AS (
+        SELECT ${col} AS k, COUNT(*) AS solves, COUNT(DISTINCT sid) AS solved_sessions,
+          SUM(CASE WHEN n = 1 THEN 1 ELSE 0 END) AS first_solves, AVG(ms) AS solve_ms
+        FROM events WHERE type = 'solved' AND site = 'nd' AND ts >= ? AND ts < ? AND ${col} IS NOT NULL${DCE} GROUP BY ${col})
       SELECT o.k AS k, o.kind, o.topic, o.opens, o.sessions, o.resumed, COALESCE(r.repeat_sessions, 0) AS repeat_sessions,
         COALESCE(u.visitors, 0) AS visitors, COALESCE(u.repeaters, 0) AS repeaters,
-        COALESCE(t.ms, 0) AS ms, COALESCE(t.commands, 0) AS commands
-      FROM o LEFT JOIN r ON r.k = o.k LEFT JOIN u ON u.k = o.k LEFT JOIN t ON t.k = o.k
+        COALESCE(t.ms, 0) AS ms, COALESCE(t.commands, 0) AS commands,
+        COALESCE(v.solves, 0) AS solves, COALESCE(v.solved_sessions, 0) AS solved_sessions, COALESCE(v.first_solves, 0) AS first_solves, v.solve_ms
+      FROM o LEFT JOIN r ON r.k = o.k LEFT JOIN u ON u.k = o.k LEFT JOIN t ON t.k = o.k LEFT JOIN v ON v.k = o.k
       ORDER BY o.opens DESC LIMIT 50`;
-    list.labs = q(opened("item"), start, end, start, end, start, end, start, end);
-    list.labTopics = q(opened("topic"), start, end, start, end, start, end, start, end);
+    list.labs = q(opened("item"), start, end, start, end, start, end, start, end, start, end);
+    list.labTopics = q(opened("topic"), start, end, start, end, start, end, start, end, start, end);
+    // Solves in the range: how many, how many were a browser's first of that lab, in how many sessions.
+    list.ndSolves = q(
+      `SELECT COUNT(*) AS solves, SUM(CASE WHEN n = 1 THEN 1 ELSE 0 END) AS first_solves, COUNT(DISTINCT sid) AS sessions
+       FROM events WHERE type = 'solved' AND site = 'nd' AND ts >= ? AND ts < ?${DCE}`,
+      start, end,
+    );
     // NetDrill has no visitor id. Whether a browser had used it before comes from
     // NetDrill's own saved progress, sent as a yes or no on each session's view.
     list.ndReturning = q(

@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 import {
   OPT_IN_REGIONS,
+  TYPES,
   bannerState,
   beaconVerdict,
   channelOf,
@@ -115,6 +116,15 @@ test("session delta: NetDrill's last place is the last lab opened", () => {
   const d = sessionDelta("nd", [view({ path: "/" }), { ts: 2000, type: "open", item: "ospf-1" }, { ts: 3000, type: "open", item: "vlan-2" }]);
   assert.equal(d.exit, "vlan-2");
   assert.equal(d.opens, 2);
+});
+
+test("event types: NetDrill's opens, time and solves are stored; anything else is dropped", () => {
+  for (const t of ["view", "leave", "open", "time", "solved", "engaged", "error"]) assert.ok(TYPES.has(t), t);
+  assert.ok(!TYPES.has("answer"));
+  // A solve is not an open: the session's opens and its exit don't move.
+  const d = sessionDelta("nd", [view({ path: "/" }), { ts: 2000, type: "open", item: "f1-cli" }, { ts: 9000, type: "solved", item: "f1-cli", n: 1, ms: 7000, c: 8 }]);
+  assert.equal(d.opens, 1);
+  assert.equal(d.exit, "f1-cli");
 });
 
 test("networks: IPv4 as is, IPv6 by its /64", () => {
